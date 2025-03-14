@@ -1,21 +1,17 @@
 import React from "react";
-import { Box, Typography, Paper } from "@mui/material";
+import { Box, Typography, Paper, Container, Stack } from "@mui/material";
+import SpeedIcon from "@mui/icons-material/Speed";
+import RateOfOperationTable from "./components/RateOfOperationTable";
 
 const RateOfOperation: React.FC = () => {
   return (
-    <Box>
-      <Typography variant="h4" component="h1" gutterBottom>
-        Rate of Operation
-      </Typography>
-      <Paper sx={{ p: 3, mb: 3 }}>
-        <Typography variant="h6" gutterBottom>
-          Operation Metrics
-        </Typography>
-        <Typography variant="body1">
-          This page will contain the Rate of Operation metrics and analytics.
-        </Typography>
-      </Paper>
-    </Box>
+    <Paper sx={{ p: 2, overflow: "hidden" }}>
+      <Stack direction="row">
+        <SpeedIcon sx={{ fontSize: "28px" }} />
+        <Typography sx={{ ml: 1, fontSize: "20px" }}>Rate of Operation</Typography>
+      </Stack>
+      <RateOfOperationTable />
+    </Paper>
   );
 };
 

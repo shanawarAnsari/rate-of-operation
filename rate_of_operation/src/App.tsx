@@ -45,8 +45,8 @@ function App() {
           <TopNavbar mode={mode} onToggleTheme={toggleColorMode} />
           <Box sx={{ display: "flex", flex: 1 }}>
             <SideNavbar />
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-              <Container sx={{ mt: 2 }}>
+            <Box sx={{ maxWidth: "95%" }}>
+              <Container maxWidth="xl" sx={{ mt: 2 }}>
                 <AppRoutes />
               </Container>
             </Box>

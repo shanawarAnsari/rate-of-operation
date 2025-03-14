@@ -20,9 +20,8 @@ interface TopNavbarProps {
 
 // Create a styled component for the logo image that responds to theme
 const LogoImage = styled("img")(({ theme }) => ({
-  height: "40px",
-  filter: theme.palette.mode === "dark" ? "brightness(0.9) contrast(1.1)" : "none",
-  transition: "filter 0.3s ease",
+  height: "28px",
+  filter: theme.palette.mode === "dark" ? "brightness(10) contrast(10)" : "none",
 }));
 
 const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
@@ -40,16 +39,17 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
 
   return (
     <AppBar
-      position="static"
+      position="sticky"
       sx={{
         bgcolor: theme.palette.background.paper,
         color: theme.palette.text.primary,
         boxShadow: theme.palette.mode === "light" ? 1 : 3,
+        zIndex: theme.zIndex.drawer + 1, // Ensures navbar stays above other content
       }}
     >
       <Toolbar>
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <LogoImage src={logoImage} alt="Company Logo" />
+          <LogoImage src={logoImage} alt="Company Logo" height="20" />
         </Box>
         <Box sx={{ flexGrow: 1 }} />
 

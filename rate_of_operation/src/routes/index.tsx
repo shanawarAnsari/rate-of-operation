@@ -5,6 +5,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import RateOfOperation from "../pages/Operations/RateOfOperation";
 import Wrenchtime from "../pages/Operations/Wrenchtime";
+import FinancialRate from "../pages/Operations/FinancialRate/index";
+import SuperUser from "../pages/SuperUser";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -12,6 +14,8 @@ const AppRoutes: React.FC = () => {
       <Route path="/" element={<Dashboard />} />
       <Route path="/operations/rate-of-operation" element={<RateOfOperation />} />
       <Route path="/operations/wrenchtime" element={<Wrenchtime />} />
+      <Route path="/operations/financial-rate" element={<FinancialRate />} />
+      <Route path="/super-user" element={<SuperUser />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
