@@ -15,6 +15,7 @@ export const useColumnVisibility = () => {
         key.toLowerCase().includes("business") ||
         key.toLowerCase().includes("category")
       ) {
+        // Remove the dropdown options for "business" and "category"
         initialVisibility[key] = false;
       } else {
         initialVisibility[key] = index <= statisticalSourceIndex;

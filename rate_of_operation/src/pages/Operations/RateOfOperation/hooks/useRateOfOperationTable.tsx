@@ -9,7 +9,9 @@ import {
 import { useColumnVisibility } from "./useColumnVisibility";
 import { usePagination } from "./usePagination";
 import { useSearch } from "./useSearch";
-import { Tooltip } from "@mui/material";
+import { Tooltip, IconButton } from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check";
+import EditIcon from "@mui/icons-material/Edit";
 
 export const useRateOfOperationTable = (data: any[]) => {
   const {
@@ -22,20 +24,36 @@ export const useRateOfOperationTable = (data: any[]) => {
 
   const columns = useMemo<ColumnDef<any>[]>(() => {
     const keys = Object.keys(data[0] || {});
-    return keys.map((key) => ({
+    return keys.map((key, index) => ({
       accessorKey: key,
       header: key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
-      cell: (info) => {
+      cell: (info: any) => {
         const value = info.getValue();
         return (
-          <Tooltip
-            title={value !== null && value !== undefined ? String(value) : ""}
-            arrow
+          <div
+            style={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
-            <div style={{ overflow: "hidden", textOverflow: "ellipsis" }}>
-              {String(value)}
-            </div>
-          </Tooltip>
+            {String(value)}
+            {index === 4 && (
+              <>
+                <Tooltip title="Edit Recipe Status" arrow>
+                  <IconButton size="small">
+                    <CheckIcon />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title="Update New TRO Value" arrow>
+                  <IconButton size="small">
+                    <EditIcon />
+                  </IconButton>
+                </Tooltip>
+              </>
+            )}
+          </div>
         );
       },
       minSize: key.includes("Asset") ? 90 : 110,
