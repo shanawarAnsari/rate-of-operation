@@ -221,11 +221,10 @@ const RateOfOperationTable: React.FC = () => {
       <TableContainer
         component={Paper}
         sx={{
-          maxHeight: "calc(100vh - 220px)",
+          flexGrow: 1,
           overflowX: "auto",
           overflowY: "auto",
           width: "100%",
-          flexGrow: 1,
           position: "relative",
           margin: 0,
         }}

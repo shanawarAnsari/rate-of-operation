@@ -13,7 +13,7 @@ const RateOfOperation: React.FC = () => {
         </Typography>
       </Stack>
       <Divider sx={{ mb: 2 }} />
-      <Container sx={{ maxWidth: "100%", disaply: "flex", flexGrow: 1 }}>
+      <Container maxWidth="xl" sx={{ width: "100%", display: "flex", flexGrow: 1 }}>
         <RateOfOperationTable />
       </Container>
     </Paper>

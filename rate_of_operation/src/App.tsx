@@ -43,9 +43,9 @@ function App() {
         <CssBaseline />
         <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
           <TopNavbar mode={mode} onToggleTheme={toggleColorMode} />
-          <Box sx={{ display: "flex", flex: 1 }}>
+          <Box sx={{ display: "flex", flex: 1, overflow: "hidden" }}>
             <SideNavbar />
-            <Box sx={{ maxWidth: "100%" }}>
+            <Box sx={{ flexGrow: 1, overflow: "auto", maxWidth: "100%" }}>
               <Container maxWidth="xl" sx={{ mt: 2 }}>
                 <AppRoutes />
               </Container>
