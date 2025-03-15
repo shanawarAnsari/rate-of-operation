@@ -50,6 +50,20 @@ const SideNavbar: React.FC = () => {
     }
   };
 
+  const menuIconStyle = {
+    fontSize: "1.5rem",
+    color: theme.palette.text.secondary, // Gray color for icons
+  };
+
+  const menuTextStyle = {
+    "& .MuiTypography-root": {
+      fontSize: "0.80rem",
+      fontWeight: 550, // Adjusted from 500 to 550 (between medium and semi-bold)
+      color: theme.palette.text.secondary, // Gray color for text
+    },
+  };
+
+  // Update selected item style to ensure it overrides the default styles
   const selectedItemStyle = {
     backgroundColor: theme.palette.primary.main + "10",
     "&.Mui-selected": {
@@ -58,11 +72,17 @@ const SideNavbar: React.FC = () => {
     "&.Mui-selected:hover": {
       backgroundColor: theme.palette.primary.main + "25",
     },
-    "& .MuiListItemIcon-root": {
-      color: theme.palette.primary.main,
+    // Use higher specificity to ensure these override the default styles
+    "&.Mui-selected .MuiListItemIcon-root, & .Mui-selected .MuiListItemIcon-root": {
+      color: `${theme.palette.primary.main} !important`,
     },
-    "& .MuiListItemText-primary": {
-      color: theme.palette.primary.main,
+    "&.Mui-selected .MuiListItemText-primary, & .Mui-selected .MuiListItemText-primary":
+      {
+        color: `${theme.palette.primary.main} !important`,
+      },
+    // Make sure SVG icons also get colored properly when selected
+    "&.Mui-selected .MuiSvgIcon-root, & .Mui-selected .MuiSvgIcon-root": {
+      color: `${theme.palette.primary.main} !important`,
     },
   };
 
@@ -98,7 +118,9 @@ const SideNavbar: React.FC = () => {
             height: "100%",
           }}
         >
-          <List>
+          <List dense>
+            {" "}
+            {/* Make the list dense to reduce vertical spacing */}
             {/* Dashboard Link - Always visible */}
             <ListItem disablePadding>
               <Tooltip title={collapsed ? "Dashboard" : ""} placement="right" arrow>
@@ -107,7 +129,7 @@ const SideNavbar: React.FC = () => {
                   to="/"
                   selected={location.pathname === "/"}
                   sx={{
-                    minHeight: 48,
+                    minHeight: 42, // Reduced from 48
                     justifyContent: collapsed ? "center" : "initial",
                     px: 2.5,
                     ...getActiveStyle("/"),
@@ -118,22 +140,24 @@ const SideNavbar: React.FC = () => {
                       minWidth: 0,
                       mr: collapsed ? 0 : 3,
                       justifyContent: "center",
+                      "& .MuiSvgIcon-root": menuIconStyle,
                     }}
                   >
                     <DashboardIcon />
                   </ListItemIcon>
-                  {!collapsed && <ListItemText primary="Dashboard" />}
+                  {!collapsed && (
+                    <ListItemText primary="Dashboard" sx={menuTextStyle} />
+                  )}
                 </ListItemButton>
               </Tooltip>
             </ListItem>
-
             {/* Operations Section - Only visible when expanded */}
             {!collapsed && (
               <ListItem disablePadding>
                 <ListItemButton
                   onClick={handleOperationsClick}
                   sx={{
-                    minHeight: 48,
+                    minHeight: 42, // Reduced from 48
                     px: 2.5,
                   }}
                 >
@@ -142,71 +166,77 @@ const SideNavbar: React.FC = () => {
                       minWidth: 0,
                       mr: 3,
                       justifyContent: "center",
+                      "& .MuiSvgIcon-root": menuIconStyle,
                     }}
                   >
                     <BuildIcon />
                   </ListItemIcon>
-                  <ListItemText primary="Production Rates" />
-                  {operationsOpen ? <ExpandLess /> : <ExpandMore />}
+                  <ListItemText primary="Production Rates" sx={menuTextStyle} />
+                  {!operationsOpen ? (
+                    <ExpandLess sx={menuIconStyle} />
+                  ) : (
+                    <ExpandMore sx={menuIconStyle} />
+                  )}
                 </ListItemButton>
               </ListItem>
             )}
-
             {/* Operations Submenu - Only visible when expanded and open */}
             {!collapsed && (
               <Collapse in={!operationsOpen} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
+                <List component="div" disablePadding dense>
                   <ListItemButton
                     sx={{
                       pl: 4,
                       ...getActiveStyle("/operations/rate-of-operation"),
+                      minHeight: 38, // Even smaller for submenu items
                     }}
                     component={Link}
                     to="/operations/rate-of-operation"
                     selected={location.pathname === "/operations/rate-of-operation"}
                   >
-                    <ListItemIcon>
+                    <ListItemIcon sx={{ "& .MuiSvgIcon-root": menuIconStyle }}>
                       <SpeedIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Rate of Operation" />
+                    <ListItemText primary="Rate of Operations" sx={menuTextStyle} />
                   </ListItemButton>
                   <ListItemButton
                     sx={{
                       pl: 4,
                       ...getActiveStyle("/operations/wrenchtime"),
+                      minHeight: 38,
                     }}
                     component={Link}
                     to="/operations/wrenchtime"
                     selected={location.pathname === "/operations/wrenchtime"}
                   >
-                    <ListItemIcon>
+                    <ListItemIcon sx={{ "& .MuiSvgIcon-root": menuIconStyle }}>
                       <TimerIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Wrench Time" />
+                    <ListItemText primary="Wrench Time" sx={menuTextStyle} />
                   </ListItemButton>
                   <ListItemButton
                     sx={{
                       pl: 4,
                       ...getActiveStyle("/operations/financial-rate"),
+                      minHeight: 38,
                     }}
                     component={Link}
                     to="/operations/financial-rate"
                     selected={location.pathname === "/operations/financial-rate"}
                   >
-                    <ListItemIcon>
+                    <ListItemIcon sx={{ "& .MuiSvgIcon-root": menuIconStyle }}>
                       <MoneyIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Financial Rate" />
+                    <ListItemText primary="Financial Rate" sx={menuTextStyle} />
                   </ListItemButton>
                 </List>
               </Collapse>
             )}
-
             {/* When collapsed, show only direct navigation links */}
             {collapsed && (
               <>
                 <ListItem disablePadding>
-                  <Tooltip title="Rate of Operation" placement="right" arrow>
+                  <Tooltip title="Rate of Operations" placement="right" arrow>
                     <ListItemButton
                       component={Link}
                       to="/operations/rate-of-operation"
@@ -214,7 +244,7 @@ const SideNavbar: React.FC = () => {
                         location.pathname === "/operations/rate-of-operation"
                       }
                       sx={{
-                        minHeight: 48,
+                        minHeight: 42, // Reduced from 48
                         justifyContent: "center",
                         px: 2.5,
                         ...getActiveStyle("/operations/rate-of-operation"),
@@ -224,6 +254,7 @@ const SideNavbar: React.FC = () => {
                         sx={{
                           minWidth: 0,
                           justifyContent: "center",
+                          "& .MuiSvgIcon-root": menuIconStyle,
                         }}
                       >
                         <SpeedIcon />
@@ -239,7 +270,7 @@ const SideNavbar: React.FC = () => {
                       to="/operations/wrenchtime"
                       selected={location.pathname === "/operations/wrenchtime"}
                       sx={{
-                        minHeight: 48,
+                        minHeight: 42,
                         justifyContent: "center",
                         px: 2.5,
                         ...getActiveStyle("/operations/wrenchtime"),
@@ -249,6 +280,7 @@ const SideNavbar: React.FC = () => {
                         sx={{
                           minWidth: 0,
                           justifyContent: "center",
+                          "& .MuiSvgIcon-root": menuIconStyle,
                         }}
                       >
                         <TimerIcon />
@@ -264,7 +296,7 @@ const SideNavbar: React.FC = () => {
                       to="/operations/financial-rate"
                       selected={location.pathname === "/operations/financial-rate"}
                       sx={{
-                        minHeight: 48,
+                        minHeight: 42,
                         justifyContent: "center",
                         px: 2.5,
                         ...getActiveStyle("/operations/financial-rate"),
@@ -274,6 +306,7 @@ const SideNavbar: React.FC = () => {
                         sx={{
                           minWidth: 0,
                           justifyContent: "center",
+                          "& .MuiSvgIcon-root": menuIconStyle,
                         }}
                       >
                         <MoneyIcon />
@@ -283,7 +316,6 @@ const SideNavbar: React.FC = () => {
                 </ListItem>
               </>
             )}
-
             {/* Super User item - always visible */}
             <ListItem disablePadding>
               <Tooltip title={collapsed ? "Super User" : ""} placement="right" arrow>
@@ -292,7 +324,7 @@ const SideNavbar: React.FC = () => {
                   to="/super-user"
                   selected={location.pathname === "/super-user"}
                   sx={{
-                    minHeight: 48,
+                    minHeight: 42,
                     justifyContent: collapsed ? "center" : "initial",
                     px: 2.5,
                     ...getActiveStyle("/super-user"),
@@ -303,11 +335,14 @@ const SideNavbar: React.FC = () => {
                       minWidth: 0,
                       mr: collapsed ? 0 : 3,
                       justifyContent: "center",
+                      "& .MuiSvgIcon-root": menuIconStyle,
                     }}
                   >
                     <SuperUserIcon />
                   </ListItemIcon>
-                  {!collapsed && <ListItemText primary="Super User" />}
+                  {!collapsed && (
+                    <ListItemText primary="Super User" sx={menuTextStyle} />
+                  )}
                 </ListItemButton>
               </Tooltip>
             </ListItem>

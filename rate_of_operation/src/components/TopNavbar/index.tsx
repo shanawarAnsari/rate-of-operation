@@ -9,8 +9,10 @@ import {
   useTheme,
   styled,
   TextField,
+  Avatar,
+  Typography,
 } from "@mui/material";
-import { Brightness4, Brightness7 } from "@mui/icons-material";
+import { Brightness4, Brightness7, AccountCircle } from "@mui/icons-material";
 import logoImage from "../../assets/KC_LOGO.png";
 
 interface TopNavbarProps {
@@ -28,6 +30,8 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
   const [region, setRegion] = useState("KCNA"); // Initialize with the only available option
   const [subRegion, setSubRegion] = useState("North America"); // Initialize with the only available option
   const theme = useTheme();
+  // Add username state (could also come from props or context)
+  const [username, setUsername] = useState("John Wick");
 
   const handleRegionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRegion(event.target.value);
@@ -52,6 +56,11 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
           <LogoImage src={logoImage} alt="Company Logo" height="20" />
         </Box>
         <Box sx={{ flexGrow: 1 }} />
+
+        {/* Theme toggle now appears before the dropdowns */}
+        <IconButton onClick={onToggleTheme} color="inherit" sx={{ mr: 2 }}>
+          {mode === "dark" ? <Brightness7 /> : <Brightness4 />}
+        </IconButton>
 
         <TextField
           select
@@ -109,9 +118,17 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
           <MenuItem value="North America">North America</MenuItem>
         </TextField>
 
-        <IconButton onClick={onToggleTheme} color="inherit">
-          {mode === "dark" ? <Brightness7 /> : <Brightness4 />}
-        </IconButton>
+        {/* Profile section with avatar and username */}
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Avatar
+            sx={{ width: 32, height: 32, bgcolor: theme.palette.primary.main }}
+          >
+            <AccountCircle />
+          </Avatar>
+          <Typography variant="body2" sx={{ ml: 1 }}>
+            {username}
+          </Typography>
+        </Box>
       </Toolbar>
     </AppBar>
   );
