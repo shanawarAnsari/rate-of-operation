@@ -1,15 +1,6 @@
-import React, { useMemo } from "react";
-import {
-  useReactTable,
-  getCoreRowModel,
-  getPaginationRowModel,
-  ColumnDef,
-  flexRender,
-} from "@tanstack/react-table";
-import { mockData } from "./mockData";
+import React from "react";
 import {
   Box,
-  Button,
   Checkbox,
   FormControl,
   FormControlLabel,
@@ -28,22 +19,22 @@ import {
   TextField,
   Select,
   InputLabel,
-  SelectChangeEvent,
   InputAdornment,
 } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SearchIcon from "@mui/icons-material/Search";
-import { useColumnVisibility } from "./hooks/useColumnVisibility";
-import { usePagination } from "./hooks/usePagination";
-import { useSearch } from "./hooks/useSearch";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { flexRender } from "@tanstack/react-table";
+import { useRateOfOperationTable } from "../hooks/useRateOfOperationTable"; // Add this import
 
 const cellStyles = {
   maxWidth: 100,
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis",
-  paddingX: "8px",
-  paddingY: "8px",
+  paddingX: "7px",
+  paddingY: "7px",
   fontSize: "0.9rem",
 };
 
@@ -66,63 +57,28 @@ const getStickyPosition = (index: number) => {
   return 0;
 };
 
-const RateOfOperationTable: React.FC = () => {
+interface RateOfOperationTableProps {
+  data: any[];
+}
+
+const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => {
   const {
+    table,
     columnVisibility,
     setColumnVisibility,
     visibleColumnsCount,
     totalColumnsCount,
-  } = useColumnVisibility();
-  const { searchText, handleSearchChange } = useSearch();
-
-  const columns = useMemo<ColumnDef<any>[]>(() => {
-    const keys = Object.keys(mockData[0] || {});
-    return keys.map((key) => ({
-      accessorKey: key,
-      header: key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
-      cell: (info) => {
-        const value = info.getValue();
-        return (
-          <Tooltip
-            title={value !== null && value !== undefined ? String(value) : ""}
-            arrow
-          >
-            <div style={{ overflow: "hidden", textOverflow: "ellipsis" }}>
-              {String(value)}
-            </div>
-          </Tooltip>
-        );
-      },
-      minSize: key.includes("Asset") ? 90 : 110,
-    }));
-  }, []);
-
-  const table = useReactTable({
-    data: mockData,
-    columns,
-    state: { columnVisibility },
-    onColumnVisibilityChange: setColumnVisibility,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-  });
-
-  const {
+    searchText,
+    handleSearchChange,
     pageInput,
     handlePageInputChange,
     handlePageInputSubmit,
     handleRowsPerPageChange,
-  } = usePagination(table);
-
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+    anchorEl,
+    open,
+    handleClick,
+    handleClose,
+  } = useRateOfOperationTable(data);
 
   return (
     <Box
@@ -165,7 +121,7 @@ const RateOfOperationTable: React.FC = () => {
           variant="outlined"
           size="small"
           value={`${visibleColumnsCount} of ${totalColumnsCount} columns visible`}
-          onClick={(event) => setAnchorEl(event.currentTarget)}
+          onClick={(event: any) => handleClick(event)}
           InputProps={{
             readOnly: true,
             endAdornment: (
@@ -227,6 +183,7 @@ const RateOfOperationTable: React.FC = () => {
           width: "100%",
           position: "relative",
           margin: 0,
+          maxHeight: "60vh",
         }}
       >
         <Table
@@ -247,6 +204,7 @@ const RateOfOperationTable: React.FC = () => {
                     key={header.id}
                     sx={{
                       ...headerCellStyles,
+                      cursor: "pointer",
                       ...(isStickyColumn(index) && {
                         position: "sticky",
                         left: getStickyPosition(index),
@@ -260,16 +218,32 @@ const RateOfOperationTable: React.FC = () => {
                       }),
                     }}
                     style={{ minWidth: header.getSize() }}
+                    onClick={header.column.getToggleSortingHandler()}
                   >
                     <Tooltip title={String(header.column.columnDef.header)} arrow>
-                      <div>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                      >
                         {header.isPlaceholder
                           ? null
                           : flexRender(
                               header.column.columnDef.header,
                               header.getContext()
                             )}
-                      </div>
+                        {header.column.getIsSorted() === "asc" && (
+                          <ArrowDropDownIcon
+                            sx={{ color: "darkgray", fontSize: 28 }}
+                          />
+                        )}
+                        {header.column.getIsSorted() === "desc" && (
+                          <ArrowDropUpIcon
+                            sx={{ color: "darkgray", fontSize: 28 }}
+                          />
+                        )}
+                      </Box>
                     </Tooltip>
                   </TableCell>
                 ))}

@@ -1,7 +1,8 @@
 import React from "react";
 import { Typography, Paper, Container, Stack, Divider } from "@mui/material";
 import SpeedIcon from "@mui/icons-material/Speed";
-import RateOfOperationTable from "./RateOfOperationTable";
+import RateOfOperationTable from "./components/RateOfOperationTable";
+import { mockData } from "./mockData";
 
 const RateOfOperation: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const RateOfOperation: React.FC = () => {
       </Stack>
       <Divider sx={{ mb: 2 }} />
       <Container maxWidth="xl" sx={{ width: "100%", display: "flex", flexGrow: 1 }}>
-        <RateOfOperationTable />
+        <RateOfOperationTable data={mockData} />
       </Container>
     </Paper>
   );
