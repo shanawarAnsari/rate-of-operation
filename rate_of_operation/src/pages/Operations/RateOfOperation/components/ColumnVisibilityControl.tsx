@@ -49,7 +49,7 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
       sx={{
         width: "220px",
         cursor: "pointer",
-        "& .MuiInputBase-input": { cursor: "pointer" },
+        "& .MuiInputBase-input": { cursor: "pointer", fontSize: "0.875rem" }, // Reduced font size
       }}
     />
     <Menu
