@@ -9,9 +9,76 @@ import {
 import { useColumnVisibility } from "./useColumnVisibility";
 import { usePagination } from "./usePagination";
 import { useSearch } from "./useSearch";
-import { Tooltip, IconButton } from "@mui/material";
-import CheckIcon from "@mui/icons-material/Check";
-import EditIcon from "@mui/icons-material/Edit";
+import { IconButton, Divider } from "@mui/material";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import ChangeCircleIcon from "@mui/icons-material/ChangeCircle";
+import UpdateIcon from "@mui/icons-material/Update";
+import ReviewStatusDialog from "../components/ReviewStatusDialog";
+
+const CellContent: React.FC<{ value: any; index: number; rowData: any }> = ({
+  value,
+  index,
+  rowData,
+}) => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleDialogOpen = () => {
+    setDialogOpen(true);
+    handleClose();
+  };
+
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+  };
+
+  return (
+    <div
+      style={{
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      {String(value)}
+      {index === 2 && (
+        <>
+          <IconButton size="small" onClick={handleClick}>
+            <MoreVertIcon />
+          </IconButton>
+          <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+            <MenuItem onClick={handleDialogOpen}>
+              <ChangeCircleIcon fontSize="small" sx={{ mr: 1 }} />
+              Change Review Status
+            </MenuItem>
+            <Divider sx={{ p: 0, m: 0 }} />
+            <MenuItem onClick={handleClose}>
+              <UpdateIcon fontSize="small" sx={{ mr: 1 }} />
+              Override New TRO
+            </MenuItem>
+          </Menu>
+          <ReviewStatusDialog
+            open={dialogOpen}
+            onClose={handleDialogClose}
+            rowData={rowData}
+          />
+        </>
+      )}
+    </div>
+  );
+};
 
 export const useRateOfOperationTable = (data: any[]) => {
   const {
@@ -27,35 +94,13 @@ export const useRateOfOperationTable = (data: any[]) => {
     return keys.map((key, index) => ({
       accessorKey: key,
       header: key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
-      cell: (info: any) => {
-        const value = info.getValue();
-        return (
-          <div
-            style={{
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            {String(value)}
-            {index === 4 && (
-              <>
-                <Tooltip title="Edit Recipe Status" arrow>
-                  <IconButton size="small">
-                    <CheckIcon />
-                  </IconButton>
-                </Tooltip>
-                <Tooltip title="Update New TRO Value" arrow>
-                  <IconButton size="small">
-                    <EditIcon />
-                  </IconButton>
-                </Tooltip>
-              </>
-            )}
-          </div>
-        );
-      },
+      cell: (info: any) => (
+        <CellContent
+          value={info.getValue()}
+          index={index}
+          rowData={info.row.original}
+        />
+      ),
       minSize: key.includes("Asset") ? 90 : 110,
       enableSorting: true,
     }));

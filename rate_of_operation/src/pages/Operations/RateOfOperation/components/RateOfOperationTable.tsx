@@ -72,7 +72,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
           handleClose={handleClose}
           visibleColumnsCount={visibleColumnsCount}
           totalColumnsCount={totalColumnsCount - 2}
-          disableColumns={[0, 1, 2, 3, 4]} // Disable visibility control for the first 3 columns
+          disableColumns={[0, 1, 2, 3, 4]} // Disable visibility control for the first 3 columns and 2 are already hidden
         />
       </Box>
       <TableContainer

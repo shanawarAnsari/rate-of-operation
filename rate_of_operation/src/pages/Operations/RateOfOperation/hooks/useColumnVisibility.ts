@@ -5,9 +5,7 @@ import { mockData } from "../mockData";
 export const useColumnVisibility = () => {
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>(() => {
     const keys = Object.keys(mockData[0] || {});
-    const statisticalSourceIndex = keys.findIndex(
-      (key) => key === "statistical_RO_Source"
-    );
+    const statisticalSourceIndex = keys.findIndex((key) => key === "tRO_Change");
     const initialVisibility: VisibilityState = {};
 
     keys.forEach((key, index) => {
