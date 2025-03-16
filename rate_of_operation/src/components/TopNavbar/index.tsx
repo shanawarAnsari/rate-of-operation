@@ -31,7 +31,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
   const [subRegion, setSubRegion] = useState("North America"); // Initialize with the only available option
   const theme = useTheme();
   // Add username state (could also come from props or context)
-  const [username, setUsername] = useState("John Wick");
+  const [username, setUsername] = useState("Ansari, Shanawar");
 
   const handleRegionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRegion(event.target.value);

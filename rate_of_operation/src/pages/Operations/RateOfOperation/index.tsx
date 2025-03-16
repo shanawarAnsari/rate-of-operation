@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Paper, Container, Stack, Divider } from "@mui/material";
-import SpeedIcon from "@mui/icons-material/Speed";
+import { Speed as SpeedIcon } from "@mui/icons-material";
 import RateOfOperationTable from "./components/RateOfOperationTable";
 import { mockData } from "./mockData";
 

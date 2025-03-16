@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import {
   Dashboard as DashboardIcon,
-  Build as BuildIcon,
+  PrecisionManufacturing as PrecisionManufacturingIcon,
   ExpandLess,
   ExpandMore,
   Speed as SpeedIcon,
@@ -77,9 +77,9 @@ const SideNavbar: React.FC = () => {
       color: `${theme.palette.primary.main} !important`,
     },
     "&.Mui-selected .MuiListItemText-primary, & .Mui-selected .MuiListItemText-primary":
-      {
-        color: `${theme.palette.primary.main} !important`,
-      },
+    {
+      color: `${theme.palette.primary.main} !important`,
+    },
     // Make sure SVG icons also get colored properly when selected
     "&.Mui-selected .MuiSvgIcon-root, & .Mui-selected .MuiSvgIcon-root": {
       color: `${theme.palette.primary.main} !important`,
@@ -169,7 +169,7 @@ const SideNavbar: React.FC = () => {
                       "& .MuiSvgIcon-root": menuIconStyle,
                     }}
                   >
-                    <BuildIcon />
+                    <PrecisionManufacturingIcon />
                   </ListItemIcon>
                   <ListItemText primary="Production Rates" sx={menuTextStyle} />
                   {!operationsOpen ? (
