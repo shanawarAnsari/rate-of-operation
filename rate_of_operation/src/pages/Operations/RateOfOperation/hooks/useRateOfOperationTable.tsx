@@ -16,6 +16,7 @@ import MenuItem from "@mui/material/MenuItem";
 import ChangeCircleIcon from "@mui/icons-material/ChangeCircle";
 import UpdateIcon from "@mui/icons-material/Update";
 import ReviewStatusDialog from "../components/ReviewStatusDialog";
+import NewTROOverrideDialog from "../components/NewTROOverrideDialog";
 
 const CellContent: React.FC<{ value: any; index: number; rowData: any }> = ({
   value,
@@ -24,6 +25,7 @@ const CellContent: React.FC<{ value: any; index: number; rowData: any }> = ({
 }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [newTRODialogOpen, setNewTRODialogOpen] = useState(false);
   const open = Boolean(anchorEl);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -43,6 +45,15 @@ const CellContent: React.FC<{ value: any; index: number; rowData: any }> = ({
     setDialogOpen(false);
   };
 
+  const handleNewTRODialogOpen = () => {
+    setNewTRODialogOpen(true);
+    handleClose();
+  };
+
+  const handleNewTRODialogClose = () => {
+    setNewTRODialogOpen(false);
+  };
+
   return (
     <div
       style={{
@@ -50,10 +61,11 @@ const CellContent: React.FC<{ value: any; index: number; rowData: any }> = ({
         textOverflow: "ellipsis",
         display: "flex",
         alignItems: "center",
+        justifyContent: index === 4 ? "space-between" : "flex-start",
       }}
     >
       {String(value)}
-      {index === 2 && (
+      {index === 4 && (
         <>
           <IconButton size="small" onClick={handleClick}>
             <MoreVertIcon />
@@ -64,7 +76,7 @@ const CellContent: React.FC<{ value: any; index: number; rowData: any }> = ({
               Change Review Status
             </MenuItem>
             <Divider sx={{ p: 0, m: 0 }} />
-            <MenuItem onClick={handleClose}>
+            <MenuItem onClick={handleNewTRODialogOpen}>
               <UpdateIcon fontSize="small" sx={{ mr: 1 }} />
               Override New TRO
             </MenuItem>
@@ -72,6 +84,11 @@ const CellContent: React.FC<{ value: any; index: number; rowData: any }> = ({
           <ReviewStatusDialog
             open={dialogOpen}
             onClose={handleDialogClose}
+            rowData={rowData}
+          />
+          <NewTROOverrideDialog
+            open={newTRODialogOpen}
+            onClose={handleNewTRODialogClose}
             rowData={rowData}
           />
         </>
@@ -101,7 +118,8 @@ export const useRateOfOperationTable = (data: any[]) => {
           rowData={info.row.original}
         />
       ),
-      minSize: key.includes("Asset") ? 90 : 110,
+      minSize: 120,
+      maxSize: 1000,
       enableSorting: true,
     }));
   }, [data]);

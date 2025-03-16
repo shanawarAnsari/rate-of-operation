@@ -53,7 +53,7 @@ const TableHeader: React.FC<TableHeaderProps> = ({ headerGroups }) => (
                 boxShadow: index === 2 ? "2px 0px 3px -1px rgba(0,0,0,0.2)" : "none",
               }),
             }}
-            style={{ minWidth: header.getSize() }}
+            style={{ minWidth: 120, maxWidth: 1000 }}
             onClick={header.column.getToggleSortingHandler()}
           >
             <Tooltip title={String(header.column.columnDef.header)} arrow>

@@ -48,7 +48,7 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => (
                 boxShadow: index === 2 ? "2px 0px 3px -1px rgba(0,0,0,0.2)" : "none",
               }),
             }}
-            style={{ minWidth: cell.column.getSize() }}
+            style={{ minWidth: 120, maxWidth: 1000 }}
           >
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
           </TableCell>
