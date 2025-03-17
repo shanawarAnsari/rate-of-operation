@@ -6,8 +6,11 @@ import {
   ListItem,
   ListItemText,
   IconButton,
+  Avatar,
+  ListItemAvatar,
 } from "@mui/material";
 import { Delete as DeleteIcon, Edit as EditIcon } from "@mui/icons-material";
+import PersonIcon from "@mui/icons-material/Person";
 
 interface User {
   email: string;
@@ -41,6 +44,11 @@ const UserList: React.FC<UserListProps> = ({ users, onEdit, onDelete }) => {
                 "&:hover": { backgroundColor: "action.hover" },
               }}
             >
+              <ListItemAvatar>
+                <Avatar>
+                  <PersonIcon />
+                </Avatar>
+              </ListItemAvatar>
               <ListItemText
                 primary={user.email}
                 secondary={`Role: ${user.role} | Categories: ${user.categories.join(

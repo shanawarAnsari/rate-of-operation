@@ -7,7 +7,7 @@ import RateOfOperation from "../pages/Operations/RateOfOperation";
 import Wrenchtime from "../pages/Operations/Wrenchtime";
 import FinancialRate from "../pages/Operations/FinancialRate/index";
 import SuperUser from "../pages/SuperUser";
-import ReviewStatus from "../pages/SuperUser/ReviewStatus/ReviewStatus";
+import ReviewStatus from "../pages/SuperUser/ReviewStatus";
 import UserManagement from "../pages/SuperUser/UserManagement";
 
 const AppRoutes: React.FC = () => {
