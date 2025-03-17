@@ -118,7 +118,7 @@ const ReviewStatusDialog: React.FC<ReviewStatusDialogProps> = ({
           Cancel
         </Button>
         <Button
-          variant="outlined"
+          variant="contained"
           onClick={handleSave}
           disabled={
             !acknowledge || reviewStatus === rowData.reviewed || reviewStatus === ""

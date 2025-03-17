@@ -109,11 +109,11 @@ const NewTROOverrideDialog: React.FC<{
         />
       </DialogContent>
       <DialogActions>
-        <Button variant="outlined" onClick={onClose}>
+        <Button variant="contained" onClick={onClose}>
           Cancel
         </Button>
         <Button
-          variant="outlined"
+          variant="contained"
           onClick={handleUpdate}
           disabled={!acknowledged || !newTROValue}
         >

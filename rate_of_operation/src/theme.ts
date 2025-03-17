@@ -1,6 +1,9 @@
 import { createTheme, PaletteMode } from "@mui/material";
 
 export const getDesignTokens = (mode: PaletteMode) => ({
+  typography: {
+    fontFamily: "'Lato', sans-serif",
+  },
   palette: {
     mode,
     ...(mode === "light"

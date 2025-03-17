@@ -1,0 +1,170 @@
+import React from "react";
+import {
+  Box,
+  FormControl,
+  Paper,
+  Table,
+  TableContainer,
+  Typography,
+  Pagination,
+  TextField,
+  Select,
+  InputLabel,
+  InputAdornment,
+  MenuItem,
+} from "@mui/material";
+import { useWrenchTimeTable } from "../hooks/useWrenchTimeTable";
+import SearchInput from "./SearchInput";
+import ColumnVisibilityControl from "./ColumnVisibilityControl";
+import TableHeader from "./TableHeader";
+import TableBodyComponent from "./TableBody";
+
+interface WrenchTimeTableProps {
+  data: any[];
+}
+
+const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
+  const {
+    table,
+    visibleColumnsCount,
+    totalColumnsCount,
+    searchText,
+    handleSearchChange,
+    pageInput,
+    handlePageInputChange,
+    handlePageInputSubmit,
+    handleRowsPerPageChange,
+    anchorEl,
+    open,
+    handleClick,
+    handleClose,
+  } = useWrenchTimeTable(data);
+
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        flexGrow: 1,
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
+      }}
+    >
+      <Box
+        sx={{
+          mb: 2,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: 1,
+        }}
+      >
+        <SearchInput
+          searchText={searchText}
+          handleSearchChange={handleSearchChange}
+        />
+        <ColumnVisibilityControl
+          table={table}
+          anchorEl={anchorEl}
+          open={open}
+          handleClick={handleClick}
+          handleClose={handleClose}
+          visibleColumnsCount={visibleColumnsCount}
+          totalColumnsCount={totalColumnsCount - 2}
+          disableColumns={[0, 1, 2, 3, 4]} // Disable visibility control for the first 3 columns and 2 are already hidden
+        />
+      </Box>
+      <TableContainer
+        component={Paper}
+        sx={{
+          flexGrow: 1,
+          overflowX: "auto",
+          overflowY: "auto",
+          width: "100%",
+          position: "relative",
+          margin: 0,
+          maxHeight: "60vh",
+        }}
+      >
+        <Table
+          stickyHeader
+          size="small"
+          sx={{
+            tableLayout: "auto",
+            width: "100%",
+          }}
+          aria-label="rate of operations table"
+        >
+          <TableHeader headerGroups={table.getHeaderGroups()} />
+          <TableBodyComponent rows={table.getRowModel().rows} />
+        </Table>
+      </TableContainer>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mt: 2,
+          flexWrap: "wrap",
+          gap: 2,
+        }}
+      >
+        <Typography variant="body2"></Typography>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <FormControl size="small" variant="outlined" sx={{ minWidth: 120 }}>
+            <InputLabel id="rows-per-page-label">Rows per page</InputLabel>
+            <Select
+              labelId="rows-per-page-label"
+              value={table.getState().pagination.pageSize}
+              onChange={handleRowsPerPageChange}
+              label="Rows per page"
+            >
+              {[5, 10, 20, 35, 50, 100].map((pageSize) => (
+                <MenuItem key={pageSize} value={pageSize}>
+                  {pageSize}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <TextField
+            size="small"
+            label="Page"
+            variant="outlined"
+            value={pageInput}
+            onChange={handlePageInputChange}
+            onBlur={handlePageInputSubmit}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                handlePageInputSubmit();
+              }
+            }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  of {table.getPageCount()}
+                </InputAdornment>
+              ),
+              inputProps: { style: { width: "40px" }, "aria-label": "page number" },
+            }}
+            sx={{ width: "120px" }}
+          />
+          <Pagination
+            count={table.getPageCount()}
+            page={table.getState().pagination.pageIndex + 1}
+            onChange={(_, page) => {
+              table.setPageIndex(page - 1);
+              handlePageInputChange({
+                target: { value: page.toString() } as EventTarget & HTMLInputElement,
+              } as React.ChangeEvent<HTMLInputElement>);
+            }}
+            color="primary"
+            size="small"
+          />
+        </Box>
+      </Box>
+    </Box>
+  );
+};
+
+export default WrenchTimeTable;
