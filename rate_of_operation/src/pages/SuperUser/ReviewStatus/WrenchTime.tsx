@@ -48,12 +48,12 @@ const WrenchTime: React.FC = () => {
 
   return (
     <Box>
-      <Box display="flex" justifyContent="flex-end" m={1}>
+      <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
+      <Box display="flex" justifyContent="flex-end" mr={4} mb={2}>
         <Button variant="contained" color="primary">
           Generate PredictionS
         </Button>
       </Box>
-      <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
     </Box>
   );
 };
