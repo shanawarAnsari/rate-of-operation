@@ -64,6 +64,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
         display: "flex",
         flexDirection: "column",
         overflow: "hidden",
+        paddingBottom: 2,
       }}
     >
       <Box

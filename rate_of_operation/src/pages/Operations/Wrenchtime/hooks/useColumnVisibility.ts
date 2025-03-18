@@ -1,9 +1,14 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { VisibilityState } from "@tanstack/react-table";
 import { mockData } from "../mockData";
 
 export const useColumnVisibility = () => {
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>(() => {
+    const savedVisibility = localStorage.getItem("columnVisibility_WT");
+    if (savedVisibility) {
+      return JSON.parse(savedVisibility);
+    }
+
     const keys = Object.keys(mockData[0] || {});
     const statisticalSourceIndex = keys.findIndex((key) => key === "setup_change");
     const initialVisibility: VisibilityState = {};
@@ -22,6 +27,10 @@ export const useColumnVisibility = () => {
 
     return initialVisibility;
   });
+
+  useEffect(() => {
+    localStorage.setItem("columnVisibility_WT", JSON.stringify(columnVisibility));
+  }, [columnVisibility]);
 
   const visibleColumnsCount = useMemo(() => {
     return Object.values(columnVisibility).filter(Boolean).length;

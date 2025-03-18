@@ -64,6 +64,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
         display: "flex",
         flexDirection: "column",
         overflow: "hidden",
+        paddingBottom: 2,
       }}
     >
       <Box
