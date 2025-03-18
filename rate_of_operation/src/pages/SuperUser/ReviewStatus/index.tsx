@@ -55,7 +55,7 @@ const ReviewStatus: React.FC = () => {
         onChange={handleTabChange}
         indicatorColor="primary"
         textColor="primary"
-        sx={{ minHeight: 36 }} // Reduce the height of the Tabs container
+        sx={{ minHeight: 36, p: 2 }} // Reduce the height of the Tabs container
       >
         <Tab
           icon={<SpeedIcon />}

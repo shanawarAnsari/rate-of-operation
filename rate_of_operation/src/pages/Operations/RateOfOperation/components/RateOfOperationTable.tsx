@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   FormControl,
@@ -40,6 +40,22 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
     handleClose,
   } = useRateOfOperationTable(data);
 
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedReviewedStatus, setSelectedReviewedStatus] =
+    useState<string>("All");
+
+  const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedCategory(event.target.value);
+    // Add logic to filter table data based on category
+  };
+
+  const handleReviewedStatusChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setSelectedReviewedStatus(event.target.value);
+    // Add logic to filter table data based on reviewed status
+  };
+
   return (
     <Box
       sx={{
@@ -52,7 +68,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
     >
       <Box
         sx={{
-          mb: 2,
+          p: 2,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -64,16 +80,43 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
           searchText={searchText}
           handleSearchChange={handleSearchChange}
         />
-        <ColumnVisibilityControl
-          table={table}
-          anchorEl={anchorEl}
-          open={open}
-          handleClick={handleClick}
-          handleClose={handleClose}
-          visibleColumnsCount={visibleColumnsCount}
-          totalColumnsCount={totalColumnsCount - 2}
-          disableColumns={[0, 1, 2, 3, 4]} // Disable visibility control for the first 3 columns and 2 are already hidden
-        />
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <TextField
+            size="small"
+            select
+            label="Category"
+            value={selectedCategory}
+            onChange={handleCategoryChange}
+            sx={{ minWidth: 150 }}
+          >
+            <MenuItem value="Single Sector">Single Sector</MenuItem>
+            <MenuItem value="Multi Sector">Multi Sector</MenuItem>
+            <MenuItem value="All">All</MenuItem>
+          </TextField>
+          <TextField
+            size="small"
+            select
+            label="Reviewed Status"
+            value={selectedReviewedStatus}
+            onChange={handleReviewedStatusChange}
+            sx={{ minWidth: 150 }}
+          >
+            <MenuItem value="Yes">Yes</MenuItem>
+            <MenuItem value="No">No</MenuItem>
+            <MenuItem value="Pending">Pending</MenuItem>
+            <MenuItem value="All">All</MenuItem>
+          </TextField>
+          <ColumnVisibilityControl
+            table={table}
+            anchorEl={anchorEl}
+            open={open}
+            handleClick={handleClick}
+            handleClose={handleClose}
+            visibleColumnsCount={visibleColumnsCount}
+            totalColumnsCount={totalColumnsCount - 2}
+            disableColumns={[0, 1, 2, 3, 4]} // Disable visibility control for the first 3 columns and 2 are already hidden
+          />
+        </Box>
       </Box>
       <TableContainer
         component={Paper}

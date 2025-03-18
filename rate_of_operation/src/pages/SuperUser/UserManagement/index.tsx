@@ -78,7 +78,11 @@ const UserAccessManagement: React.FC = () => {
             Review Status
           </Typography>
         </Stack>
-        <Button variant="contained" onClick={() => setAddDialogOpen(true)}>
+        <Button
+          size="small"
+          variant="contained"
+          onClick={() => setAddDialogOpen(true)}
+        >
           Add User
         </Button>
       </Stack>
