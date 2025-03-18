@@ -1,8 +1,10 @@
 import React from "react";
 import Chart from "react-apexcharts";
-import { Button, Box } from "@mui/material";
+import { Button, Box, useTheme } from "@mui/material";
 
 const RateOfOperations: React.FC = () => {
+  const theme = useTheme(); // Access the current theme
+
   const chartOptions: ApexCharts.ApexOptions = {
     chart: {
       type: "bar",
@@ -20,6 +22,17 @@ const RateOfOperations: React.FC = () => {
       position: "top",
     },
     colors: ["#4caf50", "#f44336"], // Colors for total and pending reviews
+    theme: {
+      mode: theme.palette.mode, // Use theme mode (light/dark)
+    },
+    dataLabels: {
+      style: {
+        colors: [theme.palette.text.primary], // Set text color based on theme
+      },
+    },
+    tooltip: {
+      theme: theme.palette.mode, // Match tooltip theme with the current mode
+    },
   };
 
   const chartSeries = [
@@ -35,12 +48,12 @@ const RateOfOperations: React.FC = () => {
 
   return (
     <Box>
-      <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
-      <Box mt={2} textAlign="center">
+      <Box display="flex" justifyContent="flex-end" m={1}>
         <Button variant="contained" color="primary">
-          Generate Prediction
+          Generate PredictionS
         </Button>
       </Box>
+      <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
     </Box>
   );
 };

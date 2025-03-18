@@ -23,17 +23,33 @@ const ReviewStatus: React.FC = () => {
   return (
     <Card
       sx={{
-        p: 2,
         boxShadow: 3,
         backgroundColor: theme.palette.background.paper,
         width: "100%",
       }}
     >
-      <Stack direction="row" alignItems="center">
+      <Stack
+        direction="row"
+        alignItems="center"
+        sx={(theme) => ({
+          backgroundColor:
+            theme.palette.mode === "light"
+              ? theme.palette.grey[200] // Lighter background for better contrast
+              : "black", // Primary color for dark mode
+          color:
+            theme.palette.mode === "light"
+              ? theme.palette.grey[800] // Dark gray text for light mode
+              : theme.palette.common.white, // White text for dark mode
+          p: 1,
+          borderRadius: 1,
+          mb: 1,
+        })}
+      >
         <AssignmentIcon sx={{ mr: 1 }} />
-        <Typography variant="h6">Review Status</Typography>
+        <Typography sx={{ ml: 0.5, fontSize: "16px", fontWeight: 525 }}>
+          Review Status
+        </Typography>
       </Stack>
-      <Divider sx={{ mb: 2, mt: 1 }} />
       <Tabs
         value={activeTab}
         onChange={handleTabChange}
@@ -44,14 +60,22 @@ const ReviewStatus: React.FC = () => {
         <Tab
           icon={<SpeedIcon />}
           iconPosition="start"
-          label={<Typography fontWeight="500">Rate of Operations</Typography>}
+          label={
+            <Typography fontWeight="500" fontSize={14}>
+              Rate of Operations
+            </Typography>
+          }
           value="rateOfOperations"
           sx={{ minHeight: 36, py: 0.5, px: 1.5 }} // Compact Tab styling
         />
         <Tab
           icon={<TimerIcon />}
           iconPosition="start"
-          label={<Typography fontWeight="500">Wrench Time</Typography>}
+          label={
+            <Typography fontWeight="500" fontSize={14}>
+              Wrench Time
+            </Typography>
+          }
           value="wrenchTime"
           sx={{ minHeight: 36, py: 0.5, px: 1.5 }} // Compact Tab styling
         />

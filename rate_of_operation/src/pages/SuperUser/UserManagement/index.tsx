@@ -17,7 +17,7 @@ import UserDialog from "./UserDialog";
 import DeleteConfirmationDialog from "./DeleteConfirmationDialog";
 import { useUserManagement } from "./hooks/useUserManagement";
 
-const UserManagement: React.FC = () => {
+const UserAccessManagement: React.FC = () => {
   const theme = useTheme();
   const {
     users,
@@ -41,36 +41,47 @@ const UserManagement: React.FC = () => {
   } = useUserManagement();
 
   return (
-    <Container maxWidth="xl" sx={{ mt: 2, ml: -2 }}>
+    <Container maxWidth="xl">
       <Card
         sx={{
-          mt: 3,
           boxShadow: 3,
           backgroundColor: theme.palette.background.paper,
           width: "100%",
         }}
       >
-        <CardContent>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          sx={(theme) => ({
+            backgroundColor:
+              theme.palette.mode === "light"
+                ? theme.palette.grey[200] // Lighter background for better contrast
+                : "black", // Primary color for dark mode
+            color:
+              theme.palette.mode === "light"
+                ? theme.palette.grey[800] // Dark gray text for light mode
+                : theme.palette.common.white, // White text for dark mode
+            p: 1,
+            borderRadius: 1,
+            mb: 1,
+          })}
+        >
           <Stack direction="row" alignItems="center">
             <UserManagementIcon sx={{ mr: 1 }} />
-            <Typography variant="h6">User Management</Typography>
+            <Typography sx={{ ml: 0.5, fontSize: "16px", fontWeight: 525 }}>
+              User Access Management
+            </Typography>
           </Stack>
-          <Divider sx={{ mt: 1, mb: 2 }} />
-          <Stack
-            sx={{ mx: 2 }}
-            direction="row"
-            justifyContent="flex-end"
-            alignItems="center"
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => handleOpenDialog()}
           >
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => handleOpenDialog()}
-            >
-              Add New User
-            </Button>
-          </Stack>
-        </CardContent>
+            Add User
+          </Button>
+        </Stack>
+
         <UserList
           users={users}
           onEdit={handleOpenDialog}
@@ -105,4 +116,4 @@ const UserManagement: React.FC = () => {
   );
 };
 
-export default UserManagement;
+export default UserAccessManagement;
