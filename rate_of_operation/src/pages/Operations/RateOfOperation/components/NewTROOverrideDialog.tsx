@@ -48,7 +48,7 @@ const NewTROOverrideDialog: React.FC<{
           },
         }}
       >
-        Override New TRO
+        TRO Override
         <IconButton
           aria-label="close"
           onClick={onClose}

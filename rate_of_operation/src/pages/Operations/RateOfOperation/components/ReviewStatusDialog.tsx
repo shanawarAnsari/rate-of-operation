@@ -46,7 +46,7 @@ const ReviewStatusDialog: React.FC<ReviewStatusDialogProps> = ({
           },
         }}
       >
-        Change Review Status
+        TRO Sign-Off
         <IconButton
           aria-label="close"
           onClick={onClose}

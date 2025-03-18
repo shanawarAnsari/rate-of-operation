@@ -71,12 +71,12 @@ const CellContent: React.FC<{ value: any; index: number; rowData: any }> = ({
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             <MenuItem onClick={handleDialogOpen}>
               <ChangeCircleIcon fontSize="small" sx={{ mr: 1 }} />
-              Change Review Status
+              TRO Sign-Off
             </MenuItem>
             <Divider sx={{ p: 0, m: 0 }} />
             <MenuItem onClick={handleNewTRODialogOpen}>
               <UpdateIcon fontSize="small" sx={{ mr: 1 }} />
-              Override New Setup Time
+              TRO Override
             </MenuItem>
           </Menu>
         </>

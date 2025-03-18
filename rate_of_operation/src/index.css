@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -9,15 +9,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, Poppins, "Courier New",
     monospace;
 }
+
 ::-webkit-scrollbar {
   background: transparent;
   height: 8px;
   width: 8px;
 }
+
 ::-webkit-scrollbar-thumb {
   border-radius: 0.25rem;
   background: rgb(123, 123, 123);
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
