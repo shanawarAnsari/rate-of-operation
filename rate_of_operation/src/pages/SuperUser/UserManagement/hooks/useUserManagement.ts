@@ -8,11 +8,12 @@ interface User {
 
 const initialUsers: User[] = [
   {
-    email: "admin@example.com",
+    email: "admin@kcc.com",
     role: "admin",
-    categories: ["Family Care", "Personal Care"],
+    categories: ["All"],
   },
-  { email: "user@example.com", role: "user", categories: ["Personal Care"] },
+  { email: "user1@kcc.com", role: "user", categories: ["Personal Care"] },
+  { email: "user2@kcc.com", role: "user", categories: ["Family Care"] },
 ];
 
 export const useUserManagement = () => {

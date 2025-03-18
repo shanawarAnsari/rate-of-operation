@@ -95,7 +95,7 @@ const UserList: React.FC<UserListProps> = ({ users, onEdit, onDelete }) => {
                       label={user.role === "admin" ? "Admin" : "User"}
                       sx={{
                         backgroundColor:
-                          user.role === "admin" ? "#FFD700" : "#4CAF50",
+                          user.role === "admin" ? "orange" : "#4CAF50",
                         color: "#fff",
                         fontWeight: "bold",
                       }}
