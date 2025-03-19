@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   TextField,
   InputAdornment,
@@ -6,8 +6,14 @@ import {
   MenuItem,
   FormControlLabel,
   Checkbox,
+  IconButton,
+  Collapse,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ViewColumnIcon from "@mui/icons-material/ViewColumn";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { Table } from "@tanstack/react-table";
 
 interface ColumnVisibilityControlProps {
@@ -18,7 +24,7 @@ interface ColumnVisibilityControlProps {
   handleClose: () => void;
   visibleColumnsCount: number;
   totalColumnsCount: number;
-  disableColumns?: number[]; // Add disableColumns prop
+  disableColumns?: number[];
 }
 
 const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
@@ -29,72 +35,135 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
   handleClose,
   visibleColumnsCount,
   totalColumnsCount,
-  disableColumns = [], // Default to an empty array
-}) => (
-  <>
-    <TextField
-      id="column-visibility-textfield"
-      variant="outlined"
-      size="small"
-      value={`${visibleColumnsCount} of ${totalColumnsCount} columns visible`}
-      onClick={(event: any) => handleClick(event)}
-      InputProps={{
-        readOnly: true,
-        endAdornment: (
-          <InputAdornment position="end">
-            <KeyboardArrowDownIcon />
-          </InputAdornment>
-        ),
-      }}
-      sx={{
-        width: "220px",
-        cursor: "pointer",
-        "& .MuiInputBase-input": { cursor: "pointer", fontSize: "0.75rem" },
-        "& .MuiInputBase-root": {
-          height: 30,
-          borderRadius: 0,
-        },
-      }}
-    />
-    <Menu
-      id="column-visibility-menu"
-      anchorEl={anchorEl}
-      open={open}
-      onClose={handleClose}
-      MenuListProps={{
-        "aria-labelledby": "column-visibility-textfield",
-        sx: { maxHeight: "400px", overflow: "auto", width: "300px" },
-      }}
-    >
-      {table.getAllLeafColumns().map(
-        (column, index) =>
-          !column.id.toLowerCase().includes("business") &&
-          !column.id.toLowerCase().includes("category") && (
-            <MenuItem key={column.id} sx={{
-              "& .MuiFormControlLabel-label": {
-                fontSize: '0.75rem',
-                padding: 0
-              },
-              p: 0,
-              ml: 2
-            }}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={column.getIsVisible()}
-                    onChange={column.getToggleVisibilityHandler()}
-                    disabled={disableColumns.includes(index)} // Disable checkbox if column index is in disableColumns
+  disableColumns = [],
+}) => {
+  const theme = useTheme(); // Access the theme for dynamic colors
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = (e: any) => {
+    e.stopPropagation();
+    setShowDropdown((prev) => !prev);
+  };
+
+  return (
+    <>
+      {!showDropdown ? (
+        <IconButton onClick={(e) => toggleDropdown(e)} sx={{ my: -0.65, p: 0 }}>
+          <ViewColumnIcon
+            sx={{ fontSize: "40px", color: theme.palette.text.secondary }}
+          />
+          <VisibilityIcon
+            sx={{
+              fontSize: "22px",
+              ml: -4,
+              color: theme.palette.background.paper,
+            }}
+          />
+        </IconButton>
+      ) : (
+        <Collapse in={showDropdown} timeout={500}>
+          <TextField
+            id="column-visibility-textfield"
+            variant="outlined"
+            size="small"
+            value={`${visibleColumnsCount} of ${totalColumnsCount} columns visible`}
+            onClick={(event: any) => handleClick(event)}
+            InputProps={{
+              readOnly: true,
+              startAdornment: (
+                <InputAdornment position="start">
+                  <IconButton
+                    onClick={(e: any) => {
+                      toggleDropdown(e);
+                      handleClose();
+                    }}
+                    sx={{ padding: 0, ml: -2, mr: 0.5 }}
+                  >
+                    <ViewColumnIcon
+                      sx={{
+                        fontSize: "40px",
+                        color: theme.palette.text.secondary,
+                      }}
+                    />
+                    <VisibilityOffIcon
+                      sx={{
+                        fontSize: "22px",
+                        ml: -4,
+                        color: theme.palette.background.paper,
+                      }}
+                    />
+                  </IconButton>
+                </InputAdornment>
+              ),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <KeyboardArrowDownIcon
+                    sx={{ color: theme.palette.text.primary }}
                   />
-                }
-                label={column.id
-                  .replace(/_/g, " ")
-                  .replace(/\b\w/g, (c) => c.toUpperCase())}
-              />
-            </MenuItem>
-          )
+                </InputAdornment>
+              ),
+            }}
+            sx={{
+              width: "220px",
+              cursor: "pointer",
+              "& .MuiInputBase-input": {
+                cursor: "pointer",
+                fontSize: "0.75rem",
+              },
+              "& .MuiInputBase-root": {
+                height: 30,
+                borderRadius: 0,
+              },
+            }}
+          />
+        </Collapse>
       )}
-    </Menu>
-  </>
-);
+      <Menu
+        id="column-visibility-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={() => {
+          handleClose();
+          setShowDropdown(false); // Close dropdown when menu closes
+        }}
+        MenuListProps={{
+          "aria-labelledby": "column-visibility-textfield",
+          sx: { maxHeight: "400px", overflow: "auto", width: "300px" },
+        }}
+      >
+        {table.getAllLeafColumns().map(
+          (column, index) =>
+            !column.id.toLowerCase().includes("business") &&
+            !column.id.toLowerCase().includes("category") && (
+              <MenuItem
+                key={column.id}
+                sx={{
+                  "& .MuiFormControlLabel-label": {
+                    fontSize: "0.75rem",
+                    padding: 0,
+                  },
+                  p: 0,
+                  ml: 2,
+                }}
+              >
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={column.getIsVisible()}
+                      onChange={column.getToggleVisibilityHandler()}
+                      disabled={disableColumns.includes(index)}
+                    />
+                  }
+                  label={column.id
+                    .replace(/_/g, " ")
+                    .replace(/\b\w/g, (c) => c.toUpperCase())}
+                />
+              </MenuItem>
+            )
+        )}
+      </Menu>
+    </>
+  );
+};
 
 export default ColumnVisibilityControl;

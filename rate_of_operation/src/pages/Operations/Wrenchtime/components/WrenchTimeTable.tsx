@@ -41,8 +41,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
   } = useWrenchTimeTable(data);
 
   const [selectedCategory, setSelectedCategory] = useState<string>("Personal Care");
-  const [selectedReviewedStatus, setSelectedReviewedStatus] =
-    useState<string>("N");
+  const [selectedReviewedStatus, setSelectedReviewedStatus] = useState<string>("N");
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedCategory(event.target.value);
@@ -81,7 +80,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
           searchText={searchText}
           handleSearchChange={handleSearchChange}
         />
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 0 }}>
           <TextField
             size="small"
             select
@@ -89,15 +88,23 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
             value={selectedCategory}
             onChange={handleCategoryChange}
             sx={{
-              minWidth: 150, "& .MuiInputBase-input": { fontSize: "0.75rem" }, "& .MuiInputBase-root": {
+              minWidth: 150,
+              "& .MuiInputBase-input": { fontSize: "0.75rem" },
+              "& .MuiInputBase-root": {
                 height: 30,
                 borderRadius: 0,
               },
             }}
           >
-            <MenuItem value="Personal Care" sx={{ fontSize: "0.75rem" }}>Personal Care</MenuItem>
-            <MenuItem value="Family care" sx={{ fontSize: "0.75rem" }}>Family care</MenuItem>
-            <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>All</MenuItem>
+            <MenuItem value="Personal Care" sx={{ fontSize: "0.75rem" }}>
+              Personal Care
+            </MenuItem>
+            <MenuItem value="Family care" sx={{ fontSize: "0.75rem" }}>
+              Family care
+            </MenuItem>
+            <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>
+              All
+            </MenuItem>
           </TextField>
           <TextField
             size="small"
@@ -114,10 +121,18 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
               },
             }}
           >
-            <MenuItem value="Y" sx={{ fontSize: "0.75rem" }}>Y</MenuItem>
-            <MenuItem value="N" sx={{ fontSize: "0.75rem" }}>N</MenuItem>
-            <MenuItem value="Pending" sx={{ fontSize: "0.75rem" }}>Pending</MenuItem>
-            <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>All</MenuItem>
+            <MenuItem value="Y" sx={{ fontSize: "0.75rem" }}>
+              Y
+            </MenuItem>
+            <MenuItem value="N" sx={{ fontSize: "0.75rem" }}>
+              N
+            </MenuItem>
+            <MenuItem value="Pending" sx={{ fontSize: "0.75rem" }}>
+              Pending
+            </MenuItem>
+            <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>
+              All
+            </MenuItem>
           </TextField>
           <ColumnVisibilityControl
             table={table}
@@ -169,13 +184,15 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
         <Typography variant="body2"></Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <FormControl size="small" variant="outlined" sx={{ minWidth: 120 }}>
-            <InputLabel id="rows-per-page-label" sx={{ fontSize: '0.75rem' }}>Rows per page</InputLabel>
+            <InputLabel id="rows-per-page-label" sx={{ fontSize: "0.75rem" }}>
+              Rows per page
+            </InputLabel>
             <Select
               labelId="rows-per-page-label"
               value={table.getState().pagination.pageSize}
               onChange={handleRowsPerPageChange}
               label="Rows per page"
-              sx={{ fontSize: '0.75rem' }}
+              sx={{ fontSize: "0.75rem" }}
             >
               {[5, 10, 20, 35, 50, 100].map((pageSize) => (
                 <MenuItem key={pageSize} value={pageSize}>
@@ -207,12 +224,11 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
             sx={{
               width: "120px",
               "& .MuiOutlinedInput-root": {
-                fontSize: "0.75rem"
+                fontSize: "0.75rem",
               },
               "& .MuiInputLabel-root": {
-                fontSize: "0.85rem"
-              }
-
+                fontSize: "0.85rem",
+              },
             }}
           />
           <Pagination
