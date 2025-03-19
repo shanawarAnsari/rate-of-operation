@@ -90,19 +90,14 @@ const ReviewStatusDialog: React.FC<ReviewStatusDialogProps> = ({
           sx={{ pointerEvents: "none" }}
         />
         <TextField
-          select
-          label="Review Status"
-          value={reviewStatus}
-          onChange={(e) => setReviewStatus(e.target.value)}
-          fullWidth
           size="small"
+          label="New TRO"
+          value={rowData.new_tRO}
+          fullWidth
           margin="normal"
-        >
-          <MenuItem value="Not Reviewed">Not Reviewed</MenuItem>
-          <MenuItem value="In Progress">In Progress</MenuItem>
-          <MenuItem value="Yes">Yes</MenuItem>
-          <MenuItem value="N">N</MenuItem>
-        </TextField>
+          InputProps={{ readOnly: true, disableUnderline: true }}
+          sx={{ pointerEvents: "none" }}
+        />
         <FormControlLabel
           control={
             <Checkbox
@@ -117,13 +112,7 @@ const ReviewStatusDialog: React.FC<ReviewStatusDialogProps> = ({
         <Button variant="outlined" onClick={onClose}>
           Cancel
         </Button>
-        <Button
-          variant="contained"
-          onClick={handleSave}
-          disabled={
-            !acknowledge || reviewStatus === rowData.reviewed || reviewStatus === ""
-          }
-        >
+        <Button variant="contained" onClick={handleSave} disabled={!acknowledge}>
           Save
         </Button>
       </DialogActions>

@@ -10,6 +10,7 @@ import {
   FormControlLabel,
   Divider,
   IconButton,
+  Stack,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -21,6 +22,12 @@ const NewTROOverrideDialog: React.FC<{
   const [newTROValue, setNewTROValue] = useState(rowData.new_tRO);
   const [comment, setComment] = useState("");
   const [acknowledged, setAcknowledged] = useState(false);
+
+  const troChange = newTROValue
+    ? ((parseFloat(newTROValue) / parseFloat(rowData.new_tRO) - 1) * 100).toFixed(
+        2
+      ) + "%"
+    : "N/A";
 
   const handleUpdate = () => {
     // Handle the update logic here
@@ -75,20 +82,47 @@ const NewTROOverrideDialog: React.FC<{
         />
         <TextField
           size="small"
-          label="New TRO"
-          value={rowData.new_tRO}
+          label="Resource"
+          value={rowData.resource}
           fullWidth
           margin="normal"
           InputProps={{ readOnly: true, disableUnderline: true }}
           sx={{ pointerEvents: "none" }}
         />
         <TextField
-          label="New TRO Override Value"
-          value={newTROValue}
-          onChange={handleTROChange}
+          size="small"
+          label="Material"
+          value={rowData.material}
           fullWidth
           margin="normal"
+          InputProps={{ readOnly: true, disableUnderline: true }}
+          sx={{ pointerEvents: "none" }}
         />
+        <Stack direction="row" spacing={2} marginY={2}>
+          <TextField
+            size="small"
+            label="New TRO"
+            value={rowData.new_tRO}
+            fullWidth
+            InputProps={{ readOnly: true, disableUnderline: true }}
+            sx={{ pointerEvents: "none" }}
+          />
+          <TextField
+            size="small"
+            label="New TRO Override Value"
+            value={newTROValue}
+            onChange={handleTROChange}
+            fullWidth
+          />
+          <TextField
+            size="small"
+            label="TRO Change"
+            value={troChange}
+            fullWidth
+            InputProps={{ readOnly: true, disableUnderline: true }}
+            sx={{ pointerEvents: "none" }}
+          />
+        </Stack>
         <TextField
           label="Comment"
           value={comment}
@@ -109,7 +143,7 @@ const NewTROOverrideDialog: React.FC<{
         />
       </DialogContent>
       <DialogActions>
-        <Button variant="contained" onClick={onClose}>
+        <Button variant="outlined" onClick={onClose}>
           Cancel
         </Button>
         <Button
