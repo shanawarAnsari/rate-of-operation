@@ -40,9 +40,9 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
     handleClose,
   } = useRateOfOperationTable(data);
 
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Personal Care");
   const [selectedReviewedStatus, setSelectedReviewedStatus] =
-    useState<string>("All");
+    useState<string>("N");
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedCategory(event.target.value);
@@ -95,8 +95,8 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
               },
             }}
           >
-            <MenuItem value="Single Sector" sx={{ fontSize: "0.75rem" }}>Single Sector</MenuItem>
-            <MenuItem value="Multi Sector" sx={{ fontSize: "0.75rem" }}>Multi Sector</MenuItem>
+            <MenuItem value="Personal Care" sx={{ fontSize: "0.75rem" }}>Personal Care</MenuItem>
+            <MenuItem value="Family care" sx={{ fontSize: "0.75rem" }}>Family care</MenuItem>
             <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>All</MenuItem>
           </TextField>
           <TextField
@@ -114,8 +114,8 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
               },
             }}
           >
-            <MenuItem value="Yes" sx={{ fontSize: "0.75rem" }}>Yes</MenuItem>
-            <MenuItem value="No" sx={{ fontSize: "0.75rem" }}>No</MenuItem>
+            <MenuItem value="Y" sx={{ fontSize: "0.75rem" }}>Y</MenuItem>
+            <MenuItem value="N" sx={{ fontSize: "0.75rem" }}>N</MenuItem>
             <MenuItem value="Pending" sx={{ fontSize: "0.75rem" }}>Pending</MenuItem>
             <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>All</MenuItem>
           </TextField>
