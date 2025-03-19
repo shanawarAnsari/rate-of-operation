@@ -51,7 +51,7 @@ const RateOfOperations: React.FC = () => {
       <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
       <Box display="flex" justifyContent="flex-end" mr={4} mb={2}>
         <Button variant="contained" color="primary">
-          Generate PredictionS
+          Generate Predictions
         </Button>
       </Box>
     </Box>

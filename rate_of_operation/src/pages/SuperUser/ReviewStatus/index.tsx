@@ -20,6 +20,17 @@ const ReviewStatus: React.FC = () => {
   };
   const theme = useTheme();
 
+  const now = new Date();
+  const currentMonthStart = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    1
+  ).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  const currentMonthEnd = new Date(
+    now.getFullYear(),
+    now.getMonth() + 1,
+    0
+  ).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
   return (
     <Card
       sx={{
@@ -31,6 +42,7 @@ const ReviewStatus: React.FC = () => {
       <Stack
         direction="row"
         alignItems="center"
+        justifyContent="space-between" // Ensure content is spaced out
         sx={(theme) => ({
           backgroundColor:
             theme.palette.mode === "light"
@@ -45,10 +57,20 @@ const ReviewStatus: React.FC = () => {
           mb: 1,
         })}
       >
-        <AssignmentIcon sx={{ mr: 1 }} />
-        <Typography sx={{ ml: 0.5, fontSize: "16px", fontWeight: 525 }}>
-          Review Status
-        </Typography>
+        <Stack direction="row" alignItems="center">
+          <AssignmentIcon sx={{ mr: 1 }} />
+          <Typography sx={{ ml: 0.5, fontSize: "16px", fontWeight: 525 }}>
+            Review Status
+          </Typography>
+        </Stack>
+        <Box textAlign="right">
+          <Typography fontSize="14px" fontWeight="500">
+            Planning Window
+          </Typography>
+          <Typography fontSize="12px">
+            {currentMonthStart} - {currentMonthEnd}
+          </Typography>
+        </Box>
       </Stack>
       <Tabs
         value={activeTab}
