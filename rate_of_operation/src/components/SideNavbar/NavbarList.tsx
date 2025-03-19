@@ -13,8 +13,8 @@ import {
 import {
   Dashboard as DashboardIcon,
   PrecisionManufacturing as PrecisionManufacturingIcon,
-  ExpandLess,
-  ExpandMore,
+  Remove as MinusIcon,
+  Add as PlusIcon,
   Speed as SpeedIcon,
   Timer as TimerIcon,
   AdminPanelSettings as SuperUserIcon,
@@ -48,15 +48,19 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
   };
 
   const menuIconStyle = {
-    fontSize: "1.5rem",
-    color: theme.palette.text.secondary,
+    fontSize: "1.25rem",
+    color: theme.palette.text.primary,
+  };
+
+  const toggleIconStyle = {
+    fontSize: "1.25rem",
+    color: theme.palette.text.primary,
   };
 
   const menuTextStyle = {
     "& .MuiTypography-root": {
       fontSize: "0.875rem",
-      fontWeight: 550,
-      color: theme.palette.text.secondary,
+      color: theme.palette.text.primary,
     },
   };
 
@@ -155,9 +159,9 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
             </ListItemIcon>
             <ListItemText primary="Super User" sx={menuTextStyle} />
             {!superUserOpen ? (
-              <ExpandLess sx={menuIconStyle} />
+              <MinusIcon sx={toggleIconStyle} />
             ) : (
-              <ExpandMore sx={menuIconStyle} />
+              <PlusIcon sx={toggleIconStyle} />
             )}
           </ListItemButton>
         </ListItem>
@@ -213,9 +217,9 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
             </ListItemIcon>
             <ListItemText primary="Production Rates" sx={menuTextStyle} />
             {!operationsOpen ? (
-              <ExpandLess sx={menuIconStyle} />
+              <MinusIcon sx={toggleIconStyle} />
             ) : (
-              <ExpandMore sx={menuIconStyle} />
+              <PlusIcon sx={toggleIconStyle} />
             )}
           </ListItemButton>
         </ListItem>
