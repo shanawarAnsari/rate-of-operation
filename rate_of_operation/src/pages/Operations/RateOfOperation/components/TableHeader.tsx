@@ -10,8 +10,8 @@ const headerCellStyles = {
   overflow: "hidden",
   textOverflow: "ellipsis",
   paddingX: "7px",
-  paddingY: "7px",
-  fontSize: "0.9rem",
+  paddingY: "4px",
+  fontSize: "0.75rem",
   fontWeight: "bold",
   backgroundColor: (theme: any) =>
     theme.palette.mode === "light"

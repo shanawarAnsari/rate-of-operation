@@ -49,7 +49,11 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
       sx={{
         width: "220px",
         cursor: "pointer",
-        "& .MuiInputBase-input": { cursor: "pointer", fontSize: "0.875rem" }, // Reduced font size
+        "& .MuiInputBase-input": { cursor: "pointer", fontSize: "0.75rem" },
+        "& .MuiInputBase-root": {
+          height: 30,
+          borderRadius: 0,
+        },
       }}
     />
     <Menu
@@ -66,7 +70,14 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
         (column, index) =>
           !column.id.toLowerCase().includes("business") &&
           !column.id.toLowerCase().includes("category") && (
-            <MenuItem key={column.id}>
+            <MenuItem key={column.id} sx={{
+              "& .MuiFormControlLabel-label": {
+                fontSize: '0.75rem',
+                padding: 0
+              },
+              p: 0,
+              ml: 2
+            }} >
               <FormControlLabel
                 control={
                   <Checkbox

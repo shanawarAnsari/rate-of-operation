@@ -9,7 +9,7 @@ import {
 import { useColumnVisibility } from "./useColumnVisibility";
 import { usePagination } from "./usePagination";
 import { useSearch } from "./useSearch";
-import { IconButton, Divider } from "@mui/material";
+import { IconButton, Divider, Typography } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -71,12 +71,12 @@ const CellContent: React.FC<{ value: any; index: number; rowData: any }> = ({
           <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
             <MenuItem onClick={handleDialogOpen}>
               <ChangeCircleIcon fontSize="small" sx={{ mr: 1 }} />
-              TRO Sign-Off
+              <Typography sx={{ fontSize: '0.75rem', pr: 3 }}>Setup time Sign-Off</Typography>
             </MenuItem>
             <Divider sx={{ p: 0, m: 0 }} />
             <MenuItem onClick={handleNewTRODialogOpen}>
               <UpdateIcon fontSize="small" sx={{ mr: 1 }} />
-              TRO Override
+              <Typography sx={{ fontSize: '0.75rem', pr: 3 }}>Setup time Override</Typography>
             </MenuItem>
           </Menu>
         </>

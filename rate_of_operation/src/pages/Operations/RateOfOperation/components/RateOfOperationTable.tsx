@@ -88,11 +88,16 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
             label="Category"
             value={selectedCategory}
             onChange={handleCategoryChange}
-            sx={{ minWidth: 150 }}
+            sx={{
+              minWidth: 150, "& .MuiInputBase-input": { fontSize: "0.75rem" }, "& .MuiInputBase-root": {
+                height: 30,
+                borderRadius: 0,
+              },
+            }}
           >
-            <MenuItem value="Single Sector">Single Sector</MenuItem>
-            <MenuItem value="Multi Sector">Multi Sector</MenuItem>
-            <MenuItem value="All">All</MenuItem>
+            <MenuItem value="Single Sector" sx={{ fontSize: "0.75rem" }}>Single Sector</MenuItem>
+            <MenuItem value="Multi Sector" sx={{ fontSize: "0.75rem" }}>Multi Sector</MenuItem>
+            <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>All</MenuItem>
           </TextField>
           <TextField
             size="small"
@@ -100,12 +105,19 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
             label="Reviewed Status"
             value={selectedReviewedStatus}
             onChange={handleReviewedStatusChange}
-            sx={{ minWidth: 150 }}
+            sx={{
+              minWidth: 150,
+              "& .MuiInputBase-input": { fontSize: "0.75rem" },
+              "& .MuiInputBase-root": {
+                height: 30,
+                borderRadius: 0,
+              },
+            }}
           >
-            <MenuItem value="Yes">Yes</MenuItem>
-            <MenuItem value="No">No</MenuItem>
-            <MenuItem value="Pending">Pending</MenuItem>
-            <MenuItem value="All">All</MenuItem>
+            <MenuItem value="Yes" sx={{ fontSize: "0.75rem" }}>Yes</MenuItem>
+            <MenuItem value="No" sx={{ fontSize: "0.75rem" }}>No</MenuItem>
+            <MenuItem value="Pending" sx={{ fontSize: "0.75rem" }}>Pending</MenuItem>
+            <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>All</MenuItem>
           </TextField>
           <ColumnVisibilityControl
             table={table}
@@ -157,12 +169,13 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
         <Typography variant="body2"></Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <FormControl size="small" variant="outlined" sx={{ minWidth: 120 }}>
-            <InputLabel id="rows-per-page-label">Rows per page</InputLabel>
+            <InputLabel id="rows-per-page-label" sx={{ fontSize: '0.85rem' }}>Rows per page</InputLabel>
             <Select
               labelId="rows-per-page-label"
               value={table.getState().pagination.pageSize}
               onChange={handleRowsPerPageChange}
               label="Rows per page"
+              sx={{ fontSize: '0.75rem' }}
             >
               {[5, 10, 20, 35, 50, 100].map((pageSize) => (
                 <MenuItem key={pageSize} value={pageSize}>
@@ -191,7 +204,16 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
               ),
               inputProps: { style: { width: "40px" }, "aria-label": "page number" },
             }}
-            sx={{ width: "120px" }}
+            sx={{
+              width: "120px",
+              "& .MuiOutlinedInput-root": {
+                fontSize: "0.75rem"
+              },
+              "& .MuiInputLabel-root": {
+                fontSize: "0.85rem"
+              }
+
+            }}
           />
           <Pagination
             count={table.getPageCount()}

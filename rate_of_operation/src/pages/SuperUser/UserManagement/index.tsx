@@ -125,14 +125,14 @@ const UserAccessManagement: React.FC = () => {
           </TableHead>
           <TableBody>
             {users.map((user) => (
-              <TableRow key={user.email}>
-                <TableCell>{user.email}</TableCell>
-                <TableCell>
+              <TableRow key={user.email} >
+                <TableCell sx={{ p: 1 }}>{user.email}</TableCell>
+                <TableCell sx={{ p: 1 }}>
                   {user.categories.map((category, index) => (
                     <Chip key={index} label={category} sx={{ marginRight: 1 }} />
                   ))}
                 </TableCell>
-                <TableCell>
+                <TableCell sx={{ p: 1 }}>
                   <Chip
                     label={user.role}
                     sx={{
@@ -141,7 +141,7 @@ const UserAccessManagement: React.FC = () => {
                     }}
                   />
                 </TableCell>
-                <TableCell>
+                <TableCell sx={{ p: 1 }}>
                   <IconButton
                     color="primary"
                     disabled={user.role === "Admin"}

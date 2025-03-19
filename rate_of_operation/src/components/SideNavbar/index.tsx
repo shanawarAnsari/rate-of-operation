@@ -26,8 +26,8 @@ const SideNavbar: React.FC = () => {
           "& .MuiDrawer-paper": {
             width: collapsed ? drawerCollapsedWidth : drawerExpandedWidth,
             boxSizing: "border-box",
-            top: "64px",
-            height: "calc(100% - 64px)",
+            top: "54px",
+            height: "calc(100% - 54px)",
             borderRight: `1px solid ${theme.palette.divider}`,
             transition: theme.transitions.create("width", {
               easing: theme.transitions.easing.sharp,

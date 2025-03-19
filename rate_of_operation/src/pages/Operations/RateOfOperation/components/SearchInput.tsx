@@ -25,7 +25,16 @@ const SearchInput: React.FC<SearchInputProps> = ({
         </InputAdornment>
       ),
     }}
-    sx={{ width: "300px" }}
+    sx={{
+      width: "300px",
+      "& .MuiOutlinedInput-input": {
+        fontSize: "0.75rem"
+      },
+      "& .MuiOutlinedInput-root": {
+        height: 30,
+        borderRadius: 0,
+      },
+    }}
   />
 );
 

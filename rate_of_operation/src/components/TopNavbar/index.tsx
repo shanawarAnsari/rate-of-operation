@@ -22,7 +22,7 @@ interface TopNavbarProps {
 
 // Create a styled component for the logo image that responds to theme
 const LogoImage = styled("img")(({ theme }) => ({
-  height: "28px",
+  height: "22px",
   filter: theme.palette.mode === "dark" ? "brightness(10) contrast(10)" : "none",
 }));
 
@@ -45,6 +45,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
     <AppBar
       position="sticky"
       sx={{
+        height: '54px',
         bgcolor: theme.palette.background.paper,
         color: theme.palette.text.primary,
         boxShadow: theme.palette.mode === "light" ? 1 : 3,
@@ -74,7 +75,8 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
             minWidth: 160,
             mr: 2,
             "& .MuiInputBase-root": {
-              height: 40,
+              height: 30,
+              borderRadius: 0,
             },
             "& .MuiOutlinedInput-notchedOutline": {
               borderColor:
@@ -82,12 +84,13 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
                   ? "rgba(0, 0, 0, 0.23)"
                   : "rgba(255, 255, 255, 0.23)",
             },
+            "& .MuiInputBase-input": { fontSize: "0.75rem" },
           }}
           InputLabelProps={{
             shrink: true,
           }}
         >
-          <MenuItem value="KCNA">KCNA</MenuItem>
+          <MenuItem value="KCNA" sx={{ fontSize: "0.75rem" }}>KCNA</MenuItem>
         </TextField>
 
         <TextField
@@ -102,7 +105,8 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
             minWidth: 160,
             mr: 2,
             "& .MuiInputBase-root": {
-              height: 40,
+              height: 30,
+              borderRadius: 0,
             },
             "& .MuiOutlinedInput-notchedOutline": {
               borderColor:
@@ -110,18 +114,19 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
                   ? "rgba(0, 0, 0, 0.23)"
                   : "rgba(255, 255, 255, 0.23)",
             },
+            "& .MuiInputBase-input": { fontSize: "0.75rem" },
           }}
           InputLabelProps={{
             shrink: true,
           }}
         >
-          <MenuItem value="North America">North America</MenuItem>
+          <MenuItem value="North America" sx={{ fontSize: "0.75rem" }}>North America</MenuItem>
         </TextField>
 
         {/* Profile section with avatar and username */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Avatar
-            sx={{ width: 32, height: 32, bgcolor: theme.palette.primary.main }}
+            sx={{ width: 24, height: 24, bgcolor: theme.palette.primary.main }}
           >
             <AccountCircle />
           </Avatar>

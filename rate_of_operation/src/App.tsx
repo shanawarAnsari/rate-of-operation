@@ -46,7 +46,7 @@ function App() {
           <Box sx={{ display: "flex", flex: 1, overflow: "hidden" }}>
             <SideNavbar />
             <Box sx={{ flexGrow: 1, overflow: "auto", maxWidth: "100%" }}>
-              <Container maxWidth="xl" sx={{ mt: 2 }}>
+              <Container maxWidth="xl" sx={{ mt: 1 }}>
                 <AppRoutes />
               </Container>
             </Box>

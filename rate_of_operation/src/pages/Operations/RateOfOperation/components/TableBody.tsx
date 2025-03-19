@@ -8,8 +8,8 @@ const cellStyles = {
   overflow: "hidden",
   textOverflow: "ellipsis",
   paddingX: "7px",
-  paddingY: "7px",
-  fontSize: "0.9rem",
+  paddingY: "4px",
+  fontSize: "0.8rem",
 };
 
 const isStickyColumn = (index: number) => index < 3;
