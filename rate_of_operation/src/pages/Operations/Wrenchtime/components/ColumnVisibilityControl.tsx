@@ -50,7 +50,7 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
       {!showDropdown ? (
         <IconButton onClick={(e) => toggleDropdown(e)} sx={{ my: -0.65, p: 0 }}>
           <ViewColumnIcon
-            sx={{ fontSize: "40px", color: theme.palette.text.secondary }}
+            sx={{ fontSize: "40px", color: theme.palette.primary.main }}
           />
           <VisibilityIcon
             sx={{

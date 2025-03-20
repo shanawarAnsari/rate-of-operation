@@ -12,12 +12,14 @@ import {
   InputLabel,
   InputAdornment,
   MenuItem,
+  IconButton,
 } from "@mui/material";
 import { useRateOfOperationTable } from "../hooks/useRateOfOperationTable";
 import SearchInput from "./SearchInput";
 import ColumnVisibilityControl from "./ColumnVisibilityControl";
 import TableHeader from "./TableHeader";
 import TableBodyComponent from "./TableBody";
+import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
 
 interface RateOfOperationTableProps {
   data: any[];
@@ -55,6 +57,11 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
     // Add logic to filter table data based on reviewed status
   };
 
+  const handleRefresh = () => {
+    // Add logic to reload the data into the table
+    console.log("Data reloaded");
+  };
+
   return (
     <Box
       sx={{
@@ -81,6 +88,20 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
           handleSearchChange={handleSearchChange}
         />
         <Box sx={{ display: "flex", alignItems: "center", gap: 0 }}>
+          <IconButton
+            onClick={handleRefresh}
+            color="primary"
+            sx={{
+              marginRight: 1,
+              p: 0.25,
+              border: "1px solid",
+              borderColor: "divider", // Matches the TextField's default border color
+              borderRadius: "0px",
+            }}
+            aria-label="refresh"
+          >
+            <ReplayCircleFilledIcon style={{ fontSize: "26px" }} />
+          </IconButton>
           <TextField
             size="small"
             select

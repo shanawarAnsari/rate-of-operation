@@ -92,9 +92,9 @@ const CellContent: React.FC<{
           <IconButton size="small" onClick={handleToggleResolve}>
             {isResolved ? (
               updatedRows[rowIndex] ? (
-                <DoneAllIcon sx={{ color: "green", transition: "color 0.3s" }} />
+                <DoneAllIcon sx={{ color: "#0bdd00", transition: "color 0.3s" }} />
               ) : (
-                <CheckIcon sx={{ color: "green", transition: "color 0.3s" }} />
+                <CheckIcon sx={{ color: "#0bdd00", transition: "color 0.3s" }} />
               )
             ) : (
               <Tooltip

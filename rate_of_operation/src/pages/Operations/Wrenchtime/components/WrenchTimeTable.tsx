@@ -12,12 +12,14 @@ import {
   InputLabel,
   InputAdornment,
   MenuItem,
+  IconButton,
 } from "@mui/material";
 import { useWrenchTimeTable } from "../hooks/useWrenchTimeTable";
 import SearchInput from "./SearchInput";
 import ColumnVisibilityControl from "./ColumnVisibilityControl";
 import TableHeader from "./TableHeader";
 import TableBodyComponent from "./TableBody";
+import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
 
 interface WrenchTimeTableProps {
   data: any[];
@@ -81,6 +83,20 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
           handleSearchChange={handleSearchChange}
         />
         <Box sx={{ display: "flex", alignItems: "center", gap: 0 }}>
+          <IconButton
+            onClick={() => {}}
+            color="primary"
+            sx={{
+              marginRight: 1,
+              p: 0.25,
+              border: "1px solid",
+              borderColor: "divider", // Matches the TextField's default border color
+              borderRadius: "0px",
+            }}
+            aria-label="refresh"
+          >
+            <ReplayCircleFilledIcon style={{ fontSize: "26px" }} />
+          </IconButton>
           <TextField
             size="small"
             select

@@ -1,6 +1,14 @@
 import React from "react";
 import Chart from "react-apexcharts";
-import { Button, Box, useTheme, Stack, Tooltip, Typography } from "@mui/material";
+import {
+  Button,
+  Box,
+  useTheme,
+  Stack,
+  Tooltip,
+  Typography,
+  Divider,
+} from "@mui/material";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
@@ -77,6 +85,7 @@ const WrenchTime: React.FC = () => {
       <Typography variant="h6" textAlign="center">
         Wrench Time Review Status
       </Typography>
+      <Divider />
       <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
     </Box>
   );
