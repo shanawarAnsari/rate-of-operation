@@ -14,7 +14,7 @@ import {
   Stack,
   useTheme,
 } from "@mui/material";
-import { Edit, Delete } from "@mui/icons-material";
+import { Edit, Delete, AdminPanelSettings, Person } from "@mui/icons-material";
 import { mockData } from "./hooks/mockData";
 import { Group as UsersIcon } from "@mui/icons-material";
 import AddUserDialog from "./components/AddUserDialog";
@@ -75,7 +75,7 @@ const UserAccessManagement: React.FC = () => {
         <Stack direction="row" alignItems="center">
           <UsersIcon sx={{ mr: 1 }} />
           <Typography sx={{ ml: 0.5, fontSize: "16px", fontWeight: 525 }}>
-            Review Status
+            User Management
           </Typography>
         </Stack>
         <Button
@@ -125,19 +125,43 @@ const UserAccessManagement: React.FC = () => {
           </TableHead>
           <TableBody>
             {users.map((user) => (
-              <TableRow key={user.email} >
+              <TableRow key={user.email}>
                 <TableCell sx={{ p: 1 }}>{user.email}</TableCell>
                 <TableCell sx={{ p: 1 }}>
                   {user.categories.map((category, index) => (
-                    <Chip key={index} label={category} sx={{ marginRight: 1 }} />
+                    <Chip
+                      label={
+                        <Typography
+                          key={index}
+                          fontSize={"14px"}
+                          color={theme.palette.background.paper}
+                        >
+                          {category}
+                        </Typography>
+                      }
+                      sx={{ marginRight: 1, bgcolor: theme.palette.primary.main }}
+                    />
                   ))}
                 </TableCell>
                 <TableCell sx={{ p: 1 }}>
                   <Chip
-                    label={user.role}
+                    label={
+                      <Typography fontWeight={500} fontSize={"14px"}>
+                        {user.role}
+                      </Typography>
+                    }
+                    icon={
+                      user.role === "Admin" ? (
+                        <AdminPanelSettings
+                          style={{ color: theme.palette.background.paper }}
+                        />
+                      ) : (
+                        <Person style={{ color: theme.palette.background.paper }} />
+                      )
+                    }
                     sx={{
                       backgroundColor: user.role === "Admin" ? "#ffc107" : "#28a745",
-                      color: "white",
+                      color: theme.palette.background.paper,
                     }}
                   />
                 </TableCell>

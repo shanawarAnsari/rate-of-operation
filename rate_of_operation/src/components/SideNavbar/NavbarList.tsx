@@ -48,7 +48,7 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
   };
 
   const menuIconStyle = {
-    fontSize: "1.25rem",
+    fontSize: "1.5rem",
     color: theme.palette.text.primary,
   };
 
@@ -67,7 +67,7 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
   const selectedItemStyle = {
     backgroundColor: theme.palette.primary.main + "10",
     "&.Mui-selected": {
-      backgroundColor: theme.palette.primary.main + "15",
+      backgroundColor: theme.palette.primary.main + "25",
     },
     "&.Mui-selected:hover": {
       backgroundColor: theme.palette.primary.main + "25",

@@ -67,7 +67,8 @@ const SideNavbar: React.FC = () => {
             duration: theme.transitions.duration.enteringScreen,
           }),
           "&:hover": {
-            backgroundColor: theme.palette.action.hover,
+            backgroundColor: theme.palette.primary.main,
+            boxShadow: 4,
           },
         }}
       >
