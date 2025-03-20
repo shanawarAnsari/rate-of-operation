@@ -1,6 +1,8 @@
 import React from "react";
 import Chart from "react-apexcharts";
-import { Button, Box, useTheme } from "@mui/material";
+import { Button, Box, useTheme, Stack, Tooltip, Typography } from "@mui/material";
+import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 const RateOfOperations: React.FC = () => {
   const theme = useTheme(); // Access the current theme
@@ -48,12 +50,34 @@ const RateOfOperations: React.FC = () => {
 
   return (
     <Box>
-      <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
-      <Box display="flex" justifyContent="flex-end" mr={4} mb={2}>
-        <Button variant="contained" color="primary">
-          Generate Predictions
-        </Button>
+      <Box display="flex" justifyContent="flex-end" mb={2}>
+        <Stack direction="row" spacing={1} mr={2}>
+          <Tooltip title="Download WinSchuttle File" arrow>
+            <Button
+              variant="outlined"
+              color="primary"
+              startIcon={<CloudDownloadIcon />}
+              size="small"
+            >
+              Download
+            </Button>
+          </Tooltip>
+          <Tooltip title="Upload WinSchuttle File" arrow>
+            <Button
+              variant="outlined"
+              color="primary"
+              startIcon={<CloudUploadIcon />}
+              size="small"
+            >
+              Upload
+            </Button>
+          </Tooltip>
+        </Stack>
       </Box>
+      <Typography variant="h6" textAlign="center" mb={2}>
+        Rate of Operations Review Status
+      </Typography>
+      <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
     </Box>
   );
 };

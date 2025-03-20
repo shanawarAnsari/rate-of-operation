@@ -1,9 +1,19 @@
 import React, { useState } from "react";
-import { Tabs, Tab, Box, Typography, Card, Divider, Stack } from "@mui/material";
+import {
+  Tabs,
+  Tab,
+  Box,
+  Typography,
+  Card,
+  Divider,
+  Stack,
+  Button,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import SpeedIcon from "@mui/icons-material/Speed";
 import TimerIcon from "@mui/icons-material/Timer";
+import AutoGraphIcon from "@mui/icons-material/AutoGraph";
 import RateOfOperations from "./RateOfOperations";
 import WrenchTime from "./WrenchTime";
 
@@ -62,7 +72,19 @@ const ReviewStatus: React.FC = () => {
           <Typography sx={{ ml: 0.5, fontSize: "16px", fontWeight: 525 }}>
             Review Status
           </Typography>
+          <Box display="flex" justifyContent="flex-end" mx={2}>
+            <Button
+              size="small"
+              variant="outlined"
+              color="primary"
+              sx={{ zIndex: 9 }}
+              startIcon={<AutoGraphIcon />}
+            >
+              Generate Predictions
+            </Button>
+          </Box>
         </Stack>
+
         <Box textAlign="right">
           <Typography fontSize="14px" fontWeight="500">
             Planning Window
@@ -77,7 +99,7 @@ const ReviewStatus: React.FC = () => {
         onChange={handleTabChange}
         indicatorColor="primary"
         textColor="primary"
-        sx={{ minHeight: 36, p: 2 }} // Reduce the height of the Tabs container
+        sx={{ minHeight: 36, p: 2, mt: -2 }} // Reduce the height of the Tabs container
       >
         <Tab
           icon={<SpeedIcon />}
@@ -88,7 +110,7 @@ const ReviewStatus: React.FC = () => {
             </Typography>
           }
           value="rateOfOperations"
-          sx={{ minHeight: 36, py: 0.5, px: 1.5 }} // Compact Tab styling
+          sx={{ minHeight: 36, px: 0.5 }} // Compact Tab styling
         />
         <Tab
           icon={<TimerIcon />}
@@ -99,7 +121,7 @@ const ReviewStatus: React.FC = () => {
             </Typography>
           }
           value="wrenchTime"
-          sx={{ minHeight: 36, py: 0.5, px: 1.5 }} // Compact Tab styling
+          sx={{ minHeight: 36, px: 0.5 }} // Compact Tab styling
         />
       </Tabs>
       <Box mt={2}>

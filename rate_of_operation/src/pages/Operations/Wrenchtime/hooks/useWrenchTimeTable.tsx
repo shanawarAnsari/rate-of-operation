@@ -12,7 +12,7 @@ import { useSearch } from "./useSearch";
 import { IconButton } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check"; // Import Check icon
 import DoneAllIcon from "@mui/icons-material/DoneAll"; // Import DoneAll icon
-import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import DoneIcon from "@mui/icons-material/Done";
 import EditIcon from "@mui/icons-material/Edit";
 import { PublishedWithChanges } from "@mui/icons-material";
 import Tooltip from "@mui/material/Tooltip"; // Import Tooltip
@@ -135,7 +135,12 @@ const CellContent: React.FC<{
             }}
           >
             {isEditing ? (
-              <TaskAltIcon sx={{ fontSize: "1.25rem", color: "green" }} />
+              <DoneIcon
+                sx={{
+                  fontSize: "1.25rem",
+                  color: (theme) => theme.palette.primary.main,
+                }}
+              />
             ) : (
               <EditIcon
                 sx={{

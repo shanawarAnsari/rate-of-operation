@@ -50,7 +50,9 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => (
             }}
             style={{ minWidth: 120, maxWidth: 1000 }}
           >
-            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+            {cell.getValue() === undefined
+              ? ""
+              : flexRender(cell.column.columnDef.cell, cell.getContext())}
           </TableCell>
         ))}
       </TableRow>

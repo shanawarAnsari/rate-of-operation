@@ -13,8 +13,8 @@ import { IconButton } from "@mui/material";
 import { PublishedWithChanges, RemoveDone } from "@mui/icons-material";
 import CheckIcon from "@mui/icons-material/Check";
 import EditIcon from "@mui/icons-material/Edit"; // Import the pencil icon
-import TaskAltIcon from "@mui/icons-material/TaskAlt"; // Import the save icon
 import DoneAllIcon from "@mui/icons-material/DoneAll"; // Import DoneAll icon
+import DoneIcon from "@mui/icons-material/Done"; // Import Done icon
 import Tooltip from "@mui/material/Tooltip"; // Import Tooltip
 import Snackbar from "@mui/material/Snackbar"; // Import Snackbar
 import Alert from "@mui/material/Alert"; // Import Alert
@@ -129,7 +129,12 @@ const CellContent: React.FC<{
             }}
           >
             {isEditing ? (
-              <TaskAltIcon sx={{ fontSize: "1.25rem", color: "green" }} />
+              <DoneIcon
+                sx={{
+                  fontSize: "1.25rem",
+                  color: (theme) => theme.palette.primary.main,
+                }}
+              />
             ) : (
               <EditIcon
                 sx={{

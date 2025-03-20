@@ -80,7 +80,7 @@ const UserAccessManagement: React.FC = () => {
         </Stack>
         <Button
           size="small"
-          variant="contained"
+          variant="outlined"
           onClick={() => setAddDialogOpen(true)}
         >
           Add User
