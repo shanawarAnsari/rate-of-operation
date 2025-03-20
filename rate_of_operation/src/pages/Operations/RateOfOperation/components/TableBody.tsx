@@ -8,7 +8,7 @@ const cellStyles = {
   overflow: "hidden",
   textOverflow: "ellipsis",
   paddingX: "7px",
-  paddingY: "4px",
+  paddingY: "3px",
   fontSize: "0.8rem",
 };
 

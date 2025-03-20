@@ -68,7 +68,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
     >
       <Box
         sx={{
-          p: 2,
+          p: 1,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -155,7 +155,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
           width: "100%",
           position: "relative",
           margin: 0,
-          maxHeight: "60vh",
+          maxHeight: "65vh",
         }}
       >
         <Table
