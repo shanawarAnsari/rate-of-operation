@@ -9,79 +9,155 @@ import {
 import { useColumnVisibility } from "./useColumnVisibility";
 import { usePagination } from "./usePagination";
 import { useSearch } from "./useSearch";
-import { IconButton, Divider, Typography } from "@mui/material";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import ChangeCircleIcon from "@mui/icons-material/ChangeCircle";
-import UpdateIcon from "@mui/icons-material/Update";
+import { IconButton } from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check"; // Import Check icon
+import DoneAllIcon from "@mui/icons-material/DoneAll"; // Import DoneAll icon
+import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import EditIcon from "@mui/icons-material/Edit";
+import { PublishedWithChanges } from "@mui/icons-material";
+import Tooltip from "@mui/material/Tooltip"; // Import Tooltip
+import Snackbar from "@mui/material/Snackbar"; // Import Snackbar
+import Alert from "@mui/material/Alert"; // Import Alert
 
-const CellContent: React.FC<{ value: any; index: number; rowData: any }> = ({
-  value,
-  index,
-  rowData,
-}) => {
+const CellContent: React.FC<{
+  value: any;
+  index: number;
+  rowData: any;
+  rowIndex: number; // Add rowIndex prop
+  updatedRows: Record<number, boolean>; // Add updatedRows prop
+  setUpdatedRows: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
+}> = ({ value, index, rowData, rowIndex, updatedRows, setUpdatedRows }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [newTRODialogOpen, setNewTRODialogOpen] = useState(false);
-  const open = Boolean(anchorEl);
+
+  const [isResolved, setIsResolved] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedValue, setEditedValue] = useState(value);
+  const [snackbarOpen, setSnackbarOpen] = useState(false); // State for snackbar
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
+  };
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleToggleResolve = () => {
+    setIsResolved((prev) => !prev);
   };
 
-  const handleDialogOpen = () => {
-    setDialogOpen(true);
-    handleClose();
+  const handleEditClick = () => {
+    setIsEditing(true);
   };
 
-  const handleDialogClose = () => {
-    setDialogOpen(false);
+  const handleSaveClick = () => {
+    if (/^\d*\.?\d*$/.test(editedValue)) {
+      // Validate input for numbers and decimals
+      setIsEditing(false);
+      console.log("Saved value:", editedValue);
+      // Mark the row as updated (Tro value is updated)
+      setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
+    } else {
+      setSnackbarOpen(true); // Show snackbar on error
+    }
   };
 
-  const handleNewTRODialogOpen = () => {
-    setNewTRODialogOpen(true);
-    handleClose();
-  };
-
-  const handleNewTRODialogClose = () => {
-    setNewTRODialogOpen(false);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEditedValue(event.target.value);
   };
 
   return (
-    <div
-      style={{
-        overflow: "hidden",
-        textOverflow: "ellipsis",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: index === 0 ? "space-between" : "flex-start",
-      }}
-    >
-      {String(value)}
-      {index === 2 && (
-        <>
-          <IconButton size="small" onClick={handleClick}>
-            <MoreVertIcon />
+    <>
+      <div
+        style={{
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          display: "flex",
+          alignItems: "center",
+          justifyContent:
+            index === 2 || index === 16 ? "space-between" : "flex-start",
+        }}
+      >
+        {isEditing && index === 16 ? (
+          <input
+            type="text"
+            value={editedValue}
+            onChange={handleInputChange}
+            style={{
+              width: "100%",
+              padding: "4px",
+              fontSize: "0.9rem",
+              border: "1px solid lightgray",
+              borderRadius: "4px",
+            }}
+          />
+        ) : (
+          String(value)
+        )}
+        {index === 2 && (
+          <IconButton size="small" onClick={handleToggleResolve}>
+            {isResolved ? (
+              updatedRows[rowIndex] ? (
+                <DoneAllIcon sx={{ color: "green", transition: "color 0.3s" }} />
+              ) : (
+                <CheckIcon sx={{ color: "green", transition: "color 0.3s" }} />
+              )
+            ) : (
+              <Tooltip
+                placement="top"
+                title={
+                  <>
+                    Click to mark this recipe reviewed.
+                    <br />
+                    New Setup Min: {rowData.new_setup_min || "N/A"}
+                  </>
+                }
+                arrow
+              >
+                <PublishedWithChanges
+                  sx={{
+                    color: (theme) => theme.palette.primary.main,
+                    transition: "color 0.3s",
+                  }}
+                />
+              </Tooltip>
+            )}
           </IconButton>
-          <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-            <MenuItem onClick={handleDialogOpen}>
-              <ChangeCircleIcon fontSize="small" sx={{ mr: 1 }} />
-              <Typography sx={{ fontSize: '0.75rem', pr: 3 }}>Setup time Sign-Off</Typography>
-            </MenuItem>
-            <Divider sx={{ p: 0, m: 0 }} />
-            <MenuItem onClick={handleNewTRODialogOpen}>
-              <UpdateIcon fontSize="small" sx={{ mr: 1 }} />
-              <Typography sx={{ fontSize: '0.75rem', pr: 3 }}>Setup time Override</Typography>
-            </MenuItem>
-          </Menu>
-        </>
-      )}
-    </div>
+        )}
+        {index === 16 && (
+          <IconButton
+            size="small"
+            onClick={isEditing ? handleSaveClick : handleEditClick}
+            sx={{
+              borderRadius: "50%",
+              padding: "4px",
+              "&:hover": { backgroundColor: (theme) => theme.palette.grey[200] },
+            }}
+          >
+            {isEditing ? (
+              <TaskAltIcon sx={{ fontSize: "1.25rem", color: "green" }} />
+            ) : (
+              <EditIcon
+                sx={{
+                  fontSize: "1.25rem",
+                  color: (theme: any) => theme.palette.primary.main,
+                }}
+              />
+            )}
+          </IconButton>
+        )}
+      </div>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={3000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert onClose={handleSnackbarClose} severity="error" sx={{ width: "100%" }}>
+          Please enter a valid number.
+        </Alert>
+      </Snackbar>
+    </>
   );
 };
 
@@ -94,6 +170,9 @@ export const useWrenchTimeTable = (data: any[]) => {
   } = useColumnVisibility();
   const { searchText, handleSearchChange } = useSearch();
 
+  // New state to track updated Tro values per row
+  const [updatedRows, setUpdatedRows] = useState<Record<number, boolean>>({});
+
   const columns = useMemo<ColumnDef<any>[]>(() => {
     const keys = Object.keys(data[0] || {});
     return keys.map((key, index) => ({
@@ -104,13 +183,16 @@ export const useWrenchTimeTable = (data: any[]) => {
           value={info.getValue()}
           index={index}
           rowData={info.row.original}
+          rowIndex={info.row.index} // Pass row index
+          updatedRows={updatedRows} // Pass updated status map
+          setUpdatedRows={setUpdatedRows} // Pass updater callback
         />
       ),
       minSize: 120,
       maxSize: 1000,
       enableSorting: true,
     }));
-  }, [data]);
+  }, [data, updatedRows]); // Include updatedRows in dependency
 
   const table = useReactTable({
     data,
