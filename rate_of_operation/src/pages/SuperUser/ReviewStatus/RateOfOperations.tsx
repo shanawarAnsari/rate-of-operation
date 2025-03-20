@@ -5,8 +5,7 @@ import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 const RateOfOperations: React.FC = () => {
-  const theme = useTheme(); // Access the current theme
-
+  const theme = useTheme();
   const chartOptions: ApexCharts.ApexOptions = {
     chart: {
       type: "bar",
@@ -50,7 +49,7 @@ const RateOfOperations: React.FC = () => {
 
   return (
     <Box>
-      <Box display="flex" justifyContent="flex-end" mb={2}>
+      <Box display="flex" justifyContent="flex-end">
         <Stack direction="row" spacing={1} mr={2}>
           <Tooltip title="Download WinSchuttle File" arrow>
             <Button
@@ -74,7 +73,7 @@ const RateOfOperations: React.FC = () => {
           </Tooltip>
         </Stack>
       </Box>
-      <Typography variant="h6" textAlign="center" mb={2}>
+      <Typography variant="h6" textAlign="center">
         Rate of Operations Review Status
       </Typography>
       <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
