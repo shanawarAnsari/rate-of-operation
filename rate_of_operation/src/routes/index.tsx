@@ -8,6 +8,7 @@ import Wrenchtime from "../pages/Operations/Wrenchtime";
 import FinancialRate from "../pages/Operations/FinancialRate/index";
 import ReviewStatus from "../pages/SuperUser/ReviewStatus";
 import UserManagement from "../pages/SuperUser/UserManagement";
+import { ExclusionList } from "../pages/SuperUser/ExclusionList";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/operations/financial-rate" element={<FinancialRate />} />
       <Route path="/super-user/review-status" element={<ReviewStatus />} />
       <Route path="/super-user/user-management" element={<UserManagement />} />
+      <Route path="/super-user/exclusion-list" element={<ExclusionList />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

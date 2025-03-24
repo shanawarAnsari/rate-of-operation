@@ -22,6 +22,7 @@ import {
 } from "@mui/icons-material";
 import ReviewStatusIcon from "@mui/icons-material/AssignmentTurnedIn";
 import UserManagementIcon from "@mui/icons-material/Group";
+import { RunningWithErrors } from "@mui/icons-material"
 
 const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
   collapsed,
@@ -76,9 +77,9 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
       color: `${theme.palette.primary.main} !important`,
     },
     "&.Mui-selected .MuiListItemText-primary, & .Mui-selected .MuiListItemText-primary":
-      {
-        color: `${theme.palette.primary.main} !important`,
-      },
+    {
+      color: `${theme.palette.primary.main} !important`,
+    },
     "&.Mui-selected .MuiSvgIcon-root, & .Mui-selected .MuiSvgIcon-root": {
       color: `${theme.palette.primary.main} !important`,
     },
@@ -178,6 +179,11 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
               "/super-user/user-management",
               "User Management",
               UserManagementIcon
+            )}
+            {renderSubListItem(
+              "/super-user/exclusion-list",
+              "Exclusion List",
+              RunningWithErrors
             )}
           </List>
         </Collapse>

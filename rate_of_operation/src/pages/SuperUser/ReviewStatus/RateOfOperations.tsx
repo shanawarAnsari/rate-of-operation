@@ -57,7 +57,12 @@ const RateOfOperations: React.FC = () => {
 
   return (
     <Box>
-      <Box display="flex" justifyContent="flex-end">
+      <Typography variant="h6" textAlign="center">
+        Rate of Operations Review Status
+      </Typography>
+      <Divider />
+      <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
+      <Box display="flex" justifyContent="flex-start" sx={{ p: 2 }}>
         <Stack direction="row" spacing={1} mr={2}>
           <Tooltip title="Download WinSchuttle File" arrow>
             <Button
@@ -81,11 +86,6 @@ const RateOfOperations: React.FC = () => {
           </Tooltip>
         </Stack>
       </Box>
-      <Typography variant="h6" textAlign="center">
-        Rate of Operations Review Status
-      </Typography>
-      <Divider />
-      <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
     </Box>
   );
 };

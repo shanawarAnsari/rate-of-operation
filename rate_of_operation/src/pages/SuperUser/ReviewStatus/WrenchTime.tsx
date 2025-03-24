@@ -58,7 +58,13 @@ const WrenchTime: React.FC = () => {
 
   return (
     <Box>
-      <Box display="flex" justifyContent="flex-end">
+
+      <Typography variant="h6" textAlign="center">
+        Wrench Time Review Status
+      </Typography>
+      <Divider />
+      <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
+      <Box display="flex" justifyContent="flex-start" sx={{ p: 2 }}>
         <Stack direction="row" spacing={1} mr={2}>
           <Tooltip title="Download WinSchuttle File" arrow>
             <Button
@@ -82,11 +88,6 @@ const WrenchTime: React.FC = () => {
           </Tooltip>
         </Stack>
       </Box>
-      <Typography variant="h6" textAlign="center">
-        Wrench Time Review Status
-      </Typography>
-      <Divider />
-      <Chart options={chartOptions} series={chartSeries} type="bar" height={350} />
     </Box>
   );
 };
