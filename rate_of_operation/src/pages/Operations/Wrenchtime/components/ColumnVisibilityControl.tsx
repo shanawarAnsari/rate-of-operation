@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import ViewColumnIcon from "@mui/icons-material/ViewColumn";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { Table } from "@tanstack/react-table";
@@ -48,15 +47,20 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
   return (
     <>
       {!showDropdown ? (
-        <IconButton onClick={(e) => toggleDropdown(e)} sx={{ my: -0.65, p: 0 }}>
-          <ViewColumnIcon
-            sx={{ fontSize: "40px", color: theme.palette.primary.main }}
-          />
+        <IconButton
+          onClick={(e) => toggleDropdown(e)}
+          sx={{
+            p: 0.25,
+            ml: 1,
+            border: "1px solid",
+            borderColor: "divider", // Matches the TextField's default border color
+            borderRadius: "0px",
+          }}
+        >
           <VisibilityIcon
             sx={{
-              fontSize: "22px",
-              ml: -4,
-              color: theme.palette.background.paper,
+              fontSize: "26px",
+              color: theme.palette.primary.main,
             }}
           />
         </IconButton>
@@ -77,19 +81,13 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
                       toggleDropdown(e);
                       handleClose();
                     }}
-                    sx={{ padding: 0, ml: -2, mr: 0.5 }}
+                    sx={{ padding: 0 }}
                   >
-                    <ViewColumnIcon
-                      sx={{
-                        fontSize: "40px",
-                        color: theme.palette.text.secondary,
-                      }}
-                    />
                     <VisibilityOffIcon
                       sx={{
-                        fontSize: "22px",
-                        ml: -4,
-                        color: theme.palette.background.paper,
+                        fontSize: "26px",
+                        ml: -1,
+                        color: theme.palette.primary.main,
                       }}
                     />
                   </IconButton>

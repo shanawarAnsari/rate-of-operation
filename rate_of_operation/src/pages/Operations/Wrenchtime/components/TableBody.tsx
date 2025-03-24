@@ -12,10 +12,11 @@ const cellStyles = {
   fontSize: "0.8rem",
 };
 
-const isStickyColumn = (index: number) => index < 1;
+const isStickyColumn = (index: number) => index < 2;
 
 const getStickyPosition = (index: number) => {
   if (index === 0) return 0;
+  if (index === 1) return 85;
   return 0;
 };
 

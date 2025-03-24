@@ -19,12 +19,11 @@ const headerCellStyles = {
       : theme.palette.grey[800],
 };
 
-const isStickyColumn = (index: number) => index < 1;
+const isStickyColumn = (index: number) => index < 2;
 
 const getStickyPosition = (index: number) => {
   if (index === 0) return 0;
-  // if (index === 1) return 85;
-  // if (index === 2) return 180;
+  if (index === 1) return 85;
   return 0;
 };
 

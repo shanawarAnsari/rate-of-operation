@@ -200,6 +200,11 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
             "User Management",
             UserManagementIcon
           )}
+          {renderListItem(
+            "/super-user/exclusion-list",
+            "Exclusion List",
+            RunningWithErrors
+          )}
         </>
       )}
       {!collapsed && (

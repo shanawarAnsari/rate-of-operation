@@ -75,7 +75,7 @@ const CellContent: React.FC<{
           display: "flex",
           alignItems: "center",
           justifyContent:
-            index === 2 || index === 16 ? "space-between" : "flex-start",
+            index === 3 || index === 16 ? "space-between" : "flex-start",
         }}
       >
         {isEditing && index === 16 ? (
@@ -94,7 +94,7 @@ const CellContent: React.FC<{
         ) : (
           String(value)
         )}
-        {index === 2 && (
+        {index === 3 && (
           <IconButton size="small" onClick={handleToggleResolve}>
             {isResolved ? (
               updatedRows[rowIndex] ? (
