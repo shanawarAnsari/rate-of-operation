@@ -9,8 +9,8 @@ import {
 import { useColumnVisibility } from "./useColumnVisibility";
 import { usePagination } from "./usePagination";
 import { useSearch } from "./useSearch";
-import { IconButton } from "@mui/material";
-import { PublishedWithChanges, RemoveDone } from "@mui/icons-material";
+import { IconButton, Typography, useTheme } from "@mui/material";
+import { PublishedWithChanges, } from "@mui/icons-material";
 import CheckIcon from "@mui/icons-material/Check";
 import EditIcon from "@mui/icons-material/Edit"; // Import the pencil icon
 import DoneAllIcon from "@mui/icons-material/DoneAll"; // Import DoneAll icon
@@ -31,7 +31,7 @@ const CellContent: React.FC<{
   const [isEditing, setIsEditing] = useState(false);
   const [editedValue, setEditedValue] = useState(value);
   const [snackbarOpen, setSnackbarOpen] = useState(false); // State for snackbar
-
+  const theme = useTheme();
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
   };
@@ -92,11 +92,32 @@ const CellContent: React.FC<{
           <IconButton size="small" onClick={handleToggleResolve}>
             {isResolved ? (
               updatedRows[rowIndex] ? (
-                <DoneAllIcon sx={{ color: "#0bdd00", transition: "color 0.3s" }} />
+                <Tooltip
+                  placement="top"
+                  title={
+                    <>
+                      Recipe has been marked Reviewed.
+                      <br />
+                      <Typography color={'#0bdd00'} sx={{ fontSize: '12px', fontWeight: 600 }}> New  TRO Override</Typography>: {rowData.new_tRO || "N/A"}
+                    </>
+                  }
+                  arrow              >
+                  <DoneAllIcon sx={{ color: "#0bdd00", transition: "color 0.3s" }} />
+                </Tooltip>
               ) : (
-                <CheckIcon sx={{ color: "#0bdd00", transition: "color 0.3s" }} />
-              )
-            ) : (
+                <Tooltip
+                  placement="top"
+                  title={
+                    <>
+                      Recipe has been marked Reviewed.
+                      <br />
+                      <Typography color={theme.palette.primary.main} sx={{ fontSize: '12px', fontWeight: 600 }}> New TRO</Typography>: {rowData.new_tRO || "N/A"}
+                    </>
+                  }
+                  arrow              >
+                  <CheckIcon sx={{ color: "#0bdd00", transition: "color 0.3s" }} />
+                </Tooltip>
+              )) : (
               <Tooltip
                 placement="top"
                 title={
