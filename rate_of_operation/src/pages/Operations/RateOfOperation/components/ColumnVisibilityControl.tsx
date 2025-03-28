@@ -51,10 +51,12 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
           onClick={(e) => toggleDropdown(e)}
           sx={{
             p: 0.25,
-            ml: 1,
             border: "1px solid",
             borderColor: "divider", // Matches the TextField's default border color
             borderRadius: "0px",
+            "&:hover": {
+              borderColor: (theme) => theme.palette.text.primary
+            }
           }}
         >
           <VisibilityIcon

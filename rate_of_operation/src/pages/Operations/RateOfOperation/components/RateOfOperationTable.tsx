@@ -20,6 +20,7 @@ import ColumnVisibilityControl from "./ColumnVisibilityControl";
 import TableHeader from "./TableHeader";
 import TableBodyComponent from "./TableBody";
 import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
+import { FilterAltRounded, SaveRounded } from "@mui/icons-material";
 
 interface RateOfOperationTableProps {
   data: any[];
@@ -88,20 +89,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
           handleSearchChange={handleSearchChange}
         />
         <Box sx={{ display: "flex", alignItems: "center", gap: 0 }}>
-          <IconButton
-            onClick={handleRefresh}
-            color="primary"
-            sx={{
-              marginRight: 1,
-              p: 0.25,
-              border: "1px solid",
-              borderColor: "divider", // Matches the TextField's default border color
-              borderRadius: "0px",
-            }}
-            aria-label="refresh"
-          >
-            <ReplayCircleFilledIcon style={{ fontSize: "26px" }} />
-          </IconButton>
+
           <TextField
             size="small"
             select
@@ -139,6 +127,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
               "& .MuiInputBase-root": {
                 height: 30,
                 borderRadius: 0,
+                mr: 1
               },
             }}
           >
@@ -155,6 +144,59 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
               All
             </MenuItem>
           </TextField>
+          <IconButton
+            onClick={handleRefresh}
+            color="primary"
+            sx={{
+              marginRight: 1,
+              p: 0.25,
+              border: "1px solid",
+              borderColor: "divider", // Matches the TextField's default border color
+              borderRadius: "0px",
+              "&:hover": {
+                borderColor: (theme) => theme.palette.text.primary
+              }
+            }}
+            aria-label="refresh"
+          >
+            <FilterAltRounded style={{ fontSize: "26px" }} />
+          </IconButton>
+          <IconButton
+            onClick={handleRefresh}
+            color="primary"
+            sx={{
+              marginRight: 1,
+              p: 0.25,
+              border: "1px solid",
+              borderColor: "divider", // Matches the TextField's default border color
+              borderRadius: "0px",
+              "&:hover": {
+                borderColor: (theme) => theme.palette.text.primary
+              }
+            }}
+            aria-label="refresh"
+          >
+            <SaveRounded style={{ fontSize: "26px" }} />
+          </IconButton>
+          <IconButton
+            onClick={handleRefresh}
+            color="primary"
+            sx={{
+              marginRight: 1,
+              p: 0.25,
+              border: "1px solid",
+              borderColor: "divider", // Matches the TextField's default border color
+              borderRadius: "0px",
+              "&:hover": {
+                borderColor: (theme) => theme.palette.text.primary
+              }
+            }}
+            aria-label="refresh"
+          >
+            <ReplayCircleFilledIcon style={{ fontSize: "26px" }} />
+
+          </IconButton>
+
           <ColumnVisibilityControl
             table={table}
             anchorEl={anchorEl}

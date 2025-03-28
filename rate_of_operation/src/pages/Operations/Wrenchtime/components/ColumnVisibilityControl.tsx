@@ -55,6 +55,9 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
             border: "1px solid",
             borderColor: "divider", // Matches the TextField's default border color
             borderRadius: "0px",
+            "&:hover": {
+              borderColor: (theme) => theme.palette.text.primary
+            }
           }}
         >
           <VisibilityIcon
