@@ -75,10 +75,10 @@ const CellContent: React.FC<{
           display: "flex",
           alignItems: "center",
           justifyContent:
-            index === 3 || index === 16 ? "space-between" : "flex-start",
+            index === 3 || index === 17 ? "space-between" : "flex-start",
         }}
       >
-        {isEditing && index === 16 ? (
+        {isEditing && index === 17 ? (
           <input
             type="text"
             value={editedValue}
@@ -124,7 +124,7 @@ const CellContent: React.FC<{
             )}
           </IconButton>
         )}
-        {index === 16 && (
+        {index === 17 && (
           <IconButton
             size="small"
             onClick={isEditing ? handleSaveClick : handleEditClick}
