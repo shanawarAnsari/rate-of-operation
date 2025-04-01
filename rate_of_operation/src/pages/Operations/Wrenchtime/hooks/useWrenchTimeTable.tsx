@@ -9,7 +9,7 @@ import {
 import { useColumnVisibility } from "./useColumnVisibility";
 import { usePagination } from "./usePagination";
 import { useSearch } from "./useSearch";
-import { IconButton } from "@mui/material";
+import { IconButton, Typography } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check"; // Import Check icon
 import DoneAllIcon from "@mui/icons-material/DoneAll"; // Import DoneAll icon
 import DoneIcon from "@mui/icons-material/Done";
@@ -18,6 +18,7 @@ import { PublishedWithChanges } from "@mui/icons-material";
 import Tooltip from "@mui/material/Tooltip"; // Import Tooltip
 import Snackbar from "@mui/material/Snackbar"; // Import Snackbar
 import Alert from "@mui/material/Alert"; // Import Alert
+import { EditSetupTimeDialog } from "../components/EditSetupTimeDialog"; // Import the dialog component
 
 const CellContent: React.FC<{
   value: any;
@@ -26,13 +27,33 @@ const CellContent: React.FC<{
   rowIndex: number; // Add rowIndex prop
   updatedRows: Record<number, boolean>; // Add updatedRows prop
   setUpdatedRows: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
-}> = ({ value, index, rowData, rowIndex, updatedRows, setUpdatedRows }) => {
+  editingRowIndex: number | null; // Add editingRowIndex prop
+  setEditingRowIndex: React.Dispatch<React.SetStateAction<number | null>>;
+}> = ({
+  value,
+  index,
+  rowData,
+  rowIndex,
+  updatedRows,
+  setUpdatedRows,
+  editingRowIndex,
+  setEditingRowIndex,
+}) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const [isResolved, setIsResolved] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editedValue, setEditedValue] = useState(value);
-  const [snackbarOpen, setSnackbarOpen] = useState(false); // State for snackbar
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  const dropdownOptions = Object.keys(rowData)
+    .slice(22)
+    .map((key) => ({
+      label: key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+      value: rowData[key] || "N/A",
+    }))
+    .filter((option) => option.value !== undefined && option.value !== "");
 
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
@@ -48,12 +69,14 @@ const CellContent: React.FC<{
 
   const handleEditClick = () => {
     setIsEditing(true);
+    setEditingRowIndex(rowIndex); // Set editing row index
   };
 
   const handleSaveClick = () => {
     if (/^\d*\.?\d*$/.test(editedValue)) {
       // Validate input for numbers and decimals
       setIsEditing(false);
+      setEditingRowIndex(null); // Clear editing row index
       console.log("Saved value:", editedValue);
       // Mark the row as updated (Tro value is updated)
       setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
@@ -66,6 +89,21 @@ const CellContent: React.FC<{
     setEditedValue(event.target.value);
   };
 
+  const handleDialogOpen = () => {
+    setDialogOpen(true);
+  };
+
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+  };
+
+  const handleValueUpdate = (newValue: any) => {
+    setEditedValue(newValue);
+    rowData.new_setup_time = newValue; // Update the row data
+    setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true })); // Mark row as updated
+    handleDialogClose();
+  };
+
   return (
     <>
       <div
@@ -75,22 +113,25 @@ const CellContent: React.FC<{
           display: "flex",
           alignItems: "center",
           justifyContent:
-            index === 3 || index === 16 ? "space-between" : "flex-start",
+            index === 3 || index === 17 ? "space-between" : "flex-start",
         }}
       >
-        {isEditing && index === 16 ? (
-          <input
-            type="text"
-            value={editedValue}
-            onChange={handleInputChange}
-            style={{
-              width: "100%",
-              padding: "4px",
-              fontSize: "0.9rem",
-              border: "1px solid lightgray",
-              borderRadius: "4px",
-            }}
-          />
+        {index === 17 ? (
+          <>
+            <Typography variant="body2" style={{ marginRight: "8px" }}>
+              {editedValue || "N/A"}
+            </Typography>
+            <IconButton
+              size="small"
+              onClick={handleDialogOpen}
+              disabled={editingRowIndex !== null && editingRowIndex !== rowIndex}
+            >
+              <EditIcon
+                fontSize="small"
+                sx={{ color: (theme) => theme.palette.primary.main }}
+              />
+            </IconButton>
+          </>
         ) : (
           String(value)
         )}
@@ -124,34 +165,14 @@ const CellContent: React.FC<{
             )}
           </IconButton>
         )}
-        {index === 16 && (
-          <IconButton
-            size="small"
-            onClick={isEditing ? handleSaveClick : handleEditClick}
-            sx={{
-              borderRadius: "50%",
-              padding: "4px",
-              "&:hover": { backgroundColor: (theme) => theme.palette.grey[200] },
-            }}
-          >
-            {isEditing ? (
-              <DoneIcon
-                sx={{
-                  fontSize: "1.25rem",
-                  color: (theme) => theme.palette.primary.main,
-                }}
-              />
-            ) : (
-              <EditIcon
-                sx={{
-                  fontSize: "1.25rem",
-                  color: (theme: any) => theme.palette.primary.main,
-                }}
-              />
-            )}
-          </IconButton>
-        )}
       </div>
+      <EditSetupTimeDialog
+        open={dialogOpen}
+        onClose={handleDialogClose}
+        onUpdate={handleValueUpdate}
+        originalValue={value}
+        dropdownOptions={dropdownOptions} // Pass dropdown options
+      />
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={3000}
@@ -177,6 +198,7 @@ export const useWrenchTimeTable = (data: any[]) => {
 
   // New state to track updated Tro values per row
   const [updatedRows, setUpdatedRows] = useState<Record<number, boolean>>({});
+  const [editingRowIndex, setEditingRowIndex] = useState<number | null>(null);
 
   const columns = useMemo<ColumnDef<any>[]>(() => {
     const keys = Object.keys(data[0] || {});
@@ -191,13 +213,15 @@ export const useWrenchTimeTable = (data: any[]) => {
           rowIndex={info.row.index} // Pass row index
           updatedRows={updatedRows} // Pass updated status map
           setUpdatedRows={setUpdatedRows} // Pass updater callback
+          editingRowIndex={editingRowIndex} // Pass editing row index
+          setEditingRowIndex={setEditingRowIndex} // Pass editing row index updater
         />
       ),
       minSize: 120,
       maxSize: 1000,
       enableSorting: true,
     }));
-  }, [data, updatedRows]); // Include updatedRows in dependency
+  }, [data, updatedRows, editingRowIndex]); // Include updatedRows and editingRowIndex in dependency
 
   const table = useReactTable({
     data,
