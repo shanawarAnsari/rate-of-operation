@@ -8,6 +8,7 @@ import {
   Checkbox,
   IconButton,
   Collapse,
+  Tooltip,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -56,16 +57,18 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
             borderColor: "divider", // Matches the TextField's default border color
             borderRadius: "0px",
             "&:hover": {
-              borderColor: (theme) => theme.palette.text.primary
-            }
+              borderColor: (theme) => theme.palette.text.primary,
+            },
           }}
         >
-          <VisibilityIcon
-            sx={{
-              fontSize: "26px",
-              color: theme.palette.primary.main,
-            }}
-          />
+          <Tooltip title="Column Visibility" arrow placement="top">
+            <VisibilityIcon
+              sx={{
+                fontSize: "26px",
+                color: theme.palette.primary.main,
+              }}
+            />
+          </Tooltip>
         </IconButton>
       ) : (
         <Collapse in={showDropdown} timeout={500}>

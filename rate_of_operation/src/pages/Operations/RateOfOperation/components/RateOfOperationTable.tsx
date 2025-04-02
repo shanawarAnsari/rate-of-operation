@@ -13,6 +13,7 @@ import {
   InputAdornment,
   MenuItem,
   IconButton,
+  Tooltip,
 } from "@mui/material";
 import { useRateOfOperationTable } from "../hooks/useRateOfOperationTable";
 import SearchInput from "./SearchInput";
@@ -21,6 +22,7 @@ import TableHeader from "./TableHeader";
 import TableBodyComponent from "./TableBody";
 import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
 import { FilterAltRounded, SaveRounded } from "@mui/icons-material";
+import FilterPopper from "./filters/FilterPopper";
 
 interface RateOfOperationTableProps {
   data: any[];
@@ -46,6 +48,9 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
   const [selectedCategory, setSelectedCategory] = useState<string>("Personal Care");
   const [selectedReviewedStatus, setSelectedReviewedStatus] = useState<string>("N");
 
+  const [filterAnchorEl, setFilterAnchorEl] = useState<HTMLElement | null>(null);
+  const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
+
   const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedCategory(event.target.value);
     // Add logic to filter table data based on category
@@ -61,6 +66,19 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
   const handleRefresh = () => {
     // Add logic to reload the data into the table
     console.log("Data reloaded");
+  };
+
+  const handleFilterIconClick = (event: React.MouseEvent<HTMLElement>) => {
+    setFilterAnchorEl(event.currentTarget);
+  };
+
+  const handleFilterClose = () => {
+    setFilterAnchorEl(null);
+  };
+
+  const handleApplyFilters = (appliedFilters: { [key: string]: string[] }) => {
+    setFilters(appliedFilters);
+    // Add logic to filter table data based on applied filters
   };
 
   return (
@@ -89,7 +107,6 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
           handleSearchChange={handleSearchChange}
         />
         <Box sx={{ display: "flex", alignItems: "center", gap: 0 }}>
-
           <TextField
             size="small"
             select
@@ -127,7 +144,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
               "& .MuiInputBase-root": {
                 height: 30,
                 borderRadius: 0,
-                mr: 1
+                mr: 1,
               },
             }}
           >
@@ -144,58 +161,61 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
               All
             </MenuItem>
           </TextField>
-          <IconButton
-            onClick={handleRefresh}
-            color="primary"
-            sx={{
-              marginRight: 1,
-              p: 0.25,
-              border: "1px solid",
-              borderColor: "divider", // Matches the TextField's default border color
-              borderRadius: "0px",
-              "&:hover": {
-                borderColor: (theme) => theme.palette.text.primary
-              }
-            }}
-            aria-label="refresh"
-          >
-            <FilterAltRounded style={{ fontSize: "26px" }} />
-          </IconButton>
-          <IconButton
-            onClick={handleRefresh}
-            color="primary"
-            sx={{
-              marginRight: 1,
-              p: 0.25,
-              border: "1px solid",
-              borderColor: "divider", // Matches the TextField's default border color
-              borderRadius: "0px",
-              "&:hover": {
-                borderColor: (theme) => theme.palette.text.primary
-              }
-            }}
-            aria-label="refresh"
-          >
-            <SaveRounded style={{ fontSize: "26px" }} />
-          </IconButton>
-          <IconButton
-            onClick={handleRefresh}
-            color="primary"
-            sx={{
-              marginRight: 1,
-              p: 0.25,
-              border: "1px solid",
-              borderColor: "divider", // Matches the TextField's default border color
-              borderRadius: "0px",
-              "&:hover": {
-                borderColor: (theme) => theme.palette.text.primary
-              }
-            }}
-            aria-label="refresh"
-          >
-            <ReplayCircleFilledIcon style={{ fontSize: "26px" }} />
-
-          </IconButton>
+          <Tooltip title="Filters" placement="top">
+            <IconButton
+              onClick={handleFilterIconClick}
+              color="primary"
+              sx={{
+                marginRight: 1,
+                p: 0.25,
+                border: "1px solid",
+                borderColor: "divider", // Matches the TextField's default border color
+                borderRadius: "0px",
+                "&:hover": {
+                  borderColor: (theme) => theme.palette.text.primary,
+                },
+              }}
+              aria-label="filter"
+            >
+              <FilterAltRounded style={{ fontSize: "26px" }} />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Save" placement="top">
+            <IconButton
+              onClick={handleRefresh}
+              color="primary"
+              sx={{
+                marginRight: 1,
+                p: 0.25,
+                border: "1px solid",
+                borderColor: "divider", // Matches the TextField's default border color
+                borderRadius: "0px",
+                "&:hover": {
+                  borderColor: (theme) => theme.palette.text.primary,
+                },
+              }}
+              aria-label="save"
+            >
+              <SaveRounded style={{ fontSize: "26px" }} />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Reload" placement="top">
+            <IconButton
+              onClick={handleRefresh}
+              color="primary"
+              sx={{
+                marginRight: 1,
+                p: 0.25,
+                border: "1px solid",
+                borderColor: "divider", // Matches the TextField's default border color
+                borderRadius: "0px",
+                "&:hover": {},
+              }}
+              aria-label="refresh"
+            >
+              <ReplayCircleFilledIcon style={{ fontSize: "26px" }} />
+            </IconButton>
+          </Tooltip>
 
           <ColumnVisibilityControl
             table={table}
@@ -209,6 +229,13 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
           />
         </Box>
       </Box>
+      <FilterPopper
+        anchorEl={filterAnchorEl}
+        open={Boolean(filterAnchorEl)}
+        onClose={handleFilterClose}
+        data={data}
+        onApply={handleApplyFilters}
+      />
       <TableContainer
         component={Paper}
         sx={{

@@ -13,6 +13,7 @@ import {
   InputAdornment,
   MenuItem,
   IconButton,
+  Tooltip, // Added Tooltip import
 } from "@mui/material";
 import { useWrenchTimeTable } from "../hooks/useWrenchTimeTable";
 import SearchInput from "./SearchInput";
@@ -143,56 +144,62 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
               All
             </MenuItem>
           </TextField>
-          <IconButton
-            onClick={handleRefresh}
-            color="primary"
-            sx={{
-              marginRight: 1,
-              p: 0.25,
-              border: "1px solid",
-              borderColor: "divider", // Matches the TextField's default border color
-              borderRadius: "0px",
-              "&:hover": {
-                borderColor: (theme) => theme.palette.text.primary,
-              },
-            }}
-            aria-label="refresh"
-          >
-            <FilterAltRounded style={{ fontSize: "26px" }} />
-          </IconButton>
-          <IconButton
-            onClick={handleRefresh}
-            color="primary"
-            sx={{
-              marginRight: 1,
-              p: 0.25,
-              border: "1px solid",
-              borderColor: "divider", // Matches the TextField's default border color
-              borderRadius: "0px",
-              "&:hover": {
-                borderColor: (theme) => theme.palette.text.primary,
-              },
-            }}
-            aria-label="refresh"
-          >
-            <SaveRounded style={{ fontSize: "26px" }} />
-          </IconButton>
-          <IconButton
-            onClick={handleRefresh}
-            color="primary"
-            sx={{
-              p: 0.25,
-              border: "1px solid",
-              borderColor: "divider", // Matches the TextField's default border color
-              borderRadius: "0px",
-              "&:hover": {
-                borderColor: (theme) => theme.palette.text.primary,
-              },
-            }}
-            aria-label="refresh"
-          >
-            <ReplayCircleFilledIcon style={{ fontSize: "26px" }} />
-          </IconButton>
+          <Tooltip title="Filter" placement="top">
+            <IconButton
+              onClick={handleRefresh}
+              color="primary"
+              sx={{
+                marginRight: 1,
+                p: 0.25,
+                border: "1px solid",
+                borderColor: "divider", // Matches the TextField's default border color
+                borderRadius: "0px",
+                "&:hover": {
+                  borderColor: (theme) => theme.palette.text.primary,
+                },
+              }}
+              aria-label="refresh"
+            >
+              <FilterAltRounded style={{ fontSize: "26px" }} />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Save" placement="top">
+            <IconButton
+              onClick={handleRefresh}
+              color="primary"
+              sx={{
+                marginRight: 1,
+                p: 0.25,
+                border: "1px solid",
+                borderColor: "divider", // Matches the TextField's default border color
+                borderRadius: "0px",
+                "&:hover": {
+                  borderColor: (theme) => theme.palette.text.primary,
+                },
+              }}
+              aria-label="refresh"
+            >
+              <SaveRounded style={{ fontSize: "26px" }} />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Reload" placement="top">
+            <IconButton
+              onClick={handleRefresh}
+              color="primary"
+              sx={{
+                p: 0.25,
+                border: "1px solid",
+                borderColor: "divider", // Matches the TextField's default border color
+                borderRadius: "0px",
+                "&:hover": {
+                  borderColor: (theme) => theme.palette.text.primary,
+                },
+              }}
+              aria-label="refresh"
+            >
+              <ReplayCircleFilledIcon style={{ fontSize: "26px" }} />
+            </IconButton>
+          </Tooltip>
 
           <ColumnVisibilityControl
             table={table}
