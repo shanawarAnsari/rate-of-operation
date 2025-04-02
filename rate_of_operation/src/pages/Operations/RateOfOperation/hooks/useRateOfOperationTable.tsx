@@ -10,55 +10,50 @@ import { useColumnVisibility } from "./useColumnVisibility";
 import { usePagination } from "./usePagination";
 import { useSearch } from "./useSearch";
 import { IconButton, Typography, useTheme } from "@mui/material";
-import { PublishedWithChanges, } from "@mui/icons-material";
+import { PublishedWithChanges } from "@mui/icons-material";
 import CheckIcon from "@mui/icons-material/Check";
 import EditIcon from "@mui/icons-material/Edit"; // Import the pencil icon
 import DoneAllIcon from "@mui/icons-material/DoneAll"; // Import DoneAll icon
-import DoneIcon from "@mui/icons-material/Done"; // Import Done icon
 import Tooltip from "@mui/material/Tooltip"; // Import Tooltip
-import Snackbar from "@mui/material/Snackbar"; // Import Snackbar
-import Alert from "@mui/material/Alert"; // Import Alert
+import { EditTROValueDialog } from "../components/EditTROValueDialog"; // Import the dialog component
 
 const CellContent: React.FC<{
   value: any;
   index: number;
   rowData: any;
-  rowIndex: number; // Add rowIndex prop
-  updatedRows: Record<number, boolean>; // Add updatedRows prop
+  rowIndex: number;
+  updatedRows: Record<number, boolean>;
   setUpdatedRows: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
 }> = ({ value, index, rowData, rowIndex, updatedRows, setUpdatedRows }) => {
   const [isResolved, setIsResolved] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedValue, setEditedValue] = useState(value);
-  const [snackbarOpen, setSnackbarOpen] = useState(false); // State for snackbar
+  const [dialogOpen, setDialogOpen] = useState(false); // State for dialog visibility
   const theme = useTheme();
-  const handleSnackbarClose = () => {
-    setSnackbarOpen(false);
-  };
 
   const handleToggleResolve = () => {
     setIsResolved((prev) => !prev);
   };
 
   const handleEditClick = () => {
-    setIsEditing(true);
+    setDialogOpen(true); // Open the dialog
   };
 
-  const handleSaveClick = () => {
-    if (/^\d*\.?\d*$/.test(editedValue)) {
-      // Validate input for numbers and decimals
-      setIsEditing(false);
-      console.log("Saved value:", editedValue);
-      // Mark the row as updated (Tro value is updated)
-      setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
-    } else {
-      setSnackbarOpen(true); // Show snackbar on error
-    }
+  const handleDialogClose = () => {
+    setDialogOpen(false); // Close the dialog
   };
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEditedValue(event.target.value);
+  const handleDialogUpdate = (newValue: any) => {
+    console.log("Updated value:", newValue);
+    setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true })); // Mark the row as updated
+    setDialogOpen(false); // Close the dialog
   };
+
+  // Extract dropdown options from column index 22 onwards
+  const dropdownOptions = Object.keys(rowData)
+    .slice(24)
+    .map((key) => ({
+      label: key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+      value: rowData[key] || "N/A",
+    }));
 
   return (
     <>
@@ -72,22 +67,7 @@ const CellContent: React.FC<{
             index === 4 || index === 18 ? "space-between" : "flex-start",
         }}
       >
-        {isEditing && index === 18 ? (
-          <input
-            type="text"
-            value={editedValue}
-            onChange={handleInputChange}
-            style={{
-              width: "100%",
-              padding: "4px",
-              fontSize: "0.9rem",
-              border: "1px solid lightgray",
-              borderRadius: "4px",
-            }}
-          />
-        ) : (
-          String(value)
-        )}
+        {String(value)}
         {index === 4 && (
           <IconButton size="small" onClick={handleToggleResolve}>
             {isResolved ? (
@@ -98,10 +78,17 @@ const CellContent: React.FC<{
                     <>
                       Recipe has been marked Reviewed.
                       <br />
-                      <Typography color={'#0bdd00'} sx={{ fontSize: '12px', fontWeight: 600 }}> New  TRO Override</Typography>: {rowData.new_tRO || "N/A"}
+                      <Typography
+                        color={"#0bdd00"}
+                        sx={{ fontSize: "12px", fontWeight: 600 }}
+                      >
+                        New TRO Override
+                      </Typography>
+                      : {rowData.new_tRO || "N/A"}
                     </>
                   }
-                  arrow              >
+                  arrow
+                >
                   <DoneAllIcon sx={{ color: "#0bdd00", transition: "color 0.3s" }} />
                 </Tooltip>
               ) : (
@@ -111,13 +98,21 @@ const CellContent: React.FC<{
                     <>
                       Recipe has been marked Reviewed.
                       <br />
-                      <Typography color={theme.palette.primary.main} sx={{ fontSize: '12px', fontWeight: 600 }}> New TRO</Typography>: {rowData.new_tRO || "N/A"}
+                      <Typography
+                        color={theme.palette.primary.main}
+                        sx={{ fontSize: "12px", fontWeight: 600 }}
+                      >
+                        New TRO
+                      </Typography>
+                      : {rowData.new_tRO || "N/A"}
                     </>
                   }
-                  arrow              >
+                  arrow
+                >
                   <CheckIcon sx={{ color: "#0bdd00", transition: "color 0.3s" }} />
                 </Tooltip>
-              )) : (
+              )
+            ) : (
               <Tooltip
                 placement="top"
                 title={
@@ -142,41 +137,29 @@ const CellContent: React.FC<{
         {index === 18 && (
           <IconButton
             size="small"
-            onClick={isEditing ? handleSaveClick : handleEditClick}
+            onClick={handleEditClick} // Open dialog on click
             sx={{
               borderRadius: "50%",
               padding: "4px",
               "&:hover": { backgroundColor: (theme) => theme.palette.grey[200] },
             }}
           >
-            {isEditing ? (
-              <DoneIcon
-                sx={{
-                  fontSize: "1.25rem",
-                  color: (theme) => theme.palette.primary.main,
-                }}
-              />
-            ) : (
-              <EditIcon
-                sx={{
-                  fontSize: "1.25rem",
-                  color: (theme) => theme.palette.primary.main,
-                }}
-              />
-            )}
+            <EditIcon
+              sx={{
+                fontSize: "1.25rem",
+                color: (theme) => theme.palette.primary.main,
+              }}
+            />
           </IconButton>
         )}
       </div>
-      <Snackbar
-        open={snackbarOpen}
-        autoHideDuration={3000}
-        onClose={handleSnackbarClose}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-      >
-        <Alert onClose={handleSnackbarClose} severity="error" sx={{ width: "100%" }}>
-          Please enter a valid number.
-        </Alert>
-      </Snackbar>
+      <EditTROValueDialog
+        open={dialogOpen}
+        onClose={handleDialogClose}
+        onUpdate={handleDialogUpdate}
+        dropdownOptions={dropdownOptions} // Pass dynamic dropdown options
+        originalValue={value}
+      />
     </>
   );
 };

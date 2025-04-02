@@ -58,6 +58,11 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
     // Add logic to filter table data based on reviewed status
   };
 
+  const handleRefresh = () => {
+    // Add logic to reload the data into the table
+    console.log("Data reloaded");
+  };
+
   return (
     <Box
       sx={{
@@ -121,7 +126,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
               "& .MuiInputBase-root": {
                 height: 30,
                 borderRadius: 0,
-                mr: 1
+                mr: 1,
               },
             }}
           >
@@ -139,7 +144,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
             </MenuItem>
           </TextField>
           <IconButton
-            onClick={() => { }}
+            onClick={handleRefresh}
             color="primary"
             sx={{
               marginRight: 1,
@@ -148,15 +153,15 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
               borderColor: "divider", // Matches the TextField's default border color
               borderRadius: "0px",
               "&:hover": {
-                borderColor: (theme) => theme.palette.text.primary
-              }
+                borderColor: (theme) => theme.palette.text.primary,
+              },
             }}
             aria-label="refresh"
           >
             <FilterAltRounded style={{ fontSize: "26px" }} />
           </IconButton>
           <IconButton
-            onClick={() => { }}
+            onClick={handleRefresh}
             color="primary"
             sx={{
               marginRight: 1,
@@ -165,15 +170,15 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
               borderColor: "divider", // Matches the TextField's default border color
               borderRadius: "0px",
               "&:hover": {
-                borderColor: (theme) => theme.palette.text.primary
-              }
+                borderColor: (theme) => theme.palette.text.primary,
+              },
             }}
             aria-label="refresh"
           >
             <SaveRounded style={{ fontSize: "26px" }} />
           </IconButton>
           <IconButton
-            onClick={() => { }}
+            onClick={handleRefresh}
             color="primary"
             sx={{
               p: 0.25,
@@ -181,8 +186,8 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
               borderColor: "divider", // Matches the TextField's default border color
               borderRadius: "0px",
               "&:hover": {
-                borderColor: (theme) => theme.palette.text.primary
-              }
+                borderColor: (theme) => theme.palette.text.primary,
+              },
             }}
             aria-label="refresh"
           >
