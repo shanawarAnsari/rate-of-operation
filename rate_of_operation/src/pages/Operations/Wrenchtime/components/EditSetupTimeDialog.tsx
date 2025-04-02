@@ -156,10 +156,11 @@ export const EditSetupTimeDialog: React.FC<EditSetupTimeDialogProps> = ({
       </DialogContent>
       <Divider variant="fullWidth" sx={{ mb: 2 }} />
       <DialogActions>
-        <Button onClick={onClose} color="secondary" variant="outlined">
+        <Button onClick={onClose} color="secondary" variant="outlined" size="small">
           Cancel
         </Button>
         <Button
+          size="small"
           onClick={handleCustomInputSubmit}
           color="primary"
           disabled={!!error || !customValue}
