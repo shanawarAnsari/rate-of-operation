@@ -31,6 +31,11 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
 }) => {
   const [customValue, setCustomValue] = useState("");
   const [error, setError] = useState("");
+  const [comments, setComments] = useState("")
+
+  const handleCommentChange = (e: any) => {
+    setComments(e.target.value)
+  }
 
   const handleOptionSelect = (value: any) => {
     onUpdate(value);
@@ -130,7 +135,8 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
         </Grid>
         <Box
           sx={{
-            my: 3,
+            mt: 3,
+            mb: 2,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -151,6 +157,16 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
             }
           />
         </Box>
+        <TextField
+          sx={{ maxWidth: "100%" }}
+          label="Comments"
+          variant="outlined"
+          fullWidth
+          value={comments}
+          onChange={handleCommentChange}
+          size="small"
+
+        />
       </DialogContent>
       <Divider variant="fullWidth" sx={{ mb: 2 }} />
       <DialogActions>
