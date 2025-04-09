@@ -282,7 +282,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
               value={table.getState().pagination.pageSize}
               onChange={handleRowsPerPageChange}
               label="Rows per page"
-              sx={{ fontSize: "0.75rem" }}
+              sx={{ fontSize: "0.75rem", borderRadius: 0 }}
             >
               {[5, 10, 20, 35, 50, 100].map((pageSize) => (
                 <MenuItem key={pageSize} value={pageSize}>
@@ -309,7 +309,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
                   of {table.getPageCount()}
                 </InputAdornment>
               ),
-              inputProps: { style: { width: "40px" }, "aria-label": "page number" },
+              inputProps: { style: { width: "40px" }, "aria-label": "page number", },
             }}
             sx={{
               width: "120px",
