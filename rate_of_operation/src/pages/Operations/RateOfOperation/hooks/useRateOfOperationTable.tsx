@@ -38,22 +38,119 @@ const CellContent: React.FC<{
   };
 
   const handleDialogClose = () => {
-    setDialogOpen(false); // Close the dialog
+    setDialogOpen(false);
   };
 
   const handleDialogUpdate = (newValue: any) => {
     console.log("Updated value:", newValue);
-    setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true })); // Mark the row as updated
-    setDialogOpen(false); // Close the dialog
+    setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
+    setDialogOpen(false);
   };
+  debugger;
+  const dropdownOptions = [
+    { label: "AI/ML TRO", value: rowData.aiml_RO || "N/A" },
 
-  // Extract dropdown options from column index 22 onwards
-  const dropdownOptions = Object.keys(rowData)
-    .slice(24)
-    .map((key) => ({
-      label: key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
-      value: rowData[key] || "N/A",
-    }));
+    {
+      label: "Asset SKU TRO (6mo)",
+      value: rowData.AssetSKU_tRO_6mo || "N/A",
+      subtext: `(N: ${rowData.AssetSKU_6mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset SKU TRO (5mo)",
+      value: rowData.AssetSKU_tRO_5mo || "N/A",
+      subtext: `(N: ${rowData.AssetSKU_5mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset SKU TRO (4mo)",
+      value: rowData.AssetSKU_tRO_4mo || "N/A",
+      subtext: `(N: ${rowData.AssetSKU_4mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset SKU TRO (3mo)",
+      value: rowData.AssetSKU_tRO_3mo || "N/A",
+      subtext: `(N: ${rowData.AssetSKU_3mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset SKU TRO (2mo)",
+      value: rowData.AssetSKU_tRO_2mo || "N/A",
+      subtext: `(N: ${rowData.AssetSKU_2mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset SKU TRO (1mo)",
+      value: rowData.AssetSKU_tRO_1mo || "N/A",
+      subtext: `(N: ${rowData.AssetSKU_1mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset Trade TRO (6mo)",
+      value: rowData.AssetTrade_tRO_6mo || "N/A",
+      subtext: `(N: ${rowData.AssetTrade_6mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset Trade TRO (5mo)",
+      value: rowData.AssetTrade_tRO_5mo || "N/A",
+      subtext: `(N: ${rowData.AssetTrade_5mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset Trade TRO (4mo)",
+      value: rowData.AssetTrade_tRO_4mo || "N/A",
+      subtext: `(N: ${rowData.AssetTrade_4mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset Trade TRO (3mo)",
+      value: rowData.AssetTrade_tRO_3mo || "N/A",
+      subtext: `(N: ${rowData.AssetTrade_3mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset Trade TRO (2mo)",
+      value: rowData.AssetTrade_tRO_2mo || "N/A",
+      subtext: `(N: ${rowData.AssetTrade_2mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset Trade TRO (1mo)",
+      value: rowData.AssetTrade_tRO_1mo || "N/A",
+      subtext: `(N: ${rowData.AssetTrade_1mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset PGPkCs TRO (6mo)",
+      value: rowData.AssetPGPkCs_tRO_6mo || "N/A",
+      subtext: `(N: ${rowData.AssetPGPKCs_6mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset PGPkCs TRO (3mo)",
+      value: rowData.AssetPGPkCs_tRO_3mo || "N/A",
+      subtext: `(N: ${rowData.AssetPGPKCs_3mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset PGPk TRO (6mo)",
+      value: rowData.AssetPGPk_tRO_6mo || "N/A",
+      subtext: `(N: ${rowData.AssetPGPK_6mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset PGPk TRO (3mo)",
+      value: rowData.AssetPGPk_tRO_3mo || "N/A",
+      subtext: `(N: ${rowData.AssetPGPK_3mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset PG TRO (6mo)",
+      value: rowData.AssetPG_tRO_6mo || "N/A",
+      subtext: `(N: ${rowData.AssetPG_6mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset PG TRO (3mo)",
+      value: rowData.AssetPG_tRO_3mo || "N/A",
+      subtext: `(N: ${rowData.AssetPG_3mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset TRO (6mo)",
+      value: rowData.Asset_tRO_6mo || "N/A",
+      subtext: `(N: ${rowData.Asset_6mo_N || "N/A"})`,
+    },
+    {
+      label: "Asset TRO (3mo)",
+      value: rowData.Asset_tRO_3mo || "N/A",
+      subtext: `(N: ${rowData.Asset_3mo_N || "N/A"})`,
+    },
+  ];
 
   return (
     <>

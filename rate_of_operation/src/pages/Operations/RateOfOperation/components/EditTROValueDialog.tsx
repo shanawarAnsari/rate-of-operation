@@ -18,7 +18,7 @@ interface EditTROValueDialogProps {
   open: boolean;
   onClose: () => void;
   onUpdate: (newValue: any) => void;
-  dropdownOptions: { label: string; value: any }[];
+  dropdownOptions: { label: string; value: any; subtext?: string }[];
   originalValue: any;
 }
 
@@ -31,11 +31,11 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
 }) => {
   const [customValue, setCustomValue] = useState("");
   const [error, setError] = useState("");
-  const [comments, setComments] = useState("")
+  const [comments, setComments] = useState("");
 
   const handleCommentChange = (e: any) => {
-    setComments(e.target.value)
-  }
+    setComments(e.target.value);
+  };
 
   const handleOptionSelect = (value: any) => {
     onUpdate(value);
@@ -93,33 +93,29 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
                 borderColor="grey.300"
                 borderRadius={1}
                 padding={1}
-                onClick={() =>
-                  !isNaN(option.value) && handleOptionSelect(option?.value)
-                }
+                onClick={() => handleOptionSelect(option.value)}
                 sx={{
-                  cursor: isNaN(option.value) ? "not-allowed" : "pointer",
-                  backgroundColor: isNaN(option.value)
-                    ? (theme) => theme.palette.action.disabledBackground
-                    : "inherit",
-                  transition: !isNaN(option.value)
-                    ? "background-color 0.4s ease, transform 0.2s ease"
-                    : "none",
-                  "&:hover": !isNaN(option?.value)
-                    ? {
-                      backgroundColor: (theme) => theme.palette.action.hover,
-                    }
-                    : undefined,
-                  "&:active": !isNaN(option?.value)
-                    ? {
-                      backgroundColor: (theme) => theme.palette.action.selected,
-                      transform: "scale(1.03)",
-                    }
-                    : undefined,
+                  cursor: "pointer",
+                  backgroundColor: "inherit",
+                  transition: "background-color 0.4s ease, transform 0.2s ease",
+                  "&:hover": {
+                    backgroundColor: (theme) => theme.palette.action.hover,
+                  },
+                  "&:active": {
+                    backgroundColor: (theme) => theme.palette.action.selected,
+                    transform: "scale(1.03)",
+                  },
                 }}
               >
-                <Typography variant="body2" style={{ flex: 1 }}>
-                  {option.label}:
-                </Typography>
+                <Box>
+                  <Typography variant="body2" sx={{ mb: -1 }}>
+                    {option.label}
+                  </Typography>
+
+                  <Typography variant="caption" color="textSecondary">
+                    {option?.subtext}
+                  </Typography>
+                </Box>
                 <Button
                   variant="outlined"
                   size="small"
@@ -149,7 +145,7 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
             fullWidth
             value={customValue}
             onChange={handleCustomInputChange}
-            error={!!error}
+            error={!!error && customValue !== ""}
             size="small"
             helperText={
               error ||
@@ -165,7 +161,6 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
           value={comments}
           onChange={handleCommentChange}
           size="small"
-
         />
       </DialogContent>
       <Divider variant="fullWidth" sx={{ mb: 2 }} />

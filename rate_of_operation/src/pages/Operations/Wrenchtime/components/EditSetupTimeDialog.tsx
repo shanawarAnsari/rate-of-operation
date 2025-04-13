@@ -143,7 +143,7 @@ export const EditSetupTimeDialog: React.FC<EditSetupTimeDialogProps> = ({
             fullWidth
             value={customValue}
             onChange={handleCustomInputChange}
-            error={!!error}
+            error={!!error && customValue !== ""}
             size="small"
             helperText={
               error ||
