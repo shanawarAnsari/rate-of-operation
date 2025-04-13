@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider, CssBaseline, Box, Container } from "@mui/material";
+import { ThemeProvider, CssBaseline, Box } from "@mui/material";
 import { getTheme } from "./theme";
 import TopNavbar from "./components/TopNavbar";
 import SideNavbar from "./components/SideNavbar";
@@ -46,9 +46,9 @@ function App() {
           <Box sx={{ display: "flex", flex: 1, overflow: "hidden" }}>
             <SideNavbar />
             <Box sx={{ flexGrow: 1, overflow: "auto", maxWidth: "100%" }}>
-              <Container maxWidth="xl" sx={{ mt: 1 }}>
+              <Box sx={{ m: 2 }}>
                 <AppRoutes />
-              </Container>
+              </Box>
             </Box>
           </Box>
         </Box>

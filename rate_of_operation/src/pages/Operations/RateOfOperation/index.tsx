@@ -70,9 +70,9 @@ const RateOfOperation: React.FC = () => {
           </Typography>
         </Box>
       </Stack>
-      <Container maxWidth="xl" sx={{ width: "100%", display: "flex", flexGrow: 1 }}>
+      <Box sx={{ width: "100%", display: "flex", flexGrow: 1 }}>
         <RateOfOperationTable data={mockData} />
-      </Container>
+      </Box>
     </Paper>
   );
 };

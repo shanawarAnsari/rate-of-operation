@@ -62,9 +62,9 @@ const Wrenchtime: React.FC = () => {
           </Typography>
         </Box>
       </Stack>
-      <Container maxWidth="xl" sx={{ width: "100%", display: "flex", flexGrow: 1 }}>
+      <Box sx={{ width: "100%", display: "flex", flexGrow: 1 }}>
         <WrenchtimeTable data={mockData} />
-      </Container>
+      </Box>
     </Paper>
   );
 };

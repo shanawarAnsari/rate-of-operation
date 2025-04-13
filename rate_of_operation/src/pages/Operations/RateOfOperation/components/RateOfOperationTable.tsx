@@ -90,6 +90,8 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
         flexDirection: "column",
         overflow: "hidden",
         paddingBottom: 2,
+        m: 1,
+        mx: 2,
       }}
     >
       <Box
@@ -309,7 +311,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
                   of {table.getPageCount()}
                 </InputAdornment>
               ),
-              inputProps: { style: { width: "40px" }, "aria-label": "page number", },
+              inputProps: { style: { width: "40px" }, "aria-label": "page number" },
             }}
             sx={{
               width: "120px",
