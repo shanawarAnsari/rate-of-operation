@@ -14,6 +14,7 @@ import {
   MenuItem,
   IconButton,
   Tooltip,
+  Menu,
 } from "@mui/material";
 import { useRateOfOperationTable } from "../hooks/useRateOfOperationTable";
 import SearchInput from "./SearchInput";
@@ -21,7 +22,7 @@ import ColumnVisibilityControl from "./ColumnVisibilityControl";
 import TableHeader from "./TableHeader";
 import TableBodyComponent from "./TableBody";
 import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
-import { FilterAltRounded, SaveRounded } from "@mui/icons-material";
+import { FilterAltRounded, SaveRounded, DownloadRounded } from "@mui/icons-material";
 import FilterPopper from "./filters/FilterPopper";
 
 interface RateOfOperationTableProps {
@@ -50,6 +51,8 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
 
   const [filterAnchorEl, setFilterAnchorEl] = useState<HTMLElement | null>(null);
   const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
+
+  const [downloadAnchorEl, setDownloadAnchorEl] = useState<HTMLElement | null>(null);
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedCategory(event.target.value);
@@ -81,6 +84,20 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
     // Add logic to filter table data based on applied filters
   };
 
+  const handleDownloadClick = (event: React.MouseEvent<HTMLElement>) => {
+    setDownloadAnchorEl(event.currentTarget);
+  };
+
+  const handleDownloadClose = () => {
+    setDownloadAnchorEl(null);
+  };
+
+  const handleDownload = (format: "excel" | "csv") => {
+    console.log(`Downloading as ${format}`);
+    // Add logic to download data as Excel or CSV
+    setDownloadAnchorEl(null);
+  };
+
   return (
     <Box
       sx={{
@@ -109,6 +126,37 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
           handleSearchChange={handleSearchChange}
         />
         <Box sx={{ display: "flex", alignItems: "center", gap: 0 }}>
+          <Tooltip title="Download" placement="top">
+            <IconButton
+              onClick={handleDownloadClick}
+              color="primary"
+              sx={{
+                marginRight: 1,
+                p: 0.25,
+                border: "1px solid",
+                borderColor: "divider",
+                borderRadius: "0px",
+                "&:hover": {
+                  borderColor: (theme) => theme.palette.text.primary,
+                },
+              }}
+              aria-label="download"
+            >
+              <DownloadRounded style={{ fontSize: "26px" }} />
+            </IconButton>
+          </Tooltip>
+          <Menu
+            anchorEl={downloadAnchorEl}
+            open={Boolean(downloadAnchorEl)}
+            onClose={handleDownloadClose}
+          >
+            <MenuItem onClick={() => handleDownload("excel")}>
+              Download as Excel
+            </MenuItem>
+            <MenuItem onClick={() => handleDownload("csv")}>
+              Download as CSV
+            </MenuItem>
+          </Menu>
           <TextField
             size="small"
             select
@@ -151,7 +199,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
             }}
           >
             <MenuItem value="Y" sx={{ fontSize: "0.75rem" }}>
-              Y
+              Y - Production Rate Web App
             </MenuItem>
             <MenuItem value="N" sx={{ fontSize: "0.75rem" }}>
               N

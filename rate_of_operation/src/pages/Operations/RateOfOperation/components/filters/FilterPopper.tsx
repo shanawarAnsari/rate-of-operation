@@ -187,8 +187,8 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
               options={[
                 "less than 0%",
                 "0% to 5%",
-                "6% to 10%",
-                "11% to 15%",
+                "5% to 10%",
+                "10% to 15%",
                 "above 15%",
               ]} // TRO Change options
               value={filters.tro_change}

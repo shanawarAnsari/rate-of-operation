@@ -129,6 +129,7 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
             </Grid>
           ))}
         </Grid>
+        <Divider variant="fullWidth" sx={{ my: 2 }} />
         <Box
           sx={{
             mt: 3,

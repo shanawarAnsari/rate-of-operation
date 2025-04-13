@@ -128,6 +128,7 @@ export const EditSetupTimeDialog: React.FC<EditSetupTimeDialogProps> = ({
             </Grid>
           ))}
         </Grid>
+        <Divider variant="fullWidth" sx={{ my: 2 }} />
         <Box
           sx={{
             my: 3,
