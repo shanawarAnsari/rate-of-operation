@@ -364,6 +364,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
               width: "120px",
               "& .MuiOutlinedInput-root": {
                 fontSize: "0.75rem",
+                borderRadius: 0,
               },
               "& .MuiInputLabel-root": {
                 fontSize: "0.85rem",
