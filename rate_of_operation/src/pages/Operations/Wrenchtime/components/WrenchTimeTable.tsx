@@ -13,7 +13,7 @@ import {
   InputAdornment,
   MenuItem,
   IconButton,
-  Tooltip, // Added Tooltip import
+  Tooltip,
 } from "@mui/material";
 import { useWrenchTimeTable } from "../hooks/useWrenchTimeTable";
 import SearchInput from "./SearchInput";
@@ -22,6 +22,7 @@ import TableHeader from "./TableHeader";
 import TableBodyComponent from "./TableBody";
 import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
 import { FilterAltRounded, SaveRounded } from "@mui/icons-material";
+import FilterPopper from "./filters/FilterPopper"; // Import FilterPopper
 
 interface WrenchTimeTableProps {
   data: any[];
@@ -46,6 +47,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
 
   const [selectedCategory, setSelectedCategory] = useState<string>("Personal Care");
   const [selectedReviewedStatus, setSelectedReviewedStatus] = useState<string>("N");
+  const [filterAnchorEl, setFilterAnchorEl] = useState<HTMLElement | null>(null);
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedCategory(event.target.value);
@@ -62,6 +64,19 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
   const handleRefresh = () => {
     // Add logic to reload the data into the table
     console.log("Data reloaded");
+  };
+
+  const handleFilterClick = (event: React.MouseEvent<HTMLElement>) => {
+    setFilterAnchorEl(filterAnchorEl ? null : event.currentTarget);
+  };
+
+  const handleFilterClose = () => {
+    setFilterAnchorEl(null);
+  };
+
+  const handleApplyFilters = (filters: { [key: string]: string[] }) => {
+    console.log("Applied Filters:", filters);
+    // Add logic to filter table data based on applied filters
   };
 
   return (
@@ -134,7 +149,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
             }}
           >
             <MenuItem value="Y" sx={{ fontSize: "0.75rem" }}>
-              Y
+              Y - Production Rate Web App
             </MenuItem>
             <MenuItem value="N" sx={{ fontSize: "0.75rem" }}>
               N
@@ -148,23 +163,30 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
           </TextField>
           <Tooltip title="Filter" placement="top">
             <IconButton
-              onClick={handleRefresh}
+              onClick={handleFilterClick}
               color="primary"
               sx={{
                 marginRight: 1,
                 p: 0.25,
                 border: "1px solid",
-                borderColor: "divider", // Matches the TextField's default border color
+                borderColor: "divider",
                 borderRadius: "0px",
                 "&:hover": {
                   borderColor: (theme) => theme.palette.text.primary,
                 },
               }}
-              aria-label="refresh"
+              aria-label="filter"
             >
               <FilterAltRounded style={{ fontSize: "26px" }} />
             </IconButton>
           </Tooltip>
+          <FilterPopper
+            anchorEl={filterAnchorEl}
+            open={Boolean(filterAnchorEl)}
+            onClose={handleFilterClose}
+            data={data}
+            onApply={handleApplyFilters}
+          />
           <Tooltip title="Save" placement="top">
             <IconButton
               onClick={handleRefresh}
@@ -173,7 +195,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
                 marginRight: 1,
                 p: 0.25,
                 border: "1px solid",
-                borderColor: "divider", // Matches the TextField's default border color
+                borderColor: "divider",
                 borderRadius: "0px",
                 "&:hover": {
                   borderColor: (theme) => theme.palette.text.primary,
@@ -191,7 +213,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
               sx={{
                 p: 0.25,
                 border: "1px solid",
-                borderColor: "divider", // Matches the TextField's default border color
+                borderColor: "divider",
                 borderRadius: "0px",
                 "&:hover": {
                   borderColor: (theme) => theme.palette.text.primary,
@@ -211,7 +233,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
             handleClose={handleClose}
             visibleColumnsCount={visibleColumnsCount}
             totalColumnsCount={totalColumnsCount - 2}
-            disableColumns={[0, 1, 2, 3, 4]} // Disable visibility control for the first 3 columns and 2 are already hidden
+            disableColumns={[0, 1, 2, 3, 4]}
           />
         </Box>
       </Box>

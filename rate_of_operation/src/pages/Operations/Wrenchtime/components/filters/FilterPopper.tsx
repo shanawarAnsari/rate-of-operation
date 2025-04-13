@@ -3,16 +3,11 @@ import {
   Box,
   Button,
   Checkbox,
-  FormControl,
-  InputLabel,
-  ListItemText,
-  MenuItem,
-  Popper,
-  Select,
-  Typography,
   TextField,
   Autocomplete,
   Divider,
+  Popper,
+  Typography,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
@@ -33,22 +28,18 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
   onApply,
 }) => {
   const [filters, setFilters] = useState<{ [key: string]: string[] }>({
-    resource: [],
-    material: [],
-    material_desc: [],
-    product_code: [],
-    trade_code: [],
-    prod_variant: [],
-    prod_size: [],
-    tro_change: [], // Add TRO Change to filters state
+    from_group: [],
+    to_group: [],
+    setup_matrix: [],
+    location: [],
+    from_machine: [],
+    from_size: [],
+    from_variant: [],
+    to_machine: [],
+    to_size: [],
+    to_variant: [],
+    setup_time_change: [],
   });
-
-  const handleFilterChange = (field: string) => (event: any) => {
-    setFilters((prev) => ({
-      ...prev,
-      [field]: event.target.value,
-    }));
-  };
 
   const handleApply = () => {
     onApply(filters);
@@ -57,29 +48,43 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
 
   const handleReset = () => {
     setFilters({
-      resource: [],
-      material: [],
-      material_desc: [],
-      product_code: [],
-      trade_code: [],
-      prod_variant: [],
-      prod_size: [],
-      tro_change: [],
+      from_group: [],
+      to_group: [],
+      setup_matrix: [],
+      location: [],
+      from_machine: [],
+      from_size: [],
+      from_variant: [],
+      to_machine: [],
+      to_size: [],
+      to_variant: [],
+      setup_time_change: [],
     });
     onApply({
-      resource: [],
-      material: [],
-      material_desc: [],
-      product_code: [],
-      trade_code: [],
-      prod_variant: [],
-      prod_size: [],
-      tro_change: [],
+      from_group: [],
+      to_group: [],
+      setup_matrix: [],
+      location: [],
+      from_machine: [],
+      from_size: [],
+      from_variant: [],
+      to_machine: [],
+      to_size: [],
+      to_variant: [],
+      setup_time_change: [],
     });
   };
 
   const getDistinctValues = (field: string) =>
     Array.from(new Set(data.map((item) => item[field])));
+
+  const setupTimeChangeOptions = [
+    "less than 0%",
+    "0% to 5%",
+    "6% to 10%",
+    "11% to 15%",
+    "above 15%",
+  ];
 
   return (
     <Popper
@@ -128,17 +133,20 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
               flex: 1,
               overflowY: "auto",
               mb: 2,
-              pr: 1, // Add padding for scrollbar
+              pr: 1,
             }}
           >
             {[
-              "resource",
-              "material",
-              "material_desc",
-              "product_code",
-              "trade_code",
-              "prod_variant",
-              "prod_size",
+              "from_group",
+              "to_group",
+              "setup_matrix",
+              "location",
+              "from_machine",
+              "from_size",
+              "from_variant",
+              "to_machine",
+              "to_size",
+              "to_variant",
             ].map((field) => (
               <Autocomplete
                 key={field}
@@ -149,11 +157,11 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                   event.stopPropagation();
                   setFilters((prev) => ({ ...prev, [field]: value }));
                 }}
-                disableCloseOnSelect // Prevent dropdown from closing after each selection
+                disableCloseOnSelect
                 renderInput={(params) => (
                   <TextField
                     {...params}
-                    label={field.replace("_", " ").toUpperCase()}
+                    label={field.replace(/_/g, " ").toUpperCase()}
                     size="small"
                     sx={{
                       mt: 1,
@@ -178,29 +186,23 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                   </li>
                 )}
                 sx={{
-                  "& .MuiAutocomplete-tag": { fontSize: 12 }, // Rendered selections
+                  "& .MuiAutocomplete-tag": { fontSize: 12 },
                 }}
               />
             ))}
             <Autocomplete
               multiple
-              options={[
-                "less than 0%",
-                "0% to 5%",
-                "6% to 10%",
-                "11% to 15%",
-                "above 15%",
-              ]} // TRO Change options
-              value={filters.tro_change}
+              options={setupTimeChangeOptions}
+              value={filters.setup_time_change}
               onChange={(event, value) => {
                 event.stopPropagation();
-                setFilters((prev) => ({ ...prev, tro_change: value }));
+                setFilters((prev) => ({ ...prev, setup_time_change: value }));
               }}
               disableCloseOnSelect
               renderInput={(params) => (
                 <TextField
                   {...params}
-                  label="TRO CHANGE"
+                  label="SETUP TIME CHANGE"
                   size="small"
                   sx={{
                     mt: 1,
