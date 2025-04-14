@@ -24,7 +24,7 @@ import TableBodyComponent from "./TableBody";
 import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
 import { FilterAltRounded, SaveRounded } from "@mui/icons-material";
 import FilterPopper from "./filters/FilterPopper";
-import DownloadIcon from "@mui/icons-material/Download";
+import { DownloadRounded } from "@mui/icons-material";
 
 interface WrenchTimeTableProps {
   data: any[];
@@ -140,7 +140,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
               }}
               aria-label="download"
             >
-              <DownloadIcon style={{ fontSize: "26px" }} />
+              <DownloadRounded style={{ fontSize: "26px" }} />
             </IconButton>
           </Tooltip>
           <Menu
@@ -148,7 +148,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
             open={Boolean(downloadAnchorEl)}
             onClose={handleDownloadClose}
           >
-            <MenuItem onClick={() => handleDownload("excel")}>
+            <MenuItem disabled onClick={() => handleDownload("excel")}>
               Download as Excel
             </MenuItem>
             <MenuItem onClick={() => handleDownload("csv")}>

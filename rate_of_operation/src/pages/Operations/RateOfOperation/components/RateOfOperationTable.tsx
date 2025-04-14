@@ -150,7 +150,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
             open={Boolean(downloadAnchorEl)}
             onClose={handleDownloadClose}
           >
-            <MenuItem onClick={() => handleDownload("excel")}>
+            <MenuItem disabled onClick={() => handleDownload("excel")}>
               Download as Excel
             </MenuItem>
             <MenuItem onClick={() => handleDownload("csv")}>
