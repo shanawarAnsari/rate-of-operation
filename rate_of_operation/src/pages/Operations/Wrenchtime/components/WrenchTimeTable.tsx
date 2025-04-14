@@ -148,7 +148,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
             open={Boolean(downloadAnchorEl)}
             onClose={handleDownloadClose}
           >
-            <MenuItem disabled onClick={() => handleDownload("excel")}>
+            <MenuItem onClick={() => handleDownload("excel")}>
               Download as Excel
             </MenuItem>
             <MenuItem onClick={() => handleDownload("csv")}>
