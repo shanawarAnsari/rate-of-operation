@@ -74,7 +74,6 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
           size="small"
           sx={{
             minWidth: 160,
-            mr: 2,
             "& .MuiInputBase-root": {
               height: 30,
               borderRadius: 0,
