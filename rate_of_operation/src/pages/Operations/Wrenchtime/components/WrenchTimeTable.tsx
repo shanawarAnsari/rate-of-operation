@@ -331,7 +331,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
               value={table.getState().pagination.pageSize}
               onChange={handleRowsPerPageChange}
               label="Rows per page"
-              sx={{ fontSize: "0.75rem" }}
+              sx={{ fontSize: "0.75rem", borderRadius: 0, mr: -2 }}
             >
               {[5, 10, 20, 35, 50, 100].map((pageSize) => (
                 <MenuItem key={pageSize} value={pageSize}>
