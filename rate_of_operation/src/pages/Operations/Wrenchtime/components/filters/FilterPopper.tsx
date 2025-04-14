@@ -79,7 +79,6 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
     Array.from(new Set(data.map((item) => item[field])));
 
   const setupTimeChangeOptions = [
-    "less than 0%",
     "0% to 5%",
     "5% to 10%",
     "10% to 15%",
@@ -202,7 +201,7 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
               renderInput={(params) => (
                 <TextField
                   {...params}
-                  label="SETUP TIME CHANGE"
+                  label="SETUP TIME CHANGE (abs)"
                   size="small"
                   sx={{
                     mt: 1,
