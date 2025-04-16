@@ -2,8 +2,6 @@ import { useState, useMemo, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider, CssBaseline, Box } from "@mui/material";
 import { getTheme } from "./theme";
-import { oktaAuth } from "./configs/oktaConfig";
-import { useUserStore } from "./store/userStore";
 import TopNavbar from "./components/TopNavbar";
 import SideNavbar from "./components/SideNavbar";
 import AppRoutes from "./routes";
@@ -39,26 +37,6 @@ function App() {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  const setUser = useUserStore(state => state.setUser);
-  const setIsLoggedIn = useUserStore(state => state.setIsLoggedIn)
-
-  useEffect(() => {
-    const syncUser = async () => {
-      const isAuthenticated = await oktaAuth.isAuthenticated();
-      if (isAuthenticated) {
-        const userInfo = await oktaAuth.getUser()
-        setUser({
-          name: userInfo.name || "",
-          email: userInfo.email || ""
-        })
-        setIsLoggedIn(true)
-      }
-      else {
-        setIsLoggedIn(false)
-      }
-    }
-    syncUser()
-  }, [setUser])
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>

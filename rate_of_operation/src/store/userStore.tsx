@@ -8,10 +8,14 @@ interface User {
 
 interface UserStore {
   user: User | null;
-  isLoggedIn: boolean;
+  isUserLoading: boolean;
+  isLoggedIn: boolean | null;
+  authToken: string | null;
   logout: () => void;
   setUser: (userData: User) => void;
   setIsLoggedIn: (val: boolean) => void;
+  setIsUserLoading: (val: boolean) => void;
+  setAuthToken: (token: string) => void;
 }
 
 export const useUserStore = create<UserStore>()(
@@ -19,9 +23,13 @@ export const useUserStore = create<UserStore>()(
     (set) => ({
       user: null,
       isLoggedIn: false,
+      isUserLoading: false,
+      authToken: null,
       setUser: (userData) => set({ user: userData }),
       setIsLoggedIn: (val) => set({ isLoggedIn: !!val }),
-      logout: () => set({ user: null })
+      setIsUserLoading: (val) => set({ isUserLoading: !!val }),
+      logout: () => set({ user: null }),
+      setAuthToken: (token) => set({ authToken: token }),
     }),
     {
       name: 'user-storage', // localStorage key
