@@ -12,7 +12,7 @@ const AuthGuard = ({ children }: any) => {
   const location = useLocation();
 
   useEffect(() => {
-    if (!authToken) {
+    if (!authToken && !isLoggedIn) {
       oktaAuth.token.getWithRedirect({
         responseType: ['token', 'id_token'],
         state: 'defaultrandomstring'
