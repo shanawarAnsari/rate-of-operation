@@ -2,9 +2,7 @@ import React from "react";
 import {
   Typography,
   Paper,
-  Container,
   Stack,
-  Divider,
   useTheme,
   Box,
 } from "@mui/material";

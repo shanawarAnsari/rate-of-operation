@@ -8,6 +8,7 @@ export const usePagination = (table: ReturnType<typeof useReactTable>) => {
   useEffect(() => {
     table.setPageSize(10);
     setPageInput("1");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [table]);
 
   const handlePageInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,6 +33,7 @@ export const usePagination = (table: ReturnType<typeof useReactTable>) => {
 
   useEffect(() => {
     setPageInput((table.getState().pagination.pageIndex + 1).toString());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [table.getState().pagination.pageIndex]);
 
   return {

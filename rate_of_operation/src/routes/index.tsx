@@ -1,7 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-
-import { oktaAuth } from '../configs/oktaConfig'
+import { Routes, Route } from "react-router-dom";
 // Import pages
 import Dashboard from "../pages/Dashboard";
 import RateOfOperation from "../pages/Operations/RateOfOperation";

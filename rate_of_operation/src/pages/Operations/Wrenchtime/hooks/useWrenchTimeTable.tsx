@@ -12,7 +12,6 @@ import { useSearch } from "./useSearch";
 import { IconButton, Typography } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check"; // Import Check icon
 import DoneAllIcon from "@mui/icons-material/DoneAll"; // Import DoneAll icon
-import DoneIcon from "@mui/icons-material/Done";
 import EditIcon from "@mui/icons-material/Edit";
 import { PublishedWithChanges } from "@mui/icons-material";
 import Tooltip from "@mui/material/Tooltip"; // Import Tooltip
@@ -39,192 +38,192 @@ const CellContent: React.FC<{
   editingRowIndex,
   setEditingRowIndex,
 }) => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const [isResolved, setIsResolved] = useState(false);
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedValue, setEditedValue] = useState(value);
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [dialogOpen, setDialogOpen] = useState(false);
+    const [isResolved, setIsResolved] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
+    const [editedValue, setEditedValue] = useState(value);
+    const [snackbarOpen, setSnackbarOpen] = useState(false);
+    const [dialogOpen, setDialogOpen] = useState(false);
 
-  const dropdownOptions = [
-    {
-      label: "AI/ML Setup Min",
-      value: rowData.aiml_setup_min || "N/A",
-    },
-    {
-      label: "Asset Group (6mo)",
-      value: rowData.AssetGroup_setup_min_6mo || "N/A",
-      subtext: `(N: ${rowData.AssetGroup_6mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset Group (3mo)",
-      value: rowData.AssetGroup_setup_min_3mo || "N/A",
-      subtext: `(N: ${rowData.AssetGroup_3mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset Size (6mo)",
-      value: rowData.AssetSize_setup_min_6mo || "N/A",
-      subtext: `(N: ${rowData.AssetSize_6mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset Size (3mo)",
-      value: rowData.AssetSize_setup_min_3mo || "N/A",
-      subtext: `(N: ${rowData.AssetSize_3mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset Variant (6mo)",
-      value: rowData.AssetVar_setup_min_6mo || "N/A",
-      subtext: `(N: ${rowData.AssetVar_6mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset Variant (3mo)",
-      value: rowData.AssetVar_setup_min_3mo || "N/A",
-      subtext: `(N: ${rowData.AssetVar_3mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset (6mo)",
-      value: rowData.Asset_setup_min_6mo || "N/A",
-      subtext: `(N: ${rowData.Asset_6mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset (3mo)",
-      value: rowData.Asset_setup_min_3mo || "N/A",
-      subtext: `(N: ${rowData.Asset_3mo_N || "N/A"})`,
-    },
-  ].filter((option) => option.value !== undefined && option.value !== "");
+    const dropdownOptions = [
+      {
+        label: "AI/ML Setup Min",
+        value: rowData.aiml_setup_min || "N/A",
+      },
+      {
+        label: "Asset Group (6mo)",
+        value: rowData.AssetGroup_setup_min_6mo || "N/A",
+        subtext: `(N: ${rowData.AssetGroup_6mo_N || "N/A"})`,
+      },
+      {
+        label: "Asset Group (3mo)",
+        value: rowData.AssetGroup_setup_min_3mo || "N/A",
+        subtext: `(N: ${rowData.AssetGroup_3mo_N || "N/A"})`,
+      },
+      {
+        label: "Asset Size (6mo)",
+        value: rowData.AssetSize_setup_min_6mo || "N/A",
+        subtext: `(N: ${rowData.AssetSize_6mo_N || "N/A"})`,
+      },
+      {
+        label: "Asset Size (3mo)",
+        value: rowData.AssetSize_setup_min_3mo || "N/A",
+        subtext: `(N: ${rowData.AssetSize_3mo_N || "N/A"})`,
+      },
+      {
+        label: "Asset Variant (6mo)",
+        value: rowData.AssetVar_setup_min_6mo || "N/A",
+        subtext: `(N: ${rowData.AssetVar_6mo_N || "N/A"})`,
+      },
+      {
+        label: "Asset Variant (3mo)",
+        value: rowData.AssetVar_setup_min_3mo || "N/A",
+        subtext: `(N: ${rowData.AssetVar_3mo_N || "N/A"})`,
+      },
+      {
+        label: "Asset (6mo)",
+        value: rowData.Asset_setup_min_6mo || "N/A",
+        subtext: `(N: ${rowData.Asset_6mo_N || "N/A"})`,
+      },
+      {
+        label: "Asset (3mo)",
+        value: rowData.Asset_setup_min_3mo || "N/A",
+        subtext: `(N: ${rowData.Asset_3mo_N || "N/A"})`,
+      },
+    ].filter((option) => option.value !== undefined && option.value !== "");
 
-  const handleSnackbarClose = () => {
-    setSnackbarOpen(false);
-  };
+    const handleSnackbarClose = () => {
+      setSnackbarOpen(false);
+    };
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+      setAnchorEl(event.currentTarget);
+    };
 
-  const handleToggleResolve = () => {
-    setIsResolved((prev) => !prev);
-  };
+    const handleToggleResolve = () => {
+      setIsResolved((prev) => !prev);
+    };
 
-  const handleEditClick = () => {
-    setIsEditing(true);
-    setEditingRowIndex(rowIndex); // Set editing row index
-  };
+    const handleEditClick = () => {
+      setIsEditing(true);
+      setEditingRowIndex(rowIndex); // Set editing row index
+    };
 
-  const handleSaveClick = () => {
-    if (/^\d*\.?\d*$/.test(editedValue)) {
-      // Validate input for numbers and decimals
-      setIsEditing(false);
-      setEditingRowIndex(null); // Clear editing row index
-      console.log("Saved value:", editedValue);
-      // Mark the row as updated (Tro value is updated)
-      setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
-    } else {
-      setSnackbarOpen(true); // Show snackbar on error
-    }
-  };
+    const handleSaveClick = () => {
+      if (/^\d*\.?\d*$/.test(editedValue)) {
+        // Validate input for numbers and decimals
+        setIsEditing(false);
+        setEditingRowIndex(null); // Clear editing row index
+        console.log("Saved value:", editedValue);
+        // Mark the row as updated (Tro value is updated)
+        setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
+      } else {
+        setSnackbarOpen(true); // Show snackbar on error
+      }
+    };
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEditedValue(event.target.value);
-  };
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setEditedValue(event.target.value);
+    };
 
-  const handleDialogOpen = () => {
-    setDialogOpen(true);
-  };
+    const handleDialogOpen = () => {
+      setDialogOpen(true);
+    };
 
-  const handleDialogClose = () => {
-    setDialogOpen(false);
-  };
+    const handleDialogClose = () => {
+      setDialogOpen(false);
+    };
 
-  const handleValueUpdate = (newValue: any) => {
-    setEditedValue(newValue);
-    rowData.new_setup_time = newValue; // Update the row data
-    setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true })); // Mark row as updated
-    handleDialogClose();
-  };
+    const handleValueUpdate = (newValue: any) => {
+      setEditedValue(newValue);
+      rowData.new_setup_time = newValue; // Update the row data
+      setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true })); // Mark row as updated
+      handleDialogClose();
+    };
 
-  return (
-    <>
-      <div
-        style={{
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          display: "flex",
-          alignItems: "center",
-          justifyContent:
-            index === 3 || index === 17 ? "space-between" : "flex-start",
-        }}
-      >
-        {index === 17 ? (
-          <>
-            <Typography variant="body2" style={{ marginRight: "8px" }}>
-              {editedValue || "N/A"}
-            </Typography>
-            <IconButton
-              size="small"
-              onClick={handleDialogOpen}
-              disabled={editingRowIndex !== null && editingRowIndex !== rowIndex}
-            >
-              <EditIcon
-                fontSize="small"
-                sx={{ color: (theme) => theme.palette.primary.main }}
-              />
-            </IconButton>
-          </>
-        ) : (
-          String(value)
-        )}
-        {index === 3 && (
-          <IconButton size="small" onClick={handleToggleResolve}>
-            {isResolved ? (
-              updatedRows[rowIndex] ? (
-                <DoneAllIcon sx={{ color: "green", transition: "color 0.3s" }} />
-              ) : (
-                <CheckIcon sx={{ color: "green", transition: "color 0.3s" }} />
-              )
-            ) : (
-              <Tooltip
-                placement="top"
-                title={
-                  <>
-                    Click to mark this recipe reviewed.
-                    <br />
-                    New Setup Min: {rowData.new_setup_min || "N/A"}
-                  </>
-                }
-                arrow
+    return (
+      <>
+        <div
+          style={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "flex",
+            alignItems: "center",
+            justifyContent:
+              index === 3 || index === 17 ? "space-between" : "flex-start",
+          }}
+        >
+          {index === 17 ? (
+            <>
+              <Typography variant="body2" style={{ marginRight: "8px" }}>
+                {editedValue || "N/A"}
+              </Typography>
+              <IconButton
+                size="small"
+                onClick={handleDialogOpen}
+                disabled={editingRowIndex !== null && editingRowIndex !== rowIndex}
               >
-                <PublishedWithChanges
-                  sx={{
-                    color: (theme) => theme.palette.primary.main,
-                    transition: "color 0.3s",
-                  }}
+                <EditIcon
+                  fontSize="small"
+                  sx={{ color: (theme) => theme.palette.primary.main }}
                 />
-              </Tooltip>
-            )}
-          </IconButton>
-        )}
-      </div>
-      <EditSetupTimeDialog
-        open={dialogOpen}
-        onClose={handleDialogClose}
-        onUpdate={handleValueUpdate}
-        originalValue={value}
-        dropdownOptions={dropdownOptions} // Pass dropdown options
-      />
-      <Snackbar
-        open={snackbarOpen}
-        autoHideDuration={3000}
-        onClose={handleSnackbarClose}
-        anchorOrigin={{ vertical: "top", horizontal: "center" }}
-      >
-        <Alert onClose={handleSnackbarClose} severity="error" sx={{ width: "100%" }}>
-          Please enter a valid number.
-        </Alert>
-      </Snackbar>
-    </>
-  );
-};
+              </IconButton>
+            </>
+          ) : (
+            String(value)
+          )}
+          {index === 3 && (
+            <IconButton size="small" onClick={handleToggleResolve}>
+              {isResolved ? (
+                updatedRows[rowIndex] ? (
+                  <DoneAllIcon sx={{ color: "green", transition: "color 0.3s" }} />
+                ) : (
+                  <CheckIcon sx={{ color: "green", transition: "color 0.3s" }} />
+                )
+              ) : (
+                <Tooltip
+                  placement="top"
+                  title={
+                    <>
+                      Click to mark this recipe reviewed.
+                      <br />
+                      New Setup Min: {rowData.new_setup_min || "N/A"}
+                    </>
+                  }
+                  arrow
+                >
+                  <PublishedWithChanges
+                    sx={{
+                      color: (theme) => theme.palette.primary.main,
+                      transition: "color 0.3s",
+                    }}
+                  />
+                </Tooltip>
+              )}
+            </IconButton>
+          )}
+        </div>
+        <EditSetupTimeDialog
+          open={dialogOpen}
+          onClose={handleDialogClose}
+          onUpdate={handleValueUpdate}
+          originalValue={value}
+          dropdownOptions={dropdownOptions} // Pass dropdown options
+        />
+        <Snackbar
+          open={snackbarOpen}
+          autoHideDuration={3000}
+          onClose={handleSnackbarClose}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        >
+          <Alert onClose={handleSnackbarClose} severity="error" sx={{ width: "100%" }}>
+            Please enter a valid number.
+          </Alert>
+        </Snackbar>
+      </>
+    );
+  };
 
 export const useWrenchTimeTable = (data: any[]) => {
   const {

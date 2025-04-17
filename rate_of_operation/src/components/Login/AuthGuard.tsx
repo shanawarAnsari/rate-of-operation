@@ -18,7 +18,7 @@ const AuthGuard = ({ children }: any) => {
         state: 'defaultrandomstring'
       });
     }
-  }, [navigate, location, isLoggedIn]);
+  }, [navigate, location, isLoggedIn, authToken]);
 
   return children;
 };

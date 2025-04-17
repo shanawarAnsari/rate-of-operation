@@ -42,6 +42,7 @@ const LoginCallback = () => {
     } else {
       navigate("/")
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isUserAllowed === false) {

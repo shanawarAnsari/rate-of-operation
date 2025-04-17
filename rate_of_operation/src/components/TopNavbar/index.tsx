@@ -14,6 +14,7 @@ import {
 import { Brightness4, Brightness7, AccountCircle } from "@mui/icons-material";
 import logoImage from "../../assets/KC_LOGO.png";
 import logoImageOrange from "../../assets/KC_LOGO_Orange.png"
+import { useUserStore } from "../../store/userStore";
 
 interface TopNavbarProps {
   mode: "light" | "dark";
@@ -30,8 +31,8 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
   const [region, setRegion] = useState("KCNA"); // Initialize with the only available option
   const [subRegion, setSubRegion] = useState("North America"); // Initialize with the only available option
   const theme = useTheme();
-  // Add username state (could also come from props or context)
-  const [username, setUsername] = useState("Shanawar, Ahmad");
+  const user = useUserStore(state => state.user)
+
 
   const handleRegionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRegion(event.target.value);
@@ -131,7 +132,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
             <AccountCircle />
           </Avatar>
           <Typography variant="body2" sx={{ ml: 1 }}>
-            {username}
+            {user?.name}
           </Typography>
         </Box>
       </Toolbar>
