@@ -22,7 +22,7 @@ import {
 } from "@mui/icons-material";
 import ReviewStatusIcon from "@mui/icons-material/AssignmentTurnedIn";
 import UserManagementIcon from "@mui/icons-material/Group";
-import { RunningWithErrors } from "@mui/icons-material"
+import { RunningWithErrors } from "@mui/icons-material";
 
 const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
   collapsed,
@@ -77,9 +77,9 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
       color: `${theme.palette.primary.main} !important`,
     },
     "&.Mui-selected .MuiListItemText-primary, & .Mui-selected .MuiListItemText-primary":
-    {
-      color: `${theme.palette.primary.main} !important`,
-    },
+      {
+        color: `${theme.palette.primary.main} !important`,
+      },
     "&.Mui-selected .MuiSvgIcon-root, & .Mui-selected .MuiSvgIcon-root": {
       color: `${theme.palette.primary.main} !important`,
     },
@@ -244,11 +244,11 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
               SpeedIcon
             )}
             {renderSubListItem("/operations/wrenchtime", "Wrench Time", TimerIcon)}
-            {renderSubListItem(
+            {/* {renderSubListItem(
               "/operations/financial-rate",
               "Financial Rate",
               MoneyIcon
-            )}
+            )} */}
           </List>
         </Collapse>
       )}
@@ -260,7 +260,7 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
             SpeedIcon
           )}
           {renderListItem("/operations/wrenchtime", "Wrench Time", TimerIcon)}
-          {renderListItem("/operations/financial-rate", "Financial Rate", MoneyIcon)}
+          {/* {renderListItem("/operations/financial-rate", "Financial Rate", MoneyIcon)} */}
         </>
       )}
     </List>
