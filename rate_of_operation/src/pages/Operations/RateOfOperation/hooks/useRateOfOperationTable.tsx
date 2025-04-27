@@ -24,7 +24,16 @@ const CellContent: React.FC<{
   rowIndex: number;
   updatedRows: Record<number, boolean>;
   setUpdatedRows: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
-}> = ({ value, index, rowData, rowIndex, updatedRows, setUpdatedRows }) => {
+  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void;
+}> = ({
+  value,
+  index,
+  rowData,
+  rowIndex,
+  updatedRows,
+  setUpdatedRows,
+  onRowUpdate,
+}) => {
   const [isResolved, setIsResolved] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false); // State for dialog visibility
   const theme = useTheme();
@@ -42,7 +51,8 @@ const CellContent: React.FC<{
   };
 
   const handleDialogUpdate = (newValue: any) => {
-    console.log("Updated value:", newValue);
+    const originalVal = parseFloat(value);
+    onRowUpdate(rowIndex, newValue, originalVal);
     setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
     setDialogOpen(false);
   };
@@ -261,7 +271,10 @@ const CellContent: React.FC<{
   );
 };
 
-export const useRateOfOperationTable = (data: any[]) => {
+export const useRateOfOperationTable = (
+  data: any[],
+  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void
+) => {
   const {
     columnVisibility,
     setColumnVisibility,
@@ -274,7 +287,7 @@ export const useRateOfOperationTable = (data: any[]) => {
   const [updatedRows, setUpdatedRows] = useState<Record<number, boolean>>({});
 
   const columns = useMemo<ColumnDef<any>[]>(() => {
-    const keys = Object.keys(data[0] || {});
+    const keys = Object.keys(data[0] || {}).filter((k) => k !== "isUpdated");
     return keys.map((key, index) => ({
       accessorKey: key,
       header: key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
@@ -286,13 +299,14 @@ export const useRateOfOperationTable = (data: any[]) => {
           rowIndex={info.row.index} // Pass row index
           updatedRows={updatedRows} // Pass updated status map
           setUpdatedRows={setUpdatedRows} // Pass updater callback
+          onRowUpdate={onRowUpdate} // Pass onRowUpdate callback
         />
       ),
       minSize: 120,
       maxSize: 1000,
       enableSorting: true,
     }));
-  }, [data, updatedRows]); // Include updatedRows in dependency
+  }, [data, updatedRows, onRowUpdate]); // Include updatedRows and onRowUpdate in dependency
 
   const table = useReactTable({
     data,

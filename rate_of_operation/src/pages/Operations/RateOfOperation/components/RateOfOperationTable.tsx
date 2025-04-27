@@ -27,9 +27,36 @@ import FilterPopper from "./filters/FilterPopper";
 
 interface RateOfOperationTableProps {
   data: any[];
+  onDataChange: (updatedData: any[]) => void;
 }
 
-const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => {
+const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
+  data,
+  onDataChange,
+}) => {
+  const [tableData, setTableData] = useState(data);
+  const handleRowUpdate = (rowIndex: number, newValue: number) => {
+    setTableData((prev) => {
+      const updated = [...prev];
+      const oldRow = updated[rowIndex];
+      const originalTRO =
+        typeof oldRow.tRO === "number" ? oldRow.new_tRO : parseFloat(oldRow.new_tRO);
+      const newPlanningTime = oldRow.planning_time * (newValue / originalTRO);
+      updated[rowIndex] = {
+        ...oldRow,
+        new_tRO: newValue,
+        new_planning_time: newPlanningTime?.toFixed(2),
+        reviewed: "Y-Reviewed from Web App",
+        tRO_Change:
+          (((newValue - originalTRO) / originalTRO) * 100).toFixed(2) + "%",
+        isUpdated: true,
+      };
+      // notify parent of updated records
+      onDataChange(updated);
+      return updated;
+    });
+  };
+
   const {
     table,
     visibleColumnsCount,
@@ -44,7 +71,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
     open,
     handleClick,
     handleClose,
-  } = useRateOfOperationTable(data);
+  } = useRateOfOperationTable(tableData, handleRowUpdate);
 
   const [selectedCategory, setSelectedCategory] = useState<string>("Personal Care");
   const [selectedReviewedStatus, setSelectedReviewedStatus] = useState<string>("N");
@@ -283,7 +310,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({ data }) => 
         anchorEl={filterAnchorEl}
         open={Boolean(filterAnchorEl)}
         onClose={handleFilterClose}
-        data={data}
+        data={tableData}
         onApply={handleApplyFilters}
       />
       <TableContainer

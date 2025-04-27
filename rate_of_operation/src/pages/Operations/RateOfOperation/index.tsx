@@ -1,17 +1,14 @@
-import React from "react";
-import {
-  Typography,
-  Paper,
-  Stack,
-  useTheme,
-  Box,
-} from "@mui/material";
+import React, { useState } from "react";
+import { Typography, Paper, Stack, useTheme, Box } from "@mui/material";
 import { Speed as SpeedIcon } from "@mui/icons-material";
 import RateOfOperationTable from "./components/RateOfOperationTable";
-import { mockData } from "./mockData";
+import { mockData as initialRateOfOperations } from "./mockData";
 
 const RateOfOperation: React.FC = () => {
   const theme = useTheme();
+  const [rateOfOperationsData, setRateOfOperationsData] = useState(
+    initialRateOfOperations
+  );
 
   const now = new Date();
   const currentMonthStart = new Date(
@@ -69,7 +66,10 @@ const RateOfOperation: React.FC = () => {
         </Box>
       </Stack>
       <Box sx={{ width: "100%", display: "flex", flexGrow: 1 }}>
-        <RateOfOperationTable data={mockData} />
+        <RateOfOperationTable
+          data={rateOfOperationsData}
+          onDataChange={setRateOfOperationsData}
+        />
       </Box>
     </Paper>
   );
