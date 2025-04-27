@@ -25,22 +25,26 @@ const CellContent: React.FC<{
   rowData: any;
   rowIndex: number; // Add rowIndex prop
   updatedRows: Record<number, boolean>; // Add updatedRows prop
+  reviewedRows: Record<number, boolean>; // Add reviewedRows prop
   setUpdatedRows: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
   editingRowIndex: number | null; // Add editingRowIndex prop
   setEditingRowIndex: React.Dispatch<React.SetStateAction<number | null>>;
   onRowUpdate: (rowIndex: number, newValue: any) => void; // Add onRowUpdate prop
   onRowReview: (rowIndex: number) => void; // Add onRowReview prop
+  handleResetRow: (rowIndex: number) => void; // Add handleResetRow prop
 }> = ({
   value,
   index,
   rowData,
   rowIndex,
   updatedRows,
+  reviewedRows,
   setUpdatedRows,
   editingRowIndex,
   setEditingRowIndex,
   onRowUpdate,
   onRowReview,
+  handleResetRow,
 }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -178,11 +182,17 @@ const CellContent: React.FC<{
           String(value)
         )}
         {index === 3 && (
-          <IconButton size="small" onClick={() => onRowReview(rowIndex)}>
-            {rowData.isUpdated && rowData.reviewed === "Y-Reviewed from Web App" ? (
+          <IconButton
+            size="small"
+            onClick={() =>
+              reviewedRows[rowIndex]
+                ? handleResetRow(rowIndex)
+                : onRowReview(rowIndex)
+            }
+          >
+            {updatedRows[rowIndex] && reviewedRows[rowIndex] ? (
               <DoneAllIcon sx={{ color: "#0bdd00" }} />
-            ) : !rowData.isUpdated &&
-              rowData.reviewed === "Y-Reviewed from Web App" ? (
+            ) : !updatedRows[rowIndex] && reviewedRows[rowIndex] ? (
               <CheckIcon sx={{ color: "#0bdd00" }} />
             ) : (
               <Tooltip
@@ -231,7 +241,8 @@ const CellContent: React.FC<{
 export const useWrenchTimeTable = (
   data: any[],
   onRowUpdate: (rowIndex: number, newValue: any) => void,
-  onRowReview: (rowIndex: number) => void
+  onRowReview: (rowIndex: number) => void,
+  onRowReset: (rowIndex: number) => void
 ) => {
   const {
     columnVisibility,
@@ -243,7 +254,27 @@ export const useWrenchTimeTable = (
 
   // New state to track updated Tro values per row
   const [updatedRows, setUpdatedRows] = useState<Record<number, boolean>>({});
+  const [reviewedRows, setReviewedRows] = useState<Record<number, boolean>>({});
   const [editingRowIndex, setEditingRowIndex] = useState<number | null>(null);
+
+  const handleResetRow = (rowIndex: number) => {
+    onRowReset(rowIndex);
+    setUpdatedRows((prev) => {
+      const copy = { ...prev };
+      delete copy[rowIndex];
+      return copy;
+    });
+    setReviewedRows((prev) => {
+      const copy = { ...prev };
+      delete copy[rowIndex];
+      return copy;
+    });
+  };
+
+  const handleReviewRow = (rowIndex: number) => {
+    onRowReview(rowIndex);
+    setReviewedRows((prev) => ({ ...prev, [rowIndex]: true }));
+  };
 
   const columns = useMemo<ColumnDef<any>[]>(() => {
     const keys = Object.keys(data[0] || {}).filter((k) => k !== "isUpdated");
@@ -257,18 +288,28 @@ export const useWrenchTimeTable = (
           rowData={info.row.original}
           rowIndex={info.row.index}
           updatedRows={updatedRows}
+          reviewedRows={reviewedRows}
           setUpdatedRows={setUpdatedRows}
           editingRowIndex={editingRowIndex}
           setEditingRowIndex={setEditingRowIndex}
           onRowUpdate={onRowUpdate}
-          onRowReview={onRowReview}
+          onRowReview={handleReviewRow}
+          handleResetRow={handleResetRow}
         />
       ),
       minSize: 120,
       maxSize: 1000,
       enableSorting: true,
     }));
-  }, [data, updatedRows, editingRowIndex, onRowUpdate, onRowReview]); // Include updatedRows, editingRowIndex, onRowUpdate, and onRowReview in dependency
+  }, [
+    data,
+    updatedRows,
+    reviewedRows,
+    editingRowIndex,
+    onRowUpdate,
+    handleResetRow,
+    handleReviewRow,
+  ]);
 
   const table = useReactTable({
     data,

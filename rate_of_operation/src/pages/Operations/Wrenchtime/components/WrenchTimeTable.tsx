@@ -51,13 +51,20 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data, onDataChange })
     onDataChange(updated);
   };
 
-  // update only reviewed on publish click
   const handleReview = (rowIndex: number) => {
     const updated = [...tableData];
+    const originalRow = data[rowIndex];
     updated[rowIndex] = {
-      ...updated[rowIndex],
-      reviewed: "Y-Reviewed from Web App",
+      ...originalRow,
+      reviewed: "Y - Reviewed from Web App",
     };
+    setTableData(updated);
+    onDataChange(updated);
+  };
+
+  const handleResetRow = (rowIndex: number) => {
+    const updated = [...tableData];
+    updated[rowIndex] = data[rowIndex];
     setTableData(updated);
     onDataChange(updated);
   };
@@ -76,7 +83,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data, onDataChange })
     open,
     handleClick,
     handleClose,
-  } = useWrenchTimeTable(tableData, handleRowUpdate, handleReview);
+  } = useWrenchTimeTable(tableData, handleRowUpdate, handleReview, handleResetRow);
 
   const [selectedCategory, setSelectedCategory] = useState<string>("Personal Care");
   const [selectedReviewedStatus, setSelectedReviewedStatus] = useState<string>("N");

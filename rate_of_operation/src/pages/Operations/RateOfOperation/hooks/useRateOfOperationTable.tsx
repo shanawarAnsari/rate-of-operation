@@ -181,10 +181,11 @@ const CellContent: React.FC<{
         {String(value)}
         {index === 4 && (
           <IconButton size="small" onClick={handlePublish}>
-            {rowData.isUpdated && rowData.reviewed === "Y-Reviewed from Web App" ? (
+            {rowData.isUpdated &&
+            rowData.reviewed === "Y - Reviewed from Web App" ? (
               <DoneAllIcon sx={{ color: "#0bdd00" }} />
             ) : !rowData.isUpdated &&
-              rowData.reviewed === "Y-Reviewed from Web App" ? (
+              rowData.reviewed === "Y - Reviewed from Web App" ? (
               <CheckIcon sx={{ color: "#0bdd00" }} />
             ) : (
               <Tooltip

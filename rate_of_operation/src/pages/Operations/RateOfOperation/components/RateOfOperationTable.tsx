@@ -62,7 +62,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
       const updated = [...prev];
       updated[rowIndex] = {
         ...updated[rowIndex],
-        reviewed: "Y-Reviewed from Web App",
+        reviewed: "Y - Reviewed from Web App",
       };
       // notify parent
       onDataChange(updated);
