@@ -6,7 +6,7 @@ import { mockData } from "./mockData";
 
 const Wrenchtime: React.FC = () => {
   const theme = useTheme();
-
+  const [wrenchtimeData, setWrenchtimeData] = React.useState(mockData);
   const now = new Date();
   const currentMonthStart = new Date(
     now.getFullYear(),
@@ -63,7 +63,7 @@ const Wrenchtime: React.FC = () => {
         </Box>
       </Stack>
       <Box sx={{ width: "100%", display: "flex", flexGrow: 1 }}>
-        <WrenchtimeTable data={mockData} />
+        <WrenchtimeTable data={wrenchtimeData} onDataChange={setWrenchtimeData} />
       </Box>
     </Paper>
   );

@@ -28,9 +28,30 @@ import { DownloadRounded } from "@mui/icons-material";
 
 interface WrenchTimeTableProps {
   data: any[];
+  onDataChange: (updatedData: any[]) => void;
 }
 
-const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
+const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data, onDataChange }) => {
+  const [tableData, setTableData] = useState(data);
+  const handleRowUpdate = (rowIndex: number, newValue: number) => {
+    const updated = [...tableData];
+    const oldRow = updated[rowIndex];
+    const original =
+      typeof oldRow.current_setup_min === "number"
+        ? oldRow.current_setup_min
+        : parseFloat(oldRow.current_setup_min);
+    const change = ((newValue - original) / original) * 100;
+    updated[rowIndex] = {
+      ...oldRow,
+      new_setup_min: newValue,
+      reviewed: "Y-Reviewed from Web App",
+      setup_change: change.toFixed(2) + "%",
+      isUpdated: true,
+    };
+    setTableData(updated);
+    onDataChange(updated);
+  };
+
   const {
     table,
     visibleColumnsCount,
@@ -45,7 +66,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
     open,
     handleClick,
     handleClose,
-  } = useWrenchTimeTable(data);
+  } = useWrenchTimeTable(tableData, handleRowUpdate);
 
   const [selectedCategory, setSelectedCategory] = useState<string>("Personal Care");
   const [selectedReviewedStatus, setSelectedReviewedStatus] = useState<string>("N");
@@ -232,7 +253,7 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data }) => {
             anchorEl={filterAnchorEl}
             open={Boolean(filterAnchorEl)}
             onClose={handleFilterClose}
-            data={data}
+            data={tableData}
             onApply={handleApplyFilters}
           />
           <Tooltip title="Save" placement="top">

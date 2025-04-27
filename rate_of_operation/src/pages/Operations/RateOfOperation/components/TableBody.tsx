@@ -61,8 +61,8 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
                   ].includes(cell.column.id) && {
                     backgroundColor:
                       theme.palette.mode === "light"
-                        ? theme.palette.grey[300]
-                        : theme.palette.grey[700],
+                        ? theme.palette.grey[200]
+                        : theme.palette.grey[800],
                     transition: "background-color 0.3s ease",
                   }),
               }}
