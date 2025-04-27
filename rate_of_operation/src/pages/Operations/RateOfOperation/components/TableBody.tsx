@@ -53,12 +53,9 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
                 }),
                 // highlight updated cells
                 ...(row.original.isUpdated &&
-                  [
-                    "new_tRO",
-                    "new_planning_time",
-                    "reviewed",
-                    "tRO_Change",
-                  ].includes(cell.column.id) && {
+                  ["new_tRO", "new_planning_time", "tRO_Change"].includes(
+                    cell.column.id
+                  ) && {
                     backgroundColor:
                       theme.palette.mode === "light"
                         ? theme.palette.grey[200]

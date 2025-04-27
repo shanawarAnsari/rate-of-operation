@@ -29,6 +29,7 @@ const CellContent: React.FC<{
   editingRowIndex: number | null; // Add editingRowIndex prop
   setEditingRowIndex: React.Dispatch<React.SetStateAction<number | null>>;
   onRowUpdate: (rowIndex: number, newValue: any) => void; // Add onRowUpdate prop
+  onRowReview: (rowIndex: number) => void; // Add onRowReview prop
 }> = ({
   value,
   index,
@@ -39,6 +40,7 @@ const CellContent: React.FC<{
   editingRowIndex,
   setEditingRowIndex,
   onRowUpdate,
+  onRowReview,
 }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -176,19 +178,17 @@ const CellContent: React.FC<{
           String(value)
         )}
         {index === 3 && (
-          <IconButton size="small" onClick={handleToggleResolve}>
-            {isResolved ? (
-              updatedRows[rowIndex] ? (
-                <DoneAllIcon sx={{ color: "green", transition: "color 0.3s" }} />
-              ) : (
-                <CheckIcon sx={{ color: "green", transition: "color 0.3s" }} />
-              )
+          <IconButton size="small" onClick={() => onRowReview(rowIndex)}>
+            {rowData.isUpdated ? (
+              <DoneAllIcon sx={{ color: "green" }} />
+            ) : rowData.reviewed === "Y-Reviewed from Web App" ? (
+              <CheckIcon sx={{ color: "green" }} />
             ) : (
               <Tooltip
                 placement="top"
                 title={
                   <>
-                    Click to mark this recipe reviewed.
+                    Click to mark reviewed.
                     <br />
                     New Setup Min: {rowData.new_setup_min || "N/A"}
                   </>
@@ -229,7 +229,8 @@ const CellContent: React.FC<{
 
 export const useWrenchTimeTable = (
   data: any[],
-  onRowUpdate: (rowIndex: number, newValue: any) => void
+  onRowUpdate: (rowIndex: number, newValue: any) => void,
+  onRowReview: (rowIndex: number) => void
 ) => {
   const {
     columnVisibility,
@@ -259,13 +260,14 @@ export const useWrenchTimeTable = (
           editingRowIndex={editingRowIndex}
           setEditingRowIndex={setEditingRowIndex}
           onRowUpdate={onRowUpdate}
+          onRowReview={onRowReview}
         />
       ),
       minSize: 120,
       maxSize: 1000,
       enableSorting: true,
     }));
-  }, [data, updatedRows, editingRowIndex, onRowUpdate]); // Include updatedRows, editingRowIndex, and onRowUpdate in dependency
+  }, [data, updatedRows, editingRowIndex, onRowUpdate, onRowReview]); // Include updatedRows, editingRowIndex, onRowUpdate, and onRowReview in dependency
 
   const table = useReactTable({
     data,

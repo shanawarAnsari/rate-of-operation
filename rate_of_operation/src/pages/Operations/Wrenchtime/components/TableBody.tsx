@@ -50,9 +50,7 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
                     index === 2 ? "2px 0px 3px -1px rgba(0,0,0,0.2)" : "none",
                 }),
                 ...(row.original.isUpdated &&
-                  ["new_setup_min", "reviewed", "setup_change"].includes(
-                    cell.column.id
-                  ) && {
+                  ["new_setup_min", "setup_change"].includes(cell.column.id) && {
                     backgroundColor: (theme: any) =>
                       theme.palette.mode === "light"
                         ? theme.palette.grey[200]

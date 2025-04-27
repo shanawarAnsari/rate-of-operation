@@ -46,12 +46,25 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
         ...oldRow,
         new_tRO: newValue,
         new_planning_time: newPlanningTime?.toFixed(2),
-        reviewed: "Y-Reviewed from Web App",
         tRO_Change:
           (((newValue - originalTRO) / originalTRO) * 100).toFixed(2) + "%",
         isUpdated: true,
       };
       // notify parent of updated records
+      onDataChange(updated);
+      return updated;
+    });
+  };
+
+  // update only reviewed status on publish icon click
+  const handleReview = (rowIndex: number) => {
+    setTableData((prev) => {
+      const updated = [...prev];
+      updated[rowIndex] = {
+        ...updated[rowIndex],
+        reviewed: "Y-Reviewed from Web App",
+      };
+      // notify parent
       onDataChange(updated);
       return updated;
     });
@@ -71,7 +84,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
     open,
     handleClick,
     handleClose,
-  } = useRateOfOperationTable(tableData, handleRowUpdate);
+  } = useRateOfOperationTable(tableData, handleRowUpdate, handleReview);
 
   const [selectedCategory, setSelectedCategory] = useState<string>("Personal Care");
   const [selectedReviewedStatus, setSelectedReviewedStatus] = useState<string>("N");

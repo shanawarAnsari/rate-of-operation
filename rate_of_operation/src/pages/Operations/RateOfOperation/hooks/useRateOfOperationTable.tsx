@@ -25,6 +25,7 @@ const CellContent: React.FC<{
   updatedRows: Record<number, boolean>;
   setUpdatedRows: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
   onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void;
+  onRowReview: (rowIndex: number) => void;
 }> = ({
   value,
   index,
@@ -33,6 +34,7 @@ const CellContent: React.FC<{
   updatedRows,
   setUpdatedRows,
   onRowUpdate,
+  onRowReview,
 }) => {
   const [isResolved, setIsResolved] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false); // State for dialog visibility
@@ -56,6 +58,8 @@ const CellContent: React.FC<{
     setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
     setDialogOpen(false);
   };
+
+  const handlePublish = () => onRowReview(rowIndex);
 
   const dropdownOptions = [
     { label: "AI/ML TRO", value: rowData.aiml_RO || "N/A" },
@@ -176,55 +180,17 @@ const CellContent: React.FC<{
       >
         {String(value)}
         {index === 4 && (
-          <IconButton size="small" onClick={handleToggleResolve}>
-            {isResolved ? (
-              updatedRows[rowIndex] ? (
-                <Tooltip
-                  placement="top"
-                  title={
-                    <>
-                      Recipe has been marked Reviewed.
-                      <br />
-                      <Typography
-                        color={"#0bdd00"}
-                        sx={{ fontSize: "12px", fontWeight: 600 }}
-                      >
-                        New TRO Override
-                      </Typography>
-                      : {rowData.new_tRO || "N/A"}
-                    </>
-                  }
-                  arrow
-                >
-                  <DoneAllIcon sx={{ color: "#0bdd00", transition: "color 0.3s" }} />
-                </Tooltip>
-              ) : (
-                <Tooltip
-                  placement="top"
-                  title={
-                    <>
-                      Recipe has been marked Reviewed.
-                      <br />
-                      <Typography
-                        color={theme.palette.primary.main}
-                        sx={{ fontSize: "12px", fontWeight: 600 }}
-                      >
-                        New TRO
-                      </Typography>
-                      : {rowData.new_tRO || "N/A"}
-                    </>
-                  }
-                  arrow
-                >
-                  <CheckIcon sx={{ color: "#0bdd00", transition: "color 0.3s" }} />
-                </Tooltip>
-              )
+          <IconButton size="small" onClick={handlePublish}>
+            {rowData.isUpdated ? (
+              <DoneAllIcon sx={{ color: "#0bdd00" }} />
+            ) : rowData.reviewed === "Y-Reviewed from Web App" ? (
+              <CheckIcon sx={{ color: "#0bdd00" }} />
             ) : (
               <Tooltip
                 placement="top"
                 title={
                   <>
-                    Click to mark this recipe reviewed.
+                    Click to mark reviewed.
                     <br />
                     New TRO: {rowData.new_tRO || "N/A"}
                   </>
@@ -273,7 +239,8 @@ const CellContent: React.FC<{
 
 export const useRateOfOperationTable = (
   data: any[],
-  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void
+  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void,
+  onRowReview: (rowIndex: number) => void
 ) => {
   const {
     columnVisibility,
@@ -300,13 +267,14 @@ export const useRateOfOperationTable = (
           updatedRows={updatedRows} // Pass updated status map
           setUpdatedRows={setUpdatedRows} // Pass updater callback
           onRowUpdate={onRowUpdate} // Pass onRowUpdate callback
+          onRowReview={onRowReview} // Pass onRowReview callback
         />
       ),
       minSize: 120,
       maxSize: 1000,
       enableSorting: true,
     }));
-  }, [data, updatedRows, onRowUpdate]); // Include updatedRows and onRowUpdate in dependency
+  }, [data, updatedRows, onRowUpdate, onRowReview]); // Include updatedRows and onRowReview in dependency
 
   const table = useReactTable({
     data,
