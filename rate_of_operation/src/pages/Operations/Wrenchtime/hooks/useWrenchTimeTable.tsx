@@ -179,10 +179,11 @@ const CellContent: React.FC<{
         )}
         {index === 3 && (
           <IconButton size="small" onClick={() => onRowReview(rowIndex)}>
-            {rowData.isUpdated ? (
-              <DoneAllIcon sx={{ color: "green" }} />
-            ) : rowData.reviewed === "Y-Reviewed from Web App" ? (
-              <CheckIcon sx={{ color: "green" }} />
+            {rowData.isUpdated && rowData.reviewed === "Y-Reviewed from Web App" ? (
+              <DoneAllIcon sx={{ color: "#0bdd00" }} />
+            ) : !rowData.isUpdated &&
+              rowData.reviewed === "Y-Reviewed from Web App" ? (
+              <CheckIcon sx={{ color: "#0bdd00" }} />
             ) : (
               <Tooltip
                 placement="top"

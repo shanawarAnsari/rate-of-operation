@@ -57,7 +57,6 @@ const WrenchTimeTable: React.FC<WrenchTimeTableProps> = ({ data, onDataChange })
     updated[rowIndex] = {
       ...updated[rowIndex],
       reviewed: "Y-Reviewed from Web App",
-      isUpdated: true,
     };
     setTableData(updated);
     onDataChange(updated);
