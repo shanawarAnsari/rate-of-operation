@@ -1,33 +1,80 @@
-import { Grid, Paper, Box, Typography, Alert } from '@mui/material';
-import { LockRounded } from '@mui/icons-material';
-
+import { Grid, Paper, Box, Typography, Alert } from "@mui/material";
+import { LockRounded } from "@mui/icons-material";
 
 const LoginCallbackError = () => {
   return (
-    <Grid container justifyContent="center" padding={2} className='login-callback-error'>
-      <Grid item xs={4}>
-        <Paper sx={{ padding: 2, color: '#585252' }}>
-          <Box sx={{ textAlign: 'center', fontSize: '1.75rem', padding: 2, color: '#b4afaf' }}>
-            <LockRounded />
+    <Grid
+      container
+      justifyContent="center"
+      alignItems="center" // Center vertically
+      padding={2}
+      className="login-callback-error"
+      sx={{ minHeight: "100vh" }} // Ensure it takes full viewport height
+    >
+      <Grid item xs={12} sm={8} md={6} lg={4}>
+        {" "}
+        {/* Responsive width */}
+        <Paper
+          elevation={3} // Add some shadow
+          sx={{
+            padding: 4, // Increased padding
+            color: "#585252",
+            border: "1px solid #e0e0e0", // Add a border
+            borderRadius: 2, // Rounded corners
+          }}
+        >
+          <Box
+            sx={{
+              textAlign: "center",
+              fontSize: "3rem",
+              padding: 2,
+              color: "#d32f2f",
+            }}
+          >
+            {" "}
+            {/* Larger icon, error color */}
+            <LockRounded fontSize="inherit" /> {/* Inherit size */}
           </Box>
-          <Box sx={{ padding: 1 }}>
-            <Alert severity="error">
-              <Typography variant='h4' color="#585252" alignContent="center">App Access Locked</Typography>
+          <Box sx={{ padding: 2 }}>
+            {" "}
+            {/* Increased padding */}
+            <Alert
+              severity="error"
+              sx={{ backgroundColor: "#ffebee", color: "#c62828" }}
+            >
+              {" "}
+              {/* Custom error colors */}
+              <Typography
+                variant="h5"
+                component="div"
+                alignContent="center"
+                sx={{ fontWeight: "bold" }}
+              >
+                {" "}
+                {/* Adjusted typography */}
+                App Access Locked
+              </Typography>
             </Alert>
           </Box>
-          <Box sx={{ textAlign: 'center', padding: 1 }}>
-            <Typography>
-              You are not allowed to access this app due to a policy set by the administrator.
+          <Box sx={{ textAlign: "center", padding: 2 }}>
+            {" "}
+            {/* Increased padding */}
+            <Typography variant="body1" sx={{ marginBottom: 1 }}>
+              {" "}
+              {/* Adjusted typography and margin */}
+              You are not allowed to access this app due to a policy set by the
+              administrator.
             </Typography>
-            <Typography sx={{ padding: 0.5 }}>
-              To request access, please contact admin.
+            <Typography variant="body2" sx={{ color: "#757575" }}>
+              {" "}
+              {/* Adjusted typography and color */}
+              To request access, please contact your administrator.
             </Typography>
           </Box>
         </Paper>
       </Grid>
     </Grid>
-
   );
-}
+};
 
 export default LoginCallbackError;
