@@ -74,26 +74,23 @@ const LoginCallback = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  if (isUserAllowed === false) {
+  // Only show the error page when we're absolutely sure the user is not allowed
+  // AND the loading process has completed
+  if (isUserAllowed === false && !isUserLoading) {
     return <LoginCallbackError />;
   }
 
   return (
-    <>
-      {isUserLoading ? (
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "100vh",
-          }}
-        >
-          <CircularProgress />
-        </Box>
-      ) : null}
-    </>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+      }}
+    >
+      <CircularProgress />
+    </Box>
   );
 };
 
