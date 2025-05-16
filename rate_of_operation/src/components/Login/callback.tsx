@@ -9,7 +9,7 @@ import { useUserStore } from "../../store/userStore";
 const LoginCallback = () => {
   ping.register();
   const navigate = useNavigate();
-  const [isUserAllowed, setIsUserAllowed] = useState(null);
+  const [isUserAllowed, setIsUserAllowed] = useState<boolean | null>(null);
   const {
     isLoggedIn,
     setIsLoggedIn,
@@ -17,9 +17,7 @@ const LoginCallback = () => {
     setIsUserLoading,
     setUser,
     setAuthToken,
-  } = useUserStore((state) => {
-    return state;
-  });
+  } = useUserStore((state) => state);
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -31,11 +29,15 @@ const LoginCallback = () => {
           oktaAuth.tokenManager.setTokens(tokens);
           let token = oktaAuth.tokenManager.getTokensSync();
           let authToken = token.accessToken?.accessToken || token.idToken?.idToken;
-          setAuthToken(authToken);
+          if (authToken) {
+            setAuthToken(authToken);
+          } else {
+            setAuthToken(""); // or handle error as appropriate
+          }
 
           oktaAuth.token
             .getUserInfo()
-            .then(function (userResp) {
+            .then(function (userResp: any) {
               // Check if user has required permissions
               const hasValidAccess =
                 userResp.myregion &&
@@ -66,6 +68,7 @@ const LoginCallback = () => {
         .catch((err) => {
           setIsLoggedIn(false);
           setIsUserAllowed(false);
+          console.log("Error parsing tokens:", err);
         });
     } else {
       navigate("/");
@@ -90,9 +93,7 @@ const LoginCallback = () => {
         >
           <l-ping size="45" speed="0.7" color="black"></l-ping>
         </Box>
-      ) : (
-        <></>
-      )}
+      ) : null}
     </>
   );
 };
