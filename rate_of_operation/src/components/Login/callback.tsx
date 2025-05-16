@@ -2,12 +2,10 @@ import { useEffect, useState } from "react";
 import { oktaAuth } from "../../configs/oktaConfig";
 import { useNavigate } from "react-router-dom";
 import LoginCallbackError from "./LoginCallbackError";
-import { ping } from "ldrs";
-import { Box } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import { useUserStore } from "../../store/userStore";
 
 const LoginCallback = () => {
-  ping.register();
   const navigate = useNavigate();
   const [isUserAllowed, setIsUserAllowed] = useState<boolean | null>(null);
   const {
@@ -20,11 +18,12 @@ const LoginCallback = () => {
   } = useUserStore((state) => state);
 
   useEffect(() => {
-    if (!isLoggedIn) {
+    // Only process the tokens if we're not already logged in
+    if (!isLoggedIn && !isUserLoading) {
+      setIsUserLoading(true);
       oktaAuth.token
         .parseFromUrl()
         .then(async function (res) {
-          setIsUserLoading(true);
           let tokens = res.tokens;
           oktaAuth.tokenManager.setTokens(tokens);
           let token = oktaAuth.tokenManager.getTokensSync();
@@ -38,14 +37,14 @@ const LoginCallback = () => {
           oktaAuth.token
             .getUserInfo()
             .then(function (userResp: any) {
-              // Check if user has required permissions
+              // Check if user has the specific required permissions
+              const requiredRegions = ["Azure_KC_ProdRate_Region_KCNA"];
+
               const hasValidAccess =
                 userResp.myregion &&
-                userResp.myregion.length > 0 &&
-                userResp.myrole &&
-                userResp.myrole.length > 0 &&
-                userResp.mygroups &&
-                userResp.mygroups.length > 0;
+                userResp.myregion.some((region: string) =>
+                  requiredRegions.includes(region)
+                );
 
               setUser(userResp);
               setIsUserLoading(false);
@@ -91,7 +90,7 @@ const LoginCallback = () => {
             height: "100vh",
           }}
         >
-          <l-ping size="45" speed="0.7" color="black"></l-ping>
+          <CircularProgress />
         </Box>
       ) : null}
     </>
