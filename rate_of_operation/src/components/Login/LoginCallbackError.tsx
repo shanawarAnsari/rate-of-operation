@@ -2,40 +2,7 @@ import { Grid, Paper, Box, Typography, Alert } from "@mui/material";
 import { LockRounded } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 
-const LoginCallbackError = () => {  const [showError, setShowError] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    // Check if user is in the process of logging in
-    const checkAuthStatus = () => {
-      // This is a simple check - you might need to adapt this based on how
-      // your authentication state is stored (e.g., localStorage, cookies, context)
-      const token = localStorage.getItem('auth_token') || sessionStorage.getItem('auth_token');
-      return !!token;
-    };
-
-    // First quick check
-    if (checkAuthStatus()) {
-      setIsAuthenticated(true);
-      return; // Exit early if authenticated
-    }
-
-    // Wait longer to ensure auth process has time to complete
-    const timer = setTimeout(() => {
-      // Check again after delay
-      if (!checkAuthStatus()) {
-        setShowError(true); // Only show error if still not authenticated
-      }
-    }, 3000); // Increased to 3 seconds delay
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Don't render anything while in potential transition state
-  if (!showError) {
-    return null;
-  }
-
+const LoginCallbackError = () => {
   return (
     <Grid
       container

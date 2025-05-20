@@ -39,7 +39,6 @@ const LoginCallback = () => {
             .then(function (userResp: any) {
               // Check if user has the specific required permissions
               const requiredRegions = ["Azure_KC_ProdRate_Region_KCNA"];
-
               const hasValidAccess =
                 userResp.myregion &&
                 userResp.myregion.some((region: string) =>
@@ -47,14 +46,15 @@ const LoginCallback = () => {
                 );
 
               setUser(userResp);
-              setIsUserLoading(false);
               setIsLoggedIn(true);
 
               if (hasValidAccess) {
                 setIsUserAllowed(true);
+                setIsUserLoading(false);
                 navigate("/");
               } else {
                 setIsUserAllowed(false);
+                setIsUserLoading(false);
               }
             })
             .catch((error) => {
@@ -65,6 +65,7 @@ const LoginCallback = () => {
             });
         })
         .catch((err) => {
+          setIsUserLoading(false);
           setIsLoggedIn(false);
           setIsUserAllowed(false);
           console.log("Error parsing tokens:", err);
