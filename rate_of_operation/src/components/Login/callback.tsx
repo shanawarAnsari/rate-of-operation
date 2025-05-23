@@ -8,17 +8,20 @@ import { useUserStore } from "../../store/userStore";
 const LoginCallback = () => {
   const navigate = useNavigate();
   const [isUserAllowed, setIsUserAllowed] = useState<boolean | null>(null);
+  const [callbackProgress, setCallbackProgress] = useState(true);
   const {
     isLoggedIn,
     setIsLoggedIn,
     isUserLoading,
     setIsUserLoading,
     setUser,
+    authToken,
     setAuthToken,
   } = useUserStore((state) => state);
 
   useEffect(() => {
-    // Only process the tokens if we're not already logged in
+
+    setCallbackProgress(true)
     if (!isLoggedIn && !isUserLoading) {
       setIsUserLoading(true);
       oktaAuth.token
@@ -31,53 +34,68 @@ const LoginCallback = () => {
           if (authToken) {
             setAuthToken(authToken);
           } else {
-            setAuthToken(""); // or handle error as appropriate
+            setAuthToken("");
           }
 
           oktaAuth.token
             .getUserInfo()
             .then(function (userResp: any) {
-              // Check if user has the specific required permissions
               const requiredRegions = ["Azure_KC_ProdRate_Region_KCNA"];
               const hasValidAccess =
                 userResp.myregion &&
                 userResp.myregion.some((region: string) =>
                   requiredRegions.includes(region)
                 );
-
               setUser(userResp);
               setIsLoggedIn(true);
-
               if (hasValidAccess) {
                 setIsUserAllowed(true);
                 setIsUserLoading(false);
+                setCallbackProgress(false);
                 navigate("/");
               } else {
                 setIsUserAllowed(false);
                 setIsUserLoading(false);
+                setCallbackProgress(false);
               }
             })
             .catch((error) => {
               setIsUserLoading(false);
               setIsLoggedIn(false);
               setIsUserAllowed(false);
+              setCallbackProgress(false);
               console.log("error", error);
             });
         })
         .catch((err) => {
           setIsUserLoading(false);
           setIsLoggedIn(false);
+          setCallbackProgress(false);
           setIsUserAllowed(false);
-          console.log("Error parsing tokens:", err);
+
         });
     } else {
       navigate("/");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, []);
-  // Only show the error page when we're absolutely sure the user is not allowed
-  // AND the loading process has completed
-  if (isUserAllowed === false && !isUserLoading) {
+  const [showAccessErrorAfterDelay, setShowAccessErrorAfterDelay] = useState(false);
+  let timer: NodeJS.Timeout;
+  useEffect(() => {
+    if (isUserAllowed === false && !isUserLoading) {
+      timer = setTimeout(() => {
+        setShowAccessErrorAfterDelay(true)
+      }, 2500);
+    } else {
+      setShowAccessErrorAfterDelay(false);
+    }
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [isUserAllowed, isUserLoading])
+
+
+  if (isUserAllowed === false && !isUserLoading && !callbackProgress && showAccessErrorAfterDelay) {
     return <LoginCallbackError />;
   }
 

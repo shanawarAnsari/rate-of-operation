@@ -2,9 +2,8 @@ import { useEffect, useState, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { oktaAuth } from "../../configs/oktaConfig";
 import { useUserStore } from "../../store/userStore";
-import NoAccess from "./NoAccess";
 import { Box, CircularProgress } from "@mui/material";
-import { shallow } from "zustand/shallow";
+import LoginCallbackError from "./LoginCallbackError";
 
 // ==============================|| AUTH GUARD ||============================== //
 
@@ -30,12 +29,12 @@ const AuthGuard = ({ children }: any) => {
     const requiredRegions = ["Azure_KC_ProdRate_Region_KCNA"];
 
     return (
-      (user as any).myregion &&
-      (user as any).myregion.some((region: string) =>
+      (user as any)?.myregion &&
+      (user as any)?.myregion.some((region: string) =>
         requiredRegions.includes(region)
       ) &&
-      (user as any).mygroups &&
-      (user as any).mygroups.some((group: string) => requiredGroups.includes(group))
+      (user as any)?.mygroup &&
+      (user as any)?.mygroup.some((group: string) => requiredGroups.includes(group))
     );
   }, [user]);
 
@@ -97,7 +96,7 @@ const AuthGuard = ({ children }: any) => {
 
   // If permissions are invalid, show the NoAccess component
   if (!hasValidAccess && isLoggedIn) {
-    return <NoAccess />;
+    return <LoginCallbackError />;
   }
 
   return children;
