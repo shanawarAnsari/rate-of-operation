@@ -17,35 +17,31 @@ import DoneAllIcon from "@mui/icons-material/DoneAll"; // Import DoneAll icon
 import Tooltip from "@mui/material/Tooltip"; // Import Tooltip
 import { EditTROValueDialog } from "../components/EditTROValueDialog"; // Import the dialog component
 
-const CellContent: React.FC<{
-  value: any;
-  index: number;
-  rowData: any;
-  rowIndex: number;
-  updatedRows: Record<number, boolean>;
-  setUpdatedRows: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
-  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void;
-  onRowReview: (rowIndex: number) => void;
-}> = ({
+// Cell component for column-specific rendering
+const CellRenderer = ({
   value,
-  index,
+  columnId,
   rowData,
   rowIndex,
-  updatedRows,
-  setUpdatedRows,
   onRowUpdate,
   onRowReview,
+  updatedRows,
+  setUpdatedRows,
+}: {
+  value: any;
+  columnId: string;
+  rowData: any;
+  rowIndex: number;
+  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void;
+  onRowReview: (rowIndex: number) => void;
+  updatedRows: Record<number, boolean>;
+  setUpdatedRows: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
 }) => {
-  const [isResolved, setIsResolved] = useState(false);
-  const [dialogOpen, setDialogOpen] = useState(false); // State for dialog visibility
+  const [dialogOpen, setDialogOpen] = useState(false);
   const theme = useTheme();
 
-  const handleToggleResolve = () => {
-    setIsResolved((prev) => !prev);
-  };
-
   const handleEditClick = () => {
-    setDialogOpen(true); // Open the dialog
+    setDialogOpen(true);
   };
 
   const handleDialogClose = () => {
@@ -61,111 +57,45 @@ const CellContent: React.FC<{
 
   const handlePublish = () => onRowReview(rowIndex);
 
+  // Create dropdown options for TRO dialog
   const dropdownOptions = [
-    { label: "AI/ML TRO", value: rowData.aiml_RO || "N/A" },
-
+    { label: "AI/ML TRO", value: rowData.AIML_RO || "N/A" },
     {
       label: "Asset SKU TRO (6mo)",
-      value: rowData.AssetSKU_tRO_6mo || "N/A",
-      subtext: `(N: ${rowData.AssetSKU_6mo_N || "N/A"})`,
+      value: rowData.ASSET_SKU_RO_6MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_SKU_N_6MONTH || "N/A"})`,
     },
     {
       label: "Asset SKU TRO (5mo)",
-      value: rowData.AssetSKU_tRO_5mo || "N/A",
-      subtext: `(N: ${rowData.AssetSKU_5mo_N || "N/A"})`,
+      value: rowData.ASSET_SKU_RO_5MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_SKU_N_5MONTH || "N/A"})`,
     },
     {
       label: "Asset SKU TRO (4mo)",
-      value: rowData.AssetSKU_tRO_4mo || "N/A",
-      subtext: `(N: ${rowData.AssetSKU_4mo_N || "N/A"})`,
+      value: rowData.ASSET_SKU_RO_4MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_SKU_N_4MONTH || "N/A"})`,
     },
     {
       label: "Asset SKU TRO (3mo)",
-      value: rowData.AssetSKU_tRO_3mo || "N/A",
-      subtext: `(N: ${rowData.AssetSKU_3mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset SKU TRO (2mo)",
-      value: rowData.AssetSKU_tRO_2mo || "N/A",
-      subtext: `(N: ${rowData.AssetSKU_2mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset SKU TRO (1mo)",
-      value: rowData.AssetSKU_tRO_1mo || "N/A",
-      subtext: `(N: ${rowData.AssetSKU_1mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset Trade TRO (6mo)",
-      value: rowData.AssetTrade_tRO_6mo || "N/A",
-      subtext: `(N: ${rowData.AssetTrade_6mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset Trade TRO (5mo)",
-      value: rowData.AssetTrade_tRO_5mo || "N/A",
-      subtext: `(N: ${rowData.AssetTrade_5mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset Trade TRO (4mo)",
-      value: rowData.AssetTrade_tRO_4mo || "N/A",
-      subtext: `(N: ${rowData.AssetTrade_4mo_N || "N/A"})`,
+      value: rowData.ASSET_SKU_RO_3MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_SKU_N_3MONTH || "N/A"})`,
     },
     {
       label: "Asset Trade TRO (3mo)",
-      value: rowData.AssetTrade_tRO_3mo || "N/A",
-      subtext: `(N: ${rowData.AssetTrade_3mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset Trade TRO (2mo)",
-      value: rowData.AssetTrade_tRO_2mo || "N/A",
-      subtext: `(N: ${rowData.AssetTrade_2mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset Trade TRO (1mo)",
-      value: rowData.AssetTrade_tRO_1mo || "N/A",
-      subtext: `(N: ${rowData.AssetTrade_1mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset PGPkCs TRO (6mo)",
-      value: rowData.AssetPGPkCs_tRO_6mo || "N/A",
-      subtext: `(N: ${rowData.AssetPGPKCs_6mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset PGPkCs TRO (3mo)",
-      value: rowData.AssetPGPkCs_tRO_3mo || "N/A",
-      subtext: `(N: ${rowData.AssetPGPKCs_3mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset PGPk TRO (6mo)",
-      value: rowData.AssetPGPk_tRO_6mo || "N/A",
-      subtext: `(N: ${rowData.AssetPGPK_6mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset PGPk TRO (3mo)",
-      value: rowData.AssetPGPk_tRO_3mo || "N/A",
-      subtext: `(N: ${rowData.AssetPGPK_3mo_N || "N/A"})`,
+      value: rowData.ASSET_TRADECODE_RO_3MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_TRADECODE_N_3MONTH || "N/A"})`,
     },
     {
       label: "Asset PG TRO (6mo)",
-      value: rowData.AssetPG_tRO_6mo || "N/A",
-      subtext: `(N: ${rowData.AssetPG_6mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset PG TRO (3mo)",
-      value: rowData.AssetPG_tRO_3mo || "N/A",
-      subtext: `(N: ${rowData.AssetPG_3mo_N || "N/A"})`,
-    },
-    {
-      label: "Asset TRO (6mo)",
-      value: rowData.Asset_tRO_6mo || "N/A",
-      subtext: `(N: ${rowData.Asset_6mo_N || "N/A"})`,
+      value: rowData.ASSET_PG_RO_6MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_PG_N_6MONTH || "N/A"})`,
     },
     {
       label: "Asset TRO (3mo)",
-      value: rowData.Asset_tRO_3mo || "N/A",
-      subtext: `(N: ${rowData.Asset_3mo_N || "N/A"})`,
+      value: rowData.ASSET_RO_3MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_N_3MONTH || "N/A"})`,
     },
   ];
-
   return (
     <>
       <div
@@ -174,18 +104,19 @@ const CellContent: React.FC<{
           textOverflow: "ellipsis",
           display: "flex",
           alignItems: "center",
-          justifyContent:
-            index === 4 || index === 18 ? "space-between" : "flex-start",
+          justifyContent: "space-between",
         }}
       >
-        {String(value)}
-        {index === 4 && (
+        {value === null ? "-" : String(value)}
+
+        {/* Add "Mark Reviewed" button to PACKER_RESOURCE column */}
+        {columnId === "PACKER_RESOURCE" && (
           <IconButton size="small" onClick={handlePublish}>
             {rowData.isUpdated &&
-            rowData.reviewed === "Y - Reviewed from Web App" ? (
+            rowData.REVIEWED === "Y - Reviewed from Web App" ? (
               <DoneAllIcon sx={{ color: "#0bdd00" }} />
             ) : !rowData.isUpdated &&
-              rowData.reviewed === "Y - Reviewed from Web App" ? (
+              rowData.REVIEWED === "Y - Reviewed from Web App" ? (
               <CheckIcon sx={{ color: "#0bdd00" }} />
             ) : (
               <Tooltip
@@ -194,7 +125,7 @@ const CellContent: React.FC<{
                   <>
                     Click to mark reviewed.
                     <br />
-                    New TRO: {rowData.new_tRO || "N/A"}
+                    New TRO: {rowData.NEW_RO || "N/A"}
                   </>
                 }
                 arrow
@@ -209,10 +140,12 @@ const CellContent: React.FC<{
             )}
           </IconButton>
         )}
-        {index === 18 && (
+
+        {/* Add Edit button to NEW_RO column */}
+        {columnId === "NEW_RO" && (
           <IconButton
             size="small"
-            onClick={handleEditClick} // Open dialog on click
+            onClick={handleEditClick}
             sx={{
               borderRadius: "50%",
               padding: "4px",
@@ -228,13 +161,17 @@ const CellContent: React.FC<{
           </IconButton>
         )}
       </div>
-      <EditTROValueDialog
-        open={dialogOpen}
-        onClose={handleDialogClose}
-        onUpdate={handleDialogUpdate}
-        dropdownOptions={dropdownOptions} // Pass dynamic dropdown options
-        originalValue={value}
-      />
+
+      {/* Dialog for editing TRO value */}
+      {columnId === "NEW_RO" && (
+        <EditTROValueDialog
+          open={dialogOpen}
+          onClose={handleDialogClose}
+          onUpdate={handleDialogUpdate}
+          dropdownOptions={dropdownOptions}
+          originalValue={value}
+        />
+      )}
     </>
   );
 };
@@ -254,22 +191,38 @@ export const useRateOfOperationTable = (
 
   // New state to track updated Tro values per row
   const [updatedRows, setUpdatedRows] = useState<Record<number, boolean>>({});
-
   const columns = useMemo<ColumnDef<any>[]>(() => {
-    const keys = Object.keys(data[0] || {}).filter((k) => k !== "isUpdated");
-    return keys.map((key, index) => ({
+    if (!data || data.length === 0) return [];
+
+    // Define our priority columns that should appear first
+    const priorityColumns = ["RECIPE_NUMBER", "MAKER_RESOURCE", "PACKER_RESOURCE"];
+    // Define columns that should be hidden
+    const hiddenColumns = ["RATE_OF_OPERATION_KEY", "SNAPSHOT_DATE"];
+
+    // Get all keys except for the ones we want to hide and isUpdated flag
+    const keys = Object.keys(data[0] || {}).filter(
+      (k) => k !== "isUpdated" && !hiddenColumns.includes(k)
+    );
+
+    // Reorder keys to ensure priority columns come first
+    const orderedKeys = [
+      ...priorityColumns,
+      ...keys.filter((k) => !priorityColumns.includes(k)),
+    ];
+
+    return orderedKeys.map((key, index) => ({
       accessorKey: key,
       header: key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
       cell: (info: any) => (
-        <CellContent
+        <CellRenderer
           value={info.getValue()}
-          index={index}
+          columnId={info.column.id}
           rowData={info.row.original}
-          rowIndex={info.row.index} // Pass row index
-          updatedRows={updatedRows} // Pass updated status map
-          setUpdatedRows={setUpdatedRows} // Pass updater callback
-          onRowUpdate={onRowUpdate} // Pass onRowUpdate callback
-          onRowReview={onRowReview} // Pass onRowReview callback
+          rowIndex={info.row.index}
+          onRowUpdate={onRowUpdate}
+          onRowReview={onRowReview}
+          updatedRows={updatedRows}
+          setUpdatedRows={setUpdatedRows}
         />
       ),
       minSize: 120,
@@ -277,11 +230,14 @@ export const useRateOfOperationTable = (
       enableSorting: true,
     }));
   }, [data, updatedRows, onRowUpdate, onRowReview]); // Include updatedRows and onRowReview in dependency
-
   const table = useReactTable({
     data,
     columns,
     state: { columnVisibility },
+    defaultColumn: {
+      minSize: 100,
+      size: 150,
+    },
     onColumnVisibilityChange: setColumnVisibility,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),

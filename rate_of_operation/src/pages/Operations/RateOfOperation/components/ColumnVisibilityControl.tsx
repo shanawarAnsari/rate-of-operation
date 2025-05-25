@@ -37,6 +37,8 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
   totalColumnsCount,
   disableColumns = [],
 }) => {
+  // Add priority columns' IDs to disableColumns
+  const priorityColumnIds = ["RECIPE_NUMBER", "MAKER_RESOURCE", "PACKER_RESOURCE"];
   const theme = useTheme(); // Access the theme for dynamic colors
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -154,7 +156,10 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
                     <Checkbox
                       checked={column.getIsVisible()}
                       onChange={column.getToggleVisibilityHandler()}
-                      disabled={disableColumns.includes(index)}
+                      disabled={
+                        disableColumns.includes(index) ||
+                        priorityColumnIds.includes(column.id)
+                      }
                     />
                   }
                   label={column.id

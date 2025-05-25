@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   FormControl,
@@ -25,33 +25,48 @@ import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
 import { FilterAltRounded, SaveRounded, DownloadRounded } from "@mui/icons-material";
 import FilterPopper from "./filters/FilterPopper";
 
-interface RateOfOperationTableProps {
-  data: any[];
-  onDataChange: (updatedData: any[]) => void;
-}
+import { useRateOfOperationsData } from "../hooks/useRateOfOperationsData";
+import { CircularProgress } from "@mui/material";
 
-const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
-  data,
-  onDataChange,
-}) => {
-  const [tableData, setTableData] = useState(data);
+interface RateOfOperationTableProps {}
+
+const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
+  const {
+    data,
+    loading,
+    error,
+    totalRows,
+    pageNumber,
+    rowsPerPage,
+    reviewedStatus,
+    reviewedStatusOptions,
+    updateData,
+    refresh,
+    updateReviewedStatus,
+    updateRowsPerPage,
+    updatePageNumber,
+  } = useRateOfOperationsData();
+  const [tableData, setTableData] = useState<any[]>([]);
   const handleRowUpdate = (rowIndex: number, newValue: number) => {
     setTableData((prev) => {
       const updated = [...prev];
       const oldRow = updated[rowIndex];
       const originalTRO =
-        typeof oldRow.tRO === "number" ? oldRow.new_tRO : parseFloat(oldRow.new_tRO);
-      const newPlanningTime = oldRow.planning_time * (newValue / originalTRO);
+        typeof oldRow.NEW_RO === "number"
+          ? oldRow.NEW_RO
+          : parseFloat(oldRow.NEW_RO);
+      const newPlanningTime =
+        oldRow.CURRENT_PLANNING_TIME * (newValue / originalTRO);
       updated[rowIndex] = {
         ...oldRow,
-        new_tRO: newValue,
-        new_planning_time: newPlanningTime?.toFixed(2),
-        tRO_Change:
+        NEW_RO: newValue,
+        NEW_PLANNING_TIME: newPlanningTime?.toFixed(2),
+        RO_PCT_CHANGE:
           (((newValue - originalTRO) / originalTRO) * 100).toFixed(2) + "%",
         isUpdated: true,
       };
-      // notify parent of updated records
-      onDataChange(updated);
+      // Update data in the hook
+      updateData(updated);
       return updated;
     });
   };
@@ -62,10 +77,10 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
       const updated = [...prev];
       updated[rowIndex] = {
         ...updated[rowIndex],
-        reviewed: "Y - Reviewed from Web App",
+        REVIEWED: "Y - Reviewed from Web App",
       };
-      // notify parent
-      onDataChange(updated);
+      // Update data in the hook
+      updateData(updated);
       return updated;
     });
   };
@@ -105,10 +120,9 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
     setSelectedReviewedStatus(event.target.value);
     // Add logic to filter table data based on reviewed status
   };
-
   const handleRefresh = () => {
-    // Add logic to reload the data into the table
-    console.log("Data reloaded");
+    // Reload the data from the API
+    refresh();
   };
 
   const handleFilterIconClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -137,6 +151,13 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
     // Add logic to download data as Excel or CSV
     setDownloadAnchorEl(null);
   };
+
+  // Update tableData when data from API changes
+  useEffect(() => {
+    if (data && data.length > 0) {
+      setTableData(data);
+    }
+  }, [data]);
 
   return (
     <Box
@@ -215,19 +236,19 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
             <MenuItem value="Personal Care" sx={{ fontSize: "0.75rem" }}>
               Personal Care
             </MenuItem>
-            <MenuItem value="Family care" sx={{ fontSize: "0.75rem" }}>
-              Family care
-            </MenuItem>
             <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>
               All
             </MenuItem>
-          </TextField>
+          </TextField>{" "}
           <TextField
             size="small"
             select
             label="Reviewed Status"
-            value={selectedReviewedStatus}
-            onChange={handleReviewedStatusChange}
+            value={reviewedStatus}
+            onChange={(e) => {
+              updateReviewedStatus(e.target.value);
+              handleReviewedStatusChange(e as React.ChangeEvent<HTMLInputElement>);
+            }}
             sx={{
               minWidth: 150,
               "& .MuiInputBase-input": { fontSize: "0.75rem" },
@@ -238,15 +259,15 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
               },
             }}
           >
-            <MenuItem value="Y" sx={{ fontSize: "0.75rem" }}>
-              Y - Production Rate Web App
-            </MenuItem>
-            <MenuItem value="N" sx={{ fontSize: "0.75rem" }}>
-              N
-            </MenuItem>
-            <MenuItem value="Pending" sx={{ fontSize: "0.75rem" }}>
-              Pending
-            </MenuItem>
+            {reviewedStatusOptions.map((option) => (
+              <MenuItem
+                key={option.REVIEWED}
+                value={option.REVIEWED}
+                sx={{ fontSize: "0.75rem" }}
+              >
+                {option.REVIEWED}
+              </MenuItem>
+            ))}
             <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>
               All
             </MenuItem>
@@ -306,7 +327,6 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
               <ReplayCircleFilledIcon style={{ fontSize: "26px" }} />
             </IconButton>
           </Tooltip>
-
           <ColumnVisibilityControl
             table={table}
             anchorEl={anchorEl}
@@ -315,7 +335,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
             handleClose={handleClose}
             visibleColumnsCount={visibleColumnsCount}
             totalColumnsCount={totalColumnsCount - 2}
-            disableColumns={[0, 1, 2, 3, 4]} // Disable visibility control for the first 3 columns and 2 are already hidden
+            disableColumns={[]} // We now use priorityColumnIds for disabling in the component
           />
         </Box>
       </Box>
@@ -325,7 +345,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
         onClose={handleFilterClose}
         data={tableData}
         onApply={handleApplyFilters}
-      />
+      />{" "}
       <TableContainer
         component={Paper}
         sx={{
@@ -338,19 +358,43 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
           maxHeight: "65vh",
         }}
       >
-        <Table
-          stickyHeader
-          size="small"
-          sx={{
-            tableLayout: "auto",
-            width: "100%",
-          }}
-          aria-label="rate of operations table"
-        >
-          <TableHeader headerGroups={table.getHeaderGroups()} />
-          <TableBodyComponent rows={table.getRowModel().rows} />
-        </Table>
-      </TableContainer>
+        {loading ? (
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "300px",
+            }}
+          >
+            <CircularProgress />
+          </Box>
+        ) : error ? (
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "300px",
+            }}
+          >
+            <Typography color="error">{error}</Typography>
+          </Box>
+        ) : (
+          <Table
+            stickyHeader
+            size="small"
+            sx={{
+              tableLayout: "auto",
+              width: "100%",
+            }}
+            aria-label="rate of operations table"
+          >
+            <TableHeader headerGroups={table.getHeaderGroups()} />
+            <TableBodyComponent rows={table.getRowModel().rows} />
+          </Table>
+        )}
+      </TableContainer>{" "}
       <Box
         sx={{
           display: "flex",
@@ -361,16 +405,25 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
           gap: 2,
         }}
       >
-        <Typography variant="body2"></Typography>
+        <Typography
+          variant="body2"
+          sx={{ fontSize: "0.85rem", color: "text.secondary" }}
+        >
+          Total Records: {totalRows || 0}
+        </Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <FormControl size="small" variant="outlined" sx={{ minWidth: 120 }}>
             <InputLabel id="rows-per-page-label" sx={{ fontSize: "0.85rem" }}>
               Rows per page
-            </InputLabel>
+            </InputLabel>{" "}
             <Select
               labelId="rows-per-page-label"
-              value={table.getState().pagination.pageSize}
-              onChange={handleRowsPerPageChange}
+              value={rowsPerPage}
+              onChange={(e) => {
+                const newRowsPerPage = Number(e.target.value);
+                updateRowsPerPage(newRowsPerPage);
+                handleRowsPerPageChange(e);
+              }}
               label="Rows per page"
               sx={{ fontSize: "0.75rem", borderRadius: 0, mr: -2 }}
             >
@@ -417,6 +470,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = ({
             page={table.getState().pagination.pageIndex + 1}
             onChange={(_, page) => {
               table.setPageIndex(page - 1);
+              updatePageNumber(page);
               handlePageInputChange({
                 target: { value: page.toString() } as EventTarget & HTMLInputElement,
               } as React.ChangeEvent<HTMLInputElement>);

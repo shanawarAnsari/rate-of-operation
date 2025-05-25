@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Button,
@@ -16,6 +16,20 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
+import { filters } from "../../../../../services/responses"; // Import filters from responses
+
+// Define the filter item interface to match the data structure
+interface FilterItem {
+  RECIPE_TYPE: string;
+  MAKER_RESOURCE: string;
+  PACKER_RESOURCE: string;
+  PRODUCT_CODE: string;
+  PROD_DESC: string;
+  PRODUCT_VARIANT: string;
+  PRODUCT_SIZE: string;
+  SETUP_GROUP: string;
+  [key: string]: string; // Allow string indexing
+}
 
 interface FilterPopperProps {
   anchorEl: HTMLElement | null;
@@ -32,54 +46,72 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
   data,
   onApply,
 }) => {
-  const [filters, setFilters] = useState<{ [key: string]: string[] }>({
-    resource: [],
-    material: [],
-    material_desc: [],
-    product_code: [],
-    trade_code: [],
-    prod_variant: [],
-    prod_size: [],
-    tro_change: [], // Add TRO Change to filters state
-  });
+  // Define the filter properties we want to use
+  const filterProperties = [
+    "RECIPE_TYPE",
+    "MAKER_RESOURCE",
+    "PACKER_RESOURCE",
+    "PRODUCT_CODE",
+    "PROD_DESC",
+    "PRODUCT_VARIANT",
+    "PRODUCT_SIZE",
+    "SETUP_GROUP",
+  ];
 
-  const handleFilterChange = (field: string) => (event: any) => {
-    setFilters((prev) => ({
+  // Create state for filter selections
+  const [filterSelections, setFilterSelections] = useState<{
+    [key: string]: string[];
+  }>({
+    RECIPE_TYPE: [],
+    MAKER_RESOURCE: [],
+    PACKER_RESOURCE: [],
+    PRODUCT_CODE: [],
+    PROD_DESC: [],
+    PRODUCT_VARIANT: [],
+    PRODUCT_SIZE: [],
+    SETUP_GROUP: [],
+    tro_change: [], // Keep the existing TRO change filter
+  });
+  // Store unique filter options for each property
+  const [filterOptions, setFilterOptions] = useState<{ [key: string]: string[] }>(
+    {}
+  );
+
+  // Extract unique values for each filter property from the filters data
+  useEffect(() => {
+    const options: { [key: string]: string[] } = {};
+
+    filterProperties.forEach((prop) => {
+      const uniqueValues = Array.from(
+        new Set(filters.map((item: FilterItem) => item[prop]))
+      );
+      options[prop] = uniqueValues.filter(Boolean) as string[]; // Remove any undefined/null values
+    });
+
+    setFilterOptions(options);
+  }, []);
+
+  const handleFilterChange = (field: string) => (event: any, newValue: string[]) => {
+    setFilterSelections((prev) => ({
       ...prev,
-      [field]: event.target.value,
+      [field]: newValue,
     }));
   };
 
   const handleApply = () => {
-    onApply(filters);
+    onApply(filterSelections);
     onClose();
   };
 
   const handleReset = () => {
-    setFilters({
-      resource: [],
-      material: [],
-      material_desc: [],
-      product_code: [],
-      trade_code: [],
-      prod_variant: [],
-      prod_size: [],
-      tro_change: [],
-    });
-    onApply({
-      resource: [],
-      material: [],
-      material_desc: [],
-      product_code: [],
-      trade_code: [],
-      prod_variant: [],
-      prod_size: [],
-      tro_change: [],
-    });
-  };
+    const resetSelections = Object.keys(filterSelections).reduce((acc, key) => {
+      acc[key] = [];
+      return acc;
+    }, {} as { [key: string]: string[] });
 
-  const getDistinctValues = (field: string) =>
-    Array.from(new Set(data.map((item) => item[field])));
+    setFilterSelections(resetSelections);
+    onApply(resetSelections);
+  };
 
   return (
     <Popper
@@ -131,29 +163,22 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
               pr: 1, // Add padding for scrollbar
             }}
           >
-            {[
-              "resource",
-              "material",
-              "material_desc",
-              "product_code",
-              "trade_code",
-              "prod_variant",
-              "prod_size",
-            ].map((field) => (
+            {/* Display filter autocompletes for each property */}
+            {filterProperties.map((field) => (
               <Autocomplete
                 key={field}
                 multiple
-                options={getDistinctValues(field)}
-                value={filters[field]}
+                options={filterOptions[field] || []}
+                value={filterSelections[field]}
                 onChange={(event, value) => {
                   event.stopPropagation();
-                  setFilters((prev) => ({ ...prev, [field]: value }));
+                  setFilterSelections((prev) => ({ ...prev, [field]: value }));
                 }}
                 disableCloseOnSelect // Prevent dropdown from closing after each selection
                 renderInput={(params) => (
                   <TextField
                     {...params}
-                    label={field.replace("_", " ").toUpperCase()}
+                    label={field.replace("_", " ")}
                     size="small"
                     sx={{
                       mt: 1,
@@ -182,18 +207,15 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                 }}
               />
             ))}
+
+            {/* Keep the existing TRO Change filter */}
             <Autocomplete
               multiple
-              options={[
-                "0% to 5%",
-                "5% to 10%",
-                "10% to 15%",
-                "above 15%",
-              ]} // TRO Change options
-              value={filters.tro_change}
+              options={["0% to 5%", "5% to 10%", "10% to 15%", "above 15%"]}
+              value={filterSelections.tro_change}
               onChange={(event, value) => {
                 event.stopPropagation();
-                setFilters((prev) => ({ ...prev, tro_change: value }));
+                setFilterSelections((prev) => ({ ...prev, tro_change: value }));
               }}
               disableCloseOnSelect
               renderInput={(params) => (
