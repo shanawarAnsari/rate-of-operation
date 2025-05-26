@@ -28,7 +28,7 @@ import FilterPopper from "./filters/FilterPopper";
 import { useRateOfOperationsData } from "../hooks/useRateOfOperationsData";
 import { CircularProgress } from "@mui/material";
 
-interface RateOfOperationTableProps {}
+interface RateOfOperationTableProps { }
 
 const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   const {
@@ -154,7 +154,9 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
 
   // Update tableData when data from API changes
   useEffect(() => {
-    if (data && data.length > 0) {
+
+    if (data?.length > 0) {
+      debugger;
       setTableData(data);
     }
   }, [data]);
@@ -259,7 +261,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
               },
             }}
           >
-            {reviewedStatusOptions.map((option) => (
+            {reviewedStatusOptions.map((option: any) => (
               <MenuItem
                 key={option.REVIEWED}
                 value={option.REVIEWED}

@@ -113,7 +113,7 @@ const CellRenderer = ({
         {columnId === "PACKER_RESOURCE" && (
           <IconButton size="small" onClick={handlePublish}>
             {rowData.isUpdated &&
-            rowData.REVIEWED === "Y - Reviewed from Web App" ? (
+              rowData.REVIEWED === "Y - Reviewed from Web App" ? (
               <DoneAllIcon sx={{ color: "#0bdd00" }} />
             ) : !rowData.isUpdated &&
               rowData.REVIEWED === "Y - Reviewed from Web App" ? (

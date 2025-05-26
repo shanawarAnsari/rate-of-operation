@@ -22,9 +22,9 @@ const headerCellStyles = {
 const isStickyColumn = (index: number) => index < 3;
 
 const getStickyPosition = (index: number) => {
-  if (index === 0) return 0; // RECIPE_NUMBER position
-  if (index === 1) return 85; // MAKER_RESOURCE position
-  if (index === 2) return 180; // PACKER_RESOURCE position
+  if (index === 0) return 0;
+  if (index === 1) return 85;
+  if (index === 2) return 180;
   return 0;
 };
 
