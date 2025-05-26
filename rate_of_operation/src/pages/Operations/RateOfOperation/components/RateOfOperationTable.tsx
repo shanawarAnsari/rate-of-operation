@@ -25,10 +25,11 @@ import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
 import { FilterAltRounded, SaveRounded, DownloadRounded } from "@mui/icons-material";
 import FilterPopper from "./filters/FilterPopper";
 
-import { useRateOfOperationsData } from "../hooks/useRateOfOperationsData";
+import { useRecipesData } from "../hooks/useRecipesData";
+import { useReviewedStatusData } from "../hooks/useReviewedStatusData";
 import { CircularProgress } from "@mui/material";
 
-interface RateOfOperationTableProps { }
+interface RateOfOperationTableProps {}
 
 const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   const {
@@ -39,13 +40,14 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     pageNumber,
     rowsPerPage,
     reviewedStatus,
-    reviewedStatusOptions,
     updateData,
     refresh,
     updateReviewedStatus,
     updateRowsPerPage,
     updatePageNumber,
-  } = useRateOfOperationsData();
+  } = useRecipesData();
+
+  const { reviewedStatusOptions } = useReviewedStatusData();
   const [tableData, setTableData] = useState<any[]>([]);
   const handleRowUpdate = (rowIndex: number, newValue: number) => {
     setTableData((prev) => {
@@ -65,13 +67,12 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           (((newValue - originalTRO) / originalTRO) * 100).toFixed(2) + "%",
         isUpdated: true,
       };
-      // Update data in the hook
+
       updateData(updated);
       return updated;
     });
   };
 
-  // update only reviewed status on publish icon click
   const handleReview = (rowIndex: number) => {
     setTableData((prev) => {
       const updated = [...prev];
@@ -79,12 +80,11 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
         ...updated[rowIndex],
         REVIEWED: "Y - Reviewed from Web App",
       };
-      // Update data in the hook
+
       updateData(updated);
       return updated;
     });
   };
-
   const {
     table,
     visibleColumnsCount,
@@ -99,7 +99,8 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     open,
     handleClick,
     handleClose,
-  } = useRateOfOperationTable(tableData, handleRowUpdate, handleReview);
+    totalPages,
+  } = useRateOfOperationTable(tableData, handleRowUpdate, handleReview, totalRows);
 
   const [selectedCategory, setSelectedCategory] = useState<string>("Personal Care");
   const [selectedReviewedStatus, setSelectedReviewedStatus] = useState<string>("N");
@@ -111,17 +112,14 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
 
   const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedCategory(event.target.value);
-    // Add logic to filter table data based on category
   };
 
   const handleReviewedStatusChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setSelectedReviewedStatus(event.target.value);
-    // Add logic to filter table data based on reviewed status
   };
   const handleRefresh = () => {
-    // Reload the data from the API
     refresh();
   };
 
@@ -135,7 +133,6 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
 
   const handleApplyFilters = (appliedFilters: { [key: string]: string[] }) => {
     setFilters(appliedFilters);
-    // Add logic to filter table data based on applied filters
   };
 
   const handleDownloadClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -145,19 +142,22 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   const handleDownloadClose = () => {
     setDownloadAnchorEl(null);
   };
-
   const handleDownload = (format: "excel" | "csv") => {
-    console.log(`Downloading as ${format}`);
-    // Add logic to download data as Excel or CSV
     setDownloadAnchorEl(null);
   };
-
-  // Update tableData when data from API changes
   useEffect(() => {
-
-    if (data?.length > 0) {
-      debugger;
+    if (Array.isArray(data) && data.length > 0) {
       setTableData(data);
+    } else if (
+      data &&
+      typeof data === "object" &&
+      "rows" in data &&
+      Array.isArray(data.rows) &&
+      data.rows.length > 0
+    ) {
+      setTableData(data.rows);
+    } else {
+      setTableData([]);
     }
   }, [data]);
 
@@ -261,15 +261,17 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
               },
             }}
           >
-            {reviewedStatusOptions.map((option: any) => (
-              <MenuItem
-                key={option.REVIEWED}
-                value={option.REVIEWED}
-                sx={{ fontSize: "0.75rem" }}
-              >
-                {option.REVIEWED}
-              </MenuItem>
-            ))}
+            {Array.isArray(reviewedStatusOptions) && reviewedStatusOptions.length > 0
+              ? reviewedStatusOptions.map((option: any) => (
+                  <MenuItem
+                    key={option.REVIEWED}
+                    value={option.REVIEWED}
+                    sx={{ fontSize: "0.75rem" }}
+                  >
+                    {option.REVIEWED}
+                  </MenuItem>
+                ))
+              : null}
             <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>
               All
             </MenuItem>
@@ -282,7 +284,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
                 marginRight: 1,
                 p: 0.25,
                 border: "1px solid",
-                borderColor: "divider", // Matches the TextField's default border color
+                borderColor: "divider",
                 borderRadius: "0px",
                 "&:hover": {
                   borderColor: (theme) => theme.palette.text.primary,
@@ -301,7 +303,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
                 marginRight: 1,
                 p: 0.25,
                 border: "1px solid",
-                borderColor: "divider", // Matches the TextField's default border color
+                borderColor: "divider",
                 borderRadius: "0px",
                 "&:hover": {
                   borderColor: (theme) => theme.palette.text.primary,
@@ -320,7 +322,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
                 marginRight: 1,
                 p: 0.25,
                 border: "1px solid",
-                borderColor: "divider", // Matches the TextField's default border color
+                borderColor: "divider",
                 borderRadius: "0px",
                 "&:hover": {},
               }}
@@ -337,7 +339,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             handleClose={handleClose}
             visibleColumnsCount={visibleColumnsCount}
             totalColumnsCount={totalColumnsCount - 2}
-            disableColumns={[]} // We now use priorityColumnIds for disabling in the component
+            disableColumns={[]}
           />
         </Box>
       </Box>
@@ -382,6 +384,17 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           >
             <Typography color="error">{error}</Typography>
           </Box>
+        ) : tableData.length === 0 && loading ? (
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "300px",
+            }}
+          >
+            <Typography>No data available</Typography>
+          </Box>
         ) : (
           <Table
             stickyHeader
@@ -407,11 +420,12 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           gap: 2,
         }}
       >
+        {" "}
         <Typography
           variant="body2"
           sx={{ fontSize: "0.85rem", color: "text.secondary" }}
         >
-          Total Records: {totalRows || 0}
+          Total Records: {totalRows || tableData.length || 0}
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <FormControl size="small" variant="outlined" sx={{ minWidth: 120 }}>
@@ -450,9 +464,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             }}
             InputProps={{
               endAdornment: (
-                <InputAdornment position="end">
-                  of {table.getPageCount()}
-                </InputAdornment>
+                <InputAdornment position="end">of {totalPages}</InputAdornment>
               ),
               inputProps: { style: { width: "40px" }, "aria-label": "page number" },
             }}
@@ -466,9 +478,9 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
                 fontSize: "0.85rem",
               },
             }}
-          />
+          />{" "}
           <Pagination
-            count={table.getPageCount()}
+            count={totalPages}
             page={table.getState().pagination.pageIndex + 1}
             onChange={(_, page) => {
               table.setPageIndex(page - 1);
@@ -479,6 +491,10 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             }}
             color="primary"
             size="small"
+            showFirstButton
+            showLastButton
+            siblingCount={1}
+            boundaryCount={1}
           />
         </Box>
       </Box>

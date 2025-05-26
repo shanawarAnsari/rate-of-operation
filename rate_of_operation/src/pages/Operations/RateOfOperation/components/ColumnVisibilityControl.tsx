@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import {
   TextField,
   InputAdornment,
@@ -9,6 +9,7 @@ import {
   IconButton,
   Collapse,
   Tooltip,
+  Box,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -27,6 +28,8 @@ interface ColumnVisibilityControlProps {
   disableColumns?: number[];
 }
 
+const ITEMS_PER_BATCH = 20;
+
 const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
   table,
   anchorEl,
@@ -41,11 +44,79 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
   const priorityColumnIds = ["RECIPE_NUMBER", "MAKER_RESOURCE", "PACKER_RESOURCE"];
   const theme = useTheme(); // Access the theme for dynamic colors
   const [showDropdown, setShowDropdown] = useState(false);
+  const [displayedItems, setDisplayedItems] = useState(ITEMS_PER_BATCH);
+  const loaderRef = useRef<HTMLDivElement | null>(null);
 
   const toggleDropdown = (e: any) => {
     e.stopPropagation();
     setShowDropdown((prev) => !prev);
-  };
+  }; // Filter columns to exclude business and category columns
+  const filteredColumns = useMemo(() => {
+    try {
+      // First try to get all leaf columns
+      const allColumns = table.getAllLeafColumns();
+      console.log("All columns length:", allColumns.length);
+
+      // If no columns found, try getting from getAllFlatColumns
+      if (!allColumns || allColumns.length === 0) {
+        const flatColumns = table.getAllFlatColumns();
+        console.log("Flat columns length:", flatColumns.length);
+
+        if (!flatColumns || flatColumns.length === 0) {
+          console.error("No columns found in the table!");
+          return [];
+        }
+
+        return flatColumns.filter(
+          (column) =>
+            !column.id.toLowerCase().includes("business") &&
+            !column.id.toLowerCase().includes("category")
+        );
+      }
+
+      const filtered = allColumns.filter(
+        (column) =>
+          !column.id.toLowerCase().includes("business") &&
+          !column.id.toLowerCase().includes("category")
+      );
+
+      console.log("Filtered columns length:", filtered.length);
+      return filtered;
+    } catch (error) {
+      console.error("Error accessing table columns:", error);
+      return [];
+    }
+  }, [table]);
+
+  // Reset displayed items when menu is closed
+  useEffect(() => {
+    if (!open) {
+      setDisplayedItems(ITEMS_PER_BATCH);
+    }
+  }, [open]);
+
+  // Setup intersection observer for infinite scroll
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "20px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && displayedItems < filteredColumns.length) {
+        setDisplayedItems((prev) =>
+          Math.min(prev + ITEMS_PER_BATCH, filteredColumns.length)
+        );
+      }
+    }, observerOptions);
+
+    if (loaderRef.current) {
+      observer.observe(loaderRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [displayedItems, filteredColumns.length]);
 
   return (
     <>
@@ -122,7 +193,7 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
             }}
           />
         </Collapse>
-      )}
+      )}{" "}
       <Menu
         id="column-visibility-menu"
         anchorEl={anchorEl}
@@ -133,42 +204,54 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
         }}
         MenuListProps={{
           "aria-labelledby": "column-visibility-textfield",
-          sx: { maxHeight: "400px", overflow: "auto", width: "300px" },
+          sx: { maxHeight: "400px", width: "300px", padding: 0 },
         }}
       >
-        {table.getAllLeafColumns().map(
-          (column, index) =>
-            !column.id.toLowerCase().includes("business") &&
-            !column.id.toLowerCase().includes("category") && (
-              <MenuItem
-                key={column.id}
-                sx={{
-                  "& .MuiFormControlLabel-label": {
-                    fontSize: "0.75rem",
-                    padding: 0,
-                  },
-                  p: 0,
-                  ml: 2,
-                }}
-              >
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={column.getIsVisible()}
-                      onChange={column.getToggleVisibilityHandler()}
-                      disabled={
-                        disableColumns.includes(index) ||
-                        priorityColumnIds.includes(column.id)
-                      }
-                    />
-                  }
-                  label={column.id
-                    .replace(/_/g, " ")
-                    .replace(/\b\w/g, (c) => c.toUpperCase())}
-                />
-              </MenuItem>
-            )
-        )}
+        <Box sx={{ overflow: "auto", maxHeight: 400 }}>
+          {filteredColumns.length === 0 ? (
+            <MenuItem sx={{ justifyContent: "center" }}>
+              No columns available
+            </MenuItem>
+          ) : (
+            <>
+              {filteredColumns.slice(0, displayedItems).map((column, index) => (
+                <MenuItem
+                  key={column.id}
+                  sx={{
+                    "& .MuiFormControlLabel-label": {
+                      fontSize: "0.75rem",
+                      padding: 0,
+                    },
+                    p: 0,
+                    ml: 2,
+                    height: "36px",
+                  }}
+                >
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={column.getIsVisible()}
+                        onChange={column.getToggleVisibilityHandler()}
+                        disabled={
+                          disableColumns.includes(index) ||
+                          priorityColumnIds.includes(column.id)
+                        }
+                      />
+                    }
+                    label={column.id
+                      .replace(/_/g, " ")
+                      .replace(/\b\w/g, (c) => c.toUpperCase())}
+                  />
+                </MenuItem>
+              ))}
+
+              {/* Invisible loader element for intersection observer */}
+              {displayedItems < filteredColumns.length && (
+                <Box ref={loaderRef} sx={{ height: 5 }} />
+              )}
+            </>
+          )}
+        </Box>
       </Menu>
     </>
   );

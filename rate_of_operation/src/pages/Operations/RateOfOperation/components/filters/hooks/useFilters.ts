@@ -1,0 +1,43 @@
+import { useState, useEffect } from "react";
+import { getFilters } from "../../../../../../services/rate-of-operations";
+
+interface FilterItem {
+  RECIPE_TYPE: string;
+  MAKER_RESOURCE: string;
+  PACKER_RESOURCE: string;
+  PRODUCT_CODE: string;
+  PROD_DESC: string;
+  PRODUCT_VARIANT: string;
+  PRODUCT_SIZE: string;
+  SETUP_GROUP: string;
+  [key: string]: string;
+}
+
+export const useFilters = () => {
+  const [filters, setFilters] = useState<FilterItem[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchFilters = async () => {
+      try {
+        setLoading(true);
+        const response = await getFilters();
+        if (response && !response.error) {
+          setFilters(response);
+        } else {
+          setError(response.error || "Failed to fetch filters");
+        }
+      } catch (err) {
+        setError("An error occurred while fetching filters");
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFilters();
+  }, []);
+
+  return { filters, loading, error };
+};

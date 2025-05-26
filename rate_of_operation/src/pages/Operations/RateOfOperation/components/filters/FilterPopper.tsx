@@ -13,12 +13,14 @@ import {
   TextField,
   Autocomplete,
   Divider,
+  CircularProgress,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
-import { filters } from "../../../../../services/responses"; // Import filters from responses
+import { useFilters } from "./hooks/useFilters";
+import { useFilterStore } from "../../../../../store/filterStore";
+import { getRecipies } from "../../../../../services/rate-of-operations";
 
-// Define the filter item interface to match the data structure
 interface FilterItem {
   RECIPE_TYPE: string;
   MAKER_RESOURCE: string;
@@ -28,7 +30,7 @@ interface FilterItem {
   PRODUCT_VARIANT: string;
   PRODUCT_SIZE: string;
   SETUP_GROUP: string;
-  [key: string]: string; // Allow string indexing
+  [key: string]: string;
 }
 
 interface FilterPopperProps {
@@ -46,7 +48,6 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
   data,
   onApply,
 }) => {
-  // Define the filter properties we want to use
   const filterProperties = [
     "RECIPE_TYPE",
     "MAKER_RESOURCE",
@@ -58,51 +59,59 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
     "SETUP_GROUP",
   ];
 
-  // Create state for filter selections
-  const [filterSelections, setFilterSelections] = useState<{
-    [key: string]: string[];
-  }>({
-    RECIPE_TYPE: [],
-    MAKER_RESOURCE: [],
-    PACKER_RESOURCE: [],
-    PRODUCT_CODE: [],
-    PROD_DESC: [],
-    PRODUCT_VARIANT: [],
-    PRODUCT_SIZE: [],
-    SETUP_GROUP: [],
-    tro_change: [], // Keep the existing TRO change filter
-  });
-  // Store unique filter options for each property
+  const {
+    filterSelections,
+    updateFilterSelection,
+    resetFilters,
+    setFilterSelections,
+  } = useFilterStore();
+
   const [filterOptions, setFilterOptions] = useState<{ [key: string]: string[] }>(
     {}
   );
 
-  // Extract unique values for each filter property from the filters data
+  const { filters, loading, error } = useFilters();
+
   useEffect(() => {
-    const options: { [key: string]: string[] } = {};
+    if (filters && filters.length > 0) {
+      const options: { [key: string]: string[] } = {};
 
-    filterProperties.forEach((prop) => {
-      const uniqueValues = Array.from(
-        new Set(filters.map((item: FilterItem) => item[prop]))
-      );
-      options[prop] = uniqueValues.filter(Boolean) as string[]; // Remove any undefined/null values
-    });
+      filterProperties.forEach((prop) => {
+        const uniqueValues = Array.from(
+          new Set(filters.map((item: FilterItem) => item[prop]))
+        );
+        options[prop] = uniqueValues.filter(Boolean) as string[];
+      });
 
-    setFilterOptions(options);
-  }, []);
-
+      setFilterOptions(options);
+    }
+  }, [filters]);
   const handleFilterChange = (field: string) => (event: any, newValue: string[]) => {
-    setFilterSelections((prev) => ({
-      ...prev,
-      [field]: newValue,
-    }));
+    updateFilterSelection(field, newValue);
   };
+  const [isApplying, setIsApplying] = useState<boolean>(false);
 
-  const handleApply = () => {
-    onApply(filterSelections);
-    onClose();
+  const handleApply = async () => {
+    try {
+      setIsApplying(true);
+
+      const response = await getRecipies({
+        filters: filterSelections,
+        pageNumber: 1,
+        rowsPerPage: 10,
+        reviewedStatus: "N",
+      });
+
+      console.log("Filter API response:", response);
+
+      onApply(filterSelections);
+    } catch (error) {
+      console.error("Error applying filters:", error);
+    } finally {
+      setIsApplying(false);
+      onClose();
+    }
   };
-
   const handleReset = () => {
     const resetSelections = Object.keys(filterSelections).reduce((acc, key) => {
       acc[key] = [];
@@ -110,7 +119,6 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
     }, {} as { [key: string]: string[] });
 
     setFilterSelections(resetSelections);
-    onApply(resetSelections);
   };
 
   return (
@@ -154,109 +162,131 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
             <CloseIcon onClick={onClose} sx={{ fontSize: 18, cursor: "pointer" }} />
           </Box>
           <Divider sx={{ mb: 1.5 }} />
-
           <Box
             sx={{
               flex: 1,
               overflowY: "auto",
               mb: 2,
-              pr: 1, // Add padding for scrollbar
+              pr: 1,
             }}
           >
-            {/* Display filter autocompletes for each property */}
-            {filterProperties.map((field) => (
-              <Autocomplete
-                key={field}
-                multiple
-                options={filterOptions[field] || []}
-                value={filterSelections[field]}
-                onChange={(event, value) => {
-                  event.stopPropagation();
-                  setFilterSelections((prev) => ({ ...prev, [field]: value }));
-                }}
-                disableCloseOnSelect // Prevent dropdown from closing after each selection
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label={field.replace("_", " ")}
-                    size="small"
+            {loading ? (
+              <Box sx={{ display: "flex", justifyContent: "center", p: 2 }}>
+                <CircularProgress size={24} />
+              </Box>
+            ) : error ? (
+              <Typography
+                color="error"
+                variant="body2"
+                sx={{ textAlign: "center", p: 2 }}
+              >
+                Error loading filters. Please try again.
+              </Typography>
+            ) : (
+              <>
+                {}
+                {filterProperties.map((field) => (
+                  <Autocomplete
+                    key={field}
+                    multiple
+                    options={filterOptions[field] || []}
+                    value={filterSelections[field]}
+                    onChange={(event, value) => {
+                      event.stopPropagation();
+                      updateFilterSelection(field, value);
+                    }}
+                    disableCloseOnSelect
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label={field.replace("_", " ")}
+                        size="small"
+                        sx={{
+                          mt: 1,
+                          mb: 0.5,
+                          width: 300,
+                          "& .MuiInputBase-input": { fontSize: 12 },
+                          "& .MuiInputLabel-root": { fontSize: 12 },
+                        }}
+                      />
+                    )}
+                    renderOption={(props, option, { selected }) => (
+                      <li
+                        {...props}
+                        style={{
+                          fontSize: 12,
+                          padding: 0,
+                          margin: 0,
+                        }}
+                      >
+                        <Checkbox style={{ marginRight: 1 }} checked={selected} />
+                        {option}
+                      </li>
+                    )}
                     sx={{
-                      mt: 1,
-                      mb: 0.5,
-                      width: 300,
-                      "& .MuiInputBase-input": { fontSize: 12 },
-                      "& .MuiInputLabel-root": { fontSize: 12 },
+                      "& .MuiAutocomplete-tag": { fontSize: 12 },
                     }}
                   />
-                )}
-                renderOption={(props, option, { selected }) => (
-                  <li
-                    {...props}
-                    style={{
-                      fontSize: 12,
-                      padding: 0,
-                      margin: 0,
-                    }}
-                  >
-                    <Checkbox style={{ marginRight: 1 }} checked={selected} />
-                    {option}
-                  </li>
-                )}
-                sx={{
-                  "& .MuiAutocomplete-tag": { fontSize: 12 }, // Rendered selections
-                }}
-              />
-            ))}
+                ))}
 
-            {/* Keep the existing TRO Change filter */}
-            <Autocomplete
-              multiple
-              options={["0% to 5%", "5% to 10%", "10% to 15%", "above 15%"]}
-              value={filterSelections.tro_change}
-              onChange={(event, value) => {
-                event.stopPropagation();
-                setFilterSelections((prev) => ({ ...prev, tro_change: value }));
-              }}
-              disableCloseOnSelect
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="TRO CHANGE (abs)"
-                  size="small"
+                {}
+                <Autocomplete
+                  multiple
+                  options={["0% to 5%", "5% to 10%", "10% to 15%", "above 15%"]}
+                  value={filterSelections.tro_change}
+                  onChange={(event, value) => {
+                    event.stopPropagation();
+                    updateFilterSelection("tro_change", value);
+                  }}
+                  disableCloseOnSelect
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="TRO CHANGE (abs)"
+                      size="small"
+                      sx={{
+                        mt: 1,
+                        mb: 0.5,
+                        width: 300,
+                        "& .MuiInputBase-input": { fontSize: 12 },
+                        "& .MuiInputLabel-root": { fontSize: 12 },
+                      }}
+                    />
+                  )}
+                  renderOption={(props, option, { selected }) => (
+                    <li
+                      {...props}
+                      style={{
+                        fontSize: 12,
+                        padding: 0,
+                        margin: 0,
+                      }}
+                    >
+                      <Checkbox style={{ marginRight: 1 }} checked={selected} />
+                      {option}
+                    </li>
+                  )}
                   sx={{
-                    mt: 1,
-                    mb: 0.5,
-                    width: 300,
-                    "& .MuiInputBase-input": { fontSize: 12 },
-                    "& .MuiInputLabel-root": { fontSize: 12 },
+                    "& .MuiAutocomplete-tag": { fontSize: 12 },
                   }}
                 />
-              )}
-              renderOption={(props, option, { selected }) => (
-                <li
-                  {...props}
-                  style={{
-                    fontSize: 12,
-                    padding: 0,
-                    margin: 0,
-                  }}
-                >
-                  <Checkbox style={{ marginRight: 1 }} checked={selected} />
-                  {option}
-                </li>
-              )}
-              sx={{
-                "& .MuiAutocomplete-tag": { fontSize: 12 },
-              }}
-            />
-          </Box>
-
+              </>
+            )}
+          </Box>{" "}
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Button size="small" onClick={handleReset}>
+            <Button size="small" onClick={handleReset} disabled={isApplying}>
               Reset
             </Button>
-            <Button size="small" variant="contained" onClick={handleApply}>
-              Apply
+            <Button
+              size="small"
+              variant="contained"
+              onClick={handleApply}
+              disabled={isApplying}
+              startIcon={
+                isApplying ? <CircularProgress size={16} color="inherit" /> : null
+              }
+            >
+              {isApplying ? "Applying..." : "Apply"}
             </Button>
           </Box>
         </Box>

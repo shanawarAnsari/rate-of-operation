@@ -12,12 +12,11 @@ import { useSearch } from "./useSearch";
 import { IconButton, Typography, useTheme } from "@mui/material";
 import { PublishedWithChanges } from "@mui/icons-material";
 import CheckIcon from "@mui/icons-material/Check";
-import EditIcon from "@mui/icons-material/Edit"; // Import the pencil icon
-import DoneAllIcon from "@mui/icons-material/DoneAll"; // Import DoneAll icon
-import Tooltip from "@mui/material/Tooltip"; // Import Tooltip
-import { EditTROValueDialog } from "../components/EditTROValueDialog"; // Import the dialog component
+import EditIcon from "@mui/icons-material/Edit";
+import DoneAllIcon from "@mui/icons-material/DoneAll";
+import Tooltip from "@mui/material/Tooltip";
+import { EditTROValueDialog } from "../components/EditTROValueDialog";
 
-// Cell component for column-specific rendering
 const CellRenderer = ({
   value,
   columnId,
@@ -57,7 +56,6 @@ const CellRenderer = ({
 
   const handlePublish = () => onRowReview(rowIndex);
 
-  // Create dropdown options for TRO dialog
   const dropdownOptions = [
     { label: "AI/ML TRO", value: rowData.AIML_RO || "N/A" },
     {
@@ -109,11 +107,11 @@ const CellRenderer = ({
       >
         {value === null ? "-" : String(value)}
 
-        {/* Add "Mark Reviewed" button to PACKER_RESOURCE column */}
+        {}
         {columnId === "PACKER_RESOURCE" && (
           <IconButton size="small" onClick={handlePublish}>
             {rowData.isUpdated &&
-              rowData.REVIEWED === "Y - Reviewed from Web App" ? (
+            rowData.REVIEWED === "Y - Reviewed from Web App" ? (
               <DoneAllIcon sx={{ color: "#0bdd00" }} />
             ) : !rowData.isUpdated &&
               rowData.REVIEWED === "Y - Reviewed from Web App" ? (
@@ -141,7 +139,7 @@ const CellRenderer = ({
           </IconButton>
         )}
 
-        {/* Add Edit button to NEW_RO column */}
+        {}
         {columnId === "NEW_RO" && (
           <IconButton
             size="small"
@@ -162,7 +160,7 @@ const CellRenderer = ({
         )}
       </div>
 
-      {/* Dialog for editing TRO value */}
+      {}
       {columnId === "NEW_RO" && (
         <EditTROValueDialog
           open={dialogOpen}
@@ -179,7 +177,8 @@ const CellRenderer = ({
 export const useRateOfOperationTable = (
   data: any[],
   onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void,
-  onRowReview: (rowIndex: number) => void
+  onRowReview: (rowIndex: number) => void,
+  totalRows: number
 ) => {
   const {
     columnVisibility,
@@ -189,22 +188,26 @@ export const useRateOfOperationTable = (
   } = useColumnVisibility();
   const { searchText, handleSearchChange } = useSearch();
 
-  // New state to track updated Tro values per row
   const [updatedRows, setUpdatedRows] = useState<Record<number, boolean>>({});
   const columns = useMemo<ColumnDef<any>[]>(() => {
-    if (!data || data.length === 0) return [];
+    if (!data || data.length === 0) {
+      return [
+        {
+          accessorKey: "empty",
+          header: "No Data",
+          cell: () => null,
+        },
+      ];
+    }
 
-    // Define our priority columns that should appear first
     const priorityColumns = ["RECIPE_NUMBER", "MAKER_RESOURCE", "PACKER_RESOURCE"];
-    // Define columns that should be hidden
+
     const hiddenColumns = ["RATE_OF_OPERATION_KEY", "SNAPSHOT_DATE"];
 
-    // Get all keys except for the ones we want to hide and isUpdated flag
     const keys = Object.keys(data[0] || {}).filter(
       (k) => k !== "isUpdated" && !hiddenColumns.includes(k)
     );
 
-    // Reorder keys to ensure priority columns come first
     const orderedKeys = [
       ...priorityColumns,
       ...keys.filter((k) => !priorityColumns.includes(k)),
@@ -229,11 +232,17 @@ export const useRateOfOperationTable = (
       maxSize: 1000,
       enableSorting: true,
     }));
-  }, [data, updatedRows, onRowUpdate, onRowReview]); // Include updatedRows and onRowReview in dependency
+  }, [data, updatedRows, onRowUpdate, onRowReview]);
   const table = useReactTable({
     data,
     columns,
-    state: { columnVisibility },
+    state: {
+      columnVisibility,
+      pagination: {
+        pageIndex: 0,
+        pageSize: 10,
+      },
+    },
     defaultColumn: {
       minSize: 100,
       size: 150,
@@ -242,14 +251,16 @@ export const useRateOfOperationTable = (
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    manualPagination: true, // Since we're handling pagination with API
+    pageCount: Math.max(1, Math.ceil(totalRows / 10)), // Initial page count calculation
   });
-
   const {
     pageInput,
     handlePageInputChange,
     handlePageInputSubmit,
     handleRowsPerPageChange,
-  } = usePagination(table);
+    totalPages,
+  } = usePagination(table, totalRows);
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -261,7 +272,6 @@ export const useRateOfOperationTable = (
   const handleClose = useCallback(() => {
     setAnchorEl(null);
   }, []);
-
   return {
     table,
     columnVisibility,
@@ -278,5 +288,6 @@ export const useRateOfOperationTable = (
     open,
     handleClick,
     handleClose,
+    totalPages,
   };
 };
