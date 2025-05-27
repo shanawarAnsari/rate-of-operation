@@ -1,4 +1,11 @@
-import React, { useState, useMemo } from "react";
+import React, {
+  useState,
+  useMemo,
+  useCallback,
+  memo,
+  useRef,
+  useEffect,
+} from "react";
 import {
   TextField,
   InputAdornment,
@@ -9,24 +16,80 @@ import {
   IconButton,
   Collapse,
   Tooltip,
+  Box,
+  Typography,
+  CircularProgress,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { Table } from "@tanstack/react-table";
-import { useColumnVisibility } from "../hooks/useColumnVisibility";
 
 interface ColumnVisibilityControlProps {
   table: Table<any>;
   anchorEl: HTMLElement | null;
   open: boolean;
-  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleClick: (event: React.MouseEvent<HTMLElement>) => void;
   handleClose: () => void;
   visibleColumnsCount: number;
   totalColumnsCount: number;
   disableColumns?: number[];
+  availableColumns: string[];
+  priorityColumns: string[];
+  columnVisibility: Record<string, boolean>;
+  setColumnVisibility: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
 }
+
+// Memoized column item to prevent unnecessary re-renders
+const ColumnItem = memo(
+  ({
+    column,
+    index,
+    disableColumns,
+    priorityColumns,
+  }: {
+    column: {
+      id: string;
+      getIsVisible: () => boolean;
+      getToggleVisibilityHandler: () => () => void;
+    };
+    index: number;
+    disableColumns: number[];
+    priorityColumns: string[];
+  }) => {
+    return (
+      <MenuItem
+        sx={{
+          "& .MuiFormControlLabel-label": {
+            fontSize: "0.75rem",
+            padding: 0,
+          },
+          p: 0,
+          ml: 2,
+          height: "36px",
+        }}
+      >
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={column.getIsVisible()}
+              onChange={column.getToggleVisibilityHandler()}
+              disabled={
+                disableColumns.includes(index) || priorityColumns.includes(column.id)
+              }
+            />
+          }
+          label={column.id
+            .replace(/_/g, " ")
+            .replace(/\b\w/g, (c: string) => c.toUpperCase())}
+        />
+      </MenuItem>
+    );
+  }
+);
+
+ColumnItem.displayName = "ColumnItem";
 
 const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
   table,
@@ -37,43 +100,93 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
   visibleColumnsCount,
   totalColumnsCount,
   disableColumns = [],
+  availableColumns,
+  priorityColumns,
+  columnVisibility,
+  setColumnVisibility,
 }) => {
-  const priorityColumnIds = ["RECIPE_NUMBER", "MAKER_RESOURCE", "PACKER_RESOURCE"];
-  const { columnVisibility, setColumnVisibility } = useColumnVisibility();
   const theme = useTheme();
   const [showDropdown, setShowDropdown] = useState(false);
+  const menuListRef = useRef<HTMLUListElement>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const toggleDropdown = (e: any) => {
+  const toggleDropdown = useCallback((e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
     setShowDropdown((prev) => !prev);
-  };
-  // Get columns from columnVisibility state (simplified approach)
+  }, []);
+
+  // Optimized columns with memoization to prevent recalculation
   const columns = useMemo(() => {
-    const hiddenFromDropdown = ["RATE_OF_OPERATION_KEY", "SNAPSHOT_DATE"];
-    const columnIds = Object.keys(columnVisibility).filter(
-      (id) => !hiddenFromDropdown.includes(id)
-    );
-    return columnIds.map((id) => ({
-      id,
-      getIsVisible: () => columnVisibility[id] !== false,
+    return availableColumns.map((columnId) => ({
+      id: columnId,
+      getIsVisible: () => columnVisibility[columnId] !== false,
       getToggleVisibilityHandler: () => () => {
         setColumnVisibility((prev) => ({
           ...prev,
-          [id]: !prev[id],
+          [columnId]: !prev[columnId],
         }));
       },
     }));
-  }, [columnVisibility, setColumnVisibility]);
+  }, [availableColumns, columnVisibility, setColumnVisibility]);
+
+  const handleMenuClose = useCallback(() => {
+    handleClose();
+    setShowDropdown(false);
+  }, [handleClose]);
+
+  // Chunked rendering for better performance with infinite scroll
+  const [visibleChunk, setVisibleChunk] = useState(20);
+  const CHUNK_SIZE = 20;
+
+  const loadMoreColumns = useCallback(() => {
+    if (isLoading || visibleChunk >= columns.length) return;
+
+    setIsLoading(true);
+    // Simulate async loading with a small delay for better UX
+    setTimeout(() => {
+      setVisibleChunk((prev) => Math.min(prev + CHUNK_SIZE, columns.length));
+      setIsLoading(false);
+    }, 100);
+  }, [columns.length, visibleChunk, isLoading]);
+
+  // Handle scroll events for infinite loading
+  const handleScroll = useCallback(
+    (event: React.UIEvent<HTMLUListElement>) => {
+      const { scrollTop, scrollHeight, clientHeight } = event.currentTarget;
+      const threshold = 50; // Load more when within 50px of bottom
+
+      if (
+        scrollHeight - scrollTop <= clientHeight + threshold &&
+        !isLoading &&
+        visibleChunk < columns.length
+      ) {
+        loadMoreColumns();
+      }
+    },
+    [loadMoreColumns, isLoading, visibleChunk, columns.length]
+  );
+
+  // Reset chunk when menu opens/closes
+  useEffect(() => {
+    if (open) {
+      setVisibleChunk(20);
+      setIsLoading(false);
+    }
+  }, [open]);
+
+  const visibleColumns = useMemo(() => {
+    return columns.slice(0, visibleChunk);
+  }, [columns, visibleChunk]);
 
   return (
     <>
       {!showDropdown ? (
         <IconButton
-          onClick={(e) => toggleDropdown(e)}
+          onClick={toggleDropdown}
           sx={{
             p: 0.25,
             border: "1px solid",
-            borderColor: "divider", // Matches the TextField's default border color
+            borderColor: "divider",
             borderRadius: "0px",
             "&:hover": {
               borderColor: (theme) => theme.palette.text.primary,
@@ -90,19 +203,19 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
           </Tooltip>
         </IconButton>
       ) : (
-        <Collapse in={showDropdown} orientation="horizontal" timeout={500}>
+        <Collapse in={showDropdown} orientation="horizontal" timeout={200}>
           <TextField
             id="column-visibility-textfield"
             variant="outlined"
             size="small"
             value={`${visibleColumnsCount} of ${totalColumnsCount} columns visible`}
-            onClick={(event: any) => handleClick(event)}
+            onClick={handleClick}
             InputProps={{
               readOnly: true,
               startAdornment: (
                 <InputAdornment position="start">
                   <IconButton
-                    onClick={(e: any) => {
+                    onClick={(e) => {
                       toggleDropdown(e);
                       handleClose();
                     }}
@@ -140,57 +253,71 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
             }}
           />
         </Collapse>
-      )}{" "}
+      )}
+
       <Menu
         id="column-visibility-menu"
         anchorEl={anchorEl}
         open={open}
-        onClose={() => {
-          handleClose();
-          setShowDropdown(false);
-        }}
+        onClose={handleMenuClose}
         MenuListProps={{
           "aria-labelledby": "column-visibility-textfield",
-          sx: { maxHeight: "400px", width: "300px", padding: 0 },
+          ref: menuListRef,
+          onScroll: handleScroll,
+          sx: {
+            maxHeight: "400px",
+            width: "300px",
+            padding: 0,
+            overflowY: "auto",
+          },
         }}
+        // Performance optimizations
+        disableAutoFocusItem
+        disableEnforceFocus
+        keepMounted={false}
+        transitionDuration={0}
       >
         {columns.length === 0 ? (
           <MenuItem sx={{ justifyContent: "center" }}>No columns available</MenuItem>
         ) : (
-          columns.map((column, index) => (
-            <MenuItem
-              key={column.id}
-              sx={{
-                "& .MuiFormControlLabel-label": {
-                  fontSize: "0.75rem",
-                  padding: 0,
-                },
-                p: 0,
-                ml: 2,
-                height: "36px",
-              }}
-            >
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={column.getIsVisible()}
-                    onChange={column.getToggleVisibilityHandler()}
-                    disabled={
-                      disableColumns.includes(index) ||
-                      priorityColumnIds.includes(column.id)
-                    }
-                  />
-                }
-                label={column.id
-                  .replace(/_/g, " ")
-                  .replace(/\b\w/g, (c: string) => c.toUpperCase())}
+          <Box>
+            {visibleColumns.map((column, index) => (
+              <ColumnItem
+                key={column.id}
+                column={column}
+                index={index}
+                disableColumns={disableColumns}
+                priorityColumns={priorityColumns}
               />
-            </MenuItem>
-          ))
+            ))}
+            {(isLoading || visibleChunk < columns.length) && (
+              <MenuItem
+                sx={{
+                  justifyContent: "center",
+                  py: 2,
+                  color: "text.secondary",
+                }}
+              >
+                {isLoading ? (
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <CircularProgress size={16} />
+                    <Typography variant="caption">
+                      Loading more columns...
+                    </Typography>
+                  </Box>
+                ) : (
+                  <Typography variant="caption" sx={{ fontStyle: "italic" }}>
+                    Scroll down to load more ({columns.length - visibleChunk}{" "}
+                    remaining)
+                  </Typography>
+                )}
+              </MenuItem>
+            )}
+          </Box>
         )}
       </Menu>
     </>
   );
 };
 
-export default ColumnVisibilityControl;
+export default memo(ColumnVisibilityControl);

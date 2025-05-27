@@ -53,6 +53,8 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     setColumnVisibility,
     visibleColumnsCount,
     totalColumnsCount,
+    availableColumns,
+    priorityColumns,
   } = useColumnVisibility(data);
   const [tableData, setTableData] = useState<any[]>([]);
   const handleRowUpdate = (rowIndex: number, newValue: number) => {
@@ -104,7 +106,14 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     handleClick,
     handleClose,
     totalPages,
-  } = useRateOfOperationTable(tableData, handleRowUpdate, handleReview, totalRows);
+  } = useRateOfOperationTable(
+    tableData,
+    handleRowUpdate,
+    handleReview,
+    totalRows,
+    columnVisibility,
+    setColumnVisibility
+  );
 
   const [selectedCategory, setSelectedCategory] = useState<string>("Personal Care");
   const [selectedReviewedStatus, setSelectedReviewedStatus] = useState<string>("N");
@@ -344,6 +353,10 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             visibleColumnsCount={visibleColumnsCount}
             totalColumnsCount={totalColumnsCount}
             disableColumns={[]}
+            availableColumns={availableColumns}
+            priorityColumns={priorityColumns}
+            columnVisibility={columnVisibility}
+            setColumnVisibility={setColumnVisibility}
           />
         </Box>
       </Box>

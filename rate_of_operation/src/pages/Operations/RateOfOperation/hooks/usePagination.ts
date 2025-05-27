@@ -7,12 +7,18 @@ export const usePagination = (
   totalRows: number
 ) => {
   const [pageInput, setPageInput] = useState<string>("1");
+
   // Calculate the total number of pages based on total rows and page size
   const totalPages = useMemo(() => {
     const pageSize = table.getState().pagination.pageSize;
     // Always ensure we have at least 1 page, even if there's no data
     return pageSize > 0 ? Math.max(1, Math.ceil(totalRows / pageSize)) : 1;
   }, [totalRows, table.getState().pagination.pageSize]);
+
+  // Update table's pageCount whenever totalPages changes
+  useEffect(() => {
+    table.setPageCount(totalPages);
+  }, [totalPages, table]);
 
   // Debug logging
   useEffect(() => {
@@ -41,7 +47,6 @@ export const usePagination = (
       setPageInput((table.getState().pagination.pageIndex + 1).toString());
     }
   };
-
   const handleRowsPerPageChange = (event: SelectChangeEvent<number>) => {
     const newSize = event.target.value as number;
     table.setPageSize(newSize);

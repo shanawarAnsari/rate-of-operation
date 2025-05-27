@@ -178,14 +178,10 @@ export const useRateOfOperationTable = (
   data: any[],
   onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void,
   onRowReview: (rowIndex: number) => void,
-  totalRows: number
+  totalRows: number,
+  columnVisibility: Record<string, boolean>,
+  setColumnVisibility: React.Dispatch<React.SetStateAction<Record<string, boolean>>>
 ) => {
-  const {
-    columnVisibility,
-    setColumnVisibility,
-    visibleColumnsCount,
-    totalColumnsCount,
-  } = useColumnVisibility();
   const { searchText, handleSearchChange } = useSearch();
 
   const [updatedRows, setUpdatedRows] = useState<Record<number, boolean>>({});
@@ -252,7 +248,7 @@ export const useRateOfOperationTable = (
     getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
     manualPagination: true, // Since we're handling pagination with API
-    pageCount: Math.max(1, Math.ceil(totalRows / 10)), // Initial page count calculation
+    pageCount: -1, // Let the table calculate page count dynamically
   });
   const {
     pageInput,
@@ -261,11 +257,10 @@ export const useRateOfOperationTable = (
     handleRowsPerPageChange,
     totalPages,
   } = usePagination(table, totalRows);
-
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
-  const handleClick = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = useCallback((event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   }, []);
 
@@ -274,10 +269,6 @@ export const useRateOfOperationTable = (
   }, []);
   return {
     table,
-    columnVisibility,
-    setColumnVisibility,
-    visibleColumnsCount,
-    totalColumnsCount,
     searchText,
     handleSearchChange,
     pageInput,
