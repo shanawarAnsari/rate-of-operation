@@ -7,22 +7,20 @@ export const useColumnVisibility = () => {
     const savedVisibility = localStorage.getItem("columnVisibility_ROO");
     if (savedVisibility) {
       return JSON.parse(savedVisibility);
-    }
-
-    // Use first row from recipies as example to build initial visibility
+    } // Use first row from recipies as example to build initial visibility
     const sampleData =
       recipies.rows && recipies.rows.length > 0 ? recipies.rows[0] : {};
     const keys = Object.keys(sampleData || {});
-    const statisticalSourceIndex = keys.findIndex((key) => key === "REVIEWED");
+    const reviewedIndex = keys.findIndex((key) => key === "REVIEWED");
     const initialVisibility: VisibilityState = {};
 
     // Define the priority columns that must be visible
     const priorityColumns = ["RECIPE_NUMBER", "MAKER_RESOURCE", "PACKER_RESOURCE"];
-    // Define columns that should be hidden
+    // Define columns that should be hidden completely
     const hiddenColumns = ["RATE_OF_OPERATION_KEY", "SNAPSHOT_DATE"];
 
     keys.forEach((key) => {
-      // Hide RATE_OF_OPERATION_KEY and SNAPSHOT_DATE
+      // Hide RATE_OF_OPERATION_KEY and SNAPSHOT_DATE completely
       if (hiddenColumns.includes(key)) {
         initialVisibility[key] = false;
       }
@@ -30,17 +28,11 @@ export const useColumnVisibility = () => {
       else if (priorityColumns.includes(key)) {
         initialVisibility[key] = true;
       }
-      // For other columns, follow the standard rule
-      else if (
-        key.toLowerCase().includes("business") ||
-        key.toLowerCase().includes("category")
-      ) {
-        // Remove the dropdown options for "business" and "category"
-        initialVisibility[key] = false;
-      } else {
-        // Show columns up to RO_PCT_CHANGE
+      // Show all columns up to and including REVIEWED, hide the rest
+      else {
         const keyIndex = keys.indexOf(key);
-        initialVisibility[key] = keyIndex <= statisticalSourceIndex;
+        initialVisibility[key] =
+          reviewedIndex !== -1 ? keyIndex <= reviewedIndex : true;
       }
     });
 
