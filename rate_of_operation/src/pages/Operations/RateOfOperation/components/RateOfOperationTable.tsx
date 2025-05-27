@@ -28,6 +28,7 @@ import FilterPopper from "./filters/FilterPopper";
 import { useRecipesData } from "../hooks/useRecipesData";
 import { useReviewedStatusData } from "../hooks/useReviewedStatusData";
 import { CircularProgress } from "@mui/material";
+import { useColumnVisibility } from "../hooks/useColumnVisibility";
 
 interface RateOfOperationTableProps {}
 
@@ -46,8 +47,13 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     updateRowsPerPage,
     updatePageNumber,
   } = useRecipesData();
-
   const { reviewedStatusOptions } = useReviewedStatusData();
+  const {
+    columnVisibility,
+    setColumnVisibility,
+    visibleColumnsCount,
+    totalColumnsCount,
+  } = useColumnVisibility(data);
   const [tableData, setTableData] = useState<any[]>([]);
   const handleRowUpdate = (rowIndex: number, newValue: number) => {
     setTableData((prev) => {
@@ -87,8 +93,6 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   };
   const {
     table,
-    visibleColumnsCount,
-    totalColumnsCount,
     searchText,
     handleSearchChange,
     pageInput,
@@ -330,7 +334,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             >
               <ReplayCircleFilledIcon style={{ fontSize: "26px" }} />
             </IconButton>
-          </Tooltip>
+          </Tooltip>{" "}
           <ColumnVisibilityControl
             table={table}
             anchorEl={anchorEl}
@@ -338,7 +342,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             handleClick={handleClick}
             handleClose={handleClose}
             visibleColumnsCount={visibleColumnsCount}
-            totalColumnsCount={totalColumnsCount - 2}
+            totalColumnsCount={totalColumnsCount}
             disableColumns={[]}
           />
         </Box>

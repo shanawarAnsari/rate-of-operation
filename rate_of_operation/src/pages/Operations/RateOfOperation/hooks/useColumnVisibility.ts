@@ -1,15 +1,18 @@
 import { useState, useMemo, useEffect } from "react";
 import { VisibilityState } from "@tanstack/react-table";
-import { recipies } from "../../../../services/responses";
 
-export const useColumnVisibility = () => {
+export const useColumnVisibility = (data?: any) => {
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>(() => {
     const savedVisibility = localStorage.getItem("columnVisibility_ROO");
     if (savedVisibility) {
       return JSON.parse(savedVisibility);
-    } // Use first row from recipies as example to build initial visibility
+    } // Use first row from data as example to build initial visibility
     const sampleData =
-      recipies.rows && recipies.rows.length > 0 ? recipies.rows[0] : {};
+      data?.rows && data.rows.length > 0
+        ? data.rows[0]
+        : Array.isArray(data) && data.length > 0
+        ? data[0]
+        : {};
     const keys = Object.keys(sampleData || {});
     const reviewedIndex = keys.findIndex((key) => key === "REVIEWED");
     const initialVisibility: VisibilityState = {};
@@ -47,8 +50,14 @@ export const useColumnVisibility = () => {
     return Object.values(columnVisibility).filter(Boolean).length;
   }, [columnVisibility]);
   const totalColumnsCount = useMemo(() => {
-    return Object.keys(recipies.rows[0] || {}).length;
-  }, []);
+    const sampleData =
+      data?.rows && data.rows.length > 0
+        ? data.rows[0]
+        : Array.isArray(data) && data.length > 0
+        ? data[0]
+        : {};
+    return Object.keys(sampleData || {}).length;
+  }, [data]);
 
   return {
     columnVisibility,
