@@ -225,9 +225,10 @@ export const useRateOfOperationTable = (
   currentPageNumber: number,
   currentRowsPerPage: number,
   onPageChange: (page: number) => void,
-  onRowsPerPageChange: (rows: number) => void
+  onRowsPerPageChange: (rows: number) => void,
+  onSearch?: (searchText: string) => void
 ) => {
-  const { searchText, handleSearchChange } = useSearch();
+  const { searchText, handleSearchChange } = useSearch(onSearch);
 
   const [updatedRows, setUpdatedRows] = useState<Record<number, boolean>>({});
   const columns = useMemo<ColumnDef<any>[]>(() => {

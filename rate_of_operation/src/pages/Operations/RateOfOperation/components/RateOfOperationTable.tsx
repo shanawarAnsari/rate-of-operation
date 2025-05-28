@@ -30,6 +30,7 @@ import { useReviewedStatusData } from "../hooks/useReviewedStatusData";
 import { CircularProgress } from "@mui/material";
 import { useColumnVisibility } from "../hooks/useColumnVisibility";
 import { useFilterStore } from "../../../../store/filterStore";
+import { searchRecipes } from "../../../../services/rate-of-operations";
 
 interface RateOfOperationTableProps {}
 
@@ -66,6 +67,34 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   } = useColumnVisibility(data);
   const [tableData, setTableData] = useState<any[]>([]);
   const [originalApiData, setOriginalApiData] = useState<any[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchData, setSearchData] = useState<any>(null);
+
+  const handleSearch = async (searchText: string) => {
+    if (!searchText.trim()) {
+      // If search text is empty, show original data
+      setIsSearching(false);
+      setSearchData(null);
+      return;
+    }
+
+    setIsSearching(true);
+    try {
+      const searchPayload = {
+        searchText: searchText.trim(),
+        pageNumber: pageNumber,
+        rowsPerPage: rowsPerPage,
+      };
+
+      const response = await searchRecipes(searchPayload);
+      setSearchData(response);
+    } catch (error) {
+      console.error("Search error:", error);
+      setSearchData(null);
+    } finally {
+      setIsSearching(false);
+    }
+  };
   const handleRowUpdate = (rowIndex: number, newValue: number) => {
     setTableData((prev) => {
       const updated = [...prev];
@@ -152,16 +181,17 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     handleClose,
     totalPages,
   } = useRateOfOperationTable(
-    tableData,
+    searchData && searchData.rows ? searchData.rows : tableData,
     handleRowUpdate,
     handleReview,
-    totalRows,
+    searchData ? searchData.totalCount || searchData.rows?.length || 0 : totalRows,
     columnVisibility,
     setColumnVisibility,
     pageNumber,
     rowsPerPage,
     updatePageNumber,
-    updateRowsPerPage
+    updateRowsPerPage,
+    handleSearch
   );
   const [filterAnchorEl, setFilterAnchorEl] = useState<HTMLElement | null>(null);
   const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
@@ -442,7 +472,8 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           maxHeight: "65vh",
         }}
       >
-        {loading ? (
+        {" "}
+        {loading || isSearching ? (
           <Box
             sx={{
               display: "flex",
@@ -452,6 +483,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             }}
           >
             <CircularProgress />
+            {isSearching && <Typography sx={{ ml: 2 }}>Searching...</Typography>}
           </Box>
         ) : error ? (
           <Box
