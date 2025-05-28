@@ -19,7 +19,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import { useFilters } from "./hooks/useFilters";
 import { useFilterStore } from "../../../../../store/filterStore";
-import { getRecipies } from "../../../../../services/rate-of-operations";
 
 interface FilterItem {
   RECIPE_TYPE: string;
@@ -89,28 +88,12 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
   const handleFilterChange = (field: string) => (event: any, newValue: string[]) => {
     updateFilterSelection(field, newValue);
   };
-  const [isApplying, setIsApplying] = useState<boolean>(false);
+  const handleApply = () => {
+    // Close the filter popup instantly
+    onClose();
 
-  const handleApply = async () => {
-    try {
-      setIsApplying(true);
-
-      const response = await getRecipies({
-        filters: filterSelections,
-        pageNumber: 1,
-        rowsPerPage: 10,
-        reviewedStatus: "N",
-      });
-
-      console.log("Filter API response:", response);
-
-      onApply(filterSelections);
-    } catch (error) {
-      console.error("Error applying filters:", error);
-    } finally {
-      setIsApplying(false);
-      onClose();
-    }
+    // Pass the filter selections to parent component
+    onApply(filterSelections);
   };
   const handleReset = () => {
     const resetSelections = Object.keys(filterSelections).reduce((acc, key) => {
@@ -274,19 +257,11 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
             )}
           </Box>{" "}
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Button size="small" onClick={handleReset} disabled={isApplying}>
+            <Button size="small" onClick={handleReset}>
               Reset
             </Button>
-            <Button
-              size="small"
-              variant="contained"
-              onClick={handleApply}
-              disabled={isApplying}
-              startIcon={
-                isApplying ? <CircularProgress size={16} color="inherit" /> : null
-              }
-            >
-              {isApplying ? "Applying..." : "Apply"}
+            <Button size="small" variant="contained" onClick={handleApply}>
+              Apply
             </Button>
           </Box>
         </Box>

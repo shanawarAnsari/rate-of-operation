@@ -4,60 +4,52 @@ import { useReactTable } from "@tanstack/react-table";
 
 export const usePagination = (
   table: ReturnType<typeof useReactTable>,
-  totalRows: number
+  totalRows: number,
+  currentPageNumber: number,
+  currentRowsPerPage: number,
+  onPageChange: (page: number) => void,
+  onRowsPerPageChange: (rows: number) => void
 ) => {
-  const [pageInput, setPageInput] = useState<string>("1");
+  const [pageInput, setPageInput] = useState<string>(currentPageNumber.toString());
 
-  // Calculate the total number of pages based on total rows and page size
+  // Calculate the total number of pages based on total rows and current page size
   const totalPages = useMemo(() => {
-    const pageSize = table.getState().pagination.pageSize;
-    // Always ensure we have at least 1 page, even if there's no data
-    return pageSize > 0 ? Math.max(1, Math.ceil(totalRows / pageSize)) : 1;
-  }, [totalRows, table.getState().pagination.pageSize]);
+    return currentRowsPerPage > 0
+      ? Math.max(1, Math.ceil(totalRows / currentRowsPerPage))
+      : 1;
+  }, [totalRows, currentRowsPerPage]);
+  // Update page input when current page changes
+  useEffect(() => {
+    setPageInput(currentPageNumber.toString());
+  }, [currentPageNumber]);
 
   // Update table's pageCount whenever totalPages changes
   useEffect(() => {
     table.setPageCount(totalPages);
   }, [totalPages, table]);
 
-  // Debug logging
+  // Sync table pagination with API pagination
   useEffect(() => {
-    console.log("Pagination debug:", {
-      totalRows,
-      pageSize: table.getState().pagination.pageSize,
-      calculatedTotalPages: totalPages,
-    });
-  }, [totalRows, table.getState().pagination.pageSize, totalPages]);
-
-  useEffect(() => {
-    table.setPageSize(10);
-    setPageInput("1");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [table]);
+    table.setPageIndex(currentPageNumber - 1);
+    table.setPageSize(currentRowsPerPage);
+  }, [currentPageNumber, currentRowsPerPage, table]);
 
   const handlePageInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPageInput(e.target.value);
   };
-
   const handlePageInputSubmit = () => {
     const pageNumber = parseInt(pageInput, 10);
     if (!isNaN(pageNumber) && pageNumber > 0 && pageNumber <= totalPages) {
-      table.setPageIndex(pageNumber - 1);
+      onPageChange(pageNumber);
     } else {
-      setPageInput((table.getState().pagination.pageIndex + 1).toString());
+      setPageInput(currentPageNumber.toString());
     }
   };
   const handleRowsPerPageChange = (event: SelectChangeEvent<number>) => {
     const newSize = event.target.value as number;
-    table.setPageSize(newSize);
-    table.setPageIndex(0);
+    onRowsPerPageChange(newSize);
     setPageInput("1");
   };
-
-  useEffect(() => {
-    setPageInput((table.getState().pagination.pageIndex + 1).toString());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [table.getState().pagination.pageIndex]);
 
   return {
     pageInput,
