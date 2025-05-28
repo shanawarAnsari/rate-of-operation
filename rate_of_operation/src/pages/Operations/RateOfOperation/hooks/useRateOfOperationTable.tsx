@@ -102,7 +102,10 @@ const CellRenderer = ({
           textOverflow: "ellipsis",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent:
+            columnId === "PACKER_RESOURCE" || columnId === "NEW_RO"
+              ? "space-between"
+              : "center",
         }}
       >
         {value === null ? "-" : String(value)}
@@ -230,7 +233,7 @@ export const useRateOfOperationTable = (
     }));
   }, [data, updatedRows, onRowUpdate, onRowReview]);
   const table = useReactTable({
-    data,
+    data: data || [], // Ensure we always have an array
     columns,
     state: {
       columnVisibility,

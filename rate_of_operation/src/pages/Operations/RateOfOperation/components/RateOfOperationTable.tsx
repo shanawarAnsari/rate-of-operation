@@ -158,21 +158,37 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   const handleDownload = (format: "excel" | "csv") => {
     setDownloadAnchorEl(null);
   };
+
+  // Update table data whenever new data is received from getRecipes
   useEffect(() => {
+    console.log("Data received from getRecipes:", data);
+
     if (Array.isArray(data) && data.length > 0) {
+      console.log("Setting table data from array:", data);
       setTableData(data);
     } else if (
       data &&
       typeof data === "object" &&
       "rows" in data &&
-      Array.isArray(data.rows) &&
-      data.rows.length > 0
+      Array.isArray(data.rows)
     ) {
+      console.log("Setting table data from data.rows:", data.rows);
       setTableData(data.rows);
+    } else if (data === null || data === undefined) {
+      console.log("Data is null/undefined, keeping existing table data");
+      // Don't clear table data if data is null/undefined
     } else {
+      console.log("No valid data found, clearing table data");
       setTableData([]);
     }
   }, [data]);
+
+  // Also update table data when data changes and ensure the table reflects the new data
+  useEffect(() => {
+    if (tableData.length > 0) {
+      console.log("Table data updated, rows count:", tableData.length);
+    }
+  }, [tableData]);
 
   return (
     <Box
