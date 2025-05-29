@@ -11,14 +11,15 @@ const cellStyles = {
   paddingX: "7px",
   paddingY: "3px",
   fontSize: "0.8rem",
+  textAlign: "center",
 };
 
 const isStickyColumn = (index: number) => index < 3;
 
 const getStickyPosition = (index: number) => {
   if (index === 0) return 0; // RECIPE_NUMBER position
-  if (index === 1) return 85; // MAKER_RESOURCE position
-  if (index === 2) return 180; // PACKER_RESOURCE position
+  if (index === 1) return 110; // MAKER_RESOURCE position
+  if (index === 2) return 220; // PACKER_RESOURCE position
   return 0;
 };
 
@@ -33,7 +34,11 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
       {rows.map((row) => (
         <TableRow
           key={row.id}
-          sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+          sx={{
+            "&:last-child td, &:last-child th": { border: 0 },
+            height: "48px", // Fixed row height
+            "& td": { height: "48px" }, // Ensure cells also have fixed height
+          }}
         >
           {row.getVisibleCells().map((cell, index) => (
             <TableCell
@@ -52,19 +57,19 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
                     index === 2 ? "2px 0px 3px -1px rgba(0,0,0,0.2)" : "none",
                 }), // Ensure cells with buttons have enough width
                 ...(["PACKER_RESOURCE", "NEW_RO"].includes(cell.column.id) && {
-                  minWidth: 160,
+                  minWidth: 120,
                 }),
                 // highlight updated cells
                 ...(row.original.isUpdated &&
                   ["NEW_RO", "NEW_PLANNING_TIME", "RO_PCT_CHANGE"].includes(
                     cell.column.id
                   ) && {
-                  backgroundColor:
-                    theme.palette.mode === "light"
-                      ? theme.palette.grey[200]
-                      : theme.palette.grey[800],
-                  transition: "background-color 0.3s ease",
-                }),
+                    backgroundColor:
+                      theme.palette.mode === "light"
+                        ? theme.palette.grey[200]
+                        : theme.palette.grey[800],
+                    transition: "background-color 0.3s ease",
+                  }),
               }}
               style={{ minWidth: 120, maxWidth: 1000 }}
             >

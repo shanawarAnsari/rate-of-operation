@@ -6,11 +6,11 @@ import {
   getSortedRowModel,
   ColumnDef,
 } from "@tanstack/react-table";
-import { useColumnVisibility } from "./useColumnVisibility";
+
 import { usePagination } from "./usePagination";
 import { useSearch } from "./useSearch";
-import { IconButton, Typography, useTheme } from "@mui/material";
-import { PublishedWithChanges } from "@mui/icons-material";
+import { Box, IconButton, useTheme } from "@mui/material";
+import { InfoOutlined, PublishedWithChanges } from "@mui/icons-material";
 import CheckIcon from "@mui/icons-material/Check";
 import EditIcon from "@mui/icons-material/Edit";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
@@ -54,7 +54,16 @@ const CellRenderer = ({
     setDialogOpen(false);
   };
 
-  const handlePublish = () => onRowReview(rowIndex);
+  const handlePublish = () => {
+    // If already reviewed, reset to original values
+    if (rowData.REVIEWED === "Y - Reviewed from Web App") {
+      // Reset the row to original state
+      onRowReview(rowIndex); // This will trigger the reset logic in parent component
+    } else {
+      // Mark as reviewed
+      onRowReview(rowIndex);
+    }
+  };
 
   const dropdownOptions = [
     { label: "AI/ML TRO", value: rowData.AIML_RO || "N/A" },
@@ -96,72 +105,104 @@ const CellRenderer = ({
   ];
   return (
     <>
+      {" "}
       <div
         style={{
           overflow: "hidden",
           textOverflow: "ellipsis",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent:
+            columnId === "PACKER_RESOURCE" ||
+            (columnId === "NEW_RO" &&
+              rowData.REVIEWED === "N" &&
+              !(rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1"))
+              ? "space-between"
+              : "center",
         }}
       >
         {value === null ? "-" : String(value)}
 
-        {}
-        {columnId === "PACKER_RESOURCE" && (
-          <IconButton size="small" onClick={handlePublish}>
-            {rowData.isUpdated &&
-            rowData.REVIEWED === "Y - Reviewed from Web App" ? (
-              <DoneAllIcon sx={{ color: "#0bdd00" }} />
-            ) : !rowData.isUpdated &&
-              rowData.REVIEWED === "Y - Reviewed from Web App" ? (
-              <CheckIcon sx={{ color: "#0bdd00" }} />
-            ) : (
+        {/* Show error info icon in PACKER_RESOURCE column for rows with error code 1 */}
+        {columnId === "PACKER_RESOURCE" &&
+          (rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1") && (
+            <Box sx={{ mr: 0.7 }}>
               <Tooltip
                 placement="top"
-                title={
-                  <>
-                    Click to mark reviewed.
-                    <br />
-                    New TRO: {rowData.NEW_RO || "N/A"}
-                  </>
-                }
+                title={rowData.ERROR_REPORT || "Error occurred"}
                 arrow
               >
-                <PublishedWithChanges
+                <InfoOutlined
                   sx={{
-                    color: (theme) => theme.palette.primary.main,
-                    transition: "color 0.3s",
+                    color: "rgba(182, 0, 0, 0.8)", // Deep bloody red with transparency
+                    fontSize: "1.5rem",
                   }}
                 />
               </Tooltip>
-            )}
-          </IconButton>
-        )}
+            </Box>
+          )}
 
-        {}
-        {columnId === "NEW_RO" && (
-          <IconButton
-            size="small"
-            onClick={handleEditClick}
-            sx={{
-              borderRadius: "50%",
-              padding: "4px",
-              "&:hover": { backgroundColor: (theme) => theme.palette.grey[200] },
-            }}
-          >
-            <EditIcon
+        {/* Review button for PACKER_RESOURCE column - show for REVIEWED = "N" with no errors, or already reviewed */}
+        {columnId === "PACKER_RESOURCE" &&
+          !(rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1") &&
+          ((rowData.REVIEWED === "N" &&
+            (rowData.ERROR_CODE === 0 || rowData.ERROR_CODE === "0")) ||
+            rowData.REVIEWED === "Y - Reviewed from Web App") && (
+            <IconButton size="small" onClick={handlePublish}>
+              {rowData.REVIEWED === "Y - Reviewed from Web App" ? (
+                rowData.isUpdated ? (
+                  <DoneAllIcon sx={{ color: "#0bdd00" }} />
+                ) : (
+                  <CheckIcon sx={{ color: "#0bdd00" }} />
+                )
+              ) : (
+                <Tooltip
+                  placement="top"
+                  title={
+                    <>
+                      Click to mark reviewed.
+                      <br />
+                      New TRO: {rowData.NEW_RO || "N/A"}
+                    </>
+                  }
+                  arrow
+                >
+                  <PublishedWithChanges
+                    sx={{
+                      color: rowData.isUpdated
+                        ? "rgb(205, 181, 0)" // Dark yellow for updated TRO
+                        : (theme) => theme.palette.primary.main,
+                      transition: "color 0.3s",
+                    }}
+                  />
+                </Tooltip>
+              )}
+            </IconButton>
+          )}
+        {/* Edit button for NEW_RO column - only show for REVIEWED = "N" and no error */}
+        {columnId === "NEW_RO" &&
+          rowData.REVIEWED === "N" &&
+          !(rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1") && (
+            <IconButton
+              size="small"
+              onClick={handleEditClick}
               sx={{
-                fontSize: "1.25rem",
-                color: (theme) => theme.palette.primary.main,
+                borderRadius: "50%",
+                padding: "4px",
+                "&:hover": { backgroundColor: (theme) => theme.palette.grey[200] },
               }}
-            />
-          </IconButton>
-        )}
+            >
+              <EditIcon
+                sx={{
+                  fontSize: "1.25rem",
+                  color: (theme) => theme.palette.primary.main,
+                }}
+              />
+            </IconButton>
+          )}
       </div>
-
-      {}
-      {columnId === "NEW_RO" && (
+      {/* Edit dialog for NEW_RO column - only for REVIEWED = "N" */}
+      {columnId === "NEW_RO" && rowData.REVIEWED === "N" && (
         <EditTROValueDialog
           open={dialogOpen}
           onClose={handleDialogClose}
@@ -180,9 +221,14 @@ export const useRateOfOperationTable = (
   onRowReview: (rowIndex: number) => void,
   totalRows: number,
   columnVisibility: Record<string, boolean>,
-  setColumnVisibility: React.Dispatch<React.SetStateAction<Record<string, boolean>>>
+  setColumnVisibility: React.Dispatch<React.SetStateAction<Record<string, boolean>>>,
+  currentPageNumber: number,
+  currentRowsPerPage: number,
+  onPageChange: (page: number) => void,
+  onRowsPerPageChange: (rows: number) => void,
+  onSearch?: (searchText: string) => void
 ) => {
-  const { searchText, handleSearchChange } = useSearch();
+  const { searchText, handleSearchChange } = useSearch(onSearch);
 
   const [updatedRows, setUpdatedRows] = useState<Record<number, boolean>>({});
   const columns = useMemo<ColumnDef<any>[]>(() => {
@@ -230,7 +276,7 @@ export const useRateOfOperationTable = (
     }));
   }, [data, updatedRows, onRowUpdate, onRowReview]);
   const table = useReactTable({
-    data,
+    data: data || [], // Ensure we always have an array
     columns,
     state: {
       columnVisibility,
@@ -256,7 +302,14 @@ export const useRateOfOperationTable = (
     handlePageInputSubmit,
     handleRowsPerPageChange,
     totalPages,
-  } = usePagination(table, totalRows);
+  } = usePagination(
+    table,
+    totalRows,
+    currentPageNumber,
+    currentRowsPerPage,
+    onPageChange,
+    onRowsPerPageChange
+  );
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 

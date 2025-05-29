@@ -8,18 +8,17 @@ export const useRecipesData = () => {
   const [error, setError] = useState<string | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(10);
-  const [reviewedStatus, setReviewedStatus] = useState<string>("N");
   const [totalRows, setTotalRows] = useState<number>(0);
 
-  const { filterSelections } = useFilterStore();
-
+  const { filterSelections, selectedCategory, selectedReviewedStatus } =
+    useFilterStore();
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
       const response = await getRecipies({
         pageNumber,
         rowsPerPage,
-        reviewedStatus,
+        reviewedStatus: selectedReviewedStatus,
         filters: filterSelections,
       });
 
@@ -38,10 +37,9 @@ export const useRecipesData = () => {
     } finally {
       setLoading(false);
     }
-  }, [pageNumber, rowsPerPage, reviewedStatus]);
+  }, [pageNumber, rowsPerPage, selectedReviewedStatus, filterSelections]);
 
   const isInitialMount = useRef(true);
-
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
@@ -49,7 +47,7 @@ export const useRecipesData = () => {
     } else {
       fetchData();
     }
-  }, [fetchData, pageNumber, rowsPerPage, reviewedStatus]);
+  }, [fetchData]);
 
   const updateData = useCallback((updatedData: any[]) => {
     setData(updatedData);
@@ -58,9 +56,9 @@ export const useRecipesData = () => {
   const refresh = useCallback(() => {
     fetchData();
   }, [fetchData]);
-
   const updateReviewedStatus = useCallback((status: string) => {
-    setReviewedStatus(status);
+    // This is now handled by the store, not local state
+    console.log("updateReviewedStatus called with:", status);
   }, []);
 
   const updateRowsPerPage = useCallback((rows: number) => {
@@ -71,7 +69,6 @@ export const useRecipesData = () => {
   const updatePageNumber = useCallback((page: number) => {
     setPageNumber(page);
   }, []);
-
   return {
     data,
     loading,
@@ -79,7 +76,7 @@ export const useRecipesData = () => {
     totalRows,
     pageNumber,
     rowsPerPage,
-    reviewedStatus,
+    reviewedStatus: selectedReviewedStatus,
     updateData,
     refresh,
     updateReviewedStatus,

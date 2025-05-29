@@ -7,8 +7,12 @@ interface FilterSelections {
 
 interface FilterStore {
   filterSelections: FilterSelections;
+  selectedCategory: string;
+  selectedReviewedStatus: string;
   setFilterSelections: (selections: FilterSelections) => void;
   updateFilterSelection: (field: string, values: string[]) => void;
+  setSelectedCategory: (category: string) => void;
+  setSelectedReviewedStatus: (status: string) => void;
   resetFilters: () => void;
 }
 
@@ -28,6 +32,8 @@ export const useFilterStore = create<FilterStore>()(
   persist(
     (set) => ({
       filterSelections: defaultFilters,
+      selectedCategory: "Personal Care",
+      selectedReviewedStatus: "N",
       setFilterSelections: (selections) => set({ filterSelections: selections }),
       updateFilterSelection: (field, values) =>
         set((state) => ({
@@ -36,11 +42,22 @@ export const useFilterStore = create<FilterStore>()(
             [field]: values,
           },
         })),
-      resetFilters: () => set({ filterSelections: defaultFilters }),
+      setSelectedCategory: (category) => set({ selectedCategory: category }),
+      setSelectedReviewedStatus: (status) => set({ selectedReviewedStatus: status }),
+      resetFilters: () =>
+        set({
+          filterSelections: defaultFilters,
+          selectedCategory: "",
+          selectedReviewedStatus: "N",
+        }),
     }),
     {
       name: "filter-storage",
-      partialize: (state) => ({ filterSelections: state.filterSelections }),
+      partialize: (state) => ({
+        filterSelections: state.filterSelections,
+        selectedCategory: state.selectedCategory,
+        selectedReviewedStatus: state.selectedReviewedStatus,
+      }),
     }
   )
 );

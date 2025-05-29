@@ -20,3 +20,9 @@ export const getReviewedStatus = async () => {
     .then((data) => data)
     .catch((error) => error);
 };
+
+export const searchRecipes = async (req) => {
+  return postApi("rate-of-operations/search", req)
+    .then((data) => data)
+    .catch((error) => error);
+};

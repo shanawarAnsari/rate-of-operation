@@ -29,10 +29,19 @@ import { useRecipesData } from "../hooks/useRecipesData";
 import { useReviewedStatusData } from "../hooks/useReviewedStatusData";
 import { CircularProgress } from "@mui/material";
 import { useColumnVisibility } from "../hooks/useColumnVisibility";
+import { useFilterStore } from "../../../../store/filterStore";
+import { searchRecipes } from "../../../../services/rate-of-operations";
 
 interface RateOfOperationTableProps {}
 
 const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
+  const {
+    setFilterSelections,
+    selectedCategory,
+    selectedReviewedStatus,
+    setSelectedCategory,
+    setSelectedReviewedStatus,
+  } = useFilterStore();
   const {
     data,
     loading,
@@ -57,18 +66,61 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     priorityColumns,
   } = useColumnVisibility(data);
   const [tableData, setTableData] = useState<any[]>([]);
+  const [originalApiData, setOriginalApiData] = useState<any[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchData, setSearchData] = useState<any>(null);
+
+  const handleSearch = async (searchText: string) => {
+    if (!searchText.trim()) {
+      // If search text is empty, show original data
+      setIsSearching(false);
+      setSearchData(null);
+      return;
+    }
+
+    setIsSearching(true);
+    try {
+      const searchPayload = {
+        searchText: searchText.trim(),
+        pageNumber: pageNumber,
+        rowsPerPage: rowsPerPage,
+      };
+
+      const response = await searchRecipes(searchPayload);
+      setSearchData(response);
+    } catch (error) {
+      console.error("Search error:", error);
+      setSearchData(null);
+    } finally {
+      setIsSearching(false);
+    }
+  };
   const handleRowUpdate = (rowIndex: number, newValue: number) => {
     setTableData((prev) => {
       const updated = [...prev];
-      const oldRow = updated[rowIndex];
+      const currentRow = updated[rowIndex];
+
+      // Check if originalApiData exists for this row
+      if (!originalApiData[rowIndex]) {
+        return prev;
+      }
+
+      // Get the original row data for calculations from originalApiData
+      const originalRowData = originalApiData[rowIndex];
       const originalTRO =
-        typeof oldRow.NEW_RO === "number"
-          ? oldRow.NEW_RO
-          : parseFloat(oldRow.NEW_RO);
+        typeof originalRowData.NEW_RO === "number"
+          ? originalRowData.NEW_RO
+          : parseFloat(originalRowData.NEW_RO);
+
+      if (isNaN(originalTRO)) {
+        return prev;
+      }
+
       const newPlanningTime =
-        oldRow.CURRENT_PLANNING_TIME * (newValue / originalTRO);
+        originalRowData.CURRENT_PLANNING_TIME * (newValue / originalTRO);
+
       updated[rowIndex] = {
-        ...oldRow,
+        ...currentRow,
         NEW_RO: newValue,
         NEW_PLANNING_TIME: newPlanningTime?.toFixed(2),
         RO_PCT_CHANGE:
@@ -76,21 +128,43 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
         isUpdated: true,
       };
 
-      updateData(updated);
       return updated;
     });
   };
-
   const handleReview = (rowIndex: number) => {
     setTableData((prev) => {
       const updated = [...prev];
-      updated[rowIndex] = {
-        ...updated[rowIndex],
-        REVIEWED: "Y - Reviewed from Web App",
-      };
+      const currentRow = updated[rowIndex];
 
-      updateData(updated);
-      return updated;
+      // If already reviewed, reset to original values
+      if (currentRow.REVIEWED === "Y - Reviewed from Web App") {
+        // Check if originalApiData exists for this row
+        if (!originalApiData[rowIndex]) {
+          return prev;
+        }
+
+        // Get the original data from the stored API response
+        const originalRowData = originalApiData[rowIndex];
+
+        // Reset to original values completely - create a completely new object
+        const resetRow = {
+          ...originalRowData,
+          REVIEWED: "N",
+          isUpdated: false,
+        };
+
+        updated[rowIndex] = resetRow;
+
+        return updated;
+      } else {
+        // Mark as reviewed - keep current values
+        updated[rowIndex] = {
+          ...currentRow,
+          REVIEWED: "Y - Reviewed from Web App",
+        };
+
+        return updated;
+      }
     });
   };
   const {
@@ -107,30 +181,31 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     handleClose,
     totalPages,
   } = useRateOfOperationTable(
-    tableData,
+    searchData && searchData.rows ? searchData.rows : tableData,
     handleRowUpdate,
     handleReview,
-    totalRows,
+    searchData ? searchData.totalCount || searchData.rows?.length || 0 : totalRows,
     columnVisibility,
-    setColumnVisibility
+    setColumnVisibility,
+    pageNumber,
+    rowsPerPage,
+    updatePageNumber,
+    updateRowsPerPage,
+    handleSearch
   );
-
-  const [selectedCategory, setSelectedCategory] = useState<string>("Personal Care");
-  const [selectedReviewedStatus, setSelectedReviewedStatus] = useState<string>("N");
-
   const [filterAnchorEl, setFilterAnchorEl] = useState<HTMLElement | null>(null);
   const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
 
   const [downloadAnchorEl, setDownloadAnchorEl] = useState<HTMLElement | null>(null);
-
   const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedCategory(event.target.value);
+    // The useRecipesData hook will automatically refresh when selectedCategory changes
   };
-
   const handleReviewedStatusChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setSelectedReviewedStatus(event.target.value);
+    // The useRecipesData hook will automatically refresh when selectedReviewedStatus changes
   };
   const handleRefresh = () => {
     refresh();
@@ -143,9 +218,11 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   const handleFilterClose = () => {
     setFilterAnchorEl(null);
   };
-
   const handleApplyFilters = (appliedFilters: { [key: string]: string[] }) => {
     setFilters(appliedFilters);
+    // Update the filter store first, then refresh
+    setFilterSelections(appliedFilters);
+    refresh();
   };
 
   const handleDownloadClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -157,20 +234,36 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   };
   const handleDownload = (format: "excel" | "csv") => {
     setDownloadAnchorEl(null);
-  };
+  }; // Update table data when data changes and store original API response
   useEffect(() => {
     if (Array.isArray(data) && data.length > 0) {
-      setTableData(data);
+      // Store original API data separately - deep copy to prevent mutations
+      setOriginalApiData(JSON.parse(JSON.stringify(data)));
+      // Initialize table data with isUpdated flag
+      const dataWithFlags = data.map((row) => ({
+        ...row,
+        isUpdated: false,
+      }));
+      setTableData(dataWithFlags);
     } else if (
       data &&
       typeof data === "object" &&
       "rows" in data &&
-      Array.isArray(data.rows) &&
-      data.rows.length > 0
+      Array.isArray(data.rows)
     ) {
-      setTableData(data.rows);
+      // Store original API data separately - deep copy to prevent mutations
+      setOriginalApiData(JSON.parse(JSON.stringify(data.rows)));
+      // Initialize table data with isUpdated flag
+      const dataWithFlags = data.rows.map((row: any) => ({
+        ...row,
+        isUpdated: false,
+      }));
+      setTableData(dataWithFlags);
+    } else if (data === null || data === undefined) {
+      // Don't clear table data if data is null/undefined
     } else {
       setTableData([]);
+      setOriginalApiData([]);
     }
   }, [data]);
 
@@ -379,7 +472,8 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           maxHeight: "65vh",
         }}
       >
-        {loading ? (
+        {" "}
+        {loading || isSearching ? (
           <Box
             sx={{
               display: "flex",
@@ -389,6 +483,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             }}
           >
             <CircularProgress />
+            {isSearching && <Typography sx={{ ml: 2 }}>Searching...</Typography>}
           </Box>
         ) : error ? (
           <Box
@@ -452,11 +547,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             <Select
               labelId="rows-per-page-label"
               value={rowsPerPage}
-              onChange={(e) => {
-                const newRowsPerPage = Number(e.target.value);
-                updateRowsPerPage(newRowsPerPage);
-                handleRowsPerPageChange(e);
-              }}
+              onChange={handleRowsPerPageChange}
               label="Rows per page"
               sx={{ fontSize: "0.75rem", borderRadius: 0, mr: -2 }}
             >
@@ -466,7 +557,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>
+          </FormControl>{" "}
           <TextField
             size="small"
             label="Page"
@@ -498,13 +589,9 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           />{" "}
           <Pagination
             count={totalPages}
-            page={table.getState().pagination.pageIndex + 1}
+            page={pageNumber}
             onChange={(_, page) => {
-              table.setPageIndex(page - 1);
               updatePageNumber(page);
-              handlePageInputChange({
-                target: { value: page.toString() } as EventTarget & HTMLInputElement,
-              } as React.ChangeEvent<HTMLInputElement>);
             }}
             color="primary"
             size="small"
