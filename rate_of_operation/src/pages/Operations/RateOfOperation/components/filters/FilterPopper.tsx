@@ -57,7 +57,6 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
     "PRODUCT_SIZE",
     "SETUP_GROUP",
   ];
-
   const {
     filterSelections,
     updateFilterSelection,
@@ -68,8 +67,26 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
   const [filterOptions, setFilterOptions] = useState<{ [key: string]: string[] }>(
     {}
   );
+  const {
+    filters,
+    loading,
+    error,
+    localFilterSelections,
+    updateLocalFilterSelection,
+    resetLocalFilters,
+  } = useFilters();
 
-  const { filters, loading, error } = useFilters();
+  // Initialize local filter selections with current store values when popper opens
+  useEffect(() => {
+    if (open && filterSelections) {
+      // Initialize local selections with current store values
+      Object.keys(filterSelections).forEach((key) => {
+        if (filterSelections[key] && filterSelections[key].length > 0) {
+          updateLocalFilterSelection(key, filterSelections[key]);
+        }
+      });
+    }
+  }, [open, filterSelections]);
 
   useEffect(() => {
     if (filters && filters.length > 0) {
@@ -86,16 +103,23 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
     }
   }, [filters]);
   const handleFilterChange = (field: string) => (event: any, newValue: string[]) => {
-    updateFilterSelection(field, newValue);
+    updateLocalFilterSelection(field, newValue);
   };
   const handleApply = () => {
+    // Update the store with local selections
+    setFilterSelections(localFilterSelections);
+
     // Close the filter popup instantly
     onClose();
 
     // Pass the filter selections to parent component
-    onApply(filterSelections);
+    onApply(localFilterSelections);
   };
   const handleReset = () => {
+    // Reset local selections
+    resetLocalFilters();
+
+    // Reset the store
     const resetSelections = Object.keys(filterSelections).reduce((acc, key) => {
       acc[key] = [];
       return acc;
@@ -167,17 +191,14 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
               </Typography>
             ) : (
               <>
-                {}
+                {}{" "}
                 {filterProperties.map((field) => (
                   <Autocomplete
                     key={field}
                     multiple
                     options={filterOptions[field] || []}
-                    value={filterSelections[field]}
-                    onChange={(event, value) => {
-                      event.stopPropagation();
-                      updateFilterSelection(field, value);
-                    }}
+                    value={localFilterSelections[field] || []}
+                    onChange={handleFilterChange(field)}
                     disableCloseOnSelect
                     renderInput={(params) => (
                       <TextField
@@ -211,15 +232,13 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                     }}
                   />
                 ))}
-
-                {}
+                {}{" "}
                 <Autocomplete
                   multiple
                   options={["0% to 5%", "5% to 10%", "10% to 15%", "above 15%"]}
-                  value={filterSelections.tro_change}
+                  value={localFilterSelections.tro_change || []}
                   onChange={(event, value) => {
-                    event.stopPropagation();
-                    updateFilterSelection("tro_change", value);
+                    updateLocalFilterSelection("tro_change", value);
                   }}
                   disableCloseOnSelect
                   renderInput={(params) => (

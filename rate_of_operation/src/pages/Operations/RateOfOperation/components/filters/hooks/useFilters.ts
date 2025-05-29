@@ -17,6 +17,9 @@ export const useFilters = () => {
   const [filters, setFilters] = useState<FilterItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [localFilterSelections, setLocalFilterSelections] = useState<{
+    [key: string]: string[];
+  }>({});
 
   useEffect(() => {
     const fetchFilters = async () => {
@@ -39,5 +42,23 @@ export const useFilters = () => {
     fetchFilters();
   }, []);
 
-  return { filters, loading, error };
+  const updateLocalFilterSelection = (field: string, values: string[]) => {
+    setLocalFilterSelections((prev) => ({
+      ...prev,
+      [field]: values,
+    }));
+  };
+
+  const resetLocalFilters = () => {
+    setLocalFilterSelections({});
+  };
+
+  return {
+    filters,
+    loading,
+    error,
+    localFilterSelections,
+    updateLocalFilterSelection,
+    resetLocalFilters,
+  };
 };
