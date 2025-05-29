@@ -184,7 +184,9 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     searchData && searchData.rows ? searchData.rows : tableData,
     handleRowUpdate,
     handleReview,
-    searchData ? searchData.totalCount || searchData.rows?.length || 0 : totalRows,
+    searchData
+      ? searchData.totalCount || searchData.rowsCount || searchData.rows?.length || 0
+      : totalRows,
     columnVisibility,
     setColumnVisibility,
     pageNumber,
@@ -220,9 +222,8 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   };
   const handleApplyFilters = (appliedFilters: { [key: string]: string[] }) => {
     setFilters(appliedFilters);
-    // Update the filter store first, then refresh
-    setFilterSelections(appliedFilters);
-    refresh();
+    // The setFilterSelections in FilterPopper will automatically trigger refresh through useRecipesData
+    // No need to call refresh() here as it would cause duplicate API calls
   };
 
   const handleDownloadClick = (event: React.MouseEvent<HTMLElement>) => {

@@ -21,10 +21,11 @@ export const useRecipesData = () => {
         reviewedStatus: selectedReviewedStatus,
         filters: filterSelections,
       });
-
       if (response && response.rows) {
         setData(response.rows);
-        setTotalRows(response.rowsCount || 0);
+        setTotalRows(
+          response.totalCount || response.rowsCount || response.rows.length || 0
+        );
       } else {
         setData(Array.isArray(response) ? response : []);
         setTotalRows(Array.isArray(response) ? response.length : 0);
