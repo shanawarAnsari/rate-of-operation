@@ -69,7 +69,6 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   const [originalApiData, setOriginalApiData] = useState<any[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [searchData, setSearchData] = useState<any>(null);
-
   const handleSearch = async (searchText: string) => {
     if (!searchText.trim()) {
       // If search text is empty, show original data
@@ -77,15 +76,16 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
       setSearchData(null);
       return;
     }
-
     setIsSearching(true);
     try {
       const searchPayload = {
         searchText: searchText.trim(),
         pageNumber: pageNumber,
         rowsPerPage: rowsPerPage,
+        reviewedStatus: selectedReviewedStatus,
+        filters: filters,
       };
-
+      console.log("seachPayload:", JSON.stringify(searchPayload));
       const response = await searchRecipes(searchPayload);
       setSearchData(response);
     } catch (error) {
