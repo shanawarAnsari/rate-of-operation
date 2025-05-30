@@ -26,3 +26,9 @@ export const searchRecipes = async (req) => {
     .then((data) => data)
     .catch((error) => error);
 };
+
+export const updateRecipes = async (req) => {
+  return postApi("rate-of-operations/updateRecipies", req)
+    .then((data) => data)
+    .catch((error) => error);
+};
