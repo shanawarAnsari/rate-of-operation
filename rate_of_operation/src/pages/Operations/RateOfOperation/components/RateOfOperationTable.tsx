@@ -24,13 +24,19 @@ import TableBodyComponent from "./TableBody";
 import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
 import { FilterAltRounded, SaveRounded, DownloadRounded } from "@mui/icons-material";
 import FilterPopper from "./filters/FilterPopper";
+import SaveConfirmationDialog from "./SaveConfirmationDialog";
+import SnackbarAlert from "./SnackbarAlert";
 
 import { useRecipesData } from "../hooks/useRecipesData";
 import { useReviewedStatusData } from "../hooks/useReviewedStatusData";
 import { CircularProgress } from "@mui/material";
 import { useColumnVisibility } from "../hooks/useColumnVisibility";
 import { useFilterStore } from "../../../../store/filterStore";
-import { searchRecipes } from "../../../../services/rate-of-operations";
+import { useUserStore } from "../../../../store/userStore";
+import {
+  searchRecipes,
+  updateRecipes,
+} from "../../../../services/rate-of-operations";
 
 interface RateOfOperationTableProps {}
 
@@ -41,7 +47,9 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     selectedReviewedStatus,
     setSelectedCategory,
     setSelectedReviewedStatus,
+    filterSelections,
   } = useFilterStore();
+  const { user } = useUserStore();
   const {
     data,
     loading,
@@ -65,13 +73,23 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     availableColumns,
     priorityColumns,
   } = useColumnVisibility(data);
+
   const [tableData, setTableData] = useState<any[]>([]);
   const [originalApiData, setOriginalApiData] = useState<any[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [searchData, setSearchData] = useState<any>(null);
+  const [updatedRecords, setUpdatedRecords] = useState<any[]>([]);
+  const [changedRowsData, setChangedRowsData] = useState<any[]>([]);
+  const [filterAnchorEl, setFilterAnchorEl] = useState<HTMLElement | null>(null);
+  const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
+  const [downloadAnchorEl, setDownloadAnchorEl] = useState<HTMLElement | null>(null);
+  const [saveDialogOpen, setSaveDialogOpen] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [updateResponse, setUpdateResponse] = useState<any>(null);
+
   const handleSearch = async (searchText: string) => {
     if (!searchText.trim()) {
-      // If search text is empty, show original data
       setIsSearching(false);
       setSearchData(null);
       return;
@@ -83,7 +101,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
         pageNumber: pageNumber,
         rowsPerPage: rowsPerPage,
         reviewedStatus: selectedReviewedStatus,
-        filters: filters,
+        filters: filterSelections,
       };
       console.log("seachPayload:", JSON.stringify(searchPayload));
       const response = await searchRecipes(searchPayload);
@@ -95,17 +113,16 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
       setIsSearching(false);
     }
   };
+
   const handleRowUpdate = (rowIndex: number, newValue: number) => {
     setTableData((prev) => {
       const updated = [...prev];
       const currentRow = updated[rowIndex];
 
-      // Check if originalApiData exists for this row
       if (!originalApiData[rowIndex]) {
         return prev;
       }
 
-      // Get the original row data for calculations from originalApiData
       const originalRowData = originalApiData[rowIndex];
       const originalTRO =
         typeof originalRowData.NEW_RO === "number"
@@ -118,35 +135,68 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
 
       const newPlanningTime =
         originalRowData.CURRENT_PLANNING_TIME * (newValue / originalTRO);
+      const roPercentChange =
+        (((newValue - originalTRO) / originalTRO) * 100).toFixed(2) + "%";
 
       updated[rowIndex] = {
         ...currentRow,
         NEW_RO: newValue,
         NEW_PLANNING_TIME: newPlanningTime?.toFixed(2),
-        RO_PCT_CHANGE:
-          (((newValue - originalTRO) / originalTRO) * 100).toFixed(2) + "%",
+        RO_PCT_CHANGE: roPercentChange,
         isUpdated: true,
+        UPDATED_BY: user?.email || "Web App User",
+        UPDATED_ON: new Date().toISOString(),
       };
+
+      const changedRowInfo = {
+        RATE_OF_OPERATION_KEY:
+          currentRow.RATE_OF_OPERATION_KEY || currentRow.RECIPE_NUMBER,
+        NEW_RO: newValue,
+        RO_PCT_CHANGE: roPercentChange,
+        NEW_PLANNING_TIME: newPlanningTime?.toFixed(2),
+        REVIEWED: currentRow.REVIEWED,
+        UPDATED_BY: user?.email || "Web App User",
+        UPDATED_ON: new Date().toISOString(),
+        ACTION: "ROW_UPDATE",
+      };
+
+      setChangedRowsData((prevChanges) => {
+        const existingIndex = prevChanges.findIndex(
+          (change) =>
+            change.RATE_OF_OPERATION_KEY === changedRowInfo.RATE_OF_OPERATION_KEY
+        );
+
+        let newChanges;
+        if (existingIndex >= 0) {
+          newChanges = [...prevChanges];
+          newChanges[existingIndex] = {
+            ...newChanges[existingIndex],
+            ...changedRowInfo,
+          };
+        } else {
+          newChanges = [...prevChanges, changedRowInfo];
+        }
+
+        console.log("Updated Row Data:", changedRowInfo);
+        console.log("All Changed Rows:", newChanges);
+        return newChanges;
+      });
 
       return updated;
     });
   };
+
   const handleReview = (rowIndex: number) => {
     setTableData((prev) => {
       const updated = [...prev];
       const currentRow = updated[rowIndex];
 
-      // If already reviewed, reset to original values
       if (currentRow.REVIEWED === "Y - Reviewed from Web App") {
-        // Check if originalApiData exists for this row
         if (!originalApiData[rowIndex]) {
           return prev;
         }
 
-        // Get the original data from the stored API response
         const originalRowData = originalApiData[rowIndex];
-
-        // Reset to original values completely - create a completely new object
         const resetRow = {
           ...originalRowData,
           REVIEWED: "N",
@@ -155,18 +205,88 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
 
         updated[rowIndex] = resetRow;
 
+        const resetRowInfo = {
+          RATE_OF_OPERATION_KEY:
+            currentRow.RATE_OF_OPERATION_KEY || currentRow.RECIPE_NUMBER,
+          NEW_RO: originalRowData.NEW_RO,
+          RO_PCT_CHANGE: originalRowData.RO_PCT_CHANGE,
+          NEW_PLANNING_TIME: originalRowData.NEW_PLANNING_TIME,
+          REVIEWED: "N",
+          UPDATED_BY: user?.email || "Web App User",
+          UPDATED_ON: new Date().toISOString(),
+          ACTION: "REVIEW_RESET",
+        };
+
+        setChangedRowsData((prevChanges) => {
+          const existingIndex = prevChanges.findIndex(
+            (change) =>
+              change.RATE_OF_OPERATION_KEY === resetRowInfo.RATE_OF_OPERATION_KEY
+          );
+
+          let newChanges;
+          if (existingIndex >= 0) {
+            newChanges = [...prevChanges];
+            newChanges[existingIndex] = {
+              ...newChanges[existingIndex],
+              ...resetRowInfo,
+            };
+          } else {
+            newChanges = [...prevChanges, resetRowInfo];
+          }
+
+          console.log("Review Reset Data:", resetRowInfo);
+          console.log("All Changed Rows:", newChanges);
+          return newChanges;
+        });
+
         return updated;
       } else {
-        // Mark as reviewed - keep current values
         updated[rowIndex] = {
           ...currentRow,
           REVIEWED: "Y - Reviewed from Web App",
+          UPDATED_BY: user?.email || "Web App User",
+          UPDATED_ON: new Date().toISOString(),
         };
+
+        const reviewedRowInfo = {
+          RATE_OF_OPERATION_KEY:
+            currentRow.RATE_OF_OPERATION_KEY || currentRow.RECIPE_NUMBER,
+          NEW_RO: currentRow.NEW_RO,
+          RO_PCT_CHANGE: currentRow.RO_PCT_CHANGE,
+          NEW_PLANNING_TIME: currentRow.NEW_PLANNING_TIME,
+          REVIEWED: "Y - Reviewed from Web App",
+          UPDATED_BY: user?.email || "Web App User",
+          UPDATED_ON: new Date().toISOString(),
+          ACTION: "REVIEW_MARKED",
+        };
+
+        setChangedRowsData((prevChanges) => {
+          const existingIndex = prevChanges.findIndex(
+            (change) =>
+              change.RATE_OF_OPERATION_KEY === reviewedRowInfo.RATE_OF_OPERATION_KEY
+          );
+
+          let newChanges;
+          if (existingIndex >= 0) {
+            newChanges = [...prevChanges];
+            newChanges[existingIndex] = {
+              ...newChanges[existingIndex],
+              ...reviewedRowInfo,
+            };
+          } else {
+            newChanges = [...prevChanges, reviewedRowInfo];
+          }
+
+          console.log("Review Marked Data:", reviewedRowInfo);
+          console.log("All Changed Rows:", newChanges);
+          return newChanges;
+        });
 
         return updated;
       }
     });
   };
+
   const {
     table,
     searchText,
@@ -195,20 +315,17 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     updateRowsPerPage,
     handleSearch
   );
-  const [filterAnchorEl, setFilterAnchorEl] = useState<HTMLElement | null>(null);
-  const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
 
-  const [downloadAnchorEl, setDownloadAnchorEl] = useState<HTMLElement | null>(null);
   const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedCategory(event.target.value);
-    // The useRecipesData hook will automatically refresh when selectedCategory changes
   };
+
   const handleReviewedStatusChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setSelectedReviewedStatus(event.target.value);
-    // The useRecipesData hook will automatically refresh when selectedReviewedStatus changes
   };
+
   const handleRefresh = () => {
     refresh();
   };
@@ -220,10 +337,9 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   const handleFilterClose = () => {
     setFilterAnchorEl(null);
   };
+
   const handleApplyFilters = (appliedFilters: { [key: string]: string[] }) => {
     setFilters(appliedFilters);
-    // The setFilterSelections in FilterPopper will automatically trigger refresh through useRecipesData
-    // No need to call refresh() here as it would cause duplicate API calls
   };
 
   const handleDownloadClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -233,14 +349,94 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   const handleDownloadClose = () => {
     setDownloadAnchorEl(null);
   };
+
   const handleDownload = (format: "excel" | "csv") => {
     setDownloadAnchorEl(null);
-  }; // Update table data when data changes and store original API response
+  };
+  const handleSaveClick = () => {
+    const reviewedRecipes = changedRowsData.filter(
+      (recipe) => recipe.ACTION === "REVIEW_MARKED"
+    );
+
+    if (reviewedRecipes.length === 0) {
+      console.log("No reviewed recipes to save");
+      // Show warning snackbar for no reviewed recipes
+      setUpdateResponse({
+        success: false,
+        results: [],
+        totalUpdated: 0,
+        totalFailed: 0,
+        message: "No reviewed recipes to save",
+        isWarning: true,
+      });
+      setSnackbarOpen(true);
+      return;
+    }
+
+    setSaveDialogOpen(true);
+  };
+
+  const handleSaveConfirm = async () => {
+    setIsSaving(true);
+    try {
+      const reviewedRecipes = changedRowsData.filter(
+        (recipe) => recipe.ACTION === "REVIEW_MARKED"
+      );
+
+      if (reviewedRecipes.length === 0) {
+        console.log("No reviewed recipes to save");
+        return;
+      }
+
+      const recipesToSave = reviewedRecipes.map(({ ACTION, ...recipe }) => recipe);
+
+      console.log("Sending reviewed recipes to API:", recipesToSave);
+
+      const response = await updateRecipes(recipesToSave);
+
+      // Set the response and show snackbar
+      setUpdateResponse(response);
+      setSnackbarOpen(true);
+
+      if (response && !response.error) {
+        console.log("Recipes updated successfully:", response);
+
+        setChangedRowsData((prevChanges) =>
+          prevChanges.filter((change) => change.ACTION !== "REVIEW_MARKED")
+        );
+
+        refresh();
+        setSaveDialogOpen(false);
+      } else {
+        console.error("Error updating recipes:", response);
+      }
+    } catch (error) {
+      console.error("Error saving recipes:", error);
+      // Set error response and show snackbar
+      setUpdateResponse({
+        success: false,
+        results: [],
+        totalUpdated: 0,
+        totalFailed: 1,
+      });
+      setSnackbarOpen(true);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleSaveCancel = () => {
+    setSaveDialogOpen(false);
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
+    setUpdateResponse(null);
+  };
+
   useEffect(() => {
     if (Array.isArray(data) && data.length > 0) {
-      // Store original API data separately - deep copy to prevent mutations
       setOriginalApiData(JSON.parse(JSON.stringify(data)));
-      // Initialize table data with isUpdated flag
       const dataWithFlags = data.map((row) => ({
         ...row,
         isUpdated: false,
@@ -252,9 +448,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
       "rows" in data &&
       Array.isArray(data.rows)
     ) {
-      // Store original API data separately - deep copy to prevent mutations
       setOriginalApiData(JSON.parse(JSON.stringify(data.rows)));
-      // Initialize table data with isUpdated flag
       const dataWithFlags = data.rows.map((row: any) => ({
         ...row,
         isUpdated: false,
@@ -348,7 +542,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>
               All
             </MenuItem>
-          </TextField>{" "}
+          </TextField>
           <TextField
             size="small"
             select
@@ -404,7 +598,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           </Tooltip>
           <Tooltip title="Save" placement="top">
             <IconButton
-              onClick={handleRefresh}
+              onClick={handleSaveClick}
               color="primary"
               sx={{
                 marginRight: 1,
@@ -437,7 +631,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             >
               <ReplayCircleFilledIcon style={{ fontSize: "26px" }} />
             </IconButton>
-          </Tooltip>{" "}
+          </Tooltip>
           <ColumnVisibilityControl
             table={table}
             anchorEl={anchorEl}
@@ -460,7 +654,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
         onClose={handleFilterClose}
         data={tableData}
         onApply={handleApplyFilters}
-      />{" "}
+      />
       <TableContainer
         component={Paper}
         sx={{
@@ -473,7 +667,6 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           maxHeight: "65vh",
         }}
       >
-        {" "}
         {loading || isSearching ? (
           <Box
             sx={{
@@ -522,7 +715,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             <TableBodyComponent rows={table.getRowModel().rows} />
           </Table>
         )}
-      </TableContainer>{" "}
+      </TableContainer>
       <Box
         sx={{
           display: "flex",
@@ -533,7 +726,6 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           gap: 2,
         }}
       >
-        {" "}
         <Typography
           variant="body2"
           sx={{ fontSize: "0.85rem", color: "text.secondary" }}
@@ -544,7 +736,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           <FormControl size="small" variant="outlined" sx={{ minWidth: 120 }}>
             <InputLabel id="rows-per-page-label" sx={{ fontSize: "0.85rem" }}>
               Rows per page
-            </InputLabel>{" "}
+            </InputLabel>
             <Select
               labelId="rows-per-page-label"
               value={rowsPerPage}
@@ -558,7 +750,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
                 </MenuItem>
               ))}
             </Select>
-          </FormControl>{" "}
+          </FormControl>
           <TextField
             size="small"
             label="Page"
@@ -587,7 +779,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
                 fontSize: "0.85rem",
               },
             }}
-          />{" "}
+          />
           <Pagination
             count={totalPages}
             page={pageNumber}
@@ -603,6 +795,24 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           />
         </Box>
       </Box>
+      {/* Save Confirmation Dialog */}
+      <SaveConfirmationDialog
+        open={saveDialogOpen}
+        onClose={handleSaveCancel}
+        onConfirm={handleSaveConfirm}
+        reviewedRecipes={changedRowsData.filter(
+          (recipe) => recipe.ACTION === "REVIEW_MARKED"
+        )}
+        originalData={originalApiData}
+        isSaving={isSaving}
+      />{" "}
+      {/* Snackbar Alert */}
+      <SnackbarAlert
+        open={snackbarOpen}
+        onClose={handleSnackbarClose}
+        updateResponse={updateResponse}
+        autoHideDuration={15000}
+      />
     </Box>
   );
 };

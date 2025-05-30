@@ -102,9 +102,11 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
       setFilterOptions(options);
     }
   }, [filters]);
+
   const handleFilterChange = (field: string) => (event: any, newValue: string[]) => {
     updateLocalFilterSelection(field, newValue);
   };
+
   const handleApply = () => {
     // Update the store with local selections
     setFilterSelections(localFilterSelections);
@@ -115,6 +117,7 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
     // Pass the filter selections to parent component
     onApply(localFilterSelections);
   };
+
   const handleReset = () => {
     // Reset local selections
     resetLocalFilters();

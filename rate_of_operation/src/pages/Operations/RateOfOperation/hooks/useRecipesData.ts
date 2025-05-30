@@ -9,7 +9,6 @@ export const useRecipesData = () => {
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(10);
   const [totalRows, setTotalRows] = useState<number>(0);
-
   const { filterSelections, selectedCategory, selectedReviewedStatus } =
     useFilterStore();
   const fetchData = useCallback(async () => {
