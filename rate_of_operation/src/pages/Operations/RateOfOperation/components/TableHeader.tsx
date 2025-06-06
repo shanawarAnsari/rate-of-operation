@@ -13,6 +13,7 @@ const headerCellStyles = {
   paddingY: "4px",
   fontSize: "0.75rem",
   fontWeight: "bold",
+  textAlign: "center",
   backgroundColor: (theme: any) =>
     theme.palette.mode === "light"
       ? theme.palette.grey[300]
@@ -23,8 +24,8 @@ const isStickyColumn = (index: number) => index < 3;
 
 const getStickyPosition = (index: number) => {
   if (index === 0) return 0;
-  if (index === 1) return 85;
-  if (index === 2) return 180;
+  if (index === 1) return 110;
+  if (index === 2) return 220;
   return 0;
 };
 
@@ -56,24 +57,23 @@ const TableHeader: React.FC<TableHeaderProps> = ({ headerGroups }) => (
             style={{ minWidth: 120, maxWidth: 1000 }}
             onClick={header.column.getToggleSortingHandler()}
           >
-            <Tooltip title={String(header.column.columnDef.header)} arrow>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                {header.isPlaceholder
-                  ? null
-                  : flexRender(header.column.columnDef.header, header.getContext())}
-                {header.column.getIsSorted() === "asc" && (
-                  <ArrowDropDownIcon sx={{ color: "darkgray", fontSize: 28 }} />
-                )}
-                {header.column.getIsSorted() === "desc" && (
-                  <ArrowDropUpIcon sx={{ color: "darkgray", fontSize: 28 }} />
-                )}
-              </Box>
-            </Tooltip>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {header.isPlaceholder
+                ? null
+                : flexRender(header.column.columnDef.header, header.getContext())}
+              {header.column.getIsSorted() === "asc" && (
+                <ArrowDropDownIcon sx={{ color: "darkgray", fontSize: 28 }} />
+              )}
+              {header.column.getIsSorted() === "desc" && (
+                <ArrowDropUpIcon sx={{ color: "darkgray", fontSize: 28 }} />
+              )}
+            </Box>
           </TableCell>
         ))}
       </TableRow>

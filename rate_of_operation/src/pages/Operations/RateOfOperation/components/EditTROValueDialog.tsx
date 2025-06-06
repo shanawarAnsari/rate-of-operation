@@ -32,19 +32,28 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
   const [customValue, setCustomValue] = useState("");
   const [error, setError] = useState("");
   const [comments, setComments] = useState("");
+  const [selectedValue, setSelectedValue] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState<any>(null);
 
   const handleCommentChange = (e: any) => {
     setComments(e.target.value);
   };
-
-  const handleOptionSelect = (value: any) => {
-    onUpdate(value);
+  const handleOptionSelect = (value: any, index: number) => {
+    setSelectedValue(value);
+    setSelectedIndex(index);
+    setCustomValue(""); // Clear custom input when selecting from options
+    setError(""); // Clear any errors
   };
 
   const handleCustomInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = event.target.value;
     const numericValue = parseFloat(inputValue);
     const originalNumericValue = parseFloat(originalValue);
+    if (inputValue) {
+      // Clear selected card when typing custom value
+      setSelectedValue(null);
+      setSelectedIndex(null);
+    }
 
     if (
       isNaN(numericValue) ||
@@ -58,10 +67,11 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
 
     setCustomValue(inputValue);
   };
-
   const handleCustomInputSubmit = () => {
     if (!error) {
-      onUpdate(customValue);
+      const valueToUpdate = customValue || selectedValue;
+      onUpdate(valueToUpdate);
+      onClose();
     }
   };
 
@@ -93,18 +103,43 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
                 borderColor="grey.300"
                 borderRadius={1}
                 padding={1}
-                onClick={() => handleOptionSelect(option.value)}
+                onClick={
+                  !isNaN(option?.value)
+                    ? () => handleOptionSelect(option.value, idx)
+                    : undefined
+                }
                 sx={{
-                  cursor: "pointer",
-                  backgroundColor: "inherit",
-                  transition: "background-color 0.4s ease, transform 0.2s ease",
-                  "&:hover": {
-                    backgroundColor: (theme) => theme.palette.action.hover,
-                  },
-                  "&:active": {
-                    backgroundColor: (theme) => theme.palette.action.selected,
-                    transform: "scale(1.03)",
-                  },
+                  cursor: !isNaN(option?.value) ? "pointer" : "not-allowed",
+                  opacity: !isNaN(option?.value) ? 1 : 0.5,
+                  backgroundColor:
+                    selectedIndex === idx
+                      ? (theme) => theme.palette.action.hover
+                      : "inherit",
+                  borderColor:
+                    selectedIndex === idx
+                      ? (theme) => theme.palette.primary.main
+                      : "grey.300",
+                  borderWidth: selectedIndex === idx ? 2 : 1,
+                  transition: "all 0.3s ease",
+                  boxShadow:
+                    selectedIndex === idx ? "0 2px 8px rgba(0,0,0,0.1)" : "none",
+                  "&:hover": !isNaN(option?.value)
+                    ? {
+                      backgroundColor:
+                        selectedIndex === idx
+                          ? (theme) => theme.palette.grey[100]
+                          : (theme) => theme.palette.action.hover,
+                      borderColor:
+                        selectedIndex === idx
+                          ? (theme) => theme.palette.primary.main
+                          : "grey.400",
+                    }
+                    : {},
+                  "&:active": !isNaN(option?.value)
+                    ? {
+                      transform: "scale(1.02)",
+                    }
+                    : {},
                 }}
               >
                 <Box>
@@ -115,12 +150,15 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
                   <Typography variant="caption" color="textSecondary">
                     {option?.subtext}
                   </Typography>
-                </Box>
+                </Box>{" "}
                 <Button
                   variant="outlined"
                   size="small"
                   disabled={isNaN(option?.value)}
-                  onClick={() => handleOptionSelect(option.value)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOptionSelect(option.value, idx);
+                  }}
                   style={{ marginLeft: "8px" }}
                 >
                   {option.value}
@@ -168,12 +206,12 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
       <DialogActions>
         <Button onClick={onClose} color="secondary" variant="outlined" size="small">
           Cancel
-        </Button>
+        </Button>{" "}
         <Button
           size="small"
           onClick={handleCustomInputSubmit}
           color="primary"
-          disabled={!!error || !customValue}
+          disabled={!!error || (!customValue && !selectedValue)}
           variant="outlined"
         >
           Update

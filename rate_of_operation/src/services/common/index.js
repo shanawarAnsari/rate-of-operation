@@ -10,7 +10,8 @@ export const getApi = async (url, data = null, headers = {}) => {
                 'Content-Type': 'application/json',
                 authorization: `Bearer ${localStorage.getItem('authToken')}`,
                 ...headers
-            }
+            },
+            responseType: url === 'downloadRecipes' ? 'blob' : 'json'
         });
         if (response.status >= 200 && response.status <= 300) {
             return response.data;
@@ -33,8 +34,7 @@ export const postApi = async (url, data, headers = {}) => {
                 authorization: `Bearer ${localStorage.getItem('authToken')}`,
                 ...headers
             },
-            responseType:
-                url === 'price-elasticity/download-query' || url === 'price-elasticity-simulator/profit-parabola-download' ? 'blob' : 'json'
+            responseType: 'json'
         });
         if (response.status >= 200 && response.status <= 300) {
             return response.data;

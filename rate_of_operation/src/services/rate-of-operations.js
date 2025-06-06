@@ -1,23 +1,40 @@
-import { getApi, postApi } from './common';
+import { getApi, postApi } from "./common";
 
 export const getRecipies = async (req) => {
-    return getApi(`rate-of-operations/getRecipies?pageNumber=${req.pageNumber}
-    &rowsPerPage=${req.rowsPerPage}&reviewedStatus=${req.reviewedStatus}`)
+    return postApi("rate-of-operations/getRecipies", req)
         .then((data) => data)
         .catch((error) => error);
 };
 export const getFilters = async () => {
-    return getApi('rate-of-operations/getFilters')
+    return getApi("rate-of-operations/getFilters")
         .then((data) => data)
         .catch((error) => error);
 };
 export const getCategories = async () => {
-    return getApi('rate-of-operations/getCategories')
+    return getApi("rate-of-operations/getCategories")
         .then((data) => data)
         .catch((error) => error);
 };
 export const getReviewedStatus = async () => {
-    return getApi('rate-of-operations/getReviewedStatus')
+    return getApi("rate-of-operations/getReviewedStatus")
+        .then((data) => data)
+        .catch((error) => error);
+};
+
+export const searchRecipes = async (req) => {
+    return postApi("rate-of-operations/search", req)
+        .then((data) => data)
+        .catch((error) => error);
+};
+
+export const updateRecipes = async (req) => {
+    return postApi("rate-of-operations/updateRecipies", req)
+        .then((data) => data)
+        .catch((error) => error);
+};
+
+export const downloadRecipes = async (req) => {
+    return postApi("rate-of-operations/downloadRecipes", req)
         .then((data) => data)
         .catch((error) => error);
 };
