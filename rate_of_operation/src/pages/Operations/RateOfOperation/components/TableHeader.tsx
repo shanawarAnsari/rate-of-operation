@@ -57,23 +57,24 @@ const TableHeader: React.FC<TableHeaderProps> = ({ headerGroups }) => (
             style={{ minWidth: 120, maxWidth: 1000 }}
             onClick={header.column.getToggleSortingHandler()}
           >
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              {header.isPlaceholder
-                ? null
-                : flexRender(header.column.columnDef.header, header.getContext())}
-              {header.column.getIsSorted() === "asc" && (
-                <ArrowDropDownIcon sx={{ color: "darkgray", fontSize: 28 }} />
-              )}
-              {header.column.getIsSorted() === "desc" && (
-                <ArrowDropUpIcon sx={{ color: "darkgray", fontSize: 28 }} />
-              )}
-            </Box>
+            <Tooltip title={String(header.column.columnDef.header)} arrow>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                {header.isPlaceholder
+                  ? null
+                  : flexRender(header.column.columnDef.header, header.getContext())}
+                {header.column.getIsSorted() === "asc" && (
+                  <ArrowDropDownIcon sx={{ color: "darkgray", fontSize: 28 }} />
+                )}
+                {header.column.getIsSorted() === "desc" && (
+                  <ArrowDropUpIcon sx={{ color: "darkgray", fontSize: 28 }} />
+                )}
+              </Box>
+            </Tooltip>
           </TableCell>
         ))}
       </TableRow>

@@ -13,12 +13,15 @@ const cellStyles = {
   paddingY: "3px",
   fontSize: "0.8rem",
   textAlign: "center",
+  textAlign: "center",
 };
 
 const isStickyColumn = (index: number) => index < 3;
 
 const getStickyPosition = (index: number) => {
   if (index === 0) return 0; // RECIPE_NUMBER position
+  if (index === 1) return 110; // MAKER_RESOURCE position
+  if (index === 2) return 220; // PACKER_RESOURCE position
   if (index === 1) return 110; // MAKER_RESOURCE position
   if (index === 2) return 220; // PACKER_RESOURCE position
   return 0;
@@ -59,6 +62,7 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
                 }), // Ensure cells with buttons have enough width
                 ...(["PACKER_RESOURCE", "NEW_RO"].includes(cell.column.id) && {
                   minWidth: 120,
+                  minWidth: 120,
                 }),
                 // highlight updated cells
                 ...(row.original.isUpdated &&
@@ -86,3 +90,4 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
 };
 
 export default TableBodyComponent;
+
