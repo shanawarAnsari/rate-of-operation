@@ -105,7 +105,6 @@ const CellRenderer = ({
   ];
   return (
     <>
-      {" "}
       <div
         style={{
           overflow: "hidden",
@@ -113,20 +112,43 @@ const CellRenderer = ({
           display: "flex",
           alignItems: "center",
           justifyContent:
+            columnId === "RECIPE_NUMBER" ||
             columnId === "PACKER_RESOURCE" ||
-              (columnId === "NEW_RO" &&
-                rowData.REVIEWED === "N" &&
-                !(rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1"))
-              ? "space-between"
+            (columnId === "NEW_RO" &&
+              rowData.REVIEWED === "N" &&
+              !(rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1"))
+              ? "flex-start"
               : "center",
+          minHeight: "32px",
+          gap: "0px",
         }}
       >
-        {value === null ? "-" : String(value)}
-
-        {/* Show error info icon in PACKER_RESOURCE column for rows with error code 1 */}
-        {columnId === "PACKER_RESOURCE" &&
-          (rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1") && (
-            <Box sx={{ mr: 0.7 }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flex: 1,
+            minWidth: 0,
+          }}
+        >
+          {value === null ? "-" : String(value)}
+        </div>
+        {/* Show error info icon in RECIPE_NUMBER column for rows with errors */}
+        {columnId === "RECIPE_NUMBER" &&
+          (rowData.ERROR_CODE === 1 ||
+            rowData.ERROR_CODE === "1" ||
+            rowData.ERROR_CODE === 0 ||
+            rowData.ERROR_CODE === "0") &&
+          rowData.ERROR_REPORT &&
+          rowData.ERROR_REPORT !== null &&
+          rowData.ERROR_REPORT.trim() !== "" && (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                flexShrink: 0,
+              }}
+            >
               <Tooltip
                 placement="top"
                 title={rowData.ERROR_REPORT || "Error occurred"}
@@ -134,71 +156,89 @@ const CellRenderer = ({
               >
                 <InfoOutlined
                   sx={{
-                    color: "rgba(182, 0, 0, 0.8)", // Deep bloody red with transparency
+                    color:
+                      rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1"
+                        ? "rgba(182, 0, 0, 0.8)" // Deep bloody red for hard errors
+                        : "rgba(255, 165, 0, 0.8)", // Orange for soft errors
                     fontSize: "1.5rem",
                   }}
                 />
               </Tooltip>
             </Box>
           )}
-
         {/* Review button for PACKER_RESOURCE column - show for REVIEWED = "N" with no errors, or already reviewed */}
         {columnId === "PACKER_RESOURCE" &&
           !(rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1") &&
           ((rowData.REVIEWED === "N" &&
             (rowData.ERROR_CODE === 0 || rowData.ERROR_CODE === "0")) ||
             rowData.REVIEWED === "Y - Reviewed from Web App") && (
-            <IconButton size="small" onClick={handlePublish}>
-              {rowData.REVIEWED === "Y - Reviewed from Web App" ? (
-                rowData.isUpdated ? (
-                  <DoneAllIcon sx={{ color: "#0bdd00" }} />
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                flexShrink: 0,
+              }}
+            >
+              <IconButton size="small" onClick={handlePublish}>
+                {rowData.REVIEWED === "Y - Reviewed from Web App" ? (
+                  rowData.isUpdated ? (
+                    <DoneAllIcon sx={{ color: "#0bdd00" }} />
+                  ) : (
+                    <CheckIcon sx={{ color: "#0bdd00" }} />
+                  )
                 ) : (
-                  <CheckIcon sx={{ color: "#0bdd00" }} />
-                )
-              ) : (
-                <Tooltip
-                  placement="top"
-                  title={
-                    <>
-                      Click to mark reviewed.
-                      <br />
-                      New TRO: {rowData.NEW_RO || "N/A"}
-                    </>
-                  }
-                  arrow
-                >
-                  <PublishedWithChanges
-                    sx={{
-                      color: rowData.isUpdated
-                        ? "rgb(205, 181, 0)" // Dark yellow for updated TRO
-                        : (theme) => theme.palette.primary.main,
-                      transition: "color 0.3s",
-                    }}
-                  />
-                </Tooltip>
-              )}
-            </IconButton>
+                  <Tooltip
+                    placement="top"
+                    title={
+                      <>
+                        Click to mark reviewed.
+                        <br />
+                        New TRO: {rowData.NEW_RO || "N/A"}
+                      </>
+                    }
+                    arrow
+                  >
+                    <PublishedWithChanges
+                      sx={{
+                        color: rowData.isUpdated
+                          ? "rgb(205, 181, 0)" // Dark yellow for updated TRO
+                          : (theme) => theme.palette.primary.main,
+                        transition: "color 0.3s",
+                      }}
+                    />
+                  </Tooltip>
+                )}
+              </IconButton>
+            </Box>
           )}
-        {/* Edit button for NEW_RO column - only show for REVIEWED = "N" and no error */}
+        {/* Edit button for NEW_RO column - show for REVIEWED = "N" and no hard error */}
         {columnId === "NEW_RO" &&
           rowData.REVIEWED === "N" &&
           !(rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1") && (
-            <IconButton
-              size="small"
-              onClick={handleEditClick}
+            <Box
               sx={{
-                borderRadius: "50%",
-                padding: "4px",
-                "&:hover": { backgroundColor: (theme) => theme.palette.grey[200] },
+                display: "flex",
+                alignItems: "center",
+                flexShrink: 0,
               }}
             >
-              <EditIcon
+              <IconButton
+                size="small"
+                onClick={handleEditClick}
                 sx={{
-                  fontSize: "1.25rem",
-                  color: (theme) => theme.palette.primary.main,
+                  borderRadius: "50%",
+                  padding: "4px",
+                  "&:hover": { backgroundColor: (theme) => theme.palette.grey[200] },
                 }}
-              />
-            </IconButton>
+              >
+                <EditIcon
+                  sx={{
+                    fontSize: "1.25rem",
+                    color: (theme) => theme.palette.primary.main,
+                  }}
+                />
+              </IconButton>
+            </Box>
           )}
       </div>
       {/* Edit dialog for NEW_RO column - only for REVIEWED = "N" */}

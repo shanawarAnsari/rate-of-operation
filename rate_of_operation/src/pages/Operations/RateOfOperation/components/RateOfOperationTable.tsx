@@ -15,6 +15,7 @@ import {
   IconButton,
   Tooltip,
   Menu,
+  Badge,
 } from "@mui/material";
 import { useRateOfOperationTable } from "../hooks/useRateOfOperationTable";
 import SearchInput from "./SearchInput";
@@ -344,9 +345,15 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   const handleFilterClose = () => {
     setFilterAnchorEl(null);
   };
-
   const handleApplyFilters = (appliedFilters: { [key: string]: string[] }) => {
     setFilters(appliedFilters);
+  };
+
+  // Calculate the number of active filters
+  const getActiveFiltersCount = () => {
+    return Object.values(filterSelections).filter(
+      (values) => Array.isArray(values) && values.length > 0
+    ).length;
   };
 
   const handleDownloadClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -356,37 +363,15 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
   const handleDownloadClose = () => {
     setDownloadAnchorEl(null);
   };
-
   const handleDownload = async (format: "xlsx" | "csv") => {
     setDownloadAnchorEl(null);
     try {
       setIsDownloading(true);
-      const fileResponse: any = await downloadRecipes({
+      await downloadRecipes({
         fileType: format,
         reviewedStatus,
         filters: filterSelections,
       });
-
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = now.getMonth() + 1;
-      const day = now.getDate();
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-      const seconds = now.getSeconds();
-      const formattedDateTime = `${year}-${String(month).padStart(2, "0")}-${String(
-        day
-      ).padStart(2, "0")}_${String(hours).padStart(2, "0")}-${String(
-        minutes
-      ).padStart(2, "0")}-${String(seconds).padStart(2, "0")}`;
-
-      const url = window.URL.createObjectURL(new Blob([fileResponse]));
-      const link = document.createElement("a");
-      link.href = url;
-      link.setAttribute("download", `Rate-of-Operations-${formattedDateTime}.xlsx`);
-      document.body.appendChild(link);
-      link.click();
-      link?.parentElement?.removeChild(link);
       setIsDownloading(false);
     } catch (error) {
       console.log(error);
@@ -617,25 +602,38 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>
               All
             </MenuItem>
-          </TextField>
+          </TextField>{" "}
           <Tooltip title="Filters" placement="top">
-            <IconButton
-              onClick={handleFilterIconClick}
-              color="primary"
+            <Badge
+              badgeContent={getActiveFiltersCount()}
+              color="secondary"
               sx={{
-                marginRight: 1,
-                p: 0.25,
-                border: "1px solid",
-                borderColor: "divider",
-                borderRadius: "0px",
-                "&:hover": {
-                  borderColor: (theme) => theme.palette.text.primary,
+                "& .MuiBadge-badge": {
+                  fontSize: "0.6rem",
+                  height: "16px",
+                  minWidth: "16px",
+                  mr: 1,
                 },
               }}
-              aria-label="filter"
             >
-              <FilterAltRounded style={{ fontSize: "26px" }} />
-            </IconButton>
+              <IconButton
+                onClick={handleFilterIconClick}
+                color="primary"
+                sx={{
+                  marginRight: 1,
+                  p: 0.25,
+                  border: "1px solid",
+                  borderColor: "divider",
+                  borderRadius: "0px",
+                  "&:hover": {
+                    borderColor: (theme) => theme.palette.text.primary,
+                  },
+                }}
+                aria-label="filter"
+              >
+                <FilterAltRounded style={{ fontSize: "26px" }} />
+              </IconButton>
+            </Badge>
           </Tooltip>
           <Tooltip title="Save" placement="top">
             <IconButton

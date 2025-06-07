@@ -10,24 +10,29 @@ interface FilterItem {
   PRODUCT_VARIANT: string;
   PRODUCT_SIZE: string;
   SETUP_GROUP: string;
+  INTERFACE: string;
   [key: string]: string;
 }
 
 export const useFilters = () => {
   const [filters, setFilters] = useState<FilterItem[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [localFilterSelections, setLocalFilterSelections] = useState<{
     [key: string]: string[];
   }>({});
+  const [hasLoaded, setHasLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchFilters = async () => {
+      if (hasLoaded) return; // Don't fetch if already loaded
+
       try {
         setLoading(true);
         const response = await getFilters();
         if (response && !response.error) {
           setFilters(response);
+          setHasLoaded(true);
         } else {
           setError(response.error || "Failed to fetch filters");
         }
@@ -40,7 +45,7 @@ export const useFilters = () => {
     };
 
     fetchFilters();
-  }, []);
+  }, [hasLoaded]);
 
   const updateLocalFilterSelection = (field: string, values: string[]) => {
     setLocalFilterSelections((prev) => ({

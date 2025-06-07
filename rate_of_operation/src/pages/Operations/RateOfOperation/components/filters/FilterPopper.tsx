@@ -29,6 +29,7 @@ interface FilterItem {
   PRODUCT_VARIANT: string;
   PRODUCT_SIZE: string;
   SETUP_GROUP: string;
+  INTERFACE: string;
   [key: string]: string;
 }
 
@@ -48,6 +49,7 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
   onApply,
 }) => {
   const filterProperties = [
+    "INTERFACE",
     "RECIPE_TYPE",
     "MAKER_RESOURCE",
     "PACKER_RESOURCE",
@@ -68,7 +70,6 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
   const [filterOptions, setFilterOptions] = useState<{ [key: string]: string[] }>(
     {}
   );
-
   const {
     filters,
     loading,
@@ -88,10 +89,10 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
         }
       });
     }
-  }, [open, filterSelections]);
-
+  }, [open]);
+  // Memoize filter options to avoid recalculating on every render
   useEffect(() => {
-    if (filters && filters.length > 0) {
+    if (filters && filters.length > 0 && Object.keys(filterOptions).length === 0) {
       const options: { [key: string]: string[] } = {};
 
       filterProperties.forEach((prop) => {
@@ -102,6 +103,14 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
       });
 
       setFilterOptions(options);
+
+      // Auto-select first INTERFACE option if not already selected
+      if (options.INTERFACE && options.INTERFACE.length > 0) {
+        const currentInterfaceSelection = localFilterSelections.INTERFACE || [];
+        if (currentInterfaceSelection.length === 0) {
+          updateLocalFilterSelection("INTERFACE", [options.INTERFACE[0]]);
+        }
+      }
     }
   }, [filters]);
 
@@ -119,7 +128,6 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
     // Pass the filter selections to parent component
     onApply(localFilterSelections);
   };
-
   const handleReset = () => {
     // Reset local selections
     resetLocalFilters();
@@ -131,6 +139,11 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
     }, {} as { [key: string]: string[] });
 
     setFilterSelections(resetSelections);
+
+    // Auto-select first INTERFACE option after reset
+    if (filterOptions.INTERFACE && filterOptions.INTERFACE.length > 0) {
+      updateLocalFilterSelection("INTERFACE", [filterOptions.INTERFACE[0]]);
+    }
   };
 
   return (
@@ -177,7 +190,7 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                 sx={{ fontSize: 18, cursor: "pointer" }}
               />{" "}
             </Box>
-            <Divider sx={{ mb: 1.5 }} />
+            <Divider sx={{ mb: 1.5 }} />{" "}
             <Box
               sx={{
                 flex: 1,
@@ -186,11 +199,11 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                 pr: 1,
               }}
             >
-              {loading ? (
+              {loading && Object.keys(filterOptions).length === 0 ? (
                 <Box sx={{ display: "flex", justifyContent: "center", p: 2 }}>
                   <CircularProgress size={24} />
                 </Box>
-              ) : error ? (
+              ) : error && Object.keys(filterOptions).length === 0 ? (
                 <Typography
                   color="error"
                   variant="body2"
@@ -281,12 +294,20 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                   />
                 </>
               )}
-            </Box>
+            </Box>{" "}
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Button size="small" onClick={handleReset}>
                 Reset
               </Button>
-              <Button size="small" variant="contained" onClick={handleApply}>
+              <Button
+                size="small"
+                variant="contained"
+                onClick={handleApply}
+                disabled={
+                  !localFilterSelections.INTERFACE ||
+                  localFilterSelections.INTERFACE.length === 0
+                }
+              >
                 Apply
               </Button>
             </Box>
