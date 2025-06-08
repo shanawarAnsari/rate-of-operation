@@ -62,27 +62,40 @@ export const useCreateUser = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
-
   const createUser = async (userData: Partial<User>) => {
     setLoading(true);
     setError(null);
     setSuccess(false);
     try {
+      debugger;
       const response = await userService.createUser(userData);
       console.log("Create User Response:", response); // Debug log
 
-      if (response && !response.error) {
-        setSuccess(true);
-        return response;
+      // More permissive response handling - assume success unless there's an explicit error
+      if (response) {
+        // Check for explicit error indicators
+        if (
+          response.error ||
+          response.success === false ||
+          response.message?.toLowerCase().includes("error")
+        ) {
+          const errorMessage =
+            response.message || response.error || "Failed to create user";
+          setError(errorMessage);
+          throw new Error(errorMessage);
+        } else {
+          // If no explicit error, consider it successful
+          setSuccess(true);
+          return response;
+        }
       } else {
-        setError(response.message || response.error || "Failed to create user");
-        throw new Error(
-          response.message || response.error || "Failed to create user"
-        );
+        throw new Error("No response received from server");
       }
     } catch (err: any) {
       console.error("Error creating user:", err);
-      setError(err.message || "Failed to create user");
+      const errorMessage =
+        err.response?.data?.message || err.message || "Failed to create user";
+      setError(errorMessage);
       throw err;
     } finally {
       setLoading(false);

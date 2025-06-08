@@ -82,7 +82,6 @@ const UserAccessManagement: React.FC = () => {
       time: date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
     };
   };
-
   const handleAddUser = async (newUser: {
     email: string;
     role: string;
@@ -91,7 +90,9 @@ const UserAccessManagement: React.FC = () => {
     updated_by: string;
   }) => {
     try {
+      console.log("Attempting to create user:", newUser); // Debug log
       await createUser(newUser);
+      console.log("User created successfully, refreshing list..."); // Debug log
       await refetch();
       setSnackbar({
         open: true,
@@ -99,10 +100,11 @@ const UserAccessManagement: React.FC = () => {
         severity: "success",
       });
       setAddDialogOpen(false);
-    } catch (error) {
+    } catch (error: any) {
+      console.error("Error in handleAddUser:", error); // Debug log
       setSnackbar({
         open: true,
-        message: "Failed to add user. Please try again.",
+        message: error?.message || "Failed to add user. Please try again.",
         severity: "error",
       });
     }
@@ -615,10 +617,10 @@ const UserAccessManagement: React.FC = () => {
             userEmail={selectedUser.email}
             loading={deleteLoading}
           />
-        )}
+        )}{" "}
         <Snackbar
           open={snackbar.open}
-          autoHideDuration={6000}
+          autoHideDuration={15000}
           onClose={handleCloseSnackbar}
           anchorOrigin={{ vertical: "top", horizontal: "right" }}
           sx={{

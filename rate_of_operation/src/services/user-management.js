@@ -13,7 +13,7 @@ export const getUserByEmail = async (email) => {
 };
 
 export const createUser = async (userData) => {
-  return postApi("user-management/users", userData)
+  return postApi("user-management/user", userData)
     .then((data) => data)
     .catch((error) => error);
 };

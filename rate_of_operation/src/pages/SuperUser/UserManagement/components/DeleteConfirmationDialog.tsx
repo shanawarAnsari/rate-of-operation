@@ -22,75 +22,53 @@ const DeleteConfirmationDialog: React.FC<{
     <Dialog
       open={open}
       onClose={onClose}
-      maxWidth="sm"
-      fullWidth
+      maxWidth="xs"
       PaperProps={{
         sx: {
-          borderRadius: 3,
-          boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
-          overflow: "hidden",
+          borderRadius: 2,
+          boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
         },
       }}
     >
+      {" "}
       <DialogTitle
         sx={{
-          background: "linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%)",
+          backgroundColor: (theme) =>
+            theme.palette.mode === "dark" ? "grey.800" : "grey.100",
           borderBottom: "1px solid",
-          borderColor: "error.light",
-          pb: 2,
-          fontSize: "1.25rem",
+          borderColor: "divider",
+          pb: 1.5,
+          pt: 2,
+          px: 2,
+          fontSize: "1.1rem",
           fontWeight: 600,
-          color: "error.main",
+          color: "text.primary",
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          <Warning sx={{ color: "error.main" }} />
+          <Warning sx={{ color: "error.main", fontSize: "1.2rem" }} />
           Delete User
         </Box>
       </DialogTitle>
-      <DialogContent sx={{ p: 3 }}>
-        <Alert
-          severity="warning"
-          sx={{
-            mb: 3,
-            borderRadius: 2,
-            "& .MuiAlert-icon": {
-              fontSize: "1.1rem",
-            },
-          }}
-        >
-          This action cannot be undone
-        </Alert>
-        <Typography variant="body1" sx={{ mb: 2 }}>
-          Are you sure you want to delete the user:
+      <DialogContent sx={{ p: 2, pb: 1, mt: 2 }}>
+        <Typography variant="body2" sx={{ mb: 1.5, color: "text.secondary" }}>
+          Delete user <strong style={{ color: "text.primary" }}>{userEmail}</strong>?
         </Typography>
-        <Box
-          sx={{
-            bgcolor: "grey.100",
-            p: 2,
-            borderRadius: 2,
-            border: "1px solid",
-            borderColor: "grey.300",
-          }}
-        >
-          <Typography
-            variant="body1"
-            fontWeight={600}
-            sx={{ color: "text.primary" }}
-          >
-            {userEmail}
-          </Typography>
-        </Box>
+        <Typography variant="caption" sx={{ color: "error.main" }}>
+          This action cannot be undone
+        </Typography>
       </DialogContent>
-      <DialogActions sx={{ p: 3, pt: 1, gap: 1 }}>
+      <DialogActions sx={{ p: 2, pt: 1, gap: 1 }}>
         <Button
           onClick={onClose}
           disabled={loading}
+          size="small"
           sx={{
-            borderRadius: 2,
-            px: 3,
             textTransform: "none",
-            fontWeight: 500,
+            color: "text.secondary",
+            "&:hover": {
+              backgroundColor: "action.hover",
+            },
           }}
         >
           Cancel
@@ -100,20 +78,14 @@ const DeleteConfirmationDialog: React.FC<{
           variant="contained"
           color="error"
           disabled={loading}
+          size="small"
           sx={{
-            borderRadius: 2,
-            px: 4,
             textTransform: "none",
-            fontWeight: 600,
-            boxShadow: "0 4px 12px rgba(244,67,54,0.3)",
-            "&:hover": {
-              boxShadow: "0 6px 20px rgba(244,67,54,0.4)",
-              transform: "translateY(-1px)",
-            },
-            transition: "all 0.2s ease-in-out",
+            fontWeight: 500,
+            minWidth: 80,
           }}
         >
-          {loading ? "Deleting..." : "Delete User"}
+          {loading ? "Deleting..." : "Delete"}
         </Button>
       </DialogActions>
     </Dialog>
