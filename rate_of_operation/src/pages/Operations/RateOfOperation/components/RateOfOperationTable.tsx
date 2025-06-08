@@ -747,6 +747,12 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
             sx={{
               tableLayout: "auto",
               width: "100%",
+              "& .MuiTableRow-root": {
+                "&:hover": {
+                  backgroundColor: (theme) => theme.palette.action.hover,
+                  transition: "background-color 0.2s ease-in-out",
+                },
+              },
             }}
             aria-label="rate of operations table"
           >

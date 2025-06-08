@@ -45,3 +45,46 @@ export const postApi = async (url, data, headers = {}) => {
     throw error;
   }
 };
+
+export const putApi = async (url, data, headers = {}) => {
+  try {
+    const response = await axios({
+      method: "PUT",
+      url: `${BASE_URL}/${url}`,
+      data: data,
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        ...headers,
+      },
+    });
+    if (response.status >= 200 && response.status <= 300) {
+      return response.data;
+    } else {
+      throw new Error(response.statusText);
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteApi = async (url, headers = {}) => {
+  try {
+    const response = await axios({
+      method: "DELETE",
+      url: `${BASE_URL}/${url}`,
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        ...headers,
+      },
+    });
+    if (response.status >= 200 && response.status <= 300) {
+      return response.data;
+    } else {
+      throw new Error(response.statusText);
+    }
+  } catch (error) {
+    throw error;
+  }
+};

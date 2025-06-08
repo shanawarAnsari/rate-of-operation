@@ -21,18 +21,14 @@ export const useFilters = () => {
   const [localFilterSelections, setLocalFilterSelections] = useState<{
     [key: string]: string[];
   }>({});
-  const [hasLoaded, setHasLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchFilters = async () => {
-      if (hasLoaded) return; // Don't fetch if already loaded
-
       try {
         setLoading(true);
         const response = await getFilters();
         if (response && !response.error) {
           setFilters(response);
-          setHasLoaded(true);
         } else {
           setError(response.error || "Failed to fetch filters");
         }
@@ -45,7 +41,7 @@ export const useFilters = () => {
     };
 
     fetchFilters();
-  }, [hasLoaded]);
+  }, []);
 
   const updateLocalFilterSelection = (field: string, values: string[]) => {
     setLocalFilterSelections((prev) => ({
