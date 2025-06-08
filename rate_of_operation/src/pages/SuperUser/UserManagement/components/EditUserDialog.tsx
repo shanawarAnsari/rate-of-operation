@@ -109,30 +109,29 @@ const EditUserDialog: React.FC<{
     <Dialog
       open={open}
       onClose={onClose}
-      maxWidth="md"
+      maxWidth="sm"
       fullWidth
       PaperProps={{
         sx: {
-          borderRadius: 3,
-          boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
-          overflow: "hidden",
+          borderRadius: 2,
+          boxShadow: 3,
         },
       }}
     >
       <DialogTitle
         sx={{
-          background: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)",
-          borderBottom: "1px solid",
-          borderColor: "divider",
-          pb: 2,
-          fontSize: "1.25rem",
+          bgcolor: "primary.main",
+          color: "primary.contrastText",
+          py: 2,
+          fontSize: "1.1rem",
           fontWeight: 600,
         }}
       >
         Edit User
       </DialogTitle>
-      <DialogContent sx={{ p: 3 }}>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 3, mt: 1 }}>
+      <DialogContent sx={{ p: 2, mt: 2 }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 1 }}>
+          {" "}
           <TextField
             fullWidth
             label="Email"
@@ -141,14 +140,7 @@ const EditUserDialog: React.FC<{
               readOnly: true,
             }}
             helperText="Email cannot be changed"
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                borderRadius: 2,
-                backgroundColor: "rgba(0,0,0,0.04)",
-              },
-            }}
           />
-
           <TextField
             fullWidth
             select
@@ -157,44 +149,24 @@ const EditUserDialog: React.FC<{
             onChange={(e) => setRole(e.target.value)}
             error={!!errors.role}
             helperText={errors.role}
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                borderRadius: 2,
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderWidth: 2,
-                },
-                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  borderWidth: 2,
-                },
-              },
-            }}
           >
             {availableRoles.map((roleOption) => (
               <MenuItem key={roleOption} value={roleOption}>
                 {roleOption}
               </MenuItem>
             ))}
-          </TextField>
-
+          </TextField>{" "}
           <FormControl fullWidth error={!!errors.category}>
             <InputLabel>Categories</InputLabel>
             <Select
               multiple
               value={selectedCategories}
               onChange={handleCategoryChange}
-              input={<OutlinedInput label="Categories" sx={{ borderRadius: 2 }} />}
+              input={<OutlinedInput label="Categories" />}
               renderValue={(selected) => (
                 <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
                   {selected.map((value) => (
-                    <Chip
-                      key={value}
-                      label={value}
-                      size="small"
-                      sx={{
-                        borderRadius: 1,
-                        fontWeight: 500,
-                      }}
-                    />
+                    <Chip key={value} label={value} size="small" />
                   ))}
                 </Box>
               )}
@@ -206,38 +178,22 @@ const EditUserDialog: React.FC<{
               ))}
             </Select>
             {errors.category && (
-              <Box
-                sx={{
-                  color: "error.main",
-                  fontSize: "0.75rem",
-                  mt: 0.5,
-                  ml: 1.5,
-                }}
-              >
+              <Alert severity="error" sx={{ mt: 0.5, fontSize: "0.75rem" }}>
                 {errors.category}
-              </Box>
+              </Alert>
             )}
           </FormControl>
-
           <FormControl fullWidth error={!!errors.interface}>
             <InputLabel>Interfaces</InputLabel>
             <Select
               multiple
               value={selectedInterfaces}
               onChange={handleInterfaceChange}
-              input={<OutlinedInput label="Interfaces" sx={{ borderRadius: 2 }} />}
+              input={<OutlinedInput label="Interfaces" />}
               renderValue={(selected) => (
                 <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
                   {selected.map((value) => (
-                    <Chip
-                      key={value}
-                      label={value}
-                      size="small"
-                      sx={{
-                        borderRadius: 1,
-                        fontWeight: 500,
-                      }}
-                    />
+                    <Chip key={value} label={value} size="small" />
                   ))}
                 </Box>
               )}
@@ -249,63 +205,27 @@ const EditUserDialog: React.FC<{
               ))}
             </Select>
             {errors.interface && (
-              <Box
-                sx={{
-                  color: "error.main",
-                  fontSize: "0.75rem",
-                  mt: 0.5,
-                  ml: 1.5,
-                }}
-              >
+              <Alert severity="error" sx={{ mt: 0.5, fontSize: "0.75rem" }}>
                 {errors.interface}
-              </Box>
+              </Alert>
             )}
-          </FormControl>
-
+          </FormControl>{" "}
           {Object.keys(errors).length > 0 && (
-            <Alert
-              severity="error"
-              sx={{
-                borderRadius: 2,
-                "& .MuiAlert-icon": {
-                  fontSize: "1.1rem",
-                },
-              }}
-            >
+            <Alert severity="error" sx={{ mt: 1 }}>
               Please fix the validation errors above
             </Alert>
           )}
         </Box>
       </DialogContent>
-      <DialogActions sx={{ p: 3, pt: 1, gap: 1 }}>
-        <Button
-          onClick={onClose}
-          disabled={loading}
-          sx={{
-            borderRadius: 2,
-            px: 3,
-            textTransform: "none",
-            fontWeight: 500,
-          }}
-        >
+      <DialogActions sx={{ p: 2, gap: 1 }}>
+        <Button onClick={onClose} disabled={loading} sx={{ textTransform: "none" }}>
           Cancel
         </Button>
         <Button
           onClick={handleSave}
           variant="contained"
           disabled={loading}
-          sx={{
-            borderRadius: 2,
-            px: 4,
-            textTransform: "none",
-            fontWeight: 600,
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-            "&:hover": {
-              boxShadow: "0 6px 20px rgba(0,0,0,0.2)",
-              transform: "translateY(-1px)",
-            },
-            transition: "all 0.2s ease-in-out",
-          }}
+          sx={{ textTransform: "none" }}
         >
           {loading ? "Saving..." : "Update User"}
         </Button>
