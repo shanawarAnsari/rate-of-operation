@@ -1,4 +1,3 @@
-
 import React from "react";
 import { TableBody, TableRow, TableCell } from "@mui/material";
 import { flexRender, Row } from "@tanstack/react-table";
@@ -12,7 +11,6 @@ const cellStyles = {
   paddingX: "7px",
   paddingY: "3px",
   fontSize: "0.8rem",
-  textAlign: "center",
   textAlign: "center",
 };
 
@@ -62,19 +60,18 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
                 }), // Ensure cells with buttons have enough width
                 ...(["PACKER_RESOURCE", "NEW_RO"].includes(cell.column.id) && {
                   minWidth: 120,
-                  minWidth: 120,
                 }),
                 // highlight updated cells
                 ...(row.original.isUpdated &&
                   ["NEW_RO", "NEW_PLANNING_TIME", "RO_PCT_CHANGE"].includes(
                     cell.column.id
                   ) && {
-                  backgroundColor:
-                    theme.palette.mode === "light"
-                      ? theme.palette.grey[200]
-                      : theme.palette.grey[800],
-                  transition: "background-color 0.3s ease",
-                }),
+                    backgroundColor:
+                      theme.palette.mode === "light"
+                        ? theme.palette.grey[200]
+                        : theme.palette.grey[800],
+                    transition: "background-color 0.3s ease",
+                  }),
               }}
               style={{ minWidth: 120, maxWidth: 1000 }}
             >
@@ -90,4 +87,3 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
 };
 
 export default TableBodyComponent;
-

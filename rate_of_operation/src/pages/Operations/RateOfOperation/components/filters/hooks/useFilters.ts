@@ -10,12 +10,13 @@ interface FilterItem {
   PRODUCT_VARIANT: string;
   PRODUCT_SIZE: string;
   SETUP_GROUP: string;
+  INTERFACE: string;
   [key: string]: string;
 }
 
 export const useFilters = () => {
   const [filters, setFilters] = useState<FilterItem[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [localFilterSelections, setLocalFilterSelections] = useState<{
     [key: string]: string[];

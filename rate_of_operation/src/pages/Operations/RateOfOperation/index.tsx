@@ -33,24 +33,41 @@ const RateOfOperation: React.FC = () => {
             theme.palette.mode === "light"
               ? theme.palette.grey[800] // Dark gray text for light mode
               : theme.palette.common.white, // White text for dark mode
-          p: 1,
+          p: 2,
           borderRadius: 1,
           mb: 1,
         })}
       >
         <Stack direction="row" alignItems="center">
-          <SpeedIcon
+          <Box
             sx={{
-              fontSize: "28px",
-              color:
-                theme.palette.mode === "light"
-                  ? theme.palette.grey[800] // Dark gray icon for light mode
-                  : theme.palette.common.white, // White icon for dark mode
+              backgroundColor: theme.palette.primary.main,
+              borderRadius: 1.5,
+              p: 1.25,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-          />
-          <Typography sx={{ ml: 0.5, fontSize: "16px", fontWeight: 525 }}>
-            Rate of Operations
-          </Typography>
+          >
+            <SpeedIcon sx={{ color: "white", fontSize: 20 }} />
+          </Box>
+
+          <Stack direction={"column"}>
+            <Typography sx={{ ml: 1, fontSize: "16px", fontWeight: 525 }}>
+              Rate of Operations
+            </Typography>
+            <Typography
+              variant="caption"
+              sx={{
+                color: theme.palette.text.secondary,
+                opacity: 0.8,
+                fontSize: "0.75rem",
+                ml: 1,
+              }}
+            >
+              Review recipes and their rate of operations
+            </Typography>
+          </Stack>
         </Stack>
         <Box textAlign="right">
           <Typography fontSize="14px" fontWeight="500">
