@@ -9,8 +9,8 @@ export const useColumnVisibility = (data?: any) => {
     return data?.rows && data.rows.length > 0
       ? data.rows[0]
       : Array.isArray(data) && data.length > 0
-      ? data[0]
-      : {};
+        ? data[0]
+        : {};
   }, [data]);
 
   // Get all available columns from data with optimized memoization

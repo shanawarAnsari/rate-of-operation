@@ -74,6 +74,7 @@ export const useRecipesData = () => {
     loading,
     error,
     totalRows,
+    setTotalRows,
     pageNumber,
     rowsPerPage,
     reviewedStatus: selectedReviewedStatus,

@@ -11,11 +11,17 @@ interface UserStore {
   isUserLoading: boolean;
   isLoggedIn: boolean | null;
   authToken: string | null;
+  isUserAdmin: boolean;
+  userAssignedCategories: string[];
+  userAssignedInterfaces: string[];
   logout: () => void;
   setUser: (userData: User) => void;
   setIsLoggedIn: (val: boolean) => void;
   setIsUserLoading: (val: boolean) => void;
   setAuthToken: (token: string) => void;
+  setIsUserAdmin: (val: boolean) => void;
+  setUserAssignedCategories: (categories: string[]) => void;
+  setUserAssignedInterfaces: (interfaces: string[]) => void;
 }
 
 export const useUserStore = create<UserStore>()(
@@ -25,17 +31,34 @@ export const useUserStore = create<UserStore>()(
       isLoggedIn: false,
       isUserLoading: false,
       authToken: null,
+      isUserAdmin: false,
+      userAssignedCategories: [],
+      userAssignedInterfaces: [],
       setUser: (userData) => set({ user: userData }),
       setIsLoggedIn: (val) => set({ isLoggedIn: !!val }),
       setIsUserLoading: (val) => set({ isUserLoading: !!val }),
-      logout: () => set({ user: null }),
+      logout: () =>
+        set({
+          user: null,
+          isLoggedIn: false,
+          authToken: null,
+          isUserAdmin: false,
+          userAssignedCategories: [],
+          userAssignedInterfaces: [],
+        }),
       setAuthToken: (token) => set({ authToken: token }),
+      setIsUserAdmin: (val) => set({ isUserAdmin: !!val }),
+      setUserAssignedCategories: (categories) => set({ userAssignedCategories: categories }),
+      setUserAssignedInterfaces: (interfaces) => set({ userAssignedInterfaces: interfaces }),
     }),
     {
-      name: 'user-storage', // localStorage key
+      name: 'user-storage',
       partialize: (state) => ({
         user: state.user,
         isLoggedIn: state.isLoggedIn,
+        isUserAdmin: state.isUserAdmin,
+        userAssignedCategories: state.userAssignedCategories,
+        userAssignedInterfaces: state.userAssignedInterfaces,
       }),
     }
   )

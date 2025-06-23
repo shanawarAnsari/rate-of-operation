@@ -23,11 +23,13 @@ import {
 import ReviewStatusIcon from "@mui/icons-material/AssignmentTurnedIn";
 import UserManagementIcon from "@mui/icons-material/Group";
 import { RunningWithErrors } from "@mui/icons-material";
+import { useUserStore } from "../../store/userStore";
 
 const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
   collapsed,
   location,
 }) => {
+  const { isUserAdmin } = useUserStore((state) => state);
   const theme = useTheme();
   const [operationsOpen, setOperationsOpen] = useState(
     location.pathname.includes("/operations") ? true : false
@@ -77,9 +79,9 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
       color: `${theme.palette.primary.main} !important`,
     },
     "&.Mui-selected .MuiListItemText-primary, & .Mui-selected .MuiListItemText-primary":
-      {
-        color: `${theme.palette.primary.main} !important`,
-      },
+    {
+      color: `${theme.palette.primary.main} !important`,
+    },
     "&.Mui-selected .MuiSvgIcon-root, & .Mui-selected .MuiSvgIcon-root": {
       color: `${theme.palette.primary.main} !important`,
     },
@@ -139,74 +141,76 @@ const NavbarList: React.FC<{ collapsed: boolean; location: any }> = ({
   return (
     <List dense>
       {renderListItem("/", "Dashboard", DashboardIcon)}
-      {!collapsed && (
-        <ListItem disablePadding>
-          <ListItemButton
-            onClick={handleSuperUserClick}
-            sx={{
-              minHeight: 42,
-              px: 2.5,
-            }}
-          >
-            <ListItemIcon
+      {isUserAdmin && <>
+        {!collapsed && (
+          <ListItem disablePadding>
+            <ListItemButton
+              onClick={handleSuperUserClick}
               sx={{
-                minWidth: 0,
-                mr: 3,
-                justifyContent: "center",
-                "& .MuiSvgIcon-root": menuIconStyle,
+                minHeight: 42,
+                px: 2.5,
               }}
             >
-              <SuperUserIcon />
-            </ListItemIcon>
-            <ListItemText primary="Super User" sx={menuTextStyle} />
-            {!superUserOpen ? (
-              <MinusIcon sx={toggleIconStyle} />
-            ) : (
-              <PlusIcon sx={toggleIconStyle} />
-            )}
-          </ListItemButton>
-        </ListItem>
-      )}
-      {!collapsed && (
-        <Collapse in={!superUserOpen} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding dense>
-            {renderSubListItem(
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: 3,
+                  justifyContent: "center",
+                  "& .MuiSvgIcon-root": menuIconStyle,
+                }}
+              >
+                <SuperUserIcon />
+              </ListItemIcon>
+              <ListItemText primary="Super User" sx={menuTextStyle} />
+              {!superUserOpen ? (
+                <MinusIcon sx={toggleIconStyle} />
+              ) : (
+                <PlusIcon sx={toggleIconStyle} />
+              )}
+            </ListItemButton>
+          </ListItem>
+        )}
+        {!collapsed && (
+          <Collapse in={!superUserOpen} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding dense>
+              {renderSubListItem(
+                "/super-user/review-status",
+                "Review Status",
+                ReviewStatusIcon
+              )}
+              {renderSubListItem(
+                "/super-user/user-management",
+                "User Management",
+                UserManagementIcon
+              )}
+              {renderSubListItem(
+                "/super-user/exclusion-list",
+                "Exclusion List",
+                RunningWithErrors
+              )}
+            </List>
+          </Collapse>
+        )}
+        {collapsed && (
+          <>
+            {renderListItem(
               "/super-user/review-status",
               "Review Status",
               ReviewStatusIcon
             )}
-            {renderSubListItem(
+            {renderListItem(
               "/super-user/user-management",
               "User Management",
               UserManagementIcon
             )}
-            {renderSubListItem(
+            {renderListItem(
               "/super-user/exclusion-list",
               "Exclusion List",
               RunningWithErrors
             )}
-          </List>
-        </Collapse>
-      )}
-      {collapsed && (
-        <>
-          {renderListItem(
-            "/super-user/review-status",
-            "Review Status",
-            ReviewStatusIcon
-          )}
-          {renderListItem(
-            "/super-user/user-management",
-            "User Management",
-            UserManagementIcon
-          )}
-          {renderListItem(
-            "/super-user/exclusion-list",
-            "Exclusion List",
-            RunningWithErrors
-          )}
-        </>
-      )}
+          </>
+        )}
+      </>}
       {!collapsed && (
         <ListItem disablePadding>
           <ListItemButton

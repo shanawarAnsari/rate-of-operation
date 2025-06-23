@@ -11,7 +11,6 @@ const SideNavbar: React.FC = () => {
   const theme = useTheme();
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(true);
-
   const toggleCollapse = () => {
     setCollapsed(!collapsed);
   };

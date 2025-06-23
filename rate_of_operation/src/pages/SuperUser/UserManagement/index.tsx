@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Table,
@@ -28,35 +28,40 @@ import {
   useCreateUser,
   useUpdateUser,
   useDeleteUser,
-  User,
-} from "./hooks/useUserManagement";
+} from "./hooks/useUserManegement";
+import SearchInput from "../../Operations/RateOfOperation/components/SearchInput";
+
+interface User {
+  email: string;
+  role: string;
+  category: string[];
+  interface: string[];
+  updated_by: string;
+  updated_on: string;
+}
 
 const UserAccessManagement: React.FC = () => {
   const { users, loading, error, refetch } = useUsers();
   const { createUser, loading: createLoading } = useCreateUser();
-  const { updateUser, loading: updateLoading } = useUpdateUser();
-  const { deleteUser, loading: deleteLoading } = useDeleteUser();
-
-  // Debug logging
-  console.log("Users state:", users);
-  console.log("Loading state:", loading);
-  console.log("Error state:", error);
-
+  const [visibleUsers, setVisibleUsers] = useState<User[]>()
+  const theme = useTheme();
   const [isAddDialogOpen, setAddDialogOpen] = useState(false);
   const [isEditDialogOpen, setEditDialogOpen] = useState(false);
   const [isDeleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
+  const [searchKey, setSearchKey] = useState('');
   const [snackbar, setSnackbar] = useState({
     open: false,
     message: "",
-    severity: "success" as "success" | "error",
+    severity: "severityStatus" as "success" | "error",
   });
-  const theme = useTheme();
-
+  const { updateUser, loading: updateLoading } = useUpdateUser();
+  const { deleteUser, loading: deleteLoading } = useDeleteUser();
+  useEffect(() => {
+    setVisibleUsers(users)
+  }, [users])
   // Helper function to format date safely
   const formatDate = (dateString: string) => {
-    console.log("Date string received:", dateString); // Debug log
-
     if (!dateString) {
       // Use current date/time as fallback
       const now = new Date();
@@ -68,7 +73,6 @@ const UserAccessManagement: React.FC = () => {
 
     const date = new Date(dateString);
     if (isNaN(date.getTime())) {
-      console.log("Invalid date format:", dateString); // Debug log
       // Use current date/time as fallback for invalid dates too
       const now = new Date();
       return {
@@ -82,82 +86,106 @@ const UserAccessManagement: React.FC = () => {
       time: date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
     };
   };
-  const handleAddUser = async (newUser: {
-    email: string;
-    role: string;
-    category: string[];
-    interface: string[];
-    updated_by: string;
-  }) => {
+
+  const handleAddUser = async (newUser: User) => {
     try {
-      console.log("Attempting to create user:", newUser); // Debug log
-      await createUser(newUser);
-      console.log("User created successfully, refreshing list..."); // Debug log
+      const createUserResponse = await createUser(newUser);
       await refetch();
-      setSnackbar({
-        open: true,
-        message: "User added successfully!",
-        severity: "success",
-      });
       setAddDialogOpen(false);
-    } catch (error: any) {
-      console.error("Error in handleAddUser:", error); // Debug log
       setSnackbar({
         open: true,
-        message: error?.message || "Failed to add user. Please try again.",
+        message: createUserResponse?.message || "User added successfully.",
+        severity: createUserResponse?.success ? "success" : "error",
+      });
+    } catch (error: any) {
+      let errorMessage = "An unexpected error occurred.";
+
+      if (error.response) {
+        // Axios-style error
+        errorMessage = error.response.data?.message || error.response.statusText || errorMessage;
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+
+      setSnackbar({
+        open: true,
+        message: errorMessage,
         severity: "error",
       });
     }
-  };
 
-  const handleEditUser = async (updatedUser: {
-    email: string;
-    role: string;
-    category: string[];
-    interface: string[];
-  }) => {
+  }
+
+  const handleEditUser = async (updatedUser: User) => {
     try {
-      await updateUser(updatedUser.email, updatedUser);
+      const updateResponse = await updateUser(updatedUser.email, updatedUser);
       await refetch();
       setSnackbar({
         open: true,
-        message: "User updated successfully!",
-        severity: "success",
+        message: updateResponse?.message || "User updated successfully.",
+        severity: updateResponse?.success ? "success" : "error",
       });
       setEditDialogOpen(false);
-    } catch (error) {
+    } catch (error: any) {
+      let errorMessage = "An unexpected error occurred.";
+
+      if (error.response) {
+        // Axios-style error
+        errorMessage = error.response.data?.message || error.response.statusText || errorMessage;
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+
       setSnackbar({
         open: true,
-        message: "Failed to update user. Please try again.",
+        message: errorMessage,
         severity: "error",
       });
     }
+
   };
 
   const handleDeleteUser = async () => {
     try {
       if (selectedUser) {
-        await deleteUser(selectedUser.email);
+        const deleteResponse = await deleteUser(selectedUser.email);
         await refetch();
         setSnackbar({
           open: true,
-          message: "User deleted successfully!",
-          severity: "success",
+          message: deleteResponse?.message || "User deleted successfully.",
+          severity: deleteResponse?.success ? "success" : "error",
         });
         setDeleteDialogOpen(false);
       }
-    } catch (error) {
+    } catch (error: any) {
+      const errorMessage =
+        error?.response?.data?.message || error?.message || "Failed to delete user. Please try again.";
       setSnackbar({
         open: true,
-        message: "Failed to delete user. Please try again.",
+        message: errorMessage,
         severity: "error",
       });
     }
   };
 
+
   const handleCloseSnackbar = () => {
     setSnackbar({ ...snackbar, open: false });
   };
+  const handleSearchChange = (e: any) => {
+    setSearchKey(e.target.value)
+    searchUsers(e.target.value)
+  }
+
+  function searchUsers(searchKey: string) {
+    let filteredUsers = users?.filter((item: User) => {
+      if (item.email.includes(searchKey)) {
+        return item
+      }
+    })
+    setVisibleUsers(filteredUsers || [] as any)
+
+  }
   return (
     <Box sx={{ backgroundColor: theme.palette.background.default }}>
       <Paper
@@ -204,8 +232,8 @@ const UserAccessManagement: React.FC = () => {
                   sx={{
                     fontWeight: 600,
                     color: theme.palette.text.primary,
-                    fontSize: "1.1rem",
-                    mb: -1,
+                    fontSize: "16px",
+                    mb: -0.5,
                   }}
                 >
                   User Management
@@ -215,38 +243,45 @@ const UserAccessManagement: React.FC = () => {
                   sx={{
                     color: theme.palette.text.secondary,
                     opacity: 0.8,
-                    fontSize: "0.75rem",
+                    fontSize: "12px",
                   }}
                 >
                   Manage user assigned categories and interfaces
                 </Typography>
               </Box>
             </Stack>
-            <Button
-              variant="contained"
-              startIcon={<Person sx={{ fontSize: 16 }} />}
-              onClick={() => setAddDialogOpen(true)}
-              disabled={createLoading}
-              size="small"
-              sx={{
-                borderRadius: 1.5,
-                px: 2,
-                py: 0.75,
-                textTransform: "none",
-                fontWeight: 500,
-                fontSize: "0.875rem",
-                boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
-                "&:hover": {
-                  boxShadow: "0 3px 10px rgba(0,0,0,0.15)",
-                  transform: "translateY(-1px)",
-                },
-                transition: "all 0.2s ease-in-out",
-              }}
-            >
-              Add User
-            </Button>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <SearchInput
+                searchText={searchKey}
+                handleSearchChange={handleSearchChange}
+              />
+              <Button
+                variant="contained"
+                startIcon={<Person sx={{ fontSize: 16 }} />}
+                onClick={() => setAddDialogOpen(true)}
+                disabled={createLoading}
+                size="small"
+                sx={{
+                  borderRadius: 1.5,
+                  px: 2,
+                  py: 0.5,
+                  ml: 2,
+                  textTransform: "none",
+                  fontWeight: 500,
+                  fontSize: "0.875rem",
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+                  "&:hover": {
+                    boxShadow: "0 3px 10px rgba(0,0,0,0.15)",
+                    transform: "translateY(-1px)",
+                  },
+                  transition: "all 0.2s ease-in-out",
+                }}
+              >
+                Add User
+              </Button>
+            </Box>
           </Stack>
-        </Box>{" "}
+        </Box>
         {error && (
           <Alert
             severity="error"
@@ -303,7 +338,6 @@ const UserAccessManagement: React.FC = () => {
                       },
                     }}
                   >
-                    {" "}
                     <TableCell
                       sx={{
                         color: theme.palette.text.primary,
@@ -355,8 +389,8 @@ const UserAccessManagement: React.FC = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {users && users.length > 0 ? (
-                    users.map((user: User) => {
+                  {visibleUsers && visibleUsers?.length > 0 ? (
+                    visibleUsers?.map((user: User) => {
                       console.log("User object:", user);
                       const { date, time } = formatDate(user.updated_on);
                       return (
@@ -370,7 +404,6 @@ const UserAccessManagement: React.FC = () => {
                             "&:last-child td": { border: 0 },
                           }}
                         >
-                          {" "}
                           <TableCell sx={{ p: 1 }}>
                             <Typography
                               variant="body2"
@@ -385,7 +418,6 @@ const UserAccessManagement: React.FC = () => {
                               <Box
                                 sx={{ display: "flex", flexWrap: "wrap", gap: 0.25 }}
                               >
-                                {" "}
                                 {user.category.map(
                                   (category: string, index: number) => (
                                     <Chip
@@ -394,7 +426,7 @@ const UserAccessManagement: React.FC = () => {
                                       variant="outlined"
                                       size="small"
                                       sx={{
-                                        borderColor: theme.palette.primary.main,
+                                        borderColor: 'transparent',
                                         color: theme.palette.primary.main,
                                         fontWeight: 500,
                                         fontSize: "0.75rem",
@@ -425,7 +457,6 @@ const UserAccessManagement: React.FC = () => {
                               <Box
                                 sx={{ display: "flex", flexWrap: "wrap", gap: 0.25 }}
                               >
-                                {" "}
                                 {user.interface.map(
                                   (iface: string, index: number) => (
                                     <Chip
@@ -434,7 +465,7 @@ const UserAccessManagement: React.FC = () => {
                                       variant="outlined"
                                       size="small"
                                       sx={{
-                                        borderColor: theme.palette.secondary.main,
+                                        borderColor: 'transparent',
                                         color: theme.palette.secondary.main,
                                         fontWeight: 500,
                                         fontSize: "0.75rem",
@@ -459,14 +490,13 @@ const UserAccessManagement: React.FC = () => {
                                 No interfaces
                               </Typography>
                             )}
-                          </TableCell>{" "}
+                          </TableCell>
                           <TableCell sx={{ p: 1 }}>
-                            {" "}
                             <Chip
                               label={user.role}
                               variant="outlined"
                               icon={
-                                user.role === "Admin" ? (
+                                user.role == "Admin" ? (
                                   <AdminPanelSettings
                                     sx={{
                                       fontSize: "16px",
@@ -524,7 +554,7 @@ const UserAccessManagement: React.FC = () => {
                               <IconButton
                                 size="small"
                                 color="primary"
-                                disabled={user.role === "Admin" || updateLoading}
+                                disabled={updateLoading || user.role === "Admin"}
                                 onClick={() => {
                                   setSelectedUser(user);
                                   setEditDialogOpen(true);
@@ -543,7 +573,7 @@ const UserAccessManagement: React.FC = () => {
                               <IconButton
                                 size="small"
                                 color="error"
-                                disabled={user.role === "Admin" || deleteLoading}
+                                disabled={deleteLoading || user.role === "Admin"}
                                 onClick={() => {
                                   setSelectedUser(user);
                                   setDeleteDialogOpen(true);
@@ -617,7 +647,7 @@ const UserAccessManagement: React.FC = () => {
             userEmail={selectedUser.email}
             loading={deleteLoading}
           />
-        )}{" "}
+        )}
         <Snackbar
           open={snackbar.open}
           autoHideDuration={15000}

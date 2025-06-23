@@ -113,10 +113,10 @@ const CellRenderer = ({
           alignItems: "center",
           justifyContent:
             columnId === "RECIPE_NUMBER" ||
-            columnId === "PACKER_RESOURCE" ||
-            (columnId === "NEW_RO" &&
-              rowData.REVIEWED === "N" &&
-              !(rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1"))
+              columnId === "PACKER_RESOURCE" ||
+              (columnId === "NEW_RO" &&
+                rowData.REVIEWED === "N" &&
+                !(rowData.ERROR_CODE === 1 || rowData.ERROR_CODE === "1"))
               ? "flex-start"
               : "center",
           minHeight: "32px",

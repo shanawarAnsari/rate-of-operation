@@ -25,7 +25,8 @@ const defaultFilters: FilterSelections = {
   PRODUCT_VARIANT: [],
   PRODUCT_SIZE: [],
   SETUP_GROUP: [],
-  tro_change: [],
+  TRO_CHANGE: [],
+  INTERFACE: []
 };
 
 export const useFilterStore = create<FilterStore>()(

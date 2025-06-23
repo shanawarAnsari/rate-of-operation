@@ -304,7 +304,7 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
                   </Box>
                 ) : (
                   <Typography variant="caption" sx={{ fontStyle: "italic" }}>
-                    Scroll down to load more ({columns.length - visibleChunk}{" "}
+                    Scroll down to load more ({columns.length - visibleChunk}
                     remaining)
                   </Typography>
                 )}

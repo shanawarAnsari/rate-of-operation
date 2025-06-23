@@ -39,6 +39,7 @@ interface FilterPopperProps {
   onClose: () => void;
   data: any[];
   onApply: (filters: { [key: string]: string[] }) => void;
+  interfaces: string[];
 }
 
 const FilterPopper: React.FC<FilterPopperProps> = ({
@@ -47,6 +48,7 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
   onClose,
   data,
   onApply,
+  interfaces
 }) => {
   const filterProperties = [
     "INTERFACE",
@@ -103,12 +105,11 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
       });
 
       setFilterOptions(options);
-
       // Auto-select first INTERFACE option if not already selected
       if (options.INTERFACE && options.INTERFACE.length > 0) {
         const currentInterfaceSelection = localFilterSelections.INTERFACE || [];
         if (currentInterfaceSelection.length === 0) {
-          updateLocalFilterSelection("INTERFACE", [options.INTERFACE[0]]);
+          updateLocalFilterSelection("INTERFACE", [interfaces[0]]);
         }
       }
     }
@@ -139,10 +140,9 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
     }, {} as { [key: string]: string[] });
 
     setFilterSelections(resetSelections);
-
     // Auto-select first INTERFACE option after reset
     if (filterOptions.INTERFACE && filterOptions.INTERFACE.length > 0) {
-      updateLocalFilterSelection("INTERFACE", [filterOptions.INTERFACE[0]]);
+      updateLocalFilterSelection("INTERFACE", [interfaces[0]]);
     }
   };
 
@@ -188,9 +188,9 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
               <CloseIcon
                 onClick={onClose}
                 sx={{ fontSize: 18, cursor: "pointer" }}
-              />{" "}
+              />
             </Box>
-            <Divider sx={{ mb: 1.5 }} />{" "}
+            <Divider sx={{ mb: 1.5 }} />
             <Box
               sx={{
                 flex: 1,
@@ -209,7 +209,7 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                   variant="body2"
                   sx={{ textAlign: "center", p: 2 }}
                 >
-                  Error loading filters. Please try again.{" "}
+                  Error loading filters. Please try again.
                 </Typography>
               ) : (
                 <>
@@ -256,9 +256,9 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                   <Autocomplete
                     multiple
                     options={["0% to 5%", "5% to 10%", "10% to 15%", "above 15%"]}
-                    value={localFilterSelections.tro_change || []}
+                    value={localFilterSelections.TRO_CHANGE || []}
                     onChange={(event, value) => {
-                      updateLocalFilterSelection("tro_change", value);
+                      updateLocalFilterSelection("TRO_CHANGE", value);
                     }}
                     disableCloseOnSelect
                     renderInput={(params) => (
@@ -294,7 +294,7 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                   />
                 </>
               )}
-            </Box>{" "}
+            </Box>
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Button size="small" onClick={handleReset}>
                 Reset
@@ -311,7 +311,7 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                 Apply
               </Button>
             </Box>
-          </Box>{" "}
+          </Box>
         </>
       </ClickAwayListener>
     </Popper>

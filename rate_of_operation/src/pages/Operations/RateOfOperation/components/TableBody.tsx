@@ -66,12 +66,12 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
                   ["NEW_RO", "NEW_PLANNING_TIME", "RO_PCT_CHANGE"].includes(
                     cell.column.id
                   ) && {
-                    backgroundColor:
-                      theme.palette.mode === "light"
-                        ? theme.palette.grey[200]
-                        : theme.palette.grey[800],
-                    transition: "background-color 0.3s ease",
-                  }),
+                  backgroundColor:
+                    theme.palette.mode === "light"
+                      ? theme.palette.grey[200]
+                      : theme.palette.grey[800],
+                  transition: "background-color 0.3s ease",
+                }),
               }}
               style={{ minWidth: 120, maxWidth: 1000 }}
             >

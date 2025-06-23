@@ -13,10 +13,10 @@ const AuthGuard = ({ children }: any) => {
   const [isRedirecting, setIsRedirecting] = useState(false);
 
   // Use the selector pattern with shallow comparison to prevent unnecessary re-renders
-  const isLoggedIn = useUserStore((state: any) => state.isLoggedIn);
-  const authToken = useUserStore((state: any) => state.authToken);
-  const user = useUserStore((state: any) => state.user);
-  const isUserLoading = useUserStore((state: any) => state.isUserLoading);
+  const isLoggedIn = useUserStore((state) => state.isLoggedIn);
+  const authToken = useUserStore((state) => state.authToken);
+  const user = useUserStore((state) => state.user);
+  const isUserLoading = useUserStore((state) => state.isUserLoading);
 
   // Memoize permission check to prevent recalculation on each render
   const hasValidAccess = useMemo(() => {

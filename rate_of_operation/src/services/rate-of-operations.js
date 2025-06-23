@@ -1,4 +1,4 @@
-import { getApi, postApi } from "./common";
+import { downloadAsExcelApi, getApi, postApi } from "./common";
 
 export const getRecipies = async (req) => {
   return postApi("rate-of-operations/getRecipies", req)
@@ -35,8 +35,8 @@ export const updateRecipes = async (req) => {
 
 export const downloadRecipes = async (req) => {
   try {
-    const fileType = req.fileType || "xlsx";
-    const response = await postApi("rate-of-operations/downloadRecipes", req);
+    const fileType = req.fileType || "csv";
+    const response = await downloadAsExcelApi("rate-of-operations/downloadRecipes", req);
 
     // Create filename with timestamp
     const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, "-");

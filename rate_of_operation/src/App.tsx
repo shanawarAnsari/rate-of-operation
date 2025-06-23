@@ -7,10 +7,10 @@ import SideNavbar from "./components/SideNavbar";
 import AppRoutes from "./routes";
 
 function App() {
-  // Initialize theme from localStorage or default to "light"
+  // Initialize theme from localStorage or default to "dark"
   const [mode, setMode] = useState<"light" | "dark">(() => {
     const savedMode = localStorage.getItem("themeMode");
-    return savedMode === "light" || savedMode === "dark" ? savedMode : "light";
+    return savedMode === "light" || savedMode === "dark" ? savedMode : "dark";
   });
 
   const theme = useMemo(() => getTheme(mode), [mode]);
