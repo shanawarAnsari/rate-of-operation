@@ -20,13 +20,7 @@ import {
 const AddUserDialog: React.FC<{
   open: boolean;
   onClose: () => void;
-  onSave: (user: {
-    email: string;
-    role: string;
-    category: string[];
-    interface: string[];
-    updated_by: string;
-  }) => void;
+  onSave: (user: any) => void;
   loading?: boolean;
   currentUserEmail: string;
 }> = ({ open, onClose, onSave, loading = false, currentUserEmail }) => {
@@ -37,7 +31,7 @@ const AddUserDialog: React.FC<{
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const availableRoles = ["User", "Admin"];
   const availableCategories = ["Personal Care"];
-  const availableInterfaces = ["CC Pants"];
+  const availableInterfaces = ["CC PANT"];
 
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
@@ -74,10 +68,11 @@ const AddUserDialog: React.FC<{
     }
     onSave({
       email: email.trim(),
-      role,
+      role: role,
       category: selectedCategories,
       interface: selectedInterfaces,
       updated_by: currentUserEmail,
+      Updated_on: (new Date()).toLocaleDateString(),
     });
 
     // Reset form
@@ -132,7 +127,6 @@ const AddUserDialog: React.FC<{
       </DialogTitle>
       <DialogContent sx={{ p: 2 }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 1 }}>
-          {" "}
           <TextField
             fullWidth
             label="Email"
@@ -156,7 +150,7 @@ const AddUserDialog: React.FC<{
                 {roleOption}
               </MenuItem>
             ))}
-          </TextField>{" "}
+          </TextField>
           <FormControl fullWidth error={!!errors.category}>
             <InputLabel>Categories</InputLabel>
             <Select
@@ -177,13 +171,13 @@ const AddUserDialog: React.FC<{
                   {category}
                 </MenuItem>
               ))}
-            </Select>{" "}
+            </Select>
             {errors.category && (
               <Alert severity="error" sx={{ mt: 0.5, fontSize: "0.75rem" }}>
                 {errors.category}
               </Alert>
             )}
-          </FormControl>{" "}
+          </FormControl>
           <FormControl fullWidth error={!!errors.interface}>
             <InputLabel>Interfaces</InputLabel>
             <Select
@@ -204,20 +198,20 @@ const AddUserDialog: React.FC<{
                   {interfaceOption}
                 </MenuItem>
               ))}
-            </Select>{" "}
+            </Select>
             {errors.interface && (
               <Alert severity="error" sx={{ mt: 0.5, fontSize: "0.75rem" }}>
                 {errors.interface}
               </Alert>
             )}
-          </FormControl>{" "}
+          </FormControl>
           {Object.keys(errors).length > 0 && (
             <Alert severity="error" sx={{ mt: 1 }}>
               Please fix the validation errors above
             </Alert>
           )}
         </Box>
-      </DialogContent>{" "}
+      </DialogContent>
       <DialogActions sx={{ p: 2, gap: 1 }}>
         <Button
           onClick={handleClose}

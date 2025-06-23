@@ -1,42 +1,99 @@
-import React from "react";
-import { Typography, Paper, Stack, useTheme, Box } from "@mui/material";
-import { Speed as SpeedIcon } from "@mui/icons-material";
+import React, { useEffect } from "react";
+import {
+  Typography,
+  Paper,
+  Stack,
+  useTheme,
+  Box,
+  Alert,
+  AlertTitle,
+  CircularProgress,
+} from "@mui/material";
+import {
+  Speed as SpeedIcon,
+  WarningAmber as WarningIcon,
+} from "@mui/icons-material";
 import RateOfOperationTable from "./components/RateOfOperationTable";
+import { useUserByEmail } from "../../SuperUser/UserManagement/hooks/useUserManegement";
+import { useUserStore } from "../../../store/userStore";
+import { useFilterStore } from "../../../store/filterStore";
+
+// Define the User type
+interface User {
+  email: string;
+  category: string[];
+  interface: string[];
+  updated_on: string;
+  updated_by: string;
+  role: string
+}
 
 const RateOfOperation: React.FC = () => {
   const theme = useTheme();
+  const { user, setUserAssignedCategories, setUserAssignedInterfaces } = useUserStore();
+  const { user: userByEmail, loading: userByEmailLoading } = useUserByEmail(user?.email);
+  const { setSelectedCategory } = useFilterStore();
+  // Safely extract the first user
+  const userDetails: User | undefined =
+    Array.isArray(userByEmail) && userByEmail.length > 0
+      ? userByEmail[0]
+      : undefined;
+
+  const hasCategoryAndInterface =
+    (userDetails) &&
+    userByEmail &&
+    Array.isArray(userDetails.category) &&
+    userDetails.category.length > 0 &&
+    Array.isArray(userDetails.interface) &&
+    userDetails.interface.length > 0;
+
+  useEffect(() => {
+    if (userDetails) {
+      setUserAssignedCategories(userDetails?.category || []);
+      setSelectedCategory(userDetails?.category[0])
+      setUserAssignedInterfaces(userDetails?.interface || []);
+    }
+  }, [userDetails, setUserAssignedCategories, setUserAssignedInterfaces]);
 
   const now = new Date();
   const currentMonthStart = new Date(
     now.getFullYear(),
     now.getMonth(),
     1
-  ).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  ).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
   const currentMonthEnd = new Date(
     now.getFullYear(),
     now.getMonth() + 1,
     0
-  ).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+  ).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
 
   return (
     <Paper sx={{ overflow: "hidden" }}>
       <Stack
         direction="row"
         alignItems={"center"}
-        justifyContent="space-between" // Ensure content is spaced out
-        sx={(theme) => ({
+        justifyContent="space-between"
+        sx={{
           backgroundColor:
             theme.palette.mode === "light"
-              ? theme.palette.grey[200] // Lighter background for better contrast
-              : "black", // Primary color for dark mode
+              ? theme.palette.grey[200]
+              : "black",
           color:
             theme.palette.mode === "light"
-              ? theme.palette.grey[800] // Dark gray text for light mode
-              : theme.palette.common.white, // White text for dark mode
+              ? theme.palette.grey[800]
+              : theme.palette.common.white,
           p: 2,
           borderRadius: 1,
           mb: 1,
-        })}
+        }}
       >
         <Stack direction="row" alignItems="center">
           <Box
@@ -53,7 +110,7 @@ const RateOfOperation: React.FC = () => {
           </Box>
 
           <Stack direction={"column"}>
-            <Typography sx={{ ml: 1, fontSize: "16px", fontWeight: 525 }}>
+            <Typography sx={{ ml: 1, fontSize: "16px", fontWeight: 600 }}>
               Rate of Operations
             </Typography>
             <Typography
@@ -77,10 +134,32 @@ const RateOfOperation: React.FC = () => {
             {currentMonthStart} - {currentMonthEnd}
           </Typography>
         </Box>
-      </Stack>{" "}
-      <Box sx={{ width: "100%", display: "flex", flexGrow: 1 }}>
-        <RateOfOperationTable />
-      </Box>
+      </Stack>
+
+      {userByEmailLoading ? <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "40vh",
+        }}
+      >
+        <CircularProgress />
+      </Box> : <Box sx={{ width: "100%", display: "flex", flexGrow: 1 }}>
+        {hasCategoryAndInterface ? (
+          <RateOfOperationTable />
+        ) : (
+          <Alert
+            severity="warning"
+            icon={<WarningIcon fontSize="inherit" />}
+            sx={{ width: "100%" }}
+          >
+            <AlertTitle>No Category/Interface Assigned</AlertTitle>
+            Please check your assignment —{" "}
+            <strong>contact your admin!</strong>
+          </Alert>
+        )}
+      </Box>}
     </Paper>
   );
 };

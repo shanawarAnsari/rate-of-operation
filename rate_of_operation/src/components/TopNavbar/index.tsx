@@ -28,18 +28,14 @@ const LogoImage = styled("img")(({ theme }) => ({
 }));
 
 const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
-  const [region, setRegion] = useState("KCNA"); // Initialize with the only available option
-  const [subRegion, setSubRegion] = useState("North America"); // Initialize with the only available option
+  const [regionSubRegion, setRegionSubRegion] = useState("KCNA-North America"); // Initialize with the only available option
+
   const theme = useTheme();
   const user = useUserStore(state => state.user)
 
 
-  const handleRegionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setRegion(event.target.value);
-  };
-
-  const handleSubRegionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSubRegion(event.target.value);
+  const handleRegionSubRegionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRegionSubRegion(event.target.value);
   };
 
   return (
@@ -65,41 +61,13 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
           {mode === "dark" ? <Brightness7 /> : <Brightness4 />}
         </IconButton>
 
-        <TextField
-          select
-          id="region-select"
-          label="Region"
-          value={region}
-          onChange={handleRegionChange}
-          variant="outlined"
-          size="small"
-          sx={{
-            minWidth: 160,
-            "& .MuiInputBase-root": {
-              height: 30,
-              borderRadius: 0,
-            },
-            "& .MuiOutlinedInput-notchedOutline": {
-              borderColor:
-                theme.palette.mode === "light"
-                  ? "rgba(0, 0, 0, 0.23)"
-                  : "rgba(255, 255, 255, 0.23)",
-            },
-            "& .MuiInputBase-input": { fontSize: "0.75rem" },
-          }}
-          InputLabelProps={{
-            shrink: true,
-          }}
-        >
-          <MenuItem value="KCNA" sx={{ fontSize: "0.75rem" }}>KCNA</MenuItem>
-        </TextField>
 
         <TextField
           select
           id="subregion-select"
-          label="Sub-Region"
-          value={subRegion}
-          onChange={handleSubRegionChange}
+          label="Region-SubRegion"
+          value={regionSubRegion}
+          onChange={handleRegionSubRegionChange}
           variant="outlined"
           size="small"
           sx={{
@@ -121,7 +89,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
             shrink: true,
           }}
         >
-          <MenuItem value="North America" sx={{ fontSize: "0.75rem" }}>North America</MenuItem>
+          <MenuItem value="KCNA-North America" sx={{ fontSize: "0.75rem" }}>KCNA-North America</MenuItem>
         </TextField>
 
         {/* Profile section with avatar and username */}

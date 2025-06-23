@@ -126,20 +126,20 @@ export const EditTROValueDialog: React.FC<EditTROValueDialogProps> = ({
                     selectedIndex === idx ? "0 2px 8px rgba(0,0,0,0.1)" : "none",
                   "&:hover": !isNaN(option?.value)
                     ? {
-                        backgroundColor:
-                          selectedIndex === idx
-                            ? (theme) => theme.palette.grey[100]
-                            : (theme) => theme.palette.action.hover,
-                        borderColor:
-                          selectedIndex === idx
-                            ? (theme) => theme.palette.primary.main
-                            : "grey.400",
-                      }
+                      backgroundColor:
+                        selectedIndex === idx
+                          ? (theme) => theme.palette.grey[100]
+                          : (theme) => theme.palette.action.hover,
+                      borderColor:
+                        selectedIndex === idx
+                          ? (theme) => theme.palette.primary.main
+                          : "grey.400",
+                    }
                     : {},
                   "&:active": !isNaN(option?.value)
                     ? {
-                        transform: "scale(1.02)",
-                      }
+                      transform: "scale(1.02)",
+                    }
                     : {},
                 }}
               >

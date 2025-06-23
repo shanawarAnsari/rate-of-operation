@@ -1,19 +1,29 @@
 import { useState, useEffect } from "react";
-import * as userService from "../../../../services/user-management";
+import { Interface } from "readline";
+import * as userService from "../../../../services/user-manegement";
 
-// Define User type to match API response exactly
-export interface User {
+interface User {
   email: string;
-  role: string;
   category: string[];
   interface: string[];
-  updated_by: string;
   updated_on: string;
+  updated_by: string;
+  role: string
 }
+
+const parseJsonArray = (value: any): string[] => {
+  try {
+    const parsed = JSON.parse(value);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+};
+
 
 // Hook for fetching all users
 export const useUsers = () => {
-  const [users, setUsers] = useState<User[]>([]);
+  const [users, setUsers] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -22,26 +32,29 @@ export const useUsers = () => {
     setError(null);
     try {
       const response = await userService.getAllUsers();
-      console.log("API Response:", response); // Debug log
-
-      // Handle the specific API response structure: {success: true, data: [...]}
       if (
         response &&
         response.success &&
         response.data &&
         Array.isArray(response.data)
       ) {
-        setUsers(response.data);
-      } else if (response && Array.isArray(response)) {
-        setUsers(response);
-      } else if (response && response.data && Array.isArray(response.data)) {
-        setUsers(response.data);
-      } else if (response && response.message && !response.success) {
-        setError(response.message);
+        // converting all the object keys to what is expected in api payload
+        const parsedUsers = response.data.map((user: any) => {
+          return {
+            email: user.EMAIL_ID,
+            role: user.ROLE,
+            category: parseJsonArray(user.CATEGORIES),
+            interface: parseJsonArray(user.INTERFACES),
+            updated_by: user.UPDATED_BY,
+            updated_on: user.UPDATED_ON,
+          };
+        });
+        setUsers(parsedUsers);
       } else {
         console.error("Unexpected response structure:", response);
         setError("Unexpected response format from server");
       }
+
     } catch (err: any) {
       console.error("Error fetching users:", err);
       setError(err.message || "Failed to fetch users");
@@ -62,16 +75,12 @@ export const useCreateUser = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
-  const createUser = async (userData: Partial<User>) => {
+  const createUser = async (userData: any) => {
     setLoading(true);
     setError(null);
     setSuccess(false);
     try {
-      debugger;
       const response = await userService.createUser(userData);
-      console.log("Create User Response:", response); // Debug log
-
-      // More permissive response handling - assume success unless there's an explicit error
       if (response) {
         // Check for explicit error indicators
         if (
@@ -111,14 +120,12 @@ export const useUpdateUser = () => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  const updateUser = async (email: string, userData: Partial<User>) => {
+  const updateUser = async (email: string, userData: any) => {
     setLoading(true);
     setError(null);
     setSuccess(false);
     try {
       const response = await userService.updateUser(email, userData);
-      console.log("Update User Response:", response); // Debug log
-
       if (response && !response.error) {
         setSuccess(true);
         return response;
@@ -152,8 +159,6 @@ export const useDeleteUser = () => {
     setSuccess(false);
     try {
       const response = await userService.deleteUser(email);
-      console.log("Delete User Response:", response); // Debug log
-
       if (response && !response.error) {
         setSuccess(true);
         return response;
@@ -173,4 +178,52 @@ export const useDeleteUser = () => {
   };
 
   return { deleteUser, loading, error, success };
+};
+export const useUserByEmail = (email: any) => {
+
+  const [user, setUser] = useState<User[]>();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchUser = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await userService.getUserByEmail(email);
+      if (
+        response &&
+        response.success &&
+        response.data &&
+        Array.isArray(response.data)
+      ) {
+
+        const parsedUsers = response.data.map((user: any) => {
+          return {
+            email: user.EMAIL_ID,
+            role: user.ROLE,
+            category: parseJsonArray(user.CATEGORIES),
+            interface: parseJsonArray(user.INTERFACES),
+            updated_by: user.UPDATED_BY,
+            updated_on: user.UPDATED_ON,
+          };
+        });
+        setUser(parsedUsers);
+      } else {
+        console.error("Unexpected response structure:", response);
+        setError("Unexpected response format from server");
+      }
+
+    } catch (err: any) {
+      console.error("Error fetching users:", err);
+      setError(err.message || "Failed to fetch users");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, [email]);
+
+  return { loading, error, fetchUser, user };
 };

@@ -16,24 +16,21 @@ import {
   OutlinedInput,
   SelectChangeEvent,
 } from "@mui/material";
+import { useUserStore } from "../../../../store/userStore";
+interface User {
+  email: string;
+  role: string;
+  category: string[];
+  interface: string[];
+  updated_by: string;
+  updated_on: string;
+}
 
 const EditUserDialog: React.FC<{
   open: boolean;
   onClose: () => void;
-  user: {
-    email: string;
-    role: string;
-    category: string[];
-    interface: string[];
-    updated_by: string;
-    updated_on: string;
-  };
-  onSave: (updatedUser: {
-    email: string;
-    role: string;
-    category: string[];
-    interface: string[];
-  }) => void;
+  user: User;
+  onSave: (updatedUser: User) => void;
   loading?: boolean;
 }> = ({ open, onClose, user, onSave, loading = false }) => {
   const [role, setRole] = useState(user.role);
@@ -46,18 +43,14 @@ const EditUserDialog: React.FC<{
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const availableRoles = ["User", "Admin"];
   const availableCategories = [
-    "Management",
-    "Operations",
-    "Analytics",
-    "Finance",
-    "HR",
+    "Personal Care"
   ];
-  const availableInterfaces = ["Web", "Mobile", "API", "Desktop"];
-
+  const availableInterfaces = ["CC PANTS"];
+  const currentUser = useUserStore((state) => state.user);
   useEffect(() => {
     setRole(user.role);
     setSelectedCategories(user.category || []);
-    setSelectedInterfaces(user.interface || []);
+    setSelectedInterfaces(user.category || []);
     setErrors({});
   }, [user]);
 
@@ -93,6 +86,8 @@ const EditUserDialog: React.FC<{
       role,
       category: selectedCategories,
       interface: selectedInterfaces,
+      updated_on: (new Date()).toLocaleDateString(),
+      updated_by: currentUser?.email || "Web App User",
     });
   };
 
@@ -131,7 +126,6 @@ const EditUserDialog: React.FC<{
       </DialogTitle>
       <DialogContent sx={{ p: 2, mt: 2 }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 1 }}>
-          {" "}
           <TextField
             fullWidth
             label="Email"
@@ -155,7 +149,7 @@ const EditUserDialog: React.FC<{
                 {roleOption}
               </MenuItem>
             ))}
-          </TextField>{" "}
+          </TextField>
           <FormControl fullWidth error={!!errors.category}>
             <InputLabel>Categories</InputLabel>
             <Select
@@ -209,7 +203,7 @@ const EditUserDialog: React.FC<{
                 {errors.interface}
               </Alert>
             )}
-          </FormControl>{" "}
+          </FormControl>
           {Object.keys(errors).length > 0 && (
             <Alert severity="error" sx={{ mt: 1 }}>
               Please fix the validation errors above

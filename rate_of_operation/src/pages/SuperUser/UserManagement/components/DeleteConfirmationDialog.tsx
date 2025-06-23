@@ -30,7 +30,6 @@ const DeleteConfirmationDialog: React.FC<{
         },
       }}
     >
-      {" "}
       <DialogTitle
         sx={{
           backgroundColor: (theme) =>

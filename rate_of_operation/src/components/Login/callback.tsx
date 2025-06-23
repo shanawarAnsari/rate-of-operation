@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import LoginCallbackError from "./LoginCallbackError";
 import { Box, CircularProgress } from "@mui/material";
 import { useUserStore } from "../../store/userStore";
+import { generateApiToken } from "../../services/apiTokenGen";
 
 const LoginCallback = () => {
   const navigate = useNavigate();
@@ -17,10 +18,10 @@ const LoginCallback = () => {
     setUser,
     authToken,
     setAuthToken,
+    setIsUserAdmin,
   } = useUserStore((state) => state);
 
   useEffect(() => {
-
     setCallbackProgress(true)
     if (!isLoggedIn && !isUserLoading) {
       setIsUserLoading(true);
@@ -46,17 +47,30 @@ const LoginCallback = () => {
                 userResp.myregion.some((region: string) =>
                   requiredRegions.includes(region)
                 );
+              if (userResp.myrole.some((role: string) => ["Azure_KC_ProdRate_Role_Admin"].includes(role))) {
+                setIsUserAdmin(true);
+              }
               setUser(userResp);
               setIsLoggedIn(true);
               if (hasValidAccess) {
                 setIsUserAllowed(true);
-                setIsUserLoading(false);
-                setCallbackProgress(false);
-                navigate("/");
+                generateApiToken(authToken, userResp.mygroup, userResp.myregion, userResp.myrole)
+                  .then((res) => {
+                    localStorage.setItem('authToken', res.jwtApiToken);
+                    setIsUserLoading(false);
+                    setCallbackProgress(false);
+                    navigate('/');
+                  })
+                  .catch((err) => {
+                    setIsUserLoading(false);
+                    setCallbackProgress(false);
+                    console.log('error', err);
+                  });
               } else {
                 setIsUserAllowed(false);
                 setIsUserLoading(false);
                 setCallbackProgress(false);
+                navigate("/login/callbackError")
               }
             })
             .catch((error) => {
@@ -65,6 +79,7 @@ const LoginCallback = () => {
               setIsUserAllowed(false);
               setCallbackProgress(false);
               console.log("error", error);
+              navigate("/login/callbackError")
             });
         })
         .catch((err) => {
@@ -72,12 +87,10 @@ const LoginCallback = () => {
           setIsLoggedIn(false);
           setCallbackProgress(false);
           setIsUserAllowed(false);
-
         });
     } else {
       navigate("/");
     }
-
   }, []);
   const [showAccessErrorAfterDelay, setShowAccessErrorAfterDelay] = useState(false);
   let timer: NodeJS.Timeout;
@@ -108,7 +121,7 @@ const LoginCallback = () => {
         height: "100vh",
       }}
     >
-      <CircularProgress />
+      <CircularProgress color="primary" />
     </Box>
   );
 };

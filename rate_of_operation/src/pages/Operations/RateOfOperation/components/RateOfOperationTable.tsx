@@ -28,7 +28,7 @@ import FilterPopper from "./filters/FilterPopper";
 import SaveConfirmationDialog from "./SaveConfirmationDialog";
 import SnackbarAlert from "./SnackbarAlert";
 
-import { useRecipesData } from "../hooks/useRecipesData";
+import { useRecipesData } from "../hooks/useRecipeData";
 import { useReviewedStatusData } from "../hooks/useReviewedStatusData";
 import { CircularProgress } from "@mui/material";
 import { useColumnVisibility } from "../hooks/useColumnVisibility";
@@ -40,9 +40,24 @@ import {
   updateRecipes,
 } from "../../../../services/rate-of-operations";
 
-interface RateOfOperationTableProps {}
+interface RateOfOperationTableProps { }
 
 const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
+  const [tableData, setTableData] = useState<any[]>([]);
+  const [originalApiData, setOriginalApiData] = useState<any[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchData, setSearchData] = useState<any>(null);
+  const [updatedRecords, setUpdatedRecords] = useState<any[]>([]);
+  const [changedRowsData, setChangedRowsData] = useState<any[]>([]);
+  const [filterAnchorEl, setFilterAnchorEl] = useState<HTMLElement | null>(null);
+  const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
+  const [downloadAnchorEl, setDownloadAnchorEl] = useState<HTMLElement | null>(null);
+  const [saveDialogOpen, setSaveDialogOpen] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [updateResponse, setUpdateResponse] = useState<any>(null);
+  const [isDownloading, setIsDownloading] = useState<boolean>(false);
+
   const {
     setFilterSelections,
     selectedCategory,
@@ -51,7 +66,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     setSelectedReviewedStatus,
     filterSelections,
   } = useFilterStore();
-  const { user } = useUserStore();
+  const { user, userAssignedCategories, userAssignedInterfaces } = useUserStore();
   const {
     data,
     loading,
@@ -59,6 +74,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     totalRows,
     pageNumber,
     rowsPerPage,
+    setTotalRows,
     reviewedStatus,
     updateData,
     refresh,
@@ -76,20 +92,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
     priorityColumns,
   } = useColumnVisibility(data);
 
-  const [tableData, setTableData] = useState<any[]>([]);
-  const [originalApiData, setOriginalApiData] = useState<any[]>([]);
-  const [isSearching, setIsSearching] = useState(false);
-  const [searchData, setSearchData] = useState<any>(null);
-  const [updatedRecords, setUpdatedRecords] = useState<any[]>([]);
-  const [changedRowsData, setChangedRowsData] = useState<any[]>([]);
-  const [filterAnchorEl, setFilterAnchorEl] = useState<HTMLElement | null>(null);
-  const [filters, setFilters] = useState<{ [key: string]: string[] }>({});
-  const [downloadAnchorEl, setDownloadAnchorEl] = useState<HTMLElement | null>(null);
-  const [saveDialogOpen, setSaveDialogOpen] = useState(false);
-  const [isSaving, setIsSaving] = useState(false);
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [updateResponse, setUpdateResponse] = useState<any>(null);
-  const [isDownloading, setIsDownloading] = useState<boolean>(false);
+
 
   const handleSearch = async (searchText: string) => {
     if (!searchText.trim()) {
@@ -109,6 +112,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
       console.log("seachPayload:", JSON.stringify(searchPayload));
       const response = await searchRecipes(searchPayload);
       setSearchData(response);
+      setTotalRows(response?.rowsCount)
     } catch (error) {
       console.error("Search error:", error);
       setSearchData(null);
@@ -355,6 +359,9 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
       (values) => Array.isArray(values) && values.length > 0
     ).length;
   };
+  useEffect(() => {
+    getActiveFiltersCount();
+  }, [])
 
   const handleDownloadClick = (event: React.MouseEvent<HTMLElement>) => {
     setDownloadAnchorEl(event.currentTarget);
@@ -514,6 +521,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
         <Box sx={{ display: "flex", alignItems: "center", gap: 0 }}>
           <Tooltip title="Download" placement="top">
             <IconButton
+              disabled={totalRows === 0}
               onClick={handleDownloadClick}
               color="primary"
               sx={{
@@ -562,9 +570,11 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
               },
             }}
           >
-            <MenuItem value="Personal Care" sx={{ fontSize: "0.75rem" }}>
-              Personal Care
-            </MenuItem>
+            {userAssignedCategories.map((item) => {
+              return <MenuItem value={item} sx={{ fontSize: "0.75rem" }}>
+                {item}
+              </MenuItem>
+            })}
             <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>
               All
             </MenuItem>
@@ -590,19 +600,19 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           >
             {Array.isArray(reviewedStatusOptions) && reviewedStatusOptions.length > 0
               ? reviewedStatusOptions.map((option: any) => (
-                  <MenuItem
-                    key={option.REVIEWED}
-                    value={option.REVIEWED}
-                    sx={{ fontSize: "0.75rem" }}
-                  >
-                    {option.REVIEWED}
-                  </MenuItem>
-                ))
+                <MenuItem
+                  key={option.REVIEWED}
+                  value={option.REVIEWED}
+                  sx={{ fontSize: "0.75rem" }}
+                >
+                  {option.REVIEWED}
+                </MenuItem>
+              ))
               : null}
             <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>
               All
             </MenuItem>
-          </TextField>{" "}
+          </TextField>
           <Tooltip title="Filters" placement="top">
             <Badge
               badgeContent={getActiveFiltersCount()}
@@ -693,6 +703,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
         onClose={handleFilterClose}
         data={tableData}
         onApply={handleApplyFilters}
+        interfaces={userAssignedInterfaces}
       />
       <TableContainer
         component={Paper}
@@ -729,7 +740,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           >
             <Typography color="error">{error}</Typography>
           </Box>
-        ) : tableData.length === 0 ? (
+        ) : (tableData.length === 0 || totalRows === 0) && !loading ? (
           <Box
             sx={{
               display: "flex",
@@ -775,7 +786,7 @@ const RateOfOperationTable: React.FC<RateOfOperationTableProps> = () => {
           variant="body2"
           sx={{ fontSize: "0.85rem", color: "text.secondary" }}
         >
-          Total Records: {totalRows || tableData.length || 0}
+          Total Records: {totalRows || 0}
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <FormControl size="small" variant="outlined" sx={{ minWidth: 120 }}>
