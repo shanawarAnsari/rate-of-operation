@@ -32,13 +32,16 @@ export const EditSetupTimeDialog: React.FC<EditSetupTimeDialogProps> = ({
   const [customValue, setCustomValue] = useState("");
   const [error, setError] = useState("");
   const [comments, setComments] = useState("");
+  const [selectedOption, setSelectedOption] = useState<any>(null);
 
   const handleCommentChange = (e: any) => {
     setComments(e.target.value);
   };
 
   const handleOptionSelect = (value: any) => {
-    onUpdate(value);
+    setSelectedOption(value);
+    setCustomValue(""); // Clear custom value when an option is selected
+    setError(""); // Clear any errors
   };
 
   const handleCustomInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,11 +60,16 @@ export const EditSetupTimeDialog: React.FC<EditSetupTimeDialogProps> = ({
     }
 
     setCustomValue(inputValue);
+    setSelectedOption(null); // Clear selected option when custom value is entered
   };
 
-  const handleCustomInputSubmit = () => {
-    if (!error) {
+  const handleUpdate = () => {
+    if (selectedOption) {
+      onUpdate(selectedOption);
+      onClose();
+    } else if (customValue && !error) {
       onUpdate(customValue);
+      onClose();
     }
   };
 
@@ -90,16 +98,22 @@ export const EditSetupTimeDialog: React.FC<EditSetupTimeDialogProps> = ({
                 justifyContent="space-between"
                 alignItems="center"
                 border={1}
-                borderColor="grey.300"
+                borderColor={
+                  selectedOption === option.value ? "primary.main" : "grey.300"
+                }
                 borderRadius={1}
                 padding={1}
                 onClick={() => handleOptionSelect(option.value)}
                 sx={{
                   cursor: "pointer",
-                  backgroundColor: "inherit",
+                  backgroundColor:
+                    selectedOption === option.value ? "action.selected" : "inherit",
                   transition: "background-color 0.4s ease, transform 0.2s ease",
                   "&:hover": {
-                    backgroundColor: (theme) => theme.palette.action.hover,
+                    backgroundColor: (theme) =>
+                      selectedOption === option.value
+                        ? theme.palette.action.selected
+                        : theme.palette.action.hover,
                   },
                   "&:active": {
                     backgroundColor: (theme) => theme.palette.action.selected,
@@ -169,9 +183,9 @@ export const EditSetupTimeDialog: React.FC<EditSetupTimeDialogProps> = ({
         </Button>
         <Button
           size="small"
-          onClick={handleCustomInputSubmit}
+          onClick={handleUpdate}
           color="primary"
-          disabled={!!error || !customValue}
+          disabled={!selectedOption && (!customValue || !!error)}
           variant="outlined"
         >
           Update

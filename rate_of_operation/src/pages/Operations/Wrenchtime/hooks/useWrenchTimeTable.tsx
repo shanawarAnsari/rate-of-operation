@@ -6,319 +6,314 @@ import {
   getSortedRowModel,
   ColumnDef,
 } from "@tanstack/react-table";
-import { useColumnVisibility } from "./useColumnVisibility";
 import { usePagination } from "./usePagination";
 import { useSearch } from "./useSearch";
-import { IconButton, Typography } from "@mui/material";
-import CheckIcon from "@mui/icons-material/Check"; // Import Check icon
-import DoneAllIcon from "@mui/icons-material/DoneAll"; // Import DoneAll icon
+import { Box, IconButton, useTheme } from "@mui/material";
+import { InfoOutlined, PublishedWithChanges } from "@mui/icons-material";
+import CheckIcon from "@mui/icons-material/Check";
 import EditIcon from "@mui/icons-material/Edit";
-import { PublishedWithChanges } from "@mui/icons-material";
-import Tooltip from "@mui/material/Tooltip"; // Import Tooltip
-import Snackbar from "@mui/material/Snackbar"; // Import Snackbar
-import Alert from "@mui/material/Alert"; // Import Alert
-import { EditSetupTimeDialog } from "../components/EditSetupTimeDialog"; // Import the dialog component
+import DoneAllIcon from "@mui/icons-material/DoneAll";
+import Tooltip from "@mui/material/Tooltip";
+import { EditSetupTimeDialog } from "../components/EditSetupTimeDialog";
 
-const CellContent: React.FC<{
-  value: any;
-  index: number;
-  rowData: any;
-  rowIndex: number; // Add rowIndex prop
-  updatedRows: Record<number, boolean>; // Add updatedRows prop
-  reviewedRows: Record<number, boolean>; // Add reviewedRows prop
-  setUpdatedRows: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
-  editingRowIndex: number | null; // Add editingRowIndex prop
-  setEditingRowIndex: React.Dispatch<React.SetStateAction<number | null>>;
-  onRowUpdate: (rowIndex: number, newValue: any) => void; // Add onRowUpdate prop
-  onRowReview: (rowIndex: number) => void; // Add onRowReview prop
-  handleResetRow: (rowIndex: number) => void; // Add handleResetRow prop
-}> = ({
+const CellRenderer = ({
   value,
-  index,
+  columnId,
   rowData,
   rowIndex,
-  updatedRows,
-  reviewedRows,
-  setUpdatedRows,
-  editingRowIndex,
-  setEditingRowIndex,
   onRowUpdate,
   onRowReview,
-  handleResetRow,
+  updatedRows,
+  setUpdatedRows,
+}: {
+  value: any;
+  columnId: string;
+  rowData: any;
+  rowIndex: number;
+  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void;
+  onRowReview: (rowIndex: number) => void;
+  updatedRows: Record<number, boolean>;
+  setUpdatedRows: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
 }) => {
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const theme = useTheme();
 
-    const [isResolved, setIsResolved] = useState(false);
-    const [isEditing, setIsEditing] = useState(false);
-    const [editedValue, setEditedValue] = useState(value);
-    const [snackbarOpen, setSnackbarOpen] = useState(false);
-    const [dialogOpen, setDialogOpen] = useState(false);
+  const handleEditClick = () => {
+    setDialogOpen(true);
+  };
 
-    const dropdownOptions = [
-      {
-        label: "AI/ML Setup Min",
-        value: rowData.aiml_setup_min || "N/A",
-      },
-      {
-        label: "Asset Group (6mo)",
-        value: rowData.AssetGroup_setup_min_6mo || "N/A",
-        subtext: `(N: ${rowData.AssetGroup_6mo_N || "N/A"})`,
-      },
-      {
-        label: "Asset Group (3mo)",
-        value: rowData.AssetGroup_setup_min_3mo || "N/A",
-        subtext: `(N: ${rowData.AssetGroup_3mo_N || "N/A"})`,
-      },
-      {
-        label: "Asset Size (6mo)",
-        value: rowData.AssetSize_setup_min_6mo || "N/A",
-        subtext: `(N: ${rowData.AssetSize_6mo_N || "N/A"})`,
-      },
-      {
-        label: "Asset Size (3mo)",
-        value: rowData.AssetSize_setup_min_3mo || "N/A",
-        subtext: `(N: ${rowData.AssetSize_3mo_N || "N/A"})`,
-      },
-      {
-        label: "Asset Variant (6mo)",
-        value: rowData.AssetVar_setup_min_6mo || "N/A",
-        subtext: `(N: ${rowData.AssetVar_6mo_N || "N/A"})`,
-      },
-      {
-        label: "Asset Variant (3mo)",
-        value: rowData.AssetVar_setup_min_3mo || "N/A",
-        subtext: `(N: ${rowData.AssetVar_3mo_N || "N/A"})`,
-      },
-      {
-        label: "Asset (6mo)",
-        value: rowData.Asset_setup_min_6mo || "N/A",
-        subtext: `(N: ${rowData.Asset_6mo_N || "N/A"})`,
-      },
-      {
-        label: "Asset (3mo)",
-        value: rowData.Asset_setup_min_3mo || "N/A",
-        subtext: `(N: ${rowData.Asset_3mo_N || "N/A"})`,
-      },
-    ].filter((option) => option.value !== undefined && option.value !== "");
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+  };
 
-    const handleSnackbarClose = () => {
-      setSnackbarOpen(false);
-    };
+  const handleDialogUpdate = (newValue: any) => {
+    const originalVal = parseFloat(value);
+    onRowUpdate(rowIndex, newValue, originalVal);
+    setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
+    setDialogOpen(false);
+  };
 
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-      setAnchorEl(event.currentTarget);
-    };
+  const handlePublish = () => {
+    if (rowData.REVIEWED === "Y - Reviewed from Web App") {
+      onRowReview(rowIndex);
+    } else {
+      onRowReview(rowIndex);
+    }
+  };
 
-    const handleToggleResolve = () => {
-      setIsResolved((prev) => !prev);
-    };
+  const dropdownOptions = [
+    { label: "AI/ML Setup Min", value: rowData.AIML_SETUPTIME_MINUTES || "N/A" },
+    {
+      label: "Asset Group (6mo)",
+      value: rowData.ASSET_SETUPGROUP_ST_6MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_SETUPGROUP_N_6MONTH || "N/A"})`,
+    },
+    {
+      label: "Asset Group (3mo)",
+      value: rowData.ASSET_SETUPGROUP_ST_3MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_SETUPGROUP_N_3MONTH || "N/A"})`,
+    },
+    {
+      label: "Asset Size (6mo)",
+      value: rowData.ASSET_SIZE_ST_6MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_SIZE_N_6MONTH || "N/A"})`,
+    },
+    {
+      label: "Asset Size (3mo)",
+      value: rowData.ASSET_SIZE_ST_3MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_SIZE_N_3MONTH || "N/A"})`,
+    },
+    {
+      label: "Asset Variant (6mo)",
+      value: rowData.ASSET_VARIANT_ST_6MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_VARIANT_N_6MONTH || "N/A"})`,
+    },
+    {
+      label: "Asset Variant (3mo)",
+      value: rowData.ASSET_VARIANT_ST_3MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_VARIANT_N_3MONTH || "N/A"})`,
+    },
+    {
+      label: "Asset (6mo)",
+      value: rowData.ASSET_ST_6MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_N_6MONTH || "N/A"})`,
+    },
+    {
+      label: "Asset (3mo)",
+      value: rowData.ASSET_ST_3MONTH || "N/A",
+      subtext: `(N: ${rowData.ASSET_N_3MONTH || "N/A"})`,
+    },
+  ];
 
-    const handleEditClick = () => {
-      setIsEditing(true);
-      setEditingRowIndex(rowIndex); // Set editing row index
-    };
-
-    const handleSaveClick = () => {
-      if (/^\d*\.?\d*$/.test(editedValue)) {
-        // Validate input for numbers and decimals
-        setIsEditing(false);
-        setEditingRowIndex(null); // Clear editing row index
-        console.log("Saved value:", editedValue);
-        // Mark the row as updated (Tro value is updated)
-        setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
-      } else {
-        setSnackbarOpen(true); // Show snackbar on error
-      }
-    };
-
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      setEditedValue(event.target.value);
-    };
-
-    const handleDialogOpen = () => {
-      setDialogOpen(true);
-    };
-
-    const handleDialogClose = () => {
-      setDialogOpen(false);
-    };
-
-    const handleValueUpdate = (newValue: any) => {
-      setEditedValue(newValue);
-      onRowUpdate(rowIndex, newValue);
-      setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
-      handleDialogClose();
-    };
-
-    return (
-      <>
+  return (
+    <>
+      <div
+        style={{
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          display: "flex",
+          alignItems: "center",
+          justifyContent:
+            columnId === "FROM_SETUP_GROUP" ||
+            columnId === "TO_SETUP_GROUP" ||
+            columnId === "SETUP_MATRIX" ||
+            (columnId === "NEW_SETUPTIME_MINUTES" && rowData.REVIEWED === "N")
+              ? "flex-start"
+              : "center",
+          minHeight: "32px",
+          gap: "0px",
+        }}
+      >
         <div
           style={{
-            overflow: "hidden",
-            textOverflow: "ellipsis",
             display: "flex",
             alignItems: "center",
-            justifyContent:
-              index === 3 || index === 17 ? "space-between" : "flex-start",
+            flex: 1,
+            minWidth: 0,
           }}
         >
-          {index === 17 ? (
-            <>
-              <Typography variant="body2" style={{ marginRight: "8px" }}>
-                {editedValue || "N/A"}
-              </Typography>
-              <IconButton
-                size="small"
-                onClick={handleDialogOpen}
-                disabled={editingRowIndex !== null && editingRowIndex !== rowIndex}
+          {value === null ? "-" : String(value)}
+        </div>
+
+        {/* Review button moved to SETUP_MATRIX column */}
+        {columnId === "SETUP_MATRIX" && rowData.REVIEWED === "N" && (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              flexShrink: 0,
+            }}
+          >
+            <IconButton size="small" onClick={handlePublish}>
+              <Tooltip
+                placement="top"
+                title={
+                  <>
+                    Click to mark reviewed.
+                    <br />
+                    New Setup Time: {rowData.NEW_SETUPTIME_MINUTES || "N/A"}
+                  </>
+                }
+                arrow
               >
-                <EditIcon
-                  fontSize="small"
-                  sx={{ color: (theme) => theme.palette.primary.main }}
+                <PublishedWithChanges
+                  sx={{
+                    color: rowData.isUpdated
+                      ? "rgb(205, 181, 0)"
+                      : (theme) => theme.palette.primary.main,
+                    transition: "color 0.3s",
+                  }}
                 />
+              </Tooltip>
+            </IconButton>
+          </Box>
+        )}
+
+        {/* Display check icons in SETUP_MATRIX column when REVIEWED is "Y" */}
+        {columnId === "SETUP_MATRIX" &&
+          rowData.REVIEWED === "Y - Reviewed from Web App" && (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                flexShrink: 0,
+              }}
+            >
+              <IconButton size="small" onClick={handlePublish}>
+                {rowData.isUpdated ? (
+                  <DoneAllIcon sx={{ color: "#0bdd00" }} />
+                ) : (
+                  <CheckIcon sx={{ color: "#0bdd00" }} />
+                )}
               </IconButton>
-            </>
-          ) : (
-            String(value)
+            </Box>
           )}
-          {index === 3 && (
+
+        {/* Edit button for NEW_SETUPTIME_MINUTES column */}
+        {columnId === "NEW_SETUPTIME_MINUTES" && rowData.REVIEWED === "N" && (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexShrink: 0,
+            }}
+          >
             <IconButton
               size="small"
-              onClick={() =>
-                reviewedRows[rowIndex]
-                  ? handleResetRow(rowIndex)
-                  : onRowReview(rowIndex)
-              }
+              onClick={handleEditClick}
+              sx={{
+                borderRadius: "50%",
+                padding: "4px",
+                "&:hover": { backgroundColor: (theme) => theme.palette.grey[200] },
+              }}
             >
-              {updatedRows[rowIndex] && reviewedRows[rowIndex] ? (
-                <DoneAllIcon sx={{ color: "#0bdd00" }} />
-              ) : !updatedRows[rowIndex] && reviewedRows[rowIndex] ? (
-                <CheckIcon sx={{ color: "#0bdd00" }} />
-              ) : (
-                <Tooltip
-                  placement="top"
-                  title={
-                    <>
-                      Click to mark reviewed.
-                      <br />
-                      New Setup Min: {rowData.new_setup_min || "N/A"}
-                    </>
-                  }
-                  arrow
-                >
-                  <PublishedWithChanges
-                    sx={{
-                      color: (theme) => theme.palette.primary.main,
-                      transition: "color 0.3s",
-                    }}
-                  />
-                </Tooltip>
-              )}
+              <EditIcon
+                sx={{
+                  fontSize: "1.25rem",
+                  color: (theme) => theme.palette.primary.main,
+                }}
+              />
             </IconButton>
-          )}
-        </div>
+          </Box>
+        )}
+      </div>
+
+      {/* Edit dialog for NEW_SETUPTIME_MINUTES column */}
+      {columnId === "NEW_SETUPTIME_MINUTES" && rowData.REVIEWED === "N" && (
         <EditSetupTimeDialog
           open={dialogOpen}
           onClose={handleDialogClose}
-          onUpdate={handleValueUpdate}
+          onUpdate={handleDialogUpdate}
+          dropdownOptions={dropdownOptions}
           originalValue={value}
-          dropdownOptions={dropdownOptions} // Pass dropdown options
         />
-        <Snackbar
-          open={snackbarOpen}
-          autoHideDuration={3000}
-          onClose={handleSnackbarClose}
-          anchorOrigin={{ vertical: "top", horizontal: "center" }}
-        >
-          <Alert onClose={handleSnackbarClose} severity="error" sx={{ width: "100%" }}>
-            Please enter a valid number.
-          </Alert>
-        </Snackbar>
-      </>
-    );
-  };
+      )}
+    </>
+  );
+};
 
 export const useWrenchTimeTable = (
   data: any[],
-  onRowUpdate: (rowIndex: number, newValue: any) => void,
+  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void,
   onRowReview: (rowIndex: number) => void,
-  onRowReset: (rowIndex: number) => void
+  totalRows: number,
+  columnVisibility: Record<string, boolean>,
+  setColumnVisibility: React.Dispatch<React.SetStateAction<Record<string, boolean>>>,
+  currentPageNumber: number,
+  currentRowsPerPage: number,
+  onPageChange: (page: number) => void,
+  onRowsPerPageChange: (rows: number) => void,
+  onSearch?: (searchText: string) => void
 ) => {
-  const {
-    columnVisibility,
-    setColumnVisibility,
-    visibleColumnsCount,
-    totalColumnsCount,
-  } = useColumnVisibility();
-  const { searchText, handleSearchChange } = useSearch();
-
-  // New state to track updated Tro values per row
+  const { searchText, handleSearchChange } = useSearch(onSearch);
   const [updatedRows, setUpdatedRows] = useState<Record<number, boolean>>({});
-  const [reviewedRows, setReviewedRows] = useState<Record<number, boolean>>({});
-  const [editingRowIndex, setEditingRowIndex] = useState<number | null>(null);
-
-  const handleResetRow = (rowIndex: number) => {
-    onRowReset(rowIndex);
-    setUpdatedRows((prev) => {
-      const copy = { ...prev };
-      delete copy[rowIndex];
-      return copy;
-    });
-    setReviewedRows((prev) => {
-      const copy = { ...prev };
-      delete copy[rowIndex];
-      return copy;
-    });
-  };
-
-  const handleReviewRow = (rowIndex: number) => {
-    onRowReview(rowIndex);
-    setReviewedRows((prev) => ({ ...prev, [rowIndex]: true }));
-  };
 
   const columns = useMemo<ColumnDef<any>[]>(() => {
-    const keys = Object.keys(data[0] || {}).filter((k) => k !== "isUpdated");
-    return keys.map((key, index) => ({
+    if (!data || data.length === 0) {
+      return [
+        {
+          accessorKey: "empty",
+          header: "No Data",
+          cell: () => null,
+        },
+      ];
+    }
+
+    // Update priority columns with new order
+    const priorityColumns = ["FROM_SETUP_GROUP", "TO_SETUP_GROUP", "SETUP_MATRIX"];
+    const hiddenColumns = ["SNAPSHOT_DATE", "CREATED_ON", "SETUP_TIME_KEY"];
+
+    const keys = Object.keys(data[0] || {}).filter(
+      (k) => k !== "isUpdated" && !hiddenColumns.includes(k)
+    );
+
+    const orderedKeys = [
+      ...priorityColumns,
+      ...keys.filter((k) => !priorityColumns.includes(k)),
+    ];
+
+    return orderedKeys.map((key, index) => ({
       accessorKey: key,
       header: key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
       cell: (info: any) => (
-        <CellContent
+        <CellRenderer
           value={info.getValue()}
-          index={index}
+          columnId={info.column.id}
           rowData={info.row.original}
           rowIndex={info.row.index}
-          updatedRows={updatedRows}
-          reviewedRows={reviewedRows}
-          setUpdatedRows={setUpdatedRows}
-          editingRowIndex={editingRowIndex}
-          setEditingRowIndex={setEditingRowIndex}
           onRowUpdate={onRowUpdate}
-          onRowReview={handleReviewRow}
-          handleResetRow={handleResetRow}
+          onRowReview={onRowReview}
+          updatedRows={updatedRows}
+          setUpdatedRows={setUpdatedRows}
         />
       ),
       minSize: 120,
       maxSize: 1000,
       enableSorting: true,
     }));
-  }, [
-    data,
-    updatedRows,
-    reviewedRows,
-    editingRowIndex,
-    onRowUpdate,
-    handleResetRow,
-    handleReviewRow,
-  ]);
+  }, [data, updatedRows, onRowUpdate, onRowReview]);
 
   const table = useReactTable({
-    data,
+    data: data || [],
     columns,
-    state: { columnVisibility },
+    state: {
+      columnVisibility,
+      pagination: {
+        pageIndex: 0,
+        pageSize: 10,
+      },
+    },
+    defaultColumn: {
+      minSize: 100,
+      size: 150,
+    },
     onColumnVisibilityChange: setColumnVisibility,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    manualPagination: true,
+    pageCount: -1,
   });
 
   const {
@@ -326,12 +321,20 @@ export const useWrenchTimeTable = (
     handlePageInputChange,
     handlePageInputSubmit,
     handleRowsPerPageChange,
-  } = usePagination(table);
+    totalPages,
+  } = usePagination(
+    table,
+    totalRows,
+    currentPageNumber,
+    currentRowsPerPage,
+    onPageChange,
+    onRowsPerPageChange
+  );
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
-  const handleClick = useCallback((event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = useCallback((event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   }, []);
 
@@ -341,10 +344,6 @@ export const useWrenchTimeTable = (
 
   return {
     table,
-    columnVisibility,
-    setColumnVisibility,
-    visibleColumnsCount,
-    totalColumnsCount,
     searchText,
     handleSearchChange,
     pageInput,
@@ -355,5 +354,6 @@ export const useWrenchTimeTable = (
     open,
     handleClick,
     handleClose,
+    totalPages,
   };
 };

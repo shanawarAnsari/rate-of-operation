@@ -1,6 +1,7 @@
-import { useState, useMemo, useEffect } from "react";
+// This file should be deleted as it's deprecated and uses mockData
+// All functionality has been moved to useWrenchtimeColumnVisibility.ts
+import React, { useState, useEffect, useMemo } from "react";
 import { VisibilityState } from "@tanstack/react-table";
-import { mockData } from "../mockData";
 
 export const useColumnVisibility = () => {
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>(() => {
@@ -9,24 +10,12 @@ export const useColumnVisibility = () => {
       return JSON.parse(savedVisibility);
     }
 
-    const keys = Object.keys(mockData[0] || {});
-    const statisticalSourceIndex = keys.findIndex((key) => key === "setup_change");
-    const initialVisibility: VisibilityState = {};
-
-    keys.forEach((key, index) => {
-      if (
-        key.toLowerCase().includes("business") ||
-        key.toLowerCase().includes("category")
-      ) {
-        // Remove the dropdown options for "business" and "category"
-        initialVisibility[key] = false;
-      } else {
-        initialVisibility[key] = index <= statisticalSourceIndex;
-      }
-    });
-
-    return initialVisibility;
+    // Default columns if no saved state exists
+    return {};
   });
+
+  // Track available columns (passed from component)
+  const [availableColumns, setAvailableColumns] = useState<string[]>([]);
 
   useEffect(() => {
     localStorage.setItem("columnVisibility_WT", JSON.stringify(columnVisibility));
@@ -37,13 +26,14 @@ export const useColumnVisibility = () => {
   }, [columnVisibility]);
 
   const totalColumnsCount = useMemo(() => {
-    return Object.keys(mockData[0] || {}).length;
-  }, []);
+    return availableColumns.length;
+  }, [availableColumns]);
 
   return {
     columnVisibility,
     setColumnVisibility,
     visibleColumnsCount,
     totalColumnsCount,
+    setAvailableColumns,
   };
 };

@@ -19,11 +19,14 @@ const headerCellStyles = {
       : theme.palette.grey[800],
 };
 
-const isStickyColumn = (index: number) => index < 2;
+// Update to make 3 columns sticky
+const isStickyColumn = (index: number) => index < 3;
 
+// Update sticky positions for 3 columns
 const getStickyPosition = (index: number) => {
   if (index === 0) return 0;
-  if (index === 1) return 85;
+  if (index === 1) return 100; // Adjust based on first column width
+  if (index === 2) return 200; // Adjust based on first and second column widths
   return 0;
 };
 

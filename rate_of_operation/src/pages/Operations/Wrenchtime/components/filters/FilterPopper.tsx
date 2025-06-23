@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Button,
@@ -8,9 +8,12 @@ import {
   Divider,
   Popper,
   Typography,
+  CircularProgress,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
+import { useWrenchtimeFilters } from "./hooks/useWrenchtimeFilters";
+import { useFilterStore } from "../../../../../store/filterStore";
 
 interface FilterPopperProps {
   anchorEl: HTMLElement | null;
@@ -18,6 +21,7 @@ interface FilterPopperProps {
   onClose: () => void;
   data: any[];
   onApply: (filters: { [key: string]: string[] }) => void;
+  interfaces?: string[];
 }
 
 const FilterPopper: React.FC<FilterPopperProps> = ({
@@ -26,57 +30,101 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
   onClose,
   data,
   onApply,
+  interfaces = [],
 }) => {
-  const [filters, setFilters] = useState<{ [key: string]: string[] }>({
-    from_group: [],
-    to_group: [],
-    setup_matrix: [],
-    location: [],
-    from_machine: [],
-    from_size: [],
-    from_variant: [],
-    to_machine: [],
-    to_size: [],
-    to_variant: [],
-    setup_time_change: [],
-  });
+  const filterProperties = [
+    "INTERFACE",
+    "SETUP_MATRIX",
+    "LOCATION",
+    "FROM_SETUP_GROUP",
+    "TO_SETUP_GROUP",
+    "FROM_MACHINE",
+    "FROM_PRODUCT_SIZE",
+    "FROM_PRODUCT_VARIANT",
+    "TO_MACHINE",
+    "TO_PRODUCT_SIZE",
+    "TO_PRODUCT_VARIANT",
+  ];
+
+  const {
+    filterSelections,
+    updateFilterSelection,
+    resetFilters,
+    setFilterSelections,
+  } = useFilterStore();
+
+  const [filterOptions, setFilterOptions] = useState<{ [key: string]: string[] }>(
+    {}
+  );
+
+  const {
+    filters,
+    loading,
+    error,
+    localFilterSelections,
+    updateLocalFilterSelection,
+    resetLocalFilters,
+  } = useWrenchtimeFilters();
+
+  // Initialize local filter selections with current store values when popper opens
+  useEffect(() => {
+    if (open && filterSelections) {
+      Object.keys(filterSelections).forEach((key) => {
+        if (filterSelections[key] && filterSelections[key].length > 0) {
+          updateLocalFilterSelection(key, filterSelections[key]);
+        }
+      });
+    }
+  }, [open]);
+
+  // Generate filter options from data or filters
+  useEffect(() => {
+    const sourceData = filters.length > 0 ? filters : data;
+    if (sourceData && sourceData.length > 0) {
+      const options: { [key: string]: string[] } = {};
+
+      filterProperties.forEach((prop) => {
+        const uniqueValues = Array.from(
+          new Set(sourceData.map((item: any) => item[prop]))
+        );
+        options[prop] = uniqueValues.filter(Boolean) as string[];
+      });
+
+      setFilterOptions(options);
+
+      // Auto-select first INTERFACE option if available and not already selected
+      if (interfaces.length > 0) {
+        const currentInterfaceSelection = localFilterSelections.INTERFACE || [];
+        if (currentInterfaceSelection.length === 0) {
+          updateLocalFilterSelection("INTERFACE", [interfaces[0]]);
+        }
+      }
+    }
+  }, [filters, data]);
+
+  const handleFilterChange = (field: string) => (event: any, newValue: string[]) => {
+    updateLocalFilterSelection(field, newValue);
+  };
 
   const handleApply = () => {
-    onApply(filters);
+    setFilterSelections(localFilterSelections);
     onClose();
+    onApply(localFilterSelections);
   };
 
   const handleReset = () => {
-    setFilters({
-      from_group: [],
-      to_group: [],
-      setup_matrix: [],
-      location: [],
-      from_machine: [],
-      from_size: [],
-      from_variant: [],
-      to_machine: [],
-      to_size: [],
-      to_variant: [],
-      setup_time_change: [],
-    });
-    onApply({
-      from_group: [],
-      to_group: [],
-      setup_matrix: [],
-      location: [],
-      from_machine: [],
-      from_size: [],
-      from_variant: [],
-      to_machine: [],
-      to_size: [],
-      to_variant: [],
-      setup_time_change: [],
-    });
-  };
+    resetLocalFilters();
+    const resetSelections = Object.keys(filterSelections).reduce((acc, key) => {
+      acc[key] = [];
+      return acc;
+    }, {} as { [key: string]: string[] });
 
-  const getDistinctValues = (field: string) =>
-    Array.from(new Set(data.map((item) => item[field])));
+    setFilterSelections(resetSelections);
+
+    if (interfaces.length > 0) {
+      updateLocalFilterSelection("INTERFACE", [interfaces[0]]);
+    }
+  };
 
   const setupTimeChangeOptions = [
     "0% to 5%",
@@ -135,107 +183,116 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
               pr: 1,
             }}
           >
-            {[
-              "from_group",
-              "to_group",
-              "setup_matrix",
-              "location",
-              "from_machine",
-              "from_size",
-              "from_variant",
-              "to_machine",
-              "to_size",
-              "to_variant",
-            ].map((field) => (
-              <Autocomplete
-                key={field}
-                multiple
-                options={getDistinctValues(field)}
-                value={filters[field]}
-                onChange={(event, value) => {
-                  event.stopPropagation();
-                  setFilters((prev) => ({ ...prev, [field]: value }));
-                }}
-                disableCloseOnSelect
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    label={field.replace(/_/g, " ").toUpperCase()}
-                    size="small"
+            {loading && Object.keys(filterOptions).length === 0 ? (
+              <Box sx={{ display: "flex", justifyContent: "center", p: 2 }}>
+                <CircularProgress size={24} />
+              </Box>
+            ) : error && Object.keys(filterOptions).length === 0 ? (
+              <Typography
+                color="error"
+                variant="body2"
+                sx={{ textAlign: "center", p: 2 }}
+              >
+                Error loading filters. Please try again.
+              </Typography>
+            ) : (
+              <>
+                {filterProperties.map((field) => (
+                  <Autocomplete
+                    key={field}
+                    multiple
+                    options={filterOptions[field] || []}
+                    value={localFilterSelections[field] || []}
+                    onChange={handleFilterChange(field)}
+                    disableCloseOnSelect
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label={field.replace(/_/g, " ")}
+                        size="small"
+                        sx={{
+                          mt: 1,
+                          mb: 0.5,
+                          width: 300,
+                          "& .MuiInputBase-input": { fontSize: 12 },
+                          "& .MuiInputLabel-root": { fontSize: 12 },
+                        }}
+                      />
+                    )}
+                    renderOption={(props, option, { selected }) => (
+                      <li
+                        {...props}
+                        style={{
+                          fontSize: 12,
+                          padding: 0,
+                          margin: 0,
+                        }}
+                      >
+                        <Checkbox style={{ marginRight: 1 }} checked={selected} />
+                        {option}
+                      </li>
+                    )}
                     sx={{
-                      mt: 1,
-                      mb: 0.5,
-                      width: 300,
-                      "& .MuiInputBase-input": { fontSize: 12 },
-                      "& .MuiInputLabel-root": { fontSize: 12 },
+                      "& .MuiAutocomplete-tag": { fontSize: 12 },
                     }}
                   />
-                )}
-                renderOption={(props, option, { selected }) => (
-                  <li
-                    {...props}
-                    style={{
-                      fontSize: 12,
-                      padding: 0,
-                      margin: 0,
-                    }}
-                  >
-                    <Checkbox style={{ marginRight: 1 }} checked={selected} />
-                    {option}
-                  </li>
-                )}
-                sx={{
-                  "& .MuiAutocomplete-tag": { fontSize: 12 },
-                }}
-              />
-            ))}
-            <Autocomplete
-              multiple
-              options={setupTimeChangeOptions}
-              value={filters.setup_time_change}
-              onChange={(event, value) => {
-                event.stopPropagation();
-                setFilters((prev) => ({ ...prev, setup_time_change: value }));
-              }}
-              disableCloseOnSelect
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="SETUP TIME CHANGE (abs)"
-                  size="small"
+                ))}
+                <Autocomplete
+                  multiple
+                  options={setupTimeChangeOptions}
+                  value={localFilterSelections.setup_time_change || []}
+                  onChange={(event, value) => {
+                    updateLocalFilterSelection("setup_time_change", value);
+                  }}
+                  disableCloseOnSelect
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="SETUP TIME CHANGE (abs)"
+                      size="small"
+                      sx={{
+                        mt: 1,
+                        mb: 0.5,
+                        width: 300,
+                        "& .MuiInputBase-input": { fontSize: 12 },
+                        "& .MuiInputLabel-root": { fontSize: 12 },
+                      }}
+                    />
+                  )}
+                  renderOption={(props, option, { selected }) => (
+                    <li
+                      {...props}
+                      style={{
+                        fontSize: 12,
+                        padding: 0,
+                        margin: 0,
+                      }}
+                    >
+                      <Checkbox style={{ marginRight: 1 }} checked={selected} />
+                      {option}
+                    </li>
+                  )}
                   sx={{
-                    mt: 1,
-                    mb: 0.5,
-                    width: 300,
-                    "& .MuiInputBase-input": { fontSize: 12 },
-                    "& .MuiInputLabel-root": { fontSize: 12 },
+                    "& .MuiAutocomplete-tag": { fontSize: 12 },
                   }}
                 />
-              )}
-              renderOption={(props, option, { selected }) => (
-                <li
-                  {...props}
-                  style={{
-                    fontSize: 12,
-                    padding: 0,
-                    margin: 0,
-                  }}
-                >
-                  <Checkbox style={{ marginRight: 1 }} checked={selected} />
-                  {option}
-                </li>
-              )}
-              sx={{
-                "& .MuiAutocomplete-tag": { fontSize: 12 },
-              }}
-            />
+              </>
+            )}
           </Box>
 
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Button size="small" onClick={handleReset}>
               Reset
             </Button>
-            <Button size="small" variant="contained" onClick={handleApply}>
+            <Button
+              size="small"
+              variant="contained"
+              onClick={handleApply}
+              disabled={
+                !localFilterSelections.INTERFACE ||
+                localFilterSelections.INTERFACE.length === 0
+              }
+            >
               Apply
             </Button>
           </Box>
