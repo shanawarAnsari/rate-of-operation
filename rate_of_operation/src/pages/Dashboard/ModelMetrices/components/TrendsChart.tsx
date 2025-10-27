@@ -19,6 +19,7 @@ import {
   ListItemText,
   OutlinedInput,
 } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import {
   TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
@@ -33,6 +34,22 @@ import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { MonthlyTrend } from "../hooks/useRateOfOperationsMetrics";
 import { mockData } from "../mockdata.js";
+
+const GROUP_LABELS: Record<string, string> = {
+  overall: "Overall",
+  interface: "Interface",
+  facility: "Facility",
+  machine: "Machine",
+  packer: "Packer Resource",
+};
+
+const TAB_OPTIONS = [
+  "overall",
+  "interface",
+  "facility",
+  "machine",
+  "packer",
+] as const;
 
 interface TrendsChartProps {
   trends: MonthlyTrend[];
@@ -710,12 +727,21 @@ const CombinedTrendsOverview: React.FC<CombinedTrendsOverviewProps> = ({
     };
 
     const field = fieldMap[groupType];
-    if (!field) return { categories: [], series: [] };
+    if (!field) {
+      console.warn(`Unknown group type: ${groupType}`);
+      return { categories: [], series: [] };
+    }
 
     // Get selected filters or all options if none selected
     const currentGroupOptions = groupingOptions[
       groupType as keyof typeof groupingOptions
     ] as string[];
+
+    if (!currentGroupOptions || currentGroupOptions.length === 0) {
+      console.warn(`No options available for group type: ${groupType}`);
+      return { categories: [], series: [] };
+    }
+
     const filtersToUse =
       selectedFilters.length > 0 ? selectedFilters : currentGroupOptions;
 
@@ -723,6 +749,11 @@ const CombinedTrendsOverview: React.FC<CombinedTrendsOverviewProps> = ({
     const filteredData = typedMockData.filter((item: any) =>
       filtersToUse.includes(item[field])
     );
+
+    if (filteredData.length === 0) {
+      console.warn(`No data found for filters:`, filtersToUse);
+      return { categories: [], series: [] };
+    }
 
     // Group by month-year
     const monthlyData = new Map();
@@ -786,34 +817,36 @@ const CombinedTrendsOverview: React.FC<CombinedTrendsOverviewProps> = ({
         : 0;
     });
 
+    const groupLabel = GROUP_LABELS[groupType] || groupType;
+
     return {
       categories,
       series: [
         {
-          name: `Process Orders (${filtersToUse.length} ${groupType}${
+          name: `Process Orders (${filtersToUse.length} ${groupLabel}${
             filtersToUse.length > 1 ? "s" : ""
           })`,
           data: poData,
           yAxisIndex: 0,
         },
         {
-          name: `AIML Error (Aggregated)`,
+          name: `AIML Error (Avg)`,
           data: aimlErrors.map((val) => Number(val.toFixed(4))),
           yAxisIndex: 1,
         },
         {
-          name: `Recommended Error (Aggregated)`,
+          name: `Recommended Error (Avg)`,
           data: recommendedErrors.map((val) => Number(val.toFixed(4))),
           yAxisIndex: 1,
         },
         {
-          name: `Regression Error (Aggregated)`,
+          name: `Regression Error (Avg)`,
           data: regressionErrors.map((val) => Number(val.toFixed(4))),
           yAxisIndex: 1,
         },
       ],
     };
-  }, [groupBy, trends, typedMockData]);
+  }, [groupBy, trends, typedMockData, selectedFilters, groupingOptions]);
 
   const handleFilterChange = (event: SelectChangeEvent<typeof selectedFilters>) => {
     const value = event.target.value;
@@ -824,6 +857,7 @@ const CombinedTrendsOverview: React.FC<CombinedTrendsOverviewProps> = ({
     setSelectedTab(newValue);
     const tabOptions = ["overall", "interface", "facility", "machine", "packer"];
     setGroupBy(tabOptions[newValue]);
+    setSelectedFilters([]); // Reset filters when tab changes
   };
 
   if (loading) {
@@ -864,10 +898,10 @@ const CombinedTrendsOverview: React.FC<CombinedTrendsOverviewProps> = ({
       dashArray: [0, 0, 5, 8], // Different line styles
     },
     colors: [
-      theme.palette.primary.main,
-      theme.palette.warning.main,
-      theme.palette.error.main,
-      theme.palette.info.main,
+      theme.palette.primary.main, // Process Orders - Blue/Orange
+      "#10b981", // AIML Error - Green
+      "#f59e0b", // Recommended Error - Amber
+      "#ef4444", // Regression Error - Red
     ],
     xaxis: {
       categories: processedData.categories,
@@ -906,7 +940,7 @@ const CombinedTrendsOverview: React.FC<CombinedTrendsOverviewProps> = ({
         title: {
           text: "Error Values",
           style: {
-            color: theme.palette.warning.main,
+            color: "#10b981",
             fontWeight: 600,
           },
         },
@@ -914,6 +948,7 @@ const CombinedTrendsOverview: React.FC<CombinedTrendsOverviewProps> = ({
           style: {
             colors: theme.palette.text.secondary,
           },
+          formatter: (value: number) => value.toFixed(2),
         },
         min: 0,
       },
@@ -1076,15 +1111,42 @@ const CombinedTrendsOverview: React.FC<CombinedTrendsOverviewProps> = ({
 
         {/* Chart */}
         <Box sx={{ height: 400, mb: 2 }}>
-          <Chart
-            options={chartOptions}
-            series={processedData.series.map((series) => ({
-              ...series,
-              yAxis: series.yAxisIndex,
-            }))}
-            type="line"
-            height={400}
-          />
+          {processedData.categories.length === 0 ? (
+            <Box
+              sx={{
+                height: 400,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                bgcolor: alpha(theme.palette.primary.main, 0.05),
+                borderRadius: 2,
+                border: `1px dashed ${theme.palette.divider}`,
+              }}
+            >
+              <FilterListIcon
+                sx={{ fontSize: 48, color: "text.secondary", mb: 2 }}
+              />
+              <Typography variant="h6" color="text.secondary" gutterBottom>
+                No Data Available
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {selectedTab > 0
+                  ? "Try selecting different filters or switch to another grouping option."
+                  : "No data found for the selected view."}
+              </Typography>
+            </Box>
+          ) : (
+            <Chart
+              options={chartOptions}
+              series={processedData.series.map((series) => ({
+                ...series,
+                yAxis: series.yAxisIndex,
+              }))}
+              type="line"
+              height={400}
+            />
+          )}
         </Box>
 
         {/* Summary Info */}
@@ -1100,11 +1162,25 @@ const CombinedTrendsOverview: React.FC<CombinedTrendsOverviewProps> = ({
             <strong>Current View:</strong>{" "}
             {groupBy === "overall"
               ? "Overall trends across all data"
-              : `Filtered by ${groupBy.split(":")[0]} = ${groupBy.split(":")[1]}`}
+              : `${GROUP_LABELS[groupBy] || groupBy} - ${
+                  selectedFilters.length > 0
+                    ? `${selectedFilters.length} selected`
+                    : "All items"
+                }`}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
             <strong>Data Points:</strong> {processedData.categories.length} time
             periods
+            {processedData.series.length > 0 &&
+              processedData.series[0].data.length > 0 && (
+                <>
+                  {" "}
+                  • <strong>Total Orders:</strong>{" "}
+                  {processedData.series[0].data
+                    .reduce((a: number, b: number) => a + b, 0)
+                    .toLocaleString()}
+                </>
+              )}
           </Typography>
         </Box>
       </CardContent>
