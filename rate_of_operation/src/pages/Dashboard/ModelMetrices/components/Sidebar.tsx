@@ -16,7 +16,7 @@ import {
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
   Speed as SpeedIcon,
-  AccessTime as AccessTimeIcon,
+  Timer as AccessTimeIcon,
   BarChart as BarChartIcon,
 } from "@mui/icons-material";
 
@@ -59,7 +59,7 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedItem, onItemSelect }) => {
     >
       <Box
         sx={{
-          p: 1.5,
+          p: 1,
           borderBottom: 1,
           borderColor: "divider",
           display: "flex",
@@ -67,10 +67,10 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedItem, onItemSelect }) => {
           justifyContent: "space-between",
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1, pl: 2.1 }}>
           <BarChartIcon sx={{ fontSize: 24, color: "primary.main" }} />
           <Collapse in={!collapsed} orientation="horizontal">
-            <Typography variant="h6" color="primary" sx={{ whiteSpace: "nowrap" }}>
+            <Typography color="primary" sx={{ whiteSpace: "nowrap", fontSize: 16 }}>
               Model Metrics
             </Typography>
           </Collapse>
@@ -80,8 +80,8 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedItem, onItemSelect }) => {
             onClick={toggleCollapse}
             size="small"
             sx={{
-              ml: collapsed ? 0 : 1,
               color: "primary.main",
+              ml: -0.5,
             }}
           >
             {collapsed ? <ChevronRightIcon /> : <ChevronLeftIcon />}
@@ -100,14 +100,16 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedItem, onItemSelect }) => {
                 selected={selectedItem === item.id}
                 onClick={() => onItemSelect(item.id)}
                 sx={{
-                  py: 1.5,
+                  py: 1,
                   px: collapsed ? 1 : 2,
                   justifyContent: collapsed ? "center" : "flex-start",
                   "&.Mui-selected": {
-                    backgroundColor: "primary.light",
-                    color: "primary.contrastText",
+                    backgroundColor: (theme) =>
+                      theme.palette.mode === "light" ? "#f0f0f0" : "#2a2a2a",
+                    color: "text.primary",
                     "&:hover": {
-                      backgroundColor: "primary.main",
+                      backgroundColor: (theme) =>
+                        theme.palette.mode === "light" ? "#e8e8e8" : "#333333",
                     },
                   },
                 }}
@@ -115,10 +117,7 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedItem, onItemSelect }) => {
                 <ListItemIcon
                   sx={{
                     minWidth: collapsed ? "auto" : 40,
-                    color:
-                      selectedItem === item.id
-                        ? "primary.contrastText"
-                        : "text.primary",
+                    color: "text.primary",
                     justifyContent: "center",
                   }}
                 >
@@ -127,7 +126,7 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedItem, onItemSelect }) => {
                 <Collapse in={!collapsed} orientation="horizontal">
                   <ListItemText
                     primary={item.label}
-                    sx={{ ml: 1, whiteSpace: "nowrap" }}
+                    sx={{ ml: 1, whiteSpace: "nowrap", fontSize: 16 }}
                   />
                 </Collapse>
               </ListItemButton>

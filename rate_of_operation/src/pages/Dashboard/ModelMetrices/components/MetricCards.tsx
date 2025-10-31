@@ -1,18 +1,11 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Box,
-  Grid,
-  Chip,
-  useTheme,
-} from "@mui/material";
+import { Card, CardContent, Typography, Box, Grid, useTheme } from "@mui/material";
 import {
   Assignment as AssignmentIcon,
-  Warning as WarningIcon,
-  Analytics as AnalyticsIcon,
   Psychology as PsychologyIcon,
+  BookOnline,
+  Newspaper,
+  AutoAwesome,
 } from "@mui/icons-material";
 import { ROMetrics } from "../hooks/useRateOfOperationsMetrics";
 
@@ -44,44 +37,33 @@ const MetricCards: React.FC<MetricCardsProps> = ({
       title: "Number of PO",
       subtitle: "Process Orders",
       value: metrics.numberOfPO,
-      icon: <AssignmentIcon sx={{ fontSize: 24 }} />,
+      icon: <AssignmentIcon sx={{ fontSize: 32 }} />,
       color: "primary.main",
       bgcolor: "primary.light",
       contrastText: "primary.contrastText",
-      description: "Total Process Orders",
+      description: "Total Distinct Process Orders",
       format: (val: number) => val.toLocaleString(),
     },
     {
-      title: "AIML Absolute Error",
-      subtitle: "AIML Process Error",
-      value: metrics.absoluteErrorAIML,
-      icon: <PsychologyIcon sx={{ fontSize: 24 }} />,
-      color: "info.main",
-      bgcolor: "info.light",
-      contrastText: "info.contrastText",
-      description: "Average AIML RO Absolute Error",
-      format: (val: number) => val.toFixed(4),
-    },
-    {
-      title: "Recommended Absolute Error",
-      subtitle: "Recommended Process Error",
-      value: metrics.absoluteErrorRecommended,
-      icon: <WarningIcon sx={{ fontSize: 24 }} />,
+      title: "PLANNED RO - MAE",
+      subtitle: "Planned Process Error",
+      value: metrics.plannedRoMAE,
+      icon: <Newspaper sx={{ fontSize: 32 }} />,
       color: "warning.main",
       bgcolor: "warning.light",
       contrastText: "warning.contrastText",
-      description: "Average Recommended RO Absolute Error",
+      description: "Average NEW RO Mean Absolute Error",
       format: (val: number) => val.toFixed(4),
     },
     {
-      title: "Regression Absolute Error",
-      subtitle: "Regression Model Error",
-      value: metrics.absoluteErrorRegression,
-      icon: <AnalyticsIcon sx={{ fontSize: 24 }} />,
-      color: "error.main",
-      bgcolor: "error.light",
-      contrastText: "error.contrastText",
-      description: "Average New RO Absolute Error",
+      title: "AI ML RO - MAE",
+      subtitle: "AI ML Process Error",
+      value: metrics.aimlRoMAE,
+      icon: <AutoAwesome sx={{ fontSize: 32 }} />,
+      color: "info.main",
+      bgcolor: "info.light",
+      contrastText: "info.contrastText",
+      description: "Average AIML RO Mean Absolute Error",
       format: (val: number) => val.toFixed(4),
     },
   ];
@@ -90,7 +72,7 @@ const MetricCards: React.FC<MetricCardsProps> = ({
     <Box>
       <Grid container spacing={3}>
         {metricCards.map((card, index) => (
-          <Grid item xs={12} sm={6} lg={3} key={index}>
+          <Grid item xs={12} sm={6} lg={4} key={index}>
             <Card
               sx={{
                 height: "100%",
@@ -103,7 +85,7 @@ const MetricCards: React.FC<MetricCardsProps> = ({
                 },
               }}
             >
-              <CardContent sx={{ p: 3 }}>
+              <CardContent sx={{ p: 4 }}>
                 <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                   <Box
                     sx={{
@@ -120,7 +102,7 @@ const MetricCards: React.FC<MetricCardsProps> = ({
                     <Typography
                       variant="subtitle2"
                       color="text.secondary"
-                      sx={{ fontSize: "0.85rem" }}
+                      sx={{ fontSize: "0.90rem" }}
                     >
                       {card.subtitle}
                     </Typography>

@@ -41,7 +41,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <Box>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider", mb: -2 }}>
         <Tabs value={value} onChange={handleChange} aria-label="dashboard tabs">
           <Tab label="Model Metrics" {...a11yProps(0)} />
           <Tab label="Usage Metrics" {...a11yProps(1)} />

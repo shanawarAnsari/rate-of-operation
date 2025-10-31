@@ -30,18 +30,46 @@ export interface MockDataItem {
 
 export interface ROMetrics {
   numberOfPO: number;
-  absoluteErrorAIML: number;
-  absoluteErrorRecommended: number;
-  absoluteErrorRegression: number;
+  aimlRoMAE: number; // AI ML RO - MAE (AIML_RO_ABSOLUTE_ERROR)
+  plannedRoMAE: number; // PLANNED RO - MAE (NEW_RO_ABSOLUTE_ERROR)
+  // Legacy fields for backwards compatibility
+  absoluteErrorAIML?: number;
+  absoluteErrorRecommended?: number;
+  absoluteErrorRegression?: number;
 }
 
 export interface MonthlyTrend {
   month: string;
   year: number;
   numberOfPO: number;
-  absoluteErrorAIML: number;
-  absoluteErrorRecommended: number;
-  absoluteErrorRegression: number;
+  aimlRoMAE: number; // AI ML RO - MAE (AIML_RO_ABSOLUTE_ERROR)
+  plannedRoMAE: number; // PLANNED RO - MAE (NEW_RO_ABSOLUTE_ERROR)
+  // Legacy fields for backwards compatibility
+  absoluteErrorAIML?: number;
+  absoluteErrorRecommended?: number;
+  absoluteErrorRegression?: number;
+}
+
+export interface PlatformMetric {
+  platform: string;
+  aimlRoMAE: number;
+  plannedRoMAE: number;
+  count: number;
+}
+
+export interface MachineMetric {
+  machine: string;
+  aimlRoMAE: number;
+  plannedRoMAE: number;
+  count: number;
+}
+
+export interface RecipeError {
+  recipeNumber: string;
+  productDesc: string;
+  aimlRoMAE: number;
+  plannedRoMAE: number;
+  processOrderCount: number;
 }
 
 export type ViewMode = "month" | "trends";
@@ -98,6 +126,8 @@ export const useRateOfOperationsMetrics = () => {
     if (!selectedMonth)
       return {
         numberOfPO: 0,
+        aimlRoMAE: 0,
+        plannedRoMAE: 0,
         absoluteErrorAIML: 0,
         absoluteErrorRecommended: 0,
         absoluteErrorRegression: 0,
@@ -117,7 +147,7 @@ export const useRateOfOperationsMetrics = () => {
       filteredData.map((item: MockDataItem) => item.PROCESS_ORDER_NUMBER)
     ).size;
 
-    // Calculate average AIML_RO_ABSOLUTE_ERROR (excluding null values)
+    // Calculate average AIML_RO_ABSOLUTE_ERROR (AI ML RO - MAE)
     const aimlErrors = filteredData
       .filter(
         (item: MockDataItem) =>
@@ -126,29 +156,14 @@ export const useRateOfOperationsMetrics = () => {
       )
       .map((item: MockDataItem) => parseFloat(item.AIML_RO_ABSOLUTE_ERROR!))
       .filter((val: number) => !isNaN(val));
-    const absoluteErrorAIML =
+    const aimlRoMAE =
       aimlErrors.length > 0
         ? aimlErrors.reduce((sum: number, val: number) => sum + val, 0) /
           aimlErrors.length
         : 0;
 
-    // Calculate average RECOMMENDED_RO_ABSOLUTE_ERROR
-    const recommendedErrors = filteredData
-      .filter(
-        (item: MockDataItem) =>
-          item.RECOMMENDED_RO_ABSOLUTE_ERROR !== null &&
-          item.RECOMMENDED_RO_ABSOLUTE_ERROR !== undefined
-      )
-      .map((item: MockDataItem) => parseFloat(item.RECOMMENDED_RO_ABSOLUTE_ERROR!))
-      .filter((val: number) => !isNaN(val));
-    const absoluteErrorRecommended =
-      recommendedErrors.length > 0
-        ? recommendedErrors.reduce((sum: number, val: number) => sum + val, 0) /
-          recommendedErrors.length
-        : 0;
-
-    // Calculate average NEW_RO_ABSOLUTE_ERROR
-    const regressionErrors = filteredData
+    // Calculate average NEW_RO_ABSOLUTE_ERROR (PLANNED RO - MAE)
+    const plannedErrors = filteredData
       .filter(
         (item: MockDataItem) =>
           item.NEW_RO_ABSOLUTE_ERROR !== null &&
@@ -156,17 +171,20 @@ export const useRateOfOperationsMetrics = () => {
       )
       .map((item: MockDataItem) => parseFloat(item.NEW_RO_ABSOLUTE_ERROR!))
       .filter((val: number) => !isNaN(val));
-    const absoluteErrorRegression =
-      regressionErrors.length > 0
-        ? regressionErrors.reduce((sum: number, val: number) => sum + val, 0) /
-          regressionErrors.length
+    const plannedRoMAE =
+      plannedErrors.length > 0
+        ? plannedErrors.reduce((sum: number, val: number) => sum + val, 0) /
+          plannedErrors.length
         : 0;
 
     return {
       numberOfPO,
-      absoluteErrorAIML: Number(absoluteErrorAIML.toFixed(4)),
-      absoluteErrorRecommended: Number(absoluteErrorRecommended.toFixed(4)),
-      absoluteErrorRegression: Number(absoluteErrorRegression.toFixed(4)),
+      aimlRoMAE: Number(aimlRoMAE.toFixed(4)),
+      plannedRoMAE: Number(plannedRoMAE.toFixed(4)),
+      // Legacy fields for backwards compatibility
+      absoluteErrorAIML: Number(aimlRoMAE.toFixed(4)),
+      absoluteErrorRecommended: 0, // No longer used
+      absoluteErrorRegression: Number(plannedRoMAE.toFixed(4)),
     };
   }, [selectedMonth, typedMockData]);
 
@@ -209,7 +227,7 @@ export const useRateOfOperationsMetrics = () => {
           group.data.map((item: MockDataItem) => item.PROCESS_ORDER_NUMBER)
         ).size;
 
-        // Calculate AIML_RO_ABSOLUTE_ERROR
+        // Calculate AIML_RO_ABSOLUTE_ERROR (AI ML RO - MAE)
         const aimlErrors = group.data
           .filter(
             (item: MockDataItem) =>
@@ -218,31 +236,14 @@ export const useRateOfOperationsMetrics = () => {
           )
           .map((item: MockDataItem) => parseFloat(item.AIML_RO_ABSOLUTE_ERROR!))
           .filter((val: number) => !isNaN(val));
-        const absoluteErrorAIML =
+        const aimlRoMAE =
           aimlErrors.length > 0
             ? aimlErrors.reduce((sum: number, val: number) => sum + val, 0) /
               aimlErrors.length
             : 0;
 
-        // Calculate RECOMMENDED_RO_ABSOLUTE_ERROR
-        const recommendedErrors = group.data
-          .filter(
-            (item: MockDataItem) =>
-              item.RECOMMENDED_RO_ABSOLUTE_ERROR !== null &&
-              item.RECOMMENDED_RO_ABSOLUTE_ERROR !== undefined
-          )
-          .map((item: MockDataItem) =>
-            parseFloat(item.RECOMMENDED_RO_ABSOLUTE_ERROR!)
-          )
-          .filter((val: number) => !isNaN(val));
-        const absoluteErrorRecommended =
-          recommendedErrors.length > 0
-            ? recommendedErrors.reduce((sum: number, val: number) => sum + val, 0) /
-              recommendedErrors.length
-            : 0;
-
-        // Calculate NEW_RO_ABSOLUTE_ERROR
-        const regressionErrors = group.data
+        // Calculate NEW_RO_ABSOLUTE_ERROR (PLANNED RO - MAE)
+        const plannedErrors = group.data
           .filter(
             (item: MockDataItem) =>
               item.NEW_RO_ABSOLUTE_ERROR !== null &&
@@ -250,19 +251,22 @@ export const useRateOfOperationsMetrics = () => {
           )
           .map((item: MockDataItem) => parseFloat(item.NEW_RO_ABSOLUTE_ERROR!))
           .filter((val: number) => !isNaN(val));
-        const absoluteErrorRegression =
-          regressionErrors.length > 0
-            ? regressionErrors.reduce((sum: number, val: number) => sum + val, 0) /
-              regressionErrors.length
+        const plannedRoMAE =
+          plannedErrors.length > 0
+            ? plannedErrors.reduce((sum: number, val: number) => sum + val, 0) /
+              plannedErrors.length
             : 0;
 
         return {
           month: group.month,
           year: group.year,
           numberOfPO,
-          absoluteErrorAIML: Number(absoluteErrorAIML.toFixed(4)),
-          absoluteErrorRecommended: Number(absoluteErrorRecommended.toFixed(4)),
-          absoluteErrorRegression: Number(absoluteErrorRegression.toFixed(4)),
+          aimlRoMAE: Number(aimlRoMAE.toFixed(4)),
+          plannedRoMAE: Number(plannedRoMAE.toFixed(4)),
+          // Legacy fields for backwards compatibility
+          absoluteErrorAIML: Number(aimlRoMAE.toFixed(4)),
+          absoluteErrorRecommended: 0,
+          absoluteErrorRegression: Number(plannedRoMAE.toFixed(4)),
         };
       })
       .sort((a, b) => {
@@ -273,6 +277,257 @@ export const useRateOfOperationsMetrics = () => {
         );
       });
   }, [typedMockData]);
+
+  // Calculate platform metrics for selected month
+  const platformMetrics = useMemo((): PlatformMetric[] => {
+    if (!selectedMonth) return [];
+
+    const [year, month] = selectedMonth.split("-");
+    const filteredData = typedMockData.filter((item: MockDataItem) => {
+      if (!item.ACTUAL_START_DATE) return false;
+      const date = new Date(item.ACTUAL_START_DATE);
+      return (
+        date.getFullYear() === parseInt(year) &&
+        date.getMonth() + 1 === parseInt(month)
+      );
+    });
+
+    const platformMap = new Map<
+      string,
+      { aimlErrors: number[]; plannedErrors: number[]; count: number }
+    >();
+
+    filteredData.forEach((item) => {
+      const platform = item.PLATFORM || "Unknown";
+      if (!platformMap.has(platform)) {
+        platformMap.set(platform, { aimlErrors: [], plannedErrors: [], count: 0 });
+      }
+
+      const data = platformMap.get(platform)!;
+      data.count++;
+
+      if (item.AIML_RO_ABSOLUTE_ERROR) {
+        const val = parseFloat(item.AIML_RO_ABSOLUTE_ERROR);
+        if (!isNaN(val)) data.aimlErrors.push(val);
+      }
+
+      if (item.NEW_RO_ABSOLUTE_ERROR) {
+        const val = parseFloat(item.NEW_RO_ABSOLUTE_ERROR);
+        if (!isNaN(val)) data.plannedErrors.push(val);
+      }
+    });
+
+    return Array.from(platformMap.entries())
+      .map(([platform, data]) => ({
+        platform,
+        aimlRoMAE:
+          data.aimlErrors.length > 0
+            ? data.aimlErrors.reduce((sum, val) => sum + val, 0) /
+              data.aimlErrors.length
+            : 0,
+        plannedRoMAE:
+          data.plannedErrors.length > 0
+            ? data.plannedErrors.reduce((sum, val) => sum + val, 0) /
+              data.plannedErrors.length
+            : 0,
+        count: data.count,
+      }))
+      .sort((a, b) => b.count - a.count);
+  }, [selectedMonth, typedMockData]);
+
+  // Calculate machine metrics for selected month
+  const machineMetrics = useMemo((): MachineMetric[] => {
+    if (!selectedMonth) return [];
+
+    const [year, month] = selectedMonth.split("-");
+    const filteredData = typedMockData.filter((item: MockDataItem) => {
+      if (!item.ACTUAL_START_DATE) return false;
+      const date = new Date(item.ACTUAL_START_DATE);
+      return (
+        date.getFullYear() === parseInt(year) &&
+        date.getMonth() + 1 === parseInt(month)
+      );
+    });
+
+    const machineMap = new Map<
+      string,
+      { aimlErrors: number[]; plannedErrors: number[]; count: number }
+    >();
+
+    filteredData.forEach((item) => {
+      const machine = item.MACHINE || "Unknown";
+      if (!machineMap.has(machine)) {
+        machineMap.set(machine, { aimlErrors: [], plannedErrors: [], count: 0 });
+      }
+
+      const data = machineMap.get(machine)!;
+      data.count++;
+
+      if (item.AIML_RO_ABSOLUTE_ERROR) {
+        const val = parseFloat(item.AIML_RO_ABSOLUTE_ERROR);
+        if (!isNaN(val)) data.aimlErrors.push(val);
+      }
+
+      if (item.NEW_RO_ABSOLUTE_ERROR) {
+        const val = parseFloat(item.NEW_RO_ABSOLUTE_ERROR);
+        if (!isNaN(val)) data.plannedErrors.push(val);
+      }
+    });
+
+    return Array.from(machineMap.entries())
+      .map(([machine, data]) => ({
+        machine,
+        aimlRoMAE:
+          data.aimlErrors.length > 0
+            ? data.aimlErrors.reduce((sum, val) => sum + val, 0) /
+              data.aimlErrors.length
+            : 0,
+        plannedRoMAE:
+          data.plannedErrors.length > 0
+            ? data.plannedErrors.reduce((sum, val) => sum + val, 0) /
+              data.plannedErrors.length
+            : 0,
+        count: data.count,
+      }))
+      .sort((a, b) => b.count - a.count);
+  }, [selectedMonth, typedMockData]);
+
+  // Calculate top recipes with highest errors for selected month
+  const topRecipesAIML = useMemo((): RecipeError[] => {
+    if (!selectedMonth) return [];
+
+    const [year, month] = selectedMonth.split("-");
+    const filteredData = typedMockData.filter((item: MockDataItem) => {
+      if (!item.ACTUAL_START_DATE) return false;
+      const date = new Date(item.ACTUAL_START_DATE);
+      return (
+        date.getFullYear() === parseInt(year) &&
+        date.getMonth() + 1 === parseInt(month)
+      );
+    });
+
+    const recipeMap = new Map<
+      string,
+      {
+        productDesc: string;
+        aimlErrors: number[];
+        plannedErrors: number[];
+        processOrders: Set<string>;
+      }
+    >();
+
+    filteredData.forEach((item) => {
+      const recipe = item.RECIPE_NUMBER || "Unknown";
+      if (!recipeMap.has(recipe)) {
+        recipeMap.set(recipe, {
+          productDesc: item.PROD_DESC || "Unknown",
+          aimlErrors: [],
+          plannedErrors: [],
+          processOrders: new Set(),
+        });
+      }
+
+      const data = recipeMap.get(recipe)!;
+      data.processOrders.add(item.PROCESS_ORDER_NUMBER);
+
+      if (item.AIML_RO_ABSOLUTE_ERROR) {
+        const val = parseFloat(item.AIML_RO_ABSOLUTE_ERROR);
+        if (!isNaN(val)) data.aimlErrors.push(val);
+      }
+
+      if (item.NEW_RO_ABSOLUTE_ERROR) {
+        const val = parseFloat(item.NEW_RO_ABSOLUTE_ERROR);
+        if (!isNaN(val)) data.plannedErrors.push(val);
+      }
+    });
+
+    return Array.from(recipeMap.entries())
+      .map(([recipeNumber, data]) => ({
+        recipeNumber,
+        productDesc: data.productDesc,
+        aimlRoMAE:
+          data.aimlErrors.length > 0
+            ? data.aimlErrors.reduce((sum, val) => sum + val, 0) /
+              data.aimlErrors.length
+            : 0,
+        plannedRoMAE:
+          data.plannedErrors.length > 0
+            ? data.plannedErrors.reduce((sum, val) => sum + val, 0) /
+              data.plannedErrors.length
+            : 0,
+        processOrderCount: data.processOrders.size,
+      }))
+      .sort((a, b) => b.aimlRoMAE - a.aimlRoMAE)
+      .slice(0, 10);
+  }, [selectedMonth, typedMockData]);
+
+  const topRecipesPlanned = useMemo((): RecipeError[] => {
+    if (!selectedMonth) return [];
+
+    const [year, month] = selectedMonth.split("-");
+    const filteredData = typedMockData.filter((item: MockDataItem) => {
+      if (!item.ACTUAL_START_DATE) return false;
+      const date = new Date(item.ACTUAL_START_DATE);
+      return (
+        date.getFullYear() === parseInt(year) &&
+        date.getMonth() + 1 === parseInt(month)
+      );
+    });
+
+    const recipeMap = new Map<
+      string,
+      {
+        productDesc: string;
+        aimlErrors: number[];
+        plannedErrors: number[];
+        processOrders: Set<string>;
+      }
+    >();
+
+    filteredData.forEach((item) => {
+      const recipe = item.RECIPE_NUMBER || "Unknown";
+      if (!recipeMap.has(recipe)) {
+        recipeMap.set(recipe, {
+          productDesc: item.PROD_DESC || "Unknown",
+          aimlErrors: [],
+          plannedErrors: [],
+          processOrders: new Set(),
+        });
+      }
+
+      const data = recipeMap.get(recipe)!;
+      data.processOrders.add(item.PROCESS_ORDER_NUMBER);
+
+      if (item.AIML_RO_ABSOLUTE_ERROR) {
+        const val = parseFloat(item.AIML_RO_ABSOLUTE_ERROR);
+        if (!isNaN(val)) data.aimlErrors.push(val);
+      }
+
+      if (item.NEW_RO_ABSOLUTE_ERROR) {
+        const val = parseFloat(item.NEW_RO_ABSOLUTE_ERROR);
+        if (!isNaN(val)) data.plannedErrors.push(val);
+      }
+    });
+
+    return Array.from(recipeMap.entries())
+      .map(([recipeNumber, data]) => ({
+        recipeNumber,
+        productDesc: data.productDesc,
+        aimlRoMAE:
+          data.aimlErrors.length > 0
+            ? data.aimlErrors.reduce((sum, val) => sum + val, 0) /
+              data.aimlErrors.length
+            : 0,
+        plannedRoMAE:
+          data.plannedErrors.length > 0
+            ? data.plannedErrors.reduce((sum, val) => sum + val, 0) /
+              data.plannedErrors.length
+            : 0,
+        processOrderCount: data.processOrders.size,
+      }))
+      .sort((a, b) => b.plannedRoMAE - a.plannedRoMAE)
+      .slice(0, 10);
+  }, [selectedMonth, typedMockData]);
 
   const handleViewModeChange = useCallback((mode: ViewMode) => {
     setViewMode(mode);
@@ -288,7 +543,12 @@ export const useRateOfOperationsMetrics = () => {
     availableMonthsYears,
     monthMetrics,
     monthlyTrends,
+    platformMetrics,
+    machineMetrics,
+    topRecipesAIML,
+    topRecipesPlanned,
     loading,
+    typedMockData,
     handleViewModeChange,
     handleMonthChange,
   };

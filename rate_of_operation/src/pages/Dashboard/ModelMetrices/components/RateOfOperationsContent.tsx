@@ -4,6 +4,7 @@ import { useRateOfOperationsMetrics } from "../hooks/useRateOfOperationsMetrics"
 import ViewSelector from "./ViewSelector";
 import MetricCards from "./MetricCards";
 import TrendsChart from "./TrendsChart";
+import MonthlyViewCharts from "./MonthlyViewCharts";
 
 const RateOfOperationsContent: React.FC = () => {
   const {
@@ -12,6 +13,7 @@ const RateOfOperationsContent: React.FC = () => {
     availableMonthsYears,
     monthMetrics,
     monthlyTrends,
+    typedMockData,
     loading,
     handleViewModeChange,
     handleMonthChange,
@@ -54,11 +56,16 @@ const RateOfOperationsContent: React.FC = () => {
       />
 
       {viewMode === "month" ? (
-        <MetricCards
-          metrics={monthMetrics}
-          selectedMonth={selectedMonth}
-          loading={loading}
-        />
+        <Box>
+          <MetricCards
+            metrics={monthMetrics}
+            selectedMonth={selectedMonth}
+            loading={loading}
+          />
+          <Box sx={{ mt: 3 }}>
+            <MonthlyViewCharts data={typedMockData} selectedMonth={selectedMonth} />
+          </Box>
+        </Box>
       ) : (
         <TrendsChart trends={monthlyTrends} loading={loading} />
       )}
