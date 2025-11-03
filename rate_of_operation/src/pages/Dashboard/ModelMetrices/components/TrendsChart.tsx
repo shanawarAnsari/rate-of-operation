@@ -207,27 +207,12 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
                   >
                     Process Orders
                   </Typography>
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                    <Typography
-                      variant="h4"
-                      sx={{ fontWeight: 700, color: "primary.main" }}
-                    >
-                      {getCurrentValue(poData)}
-                    </Typography>
-                    <Chip
-                      icon={getTrendIcon(getTrendDirection(poData))}
-                      label={`${getPercentageChange(
-                        getCurrentValue(poData),
-                        getPreviousValue(poData)
-                      ).toFixed(1)}%`}
-                      size="small"
-                      sx={{
-                        bgcolor: getTrendColor(getTrendDirection(poData)),
-                        color: "white",
-                        fontWeight: 600,
-                      }}
-                    />
-                  </Box>
+                  <Typography
+                    variant="h4"
+                    sx={{ fontWeight: 700, color: "primary.main" }}
+                  >
+                    {getCurrentValue(poData)}
+                  </Typography>
                 </Box>
               </Box>
               <Box sx={{ height: 120, mt: 2 }}>
@@ -277,27 +262,12 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
                   >
                     AI ML RO - MAE
                   </Typography>
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                    <Typography
-                      variant="h4"
-                      sx={{ fontWeight: 700, color: "#10b981" }}
-                    >
-                      {getCurrentValue(aimlRoData).toFixed(2)}
-                    </Typography>
-                    <Chip
-                      icon={getTrendIcon(getTrendDirection(aimlRoData))}
-                      label={`${getPercentageChange(
-                        getCurrentValue(aimlRoData),
-                        getPreviousValue(aimlRoData)
-                      ).toFixed(1)}%`}
-                      size="small"
-                      sx={{
-                        bgcolor: getTrendColor(getTrendDirection(aimlRoData)),
-                        color: "white",
-                        fontWeight: 600,
-                      }}
-                    />
-                  </Box>
+                  <Typography
+                    variant="h4"
+                    sx={{ fontWeight: 700, color: "#10b981" }}
+                  >
+                    {getCurrentValue(aimlRoData).toFixed(2)}
+                  </Typography>
                 </Box>
               </Box>
               <Box sx={{ height: 120, mt: 2 }}>
@@ -347,27 +317,12 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
                   >
                     PLANNED RO - MAE
                   </Typography>
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                    <Typography
-                      variant="h4"
-                      sx={{ fontWeight: 700, color: "#f59e0b" }}
-                    >
-                      {getCurrentValue(plannedRoData).toFixed(2)}
-                    </Typography>
-                    <Chip
-                      icon={getTrendIcon(getTrendDirection(plannedRoData))}
-                      label={`${getPercentageChange(
-                        getCurrentValue(plannedRoData),
-                        getPreviousValue(plannedRoData)
-                      ).toFixed(1)}%`}
-                      size="small"
-                      sx={{
-                        bgcolor: getTrendColor(getTrendDirection(plannedRoData)),
-                        color: "white",
-                        fontWeight: 600,
-                      }}
-                    />
-                  </Box>
+                  <Typography
+                    variant="h4"
+                    sx={{ fontWeight: 700, color: "#f59e0b" }}
+                  >
+                    {getCurrentValue(plannedRoData).toFixed(2)}
+                  </Typography>
                 </Box>
               </Box>
               <Box sx={{ height: 120, mt: 2 }}>
