@@ -1,21 +1,13 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Box,
-  Grid,
-  Chip,
-  useTheme,
-} from "@mui/material";
+import { Card, Typography, Box, Grid, Chip, useTheme } from "@mui/material";
 import { alpha } from "@mui/material/styles";
 import {
   TrendingUp as TrendingUpIcon,
   TrendingDown as TrendingDownIcon,
   TrendingFlat as TrendingFlatIcon,
   Assignment as AssignmentIcon,
-  Analytics as AnalyticsIcon,
-  Psychology as PsychologyIcon,
+  Newspaper,
+  AutoAwesome,
 } from "@mui/icons-material";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
@@ -92,42 +84,57 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
   const getSparklineOptions = (color: string, title: string): ApexOptions => ({
     chart: {
       type: "area",
-      height: 120,
+      height: 90,
       sparkline: {
         enabled: true,
       },
       animations: {
         enabled: true,
-        speed: 800,
+        speed: 1000,
         animateGradually: {
           enabled: true,
-          delay: 150,
+          delay: 200,
         },
         dynamicAnimation: {
           enabled: true,
-          speed: 350,
+          speed: 400,
         },
       },
     },
     stroke: {
       curve: "smooth",
       width: 3,
+      lineCap: "round",
     },
     fill: {
       type: "gradient",
       gradient: {
-        shadeIntensity: 1,
-        opacityFrom: 0.7,
-        opacityTo: 0.1,
-        stops: [0, 90, 100],
+        shade: theme.palette.mode === "dark" ? "dark" : "light",
+        type: "vertical",
+        shadeIntensity: 0.5,
+        gradientToColors: [
+          theme.palette.mode === "dark" ? alpha(color, 0.1) : alpha(color, 0.05),
+        ],
+        opacityFrom: 0.85,
+        opacityTo: 0.15,
+        stops: [0, 85, 100],
       },
     },
     colors: [color],
+    markers: {
+      size: 0,
+      strokeWidth: 0,
+      hover: {
+        size: 5,
+        sizeOffset: 3,
+      },
+    },
     tooltip: {
       enabled: true,
       theme: theme.palette.mode,
       style: {
-        fontSize: "12px",
+        fontSize: "13px",
+        fontFamily: theme.typography.fontFamily,
       },
       x: {
         show: true,
@@ -138,10 +145,20 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
         title: {
           formatter: () => `${title}: `,
         },
+        formatter: (val: number) => val.toFixed(2),
+      },
+      marker: {
+        show: true,
       },
     },
     grid: {
       show: false,
+      padding: {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+      },
     },
     xaxis: {
       categories: categories,
@@ -152,6 +169,9 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
         show: false,
       },
       axisTicks: {
+        show: false,
+      },
+      crosshairs: {
         show: false,
       },
     },
@@ -176,7 +196,7 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
         <Grid item xs={12} md={4}>
           <Card
             sx={{
-              height: "100%",
+              height: 130,
               borderRadius: 3,
               boxShadow: theme.shadows[4],
               transition: "all 0.3s ease",
@@ -186,44 +206,148 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
               },
             }}
           >
-            <CardContent sx={{ p: 3 }}>
-              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+            <Box sx={{ px: 2, py: 2.5, height: "100%" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                  height: "100%",
+                }}
+              >
                 <Box
                   sx={{
-                    p: 1.5,
-                    borderRadius: 2,
-                    bgcolor: "primary.light",
-                    color: "primary.contrastText",
-                    mr: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1.5,
+                    flex: "0 0 50%",
                   }}
                 >
-                  <AssignmentIcon sx={{ fontSize: 24 }} />
+                  <Box
+                    sx={{
+                      p: 1,
+                      borderRadius: 2,
+                      bgcolor: "primary.light",
+                      color: "primary.contrastText",
+                      width: 40,
+                      height: 40,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <AssignmentIcon sx={{ fontSize: 22 }} />
+                  </Box>
+                  <Box sx={{ flex: 1, minWidth: 0 }}>
+                    <Typography
+                      variant="subtitle2"
+                      color="text.secondary"
+                      sx={{ fontSize: "0.75rem", mb: 0.5 }}
+                    >
+                      Process Orders
+                    </Typography>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 700,
+                        color: "primary.main",
+                        fontSize: "1.5rem",
+                      }}
+                    >
+                      {getCurrentValue(poData)}
+                    </Typography>
+                  </Box>
                 </Box>
-                <Box sx={{ flex: 1 }}>
-                  <Typography
-                    variant="subtitle2"
-                    color="text.secondary"
-                    sx={{ fontSize: "0.85rem" }}
-                  >
-                    Process Orders
-                  </Typography>
-                  <Typography
-                    variant="h4"
-                    sx={{ fontWeight: 700, color: "primary.main" }}
-                  >
-                    {getCurrentValue(poData)}
-                  </Typography>
+                <Box sx={{ flex: "0 0 50%", height: 90, minWidth: 0, p: 1 }}>
+                  <Chart
+                    options={getSparklineOptions("#3b82f6", "Process Orders")}
+                    series={[{ name: "Process Orders", data: poData }]}
+                    type="area"
+                    height={90}
+                  />
                 </Box>
               </Box>
-              <Box sx={{ height: 120, mt: 2 }}>
-                <Chart
-                  options={getSparklineOptions("#3b82f6", "Process Orders")}
-                  series={[{ name: "Process Orders", data: poData }]}
-                  type="area"
-                  height={120}
-                />
+            </Box>
+          </Card>
+        </Grid>
+        {/* PLANNED RO - MAE Spark Card */}
+        <Grid item xs={12} md={4}>
+          <Card
+            sx={{
+              height: 130,
+              borderRadius: 3,
+              boxShadow: theme.shadows[4],
+              transition: "all 0.3s ease",
+              "&:hover": {
+                transform: "translateY(-4px)",
+                boxShadow: theme.shadows[8],
+              },
+            }}
+          >
+            <Box sx={{ px: 2, py: 2.5, height: "100%" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                  height: "100%",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1.5,
+                    flex: "0 0 50%",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      p: 1,
+                      borderRadius: 2,
+                      bgcolor: "warning.light",
+                      color: "warning.contrastText",
+                      width: 40,
+                      height: 40,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Newspaper sx={{ fontSize: 22 }} />
+                  </Box>
+                  <Box sx={{ flex: 1, minWidth: 0 }}>
+                    <Typography
+                      variant="subtitle2"
+                      color="text.secondary"
+                      sx={{ fontSize: "0.75rem", mb: 0.5 }}
+                    >
+                      PLANNED RO - MAE
+                    </Typography>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 700,
+                        color: "warning.main",
+                        fontSize: "1.5rem",
+                      }}
+                    >
+                      {getCurrentValue(plannedRoData).toFixed(2)} su/h
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box sx={{ flex: "0 0 50%", height: 90, minWidth: 0, p: 1 }}>
+                  <Chart
+                    options={getSparklineOptions("#f59e0b", "PLANNED RO - MAE")}
+                    series={[{ name: "PLANNED RO - MAE", data: plannedRoData }]}
+                    type="area"
+                    height={90}
+                  />
+                </Box>
               </Box>
-            </CardContent>
+            </Box>
           </Card>
         </Grid>
 
@@ -231,7 +355,7 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
         <Grid item xs={12} md={4}>
           <Card
             sx={{
-              height: "100%",
+              height: 130,
               borderRadius: 3,
               boxShadow: theme.shadows[4],
               transition: "all 0.3s ease",
@@ -241,99 +365,69 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
               },
             }}
           >
-            <CardContent sx={{ p: 3 }}>
-              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+            <Box sx={{ px: 2, py: 2.5, height: "100%" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                  height: "100%",
+                }}
+              >
                 <Box
                   sx={{
-                    p: 1.5,
-                    borderRadius: 2,
-                    bgcolor: alpha("#10b981", 0.15),
-                    color: "#10b981",
-                    mr: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1.5,
+                    flex: "0 0 50%",
                   }}
                 >
-                  <PsychologyIcon sx={{ fontSize: 24 }} />
+                  <Box
+                    sx={{
+                      p: 1,
+                      borderRadius: 2,
+                      bgcolor: "#10b981",
+                      color: "info.contrastText",
+                      width: 40,
+                      height: 40,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <AutoAwesome sx={{ fontSize: 22 }} />
+                  </Box>
+                  <Box sx={{ flex: 1, minWidth: 0 }}>
+                    <Typography
+                      variant="subtitle2"
+                      color="text.secondary"
+                      sx={{ fontSize: "0.75rem", mb: 0.5 }}
+                    >
+                      AI ML RO - MAE
+                    </Typography>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 700,
+                        color: "#10b981",
+                        fontSize: "1.5rem",
+                      }}
+                    >
+                      {getCurrentValue(aimlRoData).toFixed(2)} su/h
+                    </Typography>
+                  </Box>
                 </Box>
-                <Box sx={{ flex: 1 }}>
-                  <Typography
-                    variant="subtitle2"
-                    color="text.secondary"
-                    sx={{ fontSize: "0.85rem" }}
-                  >
-                    AI ML RO - MAE
-                  </Typography>
-                  <Typography
-                    variant="h4"
-                    sx={{ fontWeight: 700, color: "#10b981" }}
-                  >
-                    {getCurrentValue(aimlRoData).toFixed(2)}
-                  </Typography>
-                </Box>
-              </Box>
-              <Box sx={{ height: 120, mt: 2 }}>
-                <Chart
-                  options={getSparklineOptions("#10b981", "AI ML RO - MAE")}
-                  series={[{ name: "AI ML RO - MAE", data: aimlRoData }]}
-                  type="area"
-                  height={120}
-                />
-              </Box>
-            </CardContent>
-          </Card>
-        </Grid>
-
-        {/* PLANNED RO - MAE Spark Card */}
-        <Grid item xs={12} md={4}>
-          <Card
-            sx={{
-              height: "100%",
-              borderRadius: 3,
-              boxShadow: theme.shadows[4],
-              transition: "all 0.3s ease",
-              "&:hover": {
-                transform: "translateY(-4px)",
-                boxShadow: theme.shadows[8],
-              },
-            }}
-          >
-            <CardContent sx={{ p: 3 }}>
-              <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                <Box
-                  sx={{
-                    p: 1.5,
-                    borderRadius: 2,
-                    bgcolor: alpha("#f59e0b", 0.15),
-                    color: "#f59e0b",
-                    mr: 2,
-                  }}
-                >
-                  <AnalyticsIcon sx={{ fontSize: 24 }} />
-                </Box>
-                <Box sx={{ flex: 1 }}>
-                  <Typography
-                    variant="subtitle2"
-                    color="text.secondary"
-                    sx={{ fontSize: "0.85rem" }}
-                  >
-                    PLANNED RO - MAE
-                  </Typography>
-                  <Typography
-                    variant="h4"
-                    sx={{ fontWeight: 700, color: "#f59e0b" }}
-                  >
-                    {getCurrentValue(plannedRoData).toFixed(2)}
-                  </Typography>
+                <Box sx={{ flex: "0 0 50%", height: 90, minWidth: 0, p: 1, mt: -1 }}>
+                  <Chart
+                    options={getSparklineOptions("#10b981", "AI ML RO - MAE")}
+                    series={[{ name: "AI ML RO - MAE", data: aimlRoData }]}
+                    type="area"
+                    height={90}
+                  />
                 </Box>
               </Box>
-              <Box sx={{ height: 120, mt: 2 }}>
-                <Chart
-                  options={getSparklineOptions("#f59e0b", "PLANNED RO - MAE")}
-                  series={[{ name: "PLANNED RO - MAE", data: plannedRoData }]}
-                  type="area"
-                  height={120}
-                />
-              </Box>
-            </CardContent>
+            </Box>
           </Card>
         </Grid>
       </Grid>

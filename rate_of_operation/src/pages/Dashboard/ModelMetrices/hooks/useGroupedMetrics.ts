@@ -14,6 +14,7 @@ interface UseGroupedMetricsProps {
   data: MockDataItem[];
   groupBy: GroupByLevel;
   selectedMonth?: string;
+  selectedGroups?: string[];
 }
 
 const getGroupKey = (item: MockDataItem, groupBy: GroupByLevel): string => {
@@ -28,10 +29,10 @@ const getGroupKey = (item: MockDataItem, groupBy: GroupByLevel): string => {
       return item.PACKER_RESOURCE || "Unknown";
     case "PLATFORM_NAME":
       return item.PLATFORM || "Unknown";
-    case "RECIPE_NUMBER":
-      return item.RECIPE_NUMBER || "Unknown";
-    case "PROCESS_ORDER_NUMBER":
-      return item.PROCESS_ORDER_NUMBER || "Unknown";
+    case "BUSINESS_UNIT":
+      return item.BUSINESS_UNIT || "Unknown";
+    case "CATEGORY":
+      return item.CATEGORY || "Unknown";
     default:
       return "Unknown";
   }
@@ -41,6 +42,7 @@ export const useGroupedMetrics = ({
   data,
   groupBy,
   selectedMonth,
+  selectedGroups,
 }: UseGroupedMetricsProps) => {
   const groupedMetrics = useMemo((): GroupedMetric[] => {
     if (!data || data.length === 0) return [];
@@ -120,6 +122,18 @@ export const useGroupedMetrics = ({
       processOrderCount: groupData.processOrders.size,
     }));
 
+    // If selectedGroups is provided, filter to only show those groups
+    if (selectedGroups && selectedGroups.length > 0) {
+      return metrics
+        .filter((m) => selectedGroups.includes(m.groupName))
+        .sort((a, b) => {
+          return a.groupName.localeCompare(b.groupName, undefined, {
+            numeric: true,
+            sensitivity: "base",
+          });
+        });
+    }
+
     // If more than 10 groups, show only top 10 with highest combined error values
     if (metrics.length > 10) {
       return metrics
@@ -146,6 +160,39 @@ export const useGroupedMetrics = ({
         sensitivity: "base",
       });
     });
+  }, [data, groupBy, selectedMonth, selectedGroups]);
+
+  const allAvailableGroups = useMemo((): string[] => {
+    if (!data || data.length === 0) return [];
+
+    // Filter by selected month if provided
+    let filteredData = data;
+    if (selectedMonth) {
+      const [year, month] = selectedMonth.split("-");
+      filteredData = data.filter((item: MockDataItem) => {
+        if (!item.ACTUAL_START_DATE) return false;
+        const itemDate = new Date(item.ACTUAL_START_DATE);
+        return (
+          itemDate.getFullYear() === parseInt(year) &&
+          itemDate.getMonth() + 1 === parseInt(month)
+        );
+      });
+    }
+
+    // Get all unique groups
+    const uniqueGroups = new Set<string>();
+    filteredData.forEach((item) => {
+      const groupKey = getGroupKey(item, groupBy);
+      uniqueGroups.add(groupKey);
+    });
+
+    // Return sorted alphabetically
+    return Array.from(uniqueGroups).sort((a, b) =>
+      a.localeCompare(b, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      })
+    );
   }, [data, groupBy, selectedMonth]);
 
   const totalGroupsCount = useMemo((): number => {
@@ -178,6 +225,7 @@ export const useGroupedMetrics = ({
   return {
     groupedMetrics,
     totalGroupsCount,
+    allAvailableGroups,
     isShowingTopTen: totalGroupsCount > 10,
   };
 };

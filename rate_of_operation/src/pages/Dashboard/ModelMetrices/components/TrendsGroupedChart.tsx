@@ -7,8 +7,26 @@ import {
   Grid,
   useTheme,
   Chip,
+  Popover,
+  Button,
+  TextField,
+  InputAdornment,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Badge,
+  IconButton,
+  Divider,
+  Paper,
 } from "@mui/material";
-import { ShowChart as ShowChartIcon } from "@mui/icons-material";
+import {
+  ShowChart as ShowChartIcon,
+  ManageSearch as FilterListIcon,
+  Search as SearchIcon,
+  Close as CloseIcon,
+  Check as CheckIcon,
+} from "@mui/icons-material";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { MockDataItem } from "../hooks/useRateOfOperationsMetrics";
@@ -22,16 +40,64 @@ interface TrendsGroupedChartProps {
 const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
   const theme = useTheme();
   const [groupBy, setGroupBy] = useState<GroupByLevel>("INTERFACE");
+  const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
+  const [tempSelectedGroups, setTempSelectedGroups] = useState<string[]>([]);
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const { groupedTrendsMetrics, totalGroupsCount, isShowingTopTen } =
-    useTrendsGroupedMetrics({
-      data,
-      groupBy,
-    });
+  const {
+    groupedTrendsMetrics,
+    totalGroupsCount,
+    allAvailableGroups,
+    isShowingTopTwo,
+  } = useTrendsGroupedMetrics({
+    data,
+    groupBy,
+    selectedGroups: selectedGroups.length > 0 ? selectedGroups : undefined,
+  });
 
   const handleGroupByChange = (newGroupBy: GroupByLevel) => {
     setGroupBy(newGroupBy);
+    setSelectedGroups([]); // Reset selection when groupBy changes
+    setTempSelectedGroups([]); // Reset temp selection
   };
+
+  const handleFilterClick = (event: React.MouseEvent<HTMLElement>) => {
+    setTempSelectedGroups(selectedGroups); // Initialize temp with current selection
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleFilterClose = () => {
+    setAnchorEl(null);
+    setSearchTerm("");
+    setTempSelectedGroups([]); // Clear temp selection on close
+  };
+
+  const handleToggleGroup = (group: string) => {
+    setTempSelectedGroups((prev) => {
+      if (prev.includes(group)) {
+        return prev.filter((g) => g !== group);
+      } else if (prev.length < 6) {
+        return [...prev, group];
+      }
+      return prev;
+    });
+  };
+
+  const handleClearAll = () => {
+    setTempSelectedGroups([]);
+  };
+
+  const handleApply = () => {
+    setSelectedGroups(tempSelectedGroups); // Apply temp selection to actual selection
+    handleFilterClose();
+  };
+
+  const filteredGroups = allAvailableGroups.filter((group) =>
+    group.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const open = Boolean(anchorEl);
 
   // Get label for the selected groupBy
   const getGroupByLabel = (groupBy: GroupByLevel): string => {
@@ -41,8 +107,8 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
       MACHINE: "Machine",
       PACKER_RESOURCE: "Packer Resource",
       PLATFORM_NAME: "Platform Name",
-      RECIPE_NUMBER: "Recipe Number",
-      PROCESS_ORDER_NUMBER: "Process Order Number",
+      BUSINESS_UNIT: "Business Unit",
+      CATEGORY: "Category",
     };
     return labels[groupBy];
   };
@@ -75,53 +141,69 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
     return monthNames.indexOf(monthA) - monthNames.indexOf(monthB);
   });
 
-  // Prepare combined series data
-  const combinedSeries = [
-    // AI ML RO - MAE series (dashed)
-    ...groupedTrendsMetrics.map((group) => {
-      const dataPoints = categories.map((category) => {
-        const point = group.trendData.find(
-          (p) => `${p.month.slice(0, 3)} ${p.year}` === category
-        );
-        // Return the value only if it exists and is valid, otherwise return null
-        return point && point.aimlRoMAE > 0
-          ? Number(point.aimlRoMAE.toFixed(4))
-          : null;
-      });
-
-      return {
-        name: `${group.groupName} (AI ML)`,
-        data: dataPoints,
-        type: "line" as const,
-      };
-    }),
-    // PLANNED RO - MAE series (solid)
-    ...groupedTrendsMetrics.map((group) => {
-      const dataPoints = categories.map((category) => {
-        const point = group.trendData.find(
-          (p) => `${p.month.slice(0, 3)} ${p.year}` === category
-        );
-        // Return the value only if it exists and is valid, otherwise return null
-        return point && point.plannedRoMAE > 0
-          ? Number(point.plannedRoMAE.toFixed(4))
-          : null;
-      });
-
-      return {
-        name: `${group.groupName} (PLANNED)`,
-        data: dataPoints,
-        type: "line" as const,
-      };
-    }),
+  // Color palette for groups
+  const colorPalette = [
+    "#3b82f6", // Blue
+    "#10b981", // Green
+    "#f59e0b", // Amber
+    "#ef4444", // Red
+    "#8b5cf6", // Purple
+    "#ec4899", // Pink
   ];
+
+  // Prepare combined series data with same color for each group
+  const combinedSeries = groupedTrendsMetrics.flatMap((group, index) => {
+    const color = colorPalette[index % colorPalette.length];
+
+    const aimlDataPoints = categories.map((category) => {
+      const point = group.trendData.find(
+        (p) => `${p.month.slice(0, 3)} ${p.year}` === category
+      );
+      return point && point.aimlRoMAE > 0
+        ? Number(point.aimlRoMAE.toFixed(4))
+        : null;
+    });
+
+    const plannedDataPoints = categories.map((category) => {
+      const point = group.trendData.find(
+        (p) => `${p.month.slice(0, 3)} ${p.year}` === category
+      );
+      return point && point.plannedRoMAE > 0
+        ? Number(point.plannedRoMAE.toFixed(4))
+        : null;
+    });
+
+    return [
+      {
+        name: `${group.groupName} - AI ML`,
+        data: aimlDataPoints,
+        type: "line" as const,
+        color: color,
+      },
+      {
+        name: `${group.groupName} - PLANNED`,
+        data: plannedDataPoints,
+        type: "line" as const,
+        color: color,
+      },
+    ];
+  });
 
   // Chart options for combined chart
   const combinedChartOptions: ApexOptions = {
     chart: {
       type: "line",
-      height: 500,
+      height: 400,
       toolbar: {
         show: true,
+        tools: {
+          download: true,
+          zoom: true,
+          zoomin: true,
+          zoomout: true,
+          pan: true,
+          reset: true,
+        },
       },
       animations: {
         enabled: true,
@@ -129,22 +211,23 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
       },
       zoom: {
         enabled: true,
+        type: "x",
+        autoScaleYaxis: true,
       },
     },
     stroke: {
       curve: "smooth",
       width: 3,
-      dashArray: [
-        // Dashed lines for AI ML (first half of series)
-        ...Array(groupedTrendsMetrics.length).fill(5),
-        // Solid lines for PLANNED (second half of series)
-        ...Array(groupedTrendsMetrics.length).fill(0),
-      ],
+      dashArray: combinedSeries.map(
+        (_, index) => (index % 2 === 0 ? 8 : 0) // Dashed for AI ML (even indices), solid for PLANNED (odd indices)
+      ),
     },
     markers: {
-      size: 5,
+      size: 0,
+      strokeWidth: 2,
       hover: {
-        size: 7,
+        size: 6,
+        sizeOffset: 3,
       },
     },
     xaxis: {
@@ -152,99 +235,95 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
       labels: {
         style: {
           colors: theme.palette.text.secondary,
+          fontSize: "12px",
         },
         rotate: -45,
       },
-      tickPlacement: "on",
+      axisBorder: {
+        show: true,
+        color: theme.palette.divider,
+      },
+      axisTicks: {
+        show: true,
+        color: theme.palette.divider,
+      },
     },
-    yaxis: [
-      {
-        title: {
-          text: "AI ML RO - MAE",
-          style: {
-            color: theme.palette.text.secondary,
-            fontWeight: 600,
-            fontSize: "14px",
-          },
-        },
-        labels: {
-          style: {
-            colors: theme.palette.text.secondary,
-          },
-          formatter: (val: number) => val.toFixed(2),
+    yaxis: {
+      title: {
+        text: "Mean Absolute Error (MAE) - su/h",
+        style: {
+          color: theme.palette.text.secondary,
+          fontWeight: 600,
+          fontSize: "13px",
         },
       },
-      {
-        opposite: true,
-        title: {
-          text: "PLANNED RO - MAE",
-          style: {
-            color: theme.palette.text.secondary,
-            fontWeight: 600,
-            fontSize: "14px",
-          },
+      labels: {
+        style: {
+          colors: theme.palette.text.secondary,
+          fontSize: "12px",
         },
-        labels: {
-          style: {
-            colors: theme.palette.text.secondary,
-          },
-          formatter: (val: number) => val.toFixed(2),
-        },
+        formatter: (val: number) => val?.toFixed(2) || "0",
       },
-    ],
+    },
     legend: {
-      position: "right",
+      show: true,
+      position: "top",
       horizontalAlign: "center",
+      fontSize: "12px",
+      fontWeight: 500,
       labels: {
         colors: theme.palette.text.primary,
+        useSeriesColors: false,
       },
       markers: {
-        size: 6,
-        shape: "circle",
+        size: 5,
+        strokeWidth: 0,
+        shape: "square",
+        offsetX: -3,
+      },
+      itemMargin: {
+        horizontal: 10,
+        vertical: 6,
+      },
+      onItemClick: {
+        toggleDataSeries: true,
+      },
+      onItemHover: {
+        highlightDataSeries: true,
       },
     },
     tooltip: {
       theme: theme.palette.mode,
       shared: true,
       intersect: false,
+      style: {
+        fontSize: "13px",
+        fontFamily: theme.typography.fontFamily,
+      },
       y: {
         formatter: (val: number) => {
-          // Only show values that are valid numbers
           if (val === null || val === undefined || isNaN(val)) {
-            return undefined as any; // This will hide the series from tooltip
+            return undefined as any;
           }
-          return val.toFixed(4);
+          return `${val.toFixed(4)} su/h`;
         },
       },
     },
     grid: {
       borderColor: theme.palette.divider,
       strokeDashArray: 3,
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        },
+      },
     },
-    colors: [
-      // Colors for AI ML series
-      "#3b82f6",
-      "#10b981",
-      "#f59e0b",
-      "#ef4444",
-      "#8b5cf6",
-      "#ec4899",
-      "#06b6d4",
-      "#84cc16",
-      "#f97316",
-      "#6366f1",
-      // Colors for PLANNED series (same colors, will be solid)
-      "#3b82f6",
-      "#10b981",
-      "#f59e0b",
-      "#ef4444",
-      "#8b5cf6",
-      "#ec4899",
-      "#06b6d4",
-      "#84cc16",
-      "#f97316",
-      "#6366f1",
-    ],
+    colors: combinedSeries.map((series) => series.color || "#3b82f6"),
   };
 
   return (
@@ -272,18 +351,25 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
                 >
                   Error Analysis Trends by {getGroupByLabel(groupBy)}
                 </Typography>
-                {isShowingTopTen && (
-                  <Chip
-                    label={`Top 6 of ${totalGroupsCount}`}
-                    size="small"
-                    color="warning"
-                    sx={{
-                      fontWeight: 600,
-                      fontSize: "0.75rem",
-                      height: 24,
-                    }}
-                  />
-                )}
+                <Chip
+                  label={
+                    isShowingTopTwo
+                      ? `Showing 2 of ${totalGroupsCount}`
+                      : `Showing ${selectedGroups.length} of ${totalGroupsCount}`
+                  }
+                  size="medium"
+                  color={"primary"}
+                  icon={<FilterListIcon />}
+                  onClick={handleFilterClick}
+                  sx={{
+                    backgroundColor: "primary.main",
+                    fontWeight: 600,
+                    px: 1,
+                    fontSize: "0.85rem",
+                    height: 28,
+                    cursor: "pointer",
+                  }}
+                />
                 <GroupBySelector
                   selectedGroupBy={groupBy}
                   onGroupByChange={handleGroupByChange}
@@ -291,27 +377,27 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
               </Box>
               {groupedTrendsMetrics.length > 0 ? (
                 <>
+                  <Box sx={{ height: 350 }}>
+                    <Chart
+                      options={combinedChartOptions}
+                      series={combinedSeries}
+                      type="line"
+                      height={350}
+                    />
+                  </Box>
                   <Typography
                     variant="body2"
                     color="text.secondary"
                     sx={{ mb: 2, textAlign: "center" }}
                   >
-                    {isShowingTopTen
-                      ? `Showing trends for top 6 ${getGroupByLabel(
+                    {isShowingTopTwo
+                      ? `Showing trends for top 2 ${getGroupByLabel(
                           groupBy
                         ).toLowerCase()} with highest average error values`
-                      : `Error trends comparison across ${getGroupByLabel(
+                      : `Error trends comparison for selected ${getGroupByLabel(
                           groupBy
                         ).toLowerCase()}`}
                   </Typography>
-                  <Box sx={{ height: 500 }}>
-                    <Chart
-                      options={combinedChartOptions}
-                      series={combinedSeries}
-                      type="line"
-                      height={500}
-                    />
-                  </Box>
                   <Box
                     sx={{
                       display: "flex",
@@ -322,31 +408,50 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
                     }}
                   >
                     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                      <Box
+                      <svg width="40" height="10" style={{ display: "block" }}>
+                        <line
+                          x1="2"
+                          y1="5"
+                          x2="38"
+                          y2="5"
+                          stroke={theme.palette.text.primary}
+                          strokeWidth="3"
+                          strokeDasharray="6, 4"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                      <Typography
+                        variant="body2"
                         sx={{
-                          width: 30,
-                          height: 3,
-                          bgcolor: theme.palette.text.secondary,
-                          borderRadius: 1,
-                          border: "2px dashed",
-                          borderColor: theme.palette.text.secondary,
+                          fontWeight: 600,
+                          fontSize: "0.875rem",
+                          color: "text.primary",
                         }}
-                      />
-                      <Typography variant="body2" color="text.secondary">
-                        AI ML RO - MAE (Dashed)
+                      >
+                        AI ML RO - MAE
                       </Typography>
                     </Box>
                     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                      <Box
+                      <svg width="40" height="10" style={{ display: "block" }}>
+                        <line
+                          x1="2"
+                          y1="5"
+                          x2="38"
+                          y2="5"
+                          stroke={theme.palette.text.primary}
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                      <Typography
+                        variant="body2"
                         sx={{
-                          width: 30,
-                          height: 3,
-                          bgcolor: theme.palette.text.secondary,
-                          borderRadius: 1,
+                          fontWeight: 600,
+                          fontSize: "0.875rem",
+                          color: "text.primary",
                         }}
-                      />
-                      <Typography variant="body2" color="text.secondary">
-                        PLANNED RO - MAE (Solid)
+                      >
+                        PLANNED RO - MAE
                       </Typography>
                     </Box>
                   </Box>
@@ -354,7 +459,7 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
               ) : (
                 <Box
                   sx={{
-                    height: 500,
+                    height: 400,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -369,6 +474,199 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
           </Card>
         </Grid>
       </Grid>
+
+      {/* Filter Popover */}
+      <Popover
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleFilterClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        PaperProps={{
+          sx: {
+            width: 380,
+            maxHeight: 580,
+            borderRadius: 3,
+            boxShadow: theme.shadows[12],
+            mt: 1,
+          },
+        }}
+      >
+        <Box sx={{ p: 2.5 }}>
+          {/* Header */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              mb: 2,
+            }}
+          >
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 700, fontSize: "1.1rem" }}>
+                Filter {getGroupByLabel(groupBy)}
+              </Typography>
+              <Typography variant="caption" color="text.secondary">
+                Select up to 6 items
+              </Typography>
+            </Box>
+            <IconButton size="small" onClick={handleFilterClose}>
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </Box>
+
+          {/* Selected Count Badge */}
+          <Box sx={{ mb: 2 }}>
+            <Chip
+              label={`${tempSelectedGroups.length} of 6 selected`}
+              color={"primary"}
+              size="small"
+              sx={{ fontWeight: 600 }}
+            />
+          </Box>
+
+          {/* Search Bar */}
+          <TextField
+            fullWidth
+            size="small"
+            placeholder={`Search ${getGroupByLabel(groupBy).toLowerCase()}...`}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon fontSize="small" color="action" />
+                </InputAdornment>
+              ),
+            }}
+            sx={{ mb: 2 }}
+          />
+
+          {/* List of Groups */}
+          <Paper
+            variant="outlined"
+            sx={{
+              maxHeight: 320,
+              overflow: "auto",
+              borderRadius: 2,
+              "&::-webkit-scrollbar": {
+                width: "8px",
+              },
+              "&::-webkit-scrollbar-track": {
+                background: theme.palette.mode === "light" ? "#f1f1f1" : "#2a2a2a",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                background: theme.palette.mode === "light" ? "#888" : "#555",
+                borderRadius: "4px",
+              },
+              "&::-webkit-scrollbar-thumb:hover": {
+                background: theme.palette.mode === "light" ? "#555" : "#777",
+              },
+            }}
+          >
+            <List disablePadding>
+              {filteredGroups.length === 0 ? (
+                <ListItem>
+                  <ListItemText
+                    primary="No matches found"
+                    sx={{ textAlign: "center", color: "text.secondary" }}
+                  />
+                </ListItem>
+              ) : (
+                filteredGroups.map((group, index) => {
+                  const isSelected = tempSelectedGroups.includes(group);
+                  const isDisabled = !isSelected && tempSelectedGroups.length >= 6;
+
+                  return (
+                    <React.Fragment key={group}>
+                      <ListItem disablePadding>
+                        <ListItemButton
+                          onClick={() => !isDisabled && handleToggleGroup(group)}
+                          disabled={isDisabled}
+                          sx={{
+                            py: 1.5,
+                            px: 2,
+                            "&:hover": {
+                              bgcolor:
+                                theme.palette.mode === "light"
+                                  ? "#f5f5f5"
+                                  : "#2a2a2a",
+                            },
+                            opacity: isDisabled ? 0.5 : 1,
+                          }}
+                        >
+                          <Box
+                            sx={{
+                              width: 20,
+                              height: 20,
+                              borderRadius: 1,
+                              border: `2px solid ${
+                                isSelected
+                                  ? theme.palette.primary.main
+                                  : theme.palette.divider
+                              }`,
+                              bgcolor: isSelected
+                                ? theme.palette.primary.main
+                                : "transparent",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              mr: 2,
+                              transition: "all 0.2s",
+                            }}
+                          >
+                            {isSelected && (
+                              <CheckIcon sx={{ fontSize: 14, color: "#fff" }} />
+                            )}
+                          </Box>
+                          <ListItemText
+                            primary={group}
+                            primaryTypographyProps={{
+                              sx: {
+                                fontWeight: isSelected ? 600 : 400,
+                                fontSize: "0.9rem",
+                              },
+                            }}
+                          />
+                        </ListItemButton>
+                      </ListItem>
+                      {index < filteredGroups.length - 1 && <Divider />}
+                    </React.Fragment>
+                  );
+                })
+              )}
+            </List>
+          </Paper>
+
+          {/* Action Buttons */}
+          <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
+            <Button
+              variant="outlined"
+              fullWidth
+              onClick={handleClearAll}
+              disabled={tempSelectedGroups.length === 0}
+              sx={{ textTransform: "none", fontWeight: 600 }}
+            >
+              Clear All
+            </Button>
+            <Button
+              variant="contained"
+              fullWidth
+              onClick={handleApply}
+              disabled={tempSelectedGroups.length === 0}
+              sx={{ textTransform: "none", fontWeight: 600 }}
+            >
+              Apply Filter
+            </Button>
+          </Box>
+        </Box>
+      </Popover>
     </Box>
   );
 };

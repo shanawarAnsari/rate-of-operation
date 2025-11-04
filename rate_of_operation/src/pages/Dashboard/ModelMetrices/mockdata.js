@@ -24,6 +24,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1365",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1365",
     NEW_RO_ABSOLUTE_ERROR: "3.1365",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50242887",
@@ -50,6 +52,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7972",
     NEW_RO_ABSOLUTE_ERROR: "1.7972",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238961",
@@ -76,6 +80,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1167",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1167",
     NEW_RO_ABSOLUTE_ERROR: "6.1167",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236388",
@@ -102,6 +108,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.6239",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.6239",
     NEW_RO_ABSOLUTE_ERROR: "10.6239",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232941",
@@ -128,6 +136,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2108",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2108",
     NEW_RO_ABSOLUTE_ERROR: "4.2108",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238116",
@@ -154,6 +164,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1136",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1136",
     NEW_RO_ABSOLUTE_ERROR: "0.1136",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238116",
@@ -180,6 +192,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1809",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1809",
     NEW_RO_ABSOLUTE_ERROR: "3.1809",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241708",
@@ -206,6 +220,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.5061",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.5061",
     NEW_RO_ABSOLUTE_ERROR: "9.5061",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243422",
@@ -232,6 +248,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "52.0523",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "52.0523",
     NEW_RO_ABSOLUTE_ERROR: "52.0523",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237244",
@@ -258,6 +276,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1678",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1678",
     NEW_RO_ABSOLUTE_ERROR: "5.1678",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240225",
@@ -284,6 +304,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "29.2940",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "29.2940",
     NEW_RO_ABSOLUTE_ERROR: "29.2940",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240019",
@@ -310,6 +332,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4089",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4089",
     NEW_RO_ABSOLUTE_ERROR: "3.4089",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240570",
@@ -336,6 +360,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8895",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8895",
     NEW_RO_ABSOLUTE_ERROR: "2.8895",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236834",
@@ -362,6 +388,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8995",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8995",
     NEW_RO_ABSOLUTE_ERROR: "3.8995",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239609",
@@ -388,6 +416,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1023",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1023",
     NEW_RO_ABSOLUTE_ERROR: "0.1023",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237208",
@@ -414,6 +444,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6352",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6352",
     NEW_RO_ABSOLUTE_ERROR: "2.6352",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236935",
@@ -440,6 +472,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0156",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0156",
     NEW_RO_ABSOLUTE_ERROR: "2.0156",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237781",
@@ -466,6 +500,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1040",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1040",
     NEW_RO_ABSOLUTE_ERROR: "1.1040",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240305",
@@ -492,6 +528,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.7687",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.7687",
     NEW_RO_ABSOLUTE_ERROR: "7.7687",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238162",
@@ -518,6 +556,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3116",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3116",
     NEW_RO_ABSOLUTE_ERROR: "3.3116",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238254",
@@ -544,6 +584,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8147",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8147",
     NEW_RO_ABSOLUTE_ERROR: "3.8147",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236397",
@@ -570,6 +612,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.2569",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.2569",
     NEW_RO_ABSOLUTE_ERROR: "11.2569",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241857",
@@ -596,6 +640,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4299",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4299",
     NEW_RO_ABSOLUTE_ERROR: "4.4299",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240783",
@@ -622,6 +668,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "42.9222",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "42.9222",
     NEW_RO_ABSOLUTE_ERROR: "42.9222",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238116",
@@ -648,6 +696,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8935",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8935",
     NEW_RO_ABSOLUTE_ERROR: "1.8935",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234844",
@@ -674,6 +724,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "19.2210",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "19.2210",
     NEW_RO_ABSOLUTE_ERROR: "19.2210",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242754",
@@ -700,6 +752,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.6000",
     NEW_RO_ABSOLUTE_ERROR: "9.6000",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235283",
@@ -726,6 +780,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9091",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9091",
     NEW_RO_ABSOLUTE_ERROR: "1.9091",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234849",
@@ -752,6 +808,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4122",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4122",
     NEW_RO_ABSOLUTE_ERROR: "0.4122",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240230",
@@ -778,6 +836,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4391",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4391",
     NEW_RO_ABSOLUTE_ERROR: "3.4391",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239264",
@@ -804,6 +864,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.4754",
     NEW_RO_ABSOLUTE_ERROR: "16.4754",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240532",
@@ -830,6 +892,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.4168",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.4168",
     NEW_RO_ABSOLUTE_ERROR: "8.4168",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229566",
@@ -856,6 +920,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2217",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2217",
     NEW_RO_ABSOLUTE_ERROR: "5.2217",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50220722",
@@ -882,6 +948,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1966",
     NEW_RO_ABSOLUTE_ERROR: "0.1966",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236745",
@@ -908,6 +976,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7032",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7032",
     NEW_RO_ABSOLUTE_ERROR: "2.7032",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240526",
@@ -934,6 +1004,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3058",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3058",
     NEW_RO_ABSOLUTE_ERROR: "0.3058",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241769",
@@ -960,6 +1032,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.5535",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.5535",
     NEW_RO_ABSOLUTE_ERROR: "12.5535",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240530",
@@ -986,6 +1060,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.0982",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.0982",
     NEW_RO_ABSOLUTE_ERROR: "9.0982",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238857",
@@ -1012,6 +1088,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4999",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4999",
     NEW_RO_ABSOLUTE_ERROR: "3.4999",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50233577",
@@ -1038,6 +1116,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.0370",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0370",
     NEW_RO_ABSOLUTE_ERROR: "5.0370",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237212",
@@ -1064,6 +1144,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5490",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5490",
     NEW_RO_ABSOLUTE_ERROR: "2.5490",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240549",
@@ -1090,6 +1172,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.4649",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.4649",
     NEW_RO_ABSOLUTE_ERROR: "12.4649",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232938",
@@ -1116,6 +1200,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.4127",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.4127",
     NEW_RO_ABSOLUTE_ERROR: "11.4127",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236402",
@@ -1142,6 +1228,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2556",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2556",
     NEW_RO_ABSOLUTE_ERROR: "5.2556",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240801",
@@ -1168,6 +1256,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0000",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0000",
     NEW_RO_ABSOLUTE_ERROR: "4.0000",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240532",
@@ -1194,6 +1284,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4755",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4755",
     NEW_RO_ABSOLUTE_ERROR: "6.4755",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238191",
@@ -1220,6 +1312,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0933",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0933",
     NEW_RO_ABSOLUTE_ERROR: "1.0933",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234852",
@@ -1246,6 +1340,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4813",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4813",
     NEW_RO_ABSOLUTE_ERROR: "2.4813",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238122",
@@ -1272,6 +1368,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7374",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7374",
     NEW_RO_ABSOLUTE_ERROR: "5.7374",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237240",
@@ -1298,6 +1396,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9430",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9430",
     NEW_RO_ABSOLUTE_ERROR: "3.9430",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235221",
@@ -1324,6 +1424,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0933",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0933",
     NEW_RO_ABSOLUTE_ERROR: "4.0933",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240076",
@@ -1350,6 +1452,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8858",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8858",
     NEW_RO_ABSOLUTE_ERROR: "0.8858",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241552",
@@ -1376,6 +1480,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5862",
     NEW_RO_ABSOLUTE_ERROR: "4.5862",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237461",
@@ -1402,6 +1508,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.0812",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.0812",
     NEW_RO_ABSOLUTE_ERROR: "10.0812",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238961",
@@ -1428,6 +1536,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2754",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2754",
     NEW_RO_ABSOLUTE_ERROR: "4.2754",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241706",
@@ -1454,6 +1564,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4429",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4429",
     NEW_RO_ABSOLUTE_ERROR: "6.4429",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238859",
@@ -1480,6 +1592,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4717",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4717",
     NEW_RO_ABSOLUTE_ERROR: "0.4717",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235264",
@@ -1506,6 +1620,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3116",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3116",
     NEW_RO_ABSOLUTE_ERROR: "0.3116",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240579",
@@ -1532,6 +1648,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "47.6472",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "47.6472",
     NEW_RO_ABSOLUTE_ERROR: "47.6472",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235255",
@@ -1558,6 +1676,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4549",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4549",
     NEW_RO_ABSOLUTE_ERROR: "2.4549",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238795",
@@ -1584,6 +1704,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1269",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1269",
     NEW_RO_ABSOLUTE_ERROR: "3.1269",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238756",
@@ -1610,6 +1732,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.4169",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.4169",
     NEW_RO_ABSOLUTE_ERROR: "14.4169",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239634",
@@ -1636,6 +1760,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6210",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6210",
     NEW_RO_ABSOLUTE_ERROR: "1.6210",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236383",
@@ -1662,6 +1788,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.3516",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.3516",
     NEW_RO_ABSOLUTE_ERROR: "9.3516",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240526",
@@ -1688,6 +1816,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0010",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0010",
     NEW_RO_ABSOLUTE_ERROR: "3.0010",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239823",
@@ -1714,6 +1844,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1968",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1968",
     NEW_RO_ABSOLUTE_ERROR: "3.1968",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237805",
@@ -1740,6 +1872,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1511",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1511",
     NEW_RO_ABSOLUTE_ERROR: "9.1511",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236877",
@@ -1766,6 +1900,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6443",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6443",
     NEW_RO_ABSOLUTE_ERROR: "0.6443",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50230216",
@@ -1792,6 +1928,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4654",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4654",
     NEW_RO_ABSOLUTE_ERROR: "0.4654",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238098",
@@ -1818,6 +1956,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2089",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2089",
     NEW_RO_ABSOLUTE_ERROR: "7.2089",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238749",
@@ -1844,6 +1984,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1559",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1559",
     NEW_RO_ABSOLUTE_ERROR: "5.1559",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238793",
@@ -1870,6 +2012,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5336",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5336",
     NEW_RO_ABSOLUTE_ERROR: "6.5336",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50204730",
@@ -1896,6 +2040,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.1222",
     NEW_RO_ABSOLUTE_ERROR: "10.1222",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237762",
@@ -1922,6 +2068,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7578",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7578",
     NEW_RO_ABSOLUTE_ERROR: "1.7578",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236746",
@@ -1948,6 +2096,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0330",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0330",
     NEW_RO_ABSOLUTE_ERROR: "0.0330",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240252",
@@ -1974,6 +2124,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1319",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1319",
     NEW_RO_ABSOLUTE_ERROR: "3.1319",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238961",
@@ -2000,6 +2152,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "38.8731",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "38.8731",
     NEW_RO_ABSOLUTE_ERROR: "38.8731",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239293",
@@ -2026,6 +2180,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7230",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7230",
     NEW_RO_ABSOLUTE_ERROR: "2.7230",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237467",
@@ -2052,6 +2208,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "59.0046",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "59.0046",
     NEW_RO_ABSOLUTE_ERROR: "59.0046",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240542",
@@ -2078,6 +2236,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "22.6007",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "22.6007",
     NEW_RO_ABSOLUTE_ERROR: "22.6007",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236390",
@@ -2104,6 +2264,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.2315",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2315",
     NEW_RO_ABSOLUTE_ERROR: "8.2315",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237788",
@@ -2130,6 +2292,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0316",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0316",
     NEW_RO_ABSOLUTE_ERROR: "3.0316",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240230",
@@ -2156,6 +2320,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7085",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7085",
     NEW_RO_ABSOLUTE_ERROR: "2.7085",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236696",
@@ -2182,6 +2348,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.9403",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.9403",
     NEW_RO_ABSOLUTE_ERROR: "7.9403",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235277",
@@ -2208,6 +2376,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6738",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6738",
     NEW_RO_ABSOLUTE_ERROR: "0.6738",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243182",
@@ -2234,6 +2404,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0468",
     NEW_RO_ABSOLUTE_ERROR: "6.0468",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238107",
@@ -2260,6 +2432,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1947",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1947",
     NEW_RO_ABSOLUTE_ERROR: "7.1947",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236853",
@@ -2286,6 +2460,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4013",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4013",
     NEW_RO_ABSOLUTE_ERROR: "1.4013",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238261",
@@ -2312,6 +2488,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3848",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3848",
     NEW_RO_ABSOLUTE_ERROR: "4.3848",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236884",
@@ -2338,6 +2516,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5168",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5168",
     NEW_RO_ABSOLUTE_ERROR: "5.5168",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240034",
@@ -2364,6 +2544,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "15.0964",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.0964",
     NEW_RO_ABSOLUTE_ERROR: "15.0964",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236689",
@@ -2390,6 +2572,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3026",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3026",
     NEW_RO_ABSOLUTE_ERROR: "3.3026",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238047",
@@ -2416,6 +2600,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4258",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4258",
     NEW_RO_ABSOLUTE_ERROR: "3.4258",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243839",
@@ -2442,6 +2628,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5026",
     NEW_RO_ABSOLUTE_ERROR: "1.5026",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241723",
@@ -2468,6 +2656,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.3328",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.3328",
     NEW_RO_ABSOLUTE_ERROR: "11.3328",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240549",
@@ -2494,6 +2684,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3196",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3196",
     NEW_RO_ABSOLUTE_ERROR: "4.3196",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238569",
@@ -2520,6 +2712,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4777",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4777",
     NEW_RO_ABSOLUTE_ERROR: "3.4777",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236839",
@@ -2546,6 +2740,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7624",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7624",
     NEW_RO_ABSOLUTE_ERROR: "3.7624",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236824",
@@ -2572,6 +2768,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1119",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1119",
     NEW_RO_ABSOLUTE_ERROR: "0.1119",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240288",
@@ -2598,6 +2796,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.6551",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6551",
     NEW_RO_ABSOLUTE_ERROR: "5.6551",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229600",
@@ -2624,6 +2824,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2753",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2753",
     NEW_RO_ABSOLUTE_ERROR: "5.2753",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229592",
@@ -2650,6 +2852,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3766",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3766",
     NEW_RO_ABSOLUTE_ERROR: "1.3766",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240285",
@@ -2676,6 +2880,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5823",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5823",
     NEW_RO_ABSOLUTE_ERROR: "6.5823",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241948",
@@ -2702,6 +2908,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9972",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9972",
     NEW_RO_ABSOLUTE_ERROR: "2.9972",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240549",
@@ -2728,6 +2936,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9032",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9032",
     NEW_RO_ABSOLUTE_ERROR: "3.9032",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243187",
@@ -2754,6 +2964,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6844",
     NEW_RO_ABSOLUTE_ERROR: "5.6844",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240892",
@@ -2780,6 +2992,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "27.8176",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "27.8176",
     NEW_RO_ABSOLUTE_ERROR: "27.8176",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238961",
@@ -2806,6 +3020,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2543",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2543",
     NEW_RO_ABSOLUTE_ERROR: "4.2543",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238097",
@@ -2832,6 +3048,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3335",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3335",
     NEW_RO_ABSOLUTE_ERROR: "0.3335",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235160",
@@ -2858,6 +3076,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.1774",
     NEW_RO_ABSOLUTE_ERROR: "10.1774",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50232961",
@@ -2884,6 +3104,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3089",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3089",
     NEW_RO_ABSOLUTE_ERROR: "4.3089",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235181",
@@ -2910,6 +3132,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8381",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8381",
     NEW_RO_ABSOLUTE_ERROR: "2.8381",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235938",
@@ -2936,6 +3160,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5634",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5634",
     NEW_RO_ABSOLUTE_ERROR: "4.5634",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237764",
@@ -2962,6 +3188,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7244",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7244",
     NEW_RO_ABSOLUTE_ERROR: "4.7244",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240024",
@@ -2988,6 +3216,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6822",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6822",
     NEW_RO_ABSOLUTE_ERROR: "3.6822",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239636",
@@ -3014,6 +3244,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "19.3738",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "19.3738",
     NEW_RO_ABSOLUTE_ERROR: "19.3738",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240127",
@@ -3040,6 +3272,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.9411",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.9411",
     NEW_RO_ABSOLUTE_ERROR: "6.9411",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238188",
@@ -3066,6 +3300,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5299",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5299",
     NEW_RO_ABSOLUTE_ERROR: "6.5299",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235177",
@@ -3092,6 +3328,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0148",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0148",
     NEW_RO_ABSOLUTE_ERROR: "0.0148",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239650",
@@ -3118,6 +3356,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3784",
     NEW_RO_ABSOLUTE_ERROR: "4.3784",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240126",
@@ -3144,6 +3384,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "44.8802",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "44.8802",
     NEW_RO_ABSOLUTE_ERROR: "44.8802",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241941",
@@ -3170,6 +3412,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5848",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5848",
     NEW_RO_ABSOLUTE_ERROR: "1.5848",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243316",
@@ -3196,6 +3440,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.6701",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.6701",
     NEW_RO_ABSOLUTE_ERROR: "9.6701",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237469",
@@ -3222,6 +3468,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8293",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8293",
     NEW_RO_ABSOLUTE_ERROR: "5.8293",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240782",
@@ -3248,6 +3496,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "44.9019",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "44.9019",
     NEW_RO_ABSOLUTE_ERROR: "44.9019",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238971",
@@ -3274,6 +3524,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5211",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5211",
     NEW_RO_ABSOLUTE_ERROR: "5.5211",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237746",
@@ -3300,6 +3552,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0885",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0885",
     NEW_RO_ABSOLUTE_ERROR: "1.0885",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241767",
@@ -3326,6 +3580,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "20.1084",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "20.1084",
     NEW_RO_ABSOLUTE_ERROR: "20.1084",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232945",
@@ -3352,6 +3608,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.5241",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.5241",
     NEW_RO_ABSOLUTE_ERROR: "8.5241",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236468",
@@ -3378,6 +3636,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0831",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0831",
     NEW_RO_ABSOLUTE_ERROR: "1.0831",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240782",
@@ -3404,6 +3664,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1060",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1060",
     NEW_RO_ABSOLUTE_ERROR: "0.1060",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241962",
@@ -3430,6 +3692,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "48.3894",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "48.3894",
     NEW_RO_ABSOLUTE_ERROR: "48.3894",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238168",
@@ -3456,6 +3720,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8681",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8681",
     NEW_RO_ABSOLUTE_ERROR: "1.8681",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229600",
@@ -3482,6 +3748,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.1727",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.1727",
     NEW_RO_ABSOLUTE_ERROR: "12.1727",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237193",
@@ -3508,6 +3776,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2696",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2696",
     NEW_RO_ABSOLUTE_ERROR: "0.2696",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236933",
@@ -3534,6 +3804,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6689",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6689",
     NEW_RO_ABSOLUTE_ERROR: "0.6689",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236709",
@@ -3560,6 +3832,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7921",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7921",
     NEW_RO_ABSOLUTE_ERROR: "5.7921",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236300",
@@ -3586,6 +3860,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2804",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2804",
     NEW_RO_ABSOLUTE_ERROR: "2.2804",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240988",
@@ -3612,6 +3888,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2844",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2844",
     NEW_RO_ABSOLUTE_ERROR: "1.2844",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238863",
@@ -3638,6 +3916,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3659",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3659",
     NEW_RO_ABSOLUTE_ERROR: "2.3659",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235256",
@@ -3664,6 +3944,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8840",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8840",
     NEW_RO_ABSOLUTE_ERROR: "0.8840",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240304",
@@ -3690,6 +3972,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0249",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0249",
     NEW_RO_ABSOLUTE_ERROR: "1.0249",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242590",
@@ -3716,6 +4000,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1811",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1811",
     NEW_RO_ABSOLUTE_ERROR: "4.1811",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240117",
@@ -3742,6 +4028,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0295",
     NEW_RO_ABSOLUTE_ERROR: "4.0295",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239845",
@@ -3768,6 +4056,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.5969",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.5969",
     NEW_RO_ABSOLUTE_ERROR: "7.5969",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240140",
@@ -3794,6 +4084,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0736",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0736",
     NEW_RO_ABSOLUTE_ERROR: "2.0736",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240216",
@@ -3820,6 +4112,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4442",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4442",
     NEW_RO_ABSOLUTE_ERROR: "5.4442",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238857",
@@ -3846,6 +4140,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7723",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7723",
     NEW_RO_ABSOLUTE_ERROR: "0.7723",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238094",
@@ -3872,6 +4168,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2553",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2553",
     NEW_RO_ABSOLUTE_ERROR: "2.2553",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243391",
@@ -3898,6 +4196,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3731",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3731",
     NEW_RO_ABSOLUTE_ERROR: "2.3731",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240292",
@@ -3924,6 +4224,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.0389",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.0389",
     NEW_RO_ABSOLUTE_ERROR: "7.0389",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239870",
@@ -3950,6 +4252,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "17.0865",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.0865",
     NEW_RO_ABSOLUTE_ERROR: "17.0865",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237613",
@@ -3976,6 +4280,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3729",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3729",
     NEW_RO_ABSOLUTE_ERROR: "2.3729",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240231",
@@ -4002,6 +4308,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9238",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9238",
     NEW_RO_ABSOLUTE_ERROR: "0.9238",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241709",
@@ -4028,6 +4336,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2339",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2339",
     NEW_RO_ABSOLUTE_ERROR: "6.2339",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239440",
@@ -4054,6 +4364,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3368",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3368",
     NEW_RO_ABSOLUTE_ERROR: "4.3368",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238116",
@@ -4080,6 +4392,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.2006",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.2006",
     NEW_RO_ABSOLUTE_ERROR: "10.2006",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238801",
@@ -4106,6 +4420,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9806",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9806",
     NEW_RO_ABSOLUTE_ERROR: "0.9806",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239292",
@@ -4132,6 +4448,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5335",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5335",
     NEW_RO_ABSOLUTE_ERROR: "0.5335",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241715",
@@ -4158,6 +4476,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4703",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4703",
     NEW_RO_ABSOLUTE_ERROR: "4.4703",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50230216",
@@ -4184,6 +4504,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6559",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6559",
     NEW_RO_ABSOLUTE_ERROR: "1.6559",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243318",
@@ -4210,6 +4532,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.3617",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.3617",
     NEW_RO_ABSOLUTE_ERROR: "10.3617",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238191",
@@ -4236,6 +4560,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0989",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0989",
     NEW_RO_ABSOLUTE_ERROR: "0.0989",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240558",
@@ -4262,6 +4588,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "24.7903",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "24.7903",
     NEW_RO_ABSOLUTE_ERROR: "24.7903",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236451",
@@ -4288,6 +4616,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.5605",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.5605",
     NEW_RO_ABSOLUTE_ERROR: "8.5605",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240296",
@@ -4314,6 +4644,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.5593",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.5593",
     NEW_RO_ABSOLUTE_ERROR: "7.5593",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239833",
@@ -4340,6 +4672,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.6823",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.6823",
     NEW_RO_ABSOLUTE_ERROR: "7.6823",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50230195",
@@ -4366,6 +4700,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1676",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1676",
     NEW_RO_ABSOLUTE_ERROR: "3.1676",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242653",
@@ -4392,6 +4728,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.6439",
     NEW_RO_ABSOLUTE_ERROR: "10.6439",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236448",
@@ -4418,6 +4756,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6758",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6758",
     NEW_RO_ABSOLUTE_ERROR: "3.6758",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240538",
@@ -4444,6 +4784,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.9305",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.9305",
     NEW_RO_ABSOLUTE_ERROR: "5.9305",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235355",
@@ -4470,6 +4812,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "20.1004",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "20.1004",
     NEW_RO_ABSOLUTE_ERROR: "20.1004",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240017",
@@ -4496,6 +4840,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "21.9938",
     NEW_RO_ABSOLUTE_ERROR: "21.9938",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243422",
@@ -4522,6 +4868,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "52.0523",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "52.0523",
     NEW_RO_ABSOLUTE_ERROR: "52.0523",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240347",
@@ -4548,6 +4896,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9269",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9269",
     NEW_RO_ABSOLUTE_ERROR: "1.9269",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238857",
@@ -4574,6 +4924,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2033",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2033",
     NEW_RO_ABSOLUTE_ERROR: "3.2033",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237618",
@@ -4600,6 +4952,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "32.7351",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "32.7351",
     NEW_RO_ABSOLUTE_ERROR: "32.7351",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238967",
@@ -4626,6 +4980,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.8836",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.8836",
     NEW_RO_ABSOLUTE_ERROR: "6.8836",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238532",
@@ -4652,6 +5008,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2548",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2548",
     NEW_RO_ABSOLUTE_ERROR: "3.2548",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241828",
@@ -4678,6 +5036,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "38.8434",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "38.8434",
     NEW_RO_ABSOLUTE_ERROR: "38.8434",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235329",
@@ -4704,6 +5064,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.4174",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.4174",
     NEW_RO_ABSOLUTE_ERROR: "7.4174",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237617",
@@ -4730,6 +5092,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0585",
     NEW_RO_ABSOLUTE_ERROR: "0.0585",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240532",
@@ -4756,6 +5120,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8471",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8471",
     NEW_RO_ABSOLUTE_ERROR: "3.8471",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236910",
@@ -4782,6 +5148,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0445",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0445",
     NEW_RO_ABSOLUTE_ERROR: "2.0445",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236861",
@@ -4808,6 +5176,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3534",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3534",
     NEW_RO_ABSOLUTE_ERROR: "2.3534",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234851",
@@ -4834,6 +5204,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "20.6841",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "20.6841",
     NEW_RO_ABSOLUTE_ERROR: "20.6841",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237473",
@@ -4860,6 +5232,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.1393",
     NEW_RO_ABSOLUTE_ERROR: "16.1393",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232939",
@@ -4886,6 +5260,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.1330",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.1330",
     NEW_RO_ABSOLUTE_ERROR: "10.1330",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238040",
@@ -4912,6 +5288,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4995",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4995",
     NEW_RO_ABSOLUTE_ERROR: "2.4995",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50216438",
@@ -4938,6 +5316,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2726",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2726",
     NEW_RO_ABSOLUTE_ERROR: "3.2726",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240143",
@@ -4964,6 +5344,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2445",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2445",
     NEW_RO_ABSOLUTE_ERROR: "0.2445",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50185611",
@@ -4990,6 +5372,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "18.8938",
     NEW_RO_ABSOLUTE_ERROR: "18.8938",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241961",
@@ -5016,6 +5400,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0370",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0370",
     NEW_RO_ABSOLUTE_ERROR: "2.0370",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236909",
@@ -5042,6 +5428,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4688",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4688",
     NEW_RO_ABSOLUTE_ERROR: "2.4688",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240782",
@@ -5068,6 +5456,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1388",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1388",
     NEW_RO_ABSOLUTE_ERROR: "1.1388",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236886",
@@ -5094,6 +5484,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6969",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6969",
     NEW_RO_ABSOLUTE_ERROR: "1.6969",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238865",
@@ -5120,6 +5512,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.7830",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.7830",
     NEW_RO_ABSOLUTE_ERROR: "11.7830",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238971",
@@ -5146,6 +5540,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5956",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5956",
     NEW_RO_ABSOLUTE_ERROR: "0.5956",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234820",
@@ -5172,6 +5568,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1332",
     NEW_RO_ABSOLUTE_ERROR: "7.1332",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238311",
@@ -5198,6 +5596,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8902",
     NEW_RO_ABSOLUTE_ERROR: "0.8902",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240025",
@@ -5224,6 +5624,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8993",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8993",
     NEW_RO_ABSOLUTE_ERROR: "1.8993",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240541",
@@ -5250,6 +5652,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9614",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9614",
     NEW_RO_ABSOLUTE_ERROR: "1.9614",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236825",
@@ -5276,6 +5680,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8099",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8099",
     NEW_RO_ABSOLUTE_ERROR: "3.8099",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238963",
@@ -5302,6 +5708,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9669",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9669",
     NEW_RO_ABSOLUTE_ERROR: "4.9669",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236457",
@@ -5328,6 +5736,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5655",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5655",
     NEW_RO_ABSOLUTE_ERROR: "2.5655",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234848",
@@ -5354,6 +5764,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2841",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2841",
     NEW_RO_ABSOLUTE_ERROR: "3.2841",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240345",
@@ -5380,6 +5792,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9302",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9302",
     NEW_RO_ABSOLUTE_ERROR: "0.9302",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242278",
@@ -5406,6 +5820,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9472",
     NEW_RO_ABSOLUTE_ERROR: "4.9472",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241714",
@@ -5432,6 +5848,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0709",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0709",
     NEW_RO_ABSOLUTE_ERROR: "0.0709",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238793",
@@ -5458,6 +5876,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9376",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9376",
     NEW_RO_ABSOLUTE_ERROR: "1.9376",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238042",
@@ -5484,6 +5904,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1267",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1267",
     NEW_RO_ABSOLUTE_ERROR: "0.1267",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238677",
@@ -5510,6 +5932,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5159",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5159",
     NEW_RO_ABSOLUTE_ERROR: "1.5159",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50233576",
@@ -5536,6 +5960,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6546",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6546",
     NEW_RO_ABSOLUTE_ERROR: "3.6546",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239242",
@@ -5562,6 +5988,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "55.7220",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "55.7220",
     NEW_RO_ABSOLUTE_ERROR: "55.7220",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243313",
@@ -5588,6 +6016,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7135",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7135",
     NEW_RO_ABSOLUTE_ERROR: "1.7135",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238864",
@@ -5614,6 +6044,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4795",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4795",
     NEW_RO_ABSOLUTE_ERROR: "6.4795",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237475",
@@ -5640,6 +6072,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "58.8506",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "58.8506",
     NEW_RO_ABSOLUTE_ERROR: "58.8506",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235186",
@@ -5666,6 +6100,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.5043",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.5043",
     NEW_RO_ABSOLUTE_ERROR: "7.5043",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243023",
@@ -5692,6 +6128,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "51.5968",
     NEW_RO_ABSOLUTE_ERROR: "51.5968",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236742",
@@ -5718,6 +6156,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4683",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4683",
     NEW_RO_ABSOLUTE_ERROR: "6.4683",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240073",
@@ -5744,6 +6184,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8317",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8317",
     NEW_RO_ABSOLUTE_ERROR: "2.8317",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239246",
@@ -5770,6 +6212,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.2748",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.2748",
     NEW_RO_ABSOLUTE_ERROR: "13.2748",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236825",
@@ -5796,6 +6240,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.8507",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.8507",
     NEW_RO_ABSOLUTE_ERROR: "6.8507",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50185611",
@@ -5822,6 +6268,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.9656",
     NEW_RO_ABSOLUTE_ERROR: "5.9656",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240542",
@@ -5848,6 +6296,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.3118",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.3118",
     NEW_RO_ABSOLUTE_ERROR: "7.3118",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238795",
@@ -5874,6 +6324,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6422",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6422",
     NEW_RO_ABSOLUTE_ERROR: "1.6422",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237458",
@@ -5900,6 +6352,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "55.8833",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "55.8833",
     NEW_RO_ABSOLUTE_ERROR: "55.8833",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236947",
@@ -5926,6 +6380,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3102",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3102",
     NEW_RO_ABSOLUTE_ERROR: "0.3102",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240039",
@@ -5952,6 +6408,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "58.2442",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "58.2442",
     NEW_RO_ABSOLUTE_ERROR: "58.2442",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238042",
@@ -5978,6 +6436,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "37.1449",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "37.1449",
     NEW_RO_ABSOLUTE_ERROR: "37.1449",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240783",
@@ -6004,6 +6464,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "41.1557",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "41.1557",
     NEW_RO_ABSOLUTE_ERROR: "41.1557",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243838",
@@ -6030,6 +6492,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "22.0075",
     NEW_RO_ABSOLUTE_ERROR: "22.0075",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229580",
@@ -6056,6 +6520,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.2449",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.2449",
     NEW_RO_ABSOLUTE_ERROR: "13.2449",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236674",
@@ -6082,6 +6548,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.3820",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.3820",
     NEW_RO_ABSOLUTE_ERROR: "13.3820",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236669",
@@ -6108,6 +6576,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8266",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8266",
     NEW_RO_ABSOLUTE_ERROR: "0.8266",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238859",
@@ -6134,6 +6604,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0115",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0115",
     NEW_RO_ABSOLUTE_ERROR: "0.0115",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240548",
@@ -6160,6 +6632,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8079",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8079",
     NEW_RO_ABSOLUTE_ERROR: "3.8079",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232942",
@@ -6186,6 +6660,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5309",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5309",
     NEW_RO_ABSOLUTE_ERROR: "3.5309",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238177",
@@ -6212,6 +6688,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0382",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0382",
     NEW_RO_ABSOLUTE_ERROR: "3.0382",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236686",
@@ -6238,6 +6716,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2864",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2864",
     NEW_RO_ABSOLUTE_ERROR: "7.2864",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235191",
@@ -6264,6 +6744,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0331",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0331",
     NEW_RO_ABSOLUTE_ERROR: "2.0331",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240347",
@@ -6290,6 +6772,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.6912",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.6912",
     NEW_RO_ABSOLUTE_ERROR: "7.6912",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237747",
@@ -6316,6 +6800,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4595",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4595",
     NEW_RO_ABSOLUTE_ERROR: "2.4595",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232953",
@@ -6342,6 +6828,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2331",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2331",
     NEW_RO_ABSOLUTE_ERROR: "0.2331",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50230199",
@@ -6368,6 +6856,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8132",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8132",
     NEW_RO_ABSOLUTE_ERROR: "1.8132",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237788",
@@ -6394,6 +6884,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8723",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8723",
     NEW_RO_ABSOLUTE_ERROR: "0.8723",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237618",
@@ -6420,6 +6912,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "21.2427",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "21.2427",
     NEW_RO_ABSOLUTE_ERROR: "21.2427",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240782",
@@ -6446,6 +6940,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8479",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8479",
     NEW_RO_ABSOLUTE_ERROR: "0.8479",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236689",
@@ -6472,6 +6968,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.5867",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.5867",
     NEW_RO_ABSOLUTE_ERROR: "8.5867",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240892",
@@ -6498,6 +6996,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1387",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1387",
     NEW_RO_ABSOLUTE_ERROR: "0.1387",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242980",
@@ -6524,6 +7024,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.7662",
     NEW_RO_ABSOLUTE_ERROR: "8.7662",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50233577",
@@ -6550,6 +7052,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6355",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6355",
     NEW_RO_ABSOLUTE_ERROR: "6.6355",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236861",
@@ -6576,6 +7080,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9357",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9357",
     NEW_RO_ABSOLUTE_ERROR: "3.9357",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240984",
@@ -6602,6 +7108,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1644",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1644",
     NEW_RO_ABSOLUTE_ERROR: "3.1644",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237743",
@@ -6628,6 +7136,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4266",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4266",
     NEW_RO_ABSOLUTE_ERROR: "4.4266",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238967",
@@ -6654,6 +7164,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0518",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0518",
     NEW_RO_ABSOLUTE_ERROR: "1.0518",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240521",
@@ -6680,6 +7192,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6225",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6225",
     NEW_RO_ABSOLUTE_ERROR: "3.6225",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238816",
@@ -6706,6 +7220,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1403",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1403",
     NEW_RO_ABSOLUTE_ERROR: "7.1403",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235236",
@@ -6732,6 +7248,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9878",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9878",
     NEW_RO_ABSOLUTE_ERROR: "4.9878",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235277",
@@ -6758,6 +7276,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7688",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7688",
     NEW_RO_ABSOLUTE_ERROR: "0.7688",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50233576",
@@ -6784,6 +7304,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8922",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8922",
     NEW_RO_ABSOLUTE_ERROR: "3.8922",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235259",
@@ -6810,6 +7332,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "17.7118",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.7118",
     NEW_RO_ABSOLUTE_ERROR: "17.7118",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229593",
@@ -6836,6 +7360,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4006",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4006",
     NEW_RO_ABSOLUTE_ERROR: "5.4006",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232961",
@@ -6862,6 +7388,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8120",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8120",
     NEW_RO_ABSOLUTE_ERROR: "0.8120",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236898",
@@ -6888,6 +7416,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0408",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0408",
     NEW_RO_ABSOLUTE_ERROR: "0.0408",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236837",
@@ -6914,6 +7444,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8085",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8085",
     NEW_RO_ABSOLUTE_ERROR: "5.8085",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240783",
@@ -6940,6 +7472,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5001",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5001",
     NEW_RO_ABSOLUTE_ERROR: "4.5001",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229588",
@@ -6966,6 +7500,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.8021",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.8021",
     NEW_RO_ABSOLUTE_ERROR: "4.8021",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239285",
@@ -6992,6 +7528,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0471",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0471",
     NEW_RO_ABSOLUTE_ERROR: "1.0471",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237473",
@@ -7018,6 +7556,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.3349",
     NEW_RO_ABSOLUTE_ERROR: "14.3349",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240526",
@@ -7044,6 +7584,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3364",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3364",
     NEW_RO_ABSOLUTE_ERROR: "3.3364",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236828",
@@ -7070,6 +7612,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1761",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1761",
     NEW_RO_ABSOLUTE_ERROR: "2.1761",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50233576",
@@ -7096,6 +7640,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8910",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8910",
     NEW_RO_ABSOLUTE_ERROR: "0.8910",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229580",
@@ -7122,6 +7668,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.6854",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6854",
     NEW_RO_ABSOLUTE_ERROR: "5.6854",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238166",
@@ -7148,6 +7696,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2286",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2286",
     NEW_RO_ABSOLUTE_ERROR: "3.2286",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238967",
@@ -7174,6 +7724,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.9779",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.9779",
     NEW_RO_ABSOLUTE_ERROR: "8.9779",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239262",
@@ -7200,6 +7752,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.8026",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.8026",
     NEW_RO_ABSOLUTE_ERROR: "7.8026",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236381",
@@ -7226,6 +7780,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.7029",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.7029",
     NEW_RO_ABSOLUTE_ERROR: "7.7029",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238853",
@@ -7252,6 +7808,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.0917",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.0917",
     NEW_RO_ABSOLUTE_ERROR: "10.0917",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241553",
@@ -7278,6 +7836,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9575",
     NEW_RO_ABSOLUTE_ERROR: "0.9575",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238047",
@@ -7304,6 +7864,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4732",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4732",
     NEW_RO_ABSOLUTE_ERROR: "0.4732",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240120",
@@ -7330,6 +7892,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4891",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4891",
     NEW_RO_ABSOLUTE_ERROR: "6.4891",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237610",
@@ -7356,6 +7920,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6406",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6406",
     NEW_RO_ABSOLUTE_ERROR: "4.6406",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236849",
@@ -7382,6 +7948,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6788",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6788",
     NEW_RO_ABSOLUTE_ERROR: "1.6788",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240269",
@@ -7408,6 +7976,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0605",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0605",
     NEW_RO_ABSOLUTE_ERROR: "4.0605",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240697",
@@ -7434,6 +8004,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.1004",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.1004",
     NEW_RO_ABSOLUTE_ERROR: "13.1004",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237778",
@@ -7460,6 +8032,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2103",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2103",
     NEW_RO_ABSOLUTE_ERROR: "4.2103",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240262",
@@ -7486,6 +8060,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0547",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0547",
     NEW_RO_ABSOLUTE_ERROR: "3.0547",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241768",
@@ -7512,6 +8088,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.0086",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.0086",
     NEW_RO_ABSOLUTE_ERROR: "11.0086",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234868",
@@ -7538,6 +8116,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5933",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5933",
     NEW_RO_ABSOLUTE_ERROR: "1.5933",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229588",
@@ -7564,6 +8144,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5826",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5826",
     NEW_RO_ABSOLUTE_ERROR: "6.5826",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236683",
@@ -7590,6 +8172,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "50.5238",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "50.5238",
     NEW_RO_ABSOLUTE_ERROR: "50.5238",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240251",
@@ -7616,6 +8200,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6831",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6831",
     NEW_RO_ABSOLUTE_ERROR: "3.6831",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235943",
@@ -7642,6 +8228,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0113",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0113",
     NEW_RO_ABSOLUTE_ERROR: "4.0113",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235261",
@@ -7668,6 +8256,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "30.1865",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "30.1865",
     NEW_RO_ABSOLUTE_ERROR: "30.1865",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238868",
@@ -7694,6 +8284,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.1791",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.1791",
     NEW_RO_ABSOLUTE_ERROR: "10.1791",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241536",
@@ -7720,6 +8312,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.3514",
     NEW_RO_ABSOLUTE_ERROR: "9.3514",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237763",
@@ -7746,6 +8340,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5647",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5647",
     NEW_RO_ABSOLUTE_ERROR: "5.5647",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240537",
@@ -7772,6 +8368,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.3886",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.3886",
     NEW_RO_ABSOLUTE_ERROR: "14.3886",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239246",
@@ -7798,6 +8396,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6475",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6475",
     NEW_RO_ABSOLUTE_ERROR: "0.6475",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240115",
@@ -7824,6 +8424,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4074",
     NEW_RO_ABSOLUTE_ERROR: "4.4074",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240544",
@@ -7850,6 +8452,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6631",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6631",
     NEW_RO_ABSOLUTE_ERROR: "3.6631",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243838",
@@ -7876,6 +8480,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8811",
     NEW_RO_ABSOLUTE_ERROR: "3.8811",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240263",
@@ -7902,6 +8508,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.0110",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0110",
     NEW_RO_ABSOLUTE_ERROR: "5.0110",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240252",
@@ -7928,6 +8536,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2545",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2545",
     NEW_RO_ABSOLUTE_ERROR: "7.2545",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240802",
@@ -7954,6 +8564,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5915",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5915",
     NEW_RO_ABSOLUTE_ERROR: "5.5915",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237758",
@@ -7980,6 +8592,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6594",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6594",
     NEW_RO_ABSOLUTE_ERROR: "6.6594",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236740",
@@ -8006,6 +8620,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5245",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5245",
     NEW_RO_ABSOLUTE_ERROR: "4.5245",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237774",
@@ -8032,6 +8648,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0850",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0850",
     NEW_RO_ABSOLUTE_ERROR: "3.0850",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237096",
@@ -8058,6 +8676,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.9300",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.9300",
     NEW_RO_ABSOLUTE_ERROR: "5.9300",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241551",
@@ -8084,6 +8704,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4899",
     NEW_RO_ABSOLUTE_ERROR: "6.4899",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240127",
@@ -8110,6 +8732,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2235",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2235",
     NEW_RO_ABSOLUTE_ERROR: "1.2235",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243023",
@@ -8136,6 +8760,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4140",
     NEW_RO_ABSOLUTE_ERROR: "2.4140",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236681",
@@ -8162,6 +8788,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2556",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2556",
     NEW_RO_ABSOLUTE_ERROR: "3.2556",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238122",
@@ -8188,6 +8816,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.1643",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.1643",
     NEW_RO_ABSOLUTE_ERROR: "13.1643",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240535",
@@ -8214,6 +8844,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4714",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4714",
     NEW_RO_ABSOLUTE_ERROR: "1.4714",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236672",
@@ -8240,6 +8872,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3100",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3100",
     NEW_RO_ABSOLUTE_ERROR: "5.3100",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237762",
@@ -8266,6 +8900,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9371",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9371",
     NEW_RO_ABSOLUTE_ERROR: "3.9371",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240269",
@@ -8292,6 +8928,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6685",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6685",
     NEW_RO_ABSOLUTE_ERROR: "3.6685",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240025",
@@ -8318,6 +8956,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "15.1253",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.1253",
     NEW_RO_ABSOLUTE_ERROR: "15.1253",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240037",
@@ -8344,6 +8984,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "17.8131",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.8131",
     NEW_RO_ABSOLUTE_ERROR: "17.8131",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240159",
@@ -8370,6 +9012,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1240",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1240",
     NEW_RO_ABSOLUTE_ERROR: "3.1240",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237796",
@@ -8396,6 +9040,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5026",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5026",
     NEW_RO_ABSOLUTE_ERROR: "5.5026",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237769",
@@ -8422,6 +9068,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2405",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2405",
     NEW_RO_ABSOLUTE_ERROR: "3.2405",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236825",
@@ -8448,6 +9096,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2308",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2308",
     NEW_RO_ABSOLUTE_ERROR: "1.2308",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50220718",
@@ -8474,6 +9124,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7916",
     NEW_RO_ABSOLUTE_ERROR: "1.7916",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240530",
@@ -8500,6 +9152,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.8401",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.8401",
     NEW_RO_ABSOLUTE_ERROR: "13.8401",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240265",
@@ -8526,6 +9180,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5543",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5543",
     NEW_RO_ABSOLUTE_ERROR: "0.5543",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50242881",
@@ -8552,6 +9208,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1122",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1122",
     NEW_RO_ABSOLUTE_ERROR: "9.1122",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242763",
@@ -8578,6 +9236,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8945",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8945",
     NEW_RO_ABSOLUTE_ERROR: "5.8945",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242656",
@@ -8604,6 +9264,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "29.3535",
     NEW_RO_ABSOLUTE_ERROR: "29.3535",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243190",
@@ -8630,6 +9292,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3507",
     NEW_RO_ABSOLUTE_ERROR: "1.3507",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240033",
@@ -8656,6 +9320,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.0206",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.0206",
     NEW_RO_ABSOLUTE_ERROR: "8.0206",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239285",
@@ -8682,6 +9348,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.7919",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.7919",
     NEW_RO_ABSOLUTE_ERROR: "11.7919",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240537",
@@ -8708,6 +9376,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.1987",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.1987",
     NEW_RO_ABSOLUTE_ERROR: "12.1987",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240805",
@@ -8734,6 +9404,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4517",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4517",
     NEW_RO_ABSOLUTE_ERROR: "0.4517",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236859",
@@ -8760,6 +9432,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9460",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9460",
     NEW_RO_ABSOLUTE_ERROR: "0.9460",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240572",
@@ -8786,6 +9460,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.4077",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.4077",
     NEW_RO_ABSOLUTE_ERROR: "7.4077",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243381",
@@ -8812,6 +9488,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.7221",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.7221",
     NEW_RO_ABSOLUTE_ERROR: "6.7221",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240229",
@@ -8838,6 +9516,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9078",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9078",
     NEW_RO_ABSOLUTE_ERROR: "3.9078",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238038",
@@ -8864,6 +9544,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4585",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4585",
     NEW_RO_ABSOLUTE_ERROR: "1.4585",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237607",
@@ -8890,6 +9572,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.5944",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.5944",
     NEW_RO_ABSOLUTE_ERROR: "8.5944",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238786",
@@ -8916,6 +9600,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.8462",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.8462",
     NEW_RO_ABSOLUTE_ERROR: "6.8462",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241552",
@@ -8942,6 +9628,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2995",
     NEW_RO_ABSOLUTE_ERROR: "7.2995",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236742",
@@ -8968,6 +9656,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6208",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6208",
     NEW_RO_ABSOLUTE_ERROR: "6.6208",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236849",
@@ -8994,6 +9684,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1611",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1611",
     NEW_RO_ABSOLUTE_ERROR: "2.1611",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240041",
@@ -9020,6 +9712,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6982",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6982",
     NEW_RO_ABSOLUTE_ERROR: "4.6982",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229592",
@@ -9046,6 +9740,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6647",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6647",
     NEW_RO_ABSOLUTE_ERROR: "2.6647",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236954",
@@ -9072,6 +9768,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.5086",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.5086",
     NEW_RO_ABSOLUTE_ERROR: "9.5086",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50244304",
@@ -9098,6 +9796,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "43.7329",
     NEW_RO_ABSOLUTE_ERROR: "43.7329",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236467",
@@ -9124,6 +9824,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8428",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8428",
     NEW_RO_ABSOLUTE_ERROR: "0.8428",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50244304",
@@ -9150,6 +9852,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "43.7329",
     NEW_RO_ABSOLUTE_ERROR: "43.7329",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240284",
@@ -9176,6 +9880,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0657",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0657",
     NEW_RO_ABSOLUTE_ERROR: "2.0657",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240044",
@@ -9202,6 +9908,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3768",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3768",
     NEW_RO_ABSOLUTE_ERROR: "3.3768",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229595",
@@ -9228,6 +9936,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5717",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5717",
     NEW_RO_ABSOLUTE_ERROR: "1.5717",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241858",
@@ -9254,6 +9964,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3945",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3945",
     NEW_RO_ABSOLUTE_ERROR: "1.3945",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240536",
@@ -9280,6 +9992,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9186",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9186",
     NEW_RO_ABSOLUTE_ERROR: "1.9186",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243309",
@@ -9306,6 +10020,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6454",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6454",
     NEW_RO_ABSOLUTE_ERROR: "6.6454",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243184",
@@ -9332,6 +10048,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1763",
     NEW_RO_ABSOLUTE_ERROR: "5.1763",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239828",
@@ -9358,6 +10076,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0897",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0897",
     NEW_RO_ABSOLUTE_ERROR: "2.0897",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240529",
@@ -9384,6 +10104,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4342",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4342",
     NEW_RO_ABSOLUTE_ERROR: "6.4342",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236682",
@@ -9410,6 +10132,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.7947",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.7947",
     NEW_RO_ABSOLUTE_ERROR: "11.7947",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240142",
@@ -9436,6 +10160,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.2395",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.2395",
     NEW_RO_ABSOLUTE_ERROR: "13.2395",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232933",
@@ -9462,6 +10188,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2245",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2245",
     NEW_RO_ABSOLUTE_ERROR: "4.2245",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241949",
@@ -9488,6 +10216,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.8669",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.8669",
     NEW_RO_ABSOLUTE_ERROR: "8.8669",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240695",
@@ -9514,6 +10244,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.6865",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.6865",
     NEW_RO_ABSOLUTE_ERROR: "10.6865",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243184",
@@ -9540,6 +10272,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7579",
     NEW_RO_ABSOLUTE_ERROR: "0.7579",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236459",
@@ -9566,6 +10300,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1303",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1303",
     NEW_RO_ABSOLUTE_ERROR: "5.1303",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229589",
@@ -9592,6 +10328,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.2855",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.2855",
     NEW_RO_ABSOLUTE_ERROR: "13.2855",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241719",
@@ -9618,6 +10356,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3544",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3544",
     NEW_RO_ABSOLUTE_ERROR: "5.3544",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238853",
@@ -9644,6 +10384,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.7313",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.7313",
     NEW_RO_ABSOLUTE_ERROR: "8.7313",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238210",
@@ -9670,6 +10412,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1451",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1451",
     NEW_RO_ABSOLUTE_ERROR: "9.1451",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235173",
@@ -9696,6 +10440,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0843",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0843",
     NEW_RO_ABSOLUTE_ERROR: "4.0843",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229589",
@@ -9722,6 +10468,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5649",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5649",
     NEW_RO_ABSOLUTE_ERROR: "4.5649",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236696",
@@ -9748,6 +10496,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0571",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0571",
     NEW_RO_ABSOLUTE_ERROR: "1.0571",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240694",
@@ -9774,6 +10524,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "26.3539",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "26.3539",
     NEW_RO_ABSOLUTE_ERROR: "26.3539",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239583",
@@ -9800,6 +10552,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9544",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9544",
     NEW_RO_ABSOLUTE_ERROR: "3.9544",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239239",
@@ -9826,6 +10580,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7284",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7284",
     NEW_RO_ABSOLUTE_ERROR: "5.7284",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235304",
@@ -9852,6 +10608,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8391",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8391",
     NEW_RO_ABSOLUTE_ERROR: "3.8391",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241946",
@@ -9878,6 +10636,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4815",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4815",
     NEW_RO_ABSOLUTE_ERROR: "3.4815",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241962",
@@ -9904,6 +10664,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8521",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8521",
     NEW_RO_ABSOLUTE_ERROR: "2.8521",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238555",
@@ -9930,6 +10692,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9564",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9564",
     NEW_RO_ABSOLUTE_ERROR: "2.9564",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238677",
@@ -9956,6 +10720,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1730",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1730",
     NEW_RO_ABSOLUTE_ERROR: "2.1730",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241941",
@@ -9982,6 +10748,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1097",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1097",
     NEW_RO_ABSOLUTE_ERROR: "6.1097",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234843",
@@ -10008,6 +10776,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3554",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3554",
     NEW_RO_ABSOLUTE_ERROR: "0.3554",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238162",
@@ -10034,6 +10804,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6029",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6029",
     NEW_RO_ABSOLUTE_ERROR: "1.6029",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50242754",
@@ -10060,6 +10832,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "44.2710",
     NEW_RO_ABSOLUTE_ERROR: "44.2710",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235355",
@@ -10086,6 +10860,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1546",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1546",
     NEW_RO_ABSOLUTE_ERROR: "6.1546",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234844",
@@ -10112,6 +10888,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4001",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4001",
     NEW_RO_ABSOLUTE_ERROR: "6.4001",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235112",
@@ -10138,6 +10916,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0083",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0083",
     NEW_RO_ABSOLUTE_ERROR: "2.0083",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239287",
@@ -10164,6 +10944,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3187",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3187",
     NEW_RO_ABSOLUTE_ERROR: "5.3187",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240261",
@@ -10190,6 +10972,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5802",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5802",
     NEW_RO_ABSOLUTE_ERROR: "1.5802",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240763",
@@ -10216,6 +11000,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "55.8478",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "55.8478",
     NEW_RO_ABSOLUTE_ERROR: "55.8478",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239235",
@@ -10242,6 +11028,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "44.1044",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "44.1044",
     NEW_RO_ABSOLUTE_ERROR: "44.1044",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237240",
@@ -10268,6 +11056,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1128",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1128",
     NEW_RO_ABSOLUTE_ERROR: "4.1128",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236698",
@@ -10294,6 +11084,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2784",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2784",
     NEW_RO_ABSOLUTE_ERROR: "0.2784",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237485",
@@ -10320,6 +11112,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "57.2610",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "57.2610",
     NEW_RO_ABSOLUTE_ERROR: "57.2610",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239853",
@@ -10346,6 +11140,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2925",
     NEW_RO_ABSOLUTE_ERROR: "8.2925",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229590",
@@ -10372,6 +11168,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7820",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7820",
     NEW_RO_ABSOLUTE_ERROR: "5.7820",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232957",
@@ -10398,6 +11196,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.6649",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6649",
     NEW_RO_ABSOLUTE_ERROR: "5.6649",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235186",
@@ -10424,6 +11224,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2963",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2963",
     NEW_RO_ABSOLUTE_ERROR: "6.2963",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50202130",
@@ -10450,6 +11252,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6037",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6037",
     NEW_RO_ABSOLUTE_ERROR: "1.6037",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50230200",
@@ -10476,6 +11280,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8765",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8765",
     NEW_RO_ABSOLUTE_ERROR: "5.8765",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237769",
@@ -10502,6 +11308,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "18.9961",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "18.9961",
     NEW_RO_ABSOLUTE_ERROR: "18.9961",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239818",
@@ -10528,6 +11336,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0766",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0766",
     NEW_RO_ABSOLUTE_ERROR: "0.0766",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238967",
@@ -10554,6 +11364,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2593",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2593",
     NEW_RO_ABSOLUTE_ERROR: "5.2593",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240018",
@@ -10580,6 +11392,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.0139",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.0139",
     NEW_RO_ABSOLUTE_ERROR: "9.0139",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234847",
@@ -10606,6 +11420,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.1128",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.1128",
     NEW_RO_ABSOLUTE_ERROR: "8.1128",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238040",
@@ -10632,6 +11448,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.0048",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0048",
     NEW_RO_ABSOLUTE_ERROR: "5.0048",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236886",
@@ -10658,6 +11476,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5585",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5585",
     NEW_RO_ABSOLUTE_ERROR: "0.5585",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236457",
@@ -10684,6 +11504,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4280",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4280",
     NEW_RO_ABSOLUTE_ERROR: "1.4280",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243211",
@@ -10710,6 +11532,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "28.2079",
     NEW_RO_ABSOLUTE_ERROR: "28.2079",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240781",
@@ -10736,6 +11560,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4846",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4846",
     NEW_RO_ABSOLUTE_ERROR: "4.4846",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236858",
@@ -10762,6 +11588,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3412",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3412",
     NEW_RO_ABSOLUTE_ERROR: "2.3412",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50232953",
@@ -10788,6 +11616,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.8900",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.8900",
     NEW_RO_ABSOLUTE_ERROR: "10.8900",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234848",
@@ -10814,6 +11644,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3542",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3542",
     NEW_RO_ABSOLUTE_ERROR: "2.3542",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236872",
@@ -10840,6 +11672,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.3096",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.3096",
     NEW_RO_ABSOLUTE_ERROR: "6.3096",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238038",
@@ -10866,6 +11700,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4727",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4727",
     NEW_RO_ABSOLUTE_ERROR: "1.4727",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239285",
@@ -10892,6 +11728,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9623",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9623",
     NEW_RO_ABSOLUTE_ERROR: "2.9623",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238801",
@@ -10918,6 +11756,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "41.6928",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "41.6928",
     NEW_RO_ABSOLUTE_ERROR: "41.6928",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238677",
@@ -10944,6 +11784,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4764",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4764",
     NEW_RO_ABSOLUTE_ERROR: "0.4764",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237602",
@@ -10970,6 +11812,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1775",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1775",
     NEW_RO_ABSOLUTE_ERROR: "5.1775",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239830",
@@ -10996,6 +11840,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0420",
     NEW_RO_ABSOLUTE_ERROR: "0.0420",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238967",
@@ -11022,6 +11868,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4967",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4967",
     NEW_RO_ABSOLUTE_ERROR: "1.4967",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238163",
@@ -11048,6 +11896,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6222",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6222",
     NEW_RO_ABSOLUTE_ERROR: "2.6222",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50244304",
@@ -11074,6 +11924,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1691",
     NEW_RO_ABSOLUTE_ERROR: "3.1691",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236829",
@@ -11100,6 +11952,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2032",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2032",
     NEW_RO_ABSOLUTE_ERROR: "0.2032",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239246",
@@ -11126,6 +11980,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5909",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5909",
     NEW_RO_ABSOLUTE_ERROR: "6.5909",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238177",
@@ -11152,6 +12008,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3362",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3362",
     NEW_RO_ABSOLUTE_ERROR: "2.3362",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240057",
@@ -11178,6 +12036,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7093",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7093",
     NEW_RO_ABSOLUTE_ERROR: "4.7093",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236742",
@@ -11204,6 +12064,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0014",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0014",
     NEW_RO_ABSOLUTE_ERROR: "3.0014",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236400",
@@ -11230,6 +12092,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8128",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8128",
     NEW_RO_ABSOLUTE_ERROR: "1.8128",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238842",
@@ -11256,6 +12120,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3373",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3373",
     NEW_RO_ABSOLUTE_ERROR: "5.3373",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240131",
@@ -11282,6 +12148,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6242",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6242",
     NEW_RO_ABSOLUTE_ERROR: "4.6242",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239819",
@@ -11308,6 +12176,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "15.8227",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.8227",
     NEW_RO_ABSOLUTE_ERROR: "15.8227",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236949",
@@ -11334,6 +12204,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2808",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2808",
     NEW_RO_ABSOLUTE_ERROR: "1.2808",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240041",
@@ -11360,6 +12232,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7742",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7742",
     NEW_RO_ABSOLUTE_ERROR: "3.7742",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236296",
@@ -11386,6 +12260,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "19.9120",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "19.9120",
     NEW_RO_ABSOLUTE_ERROR: "19.9120",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232945",
@@ -11412,6 +12288,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2452",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2452",
     NEW_RO_ABSOLUTE_ERROR: "7.2452",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240765",
@@ -11438,6 +12316,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.2496",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2496",
     NEW_RO_ABSOLUTE_ERROR: "8.2496",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238842",
@@ -11464,6 +12344,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.7928",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.7928",
     NEW_RO_ABSOLUTE_ERROR: "14.7928",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235359",
@@ -11490,6 +12372,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0465",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0465",
     NEW_RO_ABSOLUTE_ERROR: "1.0465",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243827",
@@ -11516,6 +12400,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6807",
     NEW_RO_ABSOLUTE_ERROR: "2.6807",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235977",
@@ -11542,6 +12428,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3927",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3927",
     NEW_RO_ABSOLUTE_ERROR: "4.3927",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237785",
@@ -11568,6 +12456,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4573",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4573",
     NEW_RO_ABSOLUTE_ERROR: "3.4573",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238210",
@@ -11594,6 +12484,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3015",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3015",
     NEW_RO_ABSOLUTE_ERROR: "4.3015",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235179",
@@ -11620,6 +12512,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0850",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0850",
     NEW_RO_ABSOLUTE_ERROR: "3.0850",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238169",
@@ -11646,6 +12540,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "18.6025",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "18.6025",
     NEW_RO_ABSOLUTE_ERROR: "18.6025",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237248",
@@ -11672,6 +12568,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4180",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4180",
     NEW_RO_ABSOLUTE_ERROR: "0.4180",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240580",
@@ -11698,6 +12596,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3299",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3299",
     NEW_RO_ABSOLUTE_ERROR: "1.3299",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238192",
@@ -11724,6 +12624,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "16.6550",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.6550",
     NEW_RO_ABSOLUTE_ERROR: "16.6550",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229580",
@@ -11750,6 +12652,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5358",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5358",
     NEW_RO_ABSOLUTE_ERROR: "1.5358",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234860",
@@ -11776,6 +12680,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.0938",
     NEW_RO_ABSOLUTE_ERROR: "9.0938",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236900",
@@ -11802,6 +12708,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9532",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9532",
     NEW_RO_ABSOLUTE_ERROR: "0.9532",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240058",
@@ -11828,6 +12736,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3185",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3185",
     NEW_RO_ABSOLUTE_ERROR: "1.3185",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236293",
@@ -11854,6 +12764,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5184",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5184",
     NEW_RO_ABSOLUTE_ERROR: "0.5184",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238841",
@@ -11880,6 +12792,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8721",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8721",
     NEW_RO_ABSOLUTE_ERROR: "1.8721",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240039",
@@ -11906,6 +12820,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3881",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3881",
     NEW_RO_ABSOLUTE_ERROR: "3.3881",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229601",
@@ -11932,6 +12848,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9527",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9527",
     NEW_RO_ABSOLUTE_ERROR: "3.9527",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238854",
@@ -11958,6 +12876,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9924",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9924",
     NEW_RO_ABSOLUTE_ERROR: "0.9924",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236683",
@@ -11984,6 +12904,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.6001",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6001",
     NEW_RO_ABSOLUTE_ERROR: "5.6001",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240143",
@@ -12010,6 +12932,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6455",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6455",
     NEW_RO_ABSOLUTE_ERROR: "0.6455",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241827",
@@ -12036,6 +12960,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "25.8440",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "25.8440",
     NEW_RO_ABSOLUTE_ERROR: "25.8440",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235942",
@@ -12062,6 +12988,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4316",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4316",
     NEW_RO_ABSOLUTE_ERROR: "0.4316",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229578",
@@ -12088,6 +13016,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4828",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4828",
     NEW_RO_ABSOLUTE_ERROR: "1.4828",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240548",
@@ -12114,6 +13044,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.0185",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0185",
     NEW_RO_ABSOLUTE_ERROR: "6.0185",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236470",
@@ -12140,6 +13072,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9302",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9302",
     NEW_RO_ABSOLUTE_ERROR: "0.9302",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238174",
@@ -12166,6 +13100,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8339",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8339",
     NEW_RO_ABSOLUTE_ERROR: "5.8339",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50230205",
@@ -12192,6 +13128,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6718",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6718",
     NEW_RO_ABSOLUTE_ERROR: "3.6718",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50232939",
@@ -12218,6 +13156,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1964",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1964",
     NEW_RO_ABSOLUTE_ERROR: "1.1964",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240529",
@@ -12244,6 +13184,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2061",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2061",
     NEW_RO_ABSOLUTE_ERROR: "2.2061",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234823",
@@ -12270,6 +13212,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5131",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5131",
     NEW_RO_ABSOLUTE_ERROR: "5.5131",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238188",
@@ -12296,6 +13240,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.7212",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.7212",
     NEW_RO_ABSOLUTE_ERROR: "8.7212",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229572",
@@ -12322,6 +13268,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8922",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8922",
     NEW_RO_ABSOLUTE_ERROR: "2.8922",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240065",
@@ -12348,6 +13296,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.8700",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.8700",
     NEW_RO_ABSOLUTE_ERROR: "4.8700",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235236",
@@ -12374,6 +13324,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3673",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3673",
     NEW_RO_ABSOLUTE_ERROR: "0.3673",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235179",
@@ -12400,6 +13352,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2183",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2183",
     NEW_RO_ABSOLUTE_ERROR: "3.2183",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229578",
@@ -12426,6 +13380,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6955",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6955",
     NEW_RO_ABSOLUTE_ERROR: "4.6955",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237243",
@@ -12452,6 +13408,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7007",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7007",
     NEW_RO_ABSOLUTE_ERROR: "1.7007",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236828",
@@ -12478,6 +13436,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9712",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9712",
     NEW_RO_ABSOLUTE_ERROR: "1.9712",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235307",
@@ -12504,6 +13464,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7157",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7157",
     NEW_RO_ABSOLUTE_ERROR: "4.7157",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241719",
@@ -12530,6 +13492,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6927",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6927",
     NEW_RO_ABSOLUTE_ERROR: "1.6927",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238049",
@@ -12556,6 +13520,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5000",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5000",
     NEW_RO_ABSOLUTE_ERROR: "0.5000",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240521",
@@ -12582,6 +13548,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.4908",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.4908",
     NEW_RO_ABSOLUTE_ERROR: "7.4908",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238042",
@@ -12608,6 +13576,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.9707",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.9707",
     NEW_RO_ABSOLUTE_ERROR: "5.9707",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240275",
@@ -12634,6 +13604,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2685",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2685",
     NEW_RO_ABSOLUTE_ERROR: "0.2685",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238204",
@@ -12660,6 +13632,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0072",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0072",
     NEW_RO_ABSOLUTE_ERROR: "1.0072",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229583",
@@ -12686,6 +13660,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2364",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2364",
     NEW_RO_ABSOLUTE_ERROR: "0.2364",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239822",
@@ -12712,6 +13688,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "28.6532",
     NEW_RO_ABSOLUTE_ERROR: "28.6532",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235353",
@@ -12738,6 +13716,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4468",
     NEW_RO_ABSOLUTE_ERROR: "0.4468",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236298",
@@ -12764,6 +13744,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "16.5510",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.5510",
     NEW_RO_ABSOLUTE_ERROR: "16.5510",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238205",
@@ -12790,6 +13772,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.5583",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.5583",
     NEW_RO_ABSOLUTE_ERROR: "8.5583",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240253",
@@ -12816,6 +13800,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.6324",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.6324",
     NEW_RO_ABSOLUTE_ERROR: "12.6324",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236696",
@@ -12842,6 +13828,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2490",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2490",
     NEW_RO_ABSOLUTE_ERROR: "4.2490",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240126",
@@ -12868,6 +13856,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5179",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5179",
     NEW_RO_ABSOLUTE_ERROR: "5.5179",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242653",
@@ -12894,6 +13884,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6729",
     NEW_RO_ABSOLUTE_ERROR: "5.6729",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240252",
@@ -12920,6 +13912,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.7979",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.7979",
     NEW_RO_ABSOLUTE_ERROR: "10.7979",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241742",
@@ -12946,6 +13940,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4134",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4134",
     NEW_RO_ABSOLUTE_ERROR: "6.4134",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239583",
@@ -12972,6 +13968,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7206",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7206",
     NEW_RO_ABSOLUTE_ERROR: "3.7206",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237623",
@@ -12998,6 +13996,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0187",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0187",
     NEW_RO_ABSOLUTE_ERROR: "3.0187",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239262",
@@ -13024,6 +14024,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8471",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8471",
     NEW_RO_ABSOLUTE_ERROR: "2.8471",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236682",
@@ -13050,6 +14052,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3344",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3344",
     NEW_RO_ABSOLUTE_ERROR: "1.3344",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236740",
@@ -13076,6 +14080,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2965",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2965",
     NEW_RO_ABSOLUTE_ERROR: "7.2965",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232942",
@@ -13102,6 +14108,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4507",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4507",
     NEW_RO_ABSOLUTE_ERROR: "0.4507",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236948",
@@ -13128,6 +14136,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1432",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1432",
     NEW_RO_ABSOLUTE_ERROR: "2.1432",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237239",
@@ -13154,6 +14164,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2803",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2803",
     NEW_RO_ABSOLUTE_ERROR: "4.2803",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240025",
@@ -13180,6 +14192,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.2852",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2852",
     NEW_RO_ABSOLUTE_ERROR: "8.2852",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235943",
@@ -13206,6 +14220,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5770",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5770",
     NEW_RO_ABSOLUTE_ERROR: "3.5770",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237793",
@@ -13232,6 +14248,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.9987",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.9987",
     NEW_RO_ABSOLUTE_ERROR: "5.9987",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236466",
@@ -13258,6 +14276,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8504",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8504",
     NEW_RO_ABSOLUTE_ERROR: "0.8504",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238847",
@@ -13284,6 +14304,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1137",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1137",
     NEW_RO_ABSOLUTE_ERROR: "7.1137",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240984",
@@ -13310,6 +14332,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5499",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5499",
     NEW_RO_ABSOLUTE_ERROR: "3.5499",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237777",
@@ -13336,6 +14360,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1613",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1613",
     NEW_RO_ABSOLUTE_ERROR: "9.1613",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236397",
@@ -13362,6 +14388,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3553",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3553",
     NEW_RO_ABSOLUTE_ERROR: "1.3553",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240296",
@@ -13388,6 +14416,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.2664",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2664",
     NEW_RO_ABSOLUTE_ERROR: "8.2664",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238095",
@@ -13414,6 +14444,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3975",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3975",
     NEW_RO_ABSOLUTE_ERROR: "1.3975",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240131",
@@ -13440,6 +14472,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.5806",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.5806",
     NEW_RO_ABSOLUTE_ERROR: "11.5806",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237252",
@@ -13466,6 +14500,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5403",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5403",
     NEW_RO_ABSOLUTE_ERROR: "3.5403",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240275",
@@ -13492,6 +14528,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0026",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0026",
     NEW_RO_ABSOLUTE_ERROR: "1.0026",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238848",
@@ -13518,6 +14556,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.3982",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.3982",
     NEW_RO_ABSOLUTE_ERROR: "11.3982",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236937",
@@ -13544,6 +14584,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6480",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6480",
     NEW_RO_ABSOLUTE_ERROR: "0.6480",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240255",
@@ -13570,6 +14612,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9495",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9495",
     NEW_RO_ABSOLUTE_ERROR: "4.9495",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239850",
@@ -13596,6 +14640,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "51.8996",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "51.8996",
     NEW_RO_ABSOLUTE_ERROR: "51.8996",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240041",
@@ -13622,6 +14668,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7083",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7083",
     NEW_RO_ABSOLUTE_ERROR: "4.7083",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50202130",
@@ -13648,6 +14696,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.5075",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.5075",
     NEW_RO_ABSOLUTE_ERROR: "7.5075",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237243",
@@ -13674,6 +14724,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6431",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6431",
     NEW_RO_ABSOLUTE_ERROR: "2.6431",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236852",
@@ -13700,6 +14752,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3520",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3520",
     NEW_RO_ABSOLUTE_ERROR: "0.3520",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236681",
@@ -13726,6 +14780,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8009",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8009",
     NEW_RO_ABSOLUTE_ERROR: "5.8009",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238168",
@@ -13752,6 +14808,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2133",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2133",
     NEW_RO_ABSOLUTE_ERROR: "5.2133",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240036",
@@ -13778,6 +14836,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5036",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5036",
     NEW_RO_ABSOLUTE_ERROR: "5.5036",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238790",
@@ -13804,6 +14864,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7218",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7218",
     NEW_RO_ABSOLUTE_ERROR: "3.7218",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238795",
@@ -13830,6 +14892,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9715",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9715",
     NEW_RO_ABSOLUTE_ERROR: "0.9715",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236704",
@@ -13856,6 +14920,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.7960",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.7960",
     NEW_RO_ABSOLUTE_ERROR: "8.7960",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238861",
@@ -13882,6 +14948,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.5074",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.5074",
     NEW_RO_ABSOLUTE_ERROR: "12.5074",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234847",
@@ -13908,6 +14976,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1230",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1230",
     NEW_RO_ABSOLUTE_ERROR: "0.1230",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240216",
@@ -13934,6 +15004,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0930",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0930",
     NEW_RO_ABSOLUTE_ERROR: "0.0930",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237781",
@@ -13960,6 +15032,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1418",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1418",
     NEW_RO_ABSOLUTE_ERROR: "1.1418",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240025",
@@ -13986,6 +15060,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8608",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8608",
     NEW_RO_ABSOLUTE_ERROR: "2.8608",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240783",
@@ -14012,6 +15088,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.7969",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.7969",
     NEW_RO_ABSOLUTE_ERROR: "6.7969",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239850",
@@ -14038,6 +15116,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6786",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6786",
     NEW_RO_ABSOLUTE_ERROR: "4.6786",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236850",
@@ -14064,6 +15144,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1124",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1124",
     NEW_RO_ABSOLUTE_ERROR: "0.1124",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237806",
@@ -14090,6 +15172,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8677",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8677",
     NEW_RO_ABSOLUTE_ERROR: "2.8677",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240579",
@@ -14116,6 +15200,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "18.3061",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "18.3061",
     NEW_RO_ABSOLUTE_ERROR: "18.3061",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240545",
@@ -14142,6 +15228,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5478",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5478",
     NEW_RO_ABSOLUTE_ERROR: "3.5478",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238845",
@@ -14168,6 +15256,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6909",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6909",
     NEW_RO_ABSOLUTE_ERROR: "3.6909",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236687",
@@ -14194,6 +15284,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7775",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7775",
     NEW_RO_ABSOLUTE_ERROR: "1.7775",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237789",
@@ -14220,6 +15312,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3808",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3808",
     NEW_RO_ABSOLUTE_ERROR: "0.3808",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238969",
@@ -14246,6 +15340,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9064",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9064",
     NEW_RO_ABSOLUTE_ERROR: "4.9064",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236669",
@@ -14272,6 +15368,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.6020",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6020",
     NEW_RO_ABSOLUTE_ERROR: "5.6020",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240541",
@@ -14298,6 +15396,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.8085",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.8085",
     NEW_RO_ABSOLUTE_ERROR: "7.8085",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236450",
@@ -14324,6 +15424,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "15.8909",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.8909",
     NEW_RO_ABSOLUTE_ERROR: "15.8909",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238677",
@@ -14350,6 +15452,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.3460",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.3460",
     NEW_RO_ABSOLUTE_ERROR: "13.3460",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237762",
@@ -14376,6 +15480,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8870",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8870",
     NEW_RO_ABSOLUTE_ERROR: "0.8870",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50232949",
@@ -14402,6 +15508,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2165",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2165",
     NEW_RO_ABSOLUTE_ERROR: "5.2165",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242277",
@@ -14428,6 +15536,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.5820",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.5820",
     NEW_RO_ABSOLUTE_ERROR: "9.5820",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240276",
@@ -14454,6 +15564,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9614",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9614",
     NEW_RO_ABSOLUTE_ERROR: "3.9614",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235182",
@@ -14480,6 +15592,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0502",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0502",
     NEW_RO_ABSOLUTE_ERROR: "4.0502",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240538",
@@ -14506,6 +15620,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1928",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1928",
     NEW_RO_ABSOLUTE_ERROR: "5.1928",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240304",
@@ -14532,6 +15648,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9111",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9111",
     NEW_RO_ABSOLUTE_ERROR: "2.9111",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50244303",
@@ -14558,6 +15676,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2060",
     NEW_RO_ABSOLUTE_ERROR: "2.2060",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240259",
@@ -14584,6 +15704,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1480",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1480",
     NEW_RO_ABSOLUTE_ERROR: "7.1480",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237817",
@@ -14610,6 +15732,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9032",
     NEW_RO_ABSOLUTE_ERROR: "1.9032",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236911",
@@ -14636,6 +15760,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.4936",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.4936",
     NEW_RO_ABSOLUTE_ERROR: "7.4936",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239814",
@@ -14662,6 +15788,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2720",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2720",
     NEW_RO_ABSOLUTE_ERROR: "1.2720",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235173",
@@ -14688,6 +15816,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.4727",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.4727",
     NEW_RO_ABSOLUTE_ERROR: "7.4727",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236873",
@@ -14714,6 +15844,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9193",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9193",
     NEW_RO_ABSOLUTE_ERROR: "2.9193",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237250",
@@ -14740,6 +15872,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4612",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4612",
     NEW_RO_ABSOLUTE_ERROR: "4.4612",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236850",
@@ -14766,6 +15900,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8144",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8144",
     NEW_RO_ABSOLUTE_ERROR: "2.8144",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237596",
@@ -14792,6 +15928,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1391",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1391",
     NEW_RO_ABSOLUTE_ERROR: "1.1391",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238103",
@@ -14818,6 +15956,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1282",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1282",
     NEW_RO_ABSOLUTE_ERROR: "2.1282",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240787",
@@ -14844,6 +15984,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7018",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7018",
     NEW_RO_ABSOLUTE_ERROR: "1.7018",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235278",
@@ -14870,6 +16012,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4014",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4014",
     NEW_RO_ABSOLUTE_ERROR: "1.4014",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240529",
@@ -14896,6 +16040,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.5934",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.5934",
     NEW_RO_ABSOLUTE_ERROR: "8.5934",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238083",
@@ -14922,6 +16068,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.3135",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.3135",
     NEW_RO_ABSOLUTE_ERROR: "9.3135",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236689",
@@ -14948,6 +16096,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.2386",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2386",
     NEW_RO_ABSOLUTE_ERROR: "8.2386",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237763",
@@ -14974,6 +16124,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4058",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4058",
     NEW_RO_ABSOLUTE_ERROR: "2.4058",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240019",
@@ -15000,6 +16152,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2893",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2893",
     NEW_RO_ABSOLUTE_ERROR: "5.2893",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239828",
@@ -15026,6 +16180,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.9007",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.9007",
     NEW_RO_ABSOLUTE_ERROR: "14.9007",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236702",
@@ -15052,6 +16208,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7939",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7939",
     NEW_RO_ABSOLUTE_ERROR: "2.7939",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237602",
@@ -15078,6 +16236,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.5471",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.5471",
     NEW_RO_ABSOLUTE_ERROR: "8.5471",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236456",
@@ -15104,6 +16264,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "48.4731",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "48.4731",
     NEW_RO_ABSOLUTE_ERROR: "48.4731",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236672",
@@ -15130,6 +16292,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1200",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1200",
     NEW_RO_ABSOLUTE_ERROR: "7.1200",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236883",
@@ -15156,6 +16320,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6472",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6472",
     NEW_RO_ABSOLUTE_ERROR: "3.6472",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235262",
@@ -15182,6 +16348,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5866",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5866",
     NEW_RO_ABSOLUTE_ERROR: "5.5866",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237239",
@@ -15208,6 +16376,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6417",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6417",
     NEW_RO_ABSOLUTE_ERROR: "4.6417",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238798",
@@ -15234,6 +16404,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4147",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4147",
     NEW_RO_ABSOLUTE_ERROR: "2.4147",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235324",
@@ -15260,6 +16432,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1880",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1880",
     NEW_RO_ABSOLUTE_ERROR: "0.1880",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237762",
@@ -15286,6 +16460,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6815",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6815",
     NEW_RO_ABSOLUTE_ERROR: "1.6815",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237245",
@@ -15312,6 +16488,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5239",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5239",
     NEW_RO_ABSOLUTE_ERROR: "2.5239",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239591",
@@ -15338,6 +16516,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3147",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3147",
     NEW_RO_ABSOLUTE_ERROR: "5.3147",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240033",
@@ -15364,6 +16544,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9049",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9049",
     NEW_RO_ABSOLUTE_ERROR: "4.9049",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243318",
@@ -15390,6 +16572,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4485",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4485",
     NEW_RO_ABSOLUTE_ERROR: "0.4485",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240125",
@@ -15416,6 +16600,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.9013",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.9013",
     NEW_RO_ABSOLUTE_ERROR: "10.9013",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237764",
@@ -15442,6 +16628,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0206",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0206",
     NEW_RO_ABSOLUTE_ERROR: "2.0206",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238865",
@@ -15468,6 +16656,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5117",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5117",
     NEW_RO_ABSOLUTE_ERROR: "2.5117",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240130",
@@ -15494,6 +16684,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.8472",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.8472",
     NEW_RO_ABSOLUTE_ERROR: "8.8472",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243838",
@@ -15520,6 +16712,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "22.0075",
     NEW_RO_ABSOLUTE_ERROR: "22.0075",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236830",
@@ -15546,6 +16740,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2625",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2625",
     NEW_RO_ABSOLUTE_ERROR: "3.2625",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236837",
@@ -15572,6 +16768,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.6638",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6638",
     NEW_RO_ABSOLUTE_ERROR: "5.6638",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50230203",
@@ -15598,6 +16796,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1281",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1281",
     NEW_RO_ABSOLUTE_ERROR: "2.1281",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238257",
@@ -15624,6 +16824,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.4617",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.4617",
     NEW_RO_ABSOLUTE_ERROR: "7.4617",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239825",
@@ -15650,6 +16852,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "53.4329",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "53.4329",
     NEW_RO_ABSOLUTE_ERROR: "53.4329",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237767",
@@ -15676,6 +16880,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2410",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2410",
     NEW_RO_ABSOLUTE_ERROR: "1.2410",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236868",
@@ -15702,6 +16908,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0443",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0443",
     NEW_RO_ABSOLUTE_ERROR: "4.0443",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243851",
@@ -15728,6 +16936,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "27.7624",
     NEW_RO_ABSOLUTE_ERROR: "27.7624",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237759",
@@ -15754,6 +16964,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4550",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4550",
     NEW_RO_ABSOLUTE_ERROR: "2.4550",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243851",
@@ -15780,6 +16992,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5609",
     NEW_RO_ABSOLUTE_ERROR: "4.5609",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238261",
@@ -15806,6 +17020,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5634",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5634",
     NEW_RO_ABSOLUTE_ERROR: "2.5634",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236846",
@@ -15832,6 +17048,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8347",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8347",
     NEW_RO_ABSOLUTE_ERROR: "3.8347",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239847",
@@ -15858,6 +17076,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7904",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7904",
     NEW_RO_ABSOLUTE_ERROR: "3.7904",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237618",
@@ -15884,6 +17104,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1091",
     NEW_RO_ABSOLUTE_ERROR: "0.1091",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50230193",
@@ -15910,6 +17132,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4246",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4246",
     NEW_RO_ABSOLUTE_ERROR: "3.4246",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238849",
@@ -15936,6 +17160,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.8034",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.8034",
     NEW_RO_ABSOLUTE_ERROR: "6.8034",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232949",
@@ -15962,6 +17188,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8226",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8226",
     NEW_RO_ABSOLUTE_ERROR: "0.8226",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243314",
@@ -15988,6 +17216,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2868",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2868",
     NEW_RO_ABSOLUTE_ERROR: "2.2868",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240295",
@@ -16014,6 +17244,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5980",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5980",
     NEW_RO_ABSOLUTE_ERROR: "1.5980",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229569",
@@ -16040,6 +17272,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9469",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9469",
     NEW_RO_ABSOLUTE_ERROR: "1.9469",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240269",
@@ -16066,6 +17300,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5584",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5584",
     NEW_RO_ABSOLUTE_ERROR: "4.5584",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240014",
@@ -16092,6 +17328,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7568",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7568",
     NEW_RO_ABSOLUTE_ERROR: "2.7568",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237732",
@@ -16118,6 +17356,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8229",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8229",
     NEW_RO_ABSOLUTE_ERROR: "2.8229",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238104",
@@ -16144,6 +17384,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6165",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6165",
     NEW_RO_ABSOLUTE_ERROR: "6.6165",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238197",
@@ -16170,6 +17412,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.5297",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.5297",
     NEW_RO_ABSOLUTE_ERROR: "7.5297",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229600",
@@ -16196,6 +17440,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9457",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9457",
     NEW_RO_ABSOLUTE_ERROR: "1.9457",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238043",
@@ -16222,6 +17468,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6110",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6110",
     NEW_RO_ABSOLUTE_ERROR: "3.6110",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236877",
@@ -16248,6 +17496,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4990",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4990",
     NEW_RO_ABSOLUTE_ERROR: "1.4990",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238207",
@@ -16274,6 +17524,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.7551",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.7551",
     NEW_RO_ABSOLUTE_ERROR: "6.7551",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240159",
@@ -16300,6 +17552,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1141",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1141",
     NEW_RO_ABSOLUTE_ERROR: "5.1141",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240288",
@@ -16326,6 +17580,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.8224",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.8224",
     NEW_RO_ABSOLUTE_ERROR: "11.8224",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236746",
@@ -16352,6 +17608,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1408",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1408",
     NEW_RO_ABSOLUTE_ERROR: "1.1408",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240760",
@@ -16378,6 +17636,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "41.1447",
     NEW_RO_ABSOLUTE_ERROR: "41.1447",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237597",
@@ -16404,6 +17664,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2405",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2405",
     NEW_RO_ABSOLUTE_ERROR: "5.2405",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237730",
@@ -16430,6 +17692,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4117",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4117",
     NEW_RO_ABSOLUTE_ERROR: "3.4117",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236839",
@@ -16456,6 +17720,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0438",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0438",
     NEW_RO_ABSOLUTE_ERROR: "2.0438",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243189",
@@ -16482,6 +17748,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "26.0048",
     NEW_RO_ABSOLUTE_ERROR: "26.0048",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242763",
@@ -16508,6 +17776,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3910",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3910",
     NEW_RO_ABSOLUTE_ERROR: "4.3910",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239246",
@@ -16534,6 +17804,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4231",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4231",
     NEW_RO_ABSOLUTE_ERROR: "0.4231",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236955",
@@ -16560,6 +17832,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3946",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3946",
     NEW_RO_ABSOLUTE_ERROR: "5.3946",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238100",
@@ -16586,6 +17860,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6328",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6328",
     NEW_RO_ABSOLUTE_ERROR: "1.6328",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236469",
@@ -16612,6 +17888,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.0875",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.0875",
     NEW_RO_ABSOLUTE_ERROR: "8.0875",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240760",
@@ -16638,6 +17916,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6945",
     NEW_RO_ABSOLUTE_ERROR: "3.6945",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232949",
@@ -16664,6 +17944,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4665",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4665",
     NEW_RO_ABSOLUTE_ERROR: "3.4665",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237244",
@@ -16690,6 +17972,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4078",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4078",
     NEW_RO_ABSOLUTE_ERROR: "1.4078",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234834",
@@ -16716,6 +18000,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3025",
     NEW_RO_ABSOLUTE_ERROR: "5.3025",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238104",
@@ -16742,6 +18028,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0383",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0383",
     NEW_RO_ABSOLUTE_ERROR: "3.0383",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240231",
@@ -16768,6 +18056,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1542",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1542",
     NEW_RO_ABSOLUTE_ERROR: "0.1542",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240545",
@@ -16794,6 +18084,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2740",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2740",
     NEW_RO_ABSOLUTE_ERROR: "4.2740",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235181",
@@ -16820,6 +18112,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.8870",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.8870",
     NEW_RO_ABSOLUTE_ERROR: "9.8870",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237732",
@@ -16846,6 +18140,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2029",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2029",
     NEW_RO_ABSOLUTE_ERROR: "3.2029",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237746",
@@ -16872,6 +18168,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3836",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3836",
     NEW_RO_ABSOLUTE_ERROR: "2.3836",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237788",
@@ -16898,6 +18196,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4361",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4361",
     NEW_RO_ABSOLUTE_ERROR: "5.4361",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240256",
@@ -16924,6 +18224,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2427",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2427",
     NEW_RO_ABSOLUTE_ERROR: "2.2427",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237251",
@@ -16950,6 +18252,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5195",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5195",
     NEW_RO_ABSOLUTE_ERROR: "0.5195",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238100",
@@ -16976,6 +18280,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6667",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6667",
     NEW_RO_ABSOLUTE_ERROR: "6.6667",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242656",
@@ -17002,6 +18308,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.3749",
     NEW_RO_ABSOLUTE_ERROR: "7.3749",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242660",
@@ -17028,6 +18336,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1179",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1179",
     NEW_RO_ABSOLUTE_ERROR: "6.1179",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234817",
@@ -17054,6 +18364,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.1852",
     NEW_RO_ABSOLUTE_ERROR: "12.1852",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237248",
@@ -17080,6 +18392,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2103",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2103",
     NEW_RO_ABSOLUTE_ERROR: "6.2103",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236669",
@@ -17106,6 +18420,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.7029",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.7029",
     NEW_RO_ABSOLUTE_ERROR: "7.7029",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240544",
@@ -17132,6 +18448,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3223",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3223",
     NEW_RO_ABSOLUTE_ERROR: "2.3223",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243418",
@@ -17158,6 +18476,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6303",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6303",
     NEW_RO_ABSOLUTE_ERROR: "6.6303",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238043",
@@ -17184,6 +18504,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5475",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5475",
     NEW_RO_ABSOLUTE_ERROR: "3.5475",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240259",
@@ -17210,6 +18532,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4807",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4807",
     NEW_RO_ABSOLUTE_ERROR: "6.4807",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240524",
@@ -17236,6 +18560,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.7588",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.7588",
     NEW_RO_ABSOLUTE_ERROR: "13.7588",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237802",
@@ -17262,6 +18588,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7792",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7792",
     NEW_RO_ABSOLUTE_ERROR: "3.7792",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239446",
@@ -17288,6 +18616,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.3764",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.3764",
     NEW_RO_ABSOLUTE_ERROR: "7.3764",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237758",
@@ -17314,6 +18644,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.9704",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.9704",
     NEW_RO_ABSOLUTE_ERROR: "14.9704",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240143",
@@ -17340,6 +18672,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5144",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5144",
     NEW_RO_ABSOLUTE_ERROR: "1.5144",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235356",
@@ -17366,6 +18700,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6748",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6748",
     NEW_RO_ABSOLUTE_ERROR: "1.6748",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240295",
@@ -17392,6 +18728,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1560",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1560",
     NEW_RO_ABSOLUTE_ERROR: "0.1560",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237802",
@@ -17418,6 +18756,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.7853",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.7853",
     NEW_RO_ABSOLUTE_ERROR: "6.7853",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229590",
@@ -17444,6 +18784,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.4243",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.4243",
     NEW_RO_ABSOLUTE_ERROR: "7.4243",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241716",
@@ -17470,6 +18812,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.5121",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.5121",
     NEW_RO_ABSOLUTE_ERROR: "7.5121",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240345",
@@ -17496,6 +18840,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.0057",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.0057",
     NEW_RO_ABSOLUTE_ERROR: "8.0057",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241958",
@@ -17522,6 +18868,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.3047",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.3047",
     NEW_RO_ABSOLUTE_ERROR: "6.3047",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235320",
@@ -17548,6 +18896,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0251",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0251",
     NEW_RO_ABSOLUTE_ERROR: "0.0251",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238971",
@@ -17574,6 +18924,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6758",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6758",
     NEW_RO_ABSOLUTE_ERROR: "6.6758",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241828",
@@ -17600,6 +18952,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0064",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0064",
     NEW_RO_ABSOLUTE_ERROR: "3.0064",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236672",
@@ -17626,6 +18980,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9733",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9733",
     NEW_RO_ABSOLUTE_ERROR: "1.9733",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237752",
@@ -17652,6 +19008,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2947",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2947",
     NEW_RO_ABSOLUTE_ERROR: "2.2947",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238531",
@@ -17678,6 +19036,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7943",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7943",
     NEW_RO_ABSOLUTE_ERROR: "4.7943",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235111",
@@ -17704,6 +19064,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "23.7958",
     NEW_RO_ABSOLUTE_ERROR: "23.7958",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243210",
@@ -17730,6 +19092,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "29.7052",
     NEW_RO_ABSOLUTE_ERROR: "29.7052",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240276",
@@ -17756,6 +19120,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5574",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5574",
     NEW_RO_ABSOLUTE_ERROR: "5.5574",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236681",
@@ -17782,6 +19148,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.0314",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0314",
     NEW_RO_ABSOLUTE_ERROR: "5.0314",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236863",
@@ -17808,6 +19176,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5017",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5017",
     NEW_RO_ABSOLUTE_ERROR: "6.5017",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236850",
@@ -17834,6 +19204,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.0096",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0096",
     NEW_RO_ABSOLUTE_ERROR: "6.0096",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238779",
@@ -17860,6 +19232,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0919",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0919",
     NEW_RO_ABSOLUTE_ERROR: "4.0919",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240580",
@@ -17886,6 +19260,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "138.8358",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "138.8358",
     NEW_RO_ABSOLUTE_ERROR: "138.8358",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237763",
@@ -17912,6 +19288,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.9952",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.9952",
     NEW_RO_ABSOLUTE_ERROR: "5.9952",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239591",
@@ -17938,6 +19316,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3014",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3014",
     NEW_RO_ABSOLUTE_ERROR: "5.3014",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243210",
@@ -17964,6 +19344,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6456",
     NEW_RO_ABSOLUTE_ERROR: "3.6456",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236743",
@@ -17990,6 +19372,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4152",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4152",
     NEW_RO_ABSOLUTE_ERROR: "2.4152",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240267",
@@ -18016,6 +19400,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7837",
     NEW_RO_ABSOLUTE_ERROR: "2.7837",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236853",
@@ -18042,6 +19428,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0064",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0064",
     NEW_RO_ABSOLUTE_ERROR: "3.0064",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235111",
@@ -18068,6 +19456,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5438",
     NEW_RO_ABSOLUTE_ERROR: "1.5438",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236670",
@@ -18094,6 +19484,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "56.8337",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "56.8337",
     NEW_RO_ABSOLUTE_ERROR: "56.8337",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241540",
@@ -18120,6 +19512,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9729",
     NEW_RO_ABSOLUTE_ERROR: "1.9729",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240024",
@@ -18146,6 +19540,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "54.9825",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "54.9825",
     NEW_RO_ABSOLUTE_ERROR: "54.9825",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236671",
@@ -18172,6 +19568,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.6258",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.6258",
     NEW_RO_ABSOLUTE_ERROR: "9.6258",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239248",
@@ -18198,6 +19596,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5270",
     NEW_RO_ABSOLUTE_ERROR: "0.5270",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239619",
@@ -18224,6 +19624,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.8933",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.8933",
     NEW_RO_ABSOLUTE_ERROR: "7.8933",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241545",
@@ -18250,6 +19652,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7527",
     NEW_RO_ABSOLUTE_ERROR: "3.7527",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239255",
@@ -18276,6 +19680,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4765",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4765",
     NEW_RO_ABSOLUTE_ERROR: "0.4765",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240558",
@@ -18302,6 +19708,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2696",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2696",
     NEW_RO_ABSOLUTE_ERROR: "4.2696",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236946",
@@ -18328,6 +19736,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.8358",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.8358",
     NEW_RO_ABSOLUTE_ERROR: "8.8358",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239825",
@@ -18354,6 +19764,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2685",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2685",
     NEW_RO_ABSOLUTE_ERROR: "4.2685",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238867",
@@ -18380,6 +19792,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5880",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5880",
     NEW_RO_ABSOLUTE_ERROR: "4.5880",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236388",
@@ -18406,6 +19820,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0599",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0599",
     NEW_RO_ABSOLUTE_ERROR: "1.0599",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229580",
@@ -18432,6 +19848,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5373",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5373",
     NEW_RO_ABSOLUTE_ERROR: "2.5373",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239289",
@@ -18458,6 +19876,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8438",
     NEW_RO_ABSOLUTE_ERROR: "5.8438",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235259",
@@ -18484,6 +19904,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.0819",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0819",
     NEW_RO_ABSOLUTE_ERROR: "6.0819",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241829",
@@ -18510,6 +19932,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.4878",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.4878",
     NEW_RO_ABSOLUTE_ERROR: "14.4878",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238046",
@@ -18536,6 +19960,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2402",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2402",
     NEW_RO_ABSOLUTE_ERROR: "5.2402",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240572",
@@ -18562,6 +19988,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2027",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2027",
     NEW_RO_ABSOLUTE_ERROR: "1.2027",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50234846",
@@ -18588,6 +20016,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1240",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1240",
     NEW_RO_ABSOLUTE_ERROR: "2.1240",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237464",
@@ -18614,6 +20044,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "53.3460",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "53.3460",
     NEW_RO_ABSOLUTE_ERROR: "53.3460",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240256",
@@ -18640,6 +20072,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6368",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6368",
     NEW_RO_ABSOLUTE_ERROR: "2.6368",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239840",
@@ -18666,6 +20100,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "46.1662",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "46.1662",
     NEW_RO_ABSOLUTE_ERROR: "46.1662",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236873",
@@ -18692,6 +20128,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6523",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6523",
     NEW_RO_ABSOLUTE_ERROR: "1.6523",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238863",
@@ -18718,6 +20156,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5147",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5147",
     NEW_RO_ABSOLUTE_ERROR: "0.5147",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240056",
@@ -18744,6 +20184,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6655",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6655",
     NEW_RO_ABSOLUTE_ERROR: "4.6655",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238754",
@@ -18770,6 +20212,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7469",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7469",
     NEW_RO_ABSOLUTE_ERROR: "0.7469",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50220705",
@@ -18796,6 +20240,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2568",
     NEW_RO_ABSOLUTE_ERROR: "4.2568",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239239",
@@ -18822,6 +20268,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1253",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1253",
     NEW_RO_ABSOLUTE_ERROR: "6.1253",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236709",
@@ -18848,6 +20296,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.1305",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.1305",
     NEW_RO_ABSOLUTE_ERROR: "10.1305",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236699",
@@ -18874,6 +20324,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2536",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2536",
     NEW_RO_ABSOLUTE_ERROR: "4.2536",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239287",
@@ -18900,6 +20352,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6657",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6657",
     NEW_RO_ABSOLUTE_ERROR: "4.6657",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235328",
@@ -18926,6 +20380,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6029",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6029",
     NEW_RO_ABSOLUTE_ERROR: "1.6029",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240697",
@@ -18952,6 +20408,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "33.6069",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "33.6069",
     NEW_RO_ABSOLUTE_ERROR: "33.6069",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243181",
@@ -18978,6 +20436,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8073",
     NEW_RO_ABSOLUTE_ERROR: "1.8073",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237464",
@@ -19004,6 +20464,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.0305",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.0305",
     NEW_RO_ABSOLUTE_ERROR: "7.0305",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238867",
@@ -19030,6 +20492,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6738",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6738",
     NEW_RO_ABSOLUTE_ERROR: "2.6738",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236863",
@@ -19056,6 +20520,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7525",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7525",
     NEW_RO_ABSOLUTE_ERROR: "3.7525",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240558",
@@ -19082,6 +20548,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1916",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1916",
     NEW_RO_ABSOLUTE_ERROR: "2.1916",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240031",
@@ -19108,6 +20576,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6923",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6923",
     NEW_RO_ABSOLUTE_ERROR: "1.6923",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239289",
@@ -19134,6 +20604,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5525",
     NEW_RO_ABSOLUTE_ERROR: "0.5525",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240347",
@@ -19160,6 +20632,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4264",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4264",
     NEW_RO_ABSOLUTE_ERROR: "1.4264",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238801",
@@ -19186,6 +20660,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8062",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8062",
     NEW_RO_ABSOLUTE_ERROR: "0.8062",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240776",
@@ -19212,6 +20688,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "45.8454",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "45.8454",
     NEW_RO_ABSOLUTE_ERROR: "45.8454",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240026",
@@ -19238,6 +20716,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1624",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1624",
     NEW_RO_ABSOLUTE_ERROR: "5.1624",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229572",
@@ -19264,6 +20744,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.5181",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.5181",
     NEW_RO_ABSOLUTE_ERROR: "7.5181",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236703",
@@ -19290,6 +20772,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.9174",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.9174",
     NEW_RO_ABSOLUTE_ERROR: "6.9174",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50220717",
@@ -19316,6 +20800,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "59.9234",
     NEW_RO_ABSOLUTE_ERROR: "59.9234",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240776",
@@ -19342,6 +20828,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1638",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1638",
     NEW_RO_ABSOLUTE_ERROR: "2.1638",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239821",
@@ -19368,6 +20856,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.6234",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6234",
     NEW_RO_ABSOLUTE_ERROR: "5.6234",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240782",
@@ -19394,6 +20884,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5922",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5922",
     NEW_RO_ABSOLUTE_ERROR: "3.5922",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236829",
@@ -19420,6 +20912,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8032",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8032",
     NEW_RO_ABSOLUTE_ERROR: "2.8032",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50212294",
@@ -19446,6 +20940,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0277",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0277",
     NEW_RO_ABSOLUTE_ERROR: "0.0277",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240694",
@@ -19472,6 +20968,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1997",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1997",
     NEW_RO_ABSOLUTE_ERROR: "4.1997",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240535",
@@ -19498,6 +20996,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5686",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5686",
     NEW_RO_ABSOLUTE_ERROR: "4.5686",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237768",
@@ -19524,6 +21024,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.0486",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.0486",
     NEW_RO_ABSOLUTE_ERROR: "7.0486",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50230199",
@@ -19550,6 +21052,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5709",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5709",
     NEW_RO_ABSOLUTE_ERROR: "4.5709",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241714",
@@ -19576,6 +21080,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.8732",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.8732",
     NEW_RO_ABSOLUTE_ERROR: "8.8732",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238793",
@@ -19602,6 +21108,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4403",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4403",
     NEW_RO_ABSOLUTE_ERROR: "3.4403",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238196",
@@ -19628,6 +21136,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4348",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4348",
     NEW_RO_ABSOLUTE_ERROR: "2.4348",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236872",
@@ -19654,6 +21164,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4365",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4365",
     NEW_RO_ABSOLUTE_ERROR: "0.4365",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240577",
@@ -19680,6 +21192,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1794",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1794",
     NEW_RO_ABSOLUTE_ERROR: "4.1794",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235331",
@@ -19706,6 +21220,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1913",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1913",
     NEW_RO_ABSOLUTE_ERROR: "1.1913",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50220710",
@@ -19732,6 +21248,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.9615",
     NEW_RO_ABSOLUTE_ERROR: "5.9615",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240763",
@@ -19758,6 +21276,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "55.8478",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "55.8478",
     NEW_RO_ABSOLUTE_ERROR: "55.8478",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241826",
@@ -19784,6 +21304,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1500",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1500",
     NEW_RO_ABSOLUTE_ERROR: "3.1500",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238038",
@@ -19810,6 +21332,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1693",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1693",
     NEW_RO_ABSOLUTE_ERROR: "9.1693",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235307",
@@ -19836,6 +21360,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7546",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7546",
     NEW_RO_ABSOLUTE_ERROR: "0.7546",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50220717",
@@ -19862,6 +21388,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.3681",
     NEW_RO_ABSOLUTE_ERROR: "10.3681",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236741",
@@ -19888,6 +21416,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1779",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1779",
     NEW_RO_ABSOLUTE_ERROR: "4.1779",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237596",
@@ -19914,6 +21444,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9287",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9287",
     NEW_RO_ABSOLUTE_ERROR: "3.9287",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239840",
@@ -19940,6 +21472,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9915",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9915",
     NEW_RO_ABSOLUTE_ERROR: "4.9915",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241962",
@@ -19966,6 +21500,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9851",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9851",
     NEW_RO_ABSOLUTE_ERROR: "1.9851",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237774",
@@ -19992,6 +21528,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.7629",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.7629",
     NEW_RO_ABSOLUTE_ERROR: "7.7629",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50204730",
@@ -20018,6 +21556,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.5344",
     NEW_RO_ABSOLUTE_ERROR: "10.5344",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236949",
@@ -20044,6 +21584,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3063",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3063",
     NEW_RO_ABSOLUTE_ERROR: "3.3063",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239287",
@@ -20070,6 +21612,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7699",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7699",
     NEW_RO_ABSOLUTE_ERROR: "4.7699",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229590",
@@ -20096,6 +21640,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3010",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3010",
     NEW_RO_ABSOLUTE_ERROR: "1.3010",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240767",
@@ -20122,6 +21668,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.8720",
     NEW_RO_ABSOLUTE_ERROR: "7.8720",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229585",
@@ -20148,6 +21696,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7007",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7007",
     NEW_RO_ABSOLUTE_ERROR: "0.7007",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50244213",
@@ -20174,6 +21724,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1165",
     NEW_RO_ABSOLUTE_ERROR: "1.1165",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235265",
@@ -20200,6 +21752,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.8184",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.8184",
     NEW_RO_ABSOLUTE_ERROR: "4.8184",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240262",
@@ -20226,6 +21780,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.2152",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.2152",
     NEW_RO_ABSOLUTE_ERROR: "11.2152",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237621",
@@ -20252,6 +21808,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4405",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4405",
     NEW_RO_ABSOLUTE_ERROR: "0.4405",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236707",
@@ -20278,6 +21836,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4729",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4729",
     NEW_RO_ABSOLUTE_ERROR: "4.4729",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240550",
@@ -20304,6 +21864,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7637",
     NEW_RO_ABSOLUTE_ERROR: "4.7637",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240695",
@@ -20330,6 +21892,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "18.0561",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "18.0561",
     NEW_RO_ABSOLUTE_ERROR: "18.0561",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236905",
@@ -20356,6 +21920,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.3875",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.3875",
     NEW_RO_ABSOLUTE_ERROR: "6.3875",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240763",
@@ -20382,6 +21948,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.4719",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.4719",
     NEW_RO_ABSOLUTE_ERROR: "10.4719",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235356",
@@ -20408,6 +21976,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2796",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2796",
     NEW_RO_ABSOLUTE_ERROR: "3.2796",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50230209",
@@ -20434,6 +22004,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1729",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1729",
     NEW_RO_ABSOLUTE_ERROR: "5.1729",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239250",
@@ -20460,6 +22032,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.5310",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.5310",
     NEW_RO_ABSOLUTE_ERROR: "7.5310",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236912",
@@ -20486,6 +22060,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5141",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5141",
     NEW_RO_ABSOLUTE_ERROR: "0.5141",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240031",
@@ -20512,6 +22088,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.7760",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.7760",
     NEW_RO_ABSOLUTE_ERROR: "7.7760",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238782",
@@ -20538,6 +22116,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7680",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7680",
     NEW_RO_ABSOLUTE_ERROR: "0.7680",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240219",
@@ -20564,6 +22144,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2247",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2247",
     NEW_RO_ABSOLUTE_ERROR: "6.2247",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236397",
@@ -20590,6 +22172,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "15.6370",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.6370",
     NEW_RO_ABSOLUTE_ERROR: "15.6370",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237250",
@@ -20616,6 +22200,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "32.1629",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "32.1629",
     NEW_RO_ABSOLUTE_ERROR: "32.1629",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236466",
@@ -20642,6 +22228,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.5858",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.5858",
     NEW_RO_ABSOLUTE_ERROR: "10.5858",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229600",
@@ -20668,6 +22256,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3790",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3790",
     NEW_RO_ABSOLUTE_ERROR: "1.3790",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240292",
@@ -20694,6 +22284,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4238",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4238",
     NEW_RO_ABSOLUTE_ERROR: "4.4238",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50230210",
@@ -20720,6 +22312,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4178",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4178",
     NEW_RO_ABSOLUTE_ERROR: "5.4178",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240284",
@@ -20746,6 +22340,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1375",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1375",
     NEW_RO_ABSOLUTE_ERROR: "9.1375",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229581",
@@ -20772,6 +22368,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9264",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9264",
     NEW_RO_ABSOLUTE_ERROR: "1.9264",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237616",
@@ -20798,6 +22396,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5456",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5456",
     NEW_RO_ABSOLUTE_ERROR: "0.5456",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237485",
@@ -20824,6 +22424,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0478",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0478",
     NEW_RO_ABSOLUTE_ERROR: "2.0478",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243211",
@@ -20850,6 +22452,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1746",
     NEW_RO_ABSOLUTE_ERROR: "2.1746",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238967",
@@ -20876,6 +22480,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1732",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1732",
     NEW_RO_ABSOLUTE_ERROR: "1.1732",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238035",
@@ -20902,6 +22508,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3880",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3880",
     NEW_RO_ABSOLUTE_ERROR: "2.3880",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238837",
@@ -20928,6 +22536,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.4654",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.4654",
     NEW_RO_ABSOLUTE_ERROR: "13.4654",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239818",
@@ -20954,6 +22564,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2041",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2041",
     NEW_RO_ABSOLUTE_ERROR: "1.2041",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240803",
@@ -20980,6 +22592,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1556",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1556",
     NEW_RO_ABSOLUTE_ERROR: "2.1556",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239293",
@@ -21006,6 +22620,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4638",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4638",
     NEW_RO_ABSOLUTE_ERROR: "2.4638",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237458",
@@ -21032,6 +22648,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4248",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4248",
     NEW_RO_ABSOLUTE_ERROR: "2.4248",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240229",
@@ -21058,6 +22676,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2503",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2503",
     NEW_RO_ABSOLUTE_ERROR: "0.2503",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239588",
@@ -21084,6 +22704,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1389",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1389",
     NEW_RO_ABSOLUTE_ERROR: "5.1389",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240577",
@@ -21110,6 +22732,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7738",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7738",
     NEW_RO_ABSOLUTE_ERROR: "3.7738",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238840",
@@ -21136,6 +22760,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1343",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1343",
     NEW_RO_ABSOLUTE_ERROR: "5.1343",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240570",
@@ -21162,6 +22788,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1491",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1491",
     NEW_RO_ABSOLUTE_ERROR: "2.1491",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240984",
@@ -21188,6 +22816,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4502",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4502",
     NEW_RO_ABSOLUTE_ERROR: "3.4502",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229590",
@@ -21214,6 +22844,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.3675",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.3675",
     NEW_RO_ABSOLUTE_ERROR: "8.3675",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240054",
@@ -21240,6 +22872,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2238",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2238",
     NEW_RO_ABSOLUTE_ERROR: "1.2238",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243316",
@@ -21266,6 +22900,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4054",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4054",
     NEW_RO_ABSOLUTE_ERROR: "5.4054",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238850",
@@ -21292,6 +22928,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8167",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8167",
     NEW_RO_ABSOLUTE_ERROR: "1.8167",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236947",
@@ -21318,6 +22956,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6661",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6661",
     NEW_RO_ABSOLUTE_ERROR: "6.6661",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240125",
@@ -21344,6 +22984,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.0380",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.0380",
     NEW_RO_ABSOLUTE_ERROR: "7.0380",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241857",
@@ -21370,6 +23012,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4462",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4462",
     NEW_RO_ABSOLUTE_ERROR: "0.4462",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236467",
@@ -21396,6 +23040,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.8104",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.8104",
     NEW_RO_ABSOLUTE_ERROR: "6.8104",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240131",
@@ -21422,6 +23068,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "54.5389",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "54.5389",
     NEW_RO_ABSOLUTE_ERROR: "54.5389",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239246",
@@ -21448,6 +23096,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "43.4032",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "43.4032",
     NEW_RO_ABSOLUTE_ERROR: "43.4032",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240802",
@@ -21474,6 +23124,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9027",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9027",
     NEW_RO_ABSOLUTE_ERROR: "3.9027",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240292",
@@ -21500,6 +23152,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1733",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1733",
     NEW_RO_ABSOLUTE_ERROR: "4.1733",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238840",
@@ -21526,6 +23180,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7474",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7474",
     NEW_RO_ABSOLUTE_ERROR: "5.7474",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235152",
@@ -21552,6 +23208,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3121",
     NEW_RO_ABSOLUTE_ERROR: "2.3121",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238677",
@@ -21578,6 +23236,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4641",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4641",
     NEW_RO_ABSOLUTE_ERROR: "6.4641",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243085",
@@ -21604,6 +23264,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.7941",
     NEW_RO_ABSOLUTE_ERROR: "17.7941",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236839",
@@ -21630,6 +23292,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9424",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9424",
     NEW_RO_ABSOLUTE_ERROR: "2.9424",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239849",
@@ -21656,6 +23320,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5287",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5287",
     NEW_RO_ABSOLUTE_ERROR: "6.5287",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236876",
@@ -21682,6 +23348,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9167",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9167",
     NEW_RO_ABSOLUTE_ERROR: "1.9167",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236675",
@@ -21708,6 +23376,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.1048",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.1048",
     NEW_RO_ABSOLUTE_ERROR: "14.1048",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240015",
@@ -21734,6 +23404,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2431",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2431",
     NEW_RO_ABSOLUTE_ERROR: "2.2431",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243340",
@@ -21760,6 +23432,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.3101",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.3101",
     NEW_RO_ABSOLUTE_ERROR: "8.3101",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235318",
@@ -21786,6 +23460,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.8368",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.8368",
     NEW_RO_ABSOLUTE_ERROR: "7.8368",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237771",
@@ -21812,6 +23488,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.6775",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.6775",
     NEW_RO_ABSOLUTE_ERROR: "8.6775",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238104",
@@ -21838,6 +23516,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6330",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6330",
     NEW_RO_ABSOLUTE_ERROR: "6.6330",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238257",
@@ -21864,6 +23544,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9803",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9803",
     NEW_RO_ABSOLUTE_ERROR: "4.9803",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236887",
@@ -21890,6 +23572,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7420",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7420",
     NEW_RO_ABSOLUTE_ERROR: "5.7420",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237604",
@@ -21916,6 +23600,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0556",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0556",
     NEW_RO_ABSOLUTE_ERROR: "1.0556",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243311",
@@ -21942,6 +23628,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.6538",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.6538",
     NEW_RO_ABSOLUTE_ERROR: "7.6538",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238205",
@@ -21968,6 +23656,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.1122",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.1122",
     NEW_RO_ABSOLUTE_ERROR: "8.1122",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240535",
@@ -21994,6 +23684,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0169",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0169",
     NEW_RO_ABSOLUTE_ERROR: "4.0169",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50244208",
@@ -22020,6 +23712,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.7470",
     NEW_RO_ABSOLUTE_ERROR: "6.7470",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237752",
@@ -22046,6 +23740,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3065",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3065",
     NEW_RO_ABSOLUTE_ERROR: "0.3065",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235306",
@@ -22072,6 +23768,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1108",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1108",
     NEW_RO_ABSOLUTE_ERROR: "4.1108",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229601",
@@ -22098,6 +23796,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4823",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4823",
     NEW_RO_ABSOLUTE_ERROR: "2.4823",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237798",
@@ -22124,6 +23824,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2117",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2117",
     NEW_RO_ABSOLUTE_ERROR: "4.2117",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238042",
@@ -22150,6 +23852,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6579",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6579",
     NEW_RO_ABSOLUTE_ERROR: "2.6579",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237732",
@@ -22176,6 +23880,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4029",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4029",
     NEW_RO_ABSOLUTE_ERROR: "1.4029",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239248",
@@ -22202,6 +23908,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4981",
     NEW_RO_ABSOLUTE_ERROR: "0.4981",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240014",
@@ -22228,6 +23936,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.6554",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.6554",
     NEW_RO_ABSOLUTE_ERROR: "10.6554",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237802",
@@ -22254,6 +23964,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3311",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3311",
     NEW_RO_ABSOLUTE_ERROR: "2.3311",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236392",
@@ -22280,6 +23992,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3064",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3064",
     NEW_RO_ABSOLUTE_ERROR: "3.3064",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238197",
@@ -22306,6 +24020,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.9785",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.9785",
     NEW_RO_ABSOLUTE_ERROR: "11.9785",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237736",
@@ -22332,6 +24048,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1641",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1641",
     NEW_RO_ABSOLUTE_ERROR: "4.1641",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236839",
@@ -22358,6 +24076,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2819",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2819",
     NEW_RO_ABSOLUTE_ERROR: "4.2819",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240545",
@@ -22384,6 +24104,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5699",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5699",
     NEW_RO_ABSOLUTE_ERROR: "2.5699",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238783",
@@ -22410,6 +24132,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8691",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8691",
     NEW_RO_ABSOLUTE_ERROR: "2.8691",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239992",
@@ -22436,6 +24160,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3816",
     NEW_RO_ABSOLUTE_ERROR: "4.3816",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236837",
@@ -22462,6 +24188,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2176",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2176",
     NEW_RO_ABSOLUTE_ERROR: "3.2176",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238046",
@@ -22488,6 +24216,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5883",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5883",
     NEW_RO_ABSOLUTE_ERROR: "2.5883",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50244440",
@@ -22514,6 +24244,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6474",
     NEW_RO_ABSOLUTE_ERROR: "6.6474",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237769",
@@ -22540,6 +24272,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2435",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2435",
     NEW_RO_ABSOLUTE_ERROR: "3.2435",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235153",
@@ -22566,6 +24300,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9213",
     NEW_RO_ABSOLUTE_ERROR: "3.9213",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235235",
@@ -22592,6 +24328,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6939",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6939",
     NEW_RO_ABSOLUTE_ERROR: "3.6939",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237604",
@@ -22618,6 +24356,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1086",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1086",
     NEW_RO_ABSOLUTE_ERROR: "2.1086",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237602",
@@ -22644,6 +24384,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9422",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9422",
     NEW_RO_ABSOLUTE_ERROR: "4.9422",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236701",
@@ -22670,6 +24412,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5949",
     NEW_RO_ABSOLUTE_ERROR: "1.5949",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235216",
@@ -22696,6 +24440,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7369",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7369",
     NEW_RO_ABSOLUTE_ERROR: "3.7369",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240268",
@@ -22722,6 +24468,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "23.4892",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "23.4892",
     NEW_RO_ABSOLUTE_ERROR: "23.4892",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229585",
@@ -22748,6 +24496,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9279",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9279",
     NEW_RO_ABSOLUTE_ERROR: "1.9279",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243445",
@@ -22774,6 +24524,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.5051",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.5051",
     NEW_RO_ABSOLUTE_ERROR: "8.5051",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239440",
@@ -22800,6 +24552,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6074",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6074",
     NEW_RO_ABSOLUTE_ERROR: "0.6074",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229573",
@@ -22826,6 +24580,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8863",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8863",
     NEW_RO_ABSOLUTE_ERROR: "5.8863",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236680",
@@ -22852,6 +24608,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0234",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0234",
     NEW_RO_ABSOLUTE_ERROR: "0.0234",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236448",
@@ -22878,6 +24636,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.6877",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.6877",
     NEW_RO_ABSOLUTE_ERROR: "9.6877",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236898",
@@ -22904,6 +24664,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9678",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9678",
     NEW_RO_ABSOLUTE_ERROR: "3.9678",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238166",
@@ -22930,6 +24692,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6367",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6367",
     NEW_RO_ABSOLUTE_ERROR: "0.6367",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235976",
@@ -22956,6 +24720,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5212",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5212",
     NEW_RO_ABSOLUTE_ERROR: "4.5212",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50230195",
@@ -22982,6 +24748,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7791",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7791",
     NEW_RO_ABSOLUTE_ERROR: "4.7791",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232936",
@@ -23008,6 +24776,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2677",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2677",
     NEW_RO_ABSOLUTE_ERROR: "0.2677",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229569",
@@ -23034,6 +24804,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.9019",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.9019",
     NEW_RO_ABSOLUTE_ERROR: "6.9019",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240123",
@@ -23060,6 +24832,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4419",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4419",
     NEW_RO_ABSOLUTE_ERROR: "0.4419",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236466",
@@ -23086,6 +24860,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3989",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3989",
     NEW_RO_ABSOLUTE_ERROR: "0.3989",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240986",
@@ -23112,6 +24888,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6529",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6529",
     NEW_RO_ABSOLUTE_ERROR: "0.6529",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236848",
@@ -23138,6 +24916,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1850",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1850",
     NEW_RO_ABSOLUTE_ERROR: "2.1850",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240530",
@@ -23164,6 +24944,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "15.2522",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.2522",
     NEW_RO_ABSOLUTE_ERROR: "15.2522",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238202",
@@ -23190,6 +24972,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8197",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8197",
     NEW_RO_ABSOLUTE_ERROR: "2.8197",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240143",
@@ -23216,6 +25000,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "53.7914",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "53.7914",
     NEW_RO_ABSOLUTE_ERROR: "53.7914",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240024",
@@ -23242,6 +25028,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.3902",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.3902",
     NEW_RO_ABSOLUTE_ERROR: "9.3902",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240987",
@@ -23268,6 +25056,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5568",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5568",
     NEW_RO_ABSOLUTE_ERROR: "1.5568",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234857",
@@ -23294,6 +25084,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1008",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1008",
     NEW_RO_ABSOLUTE_ERROR: "3.1008",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240033",
@@ -23320,6 +25112,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5760",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5760",
     NEW_RO_ABSOLUTE_ERROR: "6.5760",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236743",
@@ -23346,6 +25140,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.6711",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.6711",
     NEW_RO_ABSOLUTE_ERROR: "8.6711",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237467",
@@ -23372,6 +25168,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8730",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8730",
     NEW_RO_ABSOLUTE_ERROR: "0.8730",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237737",
@@ -23398,6 +25196,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7993",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7993",
     NEW_RO_ABSOLUTE_ERROR: "2.7993",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239260",
@@ -23424,6 +25224,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.4040",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.4040",
     NEW_RO_ABSOLUTE_ERROR: "8.4040",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229595",
@@ -23450,6 +25252,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6677",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6677",
     NEW_RO_ABSOLUTE_ERROR: "0.6677",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239870",
@@ -23476,6 +25280,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.0961",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.0961",
     NEW_RO_ABSOLUTE_ERROR: "7.0961",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243199",
@@ -23502,6 +25308,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9194",
     NEW_RO_ABSOLUTE_ERROR: "1.9194",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238168",
@@ -23528,6 +25336,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5160",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5160",
     NEW_RO_ABSOLUTE_ERROR: "4.5160",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236456",
@@ -23554,6 +25364,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6321",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6321",
     NEW_RO_ABSOLUTE_ERROR: "3.6321",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239244",
@@ -23580,6 +25392,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.3343",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.3343",
     NEW_RO_ABSOLUTE_ERROR: "14.3343",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240065",
@@ -23606,6 +25420,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4212",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4212",
     NEW_RO_ABSOLUTE_ERROR: "4.4212",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238853",
@@ -23632,6 +25448,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6275",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6275",
     NEW_RO_ABSOLUTE_ERROR: "0.6275",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237766",
@@ -23658,6 +25476,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.4952",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.4952",
     NEW_RO_ABSOLUTE_ERROR: "7.4952",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236461",
@@ -23684,6 +25504,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9552",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9552",
     NEW_RO_ABSOLUTE_ERROR: "2.9552",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237621",
@@ -23710,6 +25532,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2214",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2214",
     NEW_RO_ABSOLUTE_ERROR: "3.2214",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240989",
@@ -23736,6 +25560,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7830",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7830",
     NEW_RO_ABSOLUTE_ERROR: "2.7830",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240797",
@@ -23762,6 +25588,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.0852",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.0852",
     NEW_RO_ABSOLUTE_ERROR: "9.0852",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237252",
@@ -23788,6 +25616,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1234",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1234",
     NEW_RO_ABSOLUTE_ERROR: "1.1234",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236393",
@@ -23814,6 +25644,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.0050",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.0050",
     NEW_RO_ABSOLUTE_ERROR: "10.0050",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238108",
@@ -23840,6 +25672,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4645",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4645",
     NEW_RO_ABSOLUTE_ERROR: "4.4645",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238046",
@@ -23866,6 +25700,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1199",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1199",
     NEW_RO_ABSOLUTE_ERROR: "9.1199",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240275",
@@ -23892,6 +25728,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8799",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8799",
     NEW_RO_ABSOLUTE_ERROR: "2.8799",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235329",
@@ -23918,6 +25756,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7376",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7376",
     NEW_RO_ABSOLUTE_ERROR: "0.7376",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237781",
@@ -23944,6 +25784,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5704",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5704",
     NEW_RO_ABSOLUTE_ERROR: "3.5704",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239616",
@@ -23970,6 +25812,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.4475",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.4475",
     NEW_RO_ABSOLUTE_ERROR: "14.4475",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229600",
@@ -23996,6 +25840,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8290",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8290",
     NEW_RO_ABSOLUTE_ERROR: "3.8290",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239642",
@@ -24022,6 +25868,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0994",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0994",
     NEW_RO_ABSOLUTE_ERROR: "3.0994",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237595",
@@ -24048,6 +25896,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.2656",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2656",
     NEW_RO_ABSOLUTE_ERROR: "8.2656",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236837",
@@ -24074,6 +25924,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0952",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0952",
     NEW_RO_ABSOLUTE_ERROR: "0.0952",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236670",
@@ -24100,6 +25952,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3647",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3647",
     NEW_RO_ABSOLUTE_ERROR: "2.3647",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240058",
@@ -24126,6 +25980,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.1880",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.1880",
     NEW_RO_ABSOLUTE_ERROR: "8.1880",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236691",
@@ -24152,6 +26008,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.8372",
     NEW_RO_ABSOLUTE_ERROR: "6.8372",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236954",
@@ -24178,6 +26036,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4861",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4861",
     NEW_RO_ABSOLUTE_ERROR: "1.4861",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240066",
@@ -24204,6 +26064,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6717",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6717",
     NEW_RO_ABSOLUTE_ERROR: "3.6717",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238050",
@@ -24230,6 +26092,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9502",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9502",
     NEW_RO_ABSOLUTE_ERROR: "4.9502",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236391",
@@ -24256,6 +26120,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7268",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7268",
     NEW_RO_ABSOLUTE_ERROR: "0.7268",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240548",
@@ -24282,6 +26148,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8838",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8838",
     NEW_RO_ABSOLUTE_ERROR: "0.8838",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240270",
@@ -24308,6 +26176,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2037",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2037",
     NEW_RO_ABSOLUTE_ERROR: "4.2037",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236914",
@@ -24334,6 +26204,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1985",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1985",
     NEW_RO_ABSOLUTE_ERROR: "2.1985",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239249",
@@ -24360,6 +26232,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.6397",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.6397",
     NEW_RO_ABSOLUTE_ERROR: "8.6397",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229595",
@@ -24386,6 +26260,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0104",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0104",
     NEW_RO_ABSOLUTE_ERROR: "4.0104",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241531",
@@ -24412,6 +26288,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.9070",
     NEW_RO_ABSOLUTE_ERROR: "6.9070",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236470",
@@ -24438,6 +26316,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.1379",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.1379",
     NEW_RO_ABSOLUTE_ERROR: "11.1379",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236852",
@@ -24464,6 +26344,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2087",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2087",
     NEW_RO_ABSOLUTE_ERROR: "0.2087",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240538",
@@ -24490,6 +26372,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2447",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2447",
     NEW_RO_ABSOLUTE_ERROR: "1.2447",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237807",
@@ -24516,6 +26400,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8186",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8186",
     NEW_RO_ABSOLUTE_ERROR: "5.8186",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239873",
@@ -24542,6 +26428,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5900",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5900",
     NEW_RO_ABSOLUTE_ERROR: "3.5900",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238801",
@@ -24568,6 +26456,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5959",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5959",
     NEW_RO_ABSOLUTE_ERROR: "2.5959",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229601",
@@ -24594,6 +26484,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.0084",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0084",
     NEW_RO_ABSOLUTE_ERROR: "5.0084",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236696",
@@ -24620,6 +26512,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8174",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8174",
     NEW_RO_ABSOLUTE_ERROR: "2.8174",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238853",
@@ -24646,6 +26540,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7499",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7499",
     NEW_RO_ABSOLUTE_ERROR: "1.7499",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236702",
@@ -24672,6 +26568,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5823",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5823",
     NEW_RO_ABSOLUTE_ERROR: "2.5823",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240291",
@@ -24698,6 +26596,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.9589",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.9589",
     NEW_RO_ABSOLUTE_ERROR: "5.9589",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50230210",
@@ -24724,6 +26624,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0777",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0777",
     NEW_RO_ABSOLUTE_ERROR: "4.0777",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235327",
@@ -24750,6 +26652,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.0327",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0327",
     NEW_RO_ABSOLUTE_ERROR: "6.0327",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239856",
@@ -24776,6 +26680,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3037",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3037",
     NEW_RO_ABSOLUTE_ERROR: "1.3037",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236952",
@@ -24802,6 +26708,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4699",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4699",
     NEW_RO_ABSOLUTE_ERROR: "5.4699",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238117",
@@ -24828,6 +26736,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.9927",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.9927",
     NEW_RO_ABSOLUTE_ERROR: "6.9927",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239835",
@@ -24854,6 +26764,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.8713",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.8713",
     NEW_RO_ABSOLUTE_ERROR: "6.8713",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242754",
@@ -24880,6 +26792,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "44.2710",
     NEW_RO_ABSOLUTE_ERROR: "44.2710",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236858",
@@ -24906,6 +26820,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3037",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3037",
     NEW_RO_ABSOLUTE_ERROR: "1.3037",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241717",
@@ -24932,6 +26848,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4874",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4874",
     NEW_RO_ABSOLUTE_ERROR: "1.4874",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239235",
@@ -24958,6 +26876,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.4777",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.4777",
     NEW_RO_ABSOLUTE_ERROR: "12.4777",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240031",
@@ -24984,6 +26904,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4345",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4345",
     NEW_RO_ABSOLUTE_ERROR: "4.4345",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238847",
@@ -25010,6 +26932,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7837",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7837",
     NEW_RO_ABSOLUTE_ERROR: "5.7837",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235219",
@@ -25036,6 +26960,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9952",
     NEW_RO_ABSOLUTE_ERROR: "2.9952",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236883",
@@ -25062,6 +26988,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7382",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7382",
     NEW_RO_ABSOLUTE_ERROR: "0.7382",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240276",
@@ -25088,6 +27016,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4181",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4181",
     NEW_RO_ABSOLUTE_ERROR: "2.4181",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240527",
@@ -25114,6 +27044,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.2563",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2563",
     NEW_RO_ABSOLUTE_ERROR: "8.2563",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238843",
@@ -25140,6 +27072,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.8417",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.8417",
     NEW_RO_ABSOLUTE_ERROR: "4.8417",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238860",
@@ -25166,6 +27100,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "16.7691",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.7691",
     NEW_RO_ABSOLUTE_ERROR: "16.7691",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236828",
@@ -25192,6 +27128,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6760",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6760",
     NEW_RO_ABSOLUTE_ERROR: "4.6760",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238196",
@@ -25218,6 +27156,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0362",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0362",
     NEW_RO_ABSOLUTE_ERROR: "3.0362",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240126",
@@ -25244,6 +27184,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2893",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2893",
     NEW_RO_ABSOLUTE_ERROR: "7.2893",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237626",
@@ -25270,6 +27212,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7934",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7934",
     NEW_RO_ABSOLUTE_ERROR: "0.7934",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236740",
@@ -25296,6 +27240,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4949",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4949",
     NEW_RO_ABSOLUTE_ERROR: "1.4949",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236393",
@@ -25322,6 +27268,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4044",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4044",
     NEW_RO_ABSOLUTE_ERROR: "1.4044",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229595",
@@ -25348,6 +27296,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2969",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2969",
     NEW_RO_ABSOLUTE_ERROR: "3.2969",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235216",
@@ -25374,6 +27324,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5484",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5484",
     NEW_RO_ABSOLUTE_ERROR: "2.5484",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236948",
@@ -25400,6 +27352,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0257",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0257",
     NEW_RO_ABSOLUTE_ERROR: "4.0257",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240292",
@@ -25426,6 +27380,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8677",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8677",
     NEW_RO_ABSOLUTE_ERROR: "3.8677",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240536",
@@ -25452,6 +27408,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "19.5273",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "19.5273",
     NEW_RO_ABSOLUTE_ERROR: "19.5273",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240273",
@@ -25478,6 +27436,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8576",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8576",
     NEW_RO_ABSOLUTE_ERROR: "3.8576",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229575",
@@ -25504,6 +27464,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2325",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2325",
     NEW_RO_ABSOLUTE_ERROR: "3.2325",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240013",
@@ -25530,6 +27492,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4287",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4287",
     NEW_RO_ABSOLUTE_ERROR: "4.4287",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240572",
@@ -25556,6 +27520,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7777",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7777",
     NEW_RO_ABSOLUTE_ERROR: "1.7777",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239822",
@@ -25582,6 +27548,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "26.5431",
     NEW_RO_ABSOLUTE_ERROR: "26.5431",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237778",
@@ -25608,6 +27576,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9449",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9449",
     NEW_RO_ABSOLUTE_ERROR: "3.9449",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240527",
@@ -25634,6 +27604,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5127",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5127",
     NEW_RO_ABSOLUTE_ERROR: "3.5127",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232953",
@@ -25660,6 +27632,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0302",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0302",
     NEW_RO_ABSOLUTE_ERROR: "2.0302",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236876",
@@ -25686,6 +27660,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7269",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7269",
     NEW_RO_ABSOLUTE_ERROR: "1.7269",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238043",
@@ -25712,6 +27688,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5168",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5168",
     NEW_RO_ABSOLUTE_ERROR: "3.5168",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229585",
@@ -25738,6 +27716,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8785",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8785",
     NEW_RO_ABSOLUTE_ERROR: "0.8785",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236392",
@@ -25764,6 +27744,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4723",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4723",
     NEW_RO_ABSOLUTE_ERROR: "3.4723",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237774",
@@ -25790,6 +27772,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6270",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6270",
     NEW_RO_ABSOLUTE_ERROR: "1.6270",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240695",
@@ -25816,6 +27800,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "129.2601",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "129.2601",
     NEW_RO_ABSOLUTE_ERROR: "129.2601",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232936",
@@ -25842,6 +27828,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "28.2799",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "28.2799",
     NEW_RO_ABSOLUTE_ERROR: "28.2799",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50220705",
@@ -25868,6 +27856,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "19.8585",
     NEW_RO_ABSOLUTE_ERROR: "19.8585",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241858",
@@ -25894,6 +27884,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8744",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8744",
     NEW_RO_ABSOLUTE_ERROR: "3.8744",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240527",
@@ -25920,6 +27912,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "51.9508",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "51.9508",
     NEW_RO_ABSOLUTE_ERROR: "51.9508",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238166",
@@ -25946,6 +27940,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "27.4776",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "27.4776",
     NEW_RO_ABSOLUTE_ERROR: "27.4776",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240980",
@@ -25972,6 +27968,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "20.1211",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "20.1211",
     NEW_RO_ABSOLUTE_ERROR: "20.1211",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240693",
@@ -25998,6 +27996,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "40.2368",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "40.2368",
     NEW_RO_ABSOLUTE_ERROR: "40.2368",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238109",
@@ -26024,6 +28024,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6523",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6523",
     NEW_RO_ABSOLUTE_ERROR: "4.6523",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241775",
@@ -26050,6 +28052,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.9536",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.9536",
     NEW_RO_ABSOLUTE_ERROR: "7.9536",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235320",
@@ -26076,6 +28080,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3350",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3350",
     NEW_RO_ABSOLUTE_ERROR: "0.3350",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50232936",
@@ -26102,6 +28108,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "28.2799",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "28.2799",
     NEW_RO_ABSOLUTE_ERROR: "28.2799",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236744",
@@ -26128,6 +28136,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.5999",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.5999",
     NEW_RO_ABSOLUTE_ERROR: "9.5999",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50232939",
@@ -26154,6 +28164,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "28.3759",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "28.3759",
     NEW_RO_ABSOLUTE_ERROR: "28.3759",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238851",
@@ -26180,6 +28192,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.4188",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.4188",
     NEW_RO_ABSOLUTE_ERROR: "9.4188",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50220717",
@@ -26206,6 +28220,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "20.3510",
     NEW_RO_ABSOLUTE_ERROR: "20.3510",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50220720",
@@ -26232,6 +28248,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2826",
     NEW_RO_ABSOLUTE_ERROR: "4.2826",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239636",
@@ -26258,6 +28276,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "25.7613",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "25.7613",
     NEW_RO_ABSOLUTE_ERROR: "25.7613",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240122",
@@ -26284,6 +28304,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0760",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0760",
     NEW_RO_ABSOLUTE_ERROR: "2.0760",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238793",
@@ -26310,6 +28332,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0571",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0571",
     NEW_RO_ABSOLUTE_ERROR: "1.0571",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50232936",
@@ -26336,6 +28360,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "28.2799",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "28.2799",
     NEW_RO_ABSOLUTE_ERROR: "28.2799",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238556",
@@ -26362,6 +28388,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6693",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6693",
     NEW_RO_ABSOLUTE_ERROR: "4.6693",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238863",
@@ -26388,6 +28416,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0016",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0016",
     NEW_RO_ABSOLUTE_ERROR: "0.0016",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240545",
@@ -26414,6 +28444,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0950",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0950",
     NEW_RO_ABSOLUTE_ERROR: "3.0950",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236946",
@@ -26440,6 +28472,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3456",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3456",
     NEW_RO_ABSOLUTE_ERROR: "2.3456",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235108",
@@ -26466,6 +28500,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.1625",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.1625",
     NEW_RO_ABSOLUTE_ERROR: "8.1625",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238859",
@@ -26492,6 +28528,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6937",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6937",
     NEW_RO_ABSOLUTE_ERROR: "0.6937",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236852",
@@ -26518,6 +28556,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7575",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7575",
     NEW_RO_ABSOLUTE_ERROR: "3.7575",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243314",
@@ -26544,6 +28584,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.7537",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.7537",
     NEW_RO_ABSOLUTE_ERROR: "9.7537",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236688",
@@ -26570,6 +28612,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.3287",
     NEW_RO_ABSOLUTE_ERROR: "10.3287",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229593",
@@ -26596,6 +28640,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.5834",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.5834",
     NEW_RO_ABSOLUTE_ERROR: "9.5834",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237750",
@@ -26622,6 +28668,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6981",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6981",
     NEW_RO_ABSOLUTE_ERROR: "0.6981",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240045",
@@ -26648,6 +28696,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7004",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7004",
     NEW_RO_ABSOLUTE_ERROR: "5.7004",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241827",
@@ -26674,6 +28724,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4342",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4342",
     NEW_RO_ABSOLUTE_ERROR: "4.4342",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237596",
@@ -26700,6 +28752,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1018",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1018",
     NEW_RO_ABSOLUTE_ERROR: "0.1018",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240057",
@@ -26726,6 +28780,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1142",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1142",
     NEW_RO_ABSOLUTE_ERROR: "0.1142",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236383",
@@ -26752,6 +28808,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2672",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2672",
     NEW_RO_ABSOLUTE_ERROR: "5.2672",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237743",
@@ -26778,6 +28836,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.7868",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.7868",
     NEW_RO_ABSOLUTE_ERROR: "6.7868",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50220707",
@@ -26804,6 +28864,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "25.2073",
     NEW_RO_ABSOLUTE_ERROR: "25.2073",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238166",
@@ -26830,6 +28892,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9927",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9927",
     NEW_RO_ABSOLUTE_ERROR: "4.9927",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237790",
@@ -26856,6 +28920,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8457",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8457",
     NEW_RO_ABSOLUTE_ERROR: "2.8457",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240151",
@@ -26882,6 +28948,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.9771",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.9771",
     NEW_RO_ABSOLUTE_ERROR: "7.9771",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239652",
@@ -26908,6 +28976,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.7787",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.7787",
     NEW_RO_ABSOLUTE_ERROR: "12.7787",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237961",
@@ -26934,6 +29004,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6281",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6281",
     NEW_RO_ABSOLUTE_ERROR: "1.6281",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238111",
@@ -26960,6 +29032,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3140",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3140",
     NEW_RO_ABSOLUTE_ERROR: "3.3140",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241854",
@@ -26986,6 +29060,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2551",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2551",
     NEW_RO_ABSOLUTE_ERROR: "4.2551",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241862",
@@ -27012,6 +29088,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7271",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7271",
     NEW_RO_ABSOLUTE_ERROR: "0.7271",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236453",
@@ -27038,6 +29116,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5589",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5589",
     NEW_RO_ABSOLUTE_ERROR: "2.5589",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238837",
@@ -27064,6 +29144,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7577",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7577",
     NEW_RO_ABSOLUTE_ERROR: "4.7577",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240250",
@@ -27090,6 +29172,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.0494",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.0494",
     NEW_RO_ABSOLUTE_ERROR: "9.0494",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237769",
@@ -27116,6 +29200,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5408",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5408",
     NEW_RO_ABSOLUTE_ERROR: "2.5408",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50221004",
@@ -27142,6 +29228,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.4912",
     NEW_RO_ABSOLUTE_ERROR: "12.4912",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240295",
@@ -27168,6 +29256,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7041",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7041",
     NEW_RO_ABSOLUTE_ERROR: "2.7041",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232945",
@@ -27194,6 +29284,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2512",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2512",
     NEW_RO_ABSOLUTE_ERROR: "4.2512",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237604",
@@ -27220,6 +29312,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1038",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1038",
     NEW_RO_ABSOLUTE_ERROR: "3.1038",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243378",
@@ -27246,6 +29340,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2600",
     NEW_RO_ABSOLUTE_ERROR: "0.2600",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240787",
@@ -27272,6 +29368,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "37.9822",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "37.9822",
     NEW_RO_ABSOLUTE_ERROR: "37.9822",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237789",
@@ -27298,6 +29396,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "29.8863",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "29.8863",
     NEW_RO_ABSOLUTE_ERROR: "29.8863",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237772",
@@ -27324,6 +29424,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8295",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8295",
     NEW_RO_ABSOLUTE_ERROR: "2.8295",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240230",
@@ -27350,6 +29452,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2885",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2885",
     NEW_RO_ABSOLUTE_ERROR: "0.2885",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238172",
@@ -27376,6 +29480,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9467",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9467",
     NEW_RO_ABSOLUTE_ERROR: "1.9467",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236296",
@@ -27402,6 +29508,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.9090",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.9090",
     NEW_RO_ABSOLUTE_ERROR: "9.9090",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237741",
@@ -27428,6 +29536,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9174",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9174",
     NEW_RO_ABSOLUTE_ERROR: "3.9174",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237244",
@@ -27454,6 +29564,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3059",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3059",
     NEW_RO_ABSOLUTE_ERROR: "0.3059",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235191",
@@ -27480,6 +29592,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5521",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5521",
     NEW_RO_ABSOLUTE_ERROR: "1.5521",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240143",
@@ -27506,6 +29620,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9676",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9676",
     NEW_RO_ABSOLUTE_ERROR: "3.9676",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239877",
@@ -27532,6 +29648,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9357",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9357",
     NEW_RO_ABSOLUTE_ERROR: "2.9357",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239265",
@@ -27558,6 +29676,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "17.0422",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.0422",
     NEW_RO_ABSOLUTE_ERROR: "17.0422",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236834",
@@ -27584,6 +29704,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9426",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9426",
     NEW_RO_ABSOLUTE_ERROR: "2.9426",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236913",
@@ -27610,6 +29732,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6658",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6658",
     NEW_RO_ABSOLUTE_ERROR: "1.6658",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240545",
@@ -27636,6 +29760,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.7921",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.7921",
     NEW_RO_ABSOLUTE_ERROR: "8.7921",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238779",
@@ -27662,6 +29788,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7182",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7182",
     NEW_RO_ABSOLUTE_ERROR: "1.7182",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235114",
@@ -27688,6 +29816,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6115",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6115",
     NEW_RO_ABSOLUTE_ERROR: "1.6115",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240693",
@@ -27714,6 +29844,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "49.3496",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "49.3496",
     NEW_RO_ABSOLUTE_ERROR: "49.3496",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236686",
@@ -27740,6 +29872,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2035",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2035",
     NEW_RO_ABSOLUTE_ERROR: "2.2035",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236679",
@@ -27766,6 +29900,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7483",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7483",
     NEW_RO_ABSOLUTE_ERROR: "0.7483",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240787",
@@ -27792,6 +29928,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "47.4844",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "47.4844",
     NEW_RO_ABSOLUTE_ERROR: "47.4844",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238782",
@@ -27818,6 +29956,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.9955",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.9955",
     NEW_RO_ABSOLUTE_ERROR: "7.9955",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239588",
@@ -27844,6 +29984,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0719",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0719",
     NEW_RO_ABSOLUTE_ERROR: "3.0719",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239260",
@@ -27870,6 +30012,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5540",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5540",
     NEW_RO_ABSOLUTE_ERROR: "1.5540",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235283",
@@ -27896,6 +30040,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7768",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7768",
     NEW_RO_ABSOLUTE_ERROR: "3.7768",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236454",
@@ -27922,6 +30068,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.0450",
     NEW_RO_ABSOLUTE_ERROR: "12.0450",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235260",
@@ -27948,6 +30096,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.6074",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.6074",
     NEW_RO_ABSOLUTE_ERROR: "7.6074",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240057",
@@ -27974,6 +30124,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2860",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2860",
     NEW_RO_ABSOLUTE_ERROR: "4.2860",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240787",
@@ -28000,6 +30152,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4180",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4180",
     NEW_RO_ABSOLUTE_ERROR: "0.4180",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239591",
@@ -28026,6 +30180,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5560",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5560",
     NEW_RO_ABSOLUTE_ERROR: "6.5560",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236831",
@@ -28052,6 +30208,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5016",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5016",
     NEW_RO_ABSOLUTE_ERROR: "5.5016",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240305",
@@ -28078,6 +30236,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.3914",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.3914",
     NEW_RO_ABSOLUTE_ERROR: "6.3914",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236942",
@@ -28104,6 +30264,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3764",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3764",
     NEW_RO_ABSOLUTE_ERROR: "1.3764",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240226",
@@ -28130,6 +30292,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2947",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2947",
     NEW_RO_ABSOLUTE_ERROR: "0.2947",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238850",
@@ -28156,6 +30320,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3648",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3648",
     NEW_RO_ABSOLUTE_ERROR: "1.3648",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234842",
@@ -28182,6 +30348,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4757",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4757",
     NEW_RO_ABSOLUTE_ERROR: "0.4757",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239655",
@@ -28208,6 +30376,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1609",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1609",
     NEW_RO_ABSOLUTE_ERROR: "7.1609",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241831",
@@ -28234,6 +30404,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9443",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9443",
     NEW_RO_ABSOLUTE_ERROR: "3.9443",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237459",
@@ -28260,6 +30432,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "54.6075",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "54.6075",
     NEW_RO_ABSOLUTE_ERROR: "54.6075",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241959",
@@ -28286,6 +30460,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.7900",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.7900",
     NEW_RO_ABSOLUTE_ERROR: "14.7900",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238869",
@@ -28312,6 +30488,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9164",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9164",
     NEW_RO_ABSOLUTE_ERROR: "4.9164",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50212294",
@@ -28338,6 +30516,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9290",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9290",
     NEW_RO_ABSOLUTE_ERROR: "3.9290",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234840",
@@ -28364,6 +30544,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5647",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5647",
     NEW_RO_ABSOLUTE_ERROR: "1.5647",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241860",
@@ -28390,6 +30572,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3418",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3418",
     NEW_RO_ABSOLUTE_ERROR: "3.3418",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237781",
@@ -28416,6 +30600,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6002",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6002",
     NEW_RO_ABSOLUTE_ERROR: "1.6002",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236471",
@@ -28442,6 +30628,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.0121",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.0121",
     NEW_RO_ABSOLUTE_ERROR: "7.0121",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236857",
@@ -28468,6 +30656,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8062",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8062",
     NEW_RO_ABSOLUTE_ERROR: "0.8062",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237820",
@@ -28494,6 +30684,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1108",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1108",
     NEW_RO_ABSOLUTE_ERROR: "6.1108",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240285",
@@ -28520,6 +30712,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.1309",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.1309",
     NEW_RO_ABSOLUTE_ERROR: "11.1309",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238675",
@@ -28546,6 +30740,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "17.0769",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.0769",
     NEW_RO_ABSOLUTE_ERROR: "17.0769",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236900",
@@ -28572,6 +30768,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6144",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6144",
     NEW_RO_ABSOLUTE_ERROR: "3.6144",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239239",
@@ -28598,6 +30796,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2198",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2198",
     NEW_RO_ABSOLUTE_ERROR: "7.2198",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50216438",
@@ -28624,6 +30824,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4598",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4598",
     NEW_RO_ABSOLUTE_ERROR: "1.4598",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240115",
@@ -28650,6 +30852,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.0202",
     NEW_RO_ABSOLUTE_ERROR: "11.0202",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240025",
@@ -28676,6 +30880,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1454",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1454",
     NEW_RO_ABSOLUTE_ERROR: "9.1454",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240570",
@@ -28702,6 +30908,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4199",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4199",
     NEW_RO_ABSOLUTE_ERROR: "3.4199",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236384",
@@ -28728,6 +30936,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "21.2711",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "21.2711",
     NEW_RO_ABSOLUTE_ERROR: "21.2711",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234842",
@@ -28754,6 +30964,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5599",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5599",
     NEW_RO_ABSOLUTE_ERROR: "0.5599",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240127",
@@ -28780,6 +30992,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5838",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5838",
     NEW_RO_ABSOLUTE_ERROR: "6.5838",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243339",
@@ -28806,6 +31020,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3591",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3591",
     NEW_RO_ABSOLUTE_ERROR: "3.3591",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50230200",
@@ -28832,6 +31048,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4611",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4611",
     NEW_RO_ABSOLUTE_ERROR: "6.4611",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243385",
@@ -28858,6 +31076,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5655",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5655",
     NEW_RO_ABSOLUTE_ERROR: "4.5655",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238114",
@@ -28884,6 +31104,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0881",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0881",
     NEW_RO_ABSOLUTE_ERROR: "2.0881",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238798",
@@ -28910,6 +31132,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8321",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8321",
     NEW_RO_ABSOLUTE_ERROR: "0.8321",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236466",
@@ -28936,6 +31160,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7179",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7179",
     NEW_RO_ABSOLUTE_ERROR: "3.7179",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236699",
@@ -28962,6 +31188,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4571",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4571",
     NEW_RO_ABSOLUTE_ERROR: "1.4571",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239840",
@@ -28988,6 +31216,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0275",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0275",
     NEW_RO_ABSOLUTE_ERROR: "4.0275",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238162",
@@ -29014,6 +31244,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5527",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5527",
     NEW_RO_ABSOLUTE_ERROR: "3.5527",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235110",
@@ -29040,6 +31272,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5015",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5015",
     NEW_RO_ABSOLUTE_ERROR: "1.5015",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236690",
@@ -29066,6 +31300,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.7564",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.7564",
     NEW_RO_ABSOLUTE_ERROR: "11.7564",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236873",
@@ -29092,6 +31328,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6250",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6250",
     NEW_RO_ABSOLUTE_ERROR: "6.6250",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236834",
@@ -29118,6 +31356,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0363",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0363",
     NEW_RO_ABSOLUTE_ERROR: "1.0363",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236740",
@@ -29144,6 +31384,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4415",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4415",
     NEW_RO_ABSOLUTE_ERROR: "0.4415",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237812",
@@ -29170,6 +31412,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.4252",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.4252",
     NEW_RO_ABSOLUTE_ERROR: "10.4252",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236877",
@@ -29196,6 +31440,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1124",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1124",
     NEW_RO_ABSOLUTE_ERROR: "5.1124",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235217",
@@ -29222,6 +31468,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3750",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3750",
     NEW_RO_ABSOLUTE_ERROR: "4.3750",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237962",
@@ -29248,6 +31496,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.9365",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.9365",
     NEW_RO_ABSOLUTE_ERROR: "10.9365",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237809",
@@ -29274,6 +31524,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3775",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3775",
     NEW_RO_ABSOLUTE_ERROR: "3.3775",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237253",
@@ -29300,6 +31552,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1818",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1818",
     NEW_RO_ABSOLUTE_ERROR: "2.1818",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235149",
@@ -29326,6 +31580,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.4766",
     NEW_RO_ABSOLUTE_ERROR: "9.4766",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239829",
@@ -29352,6 +31608,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7385",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7385",
     NEW_RO_ABSOLUTE_ERROR: "0.7385",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237797",
@@ -29378,6 +31636,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6472",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6472",
     NEW_RO_ABSOLUTE_ERROR: "2.6472",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234837",
@@ -29404,6 +31664,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.4712",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.4712",
     NEW_RO_ABSOLUTE_ERROR: "12.4712",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237805",
@@ -29430,6 +31692,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6096",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6096",
     NEW_RO_ABSOLUTE_ERROR: "3.6096",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237758",
@@ -29456,6 +31720,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0305",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0305",
     NEW_RO_ABSOLUTE_ERROR: "4.0305",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235309",
@@ -29482,6 +31748,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9776",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9776",
     NEW_RO_ABSOLUTE_ERROR: "1.9776",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238089",
@@ -29508,6 +31776,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4247",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4247",
     NEW_RO_ABSOLUTE_ERROR: "1.4247",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240252",
@@ -29534,6 +31804,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0865",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0865",
     NEW_RO_ABSOLUTE_ERROR: "4.0865",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238114",
@@ -29560,6 +31832,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2863",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2863",
     NEW_RO_ABSOLUTE_ERROR: "7.2863",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237735",
@@ -29586,6 +31860,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0292",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0292",
     NEW_RO_ABSOLUTE_ERROR: "1.0292",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238119",
@@ -29612,6 +31888,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.8111",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.8111",
     NEW_RO_ABSOLUTE_ERROR: "4.8111",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241521",
@@ -29638,6 +31916,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.9454",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.9454",
     NEW_RO_ABSOLUTE_ERROR: "6.9454",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236849",
@@ -29664,6 +31944,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1353",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1353",
     NEW_RO_ABSOLUTE_ERROR: "7.1353",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237782",
@@ -29690,6 +31972,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.3685",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.3685",
     NEW_RO_ABSOLUTE_ERROR: "7.3685",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243079",
@@ -29716,6 +32000,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "21.1348",
     NEW_RO_ABSOLUTE_ERROR: "21.1348",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238675",
@@ -29742,6 +32028,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5834",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5834",
     NEW_RO_ABSOLUTE_ERROR: "3.5834",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240784",
@@ -29768,6 +32056,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "42.1587",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "42.1587",
     NEW_RO_ABSOLUTE_ERROR: "42.1587",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240262",
@@ -29794,6 +32084,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2938",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2938",
     NEW_RO_ABSOLUTE_ERROR: "4.2938",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243044",
@@ -29820,6 +32112,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6602",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6602",
     NEW_RO_ABSOLUTE_ERROR: "0.6602",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240024",
@@ -29846,6 +32140,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.9290",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.9290",
     NEW_RO_ABSOLUTE_ERROR: "13.9290",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50232952",
@@ -29872,6 +32168,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0559",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0559",
     NEW_RO_ABSOLUTE_ERROR: "4.0559",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237782",
@@ -29898,6 +32196,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2475",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2475",
     NEW_RO_ABSOLUTE_ERROR: "6.2475",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237801",
@@ -29924,6 +32224,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6355",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6355",
     NEW_RO_ABSOLUTE_ERROR: "3.6355",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236707",
@@ -29950,6 +32252,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3098",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3098",
     NEW_RO_ABSOLUTE_ERROR: "1.3098",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240784",
@@ -29976,6 +32280,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2184",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2184",
     NEW_RO_ABSOLUTE_ERROR: "2.2184",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235939",
@@ -30002,6 +32308,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "19.6531",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "19.6531",
     NEW_RO_ABSOLUTE_ERROR: "19.6531",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236456",
@@ -30028,6 +32336,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "24.3089",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "24.3089",
     NEW_RO_ABSOLUTE_ERROR: "24.3089",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241958",
@@ -30054,6 +32364,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.5779",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.5779",
     NEW_RO_ABSOLUTE_ERROR: "11.5779",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235321",
@@ -30080,6 +32392,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3810",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3810",
     NEW_RO_ABSOLUTE_ERROR: "1.3810",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236676",
@@ -30106,6 +32420,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.3471",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.3471",
     NEW_RO_ABSOLUTE_ERROR: "14.3471",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50234865",
@@ -30132,6 +32448,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2568",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2568",
     NEW_RO_ABSOLUTE_ERROR: "0.2568",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238175",
@@ -30158,6 +32476,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.4188",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.4188",
     NEW_RO_ABSOLUTE_ERROR: "8.4188",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235235",
@@ -30184,6 +32504,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4796",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4796",
     NEW_RO_ABSOLUTE_ERROR: "6.4796",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236294",
@@ -30210,6 +32532,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5168",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5168",
     NEW_RO_ABSOLUTE_ERROR: "6.5168",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236695",
@@ -30236,6 +32560,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.7496",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.7496",
     NEW_RO_ABSOLUTE_ERROR: "7.7496",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240015",
@@ -30262,6 +32588,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1799",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1799",
     NEW_RO_ABSOLUTE_ERROR: "4.1799",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243422",
@@ -30288,6 +32616,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.6629",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.6629",
     NEW_RO_ABSOLUTE_ERROR: "14.6629",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236824",
@@ -30314,6 +32644,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2787",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2787",
     NEW_RO_ABSOLUTE_ERROR: "0.2787",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240231",
@@ -30340,6 +32672,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0245",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0245",
     NEW_RO_ABSOLUTE_ERROR: "4.0245",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242661",
@@ -30366,6 +32700,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "48.5690",
     NEW_RO_ABSOLUTE_ERROR: "48.5690",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50234866",
@@ -30392,6 +32728,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5608",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5608",
     NEW_RO_ABSOLUTE_ERROR: "1.5608",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238563",
@@ -30418,6 +32756,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0414",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0414",
     NEW_RO_ABSOLUTE_ERROR: "3.0414",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232949",
@@ -30444,6 +32784,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2440",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2440",
     NEW_RO_ABSOLUTE_ERROR: "6.2440",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50230210",
@@ -30470,6 +32812,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1777",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1777",
     NEW_RO_ABSOLUTE_ERROR: "6.1777",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240247",
@@ -30496,6 +32840,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1906",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1906",
     NEW_RO_ABSOLUTE_ERROR: "7.1906",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50233577",
@@ -30522,6 +32868,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9709",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9709",
     NEW_RO_ABSOLUTE_ERROR: "0.9709",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243085",
@@ -30548,6 +32896,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0403",
     NEW_RO_ABSOLUTE_ERROR: "1.0403",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242661",
@@ -30574,6 +32924,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "48.5690",
     NEW_RO_ABSOLUTE_ERROR: "48.5690",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243031",
@@ -30600,6 +32952,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.5351",
     NEW_RO_ABSOLUTE_ERROR: "10.5351",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240800",
@@ -30626,6 +32980,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.3776",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.3776",
     NEW_RO_ABSOLUTE_ERROR: "7.3776",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240075",
@@ -30652,6 +33008,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4741",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4741",
     NEW_RO_ABSOLUTE_ERROR: "3.4741",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238847",
@@ -30678,6 +33036,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3680",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3680",
     NEW_RO_ABSOLUTE_ERROR: "0.3680",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239262",
@@ -30704,6 +33064,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "48.6817",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "48.6817",
     NEW_RO_ABSOLUTE_ERROR: "48.6817",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240276",
@@ -30730,6 +33092,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.0103",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0103",
     NEW_RO_ABSOLUTE_ERROR: "6.0103",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236675",
@@ -30756,6 +33120,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.0635",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.0635",
     NEW_RO_ABSOLUTE_ERROR: "7.0635",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232953",
@@ -30782,6 +33148,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1804",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1804",
     NEW_RO_ABSOLUTE_ERROR: "0.1804",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237612",
@@ -30808,6 +33176,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4875",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4875",
     NEW_RO_ABSOLUTE_ERROR: "0.4875",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238971",
@@ -30834,6 +33204,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3591",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3591",
     NEW_RO_ABSOLUTE_ERROR: "4.3591",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236690",
@@ -30860,6 +33232,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7055",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7055",
     NEW_RO_ABSOLUTE_ERROR: "2.7055",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237592",
@@ -30886,6 +33260,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5343",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5343",
     NEW_RO_ABSOLUTE_ERROR: "0.5343",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238122",
@@ -30912,6 +33288,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1952",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1952",
     NEW_RO_ABSOLUTE_ERROR: "0.1952",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243181",
@@ -30938,6 +33316,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0652",
     NEW_RO_ABSOLUTE_ERROR: "2.0652",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238859",
@@ -30964,6 +33344,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "16.0285",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.0285",
     NEW_RO_ABSOLUTE_ERROR: "16.0285",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238859",
@@ -30990,6 +33372,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8837",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8837",
     NEW_RO_ABSOLUTE_ERROR: "0.8837",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236955",
@@ -31016,6 +33400,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1185",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1185",
     NEW_RO_ABSOLUTE_ERROR: "7.1185",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237458",
@@ -31042,6 +33428,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "55.8833",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "55.8833",
     NEW_RO_ABSOLUTE_ERROR: "55.8833",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239291",
@@ -31068,6 +33456,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1219",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1219",
     NEW_RO_ABSOLUTE_ERROR: "1.1219",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239285",
@@ -31094,6 +33484,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "16.8376",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.8376",
     NEW_RO_ABSOLUTE_ERROR: "16.8376",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242571",
@@ -31120,6 +33512,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0252",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0252",
     NEW_RO_ABSOLUTE_ERROR: "0.0252",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240350",
@@ -31146,6 +33540,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0262",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0262",
     NEW_RO_ABSOLUTE_ERROR: "1.0262",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242661",
@@ -31172,6 +33568,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3210",
     NEW_RO_ABSOLUTE_ERROR: "4.3210",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239242",
@@ -31198,6 +33596,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.4904",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.4904",
     NEW_RO_ABSOLUTE_ERROR: "14.4904",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238039",
@@ -31224,6 +33624,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.3542",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.3542",
     NEW_RO_ABSOLUTE_ERROR: "9.3542",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229592",
@@ -31250,6 +33652,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.0789",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0789",
     NEW_RO_ABSOLUTE_ERROR: "6.0789",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236300",
@@ -31276,6 +33680,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2289",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2289",
     NEW_RO_ABSOLUTE_ERROR: "6.2289",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239255",
@@ -31302,6 +33708,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9719",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9719",
     NEW_RO_ABSOLUTE_ERROR: "2.9719",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236947",
@@ -31328,6 +33736,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.8167",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.8167",
     NEW_RO_ABSOLUTE_ERROR: "6.8167",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236756",
@@ -31354,6 +33764,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1234",
     NEW_RO_ABSOLUTE_ERROR: "4.1234",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238195",
@@ -31380,6 +33792,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.8624",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.8624",
     NEW_RO_ABSOLUTE_ERROR: "7.8624",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50221004",
@@ -31406,6 +33820,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "52.8782",
     NEW_RO_ABSOLUTE_ERROR: "52.8782",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238566",
@@ -31432,6 +33848,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1181",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1181",
     NEW_RO_ABSOLUTE_ERROR: "6.1181",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238801",
@@ -31458,6 +33876,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0194",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0194",
     NEW_RO_ABSOLUTE_ERROR: "0.0194",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237473",
@@ -31484,6 +33904,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "59.2020",
     NEW_RO_ABSOLUTE_ERROR: "59.2020",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236883",
@@ -31510,6 +33932,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6092",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6092",
     NEW_RO_ABSOLUTE_ERROR: "4.6092",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240788",
@@ -31536,6 +33960,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "59.7170",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "59.7170",
     NEW_RO_ABSOLUTE_ERROR: "59.7170",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240151",
@@ -31562,6 +33988,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4072",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4072",
     NEW_RO_ABSOLUTE_ERROR: "2.4072",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235939",
@@ -31588,6 +34016,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7358",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7358",
     NEW_RO_ABSOLUTE_ERROR: "0.7358",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237458",
@@ -31614,6 +34044,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "55.8833",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "55.8833",
     NEW_RO_ABSOLUTE_ERROR: "55.8833",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236703",
@@ -31640,6 +34072,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "25.8753",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "25.8753",
     NEW_RO_ABSOLUTE_ERROR: "25.8753",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239825",
@@ -31666,6 +34100,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "53.4329",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "53.4329",
     NEW_RO_ABSOLUTE_ERROR: "53.4329",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50230212",
@@ -31692,6 +34128,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "24.8566",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "24.8566",
     NEW_RO_ABSOLUTE_ERROR: "24.8566",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240695",
@@ -31718,6 +34156,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "26.8612",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "26.8612",
     NEW_RO_ABSOLUTE_ERROR: "26.8612",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238675",
@@ -31744,6 +34184,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7491",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7491",
     NEW_RO_ABSOLUTE_ERROR: "5.7491",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235266",
@@ -31770,6 +34212,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "15.0228",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.0228",
     NEW_RO_ABSOLUTE_ERROR: "15.0228",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235281",
@@ -31796,6 +34240,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.3195",
     NEW_RO_ABSOLUTE_ERROR: "8.3195",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240763",
@@ -31822,6 +34268,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "31.5403",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "31.5403",
     NEW_RO_ABSOLUTE_ERROR: "31.5403",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238561",
@@ -31848,6 +34296,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3449",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3449",
     NEW_RO_ABSOLUTE_ERROR: "0.3449",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237480",
@@ -31874,6 +34324,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "56.3307",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "56.3307",
     NEW_RO_ABSOLUTE_ERROR: "56.3307",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243373",
@@ -31900,6 +34352,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2968",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2968",
     NEW_RO_ABSOLUTE_ERROR: "0.2968",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240570",
@@ -31926,6 +34380,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.3874",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.3874",
     NEW_RO_ABSOLUTE_ERROR: "8.3874",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235177",
@@ -31952,6 +34408,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.7526",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.7526",
     NEW_RO_ABSOLUTE_ERROR: "13.7526",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238965",
@@ -31978,6 +34436,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.4447",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.4447",
     NEW_RO_ABSOLUTE_ERROR: "12.4447",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236870",
@@ -32004,6 +34464,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1600",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1600",
     NEW_RO_ABSOLUTE_ERROR: "0.1600",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237623",
@@ -32030,6 +34492,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "33.3054",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "33.3054",
     NEW_RO_ABSOLUTE_ERROR: "33.3054",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236709",
@@ -32056,6 +34520,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.6474",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6474",
     NEW_RO_ABSOLUTE_ERROR: "5.6474",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237623",
@@ -32082,6 +34548,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "33.3054",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "33.3054",
     NEW_RO_ABSOLUTE_ERROR: "33.3054",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237623",
@@ -32108,6 +34576,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7872",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7872",
     NEW_RO_ABSOLUTE_ERROR: "1.7872",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238169",
@@ -32134,6 +34604,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.0832",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.0832",
     NEW_RO_ABSOLUTE_ERROR: "14.0832",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237243",
@@ -32160,6 +34632,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6613",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6613",
     NEW_RO_ABSOLUTE_ERROR: "1.6613",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238114",
@@ -32186,6 +34660,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.7754",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.7754",
     NEW_RO_ABSOLUTE_ERROR: "6.7754",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240803",
@@ -32212,6 +34688,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3278",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3278",
     NEW_RO_ABSOLUTE_ERROR: "2.3278",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238163",
@@ -32238,6 +34716,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0507",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0507",
     NEW_RO_ABSOLUTE_ERROR: "2.0507",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240039",
@@ -32264,6 +34744,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4522",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4522",
     NEW_RO_ABSOLUTE_ERROR: "1.4522",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243852",
@@ -32290,6 +34772,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2028",
     NEW_RO_ABSOLUTE_ERROR: "2.2028",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238177",
@@ -32316,6 +34800,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.9638",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.9638",
     NEW_RO_ABSOLUTE_ERROR: "5.9638",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238122",
@@ -32342,6 +34828,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.3573",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.3573",
     NEW_RO_ABSOLUTE_ERROR: "8.3573",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243084",
@@ -32368,6 +34856,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.9009",
     NEW_RO_ABSOLUTE_ERROR: "8.9009",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240143",
@@ -32394,6 +34884,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4721",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4721",
     NEW_RO_ABSOLUTE_ERROR: "4.4721",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238848",
@@ -32420,6 +34912,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2383",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2383",
     NEW_RO_ABSOLUTE_ERROR: "2.2383",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236466",
@@ -32446,6 +34940,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6785",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6785",
     NEW_RO_ABSOLUTE_ERROR: "6.6785",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237812",
@@ -32472,6 +34968,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6047",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6047",
     NEW_RO_ABSOLUTE_ERROR: "1.6047",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236296",
@@ -32498,6 +34996,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9386",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9386",
     NEW_RO_ABSOLUTE_ERROR: "4.9386",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240066",
@@ -32524,6 +35024,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2425",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2425",
     NEW_RO_ABSOLUTE_ERROR: "3.2425",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240011",
@@ -32550,6 +35052,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2002",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2002",
     NEW_RO_ABSOLUTE_ERROR: "3.2002",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238961",
@@ -32576,6 +35080,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9442",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9442",
     NEW_RO_ABSOLUTE_ERROR: "1.9442",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238569",
@@ -32602,6 +35108,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.0422",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0422",
     NEW_RO_ABSOLUTE_ERROR: "6.0422",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239289",
@@ -32628,6 +35136,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "38.9087",
     NEW_RO_ABSOLUTE_ERROR: "38.9087",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237458",
@@ -32654,6 +35164,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5955",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5955",
     NEW_RO_ABSOLUTE_ERROR: "6.5955",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237475",
@@ -32680,6 +35192,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4982",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4982",
     NEW_RO_ABSOLUTE_ERROR: "3.4982",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236295",
@@ -32706,6 +35220,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5381",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5381",
     NEW_RO_ABSOLUTE_ERROR: "1.5381",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238963",
@@ -32732,6 +35248,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7155",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7155",
     NEW_RO_ABSOLUTE_ERROR: "0.7155",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243023",
@@ -32758,6 +35276,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.4128",
     NEW_RO_ABSOLUTE_ERROR: "8.4128",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238786",
@@ -32784,6 +35304,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2358",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2358",
     NEW_RO_ABSOLUTE_ERROR: "6.2358",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240039",
@@ -32810,6 +35332,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.0205",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0205",
     NEW_RO_ABSOLUTE_ERROR: "5.0205",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236699",
@@ -32836,6 +35360,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7038",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7038",
     NEW_RO_ABSOLUTE_ERROR: "1.7038",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240231",
@@ -32862,6 +35388,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4669",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4669",
     NEW_RO_ABSOLUTE_ERROR: "3.4669",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242978",
@@ -32888,6 +35416,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9745",
     NEW_RO_ABSOLUTE_ERROR: "4.9745",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229585",
@@ -32914,6 +35444,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0716",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0716",
     NEW_RO_ABSOLUTE_ERROR: "4.0716",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241961",
@@ -32940,6 +35472,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2698",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2698",
     NEW_RO_ABSOLUTE_ERROR: "6.2698",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229583",
@@ -32966,6 +35500,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2272",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2272",
     NEW_RO_ABSOLUTE_ERROR: "0.2272",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243183",
@@ -32992,6 +35528,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4891",
     NEW_RO_ABSOLUTE_ERROR: "2.4891",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240581",
@@ -33018,6 +35556,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1606",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1606",
     NEW_RO_ABSOLUTE_ERROR: "6.1606",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50230202",
@@ -33044,6 +35584,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.3012",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.3012",
     NEW_RO_ABSOLUTE_ERROR: "7.3012",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239265",
@@ -33070,6 +35612,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.6573",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.6573",
     NEW_RO_ABSOLUTE_ERROR: "13.6573",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240986",
@@ -33096,6 +35640,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3327",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3327",
     NEW_RO_ABSOLUTE_ERROR: "2.3327",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240788",
@@ -33122,6 +35668,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5322",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5322",
     NEW_RO_ABSOLUTE_ERROR: "4.5322",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50230209",
@@ -33148,6 +35696,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6890",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6890",
     NEW_RO_ABSOLUTE_ERROR: "4.6890",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241862",
@@ -33174,6 +35724,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9822",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9822",
     NEW_RO_ABSOLUTE_ERROR: "3.9822",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234863",
@@ -33200,6 +35752,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1754",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1754",
     NEW_RO_ABSOLUTE_ERROR: "4.1754",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241829",
@@ -33226,6 +35780,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "38.7287",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "38.7287",
     NEW_RO_ABSOLUTE_ERROR: "38.7287",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236846",
@@ -33252,6 +35808,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0919",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0919",
     NEW_RO_ABSOLUTE_ERROR: "3.0919",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240142",
@@ -33278,6 +35836,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.6396",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.6396",
     NEW_RO_ABSOLUTE_ERROR: "7.6396",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238837",
@@ -33304,6 +35864,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.0757",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.0757",
     NEW_RO_ABSOLUTE_ERROR: "11.0757",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237459",
@@ -33330,6 +35892,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "54.6075",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "54.6075",
     NEW_RO_ABSOLUTE_ERROR: "54.6075",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240785",
@@ -33356,6 +35920,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "55.0536",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "55.0536",
     NEW_RO_ABSOLUTE_ERROR: "55.0536",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241955",
@@ -33382,6 +35948,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1126",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1126",
     NEW_RO_ABSOLUTE_ERROR: "2.1126",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240785",
@@ -33408,6 +35976,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1137",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1137",
     NEW_RO_ABSOLUTE_ERROR: "1.1137",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238039",
@@ -33434,6 +36004,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.7407",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.7407",
     NEW_RO_ABSOLUTE_ERROR: "10.7407",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240122",
@@ -33460,6 +36032,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0122",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0122",
     NEW_RO_ABSOLUTE_ERROR: "1.0122",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237459",
@@ -33486,6 +36060,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1305",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1305",
     NEW_RO_ABSOLUTE_ERROR: "4.1305",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238961",
@@ -33512,6 +36088,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.3088",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.3088",
     NEW_RO_ABSOLUTE_ERROR: "9.3088",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240226",
@@ -33538,6 +36116,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.0206",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0206",
     NEW_RO_ABSOLUTE_ERROR: "6.0206",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50242653",
@@ -33564,6 +36144,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "45.6735",
     NEW_RO_ABSOLUTE_ERROR: "45.6735",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240529",
@@ -33590,6 +36172,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1433",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1433",
     NEW_RO_ABSOLUTE_ERROR: "0.1433",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240230",
@@ -33616,6 +36200,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8722",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8722",
     NEW_RO_ABSOLUTE_ERROR: "0.8722",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241463",
@@ -33642,6 +36228,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7097",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7097",
     NEW_RO_ABSOLUTE_ERROR: "4.7097",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236858",
@@ -33668,6 +36256,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3857",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3857",
     NEW_RO_ABSOLUTE_ERROR: "2.3857",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239639",
@@ -33694,6 +36284,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8423",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8423",
     NEW_RO_ABSOLUTE_ERROR: "0.8423",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236469",
@@ -33720,6 +36312,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1277",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1277",
     NEW_RO_ABSOLUTE_ERROR: "9.1277",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238969",
@@ -33746,6 +36340,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6599",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6599",
     NEW_RO_ABSOLUTE_ERROR: "3.6599",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235235",
@@ -33772,6 +36368,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1260",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1260",
     NEW_RO_ABSOLUTE_ERROR: "7.1260",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239265",
@@ -33798,6 +36396,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.7622",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.7622",
     NEW_RO_ABSOLUTE_ERROR: "10.7622",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236457",
@@ -33824,6 +36424,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.3429",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.3429",
     NEW_RO_ABSOLUTE_ERROR: "7.3429",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242890",
@@ -33850,6 +36452,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "56.1600",
     NEW_RO_ABSOLUTE_ERROR: "56.1600",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238868",
@@ -33876,6 +36480,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2900",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2900",
     NEW_RO_ABSOLUTE_ERROR: "1.2900",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238786",
@@ -33902,6 +36508,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2553",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2553",
     NEW_RO_ABSOLUTE_ERROR: "7.2553",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235236",
@@ -33928,6 +36536,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4942",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4942",
     NEW_RO_ABSOLUTE_ERROR: "0.4942",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239821",
@@ -33954,6 +36564,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.0358",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.0358",
     NEW_RO_ABSOLUTE_ERROR: "8.0358",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237207",
@@ -33980,6 +36592,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2644",
     NEW_RO_ABSOLUTE_ERROR: "8.2644",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241460",
@@ -34006,6 +36620,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9021",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9021",
     NEW_RO_ABSOLUTE_ERROR: "1.9021",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240152",
@@ -34032,6 +36648,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6446",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6446",
     NEW_RO_ABSOLUTE_ERROR: "0.6446",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50225128",
@@ -34058,6 +36676,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.9350",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.9350",
     NEW_RO_ABSOLUTE_ERROR: "12.9350",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239642",
@@ -34084,6 +36704,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.6630",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6630",
     NEW_RO_ABSOLUTE_ERROR: "5.6630",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238867",
@@ -34110,6 +36732,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.6404",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.6404",
     NEW_RO_ABSOLUTE_ERROR: "7.6404",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240779",
@@ -34136,6 +36760,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4755",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4755",
     NEW_RO_ABSOLUTE_ERROR: "1.4755",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240274",
@@ -34162,6 +36788,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "21.3606",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "21.3606",
     NEW_RO_ABSOLUTE_ERROR: "21.3606",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241769",
@@ -34188,6 +36816,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.1616",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.1616",
     NEW_RO_ABSOLUTE_ERROR: "10.1616",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240262",
@@ -34214,6 +36844,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.1381",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.1381",
     NEW_RO_ABSOLUTE_ERROR: "10.1381",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238309",
@@ -34240,6 +36872,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0208",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0208",
     NEW_RO_ABSOLUTE_ERROR: "2.0208",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240127",
@@ -34266,6 +36900,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0437",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0437",
     NEW_RO_ABSOLUTE_ERROR: "1.0437",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237777",
@@ -34292,6 +36928,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4439",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4439",
     NEW_RO_ABSOLUTE_ERROR: "2.4439",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237961",
@@ -34318,6 +36956,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2356",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2356",
     NEW_RO_ABSOLUTE_ERROR: "4.2356",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237767",
@@ -34344,6 +36984,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.4150",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.4150",
     NEW_RO_ABSOLUTE_ERROR: "7.4150",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229579",
@@ -34370,6 +37012,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9384",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9384",
     NEW_RO_ABSOLUTE_ERROR: "4.9384",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236844",
@@ -34396,6 +37040,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7238",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7238",
     NEW_RO_ABSOLUTE_ERROR: "4.7238",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237249",
@@ -34422,6 +37068,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5760",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5760",
     NEW_RO_ABSOLUTE_ERROR: "4.5760",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240027",
@@ -34448,6 +37096,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1689",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1689",
     NEW_RO_ABSOLUTE_ERROR: "4.1689",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236470",
@@ -34474,6 +37124,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1593",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1593",
     NEW_RO_ABSOLUTE_ERROR: "2.1593",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238965",
@@ -34500,6 +37152,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6905",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6905",
     NEW_RO_ABSOLUTE_ERROR: "1.6905",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238783",
@@ -34526,6 +37180,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.3037",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.3037",
     NEW_RO_ABSOLUTE_ERROR: "8.3037",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238172",
@@ -34552,6 +37208,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7019",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7019",
     NEW_RO_ABSOLUTE_ERROR: "4.7019",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240766",
@@ -34578,6 +37236,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "44.6883",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "44.6883",
     NEW_RO_ABSOLUTE_ERROR: "44.6883",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236748",
@@ -34604,6 +37264,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.1154",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.1154",
     NEW_RO_ABSOLUTE_ERROR: "13.1154",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241718",
@@ -34630,6 +37292,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2146",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2146",
     NEW_RO_ABSOLUTE_ERROR: "7.2146",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241827",
@@ -34656,6 +37320,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6616",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6616",
     NEW_RO_ABSOLUTE_ERROR: "6.6616",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237960",
@@ -34682,6 +37348,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7350",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7350",
     NEW_RO_ABSOLUTE_ERROR: "0.7350",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240142",
@@ -34708,6 +37376,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "17.5828",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.5828",
     NEW_RO_ABSOLUTE_ERROR: "17.5828",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235151",
@@ -34734,6 +37404,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.9998",
     NEW_RO_ABSOLUTE_ERROR: "7.9998",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238098",
@@ -34760,6 +37432,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9450",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9450",
     NEW_RO_ABSOLUTE_ERROR: "4.9450",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243309",
@@ -34786,6 +37460,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "20.7962",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "20.7962",
     NEW_RO_ABSOLUTE_ERROR: "20.7962",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229583",
@@ -34812,6 +37488,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "16.9142",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.9142",
     NEW_RO_ABSOLUTE_ERROR: "16.9142",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238177",
@@ -34838,6 +37516,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6307",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6307",
     NEW_RO_ABSOLUTE_ERROR: "4.6307",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229588",
@@ -34864,6 +37544,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9755",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9755",
     NEW_RO_ABSOLUTE_ERROR: "4.9755",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237610",
@@ -34890,6 +37572,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6729",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6729",
     NEW_RO_ABSOLUTE_ERROR: "4.6729",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236851",
@@ -34916,6 +37600,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3923",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3923",
     NEW_RO_ABSOLUTE_ERROR: "2.3923",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238963",
@@ -34942,6 +37628,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.0790",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0790",
     NEW_RO_ABSOLUTE_ERROR: "5.0790",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237743",
@@ -34968,6 +37656,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4292",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4292",
     NEW_RO_ABSOLUTE_ERROR: "4.4292",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240767",
@@ -34994,6 +37684,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.8122",
     NEW_RO_ABSOLUTE_ERROR: "6.8122",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242757",
@@ -35020,6 +37712,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8461",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8461",
     NEW_RO_ABSOLUTE_ERROR: "2.8461",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240570",
@@ -35046,6 +37740,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5231",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5231",
     NEW_RO_ABSOLUTE_ERROR: "3.5231",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238801",
@@ -35072,6 +37768,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7407",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7407",
     NEW_RO_ABSOLUTE_ERROR: "2.7407",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240017",
@@ -35098,6 +37796,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "28.3149",
     NEW_RO_ABSOLUTE_ERROR: "28.3149",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243029",
@@ -35124,6 +37824,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3100",
     NEW_RO_ABSOLUTE_ERROR: "5.3100",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236684",
@@ -35150,6 +37852,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6359",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6359",
     NEW_RO_ABSOLUTE_ERROR: "2.6359",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238561",
@@ -35176,6 +37880,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.0247",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.0247",
     NEW_RO_ABSOLUTE_ERROR: "8.0247",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238854",
@@ -35202,6 +37908,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.8946",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.8946",
     NEW_RO_ABSOLUTE_ERROR: "14.8946",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241831",
@@ -35228,6 +37936,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "25.1085",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "25.1085",
     NEW_RO_ABSOLUTE_ERROR: "25.1085",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238174",
@@ -35254,6 +37964,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1928",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1928",
     NEW_RO_ABSOLUTE_ERROR: "3.1928",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232945",
@@ -35280,6 +37992,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4407",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4407",
     NEW_RO_ABSOLUTE_ERROR: "0.4407",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240312",
@@ -35306,6 +38020,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0380",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0380",
     NEW_RO_ABSOLUTE_ERROR: "0.0380",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239851",
@@ -35332,6 +38048,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8850",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8850",
     NEW_RO_ABSOLUTE_ERROR: "5.8850",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50216438",
@@ -35358,6 +38076,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1888",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1888",
     NEW_RO_ABSOLUTE_ERROR: "2.1888",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242872",
@@ -35384,6 +38104,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.7916",
     NEW_RO_ABSOLUTE_ERROR: "12.7916",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243182",
@@ -35410,6 +38132,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6707",
     NEW_RO_ABSOLUTE_ERROR: "1.6707",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238035",
@@ -35436,6 +38160,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2724",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2724",
     NEW_RO_ABSOLUTE_ERROR: "0.2724",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240273",
@@ -35462,6 +38188,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0906",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0906",
     NEW_RO_ABSOLUTE_ERROR: "3.0906",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50228847",
@@ -35488,6 +38216,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9316",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9316",
     NEW_RO_ABSOLUTE_ERROR: "1.9316",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236953",
@@ -35514,6 +38244,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8686",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8686",
     NEW_RO_ABSOLUTE_ERROR: "3.8686",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237243",
@@ -35540,6 +38272,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6203",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6203",
     NEW_RO_ABSOLUTE_ERROR: "1.6203",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234819",
@@ -35566,6 +38300,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.9809",
     NEW_RO_ABSOLUTE_ERROR: "6.9809",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237244",
@@ -35592,6 +38328,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3708",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3708",
     NEW_RO_ABSOLUTE_ERROR: "5.3708",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238782",
@@ -35618,6 +38356,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.7495",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.7495",
     NEW_RO_ABSOLUTE_ERROR: "7.7495",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229572",
@@ -35644,6 +38384,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7739",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7739",
     NEW_RO_ABSOLUTE_ERROR: "1.7739",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238172",
@@ -35670,6 +38412,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5682",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5682",
     NEW_RO_ABSOLUTE_ERROR: "2.5682",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243312",
@@ -35696,6 +38440,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6642",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6642",
     NEW_RO_ABSOLUTE_ERROR: "2.6642",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243418",
@@ -35722,6 +38468,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "54.8428",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "54.8428",
     NEW_RO_ABSOLUTE_ERROR: "54.8428",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236839",
@@ -35748,6 +38496,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7478",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7478",
     NEW_RO_ABSOLUTE_ERROR: "2.7478",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236452",
@@ -35774,6 +38524,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9617",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9617",
     NEW_RO_ABSOLUTE_ERROR: "1.9617",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237741",
@@ -35800,6 +38552,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6023",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6023",
     NEW_RO_ABSOLUTE_ERROR: "3.6023",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229590",
@@ -35826,6 +38580,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4887",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4887",
     NEW_RO_ABSOLUTE_ERROR: "3.4887",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240251",
@@ -35852,6 +38608,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0125",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0125",
     NEW_RO_ABSOLUTE_ERROR: "3.0125",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237605",
@@ -35878,6 +38636,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2547",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2547",
     NEW_RO_ABSOLUTE_ERROR: "6.2547",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240264",
@@ -35904,6 +38664,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1117",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1117",
     NEW_RO_ABSOLUTE_ERROR: "2.1117",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237736",
@@ -35930,6 +38692,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8919",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8919",
     NEW_RO_ABSOLUTE_ERROR: "2.8919",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237607",
@@ -35956,6 +38720,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8014",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8014",
     NEW_RO_ABSOLUTE_ERROR: "1.8014",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237235",
@@ -35982,6 +38748,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2183",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2183",
     NEW_RO_ABSOLUTE_ERROR: "4.2183",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236675",
@@ -36008,6 +38776,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "54.2146",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "54.2146",
     NEW_RO_ABSOLUTE_ERROR: "54.2146",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236953",
@@ -36034,6 +38804,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4679",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4679",
     NEW_RO_ABSOLUTE_ERROR: "4.4679",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242603",
@@ -36060,6 +38832,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.0472",
     NEW_RO_ABSOLUTE_ERROR: "13.0472",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236909",
@@ -36086,6 +38860,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9315",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9315",
     NEW_RO_ABSOLUTE_ERROR: "3.9315",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240037",
@@ -36112,6 +38888,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5570",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5570",
     NEW_RO_ABSOLUTE_ERROR: "0.5570",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237734",
@@ -36138,6 +38916,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6857",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6857",
     NEW_RO_ABSOLUTE_ERROR: "1.6857",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238779",
@@ -36164,6 +38944,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2294",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2294",
     NEW_RO_ABSOLUTE_ERROR: "3.2294",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241704",
@@ -36190,6 +38972,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2378",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2378",
     NEW_RO_ABSOLUTE_ERROR: "1.2378",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237783",
@@ -36216,6 +39000,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1449",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1449",
     NEW_RO_ABSOLUTE_ERROR: "5.1449",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240073",
@@ -36242,6 +39028,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1870",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1870",
     NEW_RO_ABSOLUTE_ERROR: "4.1870",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243518",
@@ -36268,6 +39056,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "54.5568",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "54.5568",
     NEW_RO_ABSOLUTE_ERROR: "54.5568",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237599",
@@ -36294,6 +39084,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4793",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4793",
     NEW_RO_ABSOLUTE_ERROR: "4.4793",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239856",
@@ -36320,6 +39112,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "15.3920",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.3920",
     NEW_RO_ABSOLUTE_ERROR: "15.3920",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240785",
@@ -36346,6 +39140,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6242",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6242",
     NEW_RO_ABSOLUTE_ERROR: "1.6242",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236954",
@@ -36372,6 +39168,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5407",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5407",
     NEW_RO_ABSOLUTE_ERROR: "0.5407",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236910",
@@ -36398,6 +39196,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5635",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5635",
     NEW_RO_ABSOLUTE_ERROR: "2.5635",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237791",
@@ -36424,6 +39224,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.3716",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.3716",
     NEW_RO_ABSOLUTE_ERROR: "11.3716",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236685",
@@ -36450,6 +39252,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.4507",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.4507",
     NEW_RO_ABSOLUTE_ERROR: "10.4507",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240065",
@@ -36476,6 +39280,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3615",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3615",
     NEW_RO_ABSOLUTE_ERROR: "4.3615",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236876",
@@ -36502,6 +39308,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9515",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9515",
     NEW_RO_ABSOLUTE_ERROR: "1.9515",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238813",
@@ -36528,6 +39336,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9561",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9561",
     NEW_RO_ABSOLUTE_ERROR: "4.9561",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236698",
@@ -36554,6 +39364,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4104",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4104",
     NEW_RO_ABSOLUTE_ERROR: "3.4104",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236844",
@@ -36580,6 +39392,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4621",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4621",
     NEW_RO_ABSOLUTE_ERROR: "0.4621",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237767",
@@ -36606,6 +39420,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2442",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2442",
     NEW_RO_ABSOLUTE_ERROR: "1.2442",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235309",
@@ -36632,6 +39448,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3006",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3006",
     NEW_RO_ABSOLUTE_ERROR: "0.3006",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229566",
@@ -36658,6 +39476,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.2029",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2029",
     NEW_RO_ABSOLUTE_ERROR: "8.2029",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242260",
@@ -36684,6 +39504,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1341",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1341",
     NEW_RO_ABSOLUTE_ERROR: "4.1341",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239839",
@@ -36710,6 +39532,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "16.5646",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.5646",
     NEW_RO_ABSOLUTE_ERROR: "16.5646",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237770",
@@ -36736,6 +39560,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.9678",
     NEW_RO_ABSOLUTE_ERROR: "12.9678",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241944",
@@ -36762,6 +39588,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.1914",
     NEW_RO_ABSOLUTE_ERROR: "14.1914",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50220713",
@@ -36788,6 +39616,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2989",
     NEW_RO_ABSOLUTE_ERROR: "3.2989",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238202",
@@ -36814,6 +39644,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "24.7112",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "24.7112",
     NEW_RO_ABSOLUTE_ERROR: "24.7112",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240275",
@@ -36840,6 +39672,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2542",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2542",
     NEW_RO_ABSOLUTE_ERROR: "3.2542",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234863",
@@ -36866,6 +39700,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9554",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9554",
     NEW_RO_ABSOLUTE_ERROR: "2.9554",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238555",
@@ -36892,6 +39728,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "39.9271",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "39.9271",
     NEW_RO_ABSOLUTE_ERROR: "39.9271",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237772",
@@ -36918,6 +39756,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3424",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3424",
     NEW_RO_ABSOLUTE_ERROR: "1.3424",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238787",
@@ -36944,6 +39784,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6996",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6996",
     NEW_RO_ABSOLUTE_ERROR: "2.6996",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234849",
@@ -36970,6 +39812,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1249",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1249",
     NEW_RO_ABSOLUTE_ERROR: "5.1249",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238188",
@@ -36996,6 +39840,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.3031",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.3031",
     NEW_RO_ABSOLUTE_ERROR: "7.3031",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236707",
@@ -37022,6 +39868,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3578",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3578",
     NEW_RO_ABSOLUTE_ERROR: "0.3578",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243078",
@@ -37048,6 +39896,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "28.2355",
     NEW_RO_ABSOLUTE_ERROR: "28.2355",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238168",
@@ -37074,6 +39924,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0876",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0876",
     NEW_RO_ABSOLUTE_ERROR: "1.0876",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238967",
@@ -37100,6 +39952,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2445",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2445",
     NEW_RO_ABSOLUTE_ERROR: "2.2445",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238860",
@@ -37126,6 +39980,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0570",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0570",
     NEW_RO_ABSOLUTE_ERROR: "2.0570",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235111",
@@ -37152,6 +40008,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.7643",
     NEW_RO_ABSOLUTE_ERROR: "12.7643",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238561",
@@ -37178,6 +40036,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7298",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7298",
     NEW_RO_ABSOLUTE_ERROR: "3.7298",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240229",
@@ -37204,6 +40064,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9927",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9927",
     NEW_RO_ABSOLUTE_ERROR: "1.9927",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238192",
@@ -37230,6 +40092,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2935",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2935",
     NEW_RO_ABSOLUTE_ERROR: "7.2935",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50230212",
@@ -37256,6 +40120,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2425",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2425",
     NEW_RO_ABSOLUTE_ERROR: "1.2425",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234872",
@@ -37282,6 +40148,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7423",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7423",
     NEW_RO_ABSOLUTE_ERROR: "0.7423",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243313",
@@ -37308,6 +40176,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.9887",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.9887",
     NEW_RO_ABSOLUTE_ERROR: "7.9887",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50216438",
@@ -37334,6 +40204,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2627",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2627",
     NEW_RO_ABSOLUTE_ERROR: "6.2627",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240544",
@@ -37360,6 +40232,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5691",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5691",
     NEW_RO_ABSOLUTE_ERROR: "1.5691",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238043",
@@ -37386,6 +40260,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3156",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3156",
     NEW_RO_ABSOLUTE_ERROR: "1.3156",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238174",
@@ -37412,6 +40288,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3937",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3937",
     NEW_RO_ABSOLUTE_ERROR: "5.3937",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229575",
@@ -37438,6 +40316,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.9854",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.9854",
     NEW_RO_ABSOLUTE_ERROR: "7.9854",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241957",
@@ -37464,6 +40344,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.8094",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.8094",
     NEW_RO_ABSOLUTE_ERROR: "10.8094",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237778",
@@ -37490,6 +40372,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.8778",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.8778",
     NEW_RO_ABSOLUTE_ERROR: "7.8778",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238967",
@@ -37516,6 +40400,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "49.0600",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "49.0600",
     NEW_RO_ABSOLUTE_ERROR: "49.0600",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50244212",
@@ -37542,6 +40428,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3000",
     NEW_RO_ABSOLUTE_ERROR: "5.3000",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237788",
@@ -37568,6 +40456,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5004",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5004",
     NEW_RO_ABSOLUTE_ERROR: "5.5004",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235189",
@@ -37594,6 +40484,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3649",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3649",
     NEW_RO_ABSOLUTE_ERROR: "4.3649",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240984",
@@ -37620,6 +40512,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "20.0075",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "20.0075",
     NEW_RO_ABSOLUTE_ERROR: "20.0075",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240276",
@@ -37646,6 +40540,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.6565",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.6565",
     NEW_RO_ABSOLUTE_ERROR: "8.6565",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235269",
@@ -37672,6 +40568,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2532",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2532",
     NEW_RO_ABSOLUTE_ERROR: "0.2532",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237253",
@@ -37698,6 +40596,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4577",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4577",
     NEW_RO_ABSOLUTE_ERROR: "5.4577",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241942",
@@ -37724,6 +40624,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1060",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1060",
     NEW_RO_ABSOLUTE_ERROR: "2.1060",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238793",
@@ -37750,6 +40652,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1733",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1733",
     NEW_RO_ABSOLUTE_ERROR: "7.1733",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240984",
@@ -37776,6 +40680,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3347",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3347",
     NEW_RO_ABSOLUTE_ERROR: "2.3347",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50244440",
@@ -37802,6 +40708,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "49.2370",
     NEW_RO_ABSOLUTE_ERROR: "49.2370",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236695",
@@ -37828,6 +40736,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "16.8980",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.8980",
     NEW_RO_ABSOLUTE_ERROR: "16.8980",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239264",
@@ -37854,6 +40764,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.2083",
     NEW_RO_ABSOLUTE_ERROR: "15.2083",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236701",
@@ -37880,6 +40792,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "44.6472",
     NEW_RO_ABSOLUTE_ERROR: "44.6472",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240013",
@@ -37906,6 +40820,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "17.7640",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.7640",
     NEW_RO_ABSOLUTE_ERROR: "17.7640",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236907",
@@ -37932,6 +40848,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.8213",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.8213",
     NEW_RO_ABSOLUTE_ERROR: "6.8213",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50244440",
@@ -37958,6 +40876,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "49.2370",
     NEW_RO_ABSOLUTE_ERROR: "49.2370",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238675",
@@ -37984,6 +40904,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.4923",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.4923",
     NEW_RO_ABSOLUTE_ERROR: "14.4923",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236948",
@@ -38010,6 +40932,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9178",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9178",
     NEW_RO_ABSOLUTE_ERROR: "1.9178",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238042",
@@ -38036,6 +40960,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "17.3884",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.3884",
     NEW_RO_ABSOLUTE_ERROR: "17.3884",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240570",
@@ -38062,6 +40988,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0293",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0293",
     NEW_RO_ABSOLUTE_ERROR: "1.0293",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237211",
@@ -38088,6 +41016,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.0541",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0541",
     NEW_RO_ABSOLUTE_ERROR: "5.0541",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238561",
@@ -38114,6 +41044,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0485",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0485",
     NEW_RO_ABSOLUTE_ERROR: "1.0485",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238866",
@@ -38140,6 +41072,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1793",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1793",
     NEW_RO_ABSOLUTE_ERROR: "4.1793",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236676",
@@ -38166,6 +41100,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2787",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2787",
     NEW_RO_ABSOLUTE_ERROR: "0.2787",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236684",
@@ -38192,6 +41128,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5075",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5075",
     NEW_RO_ABSOLUTE_ERROR: "4.5075",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238202",
@@ -38218,6 +41156,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.0288",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.0288",
     NEW_RO_ABSOLUTE_ERROR: "8.0288",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236855",
@@ -38244,6 +41184,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.0108",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.0108",
     NEW_RO_ABSOLUTE_ERROR: "7.0108",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239293",
@@ -38270,6 +41212,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3576",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3576",
     NEW_RO_ABSOLUTE_ERROR: "1.3576",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239262",
@@ -38296,6 +41240,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1323",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1323",
     NEW_RO_ABSOLUTE_ERROR: "7.1323",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238172",
@@ -38322,6 +41268,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0082",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0082",
     NEW_RO_ABSOLUTE_ERROR: "2.0082",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243343",
@@ -38348,6 +41296,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1533",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1533",
     NEW_RO_ABSOLUTE_ERROR: "7.1533",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236698",
@@ -38374,6 +41324,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.0643",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.0643",
     NEW_RO_ABSOLUTE_ERROR: "8.0643",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229601",
@@ -38400,6 +41352,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0509",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0509",
     NEW_RO_ABSOLUTE_ERROR: "1.0509",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238845",
@@ -38426,6 +41380,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2607",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2607",
     NEW_RO_ABSOLUTE_ERROR: "3.2607",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238801",
@@ -38452,6 +41408,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3028",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3028",
     NEW_RO_ABSOLUTE_ERROR: "1.3028",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240152",
@@ -38478,6 +41436,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3805",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3805",
     NEW_RO_ABSOLUTE_ERROR: "4.3805",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240777",
@@ -38504,6 +41464,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.7869",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.7869",
     NEW_RO_ABSOLUTE_ERROR: "8.7869",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238853",
@@ -38530,6 +41492,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7582",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7582",
     NEW_RO_ABSOLUTE_ERROR: "2.7582",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241832",
@@ -38556,6 +41520,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6084",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6084",
     NEW_RO_ABSOLUTE_ERROR: "1.6084",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237249",
@@ -38582,6 +41548,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2739",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2739",
     NEW_RO_ABSOLUTE_ERROR: "1.2739",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235357",
@@ -38608,6 +41576,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1504",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1504",
     NEW_RO_ABSOLUTE_ERROR: "3.1504",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236954",
@@ -38634,6 +41604,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.2175",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2175",
     NEW_RO_ABSOLUTE_ERROR: "8.2175",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237750",
@@ -38660,6 +41632,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1588",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1588",
     NEW_RO_ABSOLUTE_ERROR: "3.1588",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238801",
@@ -38686,6 +41660,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8299",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8299",
     NEW_RO_ABSOLUTE_ERROR: "5.8299",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240296",
@@ -38712,6 +41688,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7560",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7560",
     NEW_RO_ABSOLUTE_ERROR: "2.7560",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240696",
@@ -38738,6 +41716,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "210.8134",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "210.8134",
     NEW_RO_ABSOLUTE_ERROR: "210.8134",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236742",
@@ -38764,6 +41744,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8393",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8393",
     NEW_RO_ABSOLUTE_ERROR: "3.8393",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240028",
@@ -38790,6 +41772,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6912",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6912",
     NEW_RO_ABSOLUTE_ERROR: "2.6912",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242779",
@@ -38816,6 +41800,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.5677",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.5677",
     NEW_RO_ABSOLUTE_ERROR: "9.5677",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240066",
@@ -38842,6 +41828,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3005",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3005",
     NEW_RO_ABSOLUTE_ERROR: "4.3005",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238556",
@@ -38868,6 +41856,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.6253",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6253",
     NEW_RO_ABSOLUTE_ERROR: "5.6253",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236686",
@@ -38894,6 +41884,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1160",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1160",
     NEW_RO_ABSOLUTE_ERROR: "0.1160",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237785",
@@ -38920,6 +41912,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.3351",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.3351",
     NEW_RO_ABSOLUTE_ERROR: "6.3351",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242756",
@@ -38946,6 +41940,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3192",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3192",
     NEW_RO_ABSOLUTE_ERROR: "3.3192",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238038",
@@ -38972,6 +41968,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2491",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2491",
     NEW_RO_ABSOLUTE_ERROR: "4.2491",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243392",
@@ -38998,6 +41996,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.7464",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.7464",
     NEW_RO_ABSOLUTE_ERROR: "11.7464",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238566",
@@ -39024,6 +42024,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0146",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0146",
     NEW_RO_ABSOLUTE_ERROR: "2.0146",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236835",
@@ -39050,6 +42052,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1243",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1243",
     NEW_RO_ABSOLUTE_ERROR: "2.1243",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238114",
@@ -39076,6 +42080,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.2150",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.2150",
     NEW_RO_ABSOLUTE_ERROR: "11.2150",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235967",
@@ -39102,6 +42108,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "20.2306",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "20.2306",
     NEW_RO_ABSOLUTE_ERROR: "20.2306",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240989",
@@ -39128,6 +42136,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6535",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6535",
     NEW_RO_ABSOLUTE_ERROR: "0.6535",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236887",
@@ -39154,6 +42164,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9677",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9677",
     NEW_RO_ABSOLUTE_ERROR: "1.9677",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50220710",
@@ -39180,6 +42192,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.9415",
     NEW_RO_ABSOLUTE_ERROR: "7.9415",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240801",
@@ -39206,6 +42220,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.4804",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.4804",
     NEW_RO_ABSOLUTE_ERROR: "9.4804",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240549",
@@ -39232,6 +42248,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2214",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2214",
     NEW_RO_ABSOLUTE_ERROR: "4.2214",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234824",
@@ -39258,6 +42276,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8151",
     NEW_RO_ABSOLUTE_ERROR: "5.8151",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237798",
@@ -39284,6 +42304,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3239",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3239",
     NEW_RO_ABSOLUTE_ERROR: "0.3239",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237734",
@@ -39310,6 +42332,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6296",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6296",
     NEW_RO_ABSOLUTE_ERROR: "0.6296",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235329",
@@ -39336,6 +42360,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6973",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6973",
     NEW_RO_ABSOLUTE_ERROR: "0.6973",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238815",
@@ -39362,6 +42388,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3793",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3793",
     NEW_RO_ABSOLUTE_ERROR: "0.3793",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237730",
@@ -39388,6 +42416,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1095",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1095",
     NEW_RO_ABSOLUTE_ERROR: "0.1095",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237254",
@@ -39414,6 +42444,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5898",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5898",
     NEW_RO_ABSOLUTE_ERROR: "1.5898",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237235",
@@ -39440,6 +42472,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "40.5693",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "40.5693",
     NEW_RO_ABSOLUTE_ERROR: "40.5693",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237231",
@@ -39466,6 +42500,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "40.0131",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "40.0131",
     NEW_RO_ABSOLUTE_ERROR: "40.0131",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236944",
@@ -39492,6 +42528,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0508",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0508",
     NEW_RO_ABSOLUTE_ERROR: "1.0508",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237235",
@@ -39518,6 +42556,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5311",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5311",
     NEW_RO_ABSOLUTE_ERROR: "2.5311",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236704",
@@ -39544,6 +42584,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0743",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0743",
     NEW_RO_ABSOLUTE_ERROR: "1.0743",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236693",
@@ -39570,6 +42612,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2251",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2251",
     NEW_RO_ABSOLUTE_ERROR: "5.2251",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240076",
@@ -39596,6 +42640,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.0884",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.0884",
     NEW_RO_ABSOLUTE_ERROR: "12.0884",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236858",
@@ -39622,6 +42668,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3423",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3423",
     NEW_RO_ABSOLUTE_ERROR: "5.3423",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238099",
@@ -39648,6 +42696,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1379",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1379",
     NEW_RO_ABSOLUTE_ERROR: "7.1379",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240057",
@@ -39674,6 +42724,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5330",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5330",
     NEW_RO_ABSOLUTE_ERROR: "1.5330",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229595",
@@ -39700,6 +42752,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9115",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9115",
     NEW_RO_ABSOLUTE_ERROR: "4.9115",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236942",
@@ -39726,6 +42780,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5227",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5227",
     NEW_RO_ABSOLUTE_ERROR: "0.5227",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243383",
@@ -39752,6 +42808,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "17.5822",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.5822",
     NEW_RO_ABSOLUTE_ERROR: "17.5822",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240985",
@@ -39778,6 +42836,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.0118",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.0118",
     NEW_RO_ABSOLUTE_ERROR: "9.0118",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243402",
@@ -39804,6 +42864,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.1629",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.1629",
     NEW_RO_ABSOLUTE_ERROR: "12.1629",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237231",
@@ -39830,6 +42892,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2556",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2556",
     NEW_RO_ABSOLUTE_ERROR: "5.2556",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240580",
@@ -39856,6 +42920,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "47.1917",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "47.1917",
     NEW_RO_ABSOLUTE_ERROR: "47.1917",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239588",
@@ -39882,6 +42948,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.7001",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.7001",
     NEW_RO_ABSOLUTE_ERROR: "13.7001",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235108",
@@ -39908,6 +42976,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1164",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1164",
     NEW_RO_ABSOLUTE_ERROR: "2.1164",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238096",
@@ -39934,6 +43004,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.6659",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.6659",
     NEW_RO_ABSOLUTE_ERROR: "7.6659",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50220712",
@@ -39960,6 +43032,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.5282",
     NEW_RO_ABSOLUTE_ERROR: "16.5282",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238251",
@@ -39986,6 +43060,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1455",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1455",
     NEW_RO_ABSOLUTE_ERROR: "1.1455",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237801",
@@ -40012,6 +43088,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5237",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5237",
     NEW_RO_ABSOLUTE_ERROR: "0.5237",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237793",
@@ -40038,6 +43116,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0139",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0139",
     NEW_RO_ABSOLUTE_ERROR: "0.0139",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238094",
@@ -40064,6 +43144,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.9330",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.9330",
     NEW_RO_ABSOLUTE_ERROR: "5.9330",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235328",
@@ -40090,6 +43172,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1767",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1767",
     NEW_RO_ABSOLUTE_ERROR: "1.1767",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237741",
@@ -40116,6 +43200,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5265",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5265",
     NEW_RO_ABSOLUTE_ERROR: "5.5265",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240065",
@@ -40142,6 +43228,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2714",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2714",
     NEW_RO_ABSOLUTE_ERROR: "0.2714",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229601",
@@ -40168,6 +43256,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0894",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0894",
     NEW_RO_ABSOLUTE_ERROR: "3.0894",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236685",
@@ -40194,6 +43284,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "30.2295",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "30.2295",
     NEW_RO_ABSOLUTE_ERROR: "30.2295",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236750",
@@ -40220,6 +43312,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.1791",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.1791",
     NEW_RO_ABSOLUTE_ERROR: "8.1791",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236686",
@@ -40246,6 +43340,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7767",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7767",
     NEW_RO_ABSOLUTE_ERROR: "1.7767",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235256",
@@ -40272,6 +43368,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5015",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5015",
     NEW_RO_ABSOLUTE_ERROR: "2.5015",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243020",
@@ -40298,6 +43396,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9567",
     NEW_RO_ABSOLUTE_ERROR: "0.9567",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50220723",
@@ -40324,6 +43424,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.8460",
     NEW_RO_ABSOLUTE_ERROR: "4.8460",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239246",
@@ -40350,6 +43452,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.3393",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.3393",
     NEW_RO_ABSOLUTE_ERROR: "12.3393",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236851",
@@ -40376,6 +43480,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0232",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0232",
     NEW_RO_ABSOLUTE_ERROR: "2.0232",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234857",
@@ -40402,6 +43508,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3581",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3581",
     NEW_RO_ABSOLUTE_ERROR: "1.3581",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236850",
@@ -40428,6 +43536,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6067",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6067",
     NEW_RO_ABSOLUTE_ERROR: "0.6067",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236395",
@@ -40454,6 +43564,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "59.3107",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "59.3107",
     NEW_RO_ABSOLUTE_ERROR: "59.3107",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235191",
@@ -40480,6 +43592,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9326",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9326",
     NEW_RO_ABSOLUTE_ERROR: "1.9326",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235253",
@@ -40506,6 +43620,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4725",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4725",
     NEW_RO_ABSOLUTE_ERROR: "5.4725",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237759",
@@ -40532,6 +43648,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2369",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2369",
     NEW_RO_ABSOLUTE_ERROR: "6.2369",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238046",
@@ -40558,6 +43676,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "36.9116",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "36.9116",
     NEW_RO_ABSOLUTE_ERROR: "36.9116",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242766",
@@ -40584,6 +43704,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.4420",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.4420",
     NEW_RO_ABSOLUTE_ERROR: "7.4420",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232936",
@@ -40610,6 +43732,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "28.0859",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "28.0859",
     NEW_RO_ABSOLUTE_ERROR: "28.0859",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237777",
@@ -40636,6 +43760,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0756",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0756",
     NEW_RO_ABSOLUTE_ERROR: "2.0756",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237764",
@@ -40662,6 +43788,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.5047",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.5047",
     NEW_RO_ABSOLUTE_ERROR: "7.5047",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241716",
@@ -40688,6 +43816,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.8014",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.8014",
     NEW_RO_ABSOLUTE_ERROR: "4.8014",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238089",
@@ -40714,6 +43844,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1432",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1432",
     NEW_RO_ABSOLUTE_ERROR: "9.1432",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50234852",
@@ -40740,6 +43872,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3283",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3283",
     NEW_RO_ABSOLUTE_ERROR: "1.3283",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236696",
@@ -40766,6 +43900,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1675",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1675",
     NEW_RO_ABSOLUTE_ERROR: "6.1675",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239829",
@@ -40792,6 +43928,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0306",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0306",
     NEW_RO_ABSOLUTE_ERROR: "1.0306",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235182",
@@ -40818,6 +43956,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "52.3928",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "52.3928",
     NEW_RO_ABSOLUTE_ERROR: "52.3928",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237599",
@@ -40844,6 +43984,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8785",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8785",
     NEW_RO_ABSOLUTE_ERROR: "0.8785",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237807",
@@ -40870,6 +44012,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7383",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7383",
     NEW_RO_ABSOLUTE_ERROR: "5.7383",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237769",
@@ -40896,6 +44040,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8943",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8943",
     NEW_RO_ABSOLUTE_ERROR: "2.8943",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50220704",
@@ -40922,6 +44068,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.4468",
     NEW_RO_ABSOLUTE_ERROR: "12.4468",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243020",
@@ -40948,6 +44096,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "44.0680",
     NEW_RO_ABSOLUTE_ERROR: "44.0680",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229592",
@@ -40974,6 +44124,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7766",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7766",
     NEW_RO_ABSOLUTE_ERROR: "0.7766",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241827",
@@ -41000,6 +44152,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.6358",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.6358",
     NEW_RO_ABSOLUTE_ERROR: "10.6358",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240759",
@@ -41026,6 +44180,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6024",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6024",
     NEW_RO_ABSOLUTE_ERROR: "4.6024",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240252",
@@ -41052,6 +44208,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2458",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2458",
     NEW_RO_ABSOLUTE_ERROR: "5.2458",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238754",
@@ -41078,6 +44236,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6065",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6065",
     NEW_RO_ABSOLUTE_ERROR: "2.6065",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236689",
@@ -41104,6 +44264,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "15.8778",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.8778",
     NEW_RO_ABSOLUTE_ERROR: "15.8778",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235329",
@@ -41130,6 +44292,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6694",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6694",
     NEW_RO_ABSOLUTE_ERROR: "0.6694",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240775",
@@ -41156,6 +44320,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4772",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4772",
     NEW_RO_ABSOLUTE_ERROR: "2.4772",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238039",
@@ -41182,6 +44348,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1265",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1265",
     NEW_RO_ABSOLUTE_ERROR: "6.1265",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235329",
@@ -41208,6 +44376,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2821",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2821",
     NEW_RO_ABSOLUTE_ERROR: "1.2821",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236861",
@@ -41234,6 +44404,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1790",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1790",
     NEW_RO_ABSOLUTE_ERROR: "2.1790",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236876",
@@ -41260,6 +44432,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7310",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7310",
     NEW_RO_ABSOLUTE_ERROR: "3.7310",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240534",
@@ -41286,6 +44460,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "19.3040",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "19.3040",
     NEW_RO_ABSOLUTE_ERROR: "19.3040",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236955",
@@ -41312,6 +44488,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.2421",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.2421",
     NEW_RO_ABSOLUTE_ERROR: "14.2421",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239290",
@@ -41338,6 +44516,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.8753",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.8753",
     NEW_RO_ABSOLUTE_ERROR: "8.8753",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229601",
@@ -41364,6 +44544,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1364",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1364",
     NEW_RO_ABSOLUTE_ERROR: "4.1364",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240041",
@@ -41390,6 +44572,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3398",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3398",
     NEW_RO_ABSOLUTE_ERROR: "2.3398",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237763",
@@ -41416,6 +44600,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0921",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0921",
     NEW_RO_ABSOLUTE_ERROR: "4.0921",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240797",
@@ -41442,6 +44628,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "17.1705",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.1705",
     NEW_RO_ABSOLUTE_ERROR: "17.1705",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238569",
@@ -41468,6 +44656,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4237",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4237",
     NEW_RO_ABSOLUTE_ERROR: "2.4237",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239877",
@@ -41494,6 +44684,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8673",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8673",
     NEW_RO_ABSOLUTE_ERROR: "2.8673",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238309",
@@ -41520,6 +44712,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4733",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4733",
     NEW_RO_ABSOLUTE_ERROR: "3.4733",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236389",
@@ -41546,6 +44740,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9077",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9077",
     NEW_RO_ABSOLUTE_ERROR: "0.9077",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241549",
@@ -41572,6 +44768,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4883",
     NEW_RO_ABSOLUTE_ERROR: "0.4883",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238093",
@@ -41598,6 +44796,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.2207",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.2207",
     NEW_RO_ABSOLUTE_ERROR: "13.2207",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240583",
@@ -41624,6 +44824,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3960",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3960",
     NEW_RO_ABSOLUTE_ERROR: "5.3960",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236911",
@@ -41650,6 +44852,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8252",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8252",
     NEW_RO_ABSOLUTE_ERROR: "1.8252",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234825",
@@ -41676,6 +44880,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.9339",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.9339",
     NEW_RO_ABSOLUTE_ERROR: "12.9339",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236895",
@@ -41702,6 +44908,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9902",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9902",
     NEW_RO_ABSOLUTE_ERROR: "1.9902",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236745",
@@ -41728,6 +44936,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4192",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4192",
     NEW_RO_ABSOLUTE_ERROR: "6.4192",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238961",
@@ -41754,6 +44964,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0169",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0169",
     NEW_RO_ABSOLUTE_ERROR: "4.0169",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236696",
@@ -41780,6 +44992,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8749",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8749",
     NEW_RO_ABSOLUTE_ERROR: "3.8749",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240892",
@@ -41806,6 +45020,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.6071",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.6071",
     NEW_RO_ABSOLUTE_ERROR: "3.6071",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236383",
@@ -41832,6 +45048,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "43.0400",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "43.0400",
     NEW_RO_ABSOLUTE_ERROR: "43.0400",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235320",
@@ -41858,6 +45076,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5779",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5779",
     NEW_RO_ABSOLUTE_ERROR: "1.5779",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243422",
@@ -41884,6 +45104,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "52.0523",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "52.0523",
     NEW_RO_ABSOLUTE_ERROR: "52.0523",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238967",
@@ -41910,6 +45132,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2142",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2142",
     NEW_RO_ABSOLUTE_ERROR: "6.2142",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237814",
@@ -41936,6 +45160,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.5598",
     NEW_RO_ABSOLUTE_ERROR: "8.5598",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234846",
@@ -41962,6 +45188,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6503",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6503",
     NEW_RO_ABSOLUTE_ERROR: "0.6503",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240535",
@@ -41988,6 +45216,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1527",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1527",
     NEW_RO_ABSOLUTE_ERROR: "5.1527",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240252",
@@ -42014,6 +45244,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2361",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2361",
     NEW_RO_ABSOLUTE_ERROR: "4.2361",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240292",
@@ -42040,6 +45272,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4258",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4258",
     NEW_RO_ABSOLUTE_ERROR: "3.4258",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239287",
@@ -42066,6 +45300,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0256",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0256",
     NEW_RO_ABSOLUTE_ERROR: "1.0256",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237094",
@@ -42092,6 +45328,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1197",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1197",
     NEW_RO_ABSOLUTE_ERROR: "3.1197",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240774",
@@ -42118,6 +45356,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4324",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4324",
     NEW_RO_ABSOLUTE_ERROR: "1.4324",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239263",
@@ -42144,6 +45384,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6394",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6394",
     NEW_RO_ABSOLUTE_ERROR: "4.6394",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236743",
@@ -42170,6 +45412,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "18.4602",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "18.4602",
     NEW_RO_ABSOLUTE_ERROR: "18.4602",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240530",
@@ -42196,6 +45440,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "60.7876",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "60.7876",
     NEW_RO_ABSOLUTE_ERROR: "60.7876",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241520",
@@ -42222,6 +45468,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.6999",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.6999",
     NEW_RO_ABSOLUTE_ERROR: "12.6999",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237761",
@@ -42248,6 +45496,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.0274",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.0274",
     NEW_RO_ABSOLUTE_ERROR: "7.0274",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236682",
@@ -42274,6 +45524,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4078",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4078",
     NEW_RO_ABSOLUTE_ERROR: "0.4078",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238786",
@@ -42300,6 +45552,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2407",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2407",
     NEW_RO_ABSOLUTE_ERROR: "0.2407",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242755",
@@ -42326,6 +45580,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "42.5259",
     NEW_RO_ABSOLUTE_ERROR: "42.5259",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236872",
@@ -42352,6 +45608,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1989",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1989",
     NEW_RO_ABSOLUTE_ERROR: "1.1989",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237732",
@@ -42378,6 +45636,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7204",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7204",
     NEW_RO_ABSOLUTE_ERROR: "1.7204",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229589",
@@ -42404,6 +45664,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4138",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4138",
     NEW_RO_ABSOLUTE_ERROR: "2.4138",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239832",
@@ -42430,6 +45692,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.4268",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.4268",
     NEW_RO_ABSOLUTE_ERROR: "12.4268",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240010",
@@ -42456,6 +45720,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.9473",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.9473",
     NEW_RO_ABSOLUTE_ERROR: "6.9473",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236402",
@@ -42482,6 +45748,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "32.6643",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "32.6643",
     NEW_RO_ABSOLUTE_ERROR: "32.6643",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238084",
@@ -42508,6 +45776,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6132",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6132",
     NEW_RO_ABSOLUTE_ERROR: "2.6132",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239827",
@@ -42534,6 +45804,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7827",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7827",
     NEW_RO_ABSOLUTE_ERROR: "5.7827",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236831",
@@ -42560,6 +45832,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0459",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0459",
     NEW_RO_ABSOLUTE_ERROR: "1.0459",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243310",
@@ -42586,6 +45860,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.1705",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1705",
     NEW_RO_ABSOLUTE_ERROR: "7.1705",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236824",
@@ -42612,6 +45888,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7213",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7213",
     NEW_RO_ABSOLUTE_ERROR: "0.7213",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240983",
@@ -42638,6 +45916,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2094",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2094",
     NEW_RO_ABSOLUTE_ERROR: "3.2094",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235177",
@@ -42664,6 +45944,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1296",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1296",
     NEW_RO_ABSOLUTE_ERROR: "9.1296",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236946",
@@ -42690,6 +45972,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3665",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3665",
     NEW_RO_ABSOLUTE_ERROR: "5.3665",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241550",
@@ -42716,6 +46000,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4699",
     NEW_RO_ABSOLUTE_ERROR: "4.4699",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238251",
@@ -42742,6 +46028,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7217",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7217",
     NEW_RO_ABSOLUTE_ERROR: "3.7217",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243311",
@@ -42768,6 +46056,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6256",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6256",
     NEW_RO_ABSOLUTE_ERROR: "6.6256",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240151",
@@ -42794,6 +46084,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6212",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6212",
     NEW_RO_ABSOLUTE_ERROR: "4.6212",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50232942",
@@ -42820,6 +46112,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.3285",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.3285",
     NEW_RO_ABSOLUTE_ERROR: "9.3285",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229581",
@@ -42846,6 +46140,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8554",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8554",
     NEW_RO_ABSOLUTE_ERROR: "2.8554",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243851",
@@ -42872,6 +46168,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "27.7624",
     NEW_RO_ABSOLUTE_ERROR: "27.7624",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236742",
@@ -42898,6 +46196,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "21.6318",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "21.6318",
     NEW_RO_ABSOLUTE_ERROR: "21.6318",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238090",
@@ -42924,6 +46224,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3215",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3215",
     NEW_RO_ABSOLUTE_ERROR: "5.3215",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236829",
@@ -42950,6 +46252,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2529",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2529",
     NEW_RO_ABSOLUTE_ERROR: "1.2529",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50230216",
@@ -42976,6 +46280,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.4804",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.4804",
     NEW_RO_ABSOLUTE_ERROR: "13.4804",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240026",
@@ -43002,6 +46308,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7397",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7397",
     NEW_RO_ABSOLUTE_ERROR: "5.7397",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50232961",
@@ -43028,6 +46336,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1484",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1484",
     NEW_RO_ABSOLUTE_ERROR: "1.1484",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240124",
@@ -43054,6 +46364,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.2035",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.2035",
     NEW_RO_ABSOLUTE_ERROR: "10.2035",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50220710",
@@ -43080,6 +46392,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.3686",
     NEW_RO_ABSOLUTE_ERROR: "7.3686",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243022",
@@ -43106,6 +46420,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.6932",
     NEW_RO_ABSOLUTE_ERROR: "8.6932",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238868",
@@ -43132,6 +46448,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.2825",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.2825",
     NEW_RO_ABSOLUTE_ERROR: "11.2825",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237610",
@@ -43158,6 +46476,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.0396",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.0396",
     NEW_RO_ABSOLUTE_ERROR: "8.0396",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240543",
@@ -43184,6 +46504,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.8280",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.8280",
     NEW_RO_ABSOLUTE_ERROR: "11.8280",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236753",
@@ -43210,6 +46532,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.6179",
     NEW_RO_ABSOLUTE_ERROR: "9.6179",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240694",
@@ -43236,6 +46560,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.3918",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.3918",
     NEW_RO_ABSOLUTE_ERROR: "13.3918",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238172",
@@ -43262,6 +46588,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2687",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2687",
     NEW_RO_ABSOLUTE_ERROR: "0.2687",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240347",
@@ -43288,6 +46616,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "29.2989",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "29.2989",
     NEW_RO_ABSOLUTE_ERROR: "29.2989",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229566",
@@ -43314,6 +46644,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.6243",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.6243",
     NEW_RO_ABSOLUTE_ERROR: "9.6243",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239829",
@@ -43340,6 +46672,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9544",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9544",
     NEW_RO_ABSOLUTE_ERROR: "4.9544",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238795",
@@ -43366,6 +46700,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8035",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8035",
     NEW_RO_ABSOLUTE_ERROR: "1.8035",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240984",
@@ -43392,6 +46728,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.3563",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.3563",
     NEW_RO_ABSOLUTE_ERROR: "6.3563",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241859",
@@ -43418,6 +46756,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3153",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3153",
     NEW_RO_ABSOLUTE_ERROR: "4.3153",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243044",
@@ -43444,6 +46784,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5208",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5208",
     NEW_RO_ABSOLUTE_ERROR: "3.5208",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240692",
@@ -43470,6 +46812,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "21.2588",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "21.2588",
     NEW_RO_ABSOLUTE_ERROR: "21.2588",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236695",
@@ -43496,6 +46840,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8227",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8227",
     NEW_RO_ABSOLUTE_ERROR: "5.8227",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238050",
@@ -43522,6 +46868,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7006",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7006",
     NEW_RO_ABSOLUTE_ERROR: "0.7006",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239616",
@@ -43548,6 +46896,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1970",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1970",
     NEW_RO_ABSOLUTE_ERROR: "6.1970",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234821",
@@ -43574,6 +46924,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0311",
     NEW_RO_ABSOLUTE_ERROR: "4.0311",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236872",
@@ -43600,6 +46952,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6722",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6722",
     NEW_RO_ABSOLUTE_ERROR: "4.6722",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238859",
@@ -43626,6 +46980,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9972",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9972",
     NEW_RO_ABSOLUTE_ERROR: "0.9972",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236849",
@@ -43652,6 +47008,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6092",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6092",
     NEW_RO_ABSOLUTE_ERROR: "0.6092",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238178",
@@ -43678,6 +47036,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.9667",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.9667",
     NEW_RO_ABSOLUTE_ERROR: "10.9667",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240570",
@@ -43704,6 +47064,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0321",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0321",
     NEW_RO_ABSOLUTE_ERROR: "2.0321",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236705",
@@ -43730,6 +47092,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4232",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4232",
     NEW_RO_ABSOLUTE_ERROR: "0.4232",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238967",
@@ -43756,6 +47120,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "16.5169",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.5169",
     NEW_RO_ABSOLUTE_ERROR: "16.5169",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236699",
@@ -43782,6 +47148,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8503",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8503",
     NEW_RO_ABSOLUTE_ERROR: "1.8503",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241546",
@@ -43808,6 +47176,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9070",
     NEW_RO_ABSOLUTE_ERROR: "3.9070",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238311",
@@ -43834,6 +47204,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "39.1137",
     NEW_RO_ABSOLUTE_ERROR: "39.1137",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240523",
@@ -43860,6 +47232,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4183",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4183",
     NEW_RO_ABSOLUTE_ERROR: "0.4183",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229595",
@@ -43886,6 +47260,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.6760",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.6760",
     NEW_RO_ABSOLUTE_ERROR: "5.6760",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240261",
@@ -43912,6 +47288,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.7230",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.7230",
     NEW_RO_ABSOLUTE_ERROR: "7.7230",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242890",
@@ -43938,6 +47316,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "18.7643",
     NEW_RO_ABSOLUTE_ERROR: "18.7643",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241942",
@@ -43964,6 +47344,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.7686",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.7686",
     NEW_RO_ABSOLUTE_ERROR: "3.7686",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50234819",
@@ -43990,6 +47372,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.9059",
     NEW_RO_ABSOLUTE_ERROR: "6.9059",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236681",
@@ -44016,6 +47400,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.2992",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.2992",
     NEW_RO_ABSOLUTE_ERROR: "9.2992",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238782",
@@ -44042,6 +47428,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "40.0384",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "40.0384",
     NEW_RO_ABSOLUTE_ERROR: "40.0384",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236748",
@@ -44068,6 +47456,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5617",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5617",
     NEW_RO_ABSOLUTE_ERROR: "2.5617",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50234865",
@@ -44094,6 +47484,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1598",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1598",
     NEW_RO_ABSOLUTE_ERROR: "1.1598",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241704",
@@ -44120,6 +47512,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1039",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1039",
     NEW_RO_ABSOLUTE_ERROR: "4.1039",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236690",
@@ -44146,6 +47540,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.5676",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.5676",
     NEW_RO_ABSOLUTE_ERROR: "10.5676",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236741",
@@ -44172,6 +47568,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9267",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9267",
     NEW_RO_ABSOLUTE_ERROR: "4.9267",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237479",
@@ -44198,6 +47596,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "55.3612",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "55.3612",
     NEW_RO_ABSOLUTE_ERROR: "55.3612",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237249",
@@ -44224,6 +47624,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6056",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6056",
     NEW_RO_ABSOLUTE_ERROR: "0.6056",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240535",
@@ -44250,6 +47652,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "38.9580",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "38.9580",
     NEW_RO_ABSOLUTE_ERROR: "38.9580",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238563",
@@ -44276,6 +47680,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "20.9159",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "20.9159",
     NEW_RO_ABSOLUTE_ERROR: "20.9159",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236391",
@@ -44302,6 +47708,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9760",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9760",
     NEW_RO_ABSOLUTE_ERROR: "3.9760",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50233818",
@@ -44328,6 +47736,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "22.0561",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "22.0561",
     NEW_RO_ABSOLUTE_ERROR: "22.0561",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240800",
@@ -44354,6 +47764,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.3044",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.3044",
     NEW_RO_ABSOLUTE_ERROR: "7.3044",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50220706",
@@ -44380,6 +47792,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1786",
     NEW_RO_ABSOLUTE_ERROR: "4.1786",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243310",
@@ -44406,6 +47820,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2106",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2106",
     NEW_RO_ABSOLUTE_ERROR: "0.2106",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236680",
@@ -44432,6 +47848,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "54.4837",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "54.4837",
     NEW_RO_ABSOLUTE_ERROR: "54.4837",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229589",
@@ -44458,6 +47876,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7678",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7678",
     NEW_RO_ABSOLUTE_ERROR: "5.7678",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240045",
@@ -44484,6 +47904,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.3111",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.3111",
     NEW_RO_ABSOLUTE_ERROR: "10.3111",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240152",
@@ -44510,6 +47932,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.3382",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.3382",
     NEW_RO_ABSOLUTE_ERROR: "12.3382",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238311",
@@ -44536,6 +47960,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3184",
     NEW_RO_ABSOLUTE_ERROR: "4.3184",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236746",
@@ -44562,6 +47988,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7020",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7020",
     NEW_RO_ABSOLUTE_ERROR: "0.7020",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50228846",
@@ -44588,6 +48016,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "28.6920",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "28.6920",
     NEW_RO_ABSOLUTE_ERROR: "28.6920",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241777",
@@ -44614,6 +48044,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8682",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8682",
     NEW_RO_ABSOLUTE_ERROR: "1.8682",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229595",
@@ -44640,6 +48072,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7908",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7908",
     NEW_RO_ABSOLUTE_ERROR: "1.7908",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229586",
@@ -44666,6 +48100,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5074",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5074",
     NEW_RO_ABSOLUTE_ERROR: "2.5074",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237782",
@@ -44692,6 +48128,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5041",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5041",
     NEW_RO_ABSOLUTE_ERROR: "0.5041",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240788",
@@ -44718,6 +48156,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9554",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9554",
     NEW_RO_ABSOLUTE_ERROR: "0.9554",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238793",
@@ -44744,6 +48184,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6158",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6158",
     NEW_RO_ABSOLUTE_ERROR: "0.6158",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237213",
@@ -44770,6 +48212,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.0797",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.0797",
     NEW_RO_ABSOLUTE_ERROR: "11.0797",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239639",
@@ -44796,6 +48240,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.4100",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.4100",
     NEW_RO_ABSOLUTE_ERROR: "10.4100",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235267",
@@ -44822,6 +48268,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4396",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4396",
     NEW_RO_ABSOLUTE_ERROR: "1.4396",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236391",
@@ -44848,6 +48296,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.9197",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.9197",
     NEW_RO_ABSOLUTE_ERROR: "8.9197",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238191",
@@ -44874,6 +48324,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4601",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4601",
     NEW_RO_ABSOLUTE_ERROR: "4.4601",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240140",
@@ -44900,6 +48352,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2984",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2984",
     NEW_RO_ABSOLUTE_ERROR: "4.2984",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238035",
@@ -44926,6 +48380,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1877",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1877",
     NEW_RO_ABSOLUTE_ERROR: "6.1877",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234825",
@@ -44952,6 +48408,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.2464",
     NEW_RO_ABSOLUTE_ERROR: "12.2464",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240345",
@@ -44978,6 +48436,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "18.7399",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "18.7399",
     NEW_RO_ABSOLUTE_ERROR: "18.7399",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238787",
@@ -45004,6 +48464,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3156",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3156",
     NEW_RO_ABSOLUTE_ERROR: "4.3156",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241828",
@@ -45030,6 +48492,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "38.8434",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "38.8434",
     NEW_RO_ABSOLUTE_ERROR: "38.8434",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238677",
@@ -45056,6 +48520,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3076",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3076",
     NEW_RO_ABSOLUTE_ERROR: "4.3076",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238840",
@@ -45082,6 +48548,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4631",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4631",
     NEW_RO_ABSOLUTE_ERROR: "4.4631",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240131",
@@ -45108,6 +48576,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0693",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0693",
     NEW_RO_ABSOLUTE_ERROR: "1.0693",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236388",
@@ -45134,6 +48604,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.6463",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.6463",
     NEW_RO_ABSOLUTE_ERROR: "7.6463",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240526",
@@ -45160,6 +48632,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2360",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2360",
     NEW_RO_ABSOLUTE_ERROR: "1.2360",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238569",
@@ -45186,6 +48660,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0012",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0012",
     NEW_RO_ABSOLUTE_ERROR: "3.0012",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236957",
@@ -45212,6 +48688,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5287",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5287",
     NEW_RO_ABSOLUTE_ERROR: "0.5287",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240276",
@@ -45238,6 +48716,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5552",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5552",
     NEW_RO_ABSOLUTE_ERROR: "4.5552",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241957",
@@ -45264,6 +48744,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.8338",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.8338",
     NEW_RO_ABSOLUTE_ERROR: "4.8338",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239823",
@@ -45290,6 +48772,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8266",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8266",
     NEW_RO_ABSOLUTE_ERROR: "0.8266",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50230195",
@@ -45316,6 +48800,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2899",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2899",
     NEW_RO_ABSOLUTE_ERROR: "6.2899",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240347",
@@ -45342,6 +48828,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "35.4741",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "35.4741",
     NEW_RO_ABSOLUTE_ERROR: "35.4741",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239843",
@@ -45368,6 +48856,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "15.3979",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.3979",
     NEW_RO_ABSOLUTE_ERROR: "15.3979",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235269",
@@ -45394,6 +48884,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0071",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0071",
     NEW_RO_ABSOLUTE_ERROR: "2.0071",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240989",
@@ -45420,6 +48912,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6761",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6761",
     NEW_RO_ABSOLUTE_ERROR: "1.6761",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50230209",
@@ -45446,6 +48940,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "35.8237",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "35.8237",
     NEW_RO_ABSOLUTE_ERROR: "35.8237",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50230209",
@@ -45472,6 +48968,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7225",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7225",
     NEW_RO_ABSOLUTE_ERROR: "0.7225",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239442",
@@ -45498,6 +48996,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.5448",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.5448",
     NEW_RO_ABSOLUTE_ERROR: "9.5448",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235351",
@@ -45524,6 +49024,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2960",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2960",
     NEW_RO_ABSOLUTE_ERROR: "6.2960",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50220713",
@@ -45550,6 +49052,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.4230",
     NEW_RO_ABSOLUTE_ERROR: "12.4230",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240786",
@@ -45576,6 +49080,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2255",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2255",
     NEW_RO_ABSOLUTE_ERROR: "3.2255",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242653",
@@ -45602,6 +49108,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2965",
     NEW_RO_ABSOLUTE_ERROR: "2.2965",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241947",
@@ -45628,6 +49136,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5909",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5909",
     NEW_RO_ABSOLUTE_ERROR: "0.5909",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237623",
@@ -45654,6 +49164,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4514",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4514",
     NEW_RO_ABSOLUTE_ERROR: "0.4514",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237768",
@@ -45680,6 +49192,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7876",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7876",
     NEW_RO_ABSOLUTE_ERROR: "0.7876",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238842",
@@ -45706,6 +49220,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.9989",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.9989",
     NEW_RO_ABSOLUTE_ERROR: "3.9989",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236944",
@@ -45732,6 +49248,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0053",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0053",
     NEW_RO_ABSOLUTE_ERROR: "1.0053",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236400",
@@ -45758,6 +49276,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.3461",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.3461",
     NEW_RO_ABSOLUTE_ERROR: "14.3461",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240226",
@@ -45784,6 +49304,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8994",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8994",
     NEW_RO_ABSOLUTE_ERROR: "3.8994",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238961",
@@ -45810,6 +49332,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.6604",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.6604",
     NEW_RO_ABSOLUTE_ERROR: "7.6604",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241949",
@@ -45836,6 +49360,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0325",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0325",
     NEW_RO_ABSOLUTE_ERROR: "0.0325",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239875",
@@ -45862,6 +49388,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.0419",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.0419",
     NEW_RO_ABSOLUTE_ERROR: "8.0419",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238558",
@@ -45888,6 +49416,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4688",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4688",
     NEW_RO_ABSOLUTE_ERROR: "5.4688",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238564",
@@ -45914,6 +49444,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1957",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1957",
     NEW_RO_ABSOLUTE_ERROR: "1.1957",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239438",
@@ -45940,6 +49472,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6589",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6589",
     NEW_RO_ABSOLUTE_ERROR: "1.6589",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237812",
@@ -45966,6 +49500,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1999",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1999",
     NEW_RO_ABSOLUTE_ERROR: "2.1999",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236948",
@@ -45992,6 +49528,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.0949",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.0949",
     NEW_RO_ABSOLUTE_ERROR: "14.0949",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236293",
@@ -46018,6 +49556,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0460",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0460",
     NEW_RO_ABSOLUTE_ERROR: "3.0460",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229601",
@@ -46044,6 +49584,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5306",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5306",
     NEW_RO_ABSOLUTE_ERROR: "2.5306",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236861",
@@ -46070,6 +49612,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7149",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7149",
     NEW_RO_ABSOLUTE_ERROR: "1.7149",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243191",
@@ -46096,6 +49640,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5963",
     NEW_RO_ABSOLUTE_ERROR: "0.5963",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240074",
@@ -46122,6 +49668,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "16.4113",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.4113",
     NEW_RO_ABSOLUTE_ERROR: "16.4113",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236689",
@@ -46148,6 +49696,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3011",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3011",
     NEW_RO_ABSOLUTE_ERROR: "1.3011",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241859",
@@ -46174,6 +49724,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6986",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6986",
     NEW_RO_ABSOLUTE_ERROR: "1.6986",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240696",
@@ -46200,6 +49752,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.9657",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.9657",
     NEW_RO_ABSOLUTE_ERROR: "9.9657",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236848",
@@ -46226,6 +49780,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1608",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1608",
     NEW_RO_ABSOLUTE_ERROR: "4.1608",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240152",
@@ -46252,6 +49808,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9837",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9837",
     NEW_RO_ABSOLUTE_ERROR: "1.9837",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241955",
@@ -46278,6 +49836,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3123",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3123",
     NEW_RO_ABSOLUTE_ERROR: "4.3123",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239856",
@@ -46304,6 +49864,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.2418",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.2418",
     NEW_RO_ABSOLUTE_ERROR: "10.2418",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236452",
@@ -46330,6 +49892,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.1870",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.1870",
     NEW_RO_ABSOLUTE_ERROR: "8.1870",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237211",
@@ -46356,6 +49920,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.0150",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0150",
     NEW_RO_ABSOLUTE_ERROR: "6.0150",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237759",
@@ -46382,6 +49948,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "33.5664",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "33.5664",
     NEW_RO_ABSOLUTE_ERROR: "33.5664",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239655",
@@ -46408,6 +49976,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8189",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8189",
     NEW_RO_ABSOLUTE_ERROR: "3.8189",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236459",
@@ -46434,6 +50004,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3243",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3243",
     NEW_RO_ABSOLUTE_ERROR: "4.3243",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236696",
@@ -46460,6 +50032,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7960",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7960",
     NEW_RO_ABSOLUTE_ERROR: "4.7960",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240797",
@@ -46486,6 +50060,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.6111",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.6111",
     NEW_RO_ABSOLUTE_ERROR: "13.6111",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236755",
@@ -46512,6 +50088,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4086",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4086",
     NEW_RO_ABSOLUTE_ERROR: "4.4086",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237252",
@@ -46538,6 +50116,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3043",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3043",
     NEW_RO_ABSOLUTE_ERROR: "3.3043",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240545",
@@ -46564,6 +50144,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.5199",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.5199",
     NEW_RO_ABSOLUTE_ERROR: "10.5199",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240545",
@@ -46590,6 +50172,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.9657",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.9657",
     NEW_RO_ABSOLUTE_ERROR: "6.9657",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240122",
@@ -46616,6 +50200,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.5538",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.5538",
     NEW_RO_ABSOLUTE_ERROR: "10.5538",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238094",
@@ -46642,6 +50228,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8019",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8019",
     NEW_RO_ABSOLUTE_ERROR: "0.8019",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237240",
@@ -46668,6 +50256,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0230",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0230",
     NEW_RO_ABSOLUTE_ERROR: "4.0230",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237242",
@@ -46694,6 +50284,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8356",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8356",
     NEW_RO_ABSOLUTE_ERROR: "5.8356",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238865",
@@ -46720,6 +50312,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4709",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4709",
     NEW_RO_ABSOLUTE_ERROR: "0.4709",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236750",
@@ -46746,6 +50340,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "53.2132",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "53.2132",
     NEW_RO_ABSOLUTE_ERROR: "53.2132",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237758",
@@ -46772,6 +50368,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2088",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2088",
     NEW_RO_ABSOLUTE_ERROR: "0.2088",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236690",
@@ -46798,6 +50396,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8352",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8352",
     NEW_RO_ABSOLUTE_ERROR: "2.8352",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50220717",
@@ -46824,6 +50424,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3034",
     NEW_RO_ABSOLUTE_ERROR: "3.3034",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235359",
@@ -46850,6 +50452,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8270",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8270",
     NEW_RO_ABSOLUTE_ERROR: "1.8270",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238750",
@@ -46876,6 +50480,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7355",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7355",
     NEW_RO_ABSOLUTE_ERROR: "4.7355",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232935",
@@ -46902,6 +50508,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2690",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2690",
     NEW_RO_ABSOLUTE_ERROR: "3.2690",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236471",
@@ -46928,6 +50536,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8432",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8432",
     NEW_RO_ABSOLUTE_ERROR: "1.8432",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236696",
@@ -46954,6 +50564,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.3683",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.3683",
     NEW_RO_ABSOLUTE_ERROR: "7.3683",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236693",
@@ -46980,6 +50592,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5293",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5293",
     NEW_RO_ABSOLUTE_ERROR: "0.5293",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238868",
@@ -47006,6 +50620,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.2041",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.2041",
     NEW_RO_ABSOLUTE_ERROR: "11.2041",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238257",
@@ -47032,6 +50648,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3295",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3295",
     NEW_RO_ABSOLUTE_ERROR: "1.3295",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232939",
@@ -47058,6 +50676,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "28.3759",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "28.3759",
     NEW_RO_ABSOLUTE_ERROR: "28.3759",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240987",
@@ -47084,6 +50704,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "23.6514",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "23.6514",
     NEW_RO_ABSOLUTE_ERROR: "23.6514",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236745",
@@ -47110,6 +50732,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "27.7937",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "27.7937",
     NEW_RO_ABSOLUTE_ERROR: "27.7937",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50234835",
@@ -47136,6 +50760,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "43.8833",
     NEW_RO_ABSOLUTE_ERROR: "43.8833",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238857",
@@ -47162,6 +50788,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4523",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4523",
     NEW_RO_ABSOLUTE_ERROR: "2.4523",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50212294",
@@ -47188,6 +50816,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8105",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8105",
     NEW_RO_ABSOLUTE_ERROR: "3.8105",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234835",
@@ -47214,6 +50844,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.7699",
     NEW_RO_ABSOLUTE_ERROR: "9.7699",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237212",
@@ -47240,6 +50872,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "47.1330",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "47.1330",
     NEW_RO_ABSOLUTE_ERROR: "47.1330",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237610",
@@ -47266,6 +50900,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8031",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8031",
     NEW_RO_ABSOLUTE_ERROR: "5.8031",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236471",
@@ -47292,6 +50928,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.6645",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.6645",
     NEW_RO_ABSOLUTE_ERROR: "7.6645",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236885",
@@ -47318,6 +50956,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1277",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1277",
     NEW_RO_ABSOLUTE_ERROR: "6.1277",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236863",
@@ -47344,6 +50984,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0858",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0858",
     NEW_RO_ABSOLUTE_ERROR: "2.0858",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236873",
@@ -47370,6 +51012,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8007",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8007",
     NEW_RO_ABSOLUTE_ERROR: "1.8007",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236746",
@@ -47396,6 +51040,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8701",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8701",
     NEW_RO_ABSOLUTE_ERROR: "3.8701",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240287",
@@ -47422,6 +51068,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1205",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1205",
     NEW_RO_ABSOLUTE_ERROR: "3.1205",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238039",
@@ -47448,6 +51096,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6372",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6372",
     NEW_RO_ABSOLUTE_ERROR: "1.6372",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236863",
@@ -47474,6 +51124,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5003",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5003",
     NEW_RO_ABSOLUTE_ERROR: "0.5003",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236685",
@@ -47500,6 +51152,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2900",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2900",
     NEW_RO_ABSOLUTE_ERROR: "2.2900",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50242763",
@@ -47526,6 +51180,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "38.6449",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "38.6449",
     NEW_RO_ABSOLUTE_ERROR: "38.6449",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50220711",
@@ -47552,6 +51208,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "23.7712",
     NEW_RO_ABSOLUTE_ERROR: "23.7712",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235186",
@@ -47578,6 +51236,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.9036",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.9036",
     NEW_RO_ABSOLUTE_ERROR: "7.9036",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235263",
@@ -47604,6 +51264,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5081",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5081",
     NEW_RO_ABSOLUTE_ERROR: "0.5081",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236868",
@@ -47630,6 +51292,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1712",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1712",
     NEW_RO_ABSOLUTE_ERROR: "0.1712",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236395",
@@ -47656,6 +51320,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "16.8811",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "16.8811",
     NEW_RO_ABSOLUTE_ERROR: "16.8811",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240803",
@@ -47682,6 +51348,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6902",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6902",
     NEW_RO_ABSOLUTE_ERROR: "4.6902",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241828",
@@ -47708,6 +51376,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.8898",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.8898",
     NEW_RO_ABSOLUTE_ERROR: "8.8898",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237759",
@@ -47734,6 +51404,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7853",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7853",
     NEW_RO_ABSOLUTE_ERROR: "2.7853",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240126",
@@ -47760,6 +51432,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6169",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6169",
     NEW_RO_ABSOLUTE_ERROR: "1.6169",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234840",
@@ -47786,6 +51460,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0990",
     NEW_RO_ABSOLUTE_ERROR: "6.0990",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240782",
@@ -47812,6 +51488,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8660",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8660",
     NEW_RO_ABSOLUTE_ERROR: "2.8660",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240284",
@@ -47838,6 +51516,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7046",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7046",
     NEW_RO_ABSOLUTE_ERROR: "1.7046",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239829",
@@ -47864,6 +51544,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "13.1016",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "13.1016",
     NEW_RO_ABSOLUTE_ERROR: "13.1016",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239446",
@@ -47890,6 +51572,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3689",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3689",
     NEW_RO_ABSOLUTE_ERROR: "0.3689",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235186",
@@ -47916,6 +51600,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5390",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5390",
     NEW_RO_ABSOLUTE_ERROR: "2.5390",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241526",
@@ -47942,6 +51628,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.1360",
     NEW_RO_ABSOLUTE_ERROR: "17.1360",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50234866",
@@ -47968,6 +51656,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2933",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2933",
     NEW_RO_ABSOLUTE_ERROR: "4.2933",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236294",
@@ -47994,6 +51684,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8870",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8870",
     NEW_RO_ABSOLUTE_ERROR: "0.8870",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240697",
@@ -48020,6 +51712,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "167.9050",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "167.9050",
     NEW_RO_ABSOLUTE_ERROR: "167.9050",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238087",
@@ -48046,6 +51740,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.0924",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0924",
     NEW_RO_ABSOLUTE_ERROR: "6.0924",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241724",
@@ -48072,6 +51768,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6883",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6883",
     NEW_RO_ABSOLUTE_ERROR: "1.6883",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236388",
@@ -48098,6 +51796,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.2830",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.2830",
     NEW_RO_ABSOLUTE_ERROR: "10.2830",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50232949",
@@ -48124,6 +51824,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7575",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7575",
     NEW_RO_ABSOLUTE_ERROR: "2.7575",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236870",
@@ -48150,6 +51852,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3706",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3706",
     NEW_RO_ABSOLUTE_ERROR: "5.3706",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238782",
@@ -48176,6 +51880,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2685",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2685",
     NEW_RO_ABSOLUTE_ERROR: "6.2685",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242592",
@@ -48202,6 +51908,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.3565",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.3565",
     NEW_RO_ABSOLUTE_ERROR: "8.3565",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237747",
@@ -48228,6 +51936,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9746",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9746",
     NEW_RO_ABSOLUTE_ERROR: "4.9746",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240221",
@@ -48254,6 +51964,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1873",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1873",
     NEW_RO_ABSOLUTE_ERROR: "6.1873",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240037",
@@ -48280,6 +51992,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1086",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1086",
     NEW_RO_ABSOLUTE_ERROR: "5.1086",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240143",
@@ -48306,6 +52020,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "49.8418",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "49.8418",
     NEW_RO_ABSOLUTE_ERROR: "49.8418",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238814",
@@ -48332,6 +52048,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4066",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4066",
     NEW_RO_ABSOLUTE_ERROR: "5.4066",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229588",
@@ -48358,6 +52076,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.0855",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0855",
     NEW_RO_ABSOLUTE_ERROR: "5.0855",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235324",
@@ -48384,6 +52104,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "26.6204",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "26.6204",
     NEW_RO_ABSOLUTE_ERROR: "26.6204",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236848",
@@ -48410,6 +52132,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3618",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3618",
     NEW_RO_ABSOLUTE_ERROR: "1.3618",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240057",
@@ -48436,6 +52160,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8842",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8842",
     NEW_RO_ABSOLUTE_ERROR: "2.8842",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237777",
@@ -48462,6 +52188,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1916",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1916",
     NEW_RO_ABSOLUTE_ERROR: "2.1916",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241853",
@@ -48488,6 +52216,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1493",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1493",
     NEW_RO_ABSOLUTE_ERROR: "4.1493",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238762",
@@ -48514,6 +52244,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2067",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2067",
     NEW_RO_ABSOLUTE_ERROR: "2.2067",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237248",
@@ -48540,6 +52272,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.0847",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.0847",
     NEW_RO_ABSOLUTE_ERROR: "3.0847",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236741",
@@ -48566,6 +52300,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.4394",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.4394",
     NEW_RO_ABSOLUTE_ERROR: "8.4394",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50230199",
@@ -48592,6 +52328,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5693",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5693",
     NEW_RO_ABSOLUTE_ERROR: "3.5693",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234818",
@@ -48618,6 +52356,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3897",
     NEW_RO_ABSOLUTE_ERROR: "0.3897",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50230209",
@@ -48644,6 +52384,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1838",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1838",
     NEW_RO_ABSOLUTE_ERROR: "0.1838",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238842",
@@ -48670,6 +52412,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8062",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8062",
     NEW_RO_ABSOLUTE_ERROR: "0.8062",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50220720",
@@ -48696,6 +52440,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "15.7505",
     NEW_RO_ABSOLUTE_ERROR: "15.7505",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229578",
@@ -48722,6 +52468,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1128",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1128",
     NEW_RO_ABSOLUTE_ERROR: "9.1128",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236900",
@@ -48748,6 +52496,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "26.6852",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "26.6852",
     NEW_RO_ABSOLUTE_ERROR: "26.6852",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50234871",
@@ -48774,6 +52524,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.8669",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.8669",
     NEW_RO_ABSOLUTE_ERROR: "0.8669",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236837",
@@ -48800,6 +52552,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9848",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9848",
     NEW_RO_ABSOLUTE_ERROR: "1.9848",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240031",
@@ -48826,6 +52580,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.4800",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.4800",
     NEW_RO_ABSOLUTE_ERROR: "11.4800",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50232936",
@@ -48852,6 +52608,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3780",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3780",
     NEW_RO_ABSOLUTE_ERROR: "2.3780",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236852",
@@ -48878,6 +52636,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4776",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4776",
     NEW_RO_ABSOLUTE_ERROR: "1.4776",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236452",
@@ -48904,6 +52664,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1850",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1850",
     NEW_RO_ABSOLUTE_ERROR: "2.1850",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238793",
@@ -48930,6 +52692,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7776",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7776",
     NEW_RO_ABSOLUTE_ERROR: "1.7776",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50230192",
@@ -48956,6 +52720,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3252",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3252",
     NEW_RO_ABSOLUTE_ERROR: "0.3252",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235178",
@@ -48982,6 +52748,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3409",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3409",
     NEW_RO_ABSOLUTE_ERROR: "4.3409",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236909",
@@ -49008,6 +52776,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.8739",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.8739",
     NEW_RO_ABSOLUTE_ERROR: "6.8739",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238851",
@@ -49034,6 +52804,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.0257",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.0257",
     NEW_RO_ABSOLUTE_ERROR: "12.0257",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235278",
@@ -49060,6 +52832,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4619",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4619",
     NEW_RO_ABSOLUTE_ERROR: "4.4619",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238195",
@@ -49086,6 +52860,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0735",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0735",
     NEW_RO_ABSOLUTE_ERROR: "4.0735",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240040",
@@ -49112,6 +52888,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8679",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8679",
     NEW_RO_ABSOLUTE_ERROR: "2.8679",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238044",
@@ -49138,6 +52916,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.1209",
     NEW_RO_ABSOLUTE_ERROR: "7.1209",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232939",
@@ -49164,6 +52944,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9592",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9592",
     NEW_RO_ABSOLUTE_ERROR: "1.9592",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238790",
@@ -49190,6 +52972,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4711",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4711",
     NEW_RO_ABSOLUTE_ERROR: "1.4711",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240542",
@@ -49216,6 +53000,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3645",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3645",
     NEW_RO_ABSOLUTE_ERROR: "2.3645",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236741",
@@ -49242,6 +53028,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.9726",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.9726",
     NEW_RO_ABSOLUTE_ERROR: "11.9726",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240696",
@@ -49268,6 +53056,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "30.0761",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "30.0761",
     NEW_RO_ABSOLUTE_ERROR: "30.0761",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240028",
@@ -49294,6 +53084,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.3234",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.3234",
     NEW_RO_ABSOLUTE_ERROR: "14.3234",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238967",
@@ -49320,6 +53112,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4637",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4637",
     NEW_RO_ABSOLUTE_ERROR: "3.4637",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240696",
@@ -49346,6 +53140,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.8878",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.8878",
     NEW_RO_ABSOLUTE_ERROR: "4.8878",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236909",
@@ -49372,6 +53168,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5855",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5855",
     NEW_RO_ABSOLUTE_ERROR: "1.5855",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240892",
@@ -49398,6 +53196,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1492",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1492",
     NEW_RO_ABSOLUTE_ERROR: "3.1492",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240345",
@@ -49424,6 +53224,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4452",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4452",
     NEW_RO_ABSOLUTE_ERROR: "2.4452",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238854",
@@ -49450,6 +53252,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.9362",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.9362",
     NEW_RO_ABSOLUTE_ERROR: "6.9362",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238855",
@@ -49476,6 +53280,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2552",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2552",
     NEW_RO_ABSOLUTE_ERROR: "2.2552",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243392",
@@ -49502,6 +53308,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "22.1473",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "22.1473",
     NEW_RO_ABSOLUTE_ERROR: "22.1473",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240986",
@@ -49528,6 +53336,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5246",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5246",
     NEW_RO_ABSOLUTE_ERROR: "2.5246",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238793",
@@ -49554,6 +53364,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0684",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0684",
     NEW_RO_ABSOLUTE_ERROR: "0.0684",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50230192",
@@ -49580,6 +53392,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.6938",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.6938",
     NEW_RO_ABSOLUTE_ERROR: "12.6938",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238122",
@@ -49606,6 +53420,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8870",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8870",
     NEW_RO_ABSOLUTE_ERROR: "1.8870",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240581",
@@ -49632,6 +53448,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "26.9375",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "26.9375",
     NEW_RO_ABSOLUTE_ERROR: "26.9375",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240140",
@@ -49658,6 +53476,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3147",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3147",
     NEW_RO_ABSOLUTE_ERROR: "0.3147",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240989",
@@ -49684,6 +53504,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "23.2077",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "23.2077",
     NEW_RO_ABSOLUTE_ERROR: "23.2077",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239438",
@@ -49710,6 +53532,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.0966",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.0966",
     NEW_RO_ABSOLUTE_ERROR: "2.0966",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50230209",
@@ -49736,6 +53560,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.6354",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.6354",
     NEW_RO_ABSOLUTE_ERROR: "14.6354",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237588",
@@ -49762,6 +53588,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8361",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8361",
     NEW_RO_ABSOLUTE_ERROR: "3.8361",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238868",
@@ -49788,6 +53616,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6630",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6630",
     NEW_RO_ABSOLUTE_ERROR: "0.6630",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236900",
@@ -49814,6 +53644,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0857",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0857",
     NEW_RO_ABSOLUTE_ERROR: "4.0857",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237239",
@@ -49840,6 +53672,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2519",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2519",
     NEW_RO_ABSOLUTE_ERROR: "4.2519",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240226",
@@ -49866,6 +53700,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.0831",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.0831",
     NEW_RO_ABSOLUTE_ERROR: "7.0831",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243343",
@@ -49892,6 +53728,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5182",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5182",
     NEW_RO_ABSOLUTE_ERROR: "3.5182",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236756",
@@ -49918,6 +53756,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "58.3177",
     NEW_RO_ABSOLUTE_ERROR: "58.3177",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240549",
@@ -49944,6 +53784,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1368",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1368",
     NEW_RO_ABSOLUTE_ERROR: "2.1368",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234835",
@@ -49970,6 +53812,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2708",
     NEW_RO_ABSOLUTE_ERROR: "3.2708",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238754",
@@ -49996,6 +53840,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5454",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5454",
     NEW_RO_ABSOLUTE_ERROR: "2.5454",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240527",
@@ -50022,6 +53868,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.9804",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.9804",
     NEW_RO_ABSOLUTE_ERROR: "5.9804",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241950",
@@ -50048,6 +53896,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2588",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2588",
     NEW_RO_ABSOLUTE_ERROR: "4.2588",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236898",
@@ -50074,6 +53924,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9824",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9824",
     NEW_RO_ABSOLUTE_ERROR: "0.9824",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238169",
@@ -50100,6 +53952,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4585",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4585",
     NEW_RO_ABSOLUTE_ERROR: "2.4585",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237777",
@@ -50126,6 +53980,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.4756",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.4756",
     NEW_RO_ABSOLUTE_ERROR: "1.4756",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236676",
@@ -50152,6 +54008,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.7481",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.7481",
     NEW_RO_ABSOLUTE_ERROR: "5.7481",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238561",
@@ -50178,6 +54036,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3367",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3367",
     NEW_RO_ABSOLUTE_ERROR: "3.3367",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237602",
@@ -50204,6 +54064,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4814",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4814",
     NEW_RO_ABSOLUTE_ERROR: "4.4814",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241708",
@@ -50230,6 +54092,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5706",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5706",
     NEW_RO_ABSOLUTE_ERROR: "3.5706",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229600",
@@ -50256,6 +54120,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "34.2762",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "34.2762",
     NEW_RO_ABSOLUTE_ERROR: "34.2762",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50242761",
@@ -50282,6 +54148,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6461",
     NEW_RO_ABSOLUTE_ERROR: "2.6461",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235266",
@@ -50308,6 +54176,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "18.8329",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "18.8329",
     NEW_RO_ABSOLUTE_ERROR: "18.8329",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229600",
@@ -50334,6 +54204,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "34.2762",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "34.2762",
     NEW_RO_ABSOLUTE_ERROR: "34.2762",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240312",
@@ -50360,6 +54232,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8793",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8793",
     NEW_RO_ABSOLUTE_ERROR: "3.8793",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237781",
@@ -50386,6 +54260,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4091",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4091",
     NEW_RO_ABSOLUTE_ERROR: "4.4091",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240143",
@@ -50412,6 +54288,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8268",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8268",
     NEW_RO_ABSOLUTE_ERROR: "1.8268",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240044",
@@ -50438,6 +54316,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.2586",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2586",
     NEW_RO_ABSOLUTE_ERROR: "1.2586",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240231",
@@ -50464,6 +54344,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.1637",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.1637",
     NEW_RO_ABSOLUTE_ERROR: "0.1637",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50212294",
@@ -50490,6 +54372,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.2245",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.2245",
     NEW_RO_ABSOLUTE_ERROR: "3.2245",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240056",
@@ -50516,6 +54400,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.5413",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5413",
     NEW_RO_ABSOLUTE_ERROR: "4.5413",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241949",
@@ -50542,6 +54428,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.7661",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.7661",
     NEW_RO_ABSOLUTE_ERROR: "8.7661",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229600",
@@ -50568,6 +54456,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "34.2762",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "34.2762",
     NEW_RO_ABSOLUTE_ERROR: "34.2762",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239837",
@@ -50594,6 +54484,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.3006",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.3006",
     NEW_RO_ABSOLUTE_ERROR: "9.3006",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240022",
@@ -50620,6 +54512,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.9879",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.9879",
     NEW_RO_ABSOLUTE_ERROR: "0.9879",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240313",
@@ -50646,6 +54540,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.2765",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.2765",
     NEW_RO_ABSOLUTE_ERROR: "2.2765",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50238097",
@@ -50672,6 +54568,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5239",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5239",
     NEW_RO_ABSOLUTE_ERROR: "0.5239",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237737",
@@ -50698,6 +54596,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3325",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3325",
     NEW_RO_ABSOLUTE_ERROR: "2.3325",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229590",
@@ -50724,6 +54624,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0966",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0966",
     NEW_RO_ABSOLUTE_ERROR: "1.0966",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240542",
@@ -50750,6 +54652,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "14.5185",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "14.5185",
     NEW_RO_ABSOLUTE_ERROR: "14.5185",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229600",
@@ -50776,6 +54680,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "24.0016",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "24.0016",
     NEW_RO_ABSOLUTE_ERROR: "24.0016",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237469",
@@ -50802,6 +54708,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "60.9360",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "60.9360",
     NEW_RO_ABSOLUTE_ERROR: "60.9360",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238250",
@@ -50828,6 +54736,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.4085",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.4085",
     NEW_RO_ABSOLUTE_ERROR: "8.4085",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240579",
@@ -50854,6 +54764,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.2874",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.2874",
     NEW_RO_ABSOLUTE_ERROR: "11.2874",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229595",
@@ -50880,6 +54792,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9773",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9773",
     NEW_RO_ABSOLUTE_ERROR: "2.9773",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240074",
@@ -50906,6 +54820,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "44.3551",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "44.3551",
     NEW_RO_ABSOLUTE_ERROR: "44.3551",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237735",
@@ -50932,6 +54848,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.5410",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.5410",
     NEW_RO_ABSOLUTE_ERROR: "1.5410",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236469",
@@ -50958,6 +54876,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.0533",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.0533",
     NEW_RO_ABSOLUTE_ERROR: "6.0533",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237767",
@@ -50984,6 +54904,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3421",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3421",
     NEW_RO_ABSOLUTE_ERROR: "3.3421",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237467",
@@ -51010,6 +54932,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9404",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9404",
     NEW_RO_ABSOLUTE_ERROR: "4.9404",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237212",
@@ -51036,6 +54960,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4547",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4547",
     NEW_RO_ABSOLUTE_ERROR: "0.4547",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240229",
@@ -51062,6 +54988,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1000",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1000",
     NEW_RO_ABSOLUTE_ERROR: "1.1000",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50234817",
@@ -51088,6 +55016,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1040",
     NEW_RO_ABSOLUTE_ERROR: "2.1040",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236743",
@@ -51114,6 +55044,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1097",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1097",
     NEW_RO_ABSOLUTE_ERROR: "1.1097",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239290",
@@ -51140,6 +55072,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.4895",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.4895",
     NEW_RO_ABSOLUTE_ERROR: "6.4895",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240981",
@@ -51166,6 +55100,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0331",
     NEW_RO_ABSOLUTE_ERROR: "5.0331",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238108",
@@ -51192,6 +55128,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.5584",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.5584",
     NEW_RO_ABSOLUTE_ERROR: "7.5584",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240074",
@@ -51218,6 +55156,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4677",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4677",
     NEW_RO_ABSOLUTE_ERROR: "2.4677",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239821",
@@ -51244,6 +55184,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4008",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4008",
     NEW_RO_ABSOLUTE_ERROR: "2.4008",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237805",
@@ -51270,6 +55212,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.1664",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.1664",
     NEW_RO_ABSOLUTE_ERROR: "9.1664",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243191",
@@ -51296,6 +55240,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3526",
     NEW_RO_ABSOLUTE_ERROR: "1.3526",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240015",
@@ -51322,6 +55268,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5218",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5218",
     NEW_RO_ABSOLUTE_ERROR: "6.5218",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241962",
@@ -51348,6 +55296,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "49.2723",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "49.2723",
     NEW_RO_ABSOLUTE_ERROR: "49.2723",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50233577",
@@ -51374,6 +55324,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.7215",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.7215",
     NEW_RO_ABSOLUTE_ERROR: "1.7215",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50242657",
@@ -51400,6 +55352,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.5703",
     NEW_RO_ABSOLUTE_ERROR: "4.5703",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238309",
@@ -51426,6 +55380,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1965",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1965",
     NEW_RO_ABSOLUTE_ERROR: "5.1965",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238961",
@@ -51452,6 +55408,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0766",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0766",
     NEW_RO_ABSOLUTE_ERROR: "0.0766",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241533",
@@ -51478,6 +55436,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6289",
     NEW_RO_ABSOLUTE_ERROR: "6.6289",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243314",
@@ -51504,6 +55464,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8545",
     NEW_RO_ABSOLUTE_ERROR: "3.8545",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236853",
@@ -51530,6 +55492,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.3658",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.3658",
     NEW_RO_ABSOLUTE_ERROR: "5.3658",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237616",
@@ -51556,6 +55520,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4487",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4487",
     NEW_RO_ABSOLUTE_ERROR: "0.4487",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50243839",
@@ -51582,6 +55548,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "20.0096",
     NEW_RO_ABSOLUTE_ERROR: "20.0096",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238787",
@@ -51608,6 +55576,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.1643",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.1643",
     NEW_RO_ABSOLUTE_ERROR: "5.1643",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237790",
@@ -51634,6 +55604,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3477",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3477",
     NEW_RO_ABSOLUTE_ERROR: "3.3477",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50242776",
@@ -51660,6 +55632,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.8134",
     NEW_RO_ABSOLUTE_ERROR: "8.8134",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236750",
@@ -51686,6 +55660,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "30.5963",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "30.5963",
     NEW_RO_ABSOLUTE_ERROR: "30.5963",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241767",
@@ -51712,6 +55688,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5145",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5145",
     NEW_RO_ABSOLUTE_ERROR: "6.5145",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50232931",
@@ -51738,6 +55716,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1211",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1211",
     NEW_RO_ABSOLUTE_ERROR: "2.1211",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238083",
@@ -51764,6 +55744,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7662",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7662",
     NEW_RO_ABSOLUTE_ERROR: "0.7662",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50241767",
@@ -51790,6 +55772,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8625",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8625",
     NEW_RO_ABSOLUTE_ERROR: "1.8625",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236708",
@@ -51816,6 +55800,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "9.9301",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "9.9301",
     NEW_RO_ABSOLUTE_ERROR: "9.9301",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237245",
@@ -51842,6 +55828,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.0030",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0030",
     NEW_RO_ABSOLUTE_ERROR: "5.0030",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240256",
@@ -51868,6 +55856,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.8866",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.8866",
     NEW_RO_ABSOLUTE_ERROR: "1.8866",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241704",
@@ -51894,6 +55884,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2716",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2716",
     NEW_RO_ABSOLUTE_ERROR: "6.2716",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229569",
@@ -51920,6 +55912,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "17.4609",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "17.4609",
     NEW_RO_ABSOLUTE_ERROR: "17.4609",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240126",
@@ -51946,6 +55940,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "57.0274",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "57.0274",
     NEW_RO_ABSOLUTE_ERROR: "57.0274",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240019",
@@ -51972,6 +55968,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3456",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3456",
     NEW_RO_ABSOLUTE_ERROR: "3.3456",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236896",
@@ -51998,6 +55996,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4083",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4083",
     NEW_RO_ABSOLUTE_ERROR: "5.4083",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241959",
@@ -52024,6 +56024,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.7766",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.7766",
     NEW_RO_ABSOLUTE_ERROR: "6.7766",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237796",
@@ -52050,6 +56052,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.7422",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.7422",
     NEW_RO_ABSOLUTE_ERROR: "6.7422",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236825",
@@ -52076,6 +56080,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.1301",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1301",
     NEW_RO_ABSOLUTE_ERROR: "4.1301",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238787",
@@ -52102,6 +56108,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.0186",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.0186",
     NEW_RO_ABSOLUTE_ERROR: "0.0186",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50220706",
@@ -52128,6 +56136,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.2272",
     NEW_RO_ABSOLUTE_ERROR: "1.2272",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238103",
@@ -52154,6 +56164,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.6440",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.6440",
     NEW_RO_ABSOLUTE_ERROR: "0.6440",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50233576",
@@ -52180,6 +56192,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5794",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5794",
     NEW_RO_ABSOLUTE_ERROR: "3.5794",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237211",
@@ -52206,6 +56220,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.4347",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.4347",
     NEW_RO_ABSOLUTE_ERROR: "8.4347",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236750",
@@ -52232,6 +56248,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "53.2132",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "53.2132",
     NEW_RO_ABSOLUTE_ERROR: "53.2132",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50242981",
@@ -52258,6 +56276,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "10.7924",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "10.7924",
     NEW_RO_ABSOLUTE_ERROR: "10.7924",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240073",
@@ -52284,6 +56304,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.4360",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.4360",
     NEW_RO_ABSOLUTE_ERROR: "2.4360",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50242779",
@@ -52310,6 +56332,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "50.1781",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "50.1781",
     NEW_RO_ABSOLUTE_ERROR: "50.1781",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238162",
@@ -52336,6 +56360,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1867",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1867",
     NEW_RO_ABSOLUTE_ERROR: "2.1867",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238090",
@@ -52362,6 +56388,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.0273",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.0273",
     NEW_RO_ABSOLUTE_ERROR: "5.0273",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238166",
@@ -52388,6 +56416,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2529",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2529",
     NEW_RO_ABSOLUTE_ERROR: "4.2529",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237607",
@@ -52414,6 +56444,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.2590",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.2590",
     NEW_RO_ABSOLUTE_ERROR: "12.2590",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238555",
@@ -52440,6 +56472,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.1063",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.1063",
     NEW_RO_ABSOLUTE_ERROR: "6.1063",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50228846",
@@ -52466,6 +56500,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0735",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0735",
     NEW_RO_ABSOLUTE_ERROR: "1.0735",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236469",
@@ -52492,6 +56528,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.3210",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.3210",
     NEW_RO_ABSOLUTE_ERROR: "2.3210",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236852",
@@ -52518,6 +56556,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2621",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2621",
     NEW_RO_ABSOLUTE_ERROR: "6.2621",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239872",
@@ -52544,6 +56584,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.6666",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.6666",
     NEW_RO_ABSOLUTE_ERROR: "4.6666",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236848",
@@ -52570,6 +56612,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7270",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7270",
     NEW_RO_ABSOLUTE_ERROR: "2.7270",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237479",
@@ -52596,6 +56640,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1421",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1421",
     NEW_RO_ABSOLUTE_ERROR: "2.1421",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229588",
@@ -52622,6 +56668,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.4401",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.4401",
     NEW_RO_ABSOLUTE_ERROR: "4.4401",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50233818",
@@ -52648,6 +56696,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4534",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4534",
     NEW_RO_ABSOLUTE_ERROR: "0.4534",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50204720",
@@ -52674,6 +56724,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2044",
     NEW_RO_ABSOLUTE_ERROR: "4.2044",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238042",
@@ -52700,6 +56752,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.2665",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.2665",
     NEW_RO_ABSOLUTE_ERROR: "5.2665",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237245",
@@ -52726,6 +56780,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.1863",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.1863",
     NEW_RO_ABSOLUTE_ERROR: "2.1863",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238971",
@@ -52752,6 +56808,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3645",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3645",
     NEW_RO_ABSOLUTE_ERROR: "1.3645",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236824",
@@ -52778,6 +56836,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.2329",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.2329",
     NEW_RO_ABSOLUTE_ERROR: "6.2329",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239865",
@@ -52804,6 +56864,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4772",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4772",
     NEW_RO_ABSOLUTE_ERROR: "5.4772",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236909",
@@ -52830,6 +56892,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.5338",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.5338",
     NEW_RO_ABSOLUTE_ERROR: "0.5338",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236863",
@@ -52856,6 +56920,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4786",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4786",
     NEW_RO_ABSOLUTE_ERROR: "0.4786",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50240262",
@@ -52882,6 +56948,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.1917",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.1917",
     NEW_RO_ABSOLUTE_ERROR: "8.1917",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50241955",
@@ -52908,6 +56976,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.0097",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.0097",
     NEW_RO_ABSOLUTE_ERROR: "4.0097",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237730",
@@ -52934,6 +57004,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9282",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9282",
     NEW_RO_ABSOLUTE_ERROR: "1.9282",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50234866",
@@ -52960,6 +57032,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.0008",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.0008",
     NEW_RO_ABSOLUTE_ERROR: "1.0008",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50237762",
@@ -52986,6 +57060,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4364",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4364",
     NEW_RO_ABSOLUTE_ERROR: "3.4364",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50239634",
@@ -53012,6 +57088,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "35.7013",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "35.7013",
     NEW_RO_ABSOLUTE_ERROR: "35.7013",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236745",
@@ -53038,6 +57116,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "58.0408",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "58.0408",
     NEW_RO_ABSOLUTE_ERROR: "58.0408",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237772",
@@ -53064,6 +57144,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.8746",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.8746",
     NEW_RO_ABSOLUTE_ERROR: "3.8746",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238097",
@@ -53090,6 +57172,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.4054",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.4054",
     NEW_RO_ABSOLUTE_ERROR: "3.4054",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236708",
@@ -53116,6 +57200,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.2928",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.2928",
     NEW_RO_ABSOLUTE_ERROR: "8.2928",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240045",
@@ -53142,6 +57228,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.8501",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.8501",
     NEW_RO_ABSOLUTE_ERROR: "5.8501",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236750",
@@ -53168,6 +57256,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "51.0717",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "51.0717",
     NEW_RO_ABSOLUTE_ERROR: "51.0717",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50238257",
@@ -53194,6 +57284,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.7302",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.7302",
     NEW_RO_ABSOLUTE_ERROR: "0.7302",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237626",
@@ -53220,6 +57312,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3508",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3508",
     NEW_RO_ABSOLUTE_ERROR: "3.3508",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239876",
@@ -53246,6 +57340,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "8.1707",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "8.1707",
     NEW_RO_ABSOLUTE_ERROR: "8.1707",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50236859",
@@ -53272,6 +57368,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.7877",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.7877",
     NEW_RO_ABSOLUTE_ERROR: "2.7877",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240025",
@@ -53298,6 +57396,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.2530",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.2530",
     NEW_RO_ABSOLUTE_ERROR: "4.2530",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50239835",
@@ -53324,6 +57424,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "11.5093",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "11.5093",
     NEW_RO_ABSOLUTE_ERROR: "11.5093",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50230205",
@@ -53350,6 +57452,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.3064",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.3064",
     NEW_RO_ABSOLUTE_ERROR: "0.3064",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240036",
@@ -53376,6 +57480,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.7016",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.7016",
     NEW_RO_ABSOLUTE_ERROR: "7.7016",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236750",
@@ -53402,6 +57508,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.8251",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.8251",
     NEW_RO_ABSOLUTE_ERROR: "2.8251",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235283",
@@ -53428,6 +57536,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.5007",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.5007",
     NEW_RO_ABSOLUTE_ERROR: "2.5007",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50243042",
@@ -53454,6 +57564,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6725",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6725",
     NEW_RO_ABSOLUTE_ERROR: "2.6725",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50240347",
@@ -53480,6 +57592,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.4090",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.4090",
     NEW_RO_ABSOLUTE_ERROR: "5.4090",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50241711",
@@ -53506,6 +57620,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6369",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6369",
     NEW_RO_ABSOLUTE_ERROR: "6.6369",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238863",
@@ -53532,6 +57648,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.7628",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.7628",
     NEW_RO_ABSOLUTE_ERROR: "4.7628",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237771",
@@ -53558,6 +57676,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.3997",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.3997",
     NEW_RO_ABSOLUTE_ERROR: "1.3997",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229578",
@@ -53584,6 +57704,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "5.5966",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "5.5966",
     NEW_RO_ABSOLUTE_ERROR: "5.5966",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50235327",
@@ -53610,6 +57732,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.5668",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.5668",
     NEW_RO_ABSOLUTE_ERROR: "6.5668",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237801",
@@ -53636,6 +57760,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "41.2374",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "41.2374",
     NEW_RO_ABSOLUTE_ERROR: "41.2374",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237805",
@@ -53662,6 +57788,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.3778",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.3778",
     NEW_RO_ABSOLUTE_ERROR: "4.3778",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236835",
@@ -53688,6 +57816,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.6532",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.6532",
     NEW_RO_ABSOLUTE_ERROR: "1.6532",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50229575",
@@ -53714,6 +57844,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.9253",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.9253",
     NEW_RO_ABSOLUTE_ERROR: "12.9253",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240765",
@@ -53740,6 +57872,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "42.5719",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "42.5719",
     NEW_RO_ABSOLUTE_ERROR: "42.5719",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238847",
@@ -53766,6 +57900,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.0206",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.0206",
     NEW_RO_ABSOLUTE_ERROR: "7.0206",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237769",
@@ -53792,6 +57928,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.1079",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.1079",
     NEW_RO_ABSOLUTE_ERROR: "1.1079",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50243381",
@@ -53818,6 +57956,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1020",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1020",
     NEW_RO_ABSOLUTE_ERROR: "3.1020",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236959",
@@ -53844,6 +57984,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.2939",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.2939",
     NEW_RO_ABSOLUTE_ERROR: "0.2939",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50229580",
@@ -53870,6 +58012,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6250",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6250",
     NEW_RO_ABSOLUTE_ERROR: "6.6250",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50238251",
@@ -53896,6 +58040,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.9777",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.9777",
     NEW_RO_ABSOLUTE_ERROR: "2.9777",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240018",
@@ -53922,6 +58068,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2219",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2219",
     NEW_RO_ABSOLUTE_ERROR: "7.2219",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237801",
@@ -53948,6 +58096,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "1.9921",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "1.9921",
     NEW_RO_ABSOLUTE_ERROR: "1.9921",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240765",
@@ -53974,6 +58124,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.3035",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.3035",
     NEW_RO_ABSOLUTE_ERROR: "3.3035",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50239874",
@@ -54000,6 +58152,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "12.2111",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "12.2111",
     NEW_RO_ABSOLUTE_ERROR: "12.2111",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50235322",
@@ -54026,6 +58180,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "2.6557",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "2.6557",
     NEW_RO_ABSOLUTE_ERROR: "2.6557",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50235350",
@@ -54052,6 +58208,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "4.9186",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.9186",
     NEW_RO_ABSOLUTE_ERROR: "4.9186",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50237250",
@@ -54078,6 +58236,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "6.6956",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "6.6956",
     NEW_RO_ABSOLUTE_ERROR: "6.6956",
+    CATEGORY: "personal care",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50229592",
@@ -54104,6 +58264,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.5572",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.5572",
     NEW_RO_ABSOLUTE_ERROR: "3.5572",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "North America",
   },
   {
     RECIPE_NUMBER: "50237782",
@@ -54130,6 +58292,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "0.4079",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "0.4079",
     NEW_RO_ABSOLUTE_ERROR: "0.4079",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50240010",
@@ -54156,6 +58320,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "3.1273",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "3.1273",
     NEW_RO_ABSOLUTE_ERROR: "3.1273",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Europe",
   },
   {
     RECIPE_NUMBER: "50236383",
@@ -54182,6 +58348,8 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: "7.2678",
     RECOMMENDED_RO_ABSOLUTE_ERROR: "7.2678",
     NEW_RO_ABSOLUTE_ERROR: "7.2678",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
   {
     RECIPE_NUMBER: "50236455",
@@ -54208,5 +58376,7 @@ export const mockData = [
     AIML_RO_ABSOLUTE_ERROR: null,
     RECOMMENDED_RO_ABSOLUTE_ERROR: "4.1819",
     NEW_RO_ABSOLUTE_ERROR: "4.1819",
+    CATEGORY: "baby wipes",
+    BUSINESS_UNIT: "Asia Pacific",
   },
 ];

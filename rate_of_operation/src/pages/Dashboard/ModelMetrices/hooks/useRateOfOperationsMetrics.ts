@@ -26,6 +26,8 @@ export interface MockDataItem {
   AIML_RO_ABSOLUTE_ERROR: string | null;
   RECOMMENDED_RO_ABSOLUTE_ERROR: string;
   NEW_RO_ABSOLUTE_ERROR: string;
+  CATEGORY: string;
+  BUSINESS_UNIT: string;
 }
 
 export interface ROMetrics {

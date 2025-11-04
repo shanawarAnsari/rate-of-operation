@@ -7,8 +7,26 @@ import {
   Grid,
   useTheme,
   Chip,
+  Popover,
+  Button,
+  TextField,
+  InputAdornment,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Badge,
+  IconButton,
+  Divider,
+  Paper,
 } from "@mui/material";
-import { BarChart as BarChartIcon } from "@mui/icons-material";
+import {
+  BarChart as BarChartIcon,
+  ManageSearch as FilterListIcon,
+  Search as SearchIcon,
+  Close as CloseIcon,
+  Check as CheckIcon,
+} from "@mui/icons-material";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { MockDataItem } from "../hooks/useRateOfOperationsMetrics";
@@ -26,16 +44,61 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
 }) => {
   const theme = useTheme();
   const [groupBy, setGroupBy] = useState<GroupByLevel>("INTERFACE");
+  const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
+  const [tempSelectedGroups, setTempSelectedGroups] = useState<string[]>([]);
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const { groupedMetrics, totalGroupsCount, isShowingTopTen } = useGroupedMetrics({
-    data,
-    groupBy,
-    selectedMonth,
-  });
+  const { groupedMetrics, totalGroupsCount, allAvailableGroups, isShowingTopTen } =
+    useGroupedMetrics({
+      data,
+      groupBy,
+      selectedMonth,
+      selectedGroups: selectedGroups.length > 0 ? selectedGroups : undefined,
+    });
 
   const handleGroupByChange = (newGroupBy: GroupByLevel) => {
     setGroupBy(newGroupBy);
+    setSelectedGroups([]); // Reset selection when groupBy changes
+    setTempSelectedGroups([]); // Reset temp selection
   };
+
+  const handleFilterClick = (event: React.MouseEvent<HTMLElement>) => {
+    setTempSelectedGroups(selectedGroups); // Initialize temp with current selection
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleFilterClose = () => {
+    setAnchorEl(null);
+    setSearchTerm("");
+    setTempSelectedGroups([]); // Clear temp selection on close
+  };
+
+  const handleToggleGroup = (group: string) => {
+    setTempSelectedGroups((prev) => {
+      if (prev.includes(group)) {
+        return prev.filter((g) => g !== group);
+      } else if (prev.length < 10) {
+        return [...prev, group];
+      }
+      return prev;
+    });
+  };
+
+  const handleClearAll = () => {
+    setTempSelectedGroups([]);
+  };
+
+  const handleApply = () => {
+    setSelectedGroups(tempSelectedGroups); // Apply temp selection to actual selection
+    handleFilterClose();
+  };
+
+  const filteredGroups = allAvailableGroups.filter((group) =>
+    group.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const open = Boolean(anchorEl);
 
   // Get label for the selected groupBy
   const getGroupByLabel = (groupBy: GroupByLevel): string => {
@@ -45,8 +108,8 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
       MACHINE: "Machine",
       PACKER_RESOURCE: "Packer Resource",
       PLATFORM_NAME: "Platform Name",
-      RECIPE_NUMBER: "Recipe Number",
-      PROCESS_ORDER_NUMBER: "Process Order Number",
+      BUSINESS_UNIT: "Business Unit",
+      CATEGORY: "Category",
     };
     return labels[groupBy];
   };
@@ -202,18 +265,25 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
                 >
                   Error Analysis by {getGroupByLabel(groupBy)}
                 </Typography>
-                {isShowingTopTen && (
-                  <Chip
-                    label={`Top 10 of ${totalGroupsCount}`}
-                    size="medium"
-                    color="primary"
-                    sx={{
-                      fontWeight: 600,
-                      fontSize: "0.85rem",
-                      height: 24,
-                    }}
-                  />
-                )}
+                <Chip
+                  label={
+                    isShowingTopTen
+                      ? `Showing 10 of ${totalGroupsCount}`
+                      : `Showing ${groupedMetrics.length} of ${totalGroupsCount}`
+                  }
+                  size="medium"
+                  color="primary"
+                  icon={<FilterListIcon />}
+                  onClick={handleFilterClick}
+                  sx={{
+                    backgroundColor: "primary.main",
+                    fontWeight: 600,
+                    px: 1,
+                    fontSize: "0.85rem",
+                    height: 28,
+                    cursor: "pointer",
+                  }}
+                />
                 <GroupBySelector
                   selectedGroupBy={groupBy}
                   onGroupByChange={handleGroupByChange}
@@ -221,6 +291,14 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
               </Box>
               {groupedMetrics.length > 0 ? (
                 <>
+                  <Box sx={{ height: 350 }}>
+                    <Chart
+                      options={chartOptions}
+                      series={chartSeries}
+                      type="bar"
+                      height={350}
+                    />
+                  </Box>
                   <Typography
                     variant="body2"
                     color="text.secondary"
@@ -239,14 +317,6 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
                       </>
                     )}
                   </Typography>
-                  <Box sx={{ height: 350 }}>
-                    <Chart
-                      options={chartOptions}
-                      series={chartSeries}
-                      type="bar"
-                      height={350}
-                    />
-                  </Box>
                 </>
               ) : (
                 <Box
@@ -266,6 +336,199 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
           </Card>
         </Grid>
       </Grid>
+
+      {/* Filter Popover */}
+      <Popover
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleFilterClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        PaperProps={{
+          sx: {
+            width: 380,
+            maxHeight: 580,
+            borderRadius: 3,
+            boxShadow: theme.shadows[12],
+            mt: 1,
+          },
+        }}
+      >
+        <Box sx={{ p: 2.5 }}>
+          {/* Header */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              mb: 2,
+            }}
+          >
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 700, fontSize: "1.1rem" }}>
+                Filter {getGroupByLabel(groupBy)}
+              </Typography>
+              <Typography variant="caption" color="text.secondary">
+                Select up to 10 items
+              </Typography>
+            </Box>
+            <IconButton size="small" onClick={handleFilterClose}>
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </Box>
+
+          {/* Selected Count Badge */}
+          <Box sx={{ mb: 2 }}>
+            <Chip
+              label={`${tempSelectedGroups.length} of 10 selected`}
+              color={"primary"}
+              size="small"
+              sx={{ fontWeight: 600 }}
+            />
+          </Box>
+
+          {/* Search Bar */}
+          <TextField
+            fullWidth
+            size="small"
+            placeholder={`Search ${getGroupByLabel(groupBy).toLowerCase()}...`}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon fontSize="small" color="action" />
+                </InputAdornment>
+              ),
+            }}
+            sx={{ mb: 2 }}
+          />
+
+          {/* List of Groups */}
+          <Paper
+            variant="outlined"
+            sx={{
+              maxHeight: 320,
+              overflow: "auto",
+              borderRadius: 2,
+              "&::-webkit-scrollbar": {
+                width: "8px",
+              },
+              "&::-webkit-scrollbar-track": {
+                background: theme.palette.mode === "light" ? "#f1f1f1" : "#2a2a2a",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                background: theme.palette.mode === "light" ? "#888" : "#555",
+                borderRadius: "4px",
+              },
+              "&::-webkit-scrollbar-thumb:hover": {
+                background: theme.palette.mode === "light" ? "#555" : "#777",
+              },
+            }}
+          >
+            <List disablePadding>
+              {filteredGroups.length === 0 ? (
+                <ListItem>
+                  <ListItemText
+                    primary="No matches found"
+                    sx={{ textAlign: "center", color: "text.secondary" }}
+                  />
+                </ListItem>
+              ) : (
+                filteredGroups.map((group, index) => {
+                  const isSelected = tempSelectedGroups.includes(group);
+                  const isDisabled = !isSelected && tempSelectedGroups.length >= 10;
+
+                  return (
+                    <React.Fragment key={group}>
+                      <ListItem disablePadding>
+                        <ListItemButton
+                          onClick={() => !isDisabled && handleToggleGroup(group)}
+                          disabled={isDisabled}
+                          sx={{
+                            py: 1.5,
+                            px: 2,
+                            "&:hover": {
+                              bgcolor:
+                                theme.palette.mode === "light"
+                                  ? "#f5f5f5"
+                                  : "#2a2a2a",
+                            },
+                            opacity: isDisabled ? 0.5 : 1,
+                          }}
+                        >
+                          <Box
+                            sx={{
+                              width: 20,
+                              height: 20,
+                              borderRadius: 1,
+                              border: `2px solid ${
+                                isSelected
+                                  ? theme.palette.primary.main
+                                  : theme.palette.divider
+                              }`,
+                              bgcolor: isSelected
+                                ? theme.palette.primary.main
+                                : "transparent",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              mr: 2,
+                              transition: "all 0.2s",
+                            }}
+                          >
+                            {isSelected && (
+                              <CheckIcon sx={{ fontSize: 14, color: "#fff" }} />
+                            )}
+                          </Box>
+                          <ListItemText
+                            primary={group}
+                            primaryTypographyProps={{
+                              sx: {
+                                fontWeight: isSelected ? 600 : 400,
+                                fontSize: "0.9rem",
+                              },
+                            }}
+                          />
+                        </ListItemButton>
+                      </ListItem>
+                      {index < filteredGroups.length - 1 && <Divider />}
+                    </React.Fragment>
+                  );
+                })
+              )}
+            </List>
+          </Paper>
+
+          {/* Action Buttons */}
+          <Box sx={{ display: "flex", gap: 1, mt: 2 }}>
+            <Button
+              variant="outlined"
+              fullWidth
+              onClick={handleClearAll}
+              disabled={tempSelectedGroups.length === 0}
+              sx={{ textTransform: "none", fontWeight: 600 }}
+            >
+              Clear All
+            </Button>
+            <Button
+              variant="contained"
+              fullWidth
+              onClick={handleApply}
+              disabled={tempSelectedGroups.length === 0}
+              sx={{ textTransform: "none", fontWeight: 600 }}
+            >
+              Apply Filter
+            </Button>
+          </Box>
+        </Box>
+      </Popover>
     </Box>
   );
 };

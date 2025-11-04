@@ -1,9 +1,8 @@
 import React from "react";
-import { Card, CardContent, Typography, Box, Grid, useTheme } from "@mui/material";
+import { Card, Box, Typography, Grid, useTheme } from "@mui/material";
 import {
   Assignment as AssignmentIcon,
   Psychology as PsychologyIcon,
-  BookOnline,
   Newspaper,
   AutoAwesome,
 } from "@mui/icons-material";
@@ -53,18 +52,18 @@ const MetricCards: React.FC<MetricCardsProps> = ({
       bgcolor: "warning.light",
       contrastText: "warning.contrastText",
       description: "Average NEW RO Mean Absolute Error",
-      format: (val: number) => val.toFixed(4),
+      format: (val: number) => val.toFixed(2),
     },
     {
       title: "AI ML RO - MAE",
       subtitle: "AI ML Process Error",
       value: metrics.aimlRoMAE,
       icon: <AutoAwesome sx={{ fontSize: 32 }} />,
-      color: "info.main",
-      bgcolor: "info.light",
+      color: "#10b981",
+      bgcolor: "#10b981",
       contrastText: "info.contrastText",
       description: "Average AIML RO Mean Absolute Error",
-      format: (val: number) => val.toFixed(4),
+      format: (val: number) => val.toFixed(2),
     },
   ];
 
@@ -75,7 +74,7 @@ const MetricCards: React.FC<MetricCardsProps> = ({
           <Grid item xs={12} sm={6} lg={4} key={index}>
             <Card
               sx={{
-                height: "100%",
+                height: 130,
                 borderRadius: 3,
                 boxShadow: theme.shadows[4],
                 transition: "all 0.3s ease",
@@ -85,47 +84,65 @@ const MetricCards: React.FC<MetricCardsProps> = ({
                 },
               }}
             >
-              <CardContent sx={{ p: 4 }}>
-                <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+              <Box
+                sx={{
+                  p: 2.5,
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
                   <Box
                     sx={{
-                      p: 1.5,
+                      p: 1,
                       borderRadius: 2,
                       bgcolor: card.bgcolor,
                       color: card.contrastText,
-                      mr: 2,
+                      width: 40,
+                      height: 40,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
                     }}
                   >
-                    {card.icon}
+                    {React.cloneElement(card.icon, { sx: { fontSize: 22 } })}
                   </Box>
-                  <Box sx={{ flex: 1 }}>
+                  <Box sx={{ flex: 1, minWidth: 0 }}>
                     <Typography
                       variant="subtitle2"
                       color="text.secondary"
-                      sx={{ fontSize: "0.90rem" }}
+                      sx={{ fontSize: "0.75rem", mb: 0.5 }}
                     >
                       {card.subtitle}
                     </Typography>
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                      <Typography
-                        variant="h4"
-                        sx={{ fontWeight: 700, color: card.color }}
-                      >
-                        {loading ? "Loading..." : card.format(card.value)}
-                      </Typography>
-                    </Box>
+                    <Typography
+                      variant="h5"
+                      sx={{
+                        fontWeight: 700,
+                        color: card.color,
+                        fontSize: "1.5rem",
+                      }}
+                    >
+                      {loading
+                        ? "Loading..."
+                        : card?.title === "Number of PO"
+                        ? `${card.format(card.value)}`
+                        : `${card.format(card.value)} su/h`}
+                    </Typography>
                   </Box>
                 </Box>
-                <Box sx={{ mt: 2 }}>
+                <Box sx={{ mt: 1.5 }}>
                   <Typography
                     variant="body2"
                     color="text.secondary"
-                    sx={{ fontSize: "0.8rem" }}
+                    sx={{ fontSize: "0.75rem" }}
                   >
                     {card.description}
                   </Typography>
                 </Box>
-              </CardContent>
+              </Box>
             </Card>
           </Grid>
         ))}

@@ -16,8 +16,8 @@ export type GroupByLevel =
   | "PLATFORM_NAME"
   | "MACHINE"
   | "PACKER_RESOURCE"
-  | "RECIPE_NUMBER"
-  | "PROCESS_ORDER_NUMBER";
+  | "BUSINESS_UNIT"
+  | "CATEGORY";
 
 interface GroupByOption {
   value: GroupByLevel;
@@ -31,16 +31,20 @@ interface GroupBySelectorProps {
 
 const groupByOptions: GroupByOption[] = [
   {
-    value: "INTERFACE",
-    label: "Interface",
+    value: "BUSINESS_UNIT",
+    label: "Business Unit",
+  },
+  {
+    value: "CATEGORY",
+    label: "Category",
   },
   {
     value: "FACILITY_NAME",
     label: "Facility Name",
   },
   {
-    value: "PLATFORM_NAME",
-    label: "Platform Name",
+    value: "INTERFACE",
+    label: "Interface",
   },
   {
     value: "MACHINE",
@@ -51,12 +55,8 @@ const groupByOptions: GroupByOption[] = [
     label: "Packer Resource",
   },
   {
-    value: "RECIPE_NUMBER",
-    label: "Recipe Number",
-  },
-  {
-    value: "PROCESS_ORDER_NUMBER",
-    label: "Process Order Number",
+    value: "PLATFORM_NAME",
+    label: "Platform Name",
   },
 ];
 

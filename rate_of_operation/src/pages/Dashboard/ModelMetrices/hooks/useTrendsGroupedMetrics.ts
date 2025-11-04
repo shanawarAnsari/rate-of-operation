@@ -19,6 +19,7 @@ export interface GroupedTrendMetric {
 interface UseTrendsGroupedMetricsProps {
   data: MockDataItem[];
   groupBy: GroupByLevel;
+  selectedGroups?: string[];
 }
 
 const getGroupKey = (item: MockDataItem, groupBy: GroupByLevel): string => {
@@ -33,10 +34,10 @@ const getGroupKey = (item: MockDataItem, groupBy: GroupByLevel): string => {
       return item.PACKER_RESOURCE || "Unknown";
     case "PLATFORM_NAME":
       return item.PLATFORM || "Unknown";
-    case "RECIPE_NUMBER":
-      return item.RECIPE_NUMBER || "Unknown";
-    case "PROCESS_ORDER_NUMBER":
-      return item.PROCESS_ORDER_NUMBER || "Unknown";
+    case "BUSINESS_UNIT":
+      return item.BUSINESS_UNIT || "Unknown";
+    case "CATEGORY":
+      return item.CATEGORY || "Unknown";
     default:
       return "Unknown";
   }
@@ -45,6 +46,7 @@ const getGroupKey = (item: MockDataItem, groupBy: GroupByLevel): string => {
 export const useTrendsGroupedMetrics = ({
   data,
   groupBy,
+  selectedGroups,
 }: UseTrendsGroupedMetricsProps) => {
   const groupedTrendsMetrics = useMemo((): GroupedTrendMetric[] => {
     if (!data || data.length === 0) return [];
@@ -160,11 +162,17 @@ export const useTrendsGroupedMetrics = ({
       };
     });
 
-    // If more than 6 groups, show only top 6 with highest average errors
-    if (groupsWithAvgError.length > 6) {
-      return groupsWithAvgError
-        .sort((a, b) => b.avgCombinedError - a.avgCombinedError)
-        .slice(0, 6)
+    // Sort by highest average error first
+    const sortedByError = groupsWithAvgError.sort(
+      (a, b) => b.avgCombinedError - a.avgCombinedError
+    );
+
+    // If user has selected specific groups, show only those (up to 6)
+    if (selectedGroups && selectedGroups.length > 0) {
+      const filtered = sortedByError.filter((group) =>
+        selectedGroups.includes(group.groupName)
+      );
+      return filtered
         .sort((a, b) =>
           a.groupName.localeCompare(b.groupName, undefined, {
             numeric: true,
@@ -174,8 +182,9 @@ export const useTrendsGroupedMetrics = ({
         .map(({ groupName, trendData }) => ({ groupName, trendData }));
     }
 
-    // Sort alphabetically by group name
-    return groupsWithAvgError
+    // Default: show only top 2 with highest average errors
+    return sortedByError
+      .slice(0, 2)
       .sort((a, b) =>
         a.groupName.localeCompare(b.groupName, undefined, {
           numeric: true,
@@ -183,6 +192,24 @@ export const useTrendsGroupedMetrics = ({
         })
       )
       .map(({ groupName, trendData }) => ({ groupName, trendData }));
+  }, [data, groupBy, selectedGroups]);
+
+  const allAvailableGroups = useMemo((): string[] => {
+    if (!data || data.length === 0) return [];
+
+    const uniqueGroups = new Set<string>();
+    data.forEach((item) => {
+      if (!item.ACTUAL_START_DATE) return;
+      const groupKey = getGroupKey(item, groupBy);
+      uniqueGroups.add(groupKey);
+    });
+
+    return Array.from(uniqueGroups).sort((a, b) =>
+      a.localeCompare(b, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      })
+    );
   }, [data, groupBy]);
 
   const totalGroupsCount = useMemo((): number => {
@@ -200,6 +227,7 @@ export const useTrendsGroupedMetrics = ({
   return {
     groupedTrendsMetrics,
     totalGroupsCount,
-    isShowingTopTen: totalGroupsCount > 6,
+    allAvailableGroups,
+    isShowingTopTwo: !selectedGroups || selectedGroups.length === 0,
   };
 };
