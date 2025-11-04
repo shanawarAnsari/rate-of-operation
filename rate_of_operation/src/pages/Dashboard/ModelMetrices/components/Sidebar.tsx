@@ -41,7 +41,7 @@ const sidebarItems = [
 ];
 
 const Sidebar: React.FC<SidebarProps> = ({ selectedItem, onItemSelect }) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const toggleCollapse = () => {
     setCollapsed(!collapsed);
@@ -49,86 +49,169 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedItem, onItemSelect }) => {
 
   return (
     <Paper
+      elevation={0}
       sx={{
         height: "100%",
         minHeight: 400,
-        width: collapsed ? 80 : "100%",
-        transition: "width 0.3s ease-in-out",
-        overflow: "hidden",
+        width: collapsed ? 60 : 240,
+        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        overflow: "visible",
+        borderLeft: 1,
+        borderColor: "divider",
+        bgcolor: "background.paper",
+        position: "relative",
       }}
     >
-      <Box
+      {/* Collapse/Expand Button - Centered on Left Border */}
+      <Tooltip title={collapsed ? "Expand" : "Collapse"} placement="left">
+        <IconButton
+          onClick={toggleCollapse}
+          size="small"
+          sx={{
+            position: "absolute",
+            left: -14,
+            top: "50%",
+            transform: "translateY(-50%)",
+            zIndex: 1300,
+            color: "primary.main",
+            width: 28,
+            height: 28,
+            bgcolor: "background.paper",
+            border: 1,
+            borderColor: "divider",
+            boxShadow: 1,
+            "&:hover": {
+              bgcolor: "action.hover",
+            },
+          }}
+        >
+          {collapsed ? (
+            <ChevronLeftIcon fontSize="small" />
+          ) : (
+            <ChevronRightIcon fontSize="small" />
+          )}
+        </IconButton>
+      </Tooltip>
+
+      {/* Header Section */}
+      {/* <Box
         sx={{
-          p: 1,
-          borderBottom: 1,
-          borderColor: "divider",
+          py: 1,
+          px: 1.5,
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: collapsed ? "center" : "flex-start",
+          borderBottom: 1,
+          borderColor: "divider",
+          minHeight: 48,
+          bgcolor: "background.paper",
         }}
-      >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1, pl: 2.1 }}>
-          <BarChartIcon sx={{ fontSize: 24, color: "primary.main" }} />
-          <Collapse in={!collapsed} orientation="horizontal">
-            <Typography color="primary" sx={{ whiteSpace: "nowrap", fontSize: 16 }}>
+      > */}
+      {/* {!collapsed && (
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Box
+              sx={{
+                width: 28,
+                height: 28,
+                borderRadius: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                bgcolor: "primary.main",
+              }}
+            >
+              <BarChartIcon sx={{ fontSize: 18, color: "#fff" }} />
+            </Box>
+            <Typography
+              sx={{
+                fontSize: 14,
+                fontWeight: 600,
+                color: "primary.main",
+                whiteSpace: "nowrap",
+              }}
+            >
               Model Metrics
             </Typography>
-          </Collapse>
-        </Box>
-        <Tooltip title={collapsed ? "Expand sidebar" : "Collapse sidebar"}>
-          <IconButton
-            onClick={toggleCollapse}
-            size="small"
+          </Box>
+        )} */}
+      {/* {collapsed && (
+          <Box
             sx={{
-              color: "primary.main",
-              ml: -0.5,
+              width: 28,
+              height: 28,
+              borderRadius: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              bgcolor: "primary.main",
             }}
           >
-            {collapsed ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
-        </Tooltip>
-      </Box>
-      <List sx={{ p: 0 }}>
-        {sidebarItems.map((item) => (
-          <ListItem key={item.id} disablePadding>
+            <BarChartIcon sx={{ fontSize: 18, color: "#fff" }} />
+          </Box>
+        )}
+      </Box> */}
+
+      {/* Menu Items */}
+      <List sx={{ p: 1 }}>
+        {sidebarItems.map((item, index) => (
+          <ListItem key={item.id} disablePadding sx={{ mb: 0.5 }}>
             <Tooltip
               title={collapsed ? item.label : ""}
-              placement="right"
+              placement="left"
               disableHoverListener={!collapsed}
             >
               <ListItemButton
                 selected={selectedItem === item.id}
                 onClick={() => onItemSelect(item.id)}
                 sx={{
+                  minHeight: 40,
+                  borderRadius: 1,
+                  px: collapsed ? 0 : 1.5,
                   py: 1,
-                  px: collapsed ? 1 : 2,
+                  display: "flex",
+                  alignItems: "center",
                   justifyContent: collapsed ? "center" : "flex-start",
+                  transition: "all 0.2s",
                   "&.Mui-selected": {
-                    backgroundColor: (theme) =>
-                      theme.palette.mode === "light" ? "#f0f0f0" : "#2a2a2a",
-                    color: "text.primary",
-                    "&:hover": {
-                      backgroundColor: (theme) =>
-                        theme.palette.mode === "light" ? "#e8e8e8" : "#333333",
+                    bgcolor: "primary.main",
+                    color: "#fff",
+                    "& .MuiListItemIcon-root": {
+                      color: "#fff",
                     },
+                    "& .MuiListItemText-root": {
+                      color: "#fff",
+                    },
+                    "&:hover": {
+                      bgcolor: "primary.dark",
+                    },
+                  },
+                  "&:hover": {
+                    bgcolor: "action.hover",
                   },
                 }}
               >
                 <ListItemIcon
                   sx={{
-                    minWidth: collapsed ? "auto" : 40,
-                    color: "text.primary",
+                    minWidth: collapsed ? "auto" : 36,
+                    display: "flex",
+                    alignItems: "center",
                     justifyContent: "center",
+                    color: selectedItem === item.id ? "#fff" : "text.secondary",
                   }}
                 >
-                  {item.icon}
+                  {React.cloneElement(item.icon, { sx: { fontSize: 20 } })}
                 </ListItemIcon>
-                <Collapse in={!collapsed} orientation="horizontal">
+                {!collapsed && (
                   <ListItemText
                     primary={item.label}
-                    sx={{ ml: 1, whiteSpace: "nowrap", fontSize: 16 }}
+                    primaryTypographyProps={{
+                      sx: {
+                        fontSize: 13,
+                        fontWeight: selectedItem === item.id ? 600 : 500,
+                      },
+                    }}
                   />
-                </Collapse>
+                )}
               </ListItemButton>
             </Tooltip>
           </ListItem>
