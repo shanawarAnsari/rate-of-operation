@@ -19,6 +19,8 @@ import {
   IconButton,
   Divider,
   Paper,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import {
   BarChart as BarChartIcon,
@@ -26,6 +28,7 @@ import {
   Search as SearchIcon,
   Close as CloseIcon,
   Check as CheckIcon,
+  FilterAlt as DatasetIcon,
 } from "@mui/icons-material";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
@@ -47,6 +50,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
   const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
   const [tempSelectedGroups, setTempSelectedGroups] = useState<string[]>([]);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const [groupByAnchorEl, setGroupByAnchorEl] = useState<HTMLElement | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
   const { groupedMetrics, totalGroupsCount, allAvailableGroups, isShowingTopTen } =
@@ -61,6 +65,15 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
     setGroupBy(newGroupBy);
     setSelectedGroups([]); // Reset selection when groupBy changes
     setTempSelectedGroups([]); // Reset temp selection
+    setGroupByAnchorEl(null); // Close the menu
+  };
+
+  const handleGroupByClick = (event: React.MouseEvent<HTMLElement>) => {
+    setGroupByAnchorEl(event.currentTarget);
+  };
+
+  const handleGroupByClose = () => {
+    setGroupByAnchorEl(null);
   };
 
   const handleFilterClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -99,6 +112,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
   );
 
   const open = Boolean(anchorEl);
+  const groupByOpen = Boolean(groupByAnchorEl);
 
   // Get label for the selected groupBy
   const getGroupByLabel = (groupBy: GroupByLevel): string => {
@@ -113,6 +127,16 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
     };
     return labels[groupBy];
   };
+
+  const groupByOptions: Array<{ value: GroupByLevel; label: string }> = [
+    { value: "BUSINESS_UNIT", label: "Business Unit" },
+    { value: "CATEGORY", label: "Category" },
+    { value: "FACILITY_NAME", label: "Facility Name" },
+    { value: "INTERFACE", label: "Interface" },
+    { value: "MACHINE", label: "Machine" },
+    { value: "PACKER_RESOURCE", label: "Packer Resource" },
+    { value: "PLATFORM_NAME", label: "Platform Name" },
+  ];
 
   // Chart Options
   const chartOptions: ApexOptions = {
@@ -272,21 +296,54 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
                       : `Showing ${groupedMetrics.length} of ${totalGroupsCount}`
                   }
                   size="medium"
-                  color="primary"
                   icon={<FilterListIcon />}
                   onClick={handleFilterClick}
                   sx={{
-                    backgroundColor: "primary.main",
+                    bgcolor: (theme) =>
+                      theme.palette.mode === "light"
+                        ? "rgba(0, 0, 0, 0.08)"
+                        : "rgba(255, 255, 255, 0.16)",
+                    color: "text.primary",
                     fontWeight: 600,
                     px: 1,
                     fontSize: "0.85rem",
-                    height: 28,
+                    height: 32,
                     cursor: "pointer",
+                    "& .MuiChip-icon": {
+                      color: "primary.main",
+                    },
+                    "&:hover": {
+                      bgcolor: (theme) =>
+                        theme.palette.mode === "light"
+                          ? "rgba(0, 0, 0, 0.12)"
+                          : "rgba(255, 255, 255, 0.20)",
+                    },
                   }}
                 />
-                <GroupBySelector
-                  selectedGroupBy={groupBy}
-                  onGroupByChange={handleGroupByChange}
+                <Chip
+                  label={getGroupByLabel(groupBy)}
+                  icon={<DatasetIcon />}
+                  onClick={handleGroupByClick}
+                  sx={{
+                    bgcolor: (theme) =>
+                      theme.palette.mode === "light"
+                        ? "rgba(0, 0, 0, 0.08)"
+                        : "rgba(255, 255, 255, 0.16)",
+                    fontWeight: 600,
+                    px: 1,
+                    fontSize: "0.85rem",
+                    height: 32,
+                    cursor: "pointer",
+                    "& .MuiChip-icon": {
+                      color: "primary.main",
+                    },
+                    "&:hover": {
+                      bgcolor: (theme) =>
+                        theme.palette.mode === "light"
+                          ? "rgba(0, 0, 0, 0.12)"
+                          : "rgba(255, 255, 255, 0.20)",
+                    },
+                  }}
                 />
               </Box>
               {groupedMetrics.length > 0 ? (
@@ -529,6 +586,84 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
           </Box>
         </Box>
       </Popover>
+
+      {/* Group By Menu */}
+      <Menu
+        anchorEl={groupByAnchorEl}
+        open={groupByOpen}
+        onClose={handleGroupByClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        PaperProps={{
+          sx: {
+            mt: 0,
+            minWidth: 280,
+            maxWidth: 320,
+            borderRadius: 2,
+            boxShadow: theme.shadows[10],
+          },
+        }}
+      >
+        <Box sx={{ px: 2, py: 1 }}>
+          <Typography
+            variant="subtitle2"
+            sx={{
+              fontWeight: 600,
+              color: "text.primary",
+              fontSize: "0.875rem",
+            }}
+          >
+            Group By
+          </Typography>
+        </Box>
+        <Divider />
+        {groupByOptions.map((option) => (
+          <MenuItem
+            key={option.value}
+            selected={groupBy === option.value}
+            onClick={() => handleGroupByChange(option.value)}
+            sx={{
+              py: 1.5,
+              px: 2,
+              "&.Mui-selected": {
+                backgroundColor:
+                  theme.palette.mode === "light" ? "#f0f0f0" : "#2a2a2a",
+                "&:hover": {
+                  backgroundColor:
+                    theme.palette.mode === "light" ? "#e8e8e8" : "#333333",
+                },
+              },
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center", width: "100%" }}>
+              <Typography
+                sx={{
+                  flex: 1,
+                  fontSize: "0.875rem",
+                  fontWeight: groupBy === option.value ? 700 : 300,
+                }}
+              >
+                {option.label}
+              </Typography>
+              {groupBy === option.value && (
+                <CheckIcon
+                  sx={{
+                    fontSize: 18,
+                    color: "primary.main",
+                    ml: 1,
+                  }}
+                />
+              )}
+            </Box>
+          </MenuItem>
+        ))}
+      </Menu>
     </Box>
   );
 };
