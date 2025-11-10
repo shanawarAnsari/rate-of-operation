@@ -5,6 +5,10 @@ import { getTheme } from "./theme";
 import TopNavbar from "./components/TopNavbar";
 import SideNavbar from "./components/SideNavbar";
 import AppRoutes from "./routes";
+import SyncInterfaces from "./components/SyncCategoryInterface";
+import { useTelemetrySession } from "./components/appInsights/useTelemetrySession";
+import { useUserStore } from "./store/userStore";
+
 
 function App() {
   // Initialize theme from localStorage or default to "dark"
@@ -14,6 +18,9 @@ function App() {
   });
 
   const theme = useMemo(() => getTheme(mode), [mode]);
+  const user = useUserStore((state) => state.user);
+
+  useTelemetrySession({ email: user?.email });
 
   const toggleColorMode = () => {
     setMode((prevMode) => {
@@ -46,7 +53,8 @@ function App() {
           <Box sx={{ display: "flex", flex: 1, overflow: "hidden" }}>
             <SideNavbar />
             <Box sx={{ flexGrow: 1, overflow: "auto", maxWidth: "100%" }}>
-              <Box sx={{ m: 2 }}>
+              <Box sx={{ m: 0.5 }}>
+                <SyncInterfaces />
                 <AppRoutes />
               </Box>
             </Box>

@@ -16,7 +16,7 @@ import {
 import RateOfOperationTable from "./components/RateOfOperationTable";
 import { useUserByEmail } from "../../SuperUser/UserManagement/hooks/useUserManegement";
 import { useUserStore } from "../../../store/userStore";
-import { useFilterStore } from "../../../store/filterStore";
+import { useFilterStore } from "../../../store/rateOfOperationsFilterStore";
 
 // Define the User type
 interface User {

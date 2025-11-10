@@ -57,8 +57,9 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedItem, onItemSelect }) => {
         transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         overflow: "visible",
         borderLeft: 1,
+        borderRadius: 0,
         borderColor: "divider",
-        bgcolor: "background.paper",
+        bgcolor: "background.secondary",
         position: "relative",
       }}
     >

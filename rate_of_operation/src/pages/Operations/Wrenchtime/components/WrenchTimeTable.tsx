@@ -28,7 +28,6 @@ import { FilterAltRounded, SaveRounded, DownloadRounded } from "@mui/icons-mater
 import FilterPopper from "./filters/FilterPopper";
 import SaveConfirmationDialog from "./SaveConfirmationDialog";
 import SnackbarAlert from "./SnackbarAlert";
-
 import { useWrenchtimeData } from "../hooks/useWrenchtimeData";
 import { useWrenchtimeColumnVisibility } from "../hooks/useWrenchtimeColumnVisibility";
 import { useWrenchtimeFilterStore } from "../../../../store/wrenchtimeFilterStore";
@@ -38,6 +37,8 @@ import {
   searchWrenchtimeData,
   updateWrenchtimeData,
 } from "../../../../services/wrenchtime";
+import { useReviewedStatusData } from "../hooks/useReviewedStatusData";
+import useTelemetryEvent from "../../../../components/appInsights/usetelementryEvent";
 
 const WrenchTimeTable: React.FC = () => {
   const [tableData, setTableData] = useState<any[]>([]);
@@ -61,8 +62,10 @@ const WrenchTimeTable: React.FC = () => {
     setSelectedReviewedStatus,
     filterSelections,
   } = useWrenchtimeFilterStore();
-  const { user, userAssignedCategories, userAssignedInterfaces } = useUserStore();
 
+  const { user, userAssignedCategories, userAssignedInterfaces } = useUserStore();
+  const { reviewedStatusOptionsWrenchTime, refetch } = useReviewedStatusData();
+  const [searchString, setSearchString] = useState("");
   const {
     data,
     loading,
@@ -76,7 +79,7 @@ const WrenchTimeTable: React.FC = () => {
     refresh,
     updateRowsPerPage,
     updatePageNumber,
-  } = useWrenchtimeData();
+  } = useWrenchtimeData(searchString);
 
   const {
     columnVisibility,
@@ -87,18 +90,24 @@ const WrenchTimeTable: React.FC = () => {
     priorityColumns,
   } = useWrenchtimeColumnVisibility(data);
 
-  const handleSearch = async (searchText: string) => {
-    if (!searchText.trim()) {
+
+  const handleSearch = async (
+    sText: string,
+    opts?: { page?: number; pageSize?: number }
+  ): Promise<void> => {
+    if (!sText.trim()) {
+      setSearchString("");
       setIsSearching(false);
       setSearchData(null);
       return;
     }
+    setSearchString(sText);
     setIsSearching(true);
     try {
       const searchPayload = {
-        searchText: searchText.trim(),
-        pageNumber: pageNumber,
-        rowsPerPage: rowsPerPage,
+        searchText: sText.trim(),
+        pageNumber: opts?.page ?? pageNumber,
+        rowsPerPage: opts?.pageSize ?? rowsPerPage,
         reviewedStatus: selectedReviewedStatus,
         filters: filterSelections,
       };
@@ -113,31 +122,84 @@ const WrenchTimeTable: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    if (searchString.trim()) handleSearch(searchString);
+  }, [selectedReviewedStatus]);
+
   const handleRowUpdate = (
     rowIndex: number,
     newValue: number,
-    originalValue: number
+    originalValue: number,
+    comments: string
   ) => {
+    if (searchData?.rows) {
+
+      const updatedSearchRows = [...searchData.rows];
+      const currentRow = updatedSearchRows[rowIndex];
+      const currentSetupTime = currentRow?.CURRENT_SETUPTIME_MINUTES;
+      const setupTimeChange = currentSetupTime !== 0 ? (
+        ((newValue - currentSetupTime) / currentSetupTime) *
+        100
+      ).toFixed(2) :
+        0;
+
+      const updatedRow = {
+        ...currentRow,
+        NEW_SETUPTIME_MINUTES: newValue,
+        NEW_SETUPTIME_SECONDS: (newValue * 60).toFixed(4),
+        SETUPTIME_PCT_CHANGE: setupTimeChange,
+        isUpdated: true,
+        COMMENT: comments,
+        UPDATED_BY: user?.email ?? "Web App User",
+        UPDATED_ON: new Date().toISOString(),
+      };
+
+      updatedSearchRows[rowIndex] = updatedRow;
+      setSearchData((prev: any) => ({ ...prev, rows: updatedSearchRows }));
+      const changedRowInfo = {
+        SETUP_TIME_KEY: updatedRow.SETUP_TIME_KEY,
+        NEW_SETUPTIME_MINUTES: updatedRow.NEW_SETUPTIME_MINUTES,
+        NEW_SETUPTIME_SECONDS: updatedRow.NEW_SETUPTIME_SECONDS,
+        SETUPTIME_PCT_CHANGE: updatedRow.SETUPTIME_PCT_CHANGE,
+        REVIEWED: updatedRow.REVIEWED,
+        COMMENT: comments,
+        UPDATED_BY: updatedRow.UPDATED_BY,
+        UPDATED_ON: updatedRow.UPDATED_ON,
+        ACTION: "ROW_UPDATE",
+      };
+      setChangedRowsData((prev) => {
+        const i = prev.findIndex(
+          (c) => c.SETUP_TIME_KEY === changedRowInfo.SETUP_TIME_KEY
+        );
+        if (i >= 0) {
+          const copy = [...prev];
+          copy[i] = { ...copy[i], ...changedRowInfo };
+          return copy;
+        }
+        return [...prev, changedRowInfo];
+      });
+
+      return;
+    }
     setTableData((prev) => {
       const updated = [...prev];
       const currentRow = updated[rowIndex];
+      const currentSetupTime = currentRow?.CURRENT_SETUPTIME_MINUTES;
+      if (!originalApiData[rowIndex]) return prev;
 
-      if (!originalApiData[rowIndex]) {
-        return prev;
-      }
-
-      const originalRowData = originalApiData[rowIndex];
       const setupTimeChange = (
-        ((newValue - originalValue) / originalValue) *
+        ((newValue - currentSetupTime) / currentSetupTime) *
         100
       ).toFixed(2);
 
       updated[rowIndex] = {
         ...currentRow,
         NEW_SETUPTIME_MINUTES: newValue,
+        NEW_SETUPTIME_SECONDS: (newValue * 60).toFixed(4),
         SETUPTIME_PCT_CHANGE: setupTimeChange,
         isUpdated: true,
-        UPDATED_BY: user?.email || "Web App User",
+        COMMENT: comments,
+        UPDATED_BY: user?.email ?? "Web App User",
         UPDATED_ON: new Date().toISOString(),
       };
 
@@ -145,8 +207,10 @@ const WrenchTimeTable: React.FC = () => {
         SETUP_TIME_KEY: currentRow.SETUP_TIME_KEY,
         NEW_SETUPTIME_MINUTES: newValue,
         SETUPTIME_PCT_CHANGE: setupTimeChange,
+        NEW_SETUPTIME_SECONDS: (newValue * 60).toFixed(4),
         REVIEWED: currentRow.REVIEWED,
-        UPDATED_BY: user?.email || "Web App User",
+        COMMENT: comments,
+        UPDATED_BY: user?.email ?? "Web App User",
         UPDATED_ON: new Date().toISOString(),
         ACTION: "ROW_UPDATE",
       };
@@ -155,7 +219,6 @@ const WrenchTimeTable: React.FC = () => {
         const existingIndex = prevChanges.findIndex(
           (change) => change.SETUP_TIME_KEY === changedRowInfo.SETUP_TIME_KEY
         );
-
         let newChanges;
         if (existingIndex >= 0) {
           newChanges = [...prevChanges];
@@ -166,7 +229,6 @@ const WrenchTimeTable: React.FC = () => {
         } else {
           newChanges = [...prevChanges, changedRowInfo];
         }
-
         return newChanges;
       });
 
@@ -175,15 +237,77 @@ const WrenchTimeTable: React.FC = () => {
   };
 
   const handleReview = (rowIndex: number) => {
+    if (searchData?.rows) {
+
+      const rows = [...searchData.rows];
+      const currentRow = rows[rowIndex];
+
+      let nextRow: any;
+      let changeInfo: any;
+
+      if (currentRow.REVIEWED === "Y - Reviewed from Web App") {
+
+        nextRow = { ...currentRow, REVIEWED: "N", isUpdated: false };
+        changeInfo = {
+          SETUP_TIME_KEY: currentRow.SETUP_TIME_KEY,
+          NEW_SETUPTIME_MINUTES: currentRow.NEW_SETUPTIME_MINUTES,
+          NEW_SETUPTIME_SECONDS: currentRow.NEW_SETUPTIME_SECONDS,
+          SETUPTIME_PCT_CHANGE: !isNaN(currentRow.SETUPTIME_PCT_CHANGE)
+            ? currentRow.SETUPTIME_PCT_CHANGE
+            : 0,
+          REVIEWED: "N",
+          UPDATED_BY: user?.email ?? "Web App User",
+          UPDATED_ON: new Date().toISOString(),
+          ACTION: "REVIEW_RESET",
+        };
+      } else {
+
+        nextRow = {
+          ...currentRow,
+          REVIEWED: "Y - Reviewed from Web App",
+          UPDATED_BY: user?.email ?? "Web App User",
+          UPDATED_ON: new Date().toISOString(),
+        };
+        changeInfo = {
+          SETUP_TIME_KEY: currentRow.SETUP_TIME_KEY,
+          NEW_SETUPTIME_MINUTES: currentRow.NEW_SETUPTIME_MINUTES,
+          NEW_SETUPTIME_SECONDS: currentRow.NEW_SETUPTIME_SECONDS,
+          SETUPTIME_PCT_CHANGE: !isNaN(currentRow.SETUPTIME_PCT_CHANGE)
+            ? currentRow.SETUPTIME_PCT_CHANGE
+            : 0,
+          REVIEWED: "Y - Reviewed from Web App",
+          UPDATED_BY: user?.email ?? "Web App User",
+          UPDATED_ON: new Date().toISOString(),
+          ACTION: "REVIEW_MARKED",
+        };
+      }
+
+      rows[rowIndex] = nextRow;
+      setSearchData((prev: any) => ({ ...prev, rows }));
+
+
+      setChangedRowsData((prev) => {
+        const i = prev.findIndex(
+          (c) => c.SETUP_TIME_KEY === changeInfo.SETUP_TIME_KEY
+        );
+        if (i >= 0) {
+          const copy = [...prev];
+          copy[i] = { ...copy[i], ...changeInfo };
+          return copy;
+        }
+        return [...prev, changeInfo];
+      });
+
+      return;
+    }
+
+
     setTableData((prev) => {
       const updated = [...prev];
       const currentRow = updated[rowIndex];
 
       if (currentRow.REVIEWED === "Y - Reviewed from Web App") {
-        // Reset logic
-        if (!originalApiData[rowIndex]) {
-          return prev;
-        }
+        if (!originalApiData[rowIndex]) return prev;
 
         const originalRowData = originalApiData[rowIndex];
         const resetRow = {
@@ -191,15 +315,15 @@ const WrenchTimeTable: React.FC = () => {
           REVIEWED: "N",
           isUpdated: false,
         };
-
         updated[rowIndex] = resetRow;
 
         const resetRowInfo = {
           SETUP_TIME_KEY: currentRow.SETUP_TIME_KEY,
           NEW_SETUPTIME_MINUTES: originalRowData.NEW_SETUPTIME_MINUTES,
           SETUPTIME_PCT_CHANGE: originalRowData.SETUPTIME_PCT_CHANGE,
+          NEW_SETUPTIME_SECONDS: originalRowData.NEW_SETUPTIME_SECONDS,
           REVIEWED: "N",
-          UPDATED_BY: user?.email || "Web App User",
+          UPDATED_BY: user?.email ?? "Web App User",
           UPDATED_ON: new Date().toISOString(),
           ACTION: "REVIEW_RESET",
         };
@@ -208,7 +332,6 @@ const WrenchTimeTable: React.FC = () => {
           const existingIndex = prevChanges.findIndex(
             (change) => change.SETUP_TIME_KEY === resetRowInfo.SETUP_TIME_KEY
           );
-
           let newChanges;
           if (existingIndex >= 0) {
             newChanges = [...prevChanges];
@@ -219,26 +342,27 @@ const WrenchTimeTable: React.FC = () => {
           } else {
             newChanges = [...prevChanges, resetRowInfo];
           }
-
           return newChanges;
         });
 
         return updated;
       } else {
-        // Mark as reviewed
         updated[rowIndex] = {
           ...currentRow,
           REVIEWED: "Y - Reviewed from Web App",
-          UPDATED_BY: user?.email || "Web App User",
+          UPDATED_BY: user?.email ?? "Web App User",
           UPDATED_ON: new Date().toISOString(),
         };
 
         const reviewedRowInfo = {
           SETUP_TIME_KEY: currentRow.SETUP_TIME_KEY,
           NEW_SETUPTIME_MINUTES: currentRow.NEW_SETUPTIME_MINUTES,
-          SETUPTIME_PCT_CHANGE: currentRow.SETUPTIME_PCT_CHANGE,
+          NEW_SETUPTIME_SECONDS: currentRow.NEW_SETUPTIME_SECONDS,
+          SETUPTIME_PCT_CHANGE: !isNaN(currentRow.SETUPTIME_PCT_CHANGE)
+            ? currentRow.SETUPTIME_PCT_CHANGE
+            : 0,
           REVIEWED: "Y - Reviewed from Web App",
-          UPDATED_BY: user?.email || "Web App User",
+          UPDATED_BY: user?.email ?? "Web App User",
           UPDATED_ON: new Date().toISOString(),
           ACTION: "REVIEW_MARKED",
         };
@@ -247,7 +371,6 @@ const WrenchTimeTable: React.FC = () => {
           const existingIndex = prevChanges.findIndex(
             (change) => change.SETUP_TIME_KEY === reviewedRowInfo.SETUP_TIME_KEY
           );
-
           let newChanges;
           if (existingIndex >= 0) {
             newChanges = [...prevChanges];
@@ -258,7 +381,6 @@ const WrenchTimeTable: React.FC = () => {
           } else {
             newChanges = [...prevChanges, reviewedRowInfo];
           }
-
           return newChanges;
         });
 
@@ -267,61 +389,41 @@ const WrenchTimeTable: React.FC = () => {
     });
   };
 
-  const {
-    table,
-    searchText,
-    handleSearchChange,
-    pageInput,
-    handlePageInputChange,
-    handlePageInputSubmit,
-    handleRowsPerPageChange,
-    anchorEl,
-    open,
-    handleClick,
-    handleClose,
-    totalPages,
-  } = useWrenchTimeTable(
-    searchData && searchData.rows ? searchData.rows : tableData,
-    handleRowUpdate,
-    handleReview,
-    searchData
-      ? searchData.totalCount || searchData.rowsCount || searchData.rows?.length || 0
-      : totalRows,
-    columnVisibility,
-    setColumnVisibility,
-    pageNumber,
-    rowsPerPage,
-    updatePageNumber,
-    updateRowsPerPage,
-    handleSearch
-  );
 
-  const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedCategory(event.target.value);
+  const onPageChangeSearchAware = (page: number) => {
+    updatePageNumber(page);
+    if (searchString.trim()) {
+      handleSearch(searchString, { page });
+    }
   };
 
-  const handleReviewedStatusChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setSelectedReviewedStatus(event.target.value);
+  const onRowsPerPageChangeSearchAware = (rows: number) => {
+    updateRowsPerPage(rows);
+    if (searchString.trim()) {
+      handleSearch(searchString, { page: 1, pageSize: rows });
+    }
   };
 
   const handleRefresh = () => {
-    refresh();
+    if (searchString.trim()) {
+      handleSearch(searchString);
+    } else {
+      refresh();
+    }
   };
-
+  useEffect(() => {
+    handleRefresh()
+  }, [filterSelections])
   const handleFilterIconClick = (event: React.MouseEvent<HTMLElement>) => {
     setFilterAnchorEl(event.currentTarget);
   };
-
   const handleFilterClose = () => {
     setFilterAnchorEl(null);
   };
-
   const handleApplyFilters = (appliedFilters: { [key: string]: string[] }) => {
     setFilterSelections(appliedFilters);
+    updatePageNumber(1);
   };
-
   const getActiveFiltersCount = () => {
     return Object.values(filterSelections).filter(
       (values) => Array.isArray(values) && values.length > 0
@@ -331,12 +433,18 @@ const WrenchTimeTable: React.FC = () => {
   const handleDownloadClick = (event: React.MouseEvent<HTMLElement>) => {
     setDownloadAnchorEl(event.currentTarget);
   };
-
   const handleDownloadClose = () => {
     setDownloadAnchorEl(null);
   };
 
+  const { trackEvent } = useTelemetryEvent(user);
+
   const handleDownload = async (format: "xlsx" | "csv") => {
+    trackEvent("ButtonClick", {
+      featureName: `Export_${format}`,
+      page: "/operations/wrenchtime",
+      sessionId: sessionStorage.getItem("telemetry_session_id"),
+    });
     setDownloadAnchorEl(null);
     try {
       setIsDownloading(true);
@@ -358,7 +466,7 @@ const WrenchTimeTable: React.FC = () => {
     );
 
     if (reviewedSetupTimes.length === 0) {
-      // Show warning snackbar for no reviewed setup times
+
       setUpdateResponse({
         success: false,
         results: [],
@@ -370,7 +478,6 @@ const WrenchTimeTable: React.FC = () => {
       setSnackbarOpen(true);
       return;
     }
-
     setSaveDialogOpen(true);
   };
 
@@ -380,38 +487,42 @@ const WrenchTimeTable: React.FC = () => {
       const reviewedSetupTimes = changedRowsData.filter(
         (setupTime) => setupTime.ACTION === "REVIEW_MARKED"
       );
-
       if (reviewedSetupTimes.length === 0) {
         return;
       }
 
-      const setupTimesToSave = reviewedSetupTimes.map(
-        ({ ACTION, ...setupTime }) => setupTime
-      );
-
-      console.log("Sending reviewed setup times to API:", setupTimesToSave);
+      const setupTimesToSave = reviewedSetupTimes.map(({ ACTION, ...setupTime }) => {
+        return {
+          ...setupTime,
+          SETUPTIME_PCT_CHANGE: setupTime.SETUPTIME_PCT_CHANGE,
+        };
+      });
 
       const response = await updateWrenchtimeData(setupTimesToSave);
 
-      // Set the response and show snackbar
+
       setUpdateResponse(response);
       setSnackbarOpen(true);
 
       if (response && !response.error) {
-        console.log("Setup times updated successfully:", response);
-
         setChangedRowsData((prevChanges) =>
           prevChanges.filter((change) => change.ACTION !== "REVIEW_MARKED")
         );
 
-        refresh();
+
+        if (searchString.trim()) {
+          await handleSearch(searchString);
+        } else {
+          refresh();
+        }
+
+        refetch();
         setSaveDialogOpen(false);
       } else {
         console.error("Error updating setup times:", response);
       }
     } catch (error) {
       console.error("Error saving setup times:", error);
-      // Set error response and show snackbar
       setUpdateResponse({
         success: false,
         results: [],
@@ -434,6 +545,7 @@ const WrenchTimeTable: React.FC = () => {
     setUpdateResponse(null);
   };
 
+
   useEffect(() => {
     if (Array.isArray(data) && data.length > 0) {
       setOriginalApiData(JSON.parse(JSON.stringify(data)));
@@ -442,14 +554,10 @@ const WrenchTimeTable: React.FC = () => {
         isUpdated: false,
       }));
       setTableData(dataWithFlags);
-    } else if (
-      data &&
-      typeof data === "object" &&
-      "rows" in data &&
-      Array.isArray(data.rows)
-    ) {
-      setOriginalApiData(JSON.parse(JSON.stringify(data.rows)));
-      const dataWithFlags = data.rows.map((row: any) => ({
+    } else if (data && typeof data === "object" && "rows" in data && Array.isArray((data as any).rows)) {
+      const d = (data as any);
+      setOriginalApiData(JSON.parse(JSON.stringify(d.rows)));
+      const dataWithFlags = d.rows.map((row: any) => ({
         ...row,
         isUpdated: false,
       }));
@@ -459,6 +567,43 @@ const WrenchTimeTable: React.FC = () => {
       setOriginalApiData([]);
     }
   }, [data]);
+
+  const {
+    table,
+    searchText,
+    handleSearchChange,
+    pageInput,
+    handlePageInputChange,
+    handlePageInputSubmit,
+    handleRowsPerPageChange,
+    anchorEl,
+    open,
+    handleClick,
+    handleClose,
+    totalPages,
+  } = useWrenchTimeTable(
+    searchData && searchData.rows ? searchData.rows : tableData,
+    handleRowUpdate,
+    handleReview,
+    searchData
+      ? searchData.totalCount ?? searchData.rowsCount ?? searchData.rows?.length ?? 0
+      : totalRows,
+    columnVisibility,
+    setColumnVisibility,
+    pageNumber,
+    rowsPerPage,
+    onPageChangeSearchAware,
+    onRowsPerPageChangeSearchAware,
+    handleSearch
+  );
+
+  const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedCategory(event.target.value);
+  };
+
+  const handleReviewedStatusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedReviewedStatus(event.target.value);
+  };
 
   return (
     <Box
@@ -487,6 +632,7 @@ const WrenchTimeTable: React.FC = () => {
           searchText={searchText}
           handleSearchChange={handleSearchChange}
         />
+
         <Box sx={{ display: "flex", alignItems: "center", gap: 0 }}>
           <Tooltip title="Download" placement="top">
             <IconButton
@@ -505,25 +651,19 @@ const WrenchTimeTable: React.FC = () => {
               }}
               aria-label="download"
             >
-              <DownloadRounded style={{ fontSize: "26px" }} />
+              {isDownloading ? <CircularProgress size={24} /> : <DownloadRounded style={{ fontSize: "26px" }} />}
             </IconButton>
           </Tooltip>
+
           {isDownloading ? (
             <CircularProgress size="small" />
           ) : (
-            <Menu
-              anchorEl={downloadAnchorEl}
-              open={Boolean(downloadAnchorEl)}
-              onClose={handleDownloadClose}
-            >
-              <MenuItem onClick={() => handleDownload("xlsx")}>
-                Download as Excel
-              </MenuItem>
-              <MenuItem onClick={() => handleDownload("csv")}>
-                Download as CSV
-              </MenuItem>
+            <Menu anchorEl={downloadAnchorEl} open={Boolean(downloadAnchorEl)} onClose={handleDownloadClose}>
+              <MenuItem onClick={() => handleDownload("xlsx")}>Download as Excel</MenuItem>
+              <MenuItem onClick={() => handleDownload("csv")}>Download as CSV</MenuItem>
             </Menu>
           )}
+
           <TextField
             size="small"
             select
@@ -548,6 +688,7 @@ const WrenchTimeTable: React.FC = () => {
               All
             </MenuItem>
           </TextField>
+
           <TextField
             size="small"
             select
@@ -564,16 +705,18 @@ const WrenchTimeTable: React.FC = () => {
               },
             }}
           >
-            <MenuItem value="Y - Reviewed from Web App" sx={{ fontSize: "0.75rem" }}>
-              Y - Reviewed from Web App
-            </MenuItem>
-            <MenuItem value="N" sx={{ fontSize: "0.75rem" }}>
-              N
-            </MenuItem>
+            {Array.isArray(reviewedStatusOptionsWrenchTime) &&
+              reviewedStatusOptionsWrenchTime.length > 0 &&
+              reviewedStatusOptionsWrenchTime.map((option: string) => (
+                <MenuItem key={option} value={option} sx={{ fontSize: "0.75rem" }}>
+                  {option?.toUpperCase()}
+                </MenuItem>
+              ))}
             <MenuItem value="All" sx={{ fontSize: "0.75rem" }}>
               All
             </MenuItem>
           </TextField>
+
           <Tooltip title="Filters" placement="top">
             <Badge
               badgeContent={getActiveFiltersCount()}
@@ -606,6 +749,7 @@ const WrenchTimeTable: React.FC = () => {
               </IconButton>
             </Badge>
           </Tooltip>
+
           <FilterPopper
             anchorEl={filterAnchorEl}
             open={Boolean(filterAnchorEl)}
@@ -614,6 +758,7 @@ const WrenchTimeTable: React.FC = () => {
             onApply={handleApplyFilters}
             interfaces={userAssignedInterfaces}
           />
+
           <Tooltip title="Save" placement="top">
             <IconButton
               onClick={handleSaveClick}
@@ -633,6 +778,7 @@ const WrenchTimeTable: React.FC = () => {
               <SaveRounded style={{ fontSize: "26px" }} />
             </IconButton>
           </Tooltip>
+
           <Tooltip title="Reload" placement="top">
             <IconButton
               onClick={handleRefresh}
@@ -716,15 +862,7 @@ const WrenchTimeTable: React.FC = () => {
             <Typography>No data available</Typography>
           </Box>
         ) : (
-          <Table
-            stickyHeader
-            size="small"
-            sx={{
-              tableLayout: "auto",
-              width: "100%",
-            }}
-            aria-label="wrenchtime table"
-          >
+          <Table stickyHeader size="small" sx={{ tableLayout: "auto", width: "100%" }} aria-label="wrenchtime table">
             <TableHeader headerGroups={table.getHeaderGroups()} />
             <TableBodyComponent rows={table.getRowModel().rows} />
           </Table>
@@ -741,12 +879,10 @@ const WrenchTimeTable: React.FC = () => {
           gap: 2,
         }}
       >
-        <Typography
-          variant="body2"
-          sx={{ fontSize: "0.85rem", color: "text.secondary" }}
-        >
-          Total Records: {totalRows || 0}
+        <Typography variant="body2" sx={{ fontSize: "0.85rem", color: "text.secondary" }}>
+          Total Records: {totalRows ?? 0}
         </Typography>
+
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <FormControl size="small" variant="outlined" sx={{ minWidth: 120 }}>
             <InputLabel id="rows-per-page-label" sx={{ fontSize: "0.85rem" }}>
@@ -755,7 +891,7 @@ const WrenchTimeTable: React.FC = () => {
             <Select
               labelId="rows-per-page-label"
               value={rowsPerPage}
-              onChange={handleRowsPerPageChange}
+              onChange={(e) => onRowsPerPageChangeSearchAware(Number(e.target.value))}
               label="Rows per page"
               sx={{ fontSize: "0.75rem", borderRadius: 0, mr: -2 }}
             >
@@ -766,40 +902,40 @@ const WrenchTimeTable: React.FC = () => {
               ))}
             </Select>
           </FormControl>
+
           <TextField
             size="small"
             label="Page"
             variant="outlined"
             value={pageInput}
             onChange={handlePageInputChange}
-            onBlur={handlePageInputSubmit}
+            onBlur={() => {
+              handlePageInputSubmit();
+
+              if (searchString.trim()) handleSearch(searchString, { page: pageNumber });
+            }}
             onKeyPress={(e) => {
               if (e.key === "Enter") {
                 handlePageInputSubmit();
+                if (searchString.trim()) handleSearch(searchString, { page: pageNumber });
               }
             }}
             InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">of {totalPages}</InputAdornment>
-              ),
+              endAdornment: <InputAdornment position="end">of {totalPages}</InputAdornment>,
               inputProps: { style: { width: "40px" }, "aria-label": "page number" },
             }}
             sx={{
               width: "120px",
-              "& .MuiOutlinedInput-root": {
-                fontSize: "0.75rem",
-                borderRadius: 0,
-              },
-              "& .MuiInputLabel-root": {
-                fontSize: "0.85rem",
-              },
+              "& .MuiOutlinedInput-root": { fontSize: "0.75rem", borderRadius: 0 },
+              "& .MuiInputLabel-root": { fontSize: "0.85rem" },
             }}
           />
+
           <Pagination
             count={totalPages}
             page={pageNumber}
             onChange={(_, page) => {
-              updatePageNumber(page);
+              onPageChangeSearchAware(page);
             }}
             color="primary"
             size="small"
@@ -811,19 +947,17 @@ const WrenchTimeTable: React.FC = () => {
         </Box>
       </Box>
 
-      {/* Save Confirmation Dialog */}
+      { }
       <SaveConfirmationDialog
         open={saveDialogOpen}
         onClose={handleSaveCancel}
         onConfirm={handleSaveConfirm}
-        reviewedSetupTimes={changedRowsData.filter(
-          (setupTime) => setupTime.ACTION === "REVIEW_MARKED"
-        )}
+        reviewedSetupTimes={changedRowsData.filter((setupTime) => setupTime.ACTION === "REVIEW_MARKED")}
         originalData={originalApiData}
         isSaving={isSaving}
       />
 
-      {/* Snackbar Alert */}
+      { }
       <SnackbarAlert
         open={snackbarOpen}
         onClose={handleSnackbarClose}

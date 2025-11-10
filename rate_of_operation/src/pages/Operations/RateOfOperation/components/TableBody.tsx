@@ -14,14 +14,13 @@ const cellStyles = {
   textAlign: "center",
 };
 
-const isStickyColumn = (index: number) => index < 3;
+const isStickyColumn = (index: number) => index < 4;
 
 const getStickyPosition = (index: number) => {
-  if (index === 0) return 0; // RECIPE_NUMBER position
-  if (index === 1) return 110; // MAKER_RESOURCE position
-  if (index === 2) return 220; // PACKER_RESOURCE position
-  if (index === 1) return 110; // MAKER_RESOURCE position
-  if (index === 2) return 220; // PACKER_RESOURCE position
+  if (index === 0) return 0;
+  if (index === 1) return 110;
+  if (index === 2) return 220;
+  if (index === 3) return 330;
   return 0;
 };
 
@@ -38,8 +37,8 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
           key={row.id}
           sx={{
             "&:last-child td, &:last-child th": { border: 0 },
-            height: "32px", // Fixed row height
-            "& td": { height: "32px" }, // Ensure cells also have fixed height
+            height: "32px",
+            "& td": { height: "32px" },
           }}
         >
           {row.getVisibleCells().map((cell, index) => (
@@ -57,13 +56,13 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
                       : theme.palette.grey[900],
                   boxShadow:
                     index === 2 ? "2px 0px 3px -1px rgba(0,0,0,0.2)" : "none",
-                }), // Ensure cells with buttons have enough width
+                }),
                 ...(["PACKER_RESOURCE", "NEW_RO"].includes(cell.column.id) && {
                   minWidth: 120,
                 }),
-                // highlight updated cells
+
                 ...(row.original.isUpdated &&
-                  ["NEW_RO", "NEW_PLANNING_TIME", "RO_PCT_CHANGE"].includes(
+                  ["NEW_RO", "NEW_PLANNING_TIME", "RO_PCT_CHANGE", "COMMENT"].includes(
                     cell.column.id
                   ) && {
                   backgroundColor:

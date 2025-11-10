@@ -11,19 +11,26 @@ import { ExclusionList } from "../pages/SuperUser/ExclusionList";
 import LoginCallback from "../components/Login/callback";
 import AuthGuard from "../components/Login/AuthGuard";
 import LoginCallbackError from "../components/Login/LoginCallbackError";
+import { useUserStore } from "../store/userStore";
+import { usePageTracking } from "../components/appInsights/usePageTelemetry";
+import LandingPage from "../pages/LandingPage";
 
 const AppRoutes: React.FC = () => {
+  const user = useUserStore((state) => state.user);
+  usePageTracking({ email: user?.email });
+
   return (
     <Routes>
       <Route path="/login/callback" element={<LoginCallback />} />
       <Route path="/login/callbackError" element={<LoginCallbackError />} />
-      <Route path="/" element={<Dashboard />} />
-      <Route path="/operations/rate-of-operation" element={<RateOfOperation />} />
-      <Route path="/operations/wrenchtime" element={<Wrenchtime />} />
-      <Route path="/operations/financial-rate" element={<FinancialRate />} />
-      <Route path="/super-user/review-status" element={<ReviewStatus />} />
-      <Route path="/super-user/user-management" element={<UserManagement />} />
-      <Route path="/super-user/exclusion-list" element={<ExclusionList />} />
+      <Route path="/" element={<AuthGuard><LandingPage /></AuthGuard>} />
+      <Route path="/dashboard" element={<AuthGuard><Dashboard /></AuthGuard>} />
+      <Route path="/operations/rate-of-operation" element={<AuthGuard><RateOfOperation /></AuthGuard>} />
+      <Route path="/operations/wrenchtime" element={<AuthGuard><Wrenchtime /></AuthGuard>} />
+      <Route path="/operations/financial-rate" element={<AuthGuard><FinancialRate /></AuthGuard>} />
+      <Route path="/super-user/review-status" element={<AuthGuard><ReviewStatus /></AuthGuard>} />
+      <Route path="/super-user/user-management" element={<AuthGuard><UserManagement /></AuthGuard>} />
+      <Route path="/super-user/exclusion-list" element={<AuthGuard><ExclusionList /></AuthGuard>} />
     </Routes>
   );
 };

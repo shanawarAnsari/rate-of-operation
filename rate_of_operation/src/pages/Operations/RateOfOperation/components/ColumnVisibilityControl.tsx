@@ -118,16 +118,19 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
     setShowDropdown((prev) => !prev);
   }, []);
 
-  // Optimized columns with memoization to prevent recalculation
   const columns = useMemo(() => {
     return availableColumns.map((columnId) => ({
       id: columnId,
-      getIsVisible: () => columnVisibility[columnId] !== false,
+      getIsVisible: () => columnVisibility[columnId] === true,
       getToggleVisibilityHandler: () => () => {
-        setColumnVisibility((prev) => ({
-          ...prev,
-          [columnId]: !prev[columnId],
-        }));
+        setColumnVisibility((prev) => {
+          const updated = {
+            ...prev,
+            [columnId]: !prev[columnId],
+          };
+          localStorage.setItem("columnVisibility_ROO", JSON.stringify(updated));
+          return updated;
+        });
       },
     }));
   }, [availableColumns, columnVisibility, setColumnVisibility]);

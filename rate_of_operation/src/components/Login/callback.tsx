@@ -5,11 +5,13 @@ import LoginCallbackError from "./LoginCallbackError";
 import { Box, CircularProgress } from "@mui/material";
 import { useUserStore } from "../../store/userStore";
 import { generateApiToken } from "../../services/apiTokenGen";
+import { hasValidAccess, isAdminUser } from "./accessUtils";
 
 const LoginCallback = () => {
   const navigate = useNavigate();
-  const [isUserAllowed, setIsUserAllowed] = useState<boolean | null>(null);
+  const [showAccessErrorAfterDelay, setShowAccessErrorAfterDelay] = useState(false);
   const [callbackProgress, setCallbackProgress] = useState(true);
+
   const {
     isLoggedIn,
     setIsLoggedIn,
@@ -22,38 +24,28 @@ const LoginCallback = () => {
   } = useUserStore((state) => state);
 
   useEffect(() => {
-    setCallbackProgress(true)
+    setCallbackProgress(true);
     if (!isLoggedIn && !isUserLoading) {
       setIsUserLoading(true);
       oktaAuth.token
         .parseFromUrl()
-        .then(async function (res) {
-          let tokens = res.tokens;
+        .then(async (res) => {
+          const tokens = res.tokens;
           oktaAuth.tokenManager.setTokens(tokens);
-          let token = oktaAuth.tokenManager.getTokensSync();
-          let authToken = token.accessToken?.accessToken || token.idToken?.idToken;
-          if (authToken) {
-            setAuthToken(authToken);
-          } else {
-            setAuthToken("");
-          }
+          const token = oktaAuth.tokenManager.getTokensSync();
+          const authToken = token.accessToken?.accessToken || token.idToken?.idToken || "";
+          setAuthToken(authToken);
 
-          oktaAuth.token
-            .getUserInfo()
-            .then(function (userResp: any) {
-              const requiredRegions = ["Azure_KC_ProdRate_Region_KCNA"];
-              const hasValidAccess =
-                userResp.myregion &&
-                userResp.myregion.some((region: string) =>
-                  requiredRegions.includes(region)
-                );
-              if (userResp.myrole.some((role: string) => ["Azure_KC_ProdRate_Role_Admin"].includes(role))) {
-                setIsUserAdmin(true);
-              }
+          oktaAuth.token.getUserInfo()
+            .then((userResp: any) => {
               setUser(userResp);
               setIsLoggedIn(true);
-              if (hasValidAccess) {
-                setIsUserAllowed(true);
+
+              if (isAdminUser(userResp)) {
+                setIsUserAdmin(true);
+              }
+
+              if (hasValidAccess(userResp)) {
                 generateApiToken(authToken, userResp.mygroup, userResp.myregion, userResp.myrole)
                   .then((res) => {
                     localStorage.setItem('authToken', res.jwtApiToken);
@@ -62,65 +54,49 @@ const LoginCallback = () => {
                     navigate('/');
                   })
                   .catch((err) => {
+                    console.error('API token generation error:', err);
                     setIsUserLoading(false);
                     setCallbackProgress(false);
-                    console.log('error', err);
+                    setShowAccessErrorAfterDelay(true);
                   });
               } else {
-                setIsUserAllowed(false);
                 setIsUserLoading(false);
                 setCallbackProgress(false);
-                navigate("/login/callbackError")
+                setShowAccessErrorAfterDelay(true);
               }
             })
             .catch((error) => {
-              setIsUserLoading(false);
+              console.error("User info error:", error);
               setIsLoggedIn(false);
-              setIsUserAllowed(false);
+              setIsUserLoading(false);
               setCallbackProgress(false);
-              console.log("error", error);
-              navigate("/login/callbackError")
+              setShowAccessErrorAfterDelay(true);
             });
         })
         .catch((err) => {
-          setIsUserLoading(false);
+          console.error("Token parsing error:", err);
           setIsLoggedIn(false);
+          setIsUserLoading(false);
           setCallbackProgress(false);
-          setIsUserAllowed(false);
+          setShowAccessErrorAfterDelay(true);
         });
     } else {
       navigate("/");
     }
   }, []);
-  const [showAccessErrorAfterDelay, setShowAccessErrorAfterDelay] = useState(false);
-  let timer: NodeJS.Timeout;
+
   useEffect(() => {
-    if (isUserAllowed === false && !isUserLoading) {
+    let timer: NodeJS.Timeout;
+    if (showAccessErrorAfterDelay) {
       timer = setTimeout(() => {
-        setShowAccessErrorAfterDelay(true)
+        navigate("/login/callbackError");
       }, 2500);
-    } else {
-      setShowAccessErrorAfterDelay(false);
     }
-    return () => {
-      clearTimeout(timer);
-    }
-  }, [isUserAllowed, isUserLoading])
-
-
-  if (isUserAllowed === false && !isUserLoading && !callbackProgress && showAccessErrorAfterDelay) {
-    return <LoginCallbackError />;
-  }
+    return () => clearTimeout(timer);
+  }, [showAccessErrorAfterDelay]);
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-      }}
-    >
+    <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}>
       <CircularProgress color="primary" />
     </Box>
   );

@@ -3,12 +3,7 @@ import {
   Box,
   Button,
   Checkbox,
-  FormControl,
-  InputLabel,
-  ListItemText,
-  MenuItem,
   Popper,
-  Select,
   Typography,
   TextField,
   Autocomplete,
@@ -18,7 +13,8 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useFilters } from "./hooks/useFilters";
-import { useFilterStore } from "../../../../../store/filterStore";
+import { useFilterStore } from "../../../../../store/rateOfOperationsFilterStore";
+import { useUserStore } from "../../../../../store/userStore";
 
 interface FilterItem {
   RECIPE_TYPE: string;
@@ -62,16 +58,10 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
     "SETUP_GROUP",
   ];
 
-  const {
-    filterSelections,
-    updateFilterSelection,
-    resetFilters,
-    setFilterSelections,
-  } = useFilterStore();
+  const { filterSelections, setFilterSelections } = useFilterStore();
+  const userAssignedInterfaces = useUserStore((state) => state.userAssignedInterfaces);
+  const [filterOptions, setFilterOptions] = useState<{ [key: string]: string[] }>({});
 
-  const [filterOptions, setFilterOptions] = useState<{ [key: string]: string[] }>(
-    {}
-  );
   const {
     filters,
     loading,
@@ -104,7 +94,7 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
         options[prop] = uniqueValues.filter(Boolean) as string[];
       });
 
-      setFilterOptions(options);
+      setFilterOptions({ ...options, "INTERFACE": userAssignedInterfaces });
       // Auto-select first INTERFACE option if not already selected
       if (options.INTERFACE && options.INTERFACE.length > 0) {
         const currentInterfaceSelection = localFilterSelections.INTERFACE || [];
@@ -113,7 +103,7 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
         }
       }
     }
-  }, [filters]);
+  }, [filters, data]);
 
   const handleFilterChange = (field: string) => (event: any, newValue: string[]) => {
     updateLocalFilterSelection(field, newValue);

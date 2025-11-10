@@ -22,7 +22,10 @@ interface UserStore {
   setIsUserAdmin: (val: boolean) => void;
   setUserAssignedCategories: (categories: string[]) => void;
   setUserAssignedInterfaces: (interfaces: string[]) => void;
+  isUserSynced: boolean;
+  setIsUserSynced: (val: boolean) => void;
 }
+
 
 export const useUserStore = create<UserStore>()(
   persist(
@@ -34,6 +37,8 @@ export const useUserStore = create<UserStore>()(
       isUserAdmin: false,
       userAssignedCategories: [],
       userAssignedInterfaces: [],
+      isUserSynced: false,
+      setIsUserSynced: (val) => set({ isUserSynced: val }),
       setUser: (userData) => set({ user: userData }),
       setIsLoggedIn: (val) => set({ isLoggedIn: !!val }),
       setIsUserLoading: (val) => set({ isUserLoading: !!val }),
@@ -45,6 +50,7 @@ export const useUserStore = create<UserStore>()(
           isUserAdmin: false,
           userAssignedCategories: [],
           userAssignedInterfaces: [],
+          isUserSynced: false,
         }),
       setAuthToken: (token) => set({ authToken: token }),
       setIsUserAdmin: (val) => set({ isUserAdmin: !!val }),
@@ -59,6 +65,7 @@ export const useUserStore = create<UserStore>()(
         isUserAdmin: state.isUserAdmin,
         userAssignedCategories: state.userAssignedCategories,
         userAssignedInterfaces: state.userAssignedInterfaces,
+        isUserSynced: state.isUserSynced,
       }),
     }
   )

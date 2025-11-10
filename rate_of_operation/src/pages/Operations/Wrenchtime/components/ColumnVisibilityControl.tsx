@@ -87,7 +87,6 @@ const ColumnItem = memo(
 );
 
 ColumnItem.displayName = "ColumnItem";
-
 const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
   anchorEl,
   open,
@@ -113,10 +112,11 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
     setShowDropdown((prev) => !prev);
   }, []);
 
+
   const columns = useMemo(() => {
     return availableColumns.map((columnId) => ({
       id: columnId,
-      getIsVisible: () => columnVisibility[columnId] !== false,
+      getIsVisible: () => columnVisibility[columnId] === true,
       getToggleVisibilityHandler: () => () => {
         setColumnVisibility((prev) => ({
           ...prev,
@@ -179,7 +179,7 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
             borderColor: "divider",
             borderRadius: "0px",
             "&:hover": {
-              borderColor: (theme) => theme.palette.text.primary,
+              borderColor: theme.palette.text.primary,
             },
           }}
         >
@@ -296,8 +296,7 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
                   </Box>
                 ) : (
                   <Typography variant="caption" sx={{ fontStyle: "italic" }}>
-                    Scroll down to load more ({columns.length - visibleChunk}
-                    remaining)
+                    Scroll down to load more ({columns.length - visibleChunk} remaining)
                   </Typography>
                 )}
               </MenuItem>
@@ -309,4 +308,4 @@ const ColumnVisibilityControl: React.FC<ColumnVisibilityControlProps> = ({
   );
 };
 
-export default memo(ColumnVisibilityControl);
+export default React.memo(ColumnVisibilityControl);

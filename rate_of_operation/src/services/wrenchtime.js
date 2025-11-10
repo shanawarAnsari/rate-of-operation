@@ -5,7 +5,11 @@ export const getWrenchtimeData = async (req) => {
     .then((data) => data)
     .catch((error) => error);
 };
-
+export const getModelMetricesST = async (req) => {
+  return postApi("wrenchtime/getMonitorData", req)
+    .then((data) => data)
+    .catch((error) => error);
+};
 export const getWrenchtimeFilters = async () => {
   return getApi("wrenchtime/getFilters")
     .then((data) => data)

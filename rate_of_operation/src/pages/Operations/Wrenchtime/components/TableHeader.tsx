@@ -25,7 +25,7 @@ const isStickyColumn = (index: number) => index < 3;
 // Update sticky positions for 3 columns
 const getStickyPosition = (index: number) => {
   if (index === 0) return 0;
-  if (index === 1) return 100; // Adjust based on first column width
+  if (index === 1) return 105; // Adjust based on first column width
   if (index === 2) return 200; // Adjust based on first and second column widths
   return 0;
 };

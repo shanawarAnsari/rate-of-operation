@@ -5,6 +5,11 @@ export const getRecipies = async (req) => {
     .then((data) => data)
     .catch((error) => error);
 };
+export const getModelMetricesROP = async (req) => {
+  return postApi("rate-of-operations/getMonitorData", req)
+    .then((data) => data)
+    .catch((error) => error);
+};
 export const getFilters = async () => {
   return getApi("rate-of-operations/getFilters")
     .then((data) => data)

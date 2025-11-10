@@ -32,12 +32,12 @@ import {
 } from "@mui/icons-material";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import { MockDataItem } from "../hooks/useRateOfOperationsMetrics";
+import { DataItem } from "../hooks/useRateOfOperationsMetrics";
 import { useGroupedMetrics } from "../hooks/useGroupedMetrics";
 import GroupBySelector, { GroupByLevel } from "./GroupBySelector";
 
 interface MonthlyViewChartsProps {
-  data: MockDataItem[];
+  data: DataItem[];
   selectedMonth?: string;
 }
 
@@ -213,7 +213,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
         colors: theme.palette.text.primary,
       },
     },
-    colors: ["#092ACD", "#f59e0b"],
+    colors: ["#092acd", "#f59e0b"],
     tooltip: {
       theme: theme.palette.mode,
       y: {
@@ -226,21 +226,19 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
         const plannedValue = series[1].data[dataPointIndex];
 
         return `
-          <div style="padding: 10px; background: ${
-            theme.palette.background.paper
+          <div style="padding: 10px; background: ${theme.palette.background.paper
           }; border: 1px solid ${theme.palette.divider};">
-            <div style="font-weight: 600; margin-bottom: 5px; color: ${
-              theme.palette.text.primary
-            };">
+            <div style="font-weight: 600; margin-bottom: 5px; color: ${theme.palette.text.primary
+          };">
               ${metric.groupName}
             </div>
             <div style="color: ${theme.palette.text.secondary}; font-size: 12px;">
               <div>AI ML RO - MAE: <strong style="color: #092ACD;">${aimlValue.toFixed(
-                4
-              )}</strong></div>
+            4
+          )}</strong></div>
               <div>PLANNED RO - MAE: <strong style="color: #f59e0b;">${plannedValue.toFixed(
-                4
-              )}</strong></div>
+            4
+          )}</strong></div>
               <div>Process Orders: <strong>${metric.processOrderCount}</strong></div>
             </div>
           </div>
@@ -525,11 +523,10 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({
                               width: 20,
                               height: 20,
                               borderRadius: 1,
-                              border: `2px solid ${
-                                isSelected
-                                  ? theme.palette.primary.main
-                                  : theme.palette.divider
-                              }`,
+                              border: `2px solid ${isSelected
+                                ? theme.palette.primary.main
+                                : theme.palette.divider
+                                }`,
                               bgcolor: isSelected
                                 ? theme.palette.primary.main
                                 : "transparent",

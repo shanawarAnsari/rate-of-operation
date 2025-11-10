@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, CircularProgress, Alert } from "@mui/material";
+import { Box, CircularProgress, Alert, Typography } from "@mui/material";
 import { useRateOfOperationsMetrics } from "../hooks/useRateOfOperationsMetrics";
 import ViewSelector from "./ViewSelector";
 import MetricCards from "./MetricCards";
@@ -14,7 +14,7 @@ const RateOfOperationsContent: React.FC = () => {
     availableMonthsYears,
     monthMetrics,
     monthlyTrends,
-    typedMockData,
+    data: typedMockData,
     loading,
     handleViewModeChange,
     handleMonthChange,

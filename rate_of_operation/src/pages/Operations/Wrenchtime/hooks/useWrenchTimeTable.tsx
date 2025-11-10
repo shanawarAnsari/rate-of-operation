@@ -30,7 +30,7 @@ const CellRenderer = ({
   columnId: string;
   rowData: any;
   rowIndex: number;
-  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void;
+  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number, comments: string) => void;
   onRowReview: (rowIndex: number) => void;
   updatedRows: Record<number, boolean>;
   setUpdatedRows: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
@@ -46,9 +46,9 @@ const CellRenderer = ({
     setDialogOpen(false);
   };
 
-  const handleDialogUpdate = (newValue: any) => {
+  const handleDialogUpdate = (newValue: any, comments: string) => {
     const originalVal = parseFloat(value);
-    onRowUpdate(rowIndex, newValue, originalVal);
+    onRowUpdate(rowIndex, newValue, originalVal, comments);
     setUpdatedRows((prev) => ({ ...prev, [rowIndex]: true }));
     setDialogOpen(false);
   };
@@ -62,6 +62,7 @@ const CellRenderer = ({
   };
 
   const dropdownOptions = [
+    { label: "Current Setup Min", value: rowData.CURRENT_SETUPTIME_MINUTES || "N/A" },
     { label: "AI/ML Setup Min", value: rowData.AIML_SETUPTIME_MINUTES || "N/A" },
     {
       label: "Asset Group (6mo)",
@@ -115,9 +116,9 @@ const CellRenderer = ({
           alignItems: "center",
           justifyContent:
             columnId === "FROM_SETUP_GROUP" ||
-            columnId === "TO_SETUP_GROUP" ||
-            columnId === "SETUP_MATRIX" ||
-            (columnId === "NEW_SETUPTIME_MINUTES" && rowData.REVIEWED === "N")
+              columnId === "TO_SETUP_GROUP" ||
+              columnId === "SETUP_MATRIX" ||
+              (columnId === "NEW_SETUPTIME_MINUTES" && rowData.REVIEWED === "N")
               ? "flex-start"
               : "center",
           minHeight: "32px",
@@ -226,7 +227,7 @@ const CellRenderer = ({
           onClose={handleDialogClose}
           onUpdate={handleDialogUpdate}
           dropdownOptions={dropdownOptions}
-          originalValue={value}
+          originalValue={rowData?.CURRENT_SETUPTIME_MINUTES}
         />
       )}
     </>
@@ -235,7 +236,7 @@ const CellRenderer = ({
 
 export const useWrenchTimeTable = (
   data: any[],
-  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number) => void,
+  onRowUpdate: (rowIndex: number, newValue: any, originalValue: number, comments: string) => void,
   onRowReview: (rowIndex: number) => void,
   totalRows: number,
   columnVisibility: Record<string, boolean>,

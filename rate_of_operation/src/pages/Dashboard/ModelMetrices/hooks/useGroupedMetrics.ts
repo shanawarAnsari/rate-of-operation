@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { GroupByLevel } from "../components/GroupBySelector";
-import { MockDataItem } from "./useRateOfOperationsMetrics";
+import { DataItem } from "./useRateOfOperationsMetrics";
 
 export interface GroupedMetric {
   groupName: string;
@@ -11,13 +11,13 @@ export interface GroupedMetric {
 }
 
 interface UseGroupedMetricsProps {
-  data: MockDataItem[];
+  data: DataItem[];
   groupBy: GroupByLevel;
   selectedMonth?: string;
   selectedGroups?: string[];
 }
 
-const getGroupKey = (item: MockDataItem, groupBy: GroupByLevel): string => {
+const getGroupKey = (item: DataItem, groupBy: GroupByLevel): string => {
   switch (groupBy) {
     case "INTERFACE":
       return item.INTERFACE || "Unknown";
@@ -31,8 +31,6 @@ const getGroupKey = (item: MockDataItem, groupBy: GroupByLevel): string => {
       return item.PLATFORM || "Unknown";
     case "BUSINESS_UNIT":
       return item.BUSINESS_UNIT || "Unknown";
-    case "CATEGORY":
-      return item.CATEGORY || "Unknown";
     default:
       return "Unknown";
   }
@@ -51,7 +49,7 @@ export const useGroupedMetrics = ({
     let filteredData = data;
     if (selectedMonth) {
       const [year, month] = selectedMonth.split("-");
-      filteredData = data.filter((item: MockDataItem) => {
+      filteredData = data.filter((item: DataItem) => {
         if (!item.ACTUAL_START_DATE) return false;
         const date = new Date(item.ACTUAL_START_DATE);
         return (
@@ -111,12 +109,12 @@ export const useGroupedMetrics = ({
       aimlRoMAE:
         groupData.aimlErrors.length > 0
           ? groupData.aimlErrors.reduce((sum, val) => sum + val, 0) /
-            groupData.aimlErrors.length
+          groupData.aimlErrors.length
           : 0,
       plannedRoMAE:
         groupData.plannedErrors.length > 0
           ? groupData.plannedErrors.reduce((sum, val) => sum + val, 0) /
-            groupData.plannedErrors.length
+          groupData.plannedErrors.length
           : 0,
       count: groupData.count,
       processOrderCount: groupData.processOrders.size,
@@ -169,7 +167,7 @@ export const useGroupedMetrics = ({
     let filteredData = data;
     if (selectedMonth) {
       const [year, month] = selectedMonth.split("-");
-      filteredData = data.filter((item: MockDataItem) => {
+      filteredData = data.filter((item: DataItem) => {
         if (!item.ACTUAL_START_DATE) return false;
         const itemDate = new Date(item.ACTUAL_START_DATE);
         return (
@@ -202,7 +200,7 @@ export const useGroupedMetrics = ({
     let filteredData = data;
     if (selectedMonth) {
       const [year, month] = selectedMonth.split("-");
-      filteredData = data.filter((item: MockDataItem) => {
+      filteredData = data.filter((item: DataItem) => {
         if (!item.ACTUAL_START_DATE) return false;
         const date = new Date(item.ACTUAL_START_DATE);
         return (

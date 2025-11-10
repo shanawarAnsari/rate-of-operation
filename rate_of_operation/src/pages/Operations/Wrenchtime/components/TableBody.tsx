@@ -18,7 +18,7 @@ const isStickyColumn = (index: number) => index < 3;
 // Update sticky positions for 3 columns
 const getStickyPosition = (index: number) => {
   if (index === 0) return 0;
-  if (index === 1) return 100; // Adjust based on first column width
+  if (index === 1) return 105; // Adjust based on first column width
   if (index === 2) return 200; // Adjust based on first and second column widths
   return 0;
 };
@@ -53,15 +53,15 @@ const TableBodyComponent: React.FC<TableBodyProps> = ({ rows }) => {
                     index === 2 ? "2px 0px 3px -1px rgba(0,0,0,0.2)" : "none",
                 }),
                 ...(row.original.isUpdated &&
-                  ["NEW_SETUPTIME_MINUTES", "SETUPTIME_PCT_CHANGE"].includes(
+                  ["NEW_SETUPTIME_MINUTES", "SETUPTIME_PCT_CHANGE", "NEW_SETUPTIME_SECONDS", "COMMENT"].includes(
                     cell.column.id
                   ) && {
-                    backgroundColor: (theme: any) =>
-                      theme.palette.mode === "light"
-                        ? theme.palette.grey[200]
-                        : theme.palette.grey[800],
-                    transition: "background-color 0.3s ease",
-                  }),
+                  backgroundColor: (theme: any) =>
+                    theme.palette.mode === "light"
+                      ? theme.palette.grey[200]
+                      : theme.palette.grey[800],
+                  transition: "background-color 0.3s ease",
+                }),
               }}
               style={{ minWidth: 120, maxWidth: 1000 }}
             >

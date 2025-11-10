@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Interface } from "readline";
 import * as userService from "../../../../services/user-manegement";
+
 
 interface User {
   email: string;
@@ -52,7 +52,7 @@ export const useUsers = () => {
         setUsers(parsedUsers);
       } else {
         console.error("Unexpected response structure:", response);
-        setError("Unexpected response format from server");
+        setError("Something went wrong! Please check with your admin");
       }
 
     } catch (err: any) {
@@ -210,7 +210,7 @@ export const useUserByEmail = (email: any) => {
         setUser(parsedUsers);
       } else {
         console.error("Unexpected response structure:", response);
-        setError("Unexpected response format from server");
+        setError("Something went wrong! Please check with your admin");
       }
 
     } catch (err: any) {
@@ -224,6 +224,39 @@ export const useUserByEmail = (email: any) => {
   useEffect(() => {
     fetchUser();
   }, [email]);
-
   return { loading, error, fetchUser, user };
+};
+export const useGetCategories = () => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [data, setData] = useState([]);
+
+  const getCategoryInterfaceMap = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await userService.getCategpriesInterfaceMap();
+      if (response && !response.error) {
+        setData(response);
+        return response;
+      } else {
+        setError(response.message || response.error || "Failed to delete user");
+        throw new Error(
+          response.message || response.error || "Failed to delete user"
+        );
+      }
+    } catch (err: any) {
+      console.error("Error deleting user:", err);
+      setError(err.message || "Failed to delete user");
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getCategoryInterfaceMap()
+  }, [])
+
+  return { getCategoryInterfaceMap, data, loading, error };
 };

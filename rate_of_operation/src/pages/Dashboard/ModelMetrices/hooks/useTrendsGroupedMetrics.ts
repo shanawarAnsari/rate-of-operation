@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { GroupByLevel } from "../components/GroupBySelector";
-import { MockDataItem } from "./useRateOfOperationsMetrics";
+import { DataItem } from "./useRateOfOperationsMetrics";
 
 export interface TrendDataPoint {
   month: string;
@@ -17,12 +17,12 @@ export interface GroupedTrendMetric {
 }
 
 interface UseTrendsGroupedMetricsProps {
-  data: MockDataItem[];
+  data: DataItem[];
   groupBy: GroupByLevel;
   selectedGroups?: string[];
 }
 
-const getGroupKey = (item: MockDataItem, groupBy: GroupByLevel): string => {
+const getGroupKey = (item: DataItem, groupBy: GroupByLevel): string => {
   switch (groupBy) {
     case "INTERFACE":
       return item.INTERFACE || "Unknown";
@@ -34,10 +34,6 @@ const getGroupKey = (item: MockDataItem, groupBy: GroupByLevel): string => {
       return item.PACKER_RESOURCE || "Unknown";
     case "PLATFORM_NAME":
       return item.PLATFORM || "Unknown";
-    case "BUSINESS_UNIT":
-      return item.BUSINESS_UNIT || "Unknown";
-    case "CATEGORY":
-      return item.CATEGORY || "Unknown";
     default:
       return "Unknown";
   }
@@ -123,12 +119,12 @@ export const useTrendsGroupedMetrics = ({
             aimlRoMAE:
               data.aimlErrors.length > 0
                 ? data.aimlErrors.reduce((sum, val) => sum + val, 0) /
-                  data.aimlErrors.length
+                data.aimlErrors.length
                 : 0,
             plannedRoMAE:
               data.plannedErrors.length > 0
                 ? data.plannedErrors.reduce((sum, val) => sum + val, 0) /
-                  data.plannedErrors.length
+                data.plannedErrors.length
                 : 0,
             processOrderCount: data.processOrders.size,
             count: data.count,

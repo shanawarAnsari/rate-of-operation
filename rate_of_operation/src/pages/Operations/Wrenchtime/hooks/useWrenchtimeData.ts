@@ -1,91 +1,78 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { getWrenchtimeData } from "../../../../services/wrenchtime";
+import { useUserStore } from "../../../../store/userStore";
 import { useWrenchtimeFilterStore } from "../../../../store/wrenchtimeFilterStore";
 
-export const useWrenchtimeData = () => {
+export const useWrenchtimeData = (searchString: string) => {
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(10);
   const [totalRows, setTotalRows] = useState<number>(0);
-  const { filterSelections, selectedCategory, selectedReviewedStatus } =
-    useWrenchtimeFilterStore();
 
-  const fetchData = useCallback(
-    async (signal?: AbortSignal) => {
-      setLoading(true);
-      try {
-        const response = await getWrenchtimeData({
-          pageNumber,
-          rowsPerPage,
-          reviewedStatus: selectedReviewedStatus,
-          category: selectedCategory,
-          filters: filterSelections,
-          signal,
-        });
-        if (response && response.rows) {
-          setData(response.rows);
-          setTotalRows(
-            response.totalCount || response.rowsCount || response.rows.length || 0
-          );
-        } else {
-          setData(Array.isArray(response) ? response : []);
-          setTotalRows(Array.isArray(response) ? response.length : 0);
-        }
+  const { filterSelections, selectedCategory, selectedReviewedStatus } = useWrenchtimeFilterStore();
+  const { isUserSynced } = useUserStore();
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const response = await getWrenchtimeData({
+        pageNumber,
+        rowsPerPage,
+        reviewedStatus: selectedReviewedStatus,
+        category: selectedCategory,
+        filters: filterSelections,
+      });
 
-        setError(null);
-      } catch (err) {
-        if (err instanceof Error && err.name !== "AbortError") {
-          setError("Failed to fetch wrenchtime data");
-          console.error("Failed to fetch wrenchtime data:", err);
-        }
-      } finally {
-        setLoading(false);
+      if (response?.rows) {
+        setData(response.rows);
+        setTotalRows(
+          response.totalCount || response.rowsCount || response.rows.length || 0
+        );
+      } else {
+        const fallbackData = Array.isArray(response) ? response : [];
+        setData(fallbackData);
+        setTotalRows(fallbackData.length);
       }
-    },
-    [
-      pageNumber,
-      rowsPerPage,
-      selectedReviewedStatus,
-      selectedCategory,
-      filterSelections,
-    ]
-  );
 
-  const isInitialMount = useRef(true);
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-      fetchData(signal);
-    } else {
-      fetchData(signal);
+      setError(null);
+    } catch (err) {
+      setError("Failed to fetch wrenchtime data");
+      console.error("Failed to fetch wrenchtime data:", err);
+    } finally {
+      setLoading(false);
     }
+  };
 
-    return () => {
-      controller.abort();
-    };
-  }, [fetchData]);
+  useEffect(() => {
+    if (isUserSynced && !searchString?.trim()) {
+      fetchData();
+    }
+  }, [
+    isUserSynced,
+    pageNumber,
+    rowsPerPage,
+    selectedReviewedStatus,
+    selectedCategory,
+    filterSelections,
+  ]);
 
-  const updateData = useCallback((updatedData: any[]) => {
+  const updateData = (updatedData: any[]) => {
     setData(updatedData);
-  }, []);
+  };
 
   const refresh = useCallback(() => {
     fetchData();
   }, [fetchData]);
 
-  const updateRowsPerPage = useCallback((rows: number) => {
+  const updateRowsPerPage = (rows: number) => {
     setRowsPerPage(rows);
-    setPageNumber(1);
-  }, []);
+    setPageNumber(1); // Reset to first page
+  };
 
-  const updatePageNumber = useCallback((page: number) => {
+  const updatePageNumber = (page: number) => {
     setPageNumber(page);
-  }, []);
+  };
 
   return {
     data,

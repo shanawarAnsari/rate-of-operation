@@ -12,8 +12,8 @@ import {
   Typography,
 } from "@mui/material";
 import { Brightness4, Brightness7, AccountCircle } from "@mui/icons-material";
-import logoImage from "../../assets/KC_LOGO.png";
-import logoImageOrange from "../../assets/KC_LOGO_Orange.png"
+import logoImage from "../../assets/bluedark.png";
+import logoImageOrange from "../../assets/orange.png"
 import { useUserStore } from "../../store/userStore";
 
 interface TopNavbarProps {
@@ -23,7 +23,7 @@ interface TopNavbarProps {
 
 // Create a styled component for the logo image that responds to theme
 const LogoImage = styled("img")(({ theme }) => ({
-  height: "22px",
+  height: "36px",
   filter: "none",
 }));
 
@@ -50,9 +50,9 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ mode, onToggleTheme }) => {
       }}
     >
       <Toolbar>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          {(theme.palette.mode === "light") ? <LogoImage src={logoImage} alt="Company Logo" height="20" /> :
-            <LogoImage src={logoImageOrange} alt="Company Logo" height="20" />}
+        <Box sx={{ display: "flex", alignItems: "center", ml: -1.5 }}>
+          {(theme.palette.mode === "light") ? <LogoImage src={logoImage} alt="Company Logo" height="200" /> :
+            <LogoImage src={logoImageOrange} alt="Company Logo" height="200" />}
         </Box>
         <Box sx={{ flexGrow: 1 }} />
 

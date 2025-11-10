@@ -8,7 +8,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Typography,
-  Paper,
+  Chip
 } from "@mui/material";
 import {
   CalendarToday as CalendarIcon,
@@ -50,86 +50,99 @@ const ViewSelector: React.FC<ViewSelectorProps> = ({
       sx={{
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
-        gap: 2,
-        pb: 3,
-        alignItems: { sm: "center" },
         justifyContent: "space-between",
+        alignItems: "center",
+        gap: 1,
+        pb: 1.5,
       }}
     >
-      {/* View Mode Toggle - Always on the left */}
-      <ToggleButtonGroup
-        value={viewMode}
-        exclusive
-        onChange={handleViewModeChange}
-        aria-label="view mode"
-        size="small"
+      <Chip
+        label={
+          <Typography
+            variant="subtitle2"
+            sx={{
+              fontWeight: 600,
+              fontSize: "0.85rem", // slightly smaller for compactness
+              color: "text.primary",
+              letterSpacing: "0",
+            }}
+          >
+            Rate of Operations Metrices
+          </Typography>
+        }
         sx={{
-          height: "fit-content",
+          bgcolor: "primary", // subtle background
+          p: 0,
+          borderRadius: "8px",
+        }}
+      />
+
+
+
+      {/* Controls */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          gap: 1,
+          alignItems: "center",
         }}
       >
-        <ToggleButton
-          value="month"
-          aria-label="month view"
-          sx={{
-            px: 3,
-            "&.Mui-selected": {
-              bgcolor: "primary.main",
-              color: "primary.contrastText",
-              "&:hover": {
-                bgcolor: "primary.dark",
-              },
-            },
-          }}
-        >
-          <CalendarIcon sx={{ mr: 1, fontSize: 18 }} />
-          Month View
-        </ToggleButton>
-        <ToggleButton
-          value="trends"
-          aria-label="trends view"
-          sx={{
-            px: 3,
-            "&.Mui-selected": {
-              bgcolor: "primary.main",
-              color: "primary.contrastText",
-              "&:hover": {
-                bgcolor: "primary.dark",
-              },
-            },
-          }}
-        >
-          <TrendingUpIcon sx={{ mr: 1, fontSize: 18 }} />
-          Trends
-        </ToggleButton>
-      </ToggleButtonGroup>
-
-      {/* Month Selector Container - Always reserves space on the right */}
-      <Box sx={{ minWidth: 200, display: "flex", justifyContent: "flex-end" }}>
         {viewMode === "month" && (
-          <FormControl sx={{ minWidth: 200 }} size="small">
-            <InputLabel id="month-select-label">Select Month</InputLabel>
+          <FormControl sx={{ minWidth: 120 }} size="small">
+            <InputLabel id="month-select-label" sx={{ fontSize: "0.75rem" }}>
+              Month
+            </InputLabel>
             <Select
               labelId="month-select-label"
               id="month-select"
               value={selectedMonth}
-              label="Select Month"
+              label="Month"
               onChange={(e) => onMonthChange(e.target.value)}
               sx={{
-                "& .MuiOutlinedInput-root": {
-                  "&.Mui-focused fieldset": {
-                    borderColor: "primary.main",
-                  },
-                },
+                fontSize: "0.75rem",
+                "& .MuiSelect-select": { py: 0.5 },
               }}
             >
               {availableMonths.map((month) => (
-                <MenuItem key={month.value} value={month.value}>
+                <MenuItem
+                  key={month.value}
+                  value={month.value}
+                  sx={{ fontSize: "0.75rem" }}
+                >
                   {month.label}
                 </MenuItem>
               ))}
             </Select>
           </FormControl>
         )}
+
+        <ToggleButtonGroup
+          value={viewMode}
+          exclusive
+          onChange={handleViewModeChange}
+          size="small"
+          sx={{
+            "& .MuiToggleButton-root": {
+              px: 1.5,
+              fontSize: "0.7rem",
+              maxHeight: 25,
+              "&.Mui-selected": {
+                bgcolor: "primary.main",
+                color: "primary.contrastText",
+              },
+            },
+          }}
+        >
+          <ToggleButton value="month">
+            <CalendarIcon sx={{ mr: 0.3, fontSize: 12 }} />
+            Month
+          </ToggleButton>
+          <ToggleButton value="trends">
+            <TrendingUpIcon sx={{ mr: 0.3, fontSize: 12 }} />
+            Trends
+          </ToggleButton>
+        </ToggleButtonGroup>
       </Box>
     </Box>
   );

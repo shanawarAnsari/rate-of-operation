@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Dialog,
   DialogTitle,
@@ -16,7 +16,7 @@ import {
   OutlinedInput,
   SelectChangeEvent,
 } from "@mui/material";
-
+import { useGetCategories } from "../hooks/useUserManegement";
 const AddUserDialog: React.FC<{
   open: boolean;
   onClose: () => void;
@@ -29,60 +29,38 @@ const AddUserDialog: React.FC<{
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedInterfaces, setSelectedInterfaces] = useState<string[]>([]);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const { data: categoryInterfaceMap, loading: categoryLoading, error: categoryError } = useGetCategories();
   const availableRoles = ["User", "Admin"];
-  const availableCategories = ["Personal Care"];
-  const availableInterfaces = ["CC PANT"];
-
+  const availableCategories = Array.from(new Set(categoryInterfaceMap.map((item: any) => item.CATEGORY)));
+  const availableInterfaces = Array.from(
+    new Set(
+      categoryInterfaceMap
+        .filter((item: any) => selectedCategories.includes(item.CATEGORY))
+        .map((item: any) => item.INTERFACE)
+    )
+  );
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
-
-    // Email validation
-    if (!email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!email.endsWith("@kcc.com")) {
-      newErrors.email = "Email must be a valid @kcc.com address";
-    }
-
-    // Role validation
-    if (!role) {
-      newErrors.role = "Role is required";
-    }
-
-    // Category validation
-    if (selectedCategories.length === 0) {
-      newErrors.category = "At least one category is required";
-    }
-
-    // Interface validation
-    if (selectedInterfaces.length === 0) {
-      newErrors.interface = "At least one interface is required";
-    }
-
+    if (!email.trim()) newErrors.email = "Email is required";
+    else if (!email.endsWith("@kcc.com")) newErrors.email = "Email must be a valid @kcc.com address";
+    if (!role) newErrors.role = "Role is required";
+    if (selectedCategories.length === 0) newErrors.category = "At least one category is required";
+    if (selectedInterfaces.length === 0) newErrors.interface = "At least one interface is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
   const handleSave = () => {
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
     onSave({
       email: email.trim(),
-      role: role,
+      role,
       category: selectedCategories,
       interface: selectedInterfaces,
       updated_by: currentUserEmail,
-      Updated_on: (new Date()).toLocaleDateString(),
+      Updated_on: new Date().toLocaleDateString(),
     });
-
-    // Reset form
-    setEmail("");
-    setRole("");
-    setSelectedCategories([]);
-    setSelectedInterfaces([]);
-    setErrors({});
+    handleClose();
   };
-
   const handleClose = () => {
     setEmail("");
     setRole("");
@@ -91,41 +69,19 @@ const AddUserDialog: React.FC<{
     setErrors({});
     onClose();
   };
-
   const handleCategoryChange = (event: SelectChangeEvent<string[]>) => {
-    const value = event.target.value;
-    setSelectedCategories(typeof value === "string" ? value.split(",") : value);
+    const value = typeof event.target.value === "string" ? event.target.value.split(",") : event.target.value;
+    setSelectedCategories(value);
+    setSelectedInterfaces([]); // Reset interfaces when category changes
   };
-
   const handleInterfaceChange = (event: SelectChangeEvent<string[]>) => {
-    const value = event.target.value;
-    setSelectedInterfaces(typeof value === "string" ? value.split(",") : value);
+    const value = typeof event.target.value === "string" ? event.target.value.split(",") : event.target.value;
+    setSelectedInterfaces(value);
   };
   return (
-    <Dialog
-      open={open}
-      onClose={handleClose}
-      maxWidth="sm"
-      fullWidth
-      PaperProps={{
-        sx: {
-          borderRadius: 2,
-          boxShadow: 3,
-        },
-      }}
-    >
-      <DialogTitle
-        sx={{
-          bgcolor: "primary.main",
-          color: "primary.contrastText",
-          py: 2,
-          fontSize: "1.1rem",
-          fontWeight: 600,
-        }}
-      >
-        Add New User
-      </DialogTitle>
-      <DialogContent sx={{ p: 2 }}>
+    <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
+      <DialogTitle>Add New User</DialogTitle>
+      <DialogContent>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 1 }}>
           <TextField
             fullWidth
@@ -145,10 +101,8 @@ const AddUserDialog: React.FC<{
             error={!!errors.role}
             helperText={errors.role}
           >
-            {availableRoles.map((roleOption) => (
-              <MenuItem key={roleOption} value={roleOption}>
-                {roleOption}
-              </MenuItem>
+            {availableRoles.map(roleOption => (
+              <MenuItem key={roleOption} value={roleOption}>{roleOption}</MenuItem>
             ))}
           </TextField>
           <FormControl fullWidth error={!!errors.category}>
@@ -160,23 +114,15 @@ const AddUserDialog: React.FC<{
               input={<OutlinedInput label="Categories" />}
               renderValue={(selected) => (
                 <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                  {selected.map((value) => (
-                    <Chip key={value} label={value} size="small" />
-                  ))}
+                  {selected.map(value => <Chip key={value} label={value} size="small" />)}
                 </Box>
               )}
             >
-              {availableCategories.map((category) => (
-                <MenuItem key={category} value={category}>
-                  {category}
-                </MenuItem>
+              {availableCategories.map(category => (
+                <MenuItem key={category} value={category}>{category}</MenuItem>
               ))}
             </Select>
-            {errors.category && (
-              <Alert severity="error" sx={{ mt: 0.5, fontSize: "0.75rem" }}>
-                {errors.category}
-              </Alert>
-            )}
+            {errors.category && <Alert severity="error">{errors.category}</Alert>}
           </FormControl>
           <FormControl fullWidth error={!!errors.interface}>
             <InputLabel>Interfaces</InputLabel>
@@ -187,50 +133,27 @@ const AddUserDialog: React.FC<{
               input={<OutlinedInput label="Interfaces" />}
               renderValue={(selected) => (
                 <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                  {selected.map((value) => (
-                    <Chip key={value} label={value} size="small" />
-                  ))}
+                  {selected.map(value => <Chip key={value} label={value} size="small" />)}
                 </Box>
               )}
             >
-              {availableInterfaces.map((interfaceOption) => (
-                <MenuItem key={interfaceOption} value={interfaceOption}>
-                  {interfaceOption}
-                </MenuItem>
+              {availableInterfaces.map(interfaceOption => (
+                <MenuItem key={interfaceOption} value={interfaceOption}>{interfaceOption}</MenuItem>
               ))}
             </Select>
-            {errors.interface && (
-              <Alert severity="error" sx={{ mt: 0.5, fontSize: "0.75rem" }}>
-                {errors.interface}
-              </Alert>
-            )}
+            {errors.interface && <Alert severity="error">{errors.interface}</Alert>}
           </FormControl>
-          {Object.keys(errors).length > 0 && (
-            <Alert severity="error" sx={{ mt: 1 }}>
-              Please fix the validation errors above
-            </Alert>
-          )}
+          {categoryError && <Alert severity="error">{categoryError}</Alert>}
         </Box>
       </DialogContent>
-      <DialogActions sx={{ p: 2, gap: 1 }}>
-        <Button
-          onClick={handleClose}
-          disabled={loading}
-          sx={{ textTransform: "none" }}
-        >
-          Cancel
-        </Button>
-        <Button
-          onClick={handleSave}
-          variant="contained"
-          disabled={loading}
-          sx={{ textTransform: "none" }}
-        >
+      <DialogActions>
+        <Button onClick={handleClose} disabled={loading}>Cancel</Button>
+        <Button onClick={handleSave} variant="contained" disabled={loading ||
+          categoryLoading}>
           {loading ? "Saving..." : "Save User"}
         </Button>
       </DialogActions>
     </Dialog>
   );
 };
-
 export default AddUserDialog;

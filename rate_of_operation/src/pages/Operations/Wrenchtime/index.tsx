@@ -108,7 +108,7 @@ const Wrenchtime: React.FC = () => {
 
           <Stack direction={"column"}>
             <Typography sx={{ ml: 1, fontSize: "16px", fontWeight: 600 }}>
-              Wrenchtime
+              Setup Time
             </Typography>
             <Typography
               variant="caption"
@@ -146,7 +146,7 @@ const Wrenchtime: React.FC = () => {
         </Box>
       ) : (
         <Box sx={{ width: "100%", display: "flex", flexGrow: 1 }}>
-          {!hasCategoryAndInterface ? (
+          {hasCategoryAndInterface ? (
             <WrenchtimeTable />
           ) : (
             <Alert

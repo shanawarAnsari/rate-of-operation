@@ -13,7 +13,8 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import { useWrenchtimeFilters } from "./hooks/useWrenchtimeFilters";
-import { useFilterStore } from "../../../../../store/filterStore";
+import { useWrenchtimeFilterStore } from "../../../../../store/wrenchtimeFilterStore";
+import { useUserStore } from "../../../../../store/userStore";
 
 interface FilterPopperProps {
   anchorEl: HTMLElement | null;
@@ -51,11 +52,10 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
     updateFilterSelection,
     resetFilters,
     setFilterSelections,
-  } = useFilterStore();
+  } = useWrenchtimeFilterStore();
 
-  const [filterOptions, setFilterOptions] = useState<{ [key: string]: string[] }>(
-    {}
-  );
+  const [filterOptions, setFilterOptions] = useState<{ [key: string]: string[] }>({});
+  const userAssignedInterfaces = useUserStore((state) => state.userAssignedInterfaces);
 
   const {
     filters,
@@ -90,7 +90,7 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
         options[prop] = uniqueValues.filter(Boolean) as string[];
       });
 
-      setFilterOptions(options);
+      setFilterOptions({ ...options, "INTERFACE": userAssignedInterfaces });
 
       // Auto-select first INTERFACE option if available and not already selected
       if (interfaces.length > 0) {
@@ -240,9 +240,9 @@ const FilterPopper: React.FC<FilterPopperProps> = ({
                 <Autocomplete
                   multiple
                   options={setupTimeChangeOptions}
-                  value={localFilterSelections.setup_time_change || []}
+                  value={localFilterSelections.SETUPTIME_PCT_CHANGE || []}
                   onChange={(event, value) => {
-                    updateLocalFilterSelection("setup_time_change", value);
+                    updateLocalFilterSelection("SETUPTIME_PCT_CHANGE", value);
                   }}
                   disableCloseOnSelect
                   renderInput={(params) => (

@@ -1,17 +1,24 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { getRecipies } from "../../../../services/rate-of-operations";
-import { useFilterStore } from "../../../../store/filterStore";
+import { useFilterStore } from "../../../../store/rateOfOperationsFilterStore";
+import { useUserStore } from "../../../../store/userStore";
 
-export const useRecipesData = () => {
+
+export const useRecipesData = (options: { enabled?: boolean } = {}) => {
+  const { enabled = true } = options;
+
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [rowsPerPage, setRowsPerPage] = useState<number>(10);
   const [totalRows, setTotalRows] = useState<number>(0);
-  const { filterSelections, selectedCategory, selectedReviewedStatus } =
-    useFilterStore();
+
+  const { filterSelections, selectedReviewedStatus } = useFilterStore();
+  const { isUserSynced } = useUserStore();
+
   const fetchData = useCallback(async () => {
+    if (!enabled) return;
     setLoading(true);
     try {
       const response = await getRecipies({
@@ -20,16 +27,15 @@ export const useRecipesData = () => {
         reviewedStatus: selectedReviewedStatus,
         filters: filterSelections,
       });
-      if (response && response.rows) {
-        setData(response.rows);
-        setTotalRows(
-          response.totalCount || response.rowsCount || response.rows.length || 0
-        );
+      if (response && (response as any).rows) {
+        const r = response as any;
+        setData(r.rows);
+        setTotalRows(r.totalCount || r.rowsCount || r.rows.length || 0);
       } else {
-        setData(Array.isArray(response) ? response : []);
-        setTotalRows(Array.isArray(response) ? response.length : 0);
+        const arr = Array.isArray(response) ? (response as any[]) : [];
+        setData(arr);
+        setTotalRows(arr.length);
       }
-
       setError(null);
     } catch (err) {
       setError("Failed to fetch data");
@@ -37,28 +43,28 @@ export const useRecipesData = () => {
     } finally {
       setLoading(false);
     }
-  }, [pageNumber, rowsPerPage, selectedReviewedStatus, filterSelections]);
+  }, [
+    enabled,
+    pageNumber,
+    rowsPerPage,
+    selectedReviewedStatus,
+    filterSelections,
+  ]);
 
-  const isInitialMount = useRef(true);
   useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-      fetchData();
-    } else {
-      fetchData();
-    }
-  }, [fetchData]);
+    if (!isUserSynced) return;
+    fetchData();
+  }, [fetchData, isUserSynced, enabled]);
 
-  const updateData = useCallback((updatedData: any[]) => {
+  const updateData = (updatedData: any[]) => {
     setData(updatedData);
-  }, []);
+  };
 
   const refresh = useCallback(() => {
     fetchData();
-  }, [fetchData]);
+  }, [fetchData, enabled]);
+
   const updateReviewedStatus = useCallback((status: string) => {
-    // This is now handled by the store, not local state
-    console.log("updateReviewedStatus called with:", status);
   }, []);
 
   const updateRowsPerPage = useCallback((rows: number) => {
@@ -69,6 +75,7 @@ export const useRecipesData = () => {
   const updatePageNumber = useCallback((page: number) => {
     setPageNumber(page);
   }, []);
+
   return {
     data,
     loading,
@@ -83,5 +90,6 @@ export const useRecipesData = () => {
     updateReviewedStatus,
     updateRowsPerPage,
     updatePageNumber,
+    fetchData
   };
 };

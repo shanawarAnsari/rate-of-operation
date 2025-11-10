@@ -53,7 +53,7 @@ export const useFilterStore = create<FilterStore>()(
         }),
     }),
     {
-      name: "filter-storage",
+      name: "rate-of-operations-filter-storage",
       partialize: (state) => ({
         filterSelections: state.filterSelections,
         selectedCategory: state.selectedCategory,
