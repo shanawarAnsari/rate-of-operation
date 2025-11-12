@@ -11,15 +11,42 @@ import {
 } from "@mui/icons-material";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import { MonthlyTrend } from "../hooks/useRateOfOperationsMetrics";
-
-interface TrendsChartProps {
-  trends: MonthlyTrend[];
-  loading?: boolean;
+// Generic trends interface that works with both ROP and ST data
+interface TrendData {
+  month: string;
+  year: number;
+  numberOfPO: number;
+  aimlRoMAE?: number;
+  plannedRoMAE?: number;
+  // Legacy field support for backward compatibility
+  absoluteErrorAIML?: number;
+  absoluteErrorRegression?: number;
 }
 
-const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
+interface TrendsChartProps {
+  trends: TrendData[];
+  loading?: boolean;
+  modelType?: "ROP" | "ST"; // Add modelType prop for dynamic labeling
+}
+
+const TrendsChart: React.FC<TrendsChartProps> = ({
+  trends,
+  loading,
+  modelType = "ROP",
+}) => {
   const theme = useTheme();
+
+  // Get dynamic labels and units based on model type
+  const getLabels = () => {
+    return {
+      plannedLabel:
+        modelType === "ST" ? "PLANNED Setup Time - MAE" : "PLANNED RO - MAE",
+      aimlLabel: modelType === "ST" ? "AI ML Setup Time - MAE" : "AI ML RO - MAE",
+      units: modelType === "ST" ? "min/su" : "su/h",
+    };
+  };
+
+  const { plannedLabel, aimlLabel, units } = getLabels();
 
   if (loading) {
     return (
@@ -324,7 +351,7 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
                       color="text.secondary"
                       sx={{ fontSize: "0.75rem", mb: 0.5 }}
                     >
-                      PLANNED RO - MAE
+                      {plannedLabel}
                     </Typography>
                     <Typography
                       variant="h5"
@@ -334,14 +361,14 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
                         fontSize: "1.5rem",
                       }}
                     >
-                      {getCurrentValue(plannedRoData).toFixed(2)} su/h
+                      {getCurrentValue(plannedRoData).toFixed(2)} {units}
                     </Typography>
                   </Box>
                 </Box>
                 <Box sx={{ flex: "0 0 50%", height: 90, minWidth: 0, p: 1 }}>
                   <Chart
-                    options={getSparklineOptions("#f59e0b", "PLANNED RO - MAE")}
-                    series={[{ name: "PLANNED RO - MAE", data: plannedRoData }]}
+                    options={getSparklineOptions("#f59e0b", plannedLabel)}
+                    series={[{ name: plannedLabel, data: plannedRoData }]}
                     type="area"
                     height={90}
                   />
@@ -365,7 +392,7 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
               },
             }}
           >
-            <Box sx={{ px: 2, py: 2.5, height: "100%" }}>
+            <Box sx={{ px: 1, py: 1.5, height: "100%" }}>
               <Box
                 sx={{
                   display: "flex",
@@ -404,7 +431,7 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
                       color="text.secondary"
                       sx={{ fontSize: "0.75rem", mb: 0.5 }}
                     >
-                      AI ML RO - MAE
+                      {aimlLabel}
                     </Typography>
                     <Typography
                       variant="h5"
@@ -414,14 +441,14 @@ const TrendsChart: React.FC<TrendsChartProps> = ({ trends, loading }) => {
                         fontSize: "1.5rem",
                       }}
                     >
-                      {getCurrentValue(aimlRoData).toFixed(2)} su/h
+                      {getCurrentValue(aimlRoData).toFixed(2)} {units}
                     </Typography>
                   </Box>
                 </Box>
                 <Box sx={{ flex: "0 0 50%", height: 90, minWidth: 0, p: 1, mt: -1 }}>
                   <Chart
-                    options={getSparklineOptions("#10b981", "AI ML RO - MAE")}
-                    series={[{ name: "AI ML RO - MAE", data: aimlRoData }]}
+                    options={getSparklineOptions("#10b981", aimlLabel)}
+                    series={[{ name: aimlLabel, data: aimlRoData }]}
                     type="area"
                     height={90}
                   />

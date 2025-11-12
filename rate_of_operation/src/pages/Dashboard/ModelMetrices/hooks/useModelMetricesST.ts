@@ -1,11 +1,11 @@
 import { useState, useCallback } from "react";
-import { getModelMetricesROP } from "../../../../services/rate-of-operations";
+import { getModelMetricesST } from "../../../../services/rate-of-operations";
 
 interface ModelMetricesResponse {
   [key: string]: any;
 }
 
-export const useModelMetricesROP = () => {
+export const useModelMetricesST = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
   const [result, setResult] = useState<ModelMetricesResponse | null>(null);
@@ -14,14 +14,12 @@ export const useModelMetricesROP = () => {
     setLoading(true);
     setError(null);
     try {
-      console.log("Fetching ROP model metrics...");
-      const data: ModelMetricesResponse = await getModelMetricesROP();
-      console.log("ROP model metrics received:", data);
+      const data: ModelMetricesResponse = await getModelMetricesST();
       setResult(data);
       return data;
     } catch (err) {
-      console.error("Error fetching model metrics:", err);
       setError(err as Error);
+      console.error("Error fetching setup time model metrics:", err);
       return null;
     } finally {
       setLoading(false);

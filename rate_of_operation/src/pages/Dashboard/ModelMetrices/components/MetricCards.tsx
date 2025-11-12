@@ -12,12 +12,14 @@ interface MetricCardsProps {
   metrics: ROMetrics;
   selectedMonth?: string;
   loading?: boolean;
+  modelType?: "ROP" | "ST";
 }
 
 const MetricCards: React.FC<MetricCardsProps> = ({
   metrics,
   selectedMonth,
   loading,
+  modelType = "ROP",
 }) => {
   const theme = useTheme();
 
@@ -29,6 +31,11 @@ const MetricCards: React.FC<MetricCardsProps> = ({
       parseInt(month) - 1
     ).toLocaleDateString("en-US", { month: "long" });
     return `${monthName} ${year}`;
+  };
+
+  // Get the appropriate units based on model type
+  const getUnits = () => {
+    return modelType === "ST" ? "min/su" : "su/h";
   };
 
   const metricCards = [
@@ -44,25 +51,33 @@ const MetricCards: React.FC<MetricCardsProps> = ({
       format: (val: number) => val.toLocaleString(),
     },
     {
-      title: "PLANNED RO - MAE",
-      subtitle: "Planned Process Error",
+      title: modelType === "ST" ? "PLANNED Setup Time - MAE" : "PLANNED RO - MAE",
+      subtitle:
+        modelType === "ST" ? "Planned Setup Time Error" : "Planned Process Error",
       value: metrics.plannedRoMAE,
       icon: <Newspaper sx={{ fontSize: 32 }} />,
       color: "warning.main",
       bgcolor: "warning.light",
       contrastText: "warning.contrastText",
-      description: "Average NEW RO Mean Absolute Error",
+      description:
+        modelType === "ST"
+          ? "Average NEW Setup Time Mean Absolute Error"
+          : "Average NEW RO Mean Absolute Error",
       format: (val: number) => val.toFixed(2),
     },
     {
-      title: "AI ML RO - MAE",
-      subtitle: "AI ML Process Error",
+      title: modelType === "ST" ? "AI ML Setup Time - MAE" : "AI ML RO - MAE",
+      subtitle:
+        modelType === "ST" ? "AI ML Setup Time Error" : "AI ML Process Error",
       value: metrics.aimlRoMAE,
       icon: <AutoAwesome sx={{ fontSize: 32 }} />,
       color: "#10b981",
       bgcolor: "#10b981",
       contrastText: "info.contrastText",
-      description: "Average AIML RO Mean Absolute Error",
+      description:
+        modelType === "ST"
+          ? "Average AIML Setup Time Mean Absolute Error"
+          : "Average AIML RO Mean Absolute Error",
       format: (val: number) => val.toFixed(2),
     },
   ];
@@ -74,13 +89,13 @@ const MetricCards: React.FC<MetricCardsProps> = ({
           <Grid item xs={12} sm={6} lg={4} key={index}>
             <Card
               sx={{
-                height: 130,
-                borderRadius: 3,
-                boxShadow: theme.shadows[4],
-                transition: "all 0.3s ease",
+                height: 90, // reduced from 130
+                borderRadius: 2, // reduced from 3
+                boxShadow: theme.shadows[2], // reduced from 4
+                transition: "all 0.2s ease", // reduced duration
                 "&:hover": {
-                  transform: "translateY(-4px)",
-                  boxShadow: theme.shadows[8],
+                  transform: "translateY(-2px)", // reduced from -4px
+                  boxShadow: theme.shadows[4], // reduced from 8
                 },
               }}
             >
@@ -129,7 +144,7 @@ const MetricCards: React.FC<MetricCardsProps> = ({
                         ? "Loading..."
                         : card?.title === "Number of PO"
                         ? `${card.format(card.value)}`
-                        : `${card.format(card.value)} su/h`}
+                        : `${card.format(card.value)} ${getUnits()}`}
                     </Typography>
                   </Box>
                 </Box>

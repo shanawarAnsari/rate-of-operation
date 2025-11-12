@@ -32,15 +32,16 @@ import {
 } from "@mui/icons-material";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import { DataItem } from "../hooks/useRateOfOperationsMetrics";
+import { GroupByLevel } from "./GroupBySelector";
 import { useGroupedMetrics } from "../hooks/useGroupedMetrics";
-import GroupBySelector, { GroupByLevel } from "./GroupBySelector";
 
-interface MonthlyViewChartsProps {
+interface SetupTimeMonthlyViewChartsProps {
   selectedMonth?: string;
 }
 
-const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) => {
+const SetupTimeMonthlyViewCharts: React.FC<SetupTimeMonthlyViewChartsProps> = ({
+  selectedMonth,
+}) => {
   const theme = useTheme();
   const [groupBy, setGroupBy] = useState<GroupByLevel>("INTERFACE");
   const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
@@ -60,7 +61,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
     groupBy,
     selectedMonth,
     selectedGroups: selectedGroups.length > 0 ? selectedGroups : undefined,
-    modelType: "ROP",
+    modelType: "ST", // Setup Time model type
   });
 
   const handleGroupByChange = (newGroupBy: GroupByLevel) => {
@@ -118,16 +119,18 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
 
   // Get label for the selected groupBy
   const getGroupByLabel = (groupBy: GroupByLevel): string => {
-    const labels: Record<GroupByLevel, string> = {
-      INTERFACE: "Interface",
-      FACILITY_NAME: "Facility Name",
-      MACHINE: "Machine",
-      PACKER_RESOURCE: "Packer Resource",
-      PLATFORM_NAME: "Platform Name",
-      BUSINESS_UNIT: "Business Unit",
-      CATEGORY: "Category",
-    };
-    return labels[groupBy];
+    const groupByOptions = [
+      { value: "BUSINESS_UNIT", label: "Business Unit" },
+      { value: "CATEGORY", label: "Category" },
+      { value: "FACILITY_NAME", label: "Facility Name" },
+      { value: "INTERFACE", label: "Interface" },
+      { value: "MACHINE", label: "Machine" },
+      { value: "PACKER_RESOURCE", label: "Packer Resource" },
+      { value: "PLATFORM_NAME", label: "Platform Name" },
+    ];
+    return (
+      groupByOptions.find((option) => option.value === groupBy)?.label || groupBy
+    );
   };
 
   const groupByOptions: Array<{ value: GroupByLevel; label: string }> = [
@@ -140,18 +143,15 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
     { value: "PLATFORM_NAME", label: "Platform Name" },
   ];
 
-  // Chart Options
-  const chartOptions: ApexOptions = {
+  // Chart Options for Setup Time
+  const barChartOptions: ApexOptions = {
     chart: {
       type: "bar",
       height: 350,
       toolbar: {
-        show: true,
+        show: false,
       },
-      animations: {
-        enabled: true,
-        speed: 800,
-      },
+      background: "transparent",
     },
     plotOptions: {
       bar: {
@@ -167,7 +167,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
       formatter: (val: number) => val.toFixed(2),
       offsetY: -20,
       style: {
-        fontSize: "13px",
+        fontSize: "12px",
         colors: [theme.palette.text.primary],
       },
     },
@@ -181,88 +181,52 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
       labels: {
         style: {
           colors: theme.palette.text.secondary,
+          fontSize: "11px",
         },
         rotate: -45,
-        trim: true,
-        hideOverlappingLabels: true,
       },
-      tickPlacement: "on",
     },
     yaxis: {
       title: {
-        text: "Mean Absolute Error (MAE)",
+        text: "Mean Absolute Error (MAE) - min/su",
         style: {
           color: theme.palette.text.secondary,
-          fontWeight: 600,
-          fontSize: "14px",
         },
       },
       labels: {
         style: {
           colors: theme.palette.text.secondary,
-          fontSize: "14px",
         },
-        formatter: (val: number) => val.toFixed(2),
       },
     },
     fill: {
-      opacity: 0.9,
+      opacity: 1,
+    },
+    tooltip: {
+      y: {
+        formatter: function (val: number) {
+          return val.toFixed(4) + " min/su";
+        },
+      },
     },
     legend: {
       position: "top",
-      horizontalAlign: "center",
+      horizontalAlign: "left",
       labels: {
         colors: theme.palette.text.primary,
       },
     },
-    colors: ["#092acd", "#f59e0b"],
-    tooltip: {
-      theme: theme.palette.mode,
-      y: {
-        formatter: (val: number) => val.toFixed(4),
-      },
-      custom: ({ seriesIndex, dataPointIndex, w }) => {
-        const metric = groupedMetrics[dataPointIndex];
-        const series = w.config.series;
-        const aimlValue = series[0].data[dataPointIndex];
-        const plannedValue = series[1].data[dataPointIndex];
-
-        return `
-          <div style="padding: 10px; background: ${
-            theme.palette.background.paper
-          }; border: 1px solid ${theme.palette.divider};">
-            <div style="font-weight: 600; margin-bottom: 5px; color: ${
-              theme.palette.text.primary
-            };">
-              ${metric.groupName}
-            </div>
-            <div style="color: ${theme.palette.text.secondary}; font-size: 12px;">
-              <div>AI ML RO - MAE: <strong style="color: #092ACD;">${aimlValue.toFixed(
-                4
-              )}</strong></div>
-              <div>PLANNED RO - MAE: <strong style="color: #f59e0b;">${plannedValue.toFixed(
-                4
-              )}</strong></div>
-              <div>Process Orders: <strong>${metric.processOrderCount}</strong></div>
-            </div>
-          </div>
-        `;
-      },
-    },
-    grid: {
-      borderColor: theme.palette.divider,
-      strokeDashArray: 3,
-    },
+    colors: ["#10b981", "#f59e0b"], // Green for AI ML, Amber for Planned
   };
 
-  const chartSeries = [
+  const barChartSeries = [
     {
-      name: "AI ML RO - MAE",
-      data: groupedMetrics.map((m) => Number(m.aimlRoMAE.toFixed(4))),
+      name: "AI ML Setup Time - MAE",
+      data: groupedMetrics.map((m) => Number(m.aimlRoMAE.toFixed(2))),
     },
     {
-      name: "PLANNED RO - MAE",
-      data: groupedMetrics.map((m) => Number(m.plannedRoMAE.toFixed(4))),
+      name: "Planned Setup Time - MAE",
+      data: groupedMetrics.map((m) => Number(m.plannedRoMAE.toFixed(2))),
     },
   ];
 
@@ -272,7 +236,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
         <Card sx={{ borderRadius: 2 }}>
           <CardContent>
             <Typography variant="h6" gutterBottom>
-              Loading Monthly View Charts...
+              Loading Setup Time Monthly Charts...
             </Typography>
           </CardContent>
         </Card>
@@ -286,7 +250,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
         <Card sx={{ borderRadius: 2 }}>
           <CardContent>
             <Typography variant="h6" color="error" gutterBottom>
-              Error Loading Charts
+              Error Loading Setup Time Charts
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {error.message}
@@ -300,7 +264,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
   return (
     <Box>
       <Grid container spacing={3}>
-        {/* Grouped Bar Chart */}
+        {/* Setup Time Comparison Chart */}
         <Grid item xs={12}>
           <Card
             sx={{
@@ -320,7 +284,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
                     color: "text.secondary",
                   }}
                 >
-                  Error Analysis by {getGroupByLabel(groupBy)}
+                  Setup Time Analysis by {getGroupByLabel(groupBy)}
                 </Typography>
                 <Chip
                   label={
@@ -379,46 +343,29 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
                   }}
                 />
               </Box>
+
+              {/* Chart */}
               {groupedMetrics.length > 0 ? (
-                <>
-                  <Box sx={{ height: 350 }}>
-                    <Chart
-                      options={chartOptions}
-                      series={chartSeries}
-                      type="bar"
-                      height={350}
-                    />
-                  </Box>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ mt: 2, textAlign: "center" }}
-                  >
-                    {isShowingTopTen ? (
-                      <>
-                        Showing <strong>Top 10</strong>{" "}
-                        {getGroupByLabel(groupBy).toLowerCase()} with highest error
-                        values (out of {totalGroupsCount} total groups)
-                      </>
-                    ) : (
-                      <>
-                        Comparing AI ML RO and PLANNED RO Mean Absolute Error across{" "}
-                        {getGroupByLabel(groupBy).toLowerCase()}
-                      </>
-                    )}
-                  </Typography>
-                </>
+                <Box sx={{ height: 300 }}>
+                  <Chart
+                    options={barChartOptions}
+                    series={barChartSeries}
+                    type="bar"
+                    height={300}
+                  />
+                </Box>
               ) : (
                 <Box
                   sx={{
-                    height: 350,
+                    height: 300,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    color: "text.secondary",
                   }}
                 >
-                  <Typography variant="body2" color="text.secondary">
-                    No data available for the selected month and grouping
+                  <Typography>
+                    No data available for the selected criteria
                   </Typography>
                 </Box>
               )}
@@ -426,6 +373,84 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
           </Card>
         </Grid>
       </Grid>
+
+      {/* Group By Menu */}
+      <Menu
+        anchorEl={groupByAnchorEl}
+        open={groupByOpen}
+        onClose={handleGroupByClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        PaperProps={{
+          sx: {
+            mt: 0,
+            minWidth: 280,
+            maxWidth: 320,
+            borderRadius: 2,
+            boxShadow: theme.shadows[10],
+          },
+        }}
+      >
+        <Box sx={{ px: 2, py: 1 }}>
+          <Typography
+            variant="subtitle2"
+            sx={{
+              fontWeight: 600,
+              color: "text.primary",
+              fontSize: "0.875rem",
+            }}
+          >
+            Group By
+          </Typography>
+        </Box>
+        <Divider />
+        {groupByOptions.map((option) => (
+          <MenuItem
+            key={option.value}
+            selected={groupBy === option.value}
+            onClick={() => handleGroupByChange(option.value)}
+            sx={{
+              py: 1.5,
+              px: 2,
+              "&.Mui-selected": {
+                backgroundColor:
+                  theme.palette.mode === "light" ? "#f0f0f0" : "#2a2a2a",
+                "&:hover": {
+                  backgroundColor:
+                    theme.palette.mode === "light" ? "#e8e8e8" : "#333333",
+                },
+              },
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center", width: "100%" }}>
+              <Typography
+                sx={{
+                  flex: 1,
+                  fontSize: "0.875rem",
+                  fontWeight: groupBy === option.value ? 700 : 300,
+                }}
+              >
+                {option.label}
+              </Typography>
+              {groupBy === option.value && (
+                <CheckIcon
+                  sx={{
+                    fontSize: 18,
+                    color: "primary.main",
+                    ml: 1,
+                  }}
+                />
+              )}
+            </Box>
+          </MenuItem>
+        ))}
+      </Menu>
 
       {/* Filter Popover */}
       <Popover
@@ -619,86 +644,8 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
           </Box>
         </Box>
       </Popover>
-
-      {/* Group By Menu */}
-      <Menu
-        anchorEl={groupByAnchorEl}
-        open={groupByOpen}
-        onClose={handleGroupByClose}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "right",
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        PaperProps={{
-          sx: {
-            mt: 0,
-            minWidth: 280,
-            maxWidth: 320,
-            borderRadius: 2,
-            boxShadow: theme.shadows[10],
-          },
-        }}
-      >
-        <Box sx={{ px: 2, py: 1 }}>
-          <Typography
-            variant="subtitle2"
-            sx={{
-              fontWeight: 600,
-              color: "text.primary",
-              fontSize: "0.875rem",
-            }}
-          >
-            Group By
-          </Typography>
-        </Box>
-        <Divider />
-        {groupByOptions.map((option) => (
-          <MenuItem
-            key={option.value}
-            selected={groupBy === option.value}
-            onClick={() => handleGroupByChange(option.value)}
-            sx={{
-              py: 1.5,
-              px: 2,
-              "&.Mui-selected": {
-                backgroundColor:
-                  theme.palette.mode === "light" ? "#f0f0f0" : "#2a2a2a",
-                "&:hover": {
-                  backgroundColor:
-                    theme.palette.mode === "light" ? "#e8e8e8" : "#333333",
-                },
-              },
-            }}
-          >
-            <Box sx={{ display: "flex", alignItems: "center", width: "100%" }}>
-              <Typography
-                sx={{
-                  flex: 1,
-                  fontSize: "0.875rem",
-                  fontWeight: groupBy === option.value ? 700 : 300,
-                }}
-              >
-                {option.label}
-              </Typography>
-              {groupBy === option.value && (
-                <CheckIcon
-                  sx={{
-                    fontSize: 18,
-                    color: "primary.main",
-                    ml: 1,
-                  }}
-                />
-              )}
-            </Box>
-          </MenuItem>
-        ))}
-      </Menu>
     </Box>
   );
 };
 
-export default MonthlyViewCharts;
+export default SetupTimeMonthlyViewCharts;

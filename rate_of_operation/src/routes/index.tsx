@@ -23,14 +23,14 @@ const AppRoutes: React.FC = () => {
     <Routes>
       <Route path="/login/callback" element={<LoginCallback />} />
       <Route path="/login/callbackError" element={<LoginCallbackError />} />
-      <Route path="/" element={<AuthGuard><LandingPage /></AuthGuard>} />
-      <Route path="/dashboard" element={<AuthGuard><Dashboard /></AuthGuard>} />
-      <Route path="/operations/rate-of-operation" element={<AuthGuard><RateOfOperation /></AuthGuard>} />
-      <Route path="/operations/wrenchtime" element={<AuthGuard><Wrenchtime /></AuthGuard>} />
-      <Route path="/operations/financial-rate" element={<AuthGuard><FinancialRate /></AuthGuard>} />
-      <Route path="/super-user/review-status" element={<AuthGuard><ReviewStatus /></AuthGuard>} />
-      <Route path="/super-user/user-management" element={<AuthGuard><UserManagement /></AuthGuard>} />
-      <Route path="/super-user/exclusion-list" element={<AuthGuard><ExclusionList /></AuthGuard>} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/operations/rate-of-operation" element={<RateOfOperation />} />
+      <Route path="/operations/wrenchtime" element={<Wrenchtime />} />
+      <Route path="/operations/financial-rate" element={<FinancialRate />} />
+      <Route path="/super-user/review-status" element={<ReviewStatus />} />
+      <Route path="/super-user/user-management" element={<UserManagement />} />
+      <Route path="/super-user/exclusion-list" element={<ExclusionList />} />
     </Routes>
   );
 };

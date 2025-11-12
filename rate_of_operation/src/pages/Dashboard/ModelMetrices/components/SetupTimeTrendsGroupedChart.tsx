@@ -23,7 +23,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import {
-  BarChart as BarChartIcon,
+  ShowChart as ShowChartIcon,
   ManageSearch as FilterListIcon,
   Search as SearchIcon,
   Close as CloseIcon,
@@ -32,15 +32,10 @@ import {
 } from "@mui/icons-material";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import { DataItem } from "../hooks/useRateOfOperationsMetrics";
-import { useGroupedMetrics } from "../hooks/useGroupedMetrics";
-import GroupBySelector, { GroupByLevel } from "./GroupBySelector";
+import { GroupByLevel } from "./GroupBySelector";
+import { useTrendsGroupedMetrics } from "../hooks/useTrendsGroupedMetrics";
 
-interface MonthlyViewChartsProps {
-  selectedMonth?: string;
-}
-
-const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) => {
+const SetupTimeTrendsGroupedChart: React.FC = () => {
   const theme = useTheme();
   const [groupBy, setGroupBy] = useState<GroupByLevel>("INTERFACE");
   const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
@@ -50,17 +45,16 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
   const [searchTerm, setSearchTerm] = useState("");
 
   const {
-    groupedMetrics,
+    groupedTrendsMetrics,
     totalGroupsCount,
     allAvailableGroups,
-    isShowingTopTen,
+    isShowingTopTwo,
     loading,
     error,
-  } = useGroupedMetrics({
+  } = useTrendsGroupedMetrics({
     groupBy,
-    selectedMonth,
     selectedGroups: selectedGroups.length > 0 ? selectedGroups : undefined,
-    modelType: "ROP",
+    modelType: "ST", // Setup Time model type
   });
 
   const handleGroupByChange = (newGroupBy: GroupByLevel) => {
@@ -93,7 +87,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
     setTempSelectedGroups((prev) => {
       if (prev.includes(group)) {
         return prev.filter((g) => g !== group);
-      } else if (prev.length < 10) {
+      } else if (prev.length < 6) {
         return [...prev, group];
       }
       return prev;
@@ -118,16 +112,18 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
 
   // Get label for the selected groupBy
   const getGroupByLabel = (groupBy: GroupByLevel): string => {
-    const labels: Record<GroupByLevel, string> = {
-      INTERFACE: "Interface",
-      FACILITY_NAME: "Facility Name",
-      MACHINE: "Machine",
-      PACKER_RESOURCE: "Packer Resource",
-      PLATFORM_NAME: "Platform Name",
-      BUSINESS_UNIT: "Business Unit",
-      CATEGORY: "Category",
-    };
-    return labels[groupBy];
+    const groupByOptions = [
+      { value: "BUSINESS_UNIT", label: "Business Unit" },
+      { value: "CATEGORY", label: "Category" },
+      { value: "FACILITY_NAME", label: "Facility Name" },
+      { value: "INTERFACE", label: "Interface" },
+      { value: "MACHINE", label: "Machine" },
+      { value: "PACKER_RESOURCE", label: "Packer Resource" },
+      { value: "PLATFORM_NAME", label: "Platform Name" },
+    ];
+    return (
+      groupByOptions.find((option) => option.value === groupBy)?.label || groupBy
+    );
   };
 
   const groupByOptions: Array<{ value: GroupByLevel; label: string }> = [
@@ -140,73 +136,119 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
     { value: "PLATFORM_NAME", label: "Platform Name" },
   ];
 
-  // Chart Options
-  const chartOptions: ApexOptions = {
+  // Prepare categories (all unique months across all groups)
+  const allMonths = new Set<string>();
+  groupedTrendsMetrics.forEach((group) => {
+    group.trendData.forEach((point) => {
+      const monthKey = `${point.month.slice(0, 3)} ${point.year}`;
+      allMonths.add(monthKey);
+    });
+  });
+  const categories = Array.from(allMonths).sort((a, b) => {
+    const [aMonth, aYear] = a.split(" ");
+    const [bMonth, bYear] = b.split(" ");
+    const aDate = new Date(`${aMonth} 1, ${aYear}`);
+    const bDate = new Date(`${bMonth} 1, ${bYear}`);
+    return aDate.getTime() - bDate.getTime();
+  });
+
+  // Color palette for groups
+  const colorPalette = [
+    "#3b82f6",
+    "#10b981",
+    "#f59e0b",
+    "#ef4444",
+    "#8b5cf6",
+    "#06b6d4",
+    "#84cc16",
+    "#f97316",
+    "#ec4899",
+    "#6366f1",
+  ];
+
+  // Prepare series data
+  const combinedSeries: Array<{
+    name: string;
+    data: number[];
+    color: string;
+    type: string;
+  }> = [];
+
+  groupedTrendsMetrics.forEach((group, groupIndex) => {
+    const aimlData: number[] = [];
+    const plannedData: number[] = [];
+    const baseColor = colorPalette[groupIndex % colorPalette.length];
+
+    categories.forEach((category) => {
+      const [monthName, year] = category.split(" ");
+      const dataPoint = group.trendData.find(
+        (point) =>
+          point.month.slice(0, 3) === monthName && point.year.toString() === year
+      );
+
+      aimlData.push(dataPoint ? Number(dataPoint.aimlRoMAE.toFixed(2)) : 0);
+      plannedData.push(dataPoint ? Number(dataPoint.plannedRoMAE.toFixed(2)) : 0);
+    });
+
+    // AI ML Setup Time series
+    combinedSeries.push({
+      name: `${group.groupName} - AI ML Setup Time`,
+      data: aimlData,
+      color: baseColor,
+      type: "line",
+    });
+
+    // Planned Setup Time series
+    combinedSeries.push({
+      name: `${group.groupName} - Planned Setup Time`,
+      data: plannedData,
+      color: baseColor + "80", // Add transparency
+      type: "line",
+    });
+  });
+
+  const combinedChartOptions: ApexOptions = {
     chart: {
-      type: "bar",
-      height: 350,
+      type: "line",
+      height: 400,
       toolbar: {
-        show: true,
+        show: false,
       },
-      animations: {
-        enabled: true,
-        speed: 800,
-      },
-    },
-    plotOptions: {
-      bar: {
-        horizontal: false,
-        columnWidth: "70%",
-        dataLabels: {
-          position: "top",
-        },
-      },
-    },
-    dataLabels: {
-      enabled: true,
-      formatter: (val: number) => val.toFixed(2),
-      offsetY: -20,
-      style: {
-        fontSize: "13px",
-        colors: [theme.palette.text.primary],
-      },
+      background: "transparent",
     },
     stroke: {
-      show: true,
       width: 2,
-      colors: ["transparent"],
+      curve: "smooth",
     },
     xaxis: {
-      categories: groupedMetrics.map((m) => m.groupName),
+      categories: categories,
       labels: {
         style: {
           colors: theme.palette.text.secondary,
+          fontSize: "11px",
         },
         rotate: -45,
-        trim: true,
-        hideOverlappingLabels: true,
       },
-      tickPlacement: "on",
     },
     yaxis: {
       title: {
-        text: "Mean Absolute Error (MAE)",
+        text: "Mean Absolute Error (MAE) - min/su",
         style: {
           color: theme.palette.text.secondary,
-          fontWeight: 600,
-          fontSize: "14px",
         },
       },
       labels: {
         style: {
           colors: theme.palette.text.secondary,
-          fontSize: "14px",
         },
-        formatter: (val: number) => val.toFixed(2),
       },
     },
-    fill: {
-      opacity: 0.9,
+    tooltip: {
+      y: {
+        formatter: function (val: number) {
+          return val.toFixed(4) + " min/su";
+        },
+      },
     },
     legend: {
       position: "top",
@@ -214,57 +256,13 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
       labels: {
         colors: theme.palette.text.primary,
       },
-    },
-    colors: ["#092acd", "#f59e0b"],
-    tooltip: {
-      theme: theme.palette.mode,
-      y: {
-        formatter: (val: number) => val.toFixed(4),
-      },
-      custom: ({ seriesIndex, dataPointIndex, w }) => {
-        const metric = groupedMetrics[dataPointIndex];
-        const series = w.config.series;
-        const aimlValue = series[0].data[dataPointIndex];
-        const plannedValue = series[1].data[dataPointIndex];
-
-        return `
-          <div style="padding: 10px; background: ${
-            theme.palette.background.paper
-          }; border: 1px solid ${theme.palette.divider};">
-            <div style="font-weight: 600; margin-bottom: 5px; color: ${
-              theme.palette.text.primary
-            };">
-              ${metric.groupName}
-            </div>
-            <div style="color: ${theme.palette.text.secondary}; font-size: 12px;">
-              <div>AI ML RO - MAE: <strong style="color: #092ACD;">${aimlValue.toFixed(
-                4
-              )}</strong></div>
-              <div>PLANNED RO - MAE: <strong style="color: #f59e0b;">${plannedValue.toFixed(
-                4
-              )}</strong></div>
-              <div>Process Orders: <strong>${metric.processOrderCount}</strong></div>
-            </div>
-          </div>
-        `;
-      },
+      fontSize: "12px",
     },
     grid: {
       borderColor: theme.palette.divider,
-      strokeDashArray: 3,
     },
+    colors: combinedSeries.map((series) => series.color || "#3b82f6"),
   };
-
-  const chartSeries = [
-    {
-      name: "AI ML RO - MAE",
-      data: groupedMetrics.map((m) => Number(m.aimlRoMAE.toFixed(4))),
-    },
-    {
-      name: "PLANNED RO - MAE",
-      data: groupedMetrics.map((m) => Number(m.plannedRoMAE.toFixed(4))),
-    },
-  ];
 
   if (loading) {
     return (
@@ -272,7 +270,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
         <Card sx={{ borderRadius: 2 }}>
           <CardContent>
             <Typography variant="h6" gutterBottom>
-              Loading Monthly View Charts...
+              Loading Setup Time Trends Chart...
             </Typography>
           </CardContent>
         </Card>
@@ -286,7 +284,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
         <Card sx={{ borderRadius: 2 }}>
           <CardContent>
             <Typography variant="h6" color="error" gutterBottom>
-              Error Loading Charts
+              Error Loading Setup Time Trends Chart
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {error.message}
@@ -300,7 +298,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
   return (
     <Box>
       <Grid container spacing={3}>
-        {/* Grouped Bar Chart */}
+        {/* Combined Trends Chart */}
         <Grid item xs={12}>
           <Card
             sx={{
@@ -311,7 +309,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
           >
             <CardContent sx={{ p: 2.5 }}>
               <Box sx={{ display: "flex", alignItems: "center", mb: 3, gap: 1 }}>
-                <BarChartIcon sx={{ color: "text.secondary" }} />
+                <ShowChartIcon sx={{ color: "text.secondary" }} />
                 <Typography
                   sx={{
                     fontWeight: 600,
@@ -320,13 +318,13 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
                     color: "text.secondary",
                   }}
                 >
-                  Error Analysis by {getGroupByLabel(groupBy)}
+                  Setup Time Trends by {getGroupByLabel(groupBy)}
                 </Typography>
                 <Chip
                   label={
-                    isShowingTopTen
-                      ? `Showing 10 of ${totalGroupsCount}`
-                      : `Showing ${groupedMetrics.length} of ${totalGroupsCount}`
+                    isShowingTopTwo
+                      ? `Showing 2 of ${totalGroupsCount}`
+                      : `Showing ${selectedGroups.length} of ${totalGroupsCount}`
                   }
                   size="medium"
                   icon={<FilterListIcon />}
@@ -379,34 +377,88 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
                   }}
                 />
               </Box>
-              {groupedMetrics.length > 0 ? (
+
+              {/* Chart */}
+              {combinedSeries.length > 0 ? (
                 <>
                   <Box sx={{ height: 350 }}>
                     <Chart
-                      options={chartOptions}
-                      series={chartSeries}
-                      type="bar"
+                      options={combinedChartOptions}
+                      series={combinedSeries}
+                      type="line"
                       height={350}
                     />
                   </Box>
                   <Typography
                     variant="body2"
                     color="text.secondary"
-                    sx={{ mt: 2, textAlign: "center" }}
+                    sx={{ mb: 2, textAlign: "center" }}
                   >
-                    {isShowingTopTen ? (
-                      <>
-                        Showing <strong>Top 10</strong>{" "}
-                        {getGroupByLabel(groupBy).toLowerCase()} with highest error
-                        values (out of {totalGroupsCount} total groups)
-                      </>
-                    ) : (
-                      <>
-                        Comparing AI ML RO and PLANNED RO Mean Absolute Error across{" "}
-                        {getGroupByLabel(groupBy).toLowerCase()}
-                      </>
-                    )}
+                    {isShowingTopTwo
+                      ? `Showing setup time trends for top 2 ${getGroupByLabel(
+                          groupBy
+                        ).toLowerCase()} with highest average error values`
+                      : `Setup time error trends comparison for selected ${getGroupByLabel(
+                          groupBy
+                        ).toLowerCase()}`}
                   </Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      gap: 3,
+                      mt: 2,
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                      <svg width="40" height="10" style={{ display: "block" }}>
+                        <line
+                          x1="2"
+                          y1="5"
+                          x2="38"
+                          y2="5"
+                          stroke={theme.palette.text.primary}
+                          strokeWidth="3"
+                          strokeDasharray="6, 4"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          fontWeight: 600,
+                          fontSize: "0.875rem",
+                          color: "text.primary",
+                        }}
+                      >
+                        AI ML Setup Time - MAE
+                      </Typography>
+                    </Box>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                      <svg width="40" height="10" style={{ display: "block" }}>
+                        <line
+                          x1="2"
+                          y1="5"
+                          x2="38"
+                          y2="5"
+                          stroke={theme.palette.text.primary}
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          fontWeight: 600,
+                          fontSize: "0.875rem",
+                          color: "text.primary",
+                        }}
+                      >
+                        PLANNED Setup Time - MAE
+                      </Typography>
+                    </Box>
+                  </Box>
                 </>
               ) : (
                 <Box
@@ -415,17 +467,94 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    color: "text.secondary",
                   }}
                 >
-                  <Typography variant="body2" color="text.secondary">
-                    No data available for the selected month and grouping
-                  </Typography>
+                  <Typography>No trends data available</Typography>
                 </Box>
               )}
             </CardContent>
           </Card>
         </Grid>
       </Grid>
+
+      {/* Group By Menu */}
+      <Menu
+        anchorEl={groupByAnchorEl}
+        open={groupByOpen}
+        onClose={handleGroupByClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        PaperProps={{
+          sx: {
+            mt: 0,
+            minWidth: 280,
+            maxWidth: 320,
+            borderRadius: 2,
+            boxShadow: theme.shadows[10],
+          },
+        }}
+      >
+        <Box sx={{ px: 2, py: 1 }}>
+          <Typography
+            variant="subtitle2"
+            sx={{
+              fontWeight: 600,
+              color: "text.primary",
+              fontSize: "0.875rem",
+            }}
+          >
+            Group By
+          </Typography>
+        </Box>
+        <Divider />
+        {groupByOptions.map((option) => (
+          <MenuItem
+            key={option.value}
+            selected={groupBy === option.value}
+            onClick={() => handleGroupByChange(option.value)}
+            sx={{
+              py: 1.5,
+              px: 2,
+              "&.Mui-selected": {
+                backgroundColor:
+                  theme.palette.mode === "light" ? "#f0f0f0" : "#2a2a2a",
+                "&:hover": {
+                  backgroundColor:
+                    theme.palette.mode === "light" ? "#e8e8e8" : "#333333",
+                },
+              },
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center", width: "100%" }}>
+              <Typography
+                sx={{
+                  flex: 1,
+                  fontSize: "0.875rem",
+                  fontWeight: groupBy === option.value ? 700 : 300,
+                }}
+              >
+                {option.label}
+              </Typography>
+              {groupBy === option.value && (
+                <CheckIcon
+                  sx={{
+                    fontSize: 18,
+                    color: "primary.main",
+                    ml: 1,
+                  }}
+                />
+              )}
+            </Box>
+          </MenuItem>
+        ))}
+      </Menu>
 
       {/* Filter Popover */}
       <Popover
@@ -465,7 +594,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
                 Filter {getGroupByLabel(groupBy)}
               </Typography>
               <Typography variant="caption" color="text.secondary">
-                Select up to 10 items
+                Select up to 6 items
               </Typography>
             </Box>
             <IconButton size="small" onClick={handleFilterClose}>
@@ -476,7 +605,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
           {/* Selected Count Badge */}
           <Box sx={{ mb: 2 }}>
             <Chip
-              label={`${tempSelectedGroups.length} of 10 selected`}
+              label={`${tempSelectedGroups.length} of 6 selected`}
               color={"primary"}
               size="small"
               sx={{ fontWeight: 600 }}
@@ -533,7 +662,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
               ) : (
                 filteredGroups.map((group, index) => {
                   const isSelected = tempSelectedGroups.includes(group);
-                  const isDisabled = !isSelected && tempSelectedGroups.length >= 10;
+                  const isDisabled = !isSelected && tempSelectedGroups.length >= 6;
 
                   return (
                     <React.Fragment key={group}>
@@ -619,86 +748,8 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
           </Box>
         </Box>
       </Popover>
-
-      {/* Group By Menu */}
-      <Menu
-        anchorEl={groupByAnchorEl}
-        open={groupByOpen}
-        onClose={handleGroupByClose}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "right",
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        PaperProps={{
-          sx: {
-            mt: 0,
-            minWidth: 280,
-            maxWidth: 320,
-            borderRadius: 2,
-            boxShadow: theme.shadows[10],
-          },
-        }}
-      >
-        <Box sx={{ px: 2, py: 1 }}>
-          <Typography
-            variant="subtitle2"
-            sx={{
-              fontWeight: 600,
-              color: "text.primary",
-              fontSize: "0.875rem",
-            }}
-          >
-            Group By
-          </Typography>
-        </Box>
-        <Divider />
-        {groupByOptions.map((option) => (
-          <MenuItem
-            key={option.value}
-            selected={groupBy === option.value}
-            onClick={() => handleGroupByChange(option.value)}
-            sx={{
-              py: 1.5,
-              px: 2,
-              "&.Mui-selected": {
-                backgroundColor:
-                  theme.palette.mode === "light" ? "#f0f0f0" : "#2a2a2a",
-                "&:hover": {
-                  backgroundColor:
-                    theme.palette.mode === "light" ? "#e8e8e8" : "#333333",
-                },
-              },
-            }}
-          >
-            <Box sx={{ display: "flex", alignItems: "center", width: "100%" }}>
-              <Typography
-                sx={{
-                  flex: 1,
-                  fontSize: "0.875rem",
-                  fontWeight: groupBy === option.value ? 700 : 300,
-                }}
-              >
-                {option.label}
-              </Typography>
-              {groupBy === option.value && (
-                <CheckIcon
-                  sx={{
-                    fontSize: 18,
-                    color: "primary.main",
-                    ml: 1,
-                  }}
-                />
-              )}
-            </Box>
-          </MenuItem>
-        ))}
-      </Menu>
     </Box>
   );
 };
 
-export default MonthlyViewCharts;
+export default SetupTimeTrendsGroupedChart;

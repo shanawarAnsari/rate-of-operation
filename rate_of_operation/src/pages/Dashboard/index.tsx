@@ -2,12 +2,24 @@ import React from "react";
 import TabPanel from "./TabPannel";
 import ModelMetrices from "./ModelMetrices";
 import UsageMetrices from "./usageDashboard/index";
-import { Card, Tabs, Tab, Box, Stack, useTheme, Typography } from '@mui/material';
-import InsightsIcon from '@mui/icons-material/Insights';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import { Dashboard as DashboardTwoTone } from '@mui/icons-material';
+import {
+  Card,
+  Tabs,
+  Tab,
+  Box,
+  Stack,
+  useTheme,
+  Typography,
+  Divider,
+} from "@mui/material";
+import InsightsIcon from "@mui/icons-material/Insights";
+import BarChartIcon from "@mui/icons-material/BarChart";
+import { Dashboard as DashboardTwoTone } from "@mui/icons-material";
 import { useUserStore } from "../../store/userStore";
-import { useUserByEmail, useUsers } from "../SuperUser/UserManagement/hooks/useUserManegement";
+import {
+  useUserByEmail,
+  useUsers,
+} from "../SuperUser/UserManagement/hooks/useUserManegement";
 import ModelMetrics from "./ModelMetrices";
 interface User {
   email: string;
@@ -15,28 +27,26 @@ interface User {
   interface: string[];
   updated_on: string;
   updated_by: string;
-  role: string
+  role: string;
 }
 
 const Dashboard: React.FC = () => {
   const theme = useTheme();
-  const { user: currentUser } = useUserStore()
-  const { user } = useUserByEmail(currentUser?.email)
+  const { user: currentUser } = useUserStore();
+  const { user } = useUserByEmail(currentUser?.email);
   const [tabIndex, setTabIndex] = React.useState(0);
   const handleTabChange = (_event: any, newValue: number) => {
     setTabIndex(newValue);
   };
   return (
-    <Card sx={{ pt: 0, }}>
+    <Card sx={{ pt: 0 }}>
       <Stack
         direction="row"
         alignItems={"center"}
         justifyContent="space-between"
         sx={{
           backgroundColor:
-            theme.palette.mode === "light"
-              ? theme.palette.grey[200]
-              : "black",
+            theme.palette.mode === "light" ? theme.palette.grey[200] : "black",
           color:
             theme.palette.mode === "light"
               ? theme.palette.grey[800]
@@ -79,34 +89,47 @@ const Dashboard: React.FC = () => {
         </Stack>
       </Stack>
       <Box sx={{ px: 0 }}>
-        <Tabs value={tabIndex} onChange={handleTabChange} aria-label="dashboard tabs">
+        <Tabs
+          value={tabIndex}
+          onChange={handleTabChange}
+          aria-label="dashboard tabs"
+        >
           <Tab
             label={
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 <InsightsIcon fontSize="small" />
                 Model Metrices
               </Box>
             }
           />
-          {user && user[0]?.role === "Admin" && <Tab
-            label={
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <BarChartIcon fontSize="small" />
-                Usage Metrices
-              </Box>
-            }
-          />}
+          {user && user[0]?.role === "Admin" && (
+            <Tab
+              label={
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <BarChartIcon fontSize="small" />
+                  Usage Metrices
+                </Box>
+              }
+            />
+          )}
         </Tabs>
+        <Divider
+          sx={{
+            border: "1px solid",
+            mt: -0.25,
+            borderColor: theme.palette.divider,
+          }}
+        />
         <TabPanel value={tabIndex} index={0}>
           <ModelMetrics />
         </TabPanel>
-        {user && user[0]?.role === "Admin" &&
+        {user && user[0]?.role === "Admin" && (
           <TabPanel value={tabIndex} index={1}>
             <UsageMetrices />
-          </TabPanel>}
+          </TabPanel>
+        )}
       </Box>
     </Card>
-
   );
 };
 

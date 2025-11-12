@@ -5,11 +5,93 @@ export const getRecipies = async (req) => {
     .then((data) => data)
     .catch((error) => error);
 };
+// Legacy endpoints (keep for backward compatibility)
 export const getModelMetricesROP = async (req) => {
-  return postApi("rate-of-operations/getMonitorData", req)
+  return getApi("rate-of-operations/getModelData", req)
     .then((data) => data)
     .catch((error) => error);
 };
+
+export const getModelMetricesST = async (req) => {
+  return getApi("wrenchtime/getModelData", req)
+    .then((data) => data)
+    .catch((error) => error);
+};
+
+// New structured endpoints for Rate of Operations
+export const getAvailableMonths = async (modelType = "ROP") => {
+  const endpoint =
+    modelType === "ROP"
+      ? "rate-of-operations/available-months"
+      : "wrenchtime/available-months";
+  return getApi(endpoint)
+    .then((data) => data)
+    .catch((error) => error);
+};
+
+export const getMetricCards = async (modelType = "ROP", selectedMonth) => {
+  const endpoint =
+    modelType === "ROP"
+      ? "rate-of-operations/metric-cards"
+      : "wrenchtime/metric-cards";
+  const params = selectedMonth ? { selectedMonth } : {};
+  return getApi(endpoint, params)
+    .then((data) => data)
+    .catch((error) => error);
+};
+
+export const getMonthlyTrends = async (modelType = "ROP") => {
+  const endpoint =
+    modelType === "ROP"
+      ? "rate-of-operations/monthly-trends"
+      : "wrenchtime/monthly-trends";
+  return getApi(endpoint)
+    .then((data) => data)
+    .catch((error) => error);
+};
+
+export const getGroupedMetrics = async (options = {}) => {
+  const {
+    modelType = "ROP",
+    groupBy = "INTERFACE",
+    selectedMonth,
+    selectedGroups,
+  } = options;
+
+  const endpoint =
+    modelType === "ROP"
+      ? "rate-of-operations/grouped-metrics"
+      : "wrenchtime/grouped-metrics";
+
+  const params = {
+    groupBy,
+    ...(selectedMonth && { selectedMonth }),
+    ...(selectedGroups && { selectedGroups: selectedGroups.join(",") }),
+  };
+
+  return getApi(endpoint, params)
+    .then((data) => data)
+    .catch((error) => error);
+};
+
+export const getTrendsGroupedMetrics = async (options = {}) => {
+  const { modelType = "ROP", groupBy = "INTERFACE", selectedGroups } = options;
+
+  const endpoint =
+    modelType === "ROP"
+      ? "rate-of-operations/trends-grouped-metrics"
+      : "wrenchtime/trends-grouped-metrics";
+
+  const params = {
+    groupBy,
+    ...(selectedGroups && { selectedGroups: selectedGroups.join(",") }),
+  };
+
+  return getApi(endpoint, params)
+    .then((data) => data)
+    .catch((error) => error);
+};
+
 export const getFilters = async () => {
   return getApi("rate-of-operations/getFilters")
     .then((data) => data)
@@ -41,7 +123,10 @@ export const updateRecipes = async (req) => {
 export const downloadRecipes = async (req) => {
   try {
     const fileType = req.fileType || "csv";
-    const response = await downloadAsExcelApi("rate-of-operations/downloadRecipes", req);
+    const response = await downloadAsExcelApi(
+      "rate-of-operations/downloadRecipes",
+      req
+    );
 
     // Create filename with timestamp
     const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, "-");

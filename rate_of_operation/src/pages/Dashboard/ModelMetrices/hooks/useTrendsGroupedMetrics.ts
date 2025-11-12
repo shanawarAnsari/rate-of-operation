@@ -1,6 +1,6 @@
-import { useMemo } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { GroupByLevel } from "../components/GroupBySelector";
-import { DataItem } from "./useRateOfOperationsMetrics";
+import { getTrendsGroupedMetrics } from "../../../../services/rate-of-operations";
 
 export interface TrendDataPoint {
   month: string;
@@ -17,213 +17,63 @@ export interface GroupedTrendMetric {
 }
 
 interface UseTrendsGroupedMetricsProps {
-  data: DataItem[];
   groupBy: GroupByLevel;
   selectedGroups?: string[];
+  modelType?: "ROP" | "ST";
 }
 
-const getGroupKey = (item: DataItem, groupBy: GroupByLevel): string => {
-  switch (groupBy) {
-    case "INTERFACE":
-      return item.INTERFACE || "Unknown";
-    case "FACILITY_NAME":
-      return item.FACILITY_NAME || "Unknown";
-    case "MACHINE":
-      return item.MACHINE || "Unknown";
-    case "PACKER_RESOURCE":
-      return item.PACKER_RESOURCE || "Unknown";
-    case "PLATFORM_NAME":
-      return item.PLATFORM || "Unknown";
-    default:
-      return "Unknown";
-  }
-};
-
 export const useTrendsGroupedMetrics = ({
-  data,
   groupBy,
   selectedGroups,
+  modelType = "ROP",
 }: UseTrendsGroupedMetricsProps) => {
-  const groupedTrendsMetrics = useMemo((): GroupedTrendMetric[] => {
-    if (!data || data.length === 0) return [];
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<Error | null>(null);
+  const [groupedTrendsMetrics, setGroupedTrendsMetrics] = useState<
+    GroupedTrendMetric[]
+  >([]);
+  const [allAvailableGroups, setAllAvailableGroups] = useState<string[]>([]);
+  const [totalGroupsCount, setTotalGroupsCount] = useState<number>(0);
 
-    // First, group by group key, then by month
-    const groupMap = new Map<
-      string,
-      Map<
-        string,
-        {
-          month: string;
-          year: number;
-          aimlErrors: number[];
-          plannedErrors: number[];
-          count: number;
-          processOrders: Set<string>;
-        }
-      >
-    >();
+  const fetchTrendsGroupedMetrics = useCallback(async () => {
+    setLoading(true);
+    setError(null);
 
-    data.forEach((item) => {
-      if (!item.ACTUAL_START_DATE) return;
+    try {
+      const response = await getTrendsGroupedMetrics({
+        modelType,
+        groupBy,
+        selectedGroups,
+      });
 
-      const groupKey = getGroupKey(item, groupBy);
-      const date = new Date(item.ACTUAL_START_DATE);
-      const monthYear = `${date.getFullYear()}-${String(
-        date.getMonth() + 1
-      ).padStart(2, "0")}`;
-      const monthName = date.toLocaleDateString("en-US", { month: "long" });
-      const year = date.getFullYear();
-
-      if (!groupMap.has(groupKey)) {
-        groupMap.set(groupKey, new Map());
+      if (response && response.groupedTrendsMetrics) {
+        setGroupedTrendsMetrics(response.groupedTrendsMetrics);
+        setAllAvailableGroups(response.allAvailableGroups || []);
+        setTotalGroupsCount(response.totalGroupsCount || 0);
       }
-
-      const monthsMap = groupMap.get(groupKey)!;
-      if (!monthsMap.has(monthYear)) {
-        monthsMap.set(monthYear, {
-          month: monthName,
-          year: year,
-          aimlErrors: [],
-          plannedErrors: [],
-          count: 0,
-          processOrders: new Set(),
-        });
-      }
-
-      const monthData = monthsMap.get(monthYear)!;
-      monthData.count++;
-      monthData.processOrders.add(item.PROCESS_ORDER_NUMBER);
-
-      if (item.AIML_RO_ABSOLUTE_ERROR) {
-        const val = parseFloat(item.AIML_RO_ABSOLUTE_ERROR);
-        if (!isNaN(val)) {
-          monthData.aimlErrors.push(val);
-        }
-      }
-
-      if (item.NEW_RO_ABSOLUTE_ERROR) {
-        const val = parseFloat(item.NEW_RO_ABSOLUTE_ERROR);
-        if (!isNaN(val)) {
-          monthData.plannedErrors.push(val);
-        }
-      }
-    });
-
-    // Convert to GroupedTrendMetric array
-    const groupedTrends = Array.from(groupMap.entries()).map(
-      ([groupName, monthsMap]) => {
-        const trendData = Array.from(monthsMap.entries())
-          .map(([monthYear, data]) => ({
-            month: data.month,
-            year: data.year,
-            aimlRoMAE:
-              data.aimlErrors.length > 0
-                ? data.aimlErrors.reduce((sum, val) => sum + val, 0) /
-                data.aimlErrors.length
-                : 0,
-            plannedRoMAE:
-              data.plannedErrors.length > 0
-                ? data.plannedErrors.reduce((sum, val) => sum + val, 0) /
-                data.plannedErrors.length
-                : 0,
-            processOrderCount: data.processOrders.size,
-            count: data.count,
-          }))
-          .sort((a, b) => {
-            if (a.year !== b.year) return a.year - b.year;
-            return (
-              new Date(`${a.month} 1, ${a.year}`).getMonth() -
-              new Date(`${b.month} 1, ${b.year}`).getMonth()
-            );
-          });
-
-        return {
-          groupName,
-          trendData,
-        };
-      }
-    );
-
-    // Calculate average combined error for each group to determine top performers
-    const groupsWithAvgError = groupedTrends.map((group) => {
-      const avgCombinedError =
-        group.trendData.reduce(
-          (sum, point) => sum + (point.aimlRoMAE + point.plannedRoMAE) / 2,
-          0
-        ) / group.trendData.length;
-
-      return {
-        ...group,
-        avgCombinedError,
-      };
-    });
-
-    // Sort by highest average error first
-    const sortedByError = groupsWithAvgError.sort(
-      (a, b) => b.avgCombinedError - a.avgCombinedError
-    );
-
-    // If user has selected specific groups, show only those (up to 6)
-    if (selectedGroups && selectedGroups.length > 0) {
-      const filtered = sortedByError.filter((group) =>
-        selectedGroups.includes(group.groupName)
-      );
-      return filtered
-        .sort((a, b) =>
-          a.groupName.localeCompare(b.groupName, undefined, {
-            numeric: true,
-            sensitivity: "base",
-          })
-        )
-        .map(({ groupName, trendData }) => ({ groupName, trendData }));
+    } catch (err) {
+      console.error("Error fetching trends grouped metrics:", err);
+      setError(err as Error);
+    } finally {
+      setLoading(false);
     }
+  }, [groupBy, selectedGroups, modelType]);
 
-    // Default: show only top 2 with highest average errors
-    return sortedByError
-      .slice(0, 2)
-      .sort((a, b) =>
-        a.groupName.localeCompare(b.groupName, undefined, {
-          numeric: true,
-          sensitivity: "base",
-        })
-      )
-      .map(({ groupName, trendData }) => ({ groupName, trendData }));
-  }, [data, groupBy, selectedGroups]);
+  useEffect(() => {
+    fetchTrendsGroupedMetrics();
+  }, [fetchTrendsGroupedMetrics]);
 
-  const allAvailableGroups = useMemo((): string[] => {
-    if (!data || data.length === 0) return [];
-
-    const uniqueGroups = new Set<string>();
-    data.forEach((item) => {
-      if (!item.ACTUAL_START_DATE) return;
-      const groupKey = getGroupKey(item, groupBy);
-      uniqueGroups.add(groupKey);
-    });
-
-    return Array.from(uniqueGroups).sort((a, b) =>
-      a.localeCompare(b, undefined, {
-        numeric: true,
-        sensitivity: "base",
-      })
-    );
-  }, [data, groupBy]);
-
-  const totalGroupsCount = useMemo((): number => {
-    if (!data || data.length === 0) return 0;
-
-    const uniqueGroups = new Set<string>();
-    data.forEach((item) => {
-      const groupKey = getGroupKey(item, groupBy);
-      uniqueGroups.add(groupKey);
-    });
-
-    return uniqueGroups.size;
-  }, [data, groupBy]);
+  const retryFetch = useCallback(() => {
+    fetchTrendsGroupedMetrics();
+  }, [fetchTrendsGroupedMetrics]);
 
   return {
     groupedTrendsMetrics,
     totalGroupsCount,
     allAvailableGroups,
     isShowingTopTwo: !selectedGroups || selectedGroups.length === 0,
+    loading,
+    error,
+    retryFetch,
   };
 };

@@ -52,8 +52,8 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedItem, onItemSelect }) => {
       elevation={0}
       sx={{
         height: "100%",
-        minHeight: 400,
-        width: collapsed ? 60 : 240,
+        minHeight: 320, // reduced from 400
+        width: collapsed ? 48 : 200, // reduced widths
         transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         overflow: "visible",
         borderLeft: 1,

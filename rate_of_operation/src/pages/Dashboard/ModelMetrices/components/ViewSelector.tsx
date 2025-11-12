@@ -8,7 +8,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Typography,
-  Chip
+  Chip,
 } from "@mui/material";
 import {
   CalendarToday as CalendarIcon,
@@ -27,14 +27,16 @@ interface ViewSelectorProps {
   }>;
   onViewModeChange: (mode: ViewMode) => void;
   onMonthChange: (month: string) => void;
+  title?: string;
 }
 
-const ViewSelector: React.FC<ViewSelectorProps> = ({
+export const ViewSelector: React.FC<ViewSelectorProps> = ({
   viewMode,
   selectedMonth,
   availableMonths,
   onViewModeChange,
   onMonthChange,
+  title = "Rate of Operations Metrics",
 }) => {
   const handleViewModeChange = (
     event: React.MouseEvent<HTMLElement>,
@@ -62,22 +64,21 @@ const ViewSelector: React.FC<ViewSelectorProps> = ({
             variant="subtitle2"
             sx={{
               fontWeight: 600,
-              fontSize: "0.85rem", // slightly smaller for compactness
+              fontSize: "0.75rem", // reduced from 0.85rem
               color: "text.primary",
               letterSpacing: "0",
             }}
           >
-            Rate of Operations Metrices
+            {title}
           </Typography>
         }
         sx={{
-          bgcolor: "primary", // subtle background
+          bgcolor: "primary",
           p: 0,
-          borderRadius: "8px",
+          borderRadius: "6px", // reduced from 8px
+          height: 28, // explicit height control
         }}
       />
-
-
 
       {/* Controls */}
       <Box
@@ -124,9 +125,10 @@ const ViewSelector: React.FC<ViewSelectorProps> = ({
           size="small"
           sx={{
             "& .MuiToggleButton-root": {
-              px: 1.5,
-              fontSize: "0.7rem",
-              maxHeight: 25,
+              px: 1,
+              fontSize: "0.65rem", // reduced from 0.7rem
+              height: 28, // reduced from 25
+              minWidth: "auto",
               "&.Mui-selected": {
                 bgcolor: "primary.main",
                 color: "primary.contrastText",
@@ -135,11 +137,11 @@ const ViewSelector: React.FC<ViewSelectorProps> = ({
           }}
         >
           <ToggleButton value="month">
-            <CalendarIcon sx={{ mr: 0.3, fontSize: 12 }} />
+            <CalendarIcon sx={{ mr: 0.25, fontSize: 11 }} />
             Month
           </ToggleButton>
           <ToggleButton value="trends">
-            <TrendingUpIcon sx={{ mr: 0.3, fontSize: 12 }} />
+            <TrendingUpIcon sx={{ mr: 0.25, fontSize: 11 }} />
             Trends
           </ToggleButton>
         </ToggleButtonGroup>

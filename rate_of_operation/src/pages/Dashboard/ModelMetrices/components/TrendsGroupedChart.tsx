@@ -36,11 +36,9 @@ import { DataItem } from "../hooks/useRateOfOperationsMetrics";
 import { useTrendsGroupedMetrics } from "../hooks/useTrendsGroupedMetrics";
 import GroupBySelector, { GroupByLevel } from "./GroupBySelector";
 
-interface TrendsGroupedChartProps {
-  data: DataItem[];
-}
+interface TrendsGroupedChartProps {}
 
-const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
+const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = () => {
   const theme = useTheme();
   const [groupBy, setGroupBy] = useState<GroupByLevel>("INTERFACE");
   const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
@@ -54,10 +52,12 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
     totalGroupsCount,
     allAvailableGroups,
     isShowingTopTwo,
+    loading,
+    error,
   } = useTrendsGroupedMetrics({
-    data,
     groupBy,
     selectedGroups: selectedGroups.length > 0 ? selectedGroups : undefined,
+    modelType: "ROP",
   });
 
   const handleGroupByChange = (newGroupBy: GroupByLevel) => {
@@ -350,6 +350,37 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
     colors: combinedSeries.map((series) => series.color || "#3b82f6"),
   };
 
+  if (loading) {
+    return (
+      <Box sx={{ p: 2 }}>
+        <Card sx={{ borderRadius: 2 }}>
+          <CardContent>
+            <Typography variant="h6" gutterBottom>
+              Loading Trends Chart...
+            </Typography>
+          </CardContent>
+        </Card>
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box sx={{ p: 2 }}>
+        <Card sx={{ borderRadius: 2 }}>
+          <CardContent>
+            <Typography variant="h6" color="error" gutterBottom>
+              Error Loading Trends Chart
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {error.message}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Box>
+    );
+  }
+
   return (
     <Box>
       <Grid container spacing={3}>
@@ -449,11 +480,11 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
                   >
                     {isShowingTopTwo
                       ? `Showing trends for top 2 ${getGroupByLabel(
-                        groupBy
-                      ).toLowerCase()} with highest average error values`
+                          groupBy
+                        ).toLowerCase()} with highest average error values`
                       : `Error trends comparison for selected ${getGroupByLabel(
-                        groupBy
-                      ).toLowerCase()}`}
+                          groupBy
+                        ).toLowerCase()}`}
                   </Typography>
                   <Box
                     sx={{
@@ -663,10 +694,11 @@ const TrendsGroupedChart: React.FC<TrendsGroupedChartProps> = ({ data }) => {
                               width: 20,
                               height: 20,
                               borderRadius: 1,
-                              border: `2px solid ${isSelected
+                              border: `2px solid ${
+                                isSelected
                                   ? theme.palette.primary.main
                                   : theme.palette.divider
-                                }`,
+                              }`,
                               bgcolor: isSelected
                                 ? theme.palette.primary.main
                                 : "transparent",

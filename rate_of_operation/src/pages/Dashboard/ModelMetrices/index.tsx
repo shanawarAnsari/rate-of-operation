@@ -22,14 +22,14 @@ const ModelMetrics: React.FC = () => {
     <Box
       sx={{
         height: "100%",
-        minHeight: 500,
+        minHeight: 400, // reduced from 500
         display: "flex",
         gap: 0.5,
         overflow: "hidden",
       }}
     >
       <Box sx={{ flex: 1, minWidth: 0, overflow: "auto" }}>
-        <Paper sx={{ height: "100%", minHeight: 400 }}>{renderContent()}</Paper>
+        <Paper sx={{ height: "100%", minHeight: 320 }}>{renderContent()}</Paper>
       </Box>
       <Box sx={{ flexShrink: 0 }}>
         <Sidebar selectedItem={selectedItem} onItemSelect={setSelectedItem} />
