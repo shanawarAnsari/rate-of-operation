@@ -218,22 +218,22 @@ const TrendsChart: React.FC<TrendsChartProps> = ({
 
   return (
     <Box>
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         {/* Process Orders Spark Card */}
         <Grid item xs={12} md={4}>
           <Card
             sx={{
-              height: 130,
-              borderRadius: 3,
-              boxShadow: theme.shadows[4],
-              transition: "all 0.3s ease",
+              height: 90,
+              borderRadius: 2,
+              boxShadow: theme.shadows[2],
+              transition: "all 0.2s ease",
               "&:hover": {
-                transform: "translateY(-4px)",
-                boxShadow: theme.shadows[8],
+                transform: "translateY(-2px)",
+                boxShadow: theme.shadows[4],
               },
             }}
           >
-            <Box sx={{ px: 2, py: 2.5, height: "100%" }}>
+            <Box sx={{ p: 2.5, height: "100%" }}>
               <Box
                 sx={{
                   display: "flex",
@@ -246,7 +246,7 @@ const TrendsChart: React.FC<TrendsChartProps> = ({
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 1.5,
+                    gap: 2,
                     flex: "0 0 50%",
                   }}
                 >
@@ -286,12 +286,12 @@ const TrendsChart: React.FC<TrendsChartProps> = ({
                     </Typography>
                   </Box>
                 </Box>
-                <Box sx={{ flex: "0 0 50%", height: 90, minWidth: 0, p: 1 }}>
+                <Box sx={{ flex: "0 0 50%", height: 60, minWidth: 0 }}>
                   <Chart
                     options={getSparklineOptions("#3b82f6", "Process Orders")}
                     series={[{ name: "Process Orders", data: poData }]}
                     type="area"
-                    height={90}
+                    height={60}
                   />
                 </Box>
               </Box>
@@ -302,17 +302,17 @@ const TrendsChart: React.FC<TrendsChartProps> = ({
         <Grid item xs={12} md={4}>
           <Card
             sx={{
-              height: 130,
-              borderRadius: 3,
-              boxShadow: theme.shadows[4],
-              transition: "all 0.3s ease",
+              height: 90,
+              borderRadius: 2,
+              boxShadow: theme.shadows[2],
+              transition: "all 0.2s ease",
               "&:hover": {
-                transform: "translateY(-4px)",
-                boxShadow: theme.shadows[8],
+                transform: "translateY(-2px)",
+                boxShadow: theme.shadows[4],
               },
             }}
           >
-            <Box sx={{ px: 2, py: 2.5, height: "100%" }}>
+            <Box sx={{ p: 2.5, height: "100%" }}>
               <Box
                 sx={{
                   display: "flex",
@@ -325,7 +325,7 @@ const TrendsChart: React.FC<TrendsChartProps> = ({
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 1.5,
+                    gap: 2,
                     flex: "0 0 50%",
                   }}
                 >
@@ -365,12 +365,12 @@ const TrendsChart: React.FC<TrendsChartProps> = ({
                     </Typography>
                   </Box>
                 </Box>
-                <Box sx={{ flex: "0 0 50%", height: 90, minWidth: 0, p: 1 }}>
+                <Box sx={{ flex: "0 0 50%", height: 60, minWidth: 0 }}>
                   <Chart
                     options={getSparklineOptions("#f59e0b", plannedLabel)}
                     series={[{ name: plannedLabel, data: plannedRoData }]}
                     type="area"
-                    height={90}
+                    height={60}
                   />
                 </Box>
               </Box>
@@ -382,17 +382,17 @@ const TrendsChart: React.FC<TrendsChartProps> = ({
         <Grid item xs={12} md={4}>
           <Card
             sx={{
-              height: 130,
-              borderRadius: 3,
-              boxShadow: theme.shadows[4],
-              transition: "all 0.3s ease",
+              height: 90,
+              borderRadius: 2,
+              boxShadow: theme.shadows[2],
+              transition: "all 0.2s ease",
               "&:hover": {
-                transform: "translateY(-4px)",
-                boxShadow: theme.shadows[8],
+                transform: "translateY(-2px)",
+                boxShadow: theme.shadows[4],
               },
             }}
           >
-            <Box sx={{ px: 1, py: 1.5, height: "100%" }}>
+            <Box sx={{ p: 2.5, height: "100%" }}>
               <Box
                 sx={{
                   display: "flex",
@@ -405,7 +405,7 @@ const TrendsChart: React.FC<TrendsChartProps> = ({
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 1.5,
+                    gap: 2,
                     flex: "0 0 50%",
                   }}
                 >
@@ -445,12 +445,12 @@ const TrendsChart: React.FC<TrendsChartProps> = ({
                     </Typography>
                   </Box>
                 </Box>
-                <Box sx={{ flex: "0 0 50%", height: 90, minWidth: 0, p: 1, mt: -1 }}>
+                <Box sx={{ flex: "0 0 50%", height: 60, minWidth: 0 }}>
                   <Chart
                     options={getSparklineOptions("#10b981", aimlLabel)}
                     series={[{ name: aimlLabel, data: aimlRoData }]}
                     type="area"
-                    height={90}
+                    height={60}
                   />
                 </Box>
               </Box>

@@ -10,14 +10,31 @@ import {
 } from "@mui/material";
 import { FilterAlt as DatasetIcon, Check as CheckIcon } from "@mui/icons-material";
 
-export type GroupByLevel =
+// Rate of Operations group by options
+export type ROPGroupByLevel =
   | "INTERFACE"
+  | "PLATFORM"
   | "FACILITY_NAME"
-  | "PLATFORM_NAME"
   | "MACHINE"
+  | "MAKER_RESOURCE"
   | "PACKER_RESOURCE"
+  | "CATEGORY"
+  | "BUSINESS_UNIT";
+
+// Setup Time group by options
+export type SetupTimeGroupByLevel =
+  | "SETUP_MATRIX"
+  | "FROM_SETUP_GROUP"
+  | "TO_SETUP_GROUP"
+  | "SEGEMENT"
   | "BUSINESS_UNIT"
-  | "CATEGORY";
+  | "INTERFACE"
+  | "PLATFORM"
+  | "FACILITY_NAME"
+  | "MACHINE";
+
+// Union type for backward compatibility
+export type GroupByLevel = ROPGroupByLevel | SetupTimeGroupByLevel;
 
 interface GroupByOption {
   value: GroupByLevel;
@@ -28,46 +45,49 @@ interface GroupBySelectorProps {
   selectedGroupBy: GroupByLevel;
   onGroupByChange: (groupBy: GroupByLevel) => void;
   onOpen?: (event: React.MouseEvent<HTMLElement>) => void;
+  modelType?: "ROP" | "ST"; // Add modelType prop
 }
 
-const groupByOptions: GroupByOption[] = [
-  {
-    value: "BUSINESS_UNIT",
-    label: "Business Unit",
-  },
-  {
-    value: "CATEGORY",
-    label: "Category",
-  },
-  {
-    value: "FACILITY_NAME",
-    label: "Facility Name",
-  },
-  {
-    value: "INTERFACE",
-    label: "Interface",
-  },
-  {
-    value: "MACHINE",
-    label: "Machine",
-  },
-  {
-    value: "PACKER_RESOURCE",
-    label: "Packer Resource",
-  },
-  {
-    value: "PLATFORM_NAME",
-    label: "Platform Name",
-  },
+// Rate of Operations group by options
+const ropGroupByOptions: Array<{ value: ROPGroupByLevel; label: string }> = [
+  { value: "BUSINESS_UNIT", label: "Business Unit" },
+  { value: "CATEGORY", label: "Category" },
+  { value: "FACILITY_NAME", label: "Facility Name" },
+  { value: "INTERFACE", label: "Interface" },
+  { value: "MACHINE", label: "Machine" },
+  { value: "MAKER_RESOURCE", label: "Maker Resource" },
+  { value: "PACKER_RESOURCE", label: "Packer Resource" },
+  { value: "PLATFORM", label: "Platform" },
+];
+
+// Setup Time group by options
+const setupTimeGroupByOptions: Array<{
+  value: SetupTimeGroupByLevel;
+  label: string;
+}> = [
+  { value: "SETUP_MATRIX", label: "Setup Matrix" },
+  { value: "FROM_SETUP_GROUP", label: "From Setup Group" },
+  { value: "TO_SETUP_GROUP", label: "To Setup Group" },
+  { value: "SEGEMENT", label: "Segment" },
+  { value: "BUSINESS_UNIT", label: "Business Unit" },
+  { value: "INTERFACE", label: "Interface" },
+  { value: "PLATFORM", label: "Platform" },
+  { value: "FACILITY_NAME", label: "Facility Name" },
+  { value: "MACHINE", label: "Machine" },
 ];
 
 const GroupBySelector: React.FC<GroupBySelectorProps> = ({
   selectedGroupBy,
   onGroupByChange,
   onOpen,
+  modelType = "ROP", // Default to ROP for backward compatibility
 }) => {
   const theme = useTheme();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  // Get the appropriate options based on model type
+  const groupByOptions =
+    modelType === "ST" ? setupTimeGroupByOptions : ropGroupByOptions;
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     event.stopPropagation();
@@ -139,11 +159,11 @@ const GroupBySelector: React.FC<GroupBySelectorProps> = ({
             </Typography>
           </Box>
           <Divider />
-          {groupByOptions.map((option, index) => (
+          {groupByOptions.map((option) => (
             <MenuItem
               key={option.value}
               selected={selectedGroupBy === option.value}
-              onClick={() => handleSelect(option.value)}
+              onClick={() => handleSelect(option.value as GroupByLevel)}
               sx={{
                 py: 1.5,
                 px: 2,

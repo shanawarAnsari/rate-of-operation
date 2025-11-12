@@ -56,6 +56,7 @@ export const getGroupedMetrics = async (options = {}) => {
     groupBy = "INTERFACE",
     selectedMonth,
     selectedGroups,
+    filters,
   } = options;
 
   const endpoint =
@@ -67,6 +68,7 @@ export const getGroupedMetrics = async (options = {}) => {
     groupBy,
     ...(selectedMonth && { selectedMonth }),
     ...(selectedGroups && { selectedGroups: selectedGroups.join(",") }),
+    ...(filters && filters), // Spread filter parameters
   };
 
   return getApi(endpoint, params)
@@ -75,7 +77,12 @@ export const getGroupedMetrics = async (options = {}) => {
 };
 
 export const getTrendsGroupedMetrics = async (options = {}) => {
-  const { modelType = "ROP", groupBy = "INTERFACE", selectedGroups } = options;
+  const {
+    modelType = "ROP",
+    groupBy = "INTERFACE",
+    selectedGroups,
+    filters,
+  } = options;
 
   const endpoint =
     modelType === "ROP"
@@ -85,6 +92,7 @@ export const getTrendsGroupedMetrics = async (options = {}) => {
   const params = {
     groupBy,
     ...(selectedGroups && { selectedGroups: selectedGroups.join(",") }),
+    ...(filters && filters), // Spread filter parameters
   };
 
   return getApi(endpoint, params)

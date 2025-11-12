@@ -32,7 +32,7 @@ import {
 } from "@mui/icons-material";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import { GroupByLevel } from "./GroupBySelector";
+import { SetupTimeGroupByLevel } from "./GroupBySelector";
 import { useGroupedMetrics } from "../hooks/useGroupedMetrics";
 
 interface SetupTimeMonthlyViewChartsProps {
@@ -43,7 +43,7 @@ const SetupTimeMonthlyViewCharts: React.FC<SetupTimeMonthlyViewChartsProps> = ({
   selectedMonth,
 }) => {
   const theme = useTheme();
-  const [groupBy, setGroupBy] = useState<GroupByLevel>("INTERFACE");
+  const [groupBy, setGroupBy] = useState<SetupTimeGroupByLevel>("INTERFACE");
   const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
   const [tempSelectedGroups, setTempSelectedGroups] = useState<string[]>([]);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -64,7 +64,7 @@ const SetupTimeMonthlyViewCharts: React.FC<SetupTimeMonthlyViewChartsProps> = ({
     modelType: "ST", // Setup Time model type
   });
 
-  const handleGroupByChange = (newGroupBy: GroupByLevel) => {
+  const handleGroupByChange = (newGroupBy: SetupTimeGroupByLevel) => {
     setGroupBy(newGroupBy);
     setSelectedGroups([]); // Reset selection when groupBy changes
     setTempSelectedGroups([]); // Reset temp selection
@@ -118,29 +118,33 @@ const SetupTimeMonthlyViewCharts: React.FC<SetupTimeMonthlyViewChartsProps> = ({
   const groupByOpen = Boolean(groupByAnchorEl);
 
   // Get label for the selected groupBy
-  const getGroupByLabel = (groupBy: GroupByLevel): string => {
+  const getGroupByLabel = (groupBy: SetupTimeGroupByLevel): string => {
     const groupByOptions = [
+      { value: "SETUP_MATRIX", label: "Setup Matrix" },
+      { value: "FROM_SETUP_GROUP", label: "From Setup Group" },
+      { value: "TO_SETUP_GROUP", label: "To Setup Group" },
+      { value: "SEGEMENT", label: "Segment" },
       { value: "BUSINESS_UNIT", label: "Business Unit" },
-      { value: "CATEGORY", label: "Category" },
-      { value: "FACILITY_NAME", label: "Facility Name" },
       { value: "INTERFACE", label: "Interface" },
+      { value: "PLATFORM", label: "Platform" },
+      { value: "FACILITY_NAME", label: "Facility Name" },
       { value: "MACHINE", label: "Machine" },
-      { value: "PACKER_RESOURCE", label: "Packer Resource" },
-      { value: "PLATFORM_NAME", label: "Platform Name" },
     ];
     return (
       groupByOptions.find((option) => option.value === groupBy)?.label || groupBy
     );
   };
 
-  const groupByOptions: Array<{ value: GroupByLevel; label: string }> = [
+  const groupByOptions: Array<{ value: SetupTimeGroupByLevel; label: string }> = [
+    { value: "SETUP_MATRIX", label: "Setup Matrix" },
+    { value: "FROM_SETUP_GROUP", label: "From Setup Group" },
+    { value: "TO_SETUP_GROUP", label: "To Setup Group" },
+    { value: "SEGEMENT", label: "Segment" },
     { value: "BUSINESS_UNIT", label: "Business Unit" },
-    { value: "CATEGORY", label: "Category" },
-    { value: "FACILITY_NAME", label: "Facility Name" },
     { value: "INTERFACE", label: "Interface" },
+    { value: "PLATFORM", label: "Platform" },
+    { value: "FACILITY_NAME", label: "Facility Name" },
     { value: "MACHINE", label: "Machine" },
-    { value: "PACKER_RESOURCE", label: "Packer Resource" },
-    { value: "PLATFORM_NAME", label: "Platform Name" },
   ];
 
   // Chart Options for Setup Time

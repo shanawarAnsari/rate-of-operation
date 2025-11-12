@@ -34,7 +34,7 @@ import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 import { DataItem } from "../hooks/useRateOfOperationsMetrics";
 import { useGroupedMetrics } from "../hooks/useGroupedMetrics";
-import GroupBySelector, { GroupByLevel } from "./GroupBySelector";
+import GroupBySelector, { ROPGroupByLevel } from "./GroupBySelector";
 
 interface MonthlyViewChartsProps {
   selectedMonth?: string;
@@ -42,7 +42,7 @@ interface MonthlyViewChartsProps {
 
 const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) => {
   const theme = useTheme();
-  const [groupBy, setGroupBy] = useState<GroupByLevel>("INTERFACE");
+  const [groupBy, setGroupBy] = useState<ROPGroupByLevel>("INTERFACE");
   const [selectedGroups, setSelectedGroups] = useState<string[]>([]);
   const [tempSelectedGroups, setTempSelectedGroups] = useState<string[]>([]);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -63,7 +63,7 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
     modelType: "ROP",
   });
 
-  const handleGroupByChange = (newGroupBy: GroupByLevel) => {
+  const handleGroupByChange = (newGroupBy: ROPGroupByLevel) => {
     setGroupBy(newGroupBy);
     setSelectedGroups([]); // Reset selection when groupBy changes
     setTempSelectedGroups([]); // Reset temp selection
@@ -117,27 +117,29 @@ const MonthlyViewCharts: React.FC<MonthlyViewChartsProps> = ({ selectedMonth }) 
   const groupByOpen = Boolean(groupByAnchorEl);
 
   // Get label for the selected groupBy
-  const getGroupByLabel = (groupBy: GroupByLevel): string => {
-    const labels: Record<GroupByLevel, string> = {
+  const getGroupByLabel = (groupBy: ROPGroupByLevel): string => {
+    const labels: Record<ROPGroupByLevel, string> = {
       INTERFACE: "Interface",
+      PLATFORM: "Platform",
       FACILITY_NAME: "Facility Name",
       MACHINE: "Machine",
+      MAKER_RESOURCE: "Maker Resource",
       PACKER_RESOURCE: "Packer Resource",
-      PLATFORM_NAME: "Platform Name",
-      BUSINESS_UNIT: "Business Unit",
       CATEGORY: "Category",
+      BUSINESS_UNIT: "Business Unit",
     };
     return labels[groupBy];
   };
 
-  const groupByOptions: Array<{ value: GroupByLevel; label: string }> = [
+  const groupByOptions: Array<{ value: ROPGroupByLevel; label: string }> = [
     { value: "BUSINESS_UNIT", label: "Business Unit" },
     { value: "CATEGORY", label: "Category" },
     { value: "FACILITY_NAME", label: "Facility Name" },
     { value: "INTERFACE", label: "Interface" },
     { value: "MACHINE", label: "Machine" },
+    { value: "MAKER_RESOURCE", label: "Maker Resource" },
     { value: "PACKER_RESOURCE", label: "Packer Resource" },
-    { value: "PLATFORM_NAME", label: "Platform Name" },
+    { value: "PLATFORM", label: "Platform" },
   ];
 
   // Chart Options
